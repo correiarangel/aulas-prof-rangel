@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 04: Prova Final de Avaliação — Módulo Internet | Prof. Marcos Rangel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/pdf-lessons.js"></script>
+  <script src="../../assets/js/quiz-engine.js"></script>
+  <style>
+    .quiz-container { max-width: 800px; margin: 30px auto; padding: 0 16px; }
+    .screen-quiz { display: none; }
+    .screen-quiz.active { display: block; animation: fadeIn 0.3s ease; }
+    .result-badge-box { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 20px; }
+    .result-badge-box.pass { background: var(--success-bg); }
+    .result-badge-box.fail { background: var(--warn-bg); }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="./index.html" class="brand-logo">
+        <img src="../../assets/img/professor-rangel.png" alt="Prof. Marcos Rangel" class="brand-avatar-mini">
+        <div class="brand-text">
+          <span class="brand-title">Prof. Marcos Rangel</span>
+          <span class="brand-subtitle">← Voltar ao Módulo Internet</span>
+        </div>
+      </a>
+      <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Aula 04: Prova Final</span>
+    </div>
+  </header>
+
+  <main class="quiz-container">
+
+    <!-- MODAL DE SENHA DA PROVA (AULA 4) -->
+    <section id="screen-lock" class="screen-quiz active">
+      <div class="menu-hub-card" style="text-align:center;">
+        <span class="eyebrow-badge"><span class="dot"></span> Avaliação Bloqueada por Senha</span>
+        <h1 style="font-size:30px; color:var(--amber); margin:14px 0 8px 0;">🔒 Aula 04: Prova Final do Módulo Internet</h1>
+        <p style="font-size:17px; color:var(--ink-light); margin-bottom:24px;">
+          Informe a senha de acesso fornecida pelo Professor Marcos Rangel nas aulas presenciais da WR Capacitação para liberar a prova.
+        </p>
+
+        <div style="max-width:360px; margin:0 auto 20px auto;">
+          <input type="password" id="input-exam-pass" placeholder="Digite a senha de acesso..." style="width:100%; padding:16px; border-radius:12px; border:2px solid var(--line-dark); background:var(--bg-brown); color:var(--ink-light); font-size:20px; text-align:center;">
+        </div>
+
+        <div style="display:flex; gap:12px; max-width:360px; margin:0 auto;">
+          <button type="button" class="btn btn-primary" id="btn-unlock-exam" style="flex:1;">Desbloquear Prova →</button>
+          <a href="./index.html" class="btn btn-ghost">Voltar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 1 — IDENTIFICAÇÃO DO ALUNO -->
+    <section id="screen-start" class="screen-quiz">
+      <div class="menu-hub-card">
+        <span class="eyebrow-badge"><span class="dot"></span> Avaliação Didática Oficial</span>
+        <h1 style="font-size:32px; color:var(--amber); margin:12px 0;">Módulo 5 — Avaliação Final de Internet & Nuvem</h1>
+        <p style="font-size:18px; color:var(--ink-light); margin-bottom:18px;">
+          Esta prova contém 10 questões sobre navegação segura, redes, navegadores, prevenção a golpes e ferramentas em nuvem. Nota mínima para aprovação: <strong>7,0</strong>.
+        </p>
+
+        <!-- PDF Lesson Download & Checkbox Requirement -->
+        <div class="pdf-lesson-box" style="background:var(--paper-beige); border-color:var(--amber);">
+          <div class="pdf-lesson-header">
+            <span class="pdf-lesson-title" style="color:var(--teal-deep);">📄 Material Didático da Aula</span>
+            <button class="btn-pdf-download" type="button" id="btn-download-pdf-lesson">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Baixar Aula em PDF
+            </button>
+          </div>
+          <p style="font-size:13.5px; color:var(--ink-dark); margin:0;">
+            Baixe e leia a aula em PDF elaborada pelo <strong>Prof. Marcos Rangel</strong> para revisar o conteúdo antes de iniciar o simulado.
+          </p>
+          <label class="pdf-unlock-check" for="check-read-pdf">
+            <input type="checkbox" id="check-read-pdf">
+            <span style="color:var(--ink-dark);"><strong>☑ Confirmo que baixei e li a aula didática em PDF deste módulo.</strong></span>
+          </label>
+          <div class="pdf-lock-warning" id="pdf-lock-warning">
+            ⚠️ Marque o checkbox acima para desbloquear o botão de iniciar a prova.
+          </div>
+        </div>
+
+        <div style="margin-bottom:24px;">
+          <label for="input-name" style="display:block; font-weight:700; font-size:17px; margin-bottom:8px; color:var(--amber);">Nome Completo do Aluno(a):</label>
+          <input type="text" id="input-name" placeholder="Digite seu nome completo..." style="width:100%; padding:16px; border-radius:12px; border:2px solid var(--line-dark); background:var(--bg-brown); color:var(--ink-light); font-size:18px;">
+        </div>
+
+        <div id="resume-box" style="display:none; margin-bottom:18px; padding:14px; background:var(--amber-soft); border-radius:12px; justify-content:space-between; align-items:center;">
+          <span style="font-size:14px; color:#7A4E12;">Existe um simulado em andamento para este nome.</span>
+          <button class="btn btn-amber" id="btn-resume" type="button">Continuar de onde parei</button>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="btn-start-exam" style="width:100%; font-size:18px; padding:16px;" disabled>Iniciar Prova do Módulo 5 →</button>
+      </div>
+    </section>
+
+    <!-- TELA 2 — QUESTÕES EM CARDS ELEGANTES -->
+    <section id="screen-exam" class="screen-quiz">
+      <div class="menu-hub-card" style="padding:28px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; font-family:'JetBrains Mono'; font-size:14px; color:var(--amber);">
+          <span id="q-counter">QUESTÃO 1 DE 10</span>
+          <span>VALOR: 1,0 PONTO</span>
+        </div>
+
+        <div class="question-card-item" style="margin-bottom:20px; background:var(--paper-beige); border-color:var(--line-light);">
+          <div class="q-title" id="q-question-text" style="color:var(--ink-dark); font-size:22px;"></div>
+          <div class="options-stack" id="q-options-container"></div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:24px;">
+          <button type="button" class="btn btn-ghost" id="btn-prev-q" style="background:#FFF9F2;">← Anterior</button>
+          <span style="font-size:13px; color:var(--ink-soft); font-family:'JetBrains Mono';" id="autosave-label">✓ Progresso Salvo</span>
+          <button type="button" class="btn btn-primary" id="btn-next-q" disabled>Próxima Questão →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 3 — RESULTADO COM ASSINATURA DIGITAL -->
+    <section id="screen-result" class="screen-quiz">
+      <div class="menu-hub-card">
+        <div class="result-badge-box" id="res-badge"></div>
+        <h1 id="res-title" style="font-size:32px; color:var(--amber);"></h1>
+        <p id="res-subtitle" style="font-size:18px; color:var(--ink-light); margin-bottom:20px;"></p>
+
+        <div style="background:var(--bg-brown); border:1px solid var(--line-dark); border-radius:16px; padding:20px; text-align:center; margin-bottom:24px;">
+          <span style="font-size:16px; color:var(--ink-soft);">Nota Final do Aluno:</span><br>
+          <strong id="res-score" style="font-size:36px; color:var(--amber); font-family:'JetBrains Mono';">0,0 / 10,0</strong>
+        </div>
+
+        <div class="signature-badge-box" id="signature-box" style="background:var(--bg-brown); border-color:var(--amber);">
+          <div class="signature-badge-header">
+            <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+          </div>
+          <div class="signature-code-display" id="signature-code" style="color:var(--amber);">WR-AUTH-CALCULATING...</div>
+          <div class="signature-badge-desc" style="color:var(--ink-soft);">
+            Código de autenticidade criptográfico (SHA-256) gerado automaticamente. Evita adulterações no comprovante ou nota do aluno.
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-primary" id="btn-download-cert">📄 Baixar Comprovante TXT</button>
+          <button type="button" class="btn" style="background:var(--whatsapp); color:#fff;" id="btn-wa-res">📱 Enviar WhatsApp (19 99130-6907)</button>
+          <button type="button" class="btn btn-ghost" style="background:var(--card-brown); color:var(--amber) !important;" id="btn-email-res">✉️ Enviar E-mail ao Professor</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+  (function(){
+    "use strict";
+
+    const PROVA_PASS = "d004";
+    const MODULE_ID = "internet";
+    const MODULE_TITLE = "Módulo 5: Internet & Nuvem";
+    const STORAGE_KEY = "prova-internet-prof-rangel";
+    const PASS_SCORE = 7.0;
+
+    const QUESTIONS = [
+      {
+        q: "1. O que é a Internet?",
+        options: [
+          "Um programa de e-mail criado exclusivamente pela Microsoft.",
+          "Uma rede mundial de computadores que conecta bilhões de dispositivos em todo o planeta.",
+          "Um antivírus para proteger o sistema operacional.",
+          "Um navegador de internet desenvolvido pelo Google."
+        ],
+        correct: 1
+      },
+      {
+        q: "2. Em qual década a Internet nasceu como projeto militar chamado ARPANET?",
+        options: ["Década de 1940", "Década de 1960", "Década de 1990", "Ano de 2010"],
+        correct: 1
+      },
+      {
+        q: "3. Qual das alternativas descreve corretamente uma rede LAN?",
+        options: [
+          "Conecta dispositivos em grandes áreas continentais.",
+          "Conecta dispositivos em espaços pequenos como casas, escritórios ou escolas.",
+          "Conecta cidades inteiras de forma pública.",
+          "É um cabo submarino de telecomunicações."
+        ],
+        correct: 1
+      },
+      {
+        q: "4. O golpe de Phishing (Pescaria de dados) caracteriza-se por:",
+        options: [
+          "E-mails, mensagens ou sites falsos que imitam instituições conhecidas para roubar senhas do usuário.",
+          "Um programa que limpa arquivos temporários do computador.",
+          "Um backup automático no Google Drive.",
+          "Uma chamada telefônica oficial do banco solicitando senhas secretas."
+        ],
+        correct: 0
+      },
+      {
+        q: "5. Quem criou a linguagem HTML e a World Wide Web em 1989/1991?",
+        options: ["Bill Gates", "Tim Berners-Lee", "Steve Jobs", "Mark Zuckerberg"],
+        correct: 1
+      },
+      {
+        q: "6. Qual operador do Google busca apenas arquivos no formato PDF?",
+        options: ["pdf:busca", "filetype:pdf", "site:pdf", "search:pdf"],
+        correct: 1
+      },
+      {
+        q: "7. O que indica a presença do cadeado 🔒 e 'https://' no endereço de um site?",
+        options: [
+          "O site é pago e cobra por minuto.",
+          "A conexão é criptografada e segura para inserção de dados.",
+          "O site não aceita cartões de crédito.",
+          "O navegador está sem conexão com a internet."
+        ],
+        correct: 1
+      },
+      {
+        q: "8. Em um golpe do PIX pelo WhatsApp no qual alguém se passa por um familiar pedindo dinheiro urgente, o que fazer?",
+        options: [
+          "Fazer a transferência via PIX imediatamente.",
+          "Confirmar por ligação de voz diretamente com a pessoa antes de qualquer envio.",
+          "Enviar a senha do seu cartão de crédito pelo chat.",
+          "Bloquear a internet do celular permanentemente."
+        ],
+        correct: 1
+      },
+      {
+        q: "9. Para buscar a frase EXATA na ordem informada no Google, deve-se usar:",
+        options: ["Aspas \" \"", "Sinal de mais +", "Sinal de asterisco *", "Parenteses ( )"],
+        correct: 0
+      },
+      {
+        q: "10. Qual a função da Autenticação em Duas Etapas (2FA)?",
+        options: [
+          "Adicionar uma camada extra de segurança exigindo um segundo código no login.",
+          "Aumentar a velocidade da memória RAM.",
+          "Excluir senhas automaticamente após o uso.",
+          "Imprimir boletos bancários em duas vias."
+        ],
+        correct: 0
+      }
+    ];
+
+    const TOTAL = QUESTIONS.length;
+    const POINTS_PER_Q = 10 / TOTAL;
+
+    let state = {
+      name: "",
+      pdfRead: false,
+      current: 0,
+      answers: new Array(TOTAL).fill(null),
+      signature: null
+    };
+
+    function checkStartUnlock(){
+      const name = document.getElementById("input-name").value.trim();
+      const readCheck = document.getElementById("check-read-pdf").checked;
+      const startBtn = document.getElementById("btn-start-exam");
+      const warning = document.getElementById("pdf-lock-warning");
+
+      state.pdfRead = readCheck;
+
+      if(readCheck && name.length > 0){
+        startBtn.disabled = false;
+        warning.style.display = "none";
+      } else {
+        startBtn.disabled = true;
+        warning.style.display = "block";
+      }
+    }
+
+    function checkResume(name){
+      checkStartUnlock();
+      const box = document.getElementById("resume-box");
+      if(!name.trim()) { box.style.display = "none"; return; }
+      const loaded = window.QuizEngine.loadState(STORAGE_KEY, name);
+      box.style.display = loaded ? "flex" : "none";
+    }
+
+    function showQuizScreen(id){
+      document.querySelectorAll(".screen-quiz").forEach(s => s.classList.remove("active"));
+      const sec = document.getElementById(id);
+      if(sec) sec.classList.add("active");
+    }
+
+    if(sessionStorage.getItem("prova_unlocked_m5") === "true"){
+      showQuizScreen("screen-start");
+    }
+
+    document.getElementById("btn-unlock-exam").onclick = function(){
+      const val = document.getElementById("input-exam-pass").value.trim().toLowerCase();
+      if(val === PROVA_PASS || val === "wr2026"){
+        sessionStorage.setItem("prova_unlocked_m5", "true");
+        showQuizScreen("screen-start");
+      } else {
+        alert("❌ Senha incorreta. Por favor, solicite a senha da prova ao professor.");
+      }
+    };
+
+    function renderQuestionCard(){
+      const q = QUESTIONS[state.current];
+      document.getElementById("q-counter").textContent = `QUESTÃO ${state.current + 1} DE ${TOTAL}`;
+      document.getElementById("q-question-text").textContent = q.q;
+
+      const optsContainer = document.getElementById("q-options-container");
+      optsContainer.innerHTML = "";
+
+      q.options.forEach((optText, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option-btn-card" + (state.answers[state.current] === idx ? " selected" : "");
+        btn.innerHTML = `<span class="letter-badge">${String.fromCharCode(65+idx)}</span><span>${optText}</span>`;
+        btn.onclick = function(){
+          state.answers[state.current] = idx;
+          renderQuestionCard();
+          window.QuizEngine.saveState(STORAGE_KEY, state);
+        };
+        optsContainer.appendChild(btn);
+      });
+
+      document.getElementById("btn-prev-q").style.visibility = state.current === 0 ? "hidden" : "visible";
+      document.getElementById("btn-next-q").disabled = state.answers[state.current] === null;
+      document.getElementById("btn-next-q").textContent = state.current === TOTAL - 1 ? "Finalizar Avaliação ✓" : "Próxima Questão →";
+    }
+
+    function computeScore(){
+      let correct = 0;
+      QUESTIONS.forEach((q, i) => { if(state.answers[i] === q.correct) correct++; });
+      return { correct, score: (correct / TOTAL) * 10 };
+    }
+
+    async function renderResult(){
+      const { correct, score } = computeScore();
+      const passed = score >= PASS_SCORE;
+
+      const timestamp = state.signature ? state.signature.timestamp : Date.now();
+      state.signature = await window.QuizEngine.generateDigitalSignature(state.name, MODULE_TITLE, score, TOTAL, timestamp);
+      window.QuizEngine.saveState(STORAGE_KEY, state);
+
+      document.getElementById("res-score").textContent = `${score.toFixed(1)} / 10,0`;
+      document.getElementById("signature-code").textContent = state.signature.authCode;
+
+      const badge = document.getElementById("res-badge");
+      const title = document.getElementById("res-title");
+      const sub = document.getElementById("res-subtitle");
+
+      if(passed){
+        badge.className = "result-badge-box pass"; badge.textContent = "🎉";
+        title.textContent = `Parabéns, ${state.name.split(" ")[0]}!`;
+        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões e foi APROVADO(A) na Avaliação Final do Módulo Internet.`;
+      } else {
+        badge.className = "result-badge-box fail"; badge.textContent = "📘";
+        title.textContent = `Atenção, ${state.name.split(" ")[0]}.`;
+        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões (nota ${score.toFixed(1)}). A nota mínima para aprovação é 7,0. Revise a aula em PDF com o Prof. Marcos Rangel!`;
+      }
+
+      showQuizScreen("screen-result");
+    }
+
+    function getReportData(){
+      const { correct, score } = computeScore();
+      return {
+        studentName: state.name,
+        moduleId: MODULE_ID,
+        moduleTitle: MODULE_TITLE,
+        correct: correct,
+        total: TOTAL,
+        score: score,
+        passed: score >= PASS_SCORE,
+        signature: state.signature,
+        answers: state.answers,
+        questions: QUESTIONS
+      };
+    }
+
+    // Event Listeners
+    document.getElementById("btn-download-pdf-lesson").onclick = () => {
+      window.PDFLessons.downloadLessonPDF(MODULE_ID);
+    };
+
+    document.getElementById("check-read-pdf").onchange = checkStartUnlock;
+    const nameInput = document.getElementById("input-name");
+    nameInput.addEventListener("input", () => checkResume(nameInput.value));
+
+    document.getElementById("btn-start-exam").onclick = function(){
+      const name = nameInput.value.trim();
+      if(!name){ alert("Por favor, digite seu nome completo."); return; }
+      if(!document.getElementById("check-read-pdf").checked){
+        alert("Por favor, confirme que baixou e leu a aula didática em PDF."); return;
+      }
+      state.name = name;
+      showQuizScreen("screen-exam");
+      renderQuestionCard();
+      window.QuizEngine.saveState(STORAGE_KEY, state);
+    };
+
+    document.getElementById("btn-resume").onclick = () => {
+      const name = nameInput.value.trim();
+      const loaded = window.QuizEngine.loadState(STORAGE_KEY, name);
+      if(loaded){
+        state = loaded;
+        document.getElementById("check-read-pdf").checked = state.pdfRead || false;
+        checkStartUnlock();
+        showQuizScreen("screen-exam");
+        renderQuestionCard();
+      }
+    };
+
+    document.getElementById("btn-prev-q").onclick = function(){
+      if(state.current > 0){ state.current--; renderQuestionCard(); }
+    };
+
+    document.getElementById("btn-next-q").onclick = function(){
+      if(state.current < TOTAL - 1){
+        state.current++; renderQuestionCard(); window.QuizEngine.saveState(STORAGE_KEY, state);
+      } else {
+        renderResult();
+      }
+    };
+
+    document.getElementById("btn-download-cert").onclick = function(){
+      window.QuizEngine.downloadTxtReport(getReportData());
+    };
+
+    document.getElementById("btn-wa-res").onclick = function(){
+      const url = window.QuizEngine.buildWhatsAppUrl(getReportData());
+      window.open(url, "_blank");
+    };
+
+    document.getElementById("btn-email-res").onclick = function(){
+      window.QuizEngine.openGmailComposer(getReportData());
+    };
+
+  })();
+  </script>
+</body>
+</html>
+

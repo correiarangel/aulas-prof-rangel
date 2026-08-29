@@ -1,37 +1,77 @@
-# Prova de Internet — Aula 4
-### Informática para Todos
+# Portal de Informática Básica — Professor Marcos Rangel
+### WR Capacitação Profissional
 
-Prova interativa em HTML5, com 10 questões de múltipla escolha sobre o conteúdo das Aulas 1, 2 e 3 (Internet, navegador, segurança e Google Workspace).
+Portal interativo de aulas e avaliações didáticas para os alunos de Informática Básica da **WR Capacitação Profissional**, criado e ministrado pelo **Professor Marcos Rangel**.
 
-## Como usar
+---
 
-1. Abra o arquivo `prova-interativa.html` em qualquer navegador (computador ou celular).
-2. O aluno digita o nome e clica em **Começar prova**.
-3. Responde as 10 questões, uma por vez. Cada uma tem um botão **Ver dica**.
-4. As respostas são salvas automaticamente — se a prova fechar no meio, é só digitar o mesmo nome de novo e continuar de onde parou.
-5. Ao responder a última questão, clica em **Finalizar prova** e a nota é calculada na hora.
+## 📘 Documentação do Projeto
 
-## Como funciona a nota
+Para conferir os padrões arquiteturais, diretrizes de design, fluxo pedagógico em 4 Aulas e o sistema de senhas secretas, acesse o documento completo em:
+👉 **[DOCUMENTATION.md](./DOCUMENTATION.md)**
 
-- Cada questão vale 1,0 ponto — nota final de 0 a 10.
-- Nota mínima para aprovação: **7,0**.
-- Aprovado: mensagem de parabéns com a nota e o número de acertos.
-- Reprovado: mostra quantos pontos faltaram para a média e orienta a falar com o professor.
+---
 
-## Depois de finalizar
+## 👨‍🏫 Sobre o Professor
 
-Na tela de resultado o aluno pode:
+* **Nome:** Marcos Fabiano Correia Rangel (48 anos)
+* **Perfil:** Apaixonado por tecnologias, natureza, astronomia e família.
+* **Atuação:** Desenvolvedor .NET | C# | Blazor | Mobile e Instrutor de Informática Básica.
+* **Formação Acadêmica:**
+  * Pós-Graduação em Desenvolvimento de Aplicações para Dispositivos Móveis
+  * Graduado em Gestão em Tecnologia da Informação
+* **Contato:**
+  * E-mail: `okcomputer.use.linux@gmail.com`
+  * LinkedIn: [https://www.linkedin.com/in/marcos-fabiano-correia-rangel/](https://www.linkedin.com/in/marcos-fabiano-correia-rangel/)
 
-- **Baixar comprovante (.txt)** — arquivo com nome, respostas, nota e situação.
-- **Compartilhar no WhatsApp** — abre o WhatsApp com um resumo do resultado pronto para enviar.
-- **Enviar por e-mail** — baixa o comprovante e abre o Gmail já preenchido para `okcomputer.use.linux@gmail.com`. Como o navegador não deixa anexar arquivos automaticamente (por segurança), é só arrastar o `.txt` baixado para dentro do e-mail antes de enviar.
+---
 
-## Tecnologia
+## 🏫 Instituição Parceira
 
-Arquivo único em HTML, CSS e JavaScript puro — não precisa de instalação, servidor ou internet para funcionar (exceto para enviar e-mail ou WhatsApp). Tema laranja, otimizado para uso no celular.
+* **Escola:** WR Capacitação Profissional ("Seu Futuro Começa Aqui!")
+* **Website:** [https://www.wrcapacitacaoprofissional.net/](https://www.wrcapacitacaoprofissional.net/)
+* **Unidades:** Aguaí - SP e Vargem Grande do Sul - SP
 
-## Autor
+---
 
-**Marcos Rangel**
-Desenvolvedor mobile (Flutter) e back-end (C#/.NET) · Instrutor de Informática Básica
-WR Cursos Profissionalizantes — Vargem Grande do Sul, SP
+## 📚 Módulo 5: Internet (Estrutura de 4 Aulas Protegidas)
+
+1. **Aula 01**: Introdução à Internet e Navegação Segura *(Acesso Restrito)*
+2. **Aula 02**: História do HTML e sua Ligação com a Internet *(Acesso Restrito)*
+3. **Aula 03**: Dominando o Google *(Acesso Restrito)*
+4. **Aula 04**: Prova Final de Avaliação do Módulo *(Acesso Restrito com Assinatura Digital Anti-Fraude)*
+
+---
+
+## 📂 Estrutura do Repositório
+
+```text
+.
+├── index.html                    # Página inicial (Home) com catálogo dos módulos
+├── README.md                     # Visão geral do repositório
+├── DOCUMENTATION.md              # Documentação detalhada dos padrões do portal
+├── assets/
+│   ├── css/
+│   │   └── style.css             # Estilos visuais com a paleta da WR Capacitação
+│   └── img/                      # Ilustrações didáticas e avatares
+└── modules/
+    ├── windows/                  # Módulo 1: Windows
+    ├── word/                     # Módulo 2: Microsoft Word
+    ├── excel/                    # Módulo 3: Microsoft Excel
+    ├── powerpoint/               # Módulo 4: Microsoft PowerPoint
+    └── internet/                 # Módulo 5: Internet & Nuvem (4 Aulas)
+        ├── index.html            # Hub do Módulo 5 + Aulas Teóricas (1, 2 e 3)
+        └── prova-internet.html   # Aula 04: Avaliação Final do Módulo
+```
+
+---
+
+## 🚀 Recursos & Compatibilidade com GitHub Pages
+
+1. **100% Estático:** Construído com HTML5, CSS3 e JavaScript Vanilla. Hospedagem imediata no **GitHub Pages**.
+2. **Sistema de Senhas Secretas**: Bloqueio de aulas e avaliações via modal interativo (sem exposição visual de senhas).
+3. **Design Senior-Friendly**: Fontes de grande porte, alto contraste e botões táteis.
+4. **Relatório & Comprovante Anti-Fraude**:
+   * Geração de Hash Criptográfico em cada avaliação.
+   * Envio de nota e comprovante via **WhatsApp** e **E-mail (Gmail)**.
+   * Download de comprovante em arquivo de texto `.txt`.

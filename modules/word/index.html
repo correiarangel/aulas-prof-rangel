@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2: Word — Prova Interativa | Prof. Marcos Rangel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/pdf-lessons.js"></script>
+  <script src="../../assets/js/quiz-engine.js"></script>
+  <style>
+    body { display: flex; flex-direction: column; align-items: center; padding: 0; }
+    .quiz-app { width: 100%; max-width: 680px; margin: 30px auto; padding: 0 16px; }
+    .trail { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; padding: 0 4px; }
+    .trail-node { width: 12px; height: 12px; border-radius: 50%; background: var(--node-off); transition: all 0.3s ease; }
+    .trail-node.done { background: var(--teal); box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.15); }
+    .trail-node.current { background: var(--amber); transform: scale(1.35); box-shadow: 0 0 0 5px rgba(251, 146, 60, 0.3); }
+    .trail-line { flex: 1; height: 2px; background: var(--node-off); margin: 0 4px; position: relative; overflow: hidden; }
+    .trail-line i { position: absolute; inset: 0; background: var(--teal); width: 0%; transition: width 0.4s ease; }
+    .trail-line.filled i { width: 100%; }
+
+    .card-quiz { background: var(--paper); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--line); padding: 40px 36px 34px; }
+    @media (max-width: 560px) { .card-quiz { padding: 26px 20px; } }
+
+    .q-meta { display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-soft); margin-bottom: 12px; }
+    .q-text { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(19px, 3.5vw, 23px); line-height: 1.35; color: var(--teal-deep); margin-bottom: 20px; }
+    .options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+    .opt { display: flex; align-items: flex-start; gap: 12px; width: 100%; background: #FFFBF6; border: 1.5px solid var(--line); border-radius: var(--radius-md); padding: 14px 16px; cursor: pointer; font: inherit; font-size: 15px; color: var(--ink); text-align: left; transition: all 0.2s ease; }
+    .opt:hover { border-color: var(--amber); background: #FFF6EC; }
+    .opt .letter { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--line); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; color: var(--ink-soft); }
+    .opt.selected { border-color: var(--teal); background: #FFEEDD; }
+    .opt.selected .letter { background: var(--teal); color: #fff; }
+
+    .btn { border: none; cursor: pointer; font: inherit; font-weight: 700; font-size: 15px; border-radius: var(--radius-md); padding: 14px 24px; transition: all 0.2s ease; }
+    .btn-primary { background: var(--teal); color: #fff; box-shadow: 0 8px 20px rgba(154, 52, 18, 0.3); }
+    .btn-primary:hover { background: var(--teal-deep); transform: translateY(-1px); }
+    .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-ghost { background: transparent; color: var(--teal); border: 1.5px solid var(--line); }
+    .btn-ghost:hover { border-color: var(--teal); background: #FFF0E2; }
+    .btn-amber { background: var(--amber-soft); color: #8A5A17; }
+    .btn-amber:hover { background: var(--amber); color: #fff; }
+    .btn-whatsapp { background: var(--whatsapp); color: #fff; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-whatsapp:hover { background: var(--whatsapp-deep); }
+
+    .hint-toggle { background: none; border: none; cursor: pointer; font: inherit; font-weight: 600; font-size: 13px; color: #8A5A17; display: inline-flex; align-items: center; gap: 6px; padding: 4px 0; margin-bottom: 12px; }
+    .hint-box { display: none; background: var(--amber-soft); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; color: #7A4E12; margin-bottom: 18px; line-height: 1.5; }
+    .hint-box.show { display: block; }
+
+    .nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; gap: 12px; }
+    .screen { display: none; }
+    .screen.active { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+    .result-badge { width: 74px; height: 74px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: 18px; }
+    .result-badge.pass { background: var(--success-bg); }
+    .result-badge.fail { background: var(--warn-bg); }
+    .breakdown { margin: 16px 0 24px; border-top: 1px solid var(--line); }
+    .b-row { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+    .b-tag { font-weight: 700; font-size: 12px; padding: 3px 9px; border-radius: 99px; }
+    .b-tag.ok { background: var(--success-bg); color: var(--success); }
+    .b-tag.no { background: var(--warn-bg); color: var(--warn); }
+    .email-panel { margin-top: 14px; padding: 16px; border-radius: 12px; border: 1.5px dashed var(--line); background: #FBFCFC; display: none; }
+    .email-panel.show { display: block; }
+    
+    .pdf-lesson-box { background: #F8FAFC; border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 20px; }
+    .pdf-lesson-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .btn-pdf-download { background: var(--teal); color: white; border: none; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .pdf-unlock-check { display: flex; align-items: flex-start; gap: 10px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); cursor: pointer; }
+    .pdf-lock-warning { margin-top: 8px; font-size: 12px; color: var(--warn); font-weight: 600; }
+    .signature-badge-box { background: #1E293B; color: #E2E8F0; padding: 16px; border-radius: 12px; margin: 20px 0; font-size: 12px; }
+    .signature-code-display { font-family: 'JetBrains Mono'; color: #38BDF8; margin: 8px 0; word-break: break-all; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="header-nav" style="width: 100%;">
+    <div class="nav-container">
+      <a href="../../index.html" class="brand-logo">
+        <img src="../../assets/img/professor-rangel.png" alt="Prof. Marcos Rangel" class="brand-avatar-mini">
+        <div class="brand-text">
+          <span class="brand-title">Prof. Marcos Rangel</span>
+          <span class="brand-subtitle">← Voltar ao Portal</span>
+        </div>
+      </a>
+      <span class="eyebrow-badge" style="margin:0;">Módulo 2: Word</span>
+    </div>
+  </header>
+
+  <div class="quiz-app">
+
+    <!-- TELA 1 — IDENTIFICAÇÃO -->
+    <section id="screen-start" class="screen active">
+      <div class="card-quiz">
+        <div class="eyebrow-badge"><span class="dot"></span> Avaliação Didática</div>
+        <h1>Módulo 2 — Microsoft Word</h1>
+        <p style="color:var(--ink-soft); margin-bottom:18px;">
+          Esta prova contém 10 questões sobre o Microsoft Word, alinhamentos, formatações de texto, tabelas e normas. Nota mínima para aprovação: <strong>7,0</strong>.
+        </p>
+
+        <!-- PDF Lesson Download & Checkbox Requirement -->
+        <div class="pdf-lesson-box">
+          <div class="pdf-lesson-header">
+            <span class="pdf-lesson-title">📄 Material Didático da Aula</span>
+            <button class="btn-pdf-download" type="button" id="btn-download-pdf-lesson">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Baixar Aula em PDF
+            </button>
+          </div>
+          <p style="font-size:13.5px; color:var(--ink-soft); margin:0;">
+            Baixe e leia a aula em PDF elaborada pelo <strong>Prof. Marcos Rangel</strong> para revisar o conteúdo antes de iniciar o simulado.
+          </p>
+          <label class="pdf-unlock-check" for="check-read-pdf">
+            <input type="checkbox" id="check-read-pdf">
+            <span><strong>☑ Confirmo que baixei e li a aula didática em PDF deste módulo.</strong></span>
+          </label>
+          <div class="pdf-lock-warning" id="pdf-lock-warning">
+            ⚠️ Marque o checkbox acima para desbloquear o botão de iniciar a prova.
+          </div>
+        </div>
+
+        <label for="input-name" style="display:block; font-weight:600; margin-bottom:8px;">Digite seu nome completo para iniciar:</label>
+        <input type="text" id="input-name" placeholder="Ex.: Lucas Gabriel" style="width:100%; padding:14px; border-radius:12px; border:1.5px solid var(--line); font-size:16px; margin-bottom:18px;">
+
+        <div id="resume-box" style="display:none; margin-bottom:18px; padding:14px; background:var(--amber-soft); border-radius:12px; justify-content:space-between; align-items:center;">
+          <span style="font-size:14px; color:#7A4E12;">Existe um simulado em andamento para este nome.</span>
+          <button class="btn btn-amber" id="btn-resume" type="button">Continuar de onde parei</button>
+        </div>
+
+        <button class="btn btn-primary" id="btn-start" type="button" style="width:100%;" disabled>Começar Prova de Word →</button>
+      </div>
+    </section>
+
+    <!-- TELA 2 — QUESTÕES -->
+    <section id="screen-quiz" class="screen">
+      <div class="trail" id="trail"></div>
+      <div class="card-quiz">
+        <div class="q-meta">
+          <span id="q-count">QUESTÃO 1 / 10</span>
+          <span id="q-points">VALE 1,0 PONTO</span>
+        </div>
+        <div class="q-text" id="q-text"></div>
+
+        <button class="hint-toggle" id="btn-hint" type="button">💡 Ver dica do professor</button>
+        <div class="hint-box" id="hint-box"></div>
+
+        <div class="options" id="options"></div>
+
+        <div class="nav-row">
+          <button class="btn btn-ghost" id="btn-prev" type="button">← Anterior</button>
+          <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';" id="autosave-note">✓ Salvo automaticamente</span>
+          <button class="btn btn-primary" id="btn-next" type="button" disabled>Próxima →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 3 — RESULTADO -->
+    <section id="screen-result" class="screen">
+      <div class="card-quiz">
+        <div class="result-badge" id="result-badge"></div>
+        <h1 id="result-title"></h1>
+        <p style="color:var(--ink-soft);" id="result-sub"></p>
+        <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">Nota Final: <b id="result-score" style="font-size:22px; color:var(--ink);">0,0</b> / 10,0</div>
+
+        <!-- Assinatura Digital Anti-Fraude -->
+        <div class="signature-badge-box" id="signature-box">
+          <div class="signature-badge-header">
+            <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+          </div>
+          <div class="signature-code-display" id="signature-code">WR-AUTH-CALCULATING...</div>
+          <div class="signature-badge-desc">
+            Código de autenticidade criptográfico (SHA-256) gerado automaticamente. Evita adulterações no comprovante ou nota do aluno.
+          </div>
+        </div>
+
+        <div class="breakdown" id="breakdown"></div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn btn-primary" id="btn-download" type="button">Baixar Comprovante (.txt)</button>
+          <button class="btn btn-whatsapp" id="btn-whatsapp" type="button">Enviar WhatsApp</button>
+          <button class="btn btn-ghost" id="btn-email" type="button">Enviar por E-mail</button>
+        </div>
+
+        <div class="email-panel" id="email-panel">
+          <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
+          <input type="email" id="input-email" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
+          <button class="btn btn-amber" id="btn-open-gmail" type="button">Baixar e Abrir E-mail →</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+  (function(){
+    "use strict";
+    const MODULE_ID = "word";
+    const MODULE_TITLE = "Módulo 2: Microsoft Word";
+    const STORAGE_KEY = "prova-word-prof-rangel";
+    const PASS_SCORE = 7.0;
+
+    const QUESTIONS = [
+      {
+        q: "Qual alinhamento de texto faz com que as margens esquerda e direita do parágrafo fiquem perfeitamente retas?",
+        options: [
+          "Alinhar à Esquerda",
+          "Centralizar",
+          "Justificar",
+          "Alinhar à Direita"
+        ],
+        correct: 2,
+        hint: "É o alinhamento padrão usado em jornais e livros acadêmicos."
+      },
+      {
+        q: "Qual é o atalho do teclado para aplicar o efeito de NEGRITO em um texto selecionado no Word em português?",
+        options: ["Ctrl + N", "Ctrl + B", "Ctrl + I", "Ctrl + S"],
+        correct: 0,
+        hint: "Pense na inicial da palavra 'Negrito' (N)."
+      },
+      {
+        q: "Qual botão da guia Página Inicial permite copiar a formatação (cor, fonte, tamanho) de um texto para outro?",
+        options: ["Pincel de Formatação", "Copiar e Colar", "Limpar Formatação", "Substituir"],
+        correct: 0,
+        hint: "Tem o ícone parecido com uma trinchinha de pintura."
+      },
+      {
+        q: "Qual é a função do recurso 'Quebra de Página' (Ctrl + Enter) no Word?",
+        options: [
+          "Excluir a página atual imediatamente.",
+          "Forçar o início de um novo conteúdo no topo da próxima página.",
+          "Mudar a cor de fundo do papel para preto.",
+          "Imprimir o documento automaticamente."
+        ],
+        correct: 1,
+        hint: "Evita ficar pressionando a tecla 'Enter' várias vezes para pular de página."
+      },
+      {
+        q: "Em qual guia do Word fica localizada a opção de inserir Tabelas, Imagens e Cabeçalhos?",
+        options: ["Guia Página Inicial", "Guia Inserir", "Guia Layout", "Guia Exibir"],
+        correct: 1,
+        hint: "Pense na palavra 'Inserir' novos elementos no documento."
+      },
+      {
+        q: "Qual atalho do teclado abre a caixa de diálogo para SALVAR um documento no Word em português?",
+        options: ["Ctrl + S", "Ctrl + B", "Ctrl + P", "Ctrl + A"],
+        correct: 1,
+        hint: "No Word em Português, usa a letra B (de 'Baixar'/'Salvar')."
+      },
+      {
+        q: "Para que serve a régua horizontal exibida na parte superior do documento no Word?",
+        options: [
+          "Desenhar linhas coloridas na folha.",
+          "Ajustar margens do papel, recuos de parágrafo e tabulações.",
+          "Medir o tamanho físico do monitor.",
+          "Contar quantas palavras foram digitadas."
+        ],
+        correct: 1,
+        hint: "Ajuda a alinhar onde o texto começa e termina nas margens."
+      },
+      {
+        q: "Segundo a norma ABNT básica para trabalhos acadêmicos, qual deve ser o espaçamento padrão entre linhas no corpo do texto?",
+        options: ["Simples (1,0)", "1,5 cm", "Duplo (2,0)", "Triplo (3,0)"],
+        correct: 1,
+        hint: "É o espaçamento intermediário de 1,5."
+      },
+      {
+        q: "Como se chama a área no topo de todas as páginas do documento destinada a títulos repetidos ou numeração?",
+        options: ["Rodapé", "Margem Esquerda", "Cabeçalho", "Nota de Fim"],
+        correct: 2,
+        hint: "Fica na 'cabeça' ou parte superior da página."
+      },
+      {
+        q: "Qual recurso do Word permite verificar a ortografia e gramática de todo o texto digitado (atalho F7)?",
+        options: ["Dicionário de Sinônimos", "Verificação Ortográfica", "Tradutor Automático", "AutoCorreção de Estilos"],
+        correct: 1,
+        hint: "Sublinha em vermelho as palavras digitadas incorretamente."
+      }
+    ];
+
+    const TOTAL = QUESTIONS.length;
+    const POINTS_PER_Q = 10 / TOTAL;
+
+    let state = { name: "", pdfRead: false, answers: new Array(TOTAL).fill(null), current: 0, signature: null };
+
+    function checkStartUnlock(){
+      const name = document.getElementById("input-name").value.trim();
+      const readCheck = document.getElementById("check-read-pdf").checked;
+      const startBtn = document.getElementById("btn-start");
+      const warning = document.getElementById("pdf-lock-warning");
+
+      state.pdfRead = readCheck;
+
+      if(readCheck && name.length > 0){
+        startBtn.disabled = false;
+        warning.style.display = "none";
+      } else {
+        startBtn.disabled = true;
+        warning.style.display = "block";
+      }
+    }
+
+    function checkResume(name){
+      checkStartUnlock();
+      const box = document.getElementById("resume-box");
+      if(!name.trim()) { box.style.display = "none"; return; }
+      const loaded = window.QuizEngine.loadState(STORAGE_KEY, name);
+      box.style.display = loaded ? "flex" : "none";
+    }
+
+    function showScreen(id){
+      document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    function renderTrail(){
+      const trail = document.getElementById("trail");
+      trail.innerHTML = "";
+      for(let i=0; i<TOTAL; i++){
+        const node = document.createElement("div");
+        node.className = "trail-node" + (i < state.current ? " done" : i === state.current ? " current" : "");
+        trail.appendChild(node);
+        if(i < TOTAL - 1){
+          const line = document.createElement("div");
+          line.className = "trail-line" + (i < state.current ? " filled" : "");
+          line.innerHTML = "<i></i>";
+          trail.appendChild(line);
+        }
+      }
+    }
+
+    function renderQuestion(){
+      renderTrail();
+      const q = QUESTIONS[state.current];
+      document.getElementById("q-count").textContent = `QUESTÃO ${state.current + 1} / ${TOTAL}`;
+      document.getElementById("q-text").textContent = q.q;
+
+      const hintBox = document.getElementById("hint-box");
+      hintBox.textContent = q.hint;
+      hintBox.classList.remove("show");
+
+      const opts = document.getElementById("options");
+      opts.innerHTML = "";
+      q.options.forEach((text, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "opt" + (state.answers[state.current] === idx ? " selected" : "");
+        btn.innerHTML = `<span class="letter">${String.fromCharCode(97+idx)}</span><span>${text}</span>`;
+        btn.onclick = () => {
+          state.answers[state.current] = idx;
+          renderQuestion();
+          window.QuizEngine.saveState(STORAGE_KEY, state);
+        };
+        opts.appendChild(btn);
+      });
+
+      document.getElementById("btn-prev").disabled = state.current === 0;
+      document.getElementById("btn-prev").style.visibility = state.current === 0 ? "hidden" : "visible";
+      document.getElementById("btn-next").disabled = state.answers[state.current] === null;
+      document.getElementById("btn-next").textContent = state.current === TOTAL - 1 ? "Finalizar Prova ✓" : "Próxima →";
+    }
+
+    function computeScore(){
+      let correct = 0;
+      QUESTIONS.forEach((q, i) => { if(state.answers[i] === q.correct) correct++; });
+      return { correct, score: correct * POINTS_PER_Q };
+    }
+
+    function fmt(n){ return n.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
+
+    async function renderResult(){
+      const { correct, score } = computeScore();
+      const passed = score >= PASS_SCORE;
+      document.getElementById("result-score").textContent = fmt(score);
+
+      const timestamp = state.signature ? state.signature.timestamp : Date.now();
+      state.signature = await window.QuizEngine.generateDigitalSignature(state.name, MODULE_TITLE, score, TOTAL, timestamp);
+      window.QuizEngine.saveState(STORAGE_KEY, state);
+
+      document.getElementById("signature-code").textContent = state.signature.authCode;
+
+      const badge = document.getElementById("result-badge");
+      const title = document.getElementById("result-title");
+      const sub = document.getElementById("result-sub");
+
+      if(passed){
+        badge.className = "result-badge pass"; badge.textContent = "🎉";
+        title.textContent = `Parabéns, ${state.name.split(" ")[0]}!`;
+        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões e foi aprovado(a) no Módulo 2 (Microsoft Word).`;
+      } else {
+        badge.className = "result-badge fail"; badge.textContent = "📘";
+        title.textContent = `Atenção, ${state.name.split(" ")[0]}.`;
+        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões (nota ${fmt(score)}). A nota mínima é 7,0. Revise a aula em PDF do Professor Marcos Rangel!`;
+      }
+
+      const breakdown = document.getElementById("breakdown");
+      breakdown.innerHTML = "";
+      QUESTIONS.forEach((q, i) => {
+        const ok = state.answers[i] === q.correct;
+        const row = document.createElement("div");
+        row.className = "b-row";
+        row.innerHTML = `<span>${i+1}. ${q.q}</span><span class="b-tag ${ok ? "ok" : "no"}">${ok ? "correta" : "incorreta"}</span>`;
+        breakdown.appendChild(row);
+      });
+
+      showScreen("screen-result");
+    }
+
+    function getReportData(){
+      const { correct, score } = computeScore();
+      return {
+        studentName: state.name,
+        moduleId: MODULE_ID,
+        moduleTitle: MODULE_TITLE,
+        correct: correct,
+        total: TOTAL,
+        score: score,
+        passed: score >= PASS_SCORE,
+        signature: state.signature,
+        answers: state.answers,
+        questions: QUESTIONS
+      };
+    }
+
+    // Event Listeners
+    document.getElementById("btn-download-pdf-lesson").onclick = () => {
+      window.PDFLessons.downloadLessonPDF(MODULE_ID);
+    };
+
+    document.getElementById("check-read-pdf").onchange = checkStartUnlock;
+    const nameInput = document.getElementById("input-name");
+    nameInput.addEventListener("input", () => checkResume(nameInput.value));
+
+    document.getElementById("btn-start").onclick = () => {
+      const name = nameInput.value.trim();
+      if(!name){ alert("Por favor, digite seu nome completo."); return; }
+      if(!document.getElementById("check-read-pdf").checked){
+        alert("Por favor, confirme que baixou e leu a aula didática em PDF."); return;
+      }
+      state.name = name;
+      showScreen("screen-quiz");
+      renderQuestion();
+      window.QuizEngine.saveState(STORAGE_KEY, state);
+    };
+
+    document.getElementById("btn-resume").onclick = () => {
+      const name = nameInput.value.trim();
+      const loaded = window.QuizEngine.loadState(STORAGE_KEY, name);
+      if(loaded){
+        state = loaded;
+        document.getElementById("check-read-pdf").checked = state.pdfRead || false;
+        checkStartUnlock();
+        showScreen("screen-quiz");
+        renderQuestion();
+      }
+    };
+
+    document.getElementById("btn-hint").onclick = () => {
+      document.getElementById("hint-box").classList.toggle("show");
+    };
+
+    document.getElementById("btn-prev").onclick = () => {
+      if(state.current > 0) { state.current--; renderQuestion(); }
+    };
+
+    document.getElementById("btn-next").onclick = () => {
+      if(state.current < TOTAL - 1) {
+        state.current++; renderQuestion(); window.QuizEngine.saveState(STORAGE_KEY, state);
+      } else {
+        renderResult();
+      }
+    };
+
+    document.getElementById("btn-download").onclick = () => {
+      window.QuizEngine.downloadTxtReport(getReportData());
+    };
+
+    document.getElementById("btn-whatsapp").onclick = () => {
+      const url = window.QuizEngine.buildWhatsAppUrl(getReportData());
+      window.open(url, "_blank");
+    };
+
+    document.getElementById("btn-email").onclick = () => {
+      document.getElementById("email-panel").classList.toggle("show");
+    };
+
+    document.getElementById("btn-open-gmail").onclick = () => {
+      window.QuizEngine.openGmailComposer(getReportData());
+    };
+
+  })();
+  </script>
+</body>
+</html>

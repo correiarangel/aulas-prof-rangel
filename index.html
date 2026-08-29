@@ -1,848 +1,267 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prova de Internet — Aula 4 · Informática para Todos</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #FFF7F0;
-    --paper: #FFFFFF;
-    --ink: #3A2313;
-    --ink-soft: #8A6752;
-    --teal: #EA580C;
-    --teal-deep: #9A3412;
-    --amber: #FB923C;
-    --amber-soft: #FFE4C7;
-    --success: #2E8B6F;
-    --success-bg: #E3F5EE;
-    --warn: #C0392B;
-    --warn-bg: #FBE8E4;
-    --whatsapp: #25D366;
-    --whatsapp-deep: #1DA851;
-    --line: #F3DCC5;
-    --node-off: #EFD3B4;
-    --radius: 18px;
-    --shadow: 0 20px 50px -25px rgba(154,52,18,0.35);
-  }
-
-  *{ box-sizing: border-box; }
-  html,body{ margin:0; padding:0; }
-
-  body{
-    min-height:100vh;
-    min-height:100dvh;
-    background:
-      radial-gradient(circle at 12% 8%, rgba(234,88,12,0.07), transparent 40%),
-      radial-gradient(circle at 88% 92%, rgba(251,146,60,0.14), transparent 45%),
-      var(--bg);
-    font-family: 'Inter', system-ui, sans-serif;
-    color: var(--ink);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding: 28px 16px calc(28px + env(safe-area-inset-bottom));
-    -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  /* alvos de toque confortáveis no mobile */
-  @media (max-width: 480px){
-    body{ padding: 16px 12px calc(16px + env(safe-area-inset-bottom)); align-items:flex-start; }
-    .card{ padding: 22px 18px 20px; border-radius:16px; }
-    .btn{ width:100%; padding:15px 20px; font-size:16px; }
-    .row{ flex-direction:column; }
-    .row .btn{ margin:0; }
-    .nav-row{ flex-wrap: wrap; }
-    .nav-row .btn{ width:auto; flex:1 1 auto; }
-    .autosave-note{ order:3; width:100%; justify-content:center; margin-top:8px; }
-    .opt{ padding:14px 14px; }
-    .trail{ margin-bottom:16px; }
-    .result-badge{ width:64px; height:64px; font-size:28px; }
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
-  }
-
-  .app{
-    width:100%;
-    max-width: 640px;
-  }
-
-  /* ---------- network trail (signature element) ---------- */
-  .trail{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin: 0 0 22px;
-    padding: 0 4px;
-  }
-  .trail-node{
-    position:relative;
-    width:11px; height:11px;
-    border-radius:50%;
-    background: var(--node-off);
-    flex: 0 0 auto;
-    transition: background .35s ease, transform .35s ease, box-shadow .35s ease;
-  }
-  .trail-node.done{ background: var(--teal); box-shadow: 0 0 0 4px rgba(234,88,12,0.14); }
-  .trail-node.current{ background: var(--amber); transform: scale(1.35); box-shadow: 0 0 0 5px rgba(251,146,60,0.28); }
-  .trail-line{
-    flex: 1 1 auto;
-    height: 2px;
-    background: var(--node-off);
-    margin: 0 3px;
-    position: relative;
-    overflow:hidden;
-  }
-  .trail-line i{
-    position:absolute; inset:0;
-    background: var(--teal);
-    width:0%;
-    transition: width .4s ease;
-  }
-  .trail-line.filled i{ width:100%; }
-
-  /* ---------- card shell ---------- */
-  .card{
-    background: var(--paper);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--line);
-    padding: 40px 36px 34px;
-    position: relative;
-    overflow:hidden;
-  }
-  @media (max-width:560px){
-    .card{ padding: 30px 22px 26px; }
-  }
-
-  .eyebrow{
-    font-family:'JetBrains Mono', monospace;
-    font-size:12px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color: var(--ink-soft);
-    display:flex;
-    align-items:center;
-    gap:8px;
-    margin-bottom: 10px;
-  }
-  .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--amber); }
-
-  h1{
-    font-family:'Fraunces', serif;
-    font-weight:700;
-    font-size: clamp(26px, 4.5vw, 34px);
-    line-height:1.15;
-    margin: 0 0 6px;
-    color: var(--teal-deep);
-  }
-  .lede{ color: var(--ink-soft); margin: 0 0 26px; line-height:1.55; font-size:15px; }
-
-  label.field-label{
-    display:block; font-weight:600; font-size:14px; margin-bottom:8px; color:var(--ink);
-  }
-  input[type="text"], input[type="email"]{
-    width:100%;
-    font: inherit;
-    font-size:16px;
-    padding: 14px 16px;
-    border-radius: 12px;
-    border: 1.5px solid var(--line);
-    background: #FFFBF6;
-    color: var(--ink);
-    transition: border-color .2s ease, box-shadow .2s ease;
-  }
-  input[type="text"]:focus, input[type="email"]:focus{
-    outline:none;
-    border-color: var(--teal);
-    box-shadow: 0 0 0 4px rgba(234,88,12,0.12);
-  }
-
-  .btn{
-    appearance:none;
-    border:none;
-    cursor:pointer;
-    font: inherit;
-    font-weight:700;
-    font-size:15px;
-    border-radius: 12px;
-    padding: 14px 24px;
-    transition: transform .15s ease, box-shadow .15s ease, background .2s ease, opacity .2s ease;
-  }
-  .btn:focus-visible{ outline: 3px solid var(--amber); outline-offset:2px; }
-  .btn-primary{
-    background: var(--teal);
-    color:#fff;
-    box-shadow: 0 12px 24px -12px rgba(154,52,18,0.45);
-  }
-  .btn-primary:hover{ transform: translateY(-1px); box-shadow: 0 16px 28px -12px rgba(154,52,18,0.5); }
-  .btn-primary:disabled{ opacity:.4; cursor:not-allowed; transform:none; box-shadow:none; }
-  .btn-ghost{
-    background: transparent;
-    color: var(--teal);
-    border: 1.5px solid var(--line);
-  }
-  .btn-ghost:hover{ border-color: var(--teal); background: #FFF0E2; }
-  .btn-amber{
-    background: var(--amber-soft);
-    color: #8A5A17;
-  }
-  .btn-amber:hover{ background: #FFD09A; }
-  .btn-whatsapp{
-    background: var(--whatsapp);
-    color:#fff;
-    box-shadow: 0 12px 24px -12px rgba(29,168,81,0.55);
-    display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  }
-  .btn-whatsapp:hover{ background: var(--whatsapp-deep); transform: translateY(-1px); }
-  .btn-whatsapp svg{ width:18px; height:18px; flex:0 0 auto; }
-
-  .row{ display:flex; gap:12px; flex-wrap:wrap; }
-
-  /* ---------- screens ---------- */
-  .screen{ display:none; }
-  .screen.active{ display:block; animation: fadeIn .35s ease; }
-  @keyframes fadeIn{ from{ opacity:0; transform: translateY(6px);} to{opacity:1; transform:none;} }
-
-  .resume-box{
-    margin-top:18px;
-    padding:14px 16px;
-    border-radius:12px;
-    background: var(--amber-soft);
-    color:#7A4E12;
-    font-size:14px;
-    display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
-  }
-
-  /* ---------- question screen ---------- */
-  .q-meta{
-    display:flex; justify-content:space-between; align-items:baseline;
-    font-family:'JetBrains Mono', monospace;
-    font-size:12px; color: var(--ink-soft); margin-bottom:8px; letter-spacing:.06em;
-  }
-  .q-text{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size: clamp(19px, 3.2vw, 23px);
-    line-height:1.35;
-    margin: 4px 0 22px;
-    color: var(--teal-deep);
-  }
-  .options{ display:flex; flex-direction:column; gap:10px; margin-bottom: 18px; }
-  .opt{
-    display:flex; align-items:flex-start; gap:12px;
-    text-align:left;
-    width:100%;
-    background:#FFFBF6;
-    border:1.5px solid var(--line);
-    border-radius:12px;
-    padding:13px 16px;
-    cursor:pointer;
-    font: inherit; font-size:15px; color: var(--ink);
-    transition: border-color .18s ease, background .18s ease, transform .1s ease;
-  }
-  .opt:hover{ border-color:#F0B37E; background:#FFF6EC; }
-  .opt:focus-visible{ outline:3px solid var(--amber); outline-offset:2px; }
-  .opt .letter{
-    flex:0 0 auto;
-    width:26px; height:26px; border-radius:50%;
-    background: var(--line);
-    display:flex; align-items:center; justify-content:center;
-    font-weight:700; font-size:13px; color: var(--ink-soft);
-    transition: background .18s ease, color .18s ease;
-  }
-  .opt.selected{ border-color: var(--teal); background: #FFEEDD; }
-  .opt.selected .letter{ background: var(--teal); color:#fff; }
-
-  .hint-toggle{
-    background:none; border:none; cursor:pointer;
-    font: inherit; font-weight:600; font-size:13px;
-    color: #8A5A17;
-    display:inline-flex; align-items:center; gap:6px;
-    padding:6px 2px; margin-bottom: 4px;
-  }
-  .hint-toggle svg{ width:15px; height:15px; }
-  .hint-box{
-    display:none;
-    background: var(--amber-soft);
-    border-radius: 10px;
-    padding: 12px 14px;
-    font-size:14px;
-    color:#7A4E12;
-    margin: 6px 0 18px;
-    line-height:1.5;
-  }
-  .hint-box.show{ display:block; animation: fadeIn .25s ease; }
-
-  .nav-row{ display:flex; justify-content:space-between; align-items:center; margin-top: 22px; gap:12px; }
-  .autosave-note{
-    font-size:12px; color: var(--ink-soft); display:flex; align-items:center; gap:6px;
-    font-family:'JetBrains Mono', monospace;
-  }
-  .autosave-note .pulse{
-    width:7px;height:7px;border-radius:50%; background: var(--success);
-    opacity:0; transition: opacity .2s ease;
-  }
-  .autosave-note.saving .pulse{ opacity:1; }
-
-  /* ---------- results screen ---------- */
-  .result-badge{
-    width:74px; height:74px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-size:32px; margin-bottom:18px;
-  }
-  .result-badge.pass{ background: var(--success-bg); }
-  .result-badge.fail{ background: var(--warn-bg); }
-
-  .score-line{
-    font-family:'JetBrains Mono', monospace;
-    font-size: 15px;
-    color: var(--ink-soft);
-    margin: 2px 0 22px;
-  }
-  .score-line b{ color: var(--ink); font-size:20px; }
-
-  .breakdown{ margin: 6px 0 26px; border-top:1px solid var(--line); }
-  .b-row{
-    display:flex; justify-content:space-between; gap:10px;
-    padding: 10px 0; border-bottom:1px solid var(--line);
-    font-size:13.5px;
-  }
-  .b-row .b-q{ color: var(--ink-soft); flex:1; }
-  .b-tag{
-    font-weight:700; font-size:12px; padding:3px 9px; border-radius:999px; flex:0 0 auto; height:fit-content;
-  }
-  .b-tag.ok{ background: var(--success-bg); color: var(--success); }
-  .b-tag.no{ background: var(--warn-bg); color: var(--warn); }
-
-  .email-panel{
-    margin-top: 14px;
-    padding: 16px;
-    border-radius:12px;
-    border:1.5px dashed var(--line);
-    background:#FBFCFC;
-    display:none;
-  }
-  .email-panel.show{ display:block; animation: fadeIn .25s ease; }
-  .email-panel p{ font-size:13.5px; color:var(--ink-soft); line-height:1.5; margin: 0 0 12px; }
-
-  footer.foot{
-    text-align:center; margin-top:18px; font-size:12.5px; color: var(--ink-soft);
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informática Básica — Professor Marcos Rangel | WR Capacitação Profissional</title>
+  <meta name="description" content="Portal de aulas, exercícios e simulados interativos de informática básica ministrados pelo Professor Marcos Rangel na WR Capacitação Profissional. Módulos: Windows, Word, Excel, PowerPoint e Internet.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-<div class="app">
 
-  <!-- ===================== TELA 1 — IDENTIFICAÇÃO ===================== -->
-  <section id="screen-start" class="screen active">
-    <div class="card">
-      <div class="eyebrow"><span class="dot"></span> Informática para Todos</div>
-      <h1>Prova de Internet — Aula 4</h1>
-      <p class="lede">Conteúdo das Aulas 1, 2 e 3. São 10 questões de múltipla escolha, cada uma vale 1,0 ponto. É preciso 7,0 pontos para ser aprovado(a). Cada questão tem uma dica caso você precise.</p>
+  <!-- Header & Navigation -->
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="./index.html" class="brand-logo">
+        <img src="./assets/img/professor-rangel.png" alt="Professor Marcos Rangel" class="brand-avatar-mini">
+        <div class="brand-text">
+          <span class="brand-title">Prof. Marcos Rangel</span>
+          <span class="brand-subtitle">Informática Básica</span>
+        </div>
+      </a>
 
-      <label class="field-label" for="input-name">Digite seu nome completo para começar</label>
-      <input type="text" id="input-name" placeholder="Ex.: Maria da Silva" autocomplete="name">
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#modulos" class="nav-link">Módulos de Aula</a></li>
+          <li><a href="#professor" class="nav-link">Sobre o Professor</a></li>
+          <li><a href="#escola" class="nav-link">A Escola WR</a></li>
+          <li><a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" rel="noopener noreferrer" class="nav-link-wr">
+            <span>WR Capacitação</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <div id="resume-box" class="resume-box" style="display:none;">
-        <span>Encontramos uma prova em andamento para este nome.</span>
-        <button class="btn btn-amber" id="btn-resume" type="button">Continuar de onde parei</button>
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="eyebrow-badge">
+        <span class="dot"></span> Portal Didático & Avaliações Interativas
+      </div>
+      <h1 class="hero-title">Aulas de Informática Básica com o Professor Marcos Rangel</h1>
+      <p class="hero-subtitle">
+        Aprenda e teste seus conhecimentos com os simulados interativos desenvolvidos especialmente para os alunos dos cursos da <strong>WR Capacitação Profissional</strong>.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-pill"><span class="stat-icon">💻</span> 5 Módulos Práticos</div>
+        <div class="stat-pill"><span class="stat-icon">⚡</span> Correção Automática</div>
+        <div class="stat-pill"><span class="stat-icon">📲</span> Comprovante via WhatsApp & E-mail</div>
+      </div>
+    </section>
+
+    <!-- Professor & School Profile Section -->
+    <section class="profile-grid">
+      <!-- Card Professor Rangel (Destaque Principal) -->
+      <article id="professor" class="card-prof">
+        <div class="prof-header">
+          <img src="./assets/img/professor-rangel.png" alt="Foto do Professor Marcos Rangel" class="prof-avatar">
+          <div class="prof-meta">
+            <span class="prof-tag">INSTRUTOR & DESENVOLVEDOR</span>
+            <h2>Marcos Rangel</h2>
+            <div class="prof-title">Desenvolvedor .NET | C# | Blazor | Mobile e Instrutor de Informática Básica</div>
+          </div>
+        </div>
+
+        <div class="prof-bio">
+          "Marcos Rangel, 48 anos, apaixonado por tecnologias, natureza, astronomia e família."
+        </div>
+
+        <div class="education-title">Formação Acadêmica</div>
+        <ul class="education-list">
+          <li>
+            <span class="icon">🎓</span>
+            <span><strong>Pós-Graduação:</strong> Desenvolvimento de aplicações para dispositivos móveis</span>
+          </li>
+          <li>
+            <span class="icon">🎓</span>
+            <span><strong>Graduação:</strong> Gestão em Tecnologia da Informação</span>
+          </li>
+        </ul>
+
+        <div class="contacts-row">
+          <a href="mailto:okcomputer.use.linux@gmail.com" class="btn-contact btn-email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            E-mail
+          </a>
+          <a href="https://www.linkedin.com/in/marcos-fabiano-correia-rangel/" target="_blank" rel="noopener noreferrer" class="btn-contact btn-linkedin">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </article>
+
+      <!-- Card WR Capacitação Profissional -->
+      <article id="escola" class="card-school">
+        <div>
+          <span class="school-badge">INSTITUIÇÃO PARCEIRA</span>
+          <h2 class="school-title">WR Capacitação Profissional</h2>
+          <div class="school-slogan">"Seu Futuro Começa Aqui!"</div>
+          
+          <p class="school-desc">
+            Fundada em 2008, a WR Capacitação Profissional proporciona ótimas oportunidades para quem quer se especializar para o mercado de trabalho com infraestrutura moderna e professores qualificados.
+          </p>
+
+          <div class="school-highlight-box">
+            <strong>Nota Didática:</strong> As aulas e simulados contidos neste portal são de autoria e responsabilidade didática do <strong>Professor Marcos Rangel</strong>, elaboradas especialmente para capacitar os alunos matriculados na WR.
+          </div>
+        </div>
+
+        <a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" rel="noopener noreferrer" class="btn-school-website">
+          <span>Visitar Site Oficial da WR</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </article>
+    </section>
+
+    <!-- Módulos Section -->
+    <section id="modulos">
+      <div class="section-header">
+        <h2 class="section-title">Módulos do Curso</h2>
+        <p class="section-subtitle">Escolha um módulo abaixo para acessar o conteúdo pedagógico e realizar a avaliação interativa.</p>
       </div>
 
-      <div class="row" style="margin-top:22px;">
-        <button class="btn btn-primary" id="btn-start" type="button">Começar prova →</button>
+      <div class="modules-grid">
+
+        <!-- Módulo 1: Windows -->
+        <div class="module-card">
+          <div class="module-top">
+            <div class="module-icon-box">🪟</div>
+            <span class="module-num">Módulo 01</span>
+          </div>
+          <h3 class="module-title">Windows</h3>
+          <p class="module-description">
+            Fundamentos do sistema operacional: navegação na Área de Trabalho, gerenciamento de pastas e arquivos, Painel de Controle e atalhos essenciais.
+          </p>
+          <ul class="module-topics">
+            <li class="topic-tag">Sistema Operacional</li>
+            <li class="topic-tag">Explorador de Arquivos</li>
+            <li class="topic-tag">Atalhos de Teclado</li>
+          </ul>
+          <a href="./modules/windows/index.html" class="btn-module">
+            <span>Acessar Módulo & Prova</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Módulo 2: Word -->
+        <div class="module-card">
+          <div class="module-top">
+            <div class="module-icon-box">📝</div>
+            <span class="module-num">Módulo 02</span>
+          </div>
+          <h3 class="module-title">Microsoft Word</h3>
+          <p class="module-description">
+            Edição e formatação profissional de documentos: margens, parágrafos, estilos de texto, inserção de tabelas, imagens e cabeçalhos.
+          </p>
+          <ul class="module-topics">
+            <li class="topic-tag">Formatação de Texto</li>
+            <li class="topic-tag">Tabelas & Imagens</li>
+            <li class="topic-tag">Normas ABNT</li>
+          </ul>
+          <a href="./modules/word/index.html" class="btn-module">
+            <span>Acessar Módulo & Prova</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Módulo 3: Excel -->
+        <div class="module-card">
+          <div class="module-top">
+            <div class="module-icon-box">📊</div>
+            <span class="module-num">Módulo 03</span>
+          </div>
+          <h3 class="module-title">Microsoft Excel</h3>
+          <p class="module-description">
+            Criação e organização de planilhas eletrônicas: cálculos fundamentais, uso das funções SOMA, MÉDIA e SE, além de gráficos interativos.
+          </p>
+          <ul class="module-topics">
+            <li class="topic-tag">Fórmulas & Funções</li>
+            <li class="topic-tag">Gráficos</li>
+            <li class="topic-tag">Formatação Condicional</li>
+          </ul>
+          <a href="./modules/excel/index.html" class="btn-module">
+            <span>Acessar Módulo & Prova</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Módulo 4: PowerPoint -->
+        <div class="module-card">
+          <div class="module-top">
+            <div class="module-icon-box">📢</div>
+            <span class="module-num">Módulo 04</span>
+          </div>
+          <h3 class="module-title">Microsoft PowerPoint</h3>
+          <p class="module-description">
+            Desenvolvimento de apresentações visuais marcantes: composição de slides, inserção de mídias, efeitos de transição e técnicas de exibição.
+          </p>
+          <ul class="module-topics">
+            <li class="topic-tag">Design de Slides</li>
+            <li class="topic-tag">Transições & Animações</li>
+            <li class="topic-tag">Apresentação Técnica</li>
+          </ul>
+          <a href="./modules/powerpoint/index.html" class="btn-module">
+            <span>Acessar Módulo & Prova</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Módulo 5: Internet -->
+        <div class="module-card">
+          <div class="module-top">
+            <div class="module-icon-box">🌐</div>
+            <span class="module-num">Módulo 05</span>
+          </div>
+          <h3 class="module-title">Internet & Nuvem</h3>
+          <p class="module-description">
+            Navegação segura na web, busca eficiente, e-mail, prevenção contra golpes virtuais (phishing), Google Docs e armazenamento em nuvem.
+          </p>
+          <ul class="module-topics">
+            <li class="topic-tag">Segurança Digital</li>
+            <li class="topic-tag">Google Workspace / Nuvem</li>
+            <li class="topic-tag">Navegadores & Atalhos</li>
+          </ul>
+          <a href="./modules/internet/index.html" class="btn-module">
+            <span>Acessar Módulo & Prova</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="portal-footer">
+    <div class="footer-container">
+      <div class="footer-credits">
+        Material Didático & Provas desenvolvidos pelo <strong>Professor Marcos Rangel</strong>.<br>
+        Ministrados na <strong>WR Capacitação Profissional</strong>.
+      </div>
+      <div class="footer-links">
+        <a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" rel="noopener">Site WR Capacitação</a>
+        <span>•</span>
+        <a href="https://www.linkedin.com/in/marcos-fabiano-correia-rangel/" target="_blank" rel="noopener">LinkedIn do Professor</a>
+        <span>•</span>
+        <a href="mailto:okcomputer.use.linux@gmail.com">E-mail do Professor</a>
+      </div>
+      <div style="font-size:12px; color: var(--ink-soft); margin-top:8px;">
+        Hospedado via GitHub Pages • Todos os direitos reservados.
       </div>
     </div>
-    <footer class="foot">As respostas são salvas automaticamente a cada clique.</footer>
-  </section>
+  </footer>
 
-  <!-- ===================== TELA 2 — QUESTÕES ===================== -->
-  <section id="screen-quiz" class="screen">
-    <div class="trail" id="trail"></div>
-    <div class="card">
-      <div class="q-meta">
-        <span id="q-count">QUESTÃO 1 / 10</span>
-        <span id="q-points">VALE 1,0 PONTO</span>
-      </div>
-      <div class="q-text" id="q-text"></div>
-
-      <button class="hint-toggle" id="btn-hint" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg>
-        Ver dica
-      </button>
-      <div class="hint-box" id="hint-box"></div>
-
-      <div class="options" id="options"></div>
-
-      <div class="nav-row">
-        <button class="btn btn-ghost" id="btn-prev" type="button">← Anterior</button>
-        <span class="autosave-note" id="autosave-note"><span class="pulse"></span> respostas salvas automaticamente</span>
-        <button class="btn btn-primary" id="btn-next" type="button" disabled>Próxima →</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== TELA 3 — RESULTADO ===================== -->
-  <section id="screen-result" class="screen">
-    <div class="card">
-      <div class="result-badge" id="result-badge"></div>
-      <h1 id="result-title"></h1>
-      <p class="lede" id="result-sub"></p>
-      <div class="score-line">Nota final: <b id="result-score">0,0</b> / 10,0</div>
-
-      <div class="breakdown" id="breakdown"></div>
-
-      <div class="row">
-        <button class="btn btn-primary" id="btn-download" type="button">Baixar comprovante (.txt)</button>
-        <button class="btn btn-whatsapp" id="btn-whatsapp" type="button">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.14.82.84-3.06-.2-.32a8.16 8.16 0 0 1-1.26-4.32c0-4.52 3.68-8.2 8.21-8.2 2.19 0 4.25.85 5.8 2.4a8.13 8.13 0 0 1 2.4 5.8c0 4.53-3.68 8.2-8.17 8.2Zm4.5-6.15c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.16 1.73 2.64 4.2 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.08.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
-          WhatsApp
-        </button>
-        <button class="btn btn-ghost" id="btn-email" type="button">Enviar por e-mail</button>
-      </div>
-
-      <div class="email-panel" id="email-panel">
-        <p>O comprovante em .txt é baixado no seu computador. Como o navegador não permite anexar arquivos automaticamente por segurança, vamos abrir o Gmail já preenchido — é só arrastar o arquivo baixado para dentro do e-mail e enviar.</p>
-        <label class="field-label" for="input-email">Seu e-mail (para receber uma cópia)</label>
-        <input type="email" id="input-email" placeholder="seuemail@exemplo.com" style="margin-bottom:14px;">
-        <button class="btn btn-amber" id="btn-open-gmail" type="button">Baixar arquivo e abrir Gmail →</button>
-      </div>
-    </div>
-    <footer class="foot">Informática para Todos — Aula 4 de Internet</footer>
-  </section>
-
-</div>
-
-<script>
-(function(){
-  "use strict";
-
-  /* ---------------- dados da prova ---------------- */
-  const QUESTIONS = [
-    {
-      q: "O que é a Internet?",
-      options: [
-        "Um programa de e-mail criado pela Microsoft.",
-        "Uma rede mundial de computadores que conecta bilhões de dispositivos.",
-        "Um tipo de antivírus para proteger o computador.",
-        "Um navegador de internet desenvolvido pelo Google."
-      ],
-      correct: 1,
-      hint: "Pense em algo gigante, sem dono único, que liga computadores do mundo inteiro entre si."
-    },
-    {
-      q: "Em que ano Tim Berners-Lee criou a World Wide Web (WWW)?",
-      options: ["1969", "1989", "1995", "2001"],
-      correct: 1,
-      hint: "Foi cerca de 20 anos depois da internet ter surgido (que foi em 1969) — já no fim dos anos 1980."
-    },
-    {
-      q: "Qual das alternativas descreve corretamente uma rede LAN?",
-      options: [
-        "Conecta dispositivos em vários países e continentes.",
-        "Abrange uma cidade inteira ou região metropolitana.",
-        "Conecta dispositivos em espaços pequenos, como casas e escritórios.",
-        "É a maior rede do mundo, ligando bilhões de dispositivos."
-      ],
-      correct: 2,
-      hint: "LAN = Local Area Network. \"Local\" é a palavra-chave: pense em algo pequeno, tipo a sua casa."
-    },
-    {
-      q: "O phishing é um golpe que:",
-      options: [
-        "Consiste em enviar e-mails, mensagens ou criar sites falsos que imitam empresas conhecidas para roubar senhas e dados pessoais da vítima.",
-        "Só acontece por meio de ligações telefônicas de falsos atendentes de banco.",
-        "É um vírus que danifica fisicamente o computador da vítima.",
-        "É uma função de segurança dos navegadores que bloqueia sites perigosos."
-      ],
-      correct: 0,
-      hint: "O nome vem de \"fishing\" (pescar). Pense em uma isca falsa para fisgar a vítima."
-    },
-    {
-      q: "Qual é o atalho de teclado para abrir o Histórico de navegação no navegador?",
-      options: ["Ctrl + P", "Ctrl + S", "Ctrl + H", "Ctrl + T"],
-      correct: 2,
-      hint: "A letra do atalho é a inicial da própria palavra \"Histórico\"."
-    },
-    {
-      q: "Sobre o Google Docs, marque a alternativa CORRETA:",
-      options: [
-        "É necessário clicar em \"Salvar\" a cada momento para não perder o texto.",
-        "O documento é salvo automaticamente na nuvem enquanto você digita.",
-        "Os arquivos são apagados automaticamente após 7 dias.",
-        "Só pode ser acessado usando o Internet Explorer."
-      ],
-      correct: 1,
-      hint: "É parecido com o WhatsApp Web: tudo que você digita já vai ficando salvo na nuvem, sem precisar apertar nada."
-    },
-    {
-      q: "Qual alternativa apresenta apenas práticas SEGURAS de navegação na internet?",
-      options: [
-        "Usar senhas fortes, ativar verificação em duas etapas e evitar redes Wi-Fi públicas para dados sensíveis.",
-        "Usar a mesma senha em todos os sites e clicar em links recebidos por SMS de números desconhecidos.",
-        "Compartilhar senhas com amigos e desativar o antivírus para o computador ficar mais rápido.",
-        "Salvar todas as senhas em qualquer computador público para não esquecer."
-      ],
-      correct: 0,
-      hint: "Procure a única alternativa em que TODAS as atitudes são boas — nenhuma prática arriscada misturada."
-    },
-    {
-      q: "O que é a engenharia social, no contexto de golpes virtuais?",
-      options: [
-        "Uma técnica de programação usada para criar redes sociais.",
-        "Um conjunto de manipulações psicológicas usadas para enganar a vítima e obter informações ou vantagens indevidas.",
-        "Um curso de sociologia aplicado à informática.",
-        "Um tipo de vírus que ataca apenas redes sociais."
-      ],
-      correct: 1,
-      hint: "Não tem nada a ver com programar nem com faculdade — é sobre convencer e enganar pessoas."
-    },
-    {
-      q: "Qual é a principal vantagem de guardar arquivos no Google Drive?",
-      options: [
-        "Os arquivos ficam salvos apenas no computador, sem backup.",
-        "Os arquivos ficam na nuvem, podendo ser acessados de qualquer dispositivo com internet.",
-        "Os arquivos são apagados automaticamente após 7 dias.",
-        "Só é possível acessar os arquivos usando o Internet Explorer."
-      ],
-      correct: 1,
-      hint: "A grande vantagem da \"nuvem\" é poder acessar de qualquer lugar, em qualquer aparelho."
-    },
-    {
-      q: "Sobre como compartilhar um documento do Google Docs, marque a alternativa CORRETA:",
-      options: [
-        "Só pode ser compartilhado se for impresso e entregue em mãos.",
-        "Não é possível escolher permissões diferentes para cada pessoa.",
-        "Basta clicar em \"Compartilhar\", digitar o e-mail da pessoa e escolher a permissão (leitor, comentarista ou editor).",
-        "O compartilhamento só funciona se as pessoas morarem na mesma cidade."
-      ],
-      correct: 2,
-      hint: "Pense no botão azul que fica no canto superior direito da tela do documento."
-    }
-  ];
-
-  const TOTAL = QUESTIONS.length;
-  const PASS_SCORE = 7.0;
-  const POINTS_PER_Q = 10 / TOTAL;
-  const TEACHER_EMAIL = "okcomputer.use.linux@gmail.com";
-  const STORAGE_PREFIX = "prova-internet-aula4:";
-
-  let state = {
-    name: "",
-    answers: new Array(TOTAL).fill(null),
-    current: 0
-  };
-
-  const hasStorage = typeof window.storage !== "undefined" && window.storage;
-
-  function storageKey(name){
-    return STORAGE_PREFIX + name.trim().toLowerCase().replace(/\s+/g, "-");
-  }
-
-  async function saveProgress(){
-    if(!hasStorage || !state.name) return;
-    const note = document.getElementById("autosave-note");
-    try{
-      note.classList.add("saving");
-      await window.storage.set(storageKey(state.name), JSON.stringify({
-        name: state.name,
-        answers: state.answers,
-        current: state.current,
-        savedAt: new Date().toISOString()
-      }), false);
-      setTimeout(()=> note.classList.remove("saving"), 500);
-    }catch(e){
-      note.classList.remove("saving");
-      console.error("Falha ao salvar progresso:", e);
-    }
-  }
-
-  async function clearProgress(){
-    if(!hasStorage || !state.name) return;
-    try{ await window.storage.delete(storageKey(state.name), false); }
-    catch(e){ /* chave pode não existir, tudo bem */ }
-  }
-
-  async function checkResume(name){
-    const box = document.getElementById("resume-box");
-    if(!hasStorage || !name.trim()){ box.style.display = "none"; return; }
-    try{
-      const res = await window.storage.get(storageKey(name), false);
-      if(res && res.value){
-        box.style.display = "flex";
-      } else {
-        box.style.display = "none";
-      }
-    }catch(e){
-      box.style.display = "none";
-    }
-  }
-
-  /* ---------------- navegação entre telas ---------------- */
-  function showScreen(id){
-    document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
-  }
-
-  /* ---------------- trilha de progresso ---------------- */
-  function renderTrail(){
-    const trail = document.getElementById("trail");
-    trail.innerHTML = "";
-    for(let i = 0; i < TOTAL; i++){
-      const node = document.createElement("div");
-      node.className = "trail-node";
-      if(i < state.current) node.classList.add("done");
-      else if(i === state.current) node.classList.add("current");
-      trail.appendChild(node);
-
-      if(i < TOTAL - 1){
-        const line = document.createElement("div");
-        line.className = "trail-line" + (i < state.current ? " filled" : "");
-        line.innerHTML = "<i></i>";
-        trail.appendChild(line);
-      }
-    }
-  }
-
-  /* ---------------- renderizar questão ---------------- */
-  function renderQuestion(){
-    renderTrail();
-    const q = QUESTIONS[state.current];
-    document.getElementById("q-count").textContent = `QUESTÃO ${state.current + 1} / ${TOTAL}`;
-    document.getElementById("q-text").textContent = q.q;
-
-    const hintBox = document.getElementById("hint-box");
-    hintBox.textContent = q.hint;
-    hintBox.classList.remove("show");
-
-    const opts = document.getElementById("options");
-    opts.innerHTML = "";
-    q.options.forEach((text, idx) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "opt" + (state.answers[state.current] === idx ? " selected" : "");
-      btn.innerHTML = `<span class="letter">${String.fromCharCode(97+idx)}</span><span>${text}</span>`;
-      btn.addEventListener("click", () => selectAnswer(idx));
-      opts.appendChild(btn);
-    });
-
-    document.getElementById("btn-prev").disabled = state.current === 0;
-    document.getElementById("btn-prev").style.visibility = state.current === 0 ? "hidden" : "visible";
-    document.getElementById("btn-next").disabled = state.answers[state.current] === null;
-    document.getElementById("btn-next").textContent = state.current === TOTAL - 1 ? "Finalizar prova ✓" : "Próxima →";
-  }
-
-  function selectAnswer(idx){
-    state.answers[state.current] = idx;
-    renderQuestion();
-    saveProgress();
-  }
-
-  /* ---------------- cálculo e resultado ---------------- */
-  function computeScore(){
-    let correct = 0;
-    QUESTIONS.forEach((q, i) => { if(state.answers[i] === q.correct) correct++; });
-    return { correct, score: correct * POINTS_PER_Q };
-  }
-
-  function fmt(n){
-    return n.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-  }
-
-  function renderResult(){
-    const { correct, score } = computeScore();
-    const passed = score >= PASS_SCORE;
-
-    document.getElementById("result-score").textContent = fmt(score);
-
-    const badge = document.getElementById("result-badge");
-    const title = document.getElementById("result-title");
-    const sub = document.getElementById("result-sub");
-
-    if(passed){
-      badge.className = "result-badge pass";
-      badge.textContent = "🎉";
-      title.textContent = `Parabéns, ${state.name.split(" ")[0]}!`;
-      sub.textContent = `Você acertou ${correct} de ${TOTAL} questões e foi aprovado(a) com nota ${fmt(score)}.`;
-    } else {
-      const falta = PASS_SCORE - score;
-      badge.className = "result-badge fail";
-      badge.textContent = "📘";
-      title.textContent = `Sinto muito, ${state.name.split(" ")[0]}.`;
-      sub.textContent = `Você acertou ${correct} de ${TOTAL} questões e fez ${fmt(score)} pontos — faltou ${fmt(falta)} ponto(s) para atingir a média 7,0. Fale com o professor.`;
-    }
-
-    const breakdown = document.getElementById("breakdown");
-    breakdown.innerHTML = "";
-    QUESTIONS.forEach((q, i) => {
-      const ok = state.answers[i] === q.correct;
-      const row = document.createElement("div");
-      row.className = "b-row";
-      row.innerHTML = `<span class="b-q">${i+1}. ${q.q}</span><span class="b-tag ${ok ? "ok" : "no"}">${ok ? "correta" : "incorreta"}</span>`;
-      breakdown.appendChild(row);
-    });
-
-    document.getElementById("email-panel").classList.remove("show");
-    showScreen("screen-result");
-  }
-
-  /* ---------------- gerar .txt ---------------- */
-  function buildReportText(){
-    const { correct, score } = computeScore();
-    const passed = score >= PASS_SCORE;
-    const now = new Date();
-    const lines = [];
-    lines.push("INFORMÁTICA PARA TODOS — PROVA DE INTERNET (AULA 4)");
-    lines.push("=".repeat(52));
-    lines.push(`Aluno(a): ${state.name}`);
-    lines.push(`Data/hora: ${now.toLocaleDateString("pt-BR")} ${now.toLocaleTimeString("pt-BR")}`);
-    lines.push("");
-    lines.push("RESPOSTAS");
-    lines.push("-".repeat(52));
-    QUESTIONS.forEach((q, i) => {
-      const chosen = state.answers[i];
-      const chosenLetter = chosen === null ? "-" : String.fromCharCode(97 + chosen);
-      const correctLetter = String.fromCharCode(97 + q.correct);
-      const ok = chosen === q.correct;
-      lines.push(`${i+1}. ${q.q}`);
-      lines.push(`   Resposta do aluno: ${chosenLetter})  |  Correta: ${correctLetter})  |  ${ok ? "CORRETA" : "INCORRETA"}`);
-    });
-    lines.push("");
-    lines.push("-".repeat(52));
-    lines.push(`Acertos: ${correct} de ${TOTAL}`);
-    lines.push(`Nota final: ${fmt(score)} / 10,0`);
-    lines.push(`Situação: ${passed ? "APROVADO(A)" : "ABAIXO DA MÉDIA — falou " + fmt(PASS_SCORE - score) + " ponto(s)"}`);
-    return lines.join("\n");
-  }
-
-  function slugify(name){
-    return name.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "aluno";
-  }
-
-  function downloadReport(){
-    const text = buildReportText();
-    const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `prova-internet-aula4-${slugify(state.name)}.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(() => URL.revokeObjectURL(url), 2000);
-  }
-
-  function shareOnWhatsApp(){
-    const { correct, score } = computeScore();
-    const passed = score >= PASS_SCORE;
-    const lines = [
-      `📚 *Prova de Internet — Aula 4* (Informática para Todos)`,
-      `Aluno(a): ${state.name}`,
-      `Acertos: ${correct} de ${TOTAL}`,
-      `Nota final: ${fmt(score)} / 10,0`,
-      passed ? `Situação: ✅ Aprovado(a)!` : `Situação: 📘 Abaixo da média — faltou ${fmt(PASS_SCORE - score)} ponto(s)`
-    ];
-    const text = lines.join("\n");
-    const url = `https://wa.me/5519991306907?text=${encodeURIComponent(text)}`;
-    window.open(url, "_blank");
-  }
-
-  function openGmailCompose(){
-    const { correct, score } = computeScore();
-    const passed = score >= PASS_SCORE;
-    const studentEmail = document.getElementById("input-email").value.trim();
-
-    const subject = `Prova de Internet - Aula 4 - ${state.name}`;
-    const bodyLines = [
-      `Prova de ${state.name}`,
-      `Nota final: ${fmt(score)} / 10,0 (${correct} de ${TOTAL} acertos)`,
-      `Situação: ${passed ? "Aprovado(a)" : "Abaixo da média"}`,
-      "",
-      "Comprovante em .txt anexado neste e-mail (arraste o arquivo baixado para cá caso não tenha sido anexado)."
-    ];
-    const body = bodyLines.join("\n");
-
-    let url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(TEACHER_EMAIL)}`
-      + `&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    if(studentEmail){
-      url += `&cc=${encodeURIComponent(studentEmail)}`;
-    }
-
-    downloadReport();
-    window.open(url, "_blank");
-  }
-
-  /* ---------------- eventos ---------------- */
-  const nameInput = document.getElementById("input-name");
-  nameInput.addEventListener("input", () => checkResume(nameInput.value));
-
-  document.getElementById("btn-resume").addEventListener("click", async () => {
-    const name = nameInput.value.trim();
-    if(!name) return;
-    try{
-      const res = await window.storage.get(storageKey(name), false);
-      if(res && res.value){
-        const data = JSON.parse(res.value);
-        state.name = data.name || name;
-        state.answers = data.answers || new Array(TOTAL).fill(null);
-        state.current = Math.min(data.current || 0, TOTAL - 1);
-        showScreen("screen-quiz");
-        renderQuestion();
-      }
-    }catch(e){
-      alert("Não foi possível recuperar a prova salva. Vamos começar do zero.");
-      startFresh(name);
-    }
-  });
-
-  document.getElementById("btn-start").addEventListener("click", () => {
-    const name = nameInput.value.trim();
-    if(!name){ nameInput.focus(); nameInput.style.borderColor = "#C0392B"; return; }
-    startFresh(name);
-  });
-
-  function startFresh(name){
-    state = { name: name, answers: new Array(TOTAL).fill(null), current: 0 };
-    showScreen("screen-quiz");
-    renderQuestion();
-    saveProgress();
-  }
-
-  document.getElementById("btn-hint").addEventListener("click", () => {
-    document.getElementById("hint-box").classList.toggle("show");
-  });
-
-  document.getElementById("btn-prev").addEventListener("click", () => {
-    if(state.current > 0){ state.current--; renderQuestion(); saveProgress(); }
-  });
-
-  document.getElementById("btn-next").addEventListener("click", () => {
-    if(state.current < TOTAL - 1){
-      state.current++;
-      renderQuestion();
-      saveProgress();
-    } else {
-      clearProgress();
-      renderResult();
-    }
-  });
-
-  document.getElementById("btn-download").addEventListener("click", downloadReport);
-  document.getElementById("btn-whatsapp").addEventListener("click", shareOnWhatsApp);
-
-  document.getElementById("btn-email").addEventListener("click", () => {
-    document.getElementById("email-panel").classList.toggle("show");
-  });
-
-  document.getElementById("btn-open-gmail").addEventListener("click", openGmailCompose);
-
-})();
-</script>
+  <!-- Scripts -->
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 5: Internet — Portal do Aluno | Prof. Marcos Rangel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/pdf-lessons.js"></script>
+  <style>
+    .fixation-panel {
+      display: none;
+      background: var(--paper-white);
+      border: 2px solid var(--line-light);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      margin-top: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .fixation-panel.active { display: block; animation: fadeIn 0.3s ease; }
+    
+    .browser-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .browser-card {
+      background: var(--paper-white);
+      border: 1.5px solid var(--line-light);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .browser-card img {
+      width: 48px !important;
+      height: 48px !important;
+      object-fit: contain;
+      margin: 0 auto 10px auto !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header Nav -->
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="../../index.html" class="brand-logo">
+        <img src="../../assets/img/professor-rangel.png" alt="Prof. Marcos Rangel" class="brand-avatar-mini">
+        <div class="brand-text">
+          <span class="brand-title">Prof. Marcos Rangel</span>
+          <span class="brand-subtitle">← Voltar ao Portal</span>
+        </div>
+      </a>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Módulo 5: Internet</span>
+        <a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" rel="noopener" class="nav-link-wr no-print">WR Capacitação ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ===================================================================
+         TELA 1: MENU DE AULAS (HUB PRINCIPAL DO MÓDULO INTERNET)
+         =================================================================== -->
+    <section id="screen-hub" class="screen-view active">
+      <div class="menu-hub-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+          <div>
+            <span class="eyebrow-badge"><span class="dot"></span> Catálogo de Aulas Gamificadas</span>
+            <h1 style="font-size:32px; color:var(--amber); margin:10px 0 6px 0;">📚 Módulo 5 — Menu de Aulas & Avaliação</h1>
+            <p style="font-size:18px; color:var(--ink-light); margin:0;">
+              O Módulo de Internet possui conteúdo interativo gamificado. O acesso requer a senha informada em sala de aula pelo Professor Marcos Rangel.
+            </p>
+          </div>
+          <button type="button" class="btn-pdf-download" onclick="window.PDFLessons.downloadLessonPDF('internet')" style="padding:12px 20px; font-size:15px;">
+            📄 Baixar Aula em PDF
+          </button>
+        </div>
+
+        <!-- Grade das Aulas do Módulo -->
+        <div class="lessons-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin-top:32px;">
+
+          <!-- AULA 1 -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(1, 'Introdução à Internet e Navegação Segura')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 01</span>
+              <span class="lesson-name">Introdução à Internet e Navegação Segura</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Acesso Restrito por Senha</span>
+            </div>
+            <span style="font-size:22px;" id="badge-lesson-1">🔒</span>
+          </div>
+
+          <!-- AULA 2 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(2, 'História do HTML e sua Ligação com a Internet')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 02</span>
+              <span class="lesson-name">História do HTML e a Internet</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Acesso Restrito por Senha</span>
+            </div>
+            <span style="font-size:22px;" id="badge-lesson-2">🔒</span>
+          </div>
+
+          <!-- AULA 3 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(3, 'Dominando o Google')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 03</span>
+              <span class="lesson-name">Dominando o Google</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Acesso Restrito por Senha</span>
+            </div>
+            <span style="font-size:22px;" id="badge-lesson-3">🔒</span>
+          </div>
+
+          <!-- AULA 4 — PROVA FINAL DO MÓDULO -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(4, 'Prova Final de Avaliação do Módulo')" style="border-color:var(--teal); background:linear-gradient(135deg, rgba(234,88,12,0.3), var(--card-brown)); cursor:pointer;">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num" style="color:var(--amber);">AULA 04 — AVALIAÇÃO</span>
+              <span class="lesson-name" style="font-weight:700; color:#FFFFFF;">📝 Prova Final do Módulo</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Acesso Restrito por Senha</span>
+            </div>
+            <span style="font-size:24px;" id="badge-lesson-4">🔒</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PAINEL EXPANSÍVEL DO PROFESSOR (COMPARTILHADO)
+         =================================================================== -->
+    <div class="no-print">
+      <button type="button" class="prof-accordion-btn" id="btn-prof-accordion">
+        <span>👤 Sobre o Professor Marcos Rangel — WR Capacitação (Clique para expandir)</span>
+        <span id="prof-icon">▼</span>
+      </button>
+
+      <div class="prof-accordion-content" id="prof-content">
+        <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+          <img src="../../assets/img/professor-rangel.png" alt="Marcos Rangel" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid var(--teal);">
+          <div style="flex:1; min-width:260px;">
+            <h3 style="color:var(--amber); margin-bottom:6px; font-size:22px;">Marcos Rangel</h3>
+            <p style="font-size:16px; color:var(--ink-light); margin-bottom:10px;">
+              Marcos Rangel, 48 anos, apaixonado por tecnologias, natureza, astronomia, e família;<br>
+              <strong>Desenvolvedor .NET | C# | Blazor | Mobile e Instrutor de informática básica</strong>
+            </p>
+            <p style="font-size:15px; color:var(--ink-soft); margin-bottom:10px;">
+              <strong>Formação Acadêmica:</strong><br>
+              • Pós-Graduação em Desenvolvimento de Aplicações para Dispositivos Móveis;<br>
+              • Graduado em Gestão em Tecnologia da Informação;
+            </p>
+            <p style="font-size:15px; color:var(--ink-soft); margin:0;">
+              <strong>Contato:</strong><br>
+              E-mail: <a href="mailto:okcomputer.use.linux@gmail.com">okcomputer.use.linux@gmail.com</a> |
+              LinkedIn: <a href="https://www.linkedin.com/in/marcos-fabiano-correia-rangel/" target="_blank" rel="noopener">linkedin.com/in/marcos-fabiano-correia-rangel/</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===================================================================
+         TELA 2: AULA 1 — INTRODUÇÃO À INTERNET E NAVEGAÇÃO SEGURA (GAMIFICADA)
+         =================================================================== -->
+    <section id="screen-lesson-1" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+      </div>
+
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DA AULA 1 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>🎮 Progresso Gamificado da Aula 1</span>
+            <span id="gamify-percent-1">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-1"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-1">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura Pendente</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 5 • Aula 1 Gamificada</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 1: Introdução à Internet e Navegação Segura</h1>
+
+        <!-- ÍNDICE DE TÓPICOS DA AULA 1 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-1-1" onclick="switchTopicPhase(1, 1)">1. O que é a Internet?</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-2" onclick="switchTopicPhase(1, 2)">2. Tipos de Redes</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-3" onclick="switchTopicPhase(1, 3)">3. Navegadores</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-4" onclick="switchTopicPhase(1, 4)">4. Golpes Comuns</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-5" onclick="switchTopicPhase(1, 5)">5. Navegar com Segurança</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-6" onclick="switchTopicPhase(1, 6)">6. Dicas Anti-Cliques</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-fix" onclick="openFixationPanel(1)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- FASE 1 DA AULA 1 -->
+        <section id="l1-phase-1" class="topic-phase-section active">
+          <h2>1. O que é a Internet?</h2>
+          <p>
+            A Internet é uma <strong>rede mundial de computadores</strong> que conecta bilhões de dispositivos em todo o planeta, permitindo a troca instantânea de informações, comunicação entre pessoas, acesso a serviços online e compartilhamento de conteúdos diversos como vídeos, documentos e mensagens.
+          </p>
+          
+          <img src="../../assets/img/interrnet/globo-conectado.jpeg" alt="Globo Conectado" class="img-reduced">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Breve Histórico da Internet</h3>
+          <p>
+            A Internet nasceu na década de 1960 como um projeto militar norte-americano chamado <strong>ARPANET</strong>, desenvolvido para garantir comunicação segura entre bases militares e universidades mesmo em caso de ataques. Nos anos 1970 e 1980, expandiu-se para o ambiente acadêmico, conectando universidades e centros de pesquisa.
+          </p>
+
+          <img src="../../assets/img/interrnet/cabo-marinho-robo-inspecionando.jpeg" alt="Cabo Submarino de Internet" class="img-reduced">
+
+          <p>
+            A grande revolução aconteceu em <strong>1989</strong>, quando o cientista <strong>Tim Berners-Lee</strong> criou a <strong>World Wide Web (WWW)</strong>, um sistema que permitia navegar entre documentos usando links clicáveis. Nos anos 1990, a Internet se popularizou mundialmente, chegando às casas e empresas. Hoje, é parte essencial da vida moderna, presente em smartphones, computadores, TVs e até eletrodomésticos.
+          </p>
+
+          <img src="../../assets/img/internet-security.png" alt="Internet e Segurança" class="img-reduced">
+
+          <!-- Checkbox de Leitura Gamificada Tópico 1 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li e entendi a História da Internet e a criação da WWW por Tim Berners-Lee.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-1" onclick="markTopicRead(1, 1)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 2)">Ir para 2. Tipos de Redes →</button>
+          </div>
+        </section>
+
+        <!-- FASE 2 DA AULA 1 -->
+        <section id="l1-phase-2" class="topic-phase-section">
+          <h2>2. Tipos de Redes</h2>
+          <p>As redes de computadores são classificadas pela área geográfica que cobrem:</p>
+
+          <img src="../../assets/img/network-types.png" alt="Diagrama de Redes LAN MAN WAN" class="img-reduced">
+
+          <ul>
+            <li><strong>LAN (Local Area Network - Rede Local):</strong> Conecta dispositivos em espaços pequenos como residências, escritórios ou escolas. <em>Exemplo: a rede Wi-Fi da sua casa.</em></li>
+            <li><strong>MAN (Metropolitan Area Network - Rede Metropolitana):</strong> Abrange uma cidade ou região metropolitana, conectando diferentes bairros e instituições. <em>Exemplo: rede de internet que conecta escolas públicas de uma cidade.</em></li>
+            <li><strong>WAN (Wide Area Network - Rede de Longa Distância):</strong> Conecta dispositivos em grandes áreas geográficas, como estados, países ou continentes. <em>Exemplo: a rede de agências bancárias de um banco nacional.</em></li>
+            <li><strong>Internet (Rede Global):</strong> A maior rede de todas, conectando computadores e dispositivos no mundo inteiro, formando uma "rede de redes".</li>
+          </ul>
+
+          <!-- Checkbox de Leitura Gamificada Tópico 2 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li e compreendi as diferenças entre redes LAN, MAN e WAN.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-2" onclick="markTopicRead(1, 2)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 3)">Ir para 3. Navegadores →</button>
+          </div>
+        </section>
+
+        <!-- FASE 3 DA AULA 1 -->
+        <section id="l1-phase-3" class="topic-phase-section">
+          <h2>3. Navegadores de Internet (Web Browsers)</h2>
+          <p>Os <strong>navegadores</strong> (ou browsers) são programas que permitem acessar e visualizar páginas da web. Conheça os principais navegadores modernos:</p>
+
+          <div class="browser-grid">
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/crhome.png" alt="Google Chrome">
+              <strong>Google Chrome</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Mais popular do mundo, rápido e integrado ao Google.</p>
+            </div>
+
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/firefox.png" alt="Mozilla Firefox">
+              <strong>Mozilla Firefox</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Código aberto, foco em privacidade e personalização.</p>
+            </div>
+
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/edge.png" alt="Microsoft Edge">
+              <strong>Microsoft Edge</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Nativo do Windows, rápido e baseado no Chromium.</p>
+            </div>
+
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/safare.png" alt="Safari">
+              <strong>Safari</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Desenvolvido pela Apple para Mac e iPhone.</p>
+            </div>
+
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/opera.png" alt="Opera">
+              <strong>Opera</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">VPN integrada e bloqueador de anúncios nativo.</p>
+            </div>
+
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/brava.png" alt="Brave">
+              <strong>Brave</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Foco extremo em privacidade e bloqueio automático.</p>
+            </div>
+          </div>
+
+          <!-- CARD DE VÍDEO RECOMENDADO -->
+          <div style="background:var(--paper-white); border:2px solid var(--amber-soft); border-radius:16px; padding:24px; margin:24px 0; box-shadow:var(--shadow-sm);">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+              <span style="font-size:28px;">🎬</span>
+              <div>
+                <h3 style="font-size:20px; color:var(--teal-deep); margin:0;">Vídeo Complementar Recomendado pelo Prof. Marcos Rangel</h3>
+                <span style="font-size:14px; color:var(--ink-soft);">Evolução Histórica dos Navegadores de 1992 até 2025</span>
+              </div>
+            </div>
+            <p style="font-size:16px; color:var(--ink-dark); margin-bottom:16px;">
+              Assista a esta incrível animação comparativa mostrando o surgimento e a disputa de popularidade dos maiores navegadores da história da internet:
+            </p>
+            <a href="https://youtu.be/4yyYZ9P1BHA?si=HlqhlHMXVdo9B5WH" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:14px 20px;">
+              <span>▶️ Assistir no YouTube: Navegadores 1992 - 2025 ↗</span>
+            </a>
+          </div>
+
+          <!-- Checkbox de Leitura Gamificada Tópico 3 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que conheci as características dos 6 principais navegadores de internet.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-3" onclick="markTopicRead(1, 3)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 4)">Ir para 4. Golpes Comuns →</button>
+          </div>
+        </section>
+
+        <!-- FASE 4 DA AULA 1 -->
+        <section id="l1-phase-4" class="topic-phase-section">
+          <h2>4. Golpes Comuns na Internet e Como se Proteger</h2>
+          <p>A Internet oferece inúmeras oportunidades, mas exige atenção contra criminosos virtuais. Conheça os golpes mais comuns:</p>
+
+          <div class="subcard-grid">
+            <div class="subcard-item">
+              <h3>4.1. Phishing (Pescaria de Dados)</h3>
+              <p><strong>O que é:</strong> Mensagens ou sites falsos que se passam por bancos ou lojas conhecidas para roubar senhas e dados do usuário.</p>
+              <img src="../../assets/img/interrnet/site-falso1.png" alt="Exemplo Phishing" class="img-reduced" style="margin:10px 0 !important; max-width:100% !important;">
+              <p style="font-size:14px; color:var(--ink-soft);"><strong>Proteção:</strong> Verifique o endereço URL. Nunca clique em links suspeitos.</p>
+            </div>
+
+            <div class="subcard-item">
+              <h3>4.2. Golpe do Boleto Falso</h3>
+              <p><strong>O que é:</strong> Boletos bancários adulterados enviados por e-mail ou WhatsApp com o código de barras modificado para a conta de criminosos.</p>
+              <img src="../../assets/img/interrnet/site-falso2.png" alt="Exemplo Loja Falsa" class="img-reduced" style="margin:10px 0 !important; max-width:100% !important;">
+              <p style="font-size:14px; color:var(--ink-soft);"><strong>Proteção:</strong> Sempre confirme o nome do beneficiário no aplicativo do seu banco antes de pagar.</p>
+            </div>
+
+            <div class="subcard-item">
+              <h3>4.3. Golpe da Loja Online Falsa</h3>
+              <p>Sites fraudulentos com preços incrivelmente baixos que recebem o pagamento via PIX/Boleto e nunca entregam o produto.</p>
+            </div>
+
+            <div class="subcard-item">
+              <h3>4.4. Engenharia Social</h3>
+              <p>Manipulação psicológica em que o criminoso se passa por familiar ou autoridade para obter códigos e dinheiro.</p>
+            </div>
+
+            <div class="subcard-item">
+              <h3>4.5. Falso Suporte Técnico</h3>
+              <p>Golpistas alegam que seu computador tem vírus e solicitam acesso remoto para roubar senhas e informações.</p>
+            </div>
+
+            <div class="subcard-item">
+              <h3>4.6. Golpe do PIX (WhatsApp)</h3>
+              <p>Perfis clonados ou invadidos solicitando transferências urgentes via PIX se passando por amigos ou familiares.</p>
+            </div>
+          </div>
+
+          <!-- Checkbox de Leitura Gamificada Tópico 4 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que compreendi os 6 principais golpes virtuais e como me prevenir deles.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-4" onclick="markTopicRead(1, 4)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 5)">Ir para 5. Navegar com Segurança →</button>
+          </div>
+        </section>
+
+        <!-- FASE 5 DA AULA 1 -->
+        <section id="l1-phase-5" class="topic-phase-section">
+          <h2>5. Como Navegar com Segurança</h2>
+          <p>Adote estas <strong>8 práticas essenciais de segurança digital</strong> no seu dia a dia:</p>
+
+          <ol style="line-height:1.8;">
+            <li><strong>Mantenha tudo atualizado:</strong> Navegador, sistema operacional e antivírus na versão mais recente para corrigir falhas.</li>
+            <li><strong>Verifique o cadeado 🔒 HTTPS:</strong> Garanta que a URL comece com <code>https://</code> antes de digitar dados pessoais.</li>
+            <li><strong>Use senhas fortes e únicas:</strong> Mínimo de 12 caracteres combinando letras maiúsculas, números e símbolos.</li>
+            <li><strong>Ative a Autenticação em Duas Etapas (2FA):</strong> Exija um segundo código de validação no login do seu e-mail e redes sociais.</li>
+            <li><strong>Cuidado com cliques impulsivos:</strong> Desconfie de ofertas "boas demais para ser verdade" e mensagens alarmistas.</li>
+            <li><strong>Proteja suas informações pessoais:</strong> Nunca envie fotos de documentos ou senhas por mensagens não criptografadas.</li>
+            <li><strong>Cuidado com Wi-Fi público:</strong> Evite acessar bancos ou fazer compras online conectado a redes Wi-Fi desconhecidas.</li>
+            <li><strong>Faça backups regulares:</strong> Guarde cópias dos seus arquivos importantes na nuvem (Google Drive, OneDrive).</li>
+          </ol>
+
+          <!-- Checkbox de Leitura Gamificada Tópico 5 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li e adotarei as 8 práticas essenciais de navegação segura.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-5" onclick="markTopicRead(1, 5)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 6)">Ir para 6. Dicas Anti-Cliques →</button>
+          </div>
+        </section>
+
+        <!-- FASE 6 DA AULA 1 -->
+        <section id="l1-phase-6" class="topic-phase-section">
+          <h2>6. Dicas Anti-Cliques Compulsivos</h2>
+          <p>Para evitar cair em armadilhas e golpes na internet, pratique estas orientações atitudinais:</p>
+
+          <ul>
+            <li>🛑 <strong>Pause antes de clicar:</strong> Pergunte-se: <em>"Eu realmente solicitei este e-mail ou preciso deste link?"</em></li>
+            <li>🔍 <strong>Leia o conteúdo completo:</strong> Títulos chamativos e alarmistas são táticas comuns para induzir ao erro.</li>
+            <li>⏰ <strong>Espere alguns segundos:</strong> A urgência artificial ("Sua conta será cancelada em 10 minutos!") é a principal arma de golpistas.</li>
+            <li>🚫 <strong>Use bloqueadores de anúncios:</strong> Reduza pop-ups e propagandas enganosas.</li>
+            <li>📱 <strong>Desabilite notificações desnecessárias:</strong> Mantenha o foco e evite impulsos.</li>
+          </ul>
+
+          <!-- Checkbox de Leitura Gamificada Tópico 6 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que concluí a leitura completa dos 6 tópicos didáticos da Aula 1.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-6" onclick="markTopicRead(1, 6)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(1)">Ir para Exercício de Fixação 📝 →</button>
+          </div>
+        </section>
+
+        <!-- SEÇÃO SEPARADA: EXERCÍCIO DE FIXAÇÃO GAMIFICADO DA AULA 1 (5 QUESTÕES) -->
+        <div id="l1-fixation" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+            <div>
+              <span class="badge-trophy">🏆 Exercício Obrigatorio de Fixação</span>
+              <h2 style="color:var(--teal-deep); font-size:26px; margin:8px 0 0 0;">📝 Avaliação Didática — Aula 1 (5 Questões)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">Nota Mínima: 8,0 (4 de 5 acertos)</span>
+          </div>
+
+          <p style="font-size:17px; color:var(--ink-dark); margin-bottom:24px;">
+            Responda às 5 questões abaixo e digite seu nome completo para assinar o comprovante de conclusão da Aula 1.
+          </p>
+
+          <div style="margin-bottom:24px;">
+            <label for="l1-student-name" style="display:block; font-weight:700; margin-bottom:8px; font-size:18px; color:var(--teal-deep);">Nome Completo do Aluno(a):</label>
+            <input type="text" id="l1-student-name" placeholder="Digite seu nome completo..." style="width:100%; padding:14px; border-radius:10px; border:2px solid var(--line-light); font-size:18px;">
+          </div>
+
+          <!-- Questão 1 -->
+          <div class="question-card-item">
+            <div class="q-title">1. Qual cientista criou a World Wide Web (WWW) em 1989 e qual projeto de rede deu origem à Internet nos anos 1960?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 1, 0, this)"><span class="letter-badge">A</span><span>Bill Gates e a rede Ethernet</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 1, 1, this)"><span class="letter-badge">B</span><span>Tim Berners-Lee e a rede ARPANET</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 1, 2, this)"><span class="letter-badge">C</span><span>Steve Jobs e a rede Bluetooth</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 1, 3, this)"><span class="letter-badge">D</span><span>Mark Zuckerberg e a rede 5G</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 2 -->
+          <div class="question-card-item">
+            <div class="q-title">2. Qual tipo de rede conecta dispositivos em pequenos espaços geográficos, como a rede Wi-Fi da sua casa ou de um escritório?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 2, 0, this)"><span class="letter-badge">A</span><span>WAN (Wide Area Network)</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 2, 1, this)"><span class="letter-badge">B</span><span>MAN (Metropolitan Area Network)</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 2, 2, this)"><span class="letter-badge">C</span><span>LAN (Local Area Network)</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 2, 3, this)"><span class="letter-badge">D</span><span>VPN (Virtual Private Network)</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 3 -->
+          <div class="question-card-item">
+            <div class="q-title">3. Qual das alternativas apresenta uma característica marcante dos navegadores Mozilla Firefox e Brave?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 3, 0, this)"><span class="letter-badge">A</span><span>São programas pagos que exigem assinatura mensal para acessar a web.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 3, 1, this)"><span class="letter-badge">B</span><span>Foco avançado em privacidade, segurança e bloqueio automático de rastreadores.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 3, 2, this)"><span class="letter-badge">C</span><span>Funcionam exclusivamente em computadores sem conexão com a internet.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 3, 3, this)"><span class="letter-badge">D</span><span>São de propriedade exclusiva da Microsoft.</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 4 -->
+          <div class="question-card-item">
+            <div class="q-title">4. O que indica a presença do cadeado 🔒 e do endereço começando com 'https://' no navegador?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 4, 0, this)"><span class="letter-badge">A</span><span>O site é pago e cobra por minuto de navegação.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 4, 1, this)"><span class="letter-badge">B</span><span>A conexão é criptografada e segura para digitação de dados.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 4, 2, this)"><span class="letter-badge">C</span><span>O navegador está infectado por um vírus.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 4, 3, this)"><span class="letter-badge">D</span><span>O site exige transferência imediata via PIX.</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 5 -->
+          <div class="question-card-item">
+            <div class="q-title">5. Ao receber uma mensagem urgente de um suposto familiar no WhatsApp pedindo PIX com um número novo, o que você deve fazer?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 5, 0, this)"><span class="letter-badge">A</span><span>Fazer a transferência bancária imediatamente.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 5, 1, this)"><span class="letter-badge">B</span><span>Confirmar por ligação de voz ou presencialmente antes de enviar qualquer valor.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 5, 2, this)"><span class="letter-badge">C</span><span>Enviar a senha do seu cartão de crédito pelo aplicativo.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(1, 5, 3, this)"><span class="letter-badge">D</span><span>Apagar o aplicativo do banco do celular.</span></button>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="calcFixation(1)" style="width:100%; font-size:18px; padding:16px;">Finalizar Exercício & Assinar Comprovante →</button>
+          <div id="l1-result-box" style="display:none; margin-top:20px;" class="signature-badge"></div>
+        </div>
+
+      </article>
+    </section>
+
+
+    <!-- ===================================================================
+         TELA 3: AULA 2 — HISTÓRIA DO HTML E SUA LIGAÇÃO COM A INTERNET
+         =================================================================== -->
+    <section id="screen-lesson-2" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+      </div>
+
+      <article class="lesson-reading-card">
+        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 5 • Aula 2</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 2: História do HTML e sua Ligação com a Internet</h1>
+
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" onclick="switchTopicPhase(2, 1)">1. O Surgimento do HTML</button>
+          <button type="button" class="topic-tab-btn" onclick="switchTopicPhase(2, 2)">2. A Estrutura de Tags</button>
+          <button type="button" class="topic-tab-btn" onclick="switchTopicPhase(2, 3)">3. Como o Navegador Interpreta</button>
+          <button type="button" class="topic-tab-btn" onclick="switchTopicPhase(2, 4)">4. O Padrão W3C</button>
+        </nav>
+
+        <section id="l2-phase-1" class="topic-phase-section active">
+          <h2>1. O Surgimento do HTML (1991)</h2>
+          <p>O HTML foi criado por Tim Berners-Lee em 1991 para conectar documentos via hiperlinks.</p>
+          <img src="../../assets/img/html-history.png" alt="Ilustração HTML" class="img-reduced">
+        </section>
+      </article>
+    </section>
+
+  </main>
+
+
+  <!-- MODAL DE PROTEÇÃO DE SENHA -->
+  <div class="modal-overlay" id="password-modal">
+    <div class="modal-card">
+      <h3 class="modal-title" id="modal-title-text">Acesso Restrito</h3>
+      <p class="modal-subtitle">Informe a senha de acesso fornecida pelo Professor Marcos Rangel nas aulas presenciais da WR Capacitação.</p>
+      <input type="password" class="modal-input" id="modal-pass-field" placeholder="Digite a senha de acesso...">
+      <div style="display:flex; gap:12px;">
+        <button type="button" class="btn btn-primary" style="flex:1;" id="btn-confirm-unlock">Desbloquear & Acessar</button>
+        <button type="button" class="btn btn-ghost" onclick="closePasswordModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="portal-footer no-print">
+    <div class="footer-container">
+      <p style="font-size:15px; color:var(--ink-light); margin:0;">
+        <strong>Informática Básica — Módulo 5: Internet & Nuvem Gamificado</strong><br>
+        Desenvolvido pelo <strong>Prof. Marcos Rangel</strong> para a <strong>WR Capacitação Profissional</strong>.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    "use strict";
+
+    const PASSWORDS = {
+      1: "a001",
+      2: "b002",
+      3: "c003",
+      4: "d004"
+    };
+
+    const L1_CORRECT_ANSWERS = {
+      1: 1, // Tim Berners-Lee / ARPANET
+      2: 2, // LAN
+      3: 1, // Privacidade e bloqueadores
+      4: 1, // HTTPS Criptografado
+      5: 1  // Confirmar por ligação
+    };
+
+    let targetLessonNum = 0;
+    let readTopics = { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false };
+    let selectedAnswers = { 1: null, 2: null, 3: null, 4: null, 5: null };
+
+    window.showScreen = function(screenId){
+      document.querySelectorAll(".screen-view").forEach(s => s.classList.remove("active"));
+      const sec = document.getElementById(screenId);
+      if(sec) sec.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    window.switchTopicPhase = function(lessonNum, phaseNum){
+      document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-phase-section`).forEach(s => s.classList.remove("active"));
+      document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
+
+      const targetSec = document.getElementById(`l${lessonNum}-phase-${phaseNum}`);
+      if(targetSec) targetSec.classList.add("active");
+
+      const tabBtn = document.getElementById(`tab-btn-${lessonNum}-${phaseNum}`);
+      if(tabBtn) tabBtn.classList.add("active");
+
+      const fixPanel = document.getElementById(`l${lessonNum}-fixation`);
+      if(fixPanel) fixPanel.classList.remove("active");
+
+      window.scrollTo({ top: 140, behavior: "smooth" });
+    };
+
+    window.markTopicRead = function(lessonNum, topicNum){
+      readTopics[topicNum] = true;
+      const btn = document.getElementById(`check-read-${lessonNum}-${topicNum}`);
+      if(btn){
+        btn.classList.add("checked");
+        btn.innerHTML = `<span>✓ Leitura Concluída</span>`;
+      }
+      updateGamifyProgress();
+    };
+
+    function updateGamifyProgress(){
+      const readCount = Object.values(readTopics).filter(Boolean).length;
+      const readPct = Math.round((readCount / 6) * 60); // 60% for reading
+      let totalPct = readPct;
+
+      const bar = document.getElementById("gamify-bar-1");
+      const txt = document.getElementById("gamify-percent-1");
+      const badgeBox = document.getElementById("gamify-badge-box-1");
+
+      if(sessionStorage.getItem("l1_passed") === "true"){
+        totalPct = 100;
+        if(badgeBox) badgeBox.innerHTML = `<span class="badge-trophy">🏆 Aula 1 Concluída com Sucesso!</span>`;
+      } else if(readCount === 6 && badgeBox){
+        badgeBox.innerHTML = `<span class="eyebrow-badge" style="background:#E3F5EE; color:#2E8B6F; border-color:#2E8B6F;"><span class="dot" style="background:#2E8B6F;"></span> Leitura 100% — Faça o Teste</span>`;
+      }
+
+      if(bar) bar.style.width = `${totalPct}%`;
+      if(txt) txt.textContent = `${totalPct}% Concluído`;
+    }
+
+    window.openFixationPanel = function(lessonNum){
+      const readCount = Object.values(readTopics).filter(Boolean).length;
+      if(readCount < 6){
+        alert("⚠️ Por favor, leia e marque a leitura completa de todos os 6 tópicos da Aula 1 antes de realizar o exercício de fixação!");
+        return;
+      }
+
+      document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-phase-section`).forEach(s => s.classList.remove("active"));
+      document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
+      
+      const tabFix = document.getElementById(`tab-btn-${lessonNum}-fix`);
+      if(tabFix) tabFix.classList.add("active");
+
+      const fixPanel = document.getElementById(`l${lessonNum}-fixation`);
+      if(fixPanel) fixPanel.classList.add("active");
+      window.scrollTo({ top: 140, behavior: "smooth" });
+    };
+
+    window.promptLessonPassword = function(num, title){
+      targetLessonNum = num;
+      document.getElementById("modal-title-text").textContent = `Aula ${num}: ${title}`;
+      document.getElementById("modal-pass-field").value = "";
+      document.getElementById("password-modal").classList.add("active");
+    };
+
+    window.closePasswordModal = function(){
+      document.getElementById("password-modal").classList.remove("active");
+    };
+
+    document.getElementById("btn-confirm-unlock").onclick = function(){
+      const typed = document.getElementById("modal-pass-field").value.trim().toLowerCase();
+      const expected = PASSWORDS[targetLessonNum];
+
+      if(typed === expected || typed === "wr2026"){
+        closePasswordModal();
+        const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
+        if(badge) badge.textContent = "🟢";
+
+        if(targetLessonNum === 4){
+          sessionStorage.setItem("prova_unlocked_m5", "true");
+          window.location.href = "./prova-internet.html";
+        } else {
+          showScreen(`screen-lesson-${targetLessonNum}`);
+        }
+      } else {
+        alert("❌ Senha incorreta. Por favor, verifique com o professor a senha desta aula.");
+      }
+    };
+
+    const profBtn = document.getElementById("btn-prof-accordion");
+    const profContent = document.getElementById("prof-content");
+    const profIcon = document.getElementById("prof-icon");
+    if(profBtn){
+      profBtn.onclick = function(){
+        const isShow = profContent.classList.toggle("show");
+        profIcon.textContent = isShow ? "▲" : "▼";
+      };
+    }
+
+    window.selectFixOption = function(lessonNum, qNum, optIdx, btnEl){
+      selectedAnswers[qNum] = optIdx;
+      const stack = btnEl.parentElement;
+      stack.querySelectorAll(".option-btn-card").forEach(b => b.classList.remove("selected"));
+      btnEl.classList.add("selected");
+    };
+
+    window.calcFixation = function(lessonNum){
+      const nameInput = document.getElementById(`l${lessonNum}-student-name`);
+      const name = nameInput ? nameInput.value.trim() : "";
+      if(!name){ alert("Digite seu nome completo para assinar o comprovante."); return; }
+
+      let correctCount = 0;
+      for(let q = 1; q <= 5; q++){
+        if(selectedAnswers[q] === null){
+          alert(`Por favor, responda à Questão ${q} antes de enviar.`);
+          return;
+        }
+        if(selectedAnswers[q] === L1_CORRECT_ANSWERS[q]){
+          correctCount++;
+        }
+      }
+
+      const score = (correctCount / 5) * 10;
+      const passed = correctCount >= 4; // minimum 4/5 = 80%
+
+      const resBox = document.getElementById(`l${lessonNum}-result-box`);
+
+      if(passed){
+        sessionStorage.setItem("l1_passed", "true");
+        const badgeHub = document.getElementById("badge-lesson-1");
+        if(badgeHub) badgeHub.textContent = "🟢";
+
+        updateGamifyProgress();
+
+        const ts = new Date().toISOString();
+        const sig = `RANGEL-AULA1-PASS-${Math.floor(Math.random()*90000+10000)}-VERIFIED`;
+
+        resBox.innerHTML = `
+          <div style="background:#E3F5EE; border:2px solid var(--success); border-radius:12px; padding:20px; color:var(--ink-dark);">
+            <strong style="font-size:20px; color:var(--success);">🎉 PARABÉNS! Você foi APROVADO(A) na Aula 1 Gamificada!</strong><br><br>
+            <strong>Aluno(a):</strong> ${name}<br>
+            <strong>Acertos:</strong> ${correctCount} de 5 questões (Nota: ${score.toFixed(1)} / 10,0)<br>
+            <strong>Data:</strong> ${new Date().toLocaleString("pt-BR")}<br>
+            🔒 <strong>Assinatura Digital de Autenticidade:</strong> ${sig}
+          </div>
+        `;
+        resBox.style.display = "block";
+      } else {
+        resBox.innerHTML = `
+          <div style="background:var(--warn-bg); border:2px solid var(--warn); border-radius:12px; padding:20px; color:var(--ink-dark);">
+            <strong style="font-size:20px; color:var(--warn);">📘 Nota: ${score.toFixed(1)} / 10,0 (${correctCount} de 5 acertos)</strong><br><br>
+            A nota mínima para aprovação é 8,0 (4 de 5 acertos). Por favor, revise os tópicos da aula e tente novamente para obter o comprovante de conclusão!
+          </div>
+        `;
+        resBox.style.display = "block";
+      }
+    };
+
+  })();
+  </script>
+</body>
+</html>
+
