@@ -18,7 +18,7 @@ window.PDFLessons = (function() {
           chapter: "AULA 01: INTRODUÇÃO À INTERNET E NAVEGAÇÃO SEGURA",
           heading: "1.1 O que é a Internet & Origem Histórica",
           content: `A Internet é uma rede mundial de computadores interconectada globalmente, permitindo a troca instantânea de dados, comunicação interpessoal, acesso a serviços bancários e compartilhamento de conteúdo.\n\n• Origem: A Internet nasceu na década de 1960 como o projeto militar norte-americano ARPANET.\n• A Grande Revolução (1989/1991): O cientista Tim Berners-Lee, no laboratório CERN na Suíça, criou a World Wide Web (WWW) e a linguagem HTML, permitindo navegar entre documentos através de links clicáveis (hiperlinks).`,
-          images: ["../../assets/img/interrnet/globo-conectado.jpeg", "../../assets/img/interrnet/cabo-marinho-robo-inspecionando.jpeg"],
+          images: ["../../assets/img/internet/globo-conectado.jpeg", "../../assets/img/internet/cabo-marinho-robo-inspecionando.jpeg"],
           boxType: "tip",
           boxTitle: "💡 O que é a WWW?",
           boxText: "A World Wide Web (WWW) é a teia de páginas que navegamos na Internet usando um navegador web."
@@ -33,13 +33,13 @@ window.PDFLessons = (function() {
           lessonNum: 1,
           heading: "1.3 Principais Navegadores de Internet (Browsers)",
           content: `Os navegadores são programas que interpretam o código HTML e exibem os sites na tela:\n\n1. Google Chrome: O mais utilizado no mundo, rápido e integrado à Conta Google.\n2. Mozilla Firefox: Focado em privacidade, código aberto e altamente personalizável.\n3. Microsoft Edge: Padrão do Windows, baseado no Chromium, otimizado para o sistema.\n4. Apple Safari: Padrão em dispositivos Apple (Mac, iPhone, iPad).\n5. Opera: Inclui recursos nativos como VPN gratuita integrada e bloqueador de anúncios.\n6. Brave: Focado em privacidade rigorosa, bloqueando rastreadores automaticamente.`,
-          image: "../../assets/img/interrnet/navegadores.png"
+          image: "../../assets/img/internet/navegadores.png"
         },
         {
           lessonNum: 1,
           heading: "1.4 Golpes Virtuais Comuns & Como se Proteger",
           content: `• Phishing (Pescaria de Dados): Mensagens ou e-mails falsos se passando por bancos/lojas para roubar senhas.\n• Boleto Falso: Boletos alterados por criminosos. Solução: Confira sempre o nome e o CNPJ do beneficiário no banco antes de pagar.\n• Loja Online Falsa: Sites com preços absurdamente baixos. Solução: Pesquise no 'Reclame Aqui' e verifique se o endereço tem HTTPS.\n• Engenharia Social & Golpe do PIX: Manipulação por mensagens urgentes de supostos parentes no WhatsApp. Solução: Ligue de viva-voz antes de transferir qualquer valor.\n• Falso Suporte Técnico: Pop-ups alarmantes dizendo que o PC tem vírus. Lembre-se: A Microsoft NUNCA liga para você pedindo acesso remoto.`,
-          image: "../../assets/img/interrnet/site-falso1.png",
+          image: "../../assets/img/internet/site-falso1.png",
           boxType: "warning",
           boxTitle: "⚠️ Regra de Ouro da Segurança",
           boxText: "Bancos e órgãos oficiais NUNCA pedem senhas completas ou códigos por e-mail, telefone ou WhatsApp!"
@@ -52,7 +52,7 @@ window.PDFLessons = (function() {
         },
         {
           lessonNum: 2,
-          chapter: "AULA 02: NAVEGANDO NA INTERNET & HISTÓRIA DO HTML",
+          chapter: "AULA 02: NAVEGAÇÃO PRÁTICA, SEGURANÇA E HTML",
           heading: "2.1 O Navegador como Janela para a Web & Código-Fonte",
           content: `O navegador é a sua janela de acesso às páginas da Web. Toda página é construída em código HTML.\n\nComo visualizar o código de qualquer site:\n1. Clique com o botão direito do mouse em qualquer área neutra da página.\n2. Escolha a opção 'Exibir código-fonte da página' (ou 'Ver código-fonte').\n3. Uma nova aba abrirá exibindo o código HTML estrutural.`,
           image: "../../assets/img/html-history.png"
@@ -61,19 +61,19 @@ window.PDFLessons = (function() {
           lessonNum: 2,
           heading: "2.2 Tour pelas Ferramentas do Navegador",
           content: `• Barra de Endereços (URL): Onde você digita o site desejado (ex: www.google.com).\n• Botões de Controle: Seta para esquerda (←) volta; Seta para direita (→) avança; Círculo (↻) atualiza a página.\n• Atalhos de Abas: Ctrl + T abre nova aba; Ctrl + W fecha a aba atual.\n• Ajuste de Zoom: Pressione Ctrl e + para aumentar o texto; Ctrl e - para diminuir; Ctrl + 0 restaura o padrão 100%.`,
-          image: "../../assets/img/interrnet/barra-url.png"
+          image: "../../assets/img/internet/barra-url.png"
         },
         {
           lessonNum: 2,
           heading: "2.3 Histórico de Navegação e Privacidade",
           content: `O navegador registra a lista de todos os sites visitados por data.\n\n• Consultar Histórico: Pressione o atalho Ctrl + H no teclado.\n• Limpar Dados de Navegação: No menu do histórico, escolha 'Limpar dados', marque Histórico, Cookies e Cache, e confirme a exclusão.`,
-          image: "../../assets/img/interrnet/hitorico-chrome.png"
+          image: "../../assets/img/internet/historico-chrome.png"
         },
         {
           lessonNum: 2,
           heading: "2.4 Atividades Práticas — Gerador de Home Page Pessoal & Inteligência Artificial (IA)",
           content: `Passo a Passo Guiado de Criação de Páginas Web:\n\n• Atividade 6.1 — Gerador Interativo de Código HTML:\n1. Preencha seus dados de identificação (Nome Completo, Profissão/Ocupação, Escolaridade, Hobbies, Cidade e 3 Sites Favoritos).\n2. Clique no botão '⚡ Gerar Meu Código HTML Personalizado' para visualizar a estrutura construída em tempo real.\n3. Utilize os botões '📋 Copiar Código' ou '💾 Baixar HTML (minha-pagina.html)' para salvar o arquivo no seu computador.\n4. Dê duplo clique no arquivo salvo para abri-lo no seu navegador de internet!\n\n• Atividade 6.2 — Criando com Inteligência Artificial (IA & Prompts):\n1. Entenda o conceito: Inteligência Artificial é um assistente virtual que entende linguagem natural. Um 'Prompt' é a instrução ou comando que você envia para a IA.\n2. Copie o prompt pré-formatado da lição contendo suas preferências visuais e de cores.\n3. Cole em qualquer chat de IA (Google Gemini, ChatGPT, Copilot) e veja a IA criar uma Home Page ainda mais fluida e elegante para você!`,
-          image: "../../assets/img/interrnet/gerenciador-senha-chrome.png",
+          image: "../../assets/img/internet/gerenciador-senha-chrome.png",
           boxType: "code",
           boxTitle: "💻 Atividade Prática Concluída",
           boxText: "Parabéns! Você aprendeu a gerar código HTML personalizado e a interagir com Inteligência Artificial usando Prompts!"
@@ -83,25 +83,25 @@ window.PDFLessons = (function() {
           chapter: "AULA 03: DOMINANDO O GOOGLE E PRODUTIVIDADE NA NUVEM",
           heading: "3.1 O Ecossistema Google & A Conta Gmail",
           content: `A Conta Google (Gmail) funciona como o seu passaporte digital único. Com um único e-mail e senha, você acessa e-mails, documentos, arquivos, vídeos e mapas de qualquer lugar do mundo.\n\n⚠️ Cuide bem da sua senha de e-mail e anote em um caderno seguro.`,
-          images: ["../../assets/img/interrnet/a3/gmail-imagem-foto-user-menu-google-fechado.png", "../../assets/img/interrnet/a3/botao-escreve-email-gmail.png"]
+          images: ["../../assets/img/internet/a3/gmail-imagem-foto-user-menu-google-fechado.png", "../../assets/img/internet/a3/botao-escreve-email-gmail.png"]
         },
         {
           lessonNum: 3,
           heading: "3.2 O Menu Mágico dos 9 Pontinhos (Waffle)",
           content: `Ao entrar na sua Conta Google, no canto superior direito há um ícone com 9 pontinhos (Waffle). Ele dá acesso gratuito aos principais aplicativos:\n\n• 📄 Google Docs (Documentos): Editor de texto profissional (equivalente ao Word).\n• 📊 Google Sheets (Planilhas): Tabelas e cálculos automáticos (equivalente ao Excel).\n• 🖼️ Google Slides (Apresentações): Criação de slides visuais (equivalente ao PowerPoint).\n• 📁 Google Drive: Seu armário de arquivos na nuvem com 15 GB gratuitos.`,
-          images: ["../../assets/img/interrnet/a3/grade-menu-apps--google.png", "../../assets/img/interrnet/a3/dual-linha-grade-menu-apps--google.png"]
+          images: ["../../assets/img/internet/a3/grade-menu-apps--google.png", "../../assets/img/internet/a3/dual-linha-grade-menu-apps--google.png"]
         },
         {
           lessonNum: 3,
           heading: "3.3 Recursos do Google Docs e Planilhas",
           content: `• Salvamento Automático Contínuo: No Google Docs e Planilhas não existe o botão 'Salvar'. Cada letra ou número digitado é salvo na nuvem instantaneamente.\n• Google Planilhas: As células são identificadas por Colunas (A, B, C) e Linhas (1, 2, 3). Para somar valores, selecione as células e veja o resultado automático no canto inferior direito.`,
-          images: ["../../assets/img/interrnet/a3/barra-ferramentas-googlr-docs.png", "../../assets/img/interrnet/a3/barra-ferramentas-planolha.png"]
+          images: ["../../assets/img/internet/a3/barra-ferramentas-google-docs.png", "../../assets/img/internet/a3/barra-ferramentas-planilha.png"]
         },
         {
           lessonNum: 3,
           heading: "3.4 O Poder do Compartilhamento & Google Drive",
           content: `Em vez de anexar arquivos pesados por e-mail, clique no botão azul 'Compartilhar':\n\n• Leitor: A pessoa pode apenas visualizar e ler o documento.\n• Editor: A pessoa pode alterar, escrever e trabalhar junto com você em tempo real.\n\n📁 Passo a Passo Guiado no Google Drive (drive.google.com):\n1. Criar Pastas e Docs: Clique no botão '+ Novo' -> Selecione 'Nova pasta' (para organizar) ou 'Documentos Google' / 'Planilhas Google' (para criar um arquivo novo).\n2. Subir (Upload) Arquivos e Pastas do PC:\n   • Método 1 (+ Novo): Clique em '+ Novo' -> Escolha 'Fazer upload de arquivo' (para 1 arquivo) ou 'Fazer upload de pasta' (para uma pasta inteira) e selecione no computador.\n   • Método 2 (Arrastar e Soltar): Abra a pasta do seu PC, clique no arquivo, segure e arraste diretamente para a tela do navegador no Google Drive!`,
-          images: ["../../assets/img/interrnet/a3/botao-compartilhar-docs-google.png", "../../assets/img/interrnet/a3/configuracao-compartilhameto-documeto.png"]
+          images: ["../../assets/img/internet/a3/botao-compartilhar-docs-google.png", "../../assets/img/internet/a3/configuracao-compartilhamento-documento.png"]
         },
         {
           lessonNum: 3,
@@ -281,16 +281,18 @@ window.PDFLessons = (function() {
         <style>
           @page {
             size: A4;
-            margin: 18mm 15mm 18mm 15mm;
+            margin: 16mm 14mm 16mm 14mm;
           }
           body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: #1F160F;
-            line-height: 1.65;
+            color: #20130B;
+            line-height: 1.7;
             margin: 0;
-            padding: 24px;
+            padding: 20px;
             background: #FFFFFF;
             font-size: 13.5px;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
           }
           .btn-print {
             position: fixed;
@@ -300,166 +302,218 @@ window.PDFLessons = (function() {
             color: #FFFFFF;
             border: none;
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: 99px;
             font-weight: 700;
             font-size: 14px;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+            box-shadow: 0 4px 16px rgba(234, 88, 12, 0.4);
             z-index: 9999;
+            transition: all 0.2s ease;
           }
           .btn-print:hover {
-            background: #C2410C;
+            background: #8E2C07;
+            transform: translateY(-2px);
           }
           .header-banner {
-            border-bottom: 3px solid #EA580C;
-            padding-bottom: 16px;
+            background: linear-gradient(135deg, #1E130B 0%, #321F12 100%);
+            border-bottom: 4px solid #EA580C;
+            border-radius: 12px;
+            padding: 18px 24px;
             margin-bottom: 24px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+          }
+          .header-profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+          }
+          .header-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid #FB923C;
+            object-fit: cover;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            background: #FFF7F0;
+            flex-shrink: 0;
           }
           .header-title h1 {
-            font-size: 22px;
-            color: #8E2C07;
+            font-size: 20px;
+            color: #FB923C;
             margin: 0 0 4px 0;
             font-weight: 700;
+            line-height: 1.3;
           }
           .header-title p {
             font-size: 13px;
-            color: #666666;
+            color: #F4E8DC;
             margin: 0;
+            opacity: 0.9;
           }
           .badge-institution {
-            background: #FFF3E0;
-            border: 1.5px solid #EA580C;
-            color: #8E2C07;
+            background: rgba(251, 146, 60, 0.15);
+            border: 1.5px solid #FB923C;
+            color: #FB923C;
             font-weight: 700;
-            font-size: 11px;
+            font-size: 10.5px;
             padding: 6px 14px;
-            border-radius: 20px;
+            border-radius: 99px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            white-space: nowrap;
+            flex-shrink: 0;
           }
           .chapter-title {
-            background: #1E130B;
-            color: #EA580C;
-            padding: 10px 16px;
-            border-radius: 6px;
-            font-size: 15px;
+            background: #120B06;
+            color: #FB923C;
+            border-left: 5px solid #EA580C;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14.5px;
             font-weight: 700;
             margin-top: 26px;
             margin-bottom: 16px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
             page-break-after: avoid;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
           }
           .section-block {
-            background: #FFFDF9;
-            border: 1px solid #EADBCE;
+            background: #FFF9F2;
+            border: 1px solid #E6D2C1;
             border-left: 4px solid #EA580C;
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin-bottom: 16px;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-bottom: 18px;
             page-break-inside: avoid;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
           }
           .section-block h3 {
             font-size: 15px;
-            color: #1E130B;
+            color: #8E2C07;
             margin-top: 0;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 700;
+            border-bottom: 1px dashed #E6D2C1;
+            padding-bottom: 6px;
           }
           .section-block p {
             font-size: 13.5px;
-            color: #2D2118;
+            color: #20130B;
             margin: 0;
             white-space: pre-line;
+            line-height: 1.7;
           }
           .pdf-img-container {
             text-align: center;
-            margin: 14px 0;
+            margin: 16px 0 10px 0;
             page-break-inside: avoid;
           }
           .pdf-img-container img {
             max-width: 85%;
-            max-height: 220px;
+            max-height: 230px;
             object-fit: contain;
-            border-radius: 8px;
-            border: 1px solid #CBD5E1;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            border-radius: 10px;
+            border: 1.5px solid #E6D2C1;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            background: #FFFFFF;
+            padding: 4px;
           }
           .pdf-img-grid {
             display: flex;
             justify-content: center;
             gap: 12px;
             flex-wrap: wrap;
-            margin: 14px 0;
+            margin: 16px 0 10px 0;
             page-break-inside: avoid;
           }
           .pdf-img-grid img {
             max-width: 46%;
-            max-height: 180px;
+            max-height: 190px;
             object-fit: contain;
-            border-radius: 8px;
-            border: 1px solid #CBD5E1;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            border-radius: 10px;
+            border: 1.5px solid #E6D2C1;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            background: #FFFFFF;
+            padding: 4px;
           }
           .box-callout {
-            border-radius: 6px;
-            padding: 12px 16px;
-            margin-top: 12px;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-top: 14px;
             font-size: 13px;
+            line-height: 1.6;
           }
           .box-tip {
-            background: #E6FFFA;
-            border: 1px solid #0D9488;
-            color: #0F766E;
+            background: #E6F4F1;
+            border: 1.5px solid #2E8B6F;
+            color: #1A5241;
           }
           .box-warning {
-            background: #FEF2F2;
-            border: 1px solid #EF4444;
-            color: #B91C1C;
+            background: #FBE8E4;
+            border: 1.5px solid #C0392B;
+            color: #7A241B;
           }
           .box-code {
-            background: #1E1E1E;
-            color: #4ADE80;
-            font-family: 'Courier New', monospace;
-            border: 1px solid #333333;
+            background: #120B06;
+            color: #FB923C;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            border: 1.5px solid #422A1A;
           }
           .box-academic {
             background: #F3E8FF;
-            border: 1px solid #9333EA;
-            color: #6B21A8;
+            border: 1.5px solid #9333EA;
+            color: #5B21B6;
           }
           .box-callout strong {
             display: block;
             margin-bottom: 4px;
+            font-size: 13.5px;
           }
           .student-signature-box {
             margin-top: 32px;
-            padding: 16px;
-            border: 1.5px dashed #CBD5E1;
-            border-radius: 8px;
-            background: #F8FAFC;
+            padding: 20px 24px;
+            border: 2px dashed #EA580C;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #FAF2EA 0%, #FFF9F2 100%);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
             page-break-inside: avoid;
           }
+          .signature-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          }
+          .signature-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid #EA580C;
+            object-fit: cover;
+          }
           .signature-line {
-            width: 50%;
-            border-top: 1px solid #475569;
+            width: 45%;
+            border-top: 1.5px solid #422A1A;
             text-align: center;
-            padding-top: 4px;
-            font-size: 11px;
-            color: #475569;
+            padding-top: 6px;
+            font-size: 11.5px;
+            color: #422A1A;
+            font-weight: 600;
           }
           .footer-pdf {
-            margin-top: 28px;
+            margin-top: 24px;
             padding-top: 12px;
-            border-top: 1px solid #E2E8F0;
+            border-top: 1px solid #E6D2C1;
             font-size: 11px;
-            color: #64748B;
+            color: #A38470;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -474,11 +528,14 @@ window.PDFLessons = (function() {
         <button class="btn-print" onclick="window.print()">🖨️ Salvar como PDF / Imprimir Apostila Completa</button>
         
         <div class="header-banner">
-          <div class="header-title">
-            <h1>${pdfTitle}</h1>
-            <p>${pdfSubtitle}</p>
+          <div class="header-profile">
+            <img class="header-avatar" src="${resolveImagePath('../../assets/img/professor-rangel.png')}" alt="Prof. Marcos Rangel">
+            <div class="header-title">
+              <h1>${pdfTitle}</h1>
+              <p>${pdfSubtitle}</p>
+            </div>
           </div>
-          <div class="badge-institution">WR CAPACITAÇÃO PROFISSIONAL</div>
+          <div class="badge-institution">🎓 WR CAPACITAÇÃO PROFISSIONAL</div>
         </div>
 
         ${targetSections.map(sec => `
@@ -501,12 +558,16 @@ window.PDFLessons = (function() {
                 <span>${sec.boxText}</span>
               </div>
             ` : ''}
+          </div>
         `).join('')}
 
         <div class="student-signature-box">
-          <div>
-            <span style="font-weight:700; font-size:12px; color:#1E293B;">Comprovante de Estudo & Frequência</span><br>
-            <span style="font-size:11px; color:#64748B;">Portal Didático de Informática Básica • Prof. Marcos Rangel</span>
+          <div class="signature-info">
+            <img class="signature-avatar" src="${resolveImagePath('../../assets/img/professor-rangel.png')}" alt="Prof. Marcos Rangel">
+            <div>
+              <span style="font-weight:700; font-size:12.5px; color:#8E2C07;">Comprovante de Estudo & Frequência</span><br>
+              <span style="font-size:11px; color:#A38470;">Portal Didático de Informática Básica • Prof. Marcos Rangel</span>
+            </div>
           </div>
           <div class="signature-line">
             Assinatura do Aluno(a) / Data
@@ -514,8 +575,8 @@ window.PDFLessons = (function() {
         </div>
 
         <div class="footer-pdf">
-          <span>Prof. Marcos Rangel — okcomputer.use.linux@gmail.com</span>
-          <span>WR Capacitação Profissional • WhatsApp: (19) 99130-6907</span>
+          <span>👨‍🏫 Prof. Marcos Rangel — okcomputer.use.linux@gmail.com</span>
+          <span>🎓 WR Capacitação Profissional • WhatsApp: (19) 99130-6907</span>
         </div>
 
         <script>

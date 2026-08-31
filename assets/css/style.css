@@ -292,14 +292,42 @@ a:hover {
   }
 }
 
+@media (max-width: 900px) {
+  .lesson-reading-card {
+    padding: 32px 20px;
+  }
+  .topic-tab-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+  .gamify-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 /* Navigation Tabs per Topic (Fases) */
 .topic-tabs-bar {
   display: flex;
   gap: 8px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
   padding-bottom: 12px;
   margin-bottom: 32px;
   border-bottom: 2px solid var(--line-light);
+  position: relative;
+}
+
+.topic-tabs-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, transparent, var(--paper-white));
+  pointer-events: none;
 }
 
 .topic-tab-btn {
@@ -982,6 +1010,27 @@ a:hover {
   }
 }
 
+@media (max-width: 480px) {
+  .topic-tab-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+  .browser-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .subcard-grid {
+    grid-template-columns: 1fr;
+  }
+  .read-check-box {
+    flex-direction: column;
+    text-align: center;
+  }
+  .phase-nav-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 /* Gamification UI Components */
 .gamify-header-bar {
   background: var(--paper-white);
@@ -1081,6 +1130,41 @@ a:hover {
   font-weight: 700;
   font-size: 14px;
   border: 1px solid var(--amber);
+}
+
+/* Responsive utility classes for inline-style migration */
+.title-aula {
+  font-size: clamp(26px, 5vw, 34px);
+  color: var(--teal-deep);
+  margin-bottom: 8px;
+}
+
+.title-hub {
+  font-size: clamp(24px, 4.5vw, 32px);
+  color: var(--amber);
+  margin: 10px 0 6px 0;
+}
+
+.subtitle-hub {
+  font-size: clamp(15px, 2.5vw, 18px);
+  color: var(--ink-light);
+  margin: 0;
+}
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .result-actions {
+    flex-direction: column;
+  }
+  .result-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* Footer */
