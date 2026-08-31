@@ -1,4 +1,5 @@
 # Portal de Informática Básica — Professor Marcos Rangel
+
 ### WR Capacitação Profissional
 
 Portal interativo de aulas e avaliações didáticas para os alunos de Informática Básica da **WR Capacitação Profissional**, criado e ministrado pelo **Professor Marcos Rangel**.
@@ -30,7 +31,7 @@ Para conferir os padrões arquiteturais, diretrizes de design, fluxo pedagógico
 
 * **Escola:** WR Capacitação Profissional ("Seu Futuro Começa Aqui!")
 * **Website:** [https://www.wrcapacitacaoprofissional.net/](https://www.wrcapacitacaoprofissional.net/)
-* **Unidades:** Aguaí - SP e Vargem Grande do Sul - SP
+* **Unidades:** Aguaí  e Vargem Grande do Sul - SP
 
 ---
 
