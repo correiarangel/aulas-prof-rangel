@@ -52,7 +52,7 @@ provas/internet/
     ├── word/                     # Módulo 2: Microsoft Word
     ├── excel/                    # Módulo 3: Microsoft Excel
     ├── powerpoint/               # Módulo 4: Microsoft PowerPoint
-    └── internet/                 # Módulo 5: Internet & Nuvem
+    └── internet/                 # Módulo 5: Internet & Segurança
         ├── index.html            # Hub do Módulo 5 + Aulas 1, 2 e 3 Didáticas
         └── prova-internet.html   # Aula 04: Avaliação Final do Módulo Internet
 ```
@@ -95,3 +95,184 @@ Todos os módulos contam com o painel retrátil expansível com as credenciais d
 - **Experiência**: Desenvolvedor .NET | C# | Blazor | Mobile e Instrutor.
 - **Formação**: Pós-Graduado em Mobile e Graduado em Gestão de TI.
 - **Instituição**: WR Capacitação Profissional.
+
+---
+
+## 📜 6. Histórico Cronológico de Alterações & Registro SDD (Chronology)
+
+### 🗓️ Registro #001 — 30/08/2026 (Módulo 5: Aula 1 — Assinatura Digital & Exportação)
+- **Problema Identificado:**
+  A Aula 1 do Módulo de Internet (`modules/internet/index.html`) não estava integrada ao motor criptográfico `quiz-engine.js`. O término do exercício gerava apenas uma string mock sem SHA-256 e sem os botões de exportação (Comprovante TXT, WhatsApp e E-mail). Adicionalmente, havia um botão redundante de PDF no cabeçalho superior do Hub.
+- **Solução Implementada:**
+  1. Importação do `quiz-engine.js` no `<head>` de `modules/internet/index.html`.
+  2. Atualização da função `calcFixation(1)` para assinar digitalmente o comprovante com o algoritmo SHA-256 (`QuizEngine.generateDigitalSignature`).
+  3. Agrupamento e alinhamento dos **4 botões de ação** no painel final de resultado:
+     - 📄 **Baixar Comprovante TXT**
+     - 📑 **Baixar Aula em PDF**
+     - 📱 **Enviar WhatsApp (19 99130-6907)**
+     - ✉️ **Enviar E-mail ao Professor (okcomputer.use.linux@gmail.com)**
+  4. Remoção do botão redundante de PDF no topo do Hub Card.
+  5. Encerramento rigoroso dos servidores HTTP locais (`python3 -m http.server`) ao término da validação de testes.
+- **Arquivos Modificados:**
+  - [modules/internet/index.html](file:///home/rangel/git-dev/aulas/modules/internet/index.html)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados & Resultados:**
+  - Validação E2E com `browser_subagent` registrando screenshot e animação WebP.
+  - Confirmação visual da geração da hash SHA-256 real (`WR-7C8E-F463-A25D-12C2`) e dos 4 botões finais.
+  - Verificação de ausência de processos pendentes em background.
+
+### 🗓️ Registro #002 — 30/08/2026 (Módulo 5: Elaboração das Especificações SDD para Arquitetura, Aula 2 e Aula 3)
+- **Problema Identificado:**
+  Havia necessidade de estruturar o projeto sob as especificações formais do Spec-Driven Development (SDD) conforme o Global Start Skill, definindo a arquitetura geral do portal, o mapeamento detalhado dos ativos visuais em `assets/img/interrnet/`, os tópicos interativos e a fundamentação teórica acadêmica para as Aulas 02 (Navegando na Internet & História do HTML) e 03 (Dominando o Google & Produtividade na Nuvem).
+- **Solução Implementada:**
+  1. Carregamento e auditoria das regras do `global-start-skill` (v6.0).
+  2. Criação dos documentos formais de especificação em `Docs/`:
+     - [Docs/SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md): Arquitetura, Design System WR Capacitação, A11Y Senior-Friendly e Senhas Secretas.
+     - [Docs/SPEC-AULA-02.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-AULA-02.md): Tópicos da Aula 02, mapeamento completo de imagens do diretório `assets/img/interrnet/` e projeto prático do Bloco de Notas.
+     - [Docs/SPEC-AULA-03.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-AULA-03.md): Tópicos da Aula 03, ecossistema Google, Waffle dos 9 Pontinhos, Docs, Sheets, Slides, Drive e Operadores de Busca.
+  3. Inclusão de bibliografia reconhecida (Berners-Lee 1992, Brin & Page 1998, Tanenbaum 2011, Stallings 2018, W3C WCAG 2.2).
+  4. Manutenção estrita da pausa de implementação de código aguardando validação prévia pelo usuário.
+- **Arquivos Criados/Modificados:**
+  - [Docs/SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md)
+  - [Docs/SPEC-AULA-02.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-AULA-02.md)
+  - [Docs/SPEC-AULA-03.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-AULA-03.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+
+### 🗓️ Registro #003 — 30/08/2026 (Refinamento SDD: Regra Estrita do Botão de PDF & Gerador de Apostila Completa)
+- **Problema Identificado:**
+  1. O gerador de PDF (`assets/js/pdf-lessons.js`) produzia um resumo curto de 5 marcadores por módulo, enquanto a diretiva exigia uma apostila didática completa, estruturada e abrangente com todo o conteúdo das lições.
+  2. Haviam sido adicionados botões de PDF no Hub Inicial e barras superiores de telas, violando a regra de UI/UX segundo a qual o botão `📑 Baixar Aula em PDF` deve ser exibido **EXCLUSIVAMENTE** no painel de finalização/conclusão do exercício de fixação.
+- **Solução Implementada:**
+  1. Reversão e remoção imediata de todos os botões de PDF no Hub Inicial e barras de topo de `modules/internet/index.html`.
+  2. Reescrita completa do motor `pdf-lessons.js` expandindo as seções para formar uma apostila didática completa de A4, com capa formal, unidades, callouts visuais de dicas e alertas, blocos de código HTML, atividade prática do Bloco de Notas, guia de buscas e referências acadêmicas.
+  3. Atualização das especificações SDD (`Docs/SPEC-PROJECT-ARCHITECTURE.md`, `Docs/SPEC-AULA-02.md`, `Docs/SPEC-AULA-03.md`) formalizando a Regra Estrita dos Botões de Exportação.
+  4. Finalização do protocolo Stop & Resume para encerramento de sessão.
+- **Arquivos Modificados:**
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [modules/internet/index.html](file:///home/rangel/git-dev/aulas/modules/internet/index.html)
+  - [Docs/SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+
+### 🗓️ Registro #004 — 30/08/2026 (Módulo 5: Implementação Completa HTML/JS das Aulas 02 e 03)
+- **Problema Identificado:**
+  As especificações SDD das Aulas 02 e 03 estavam concluídas e validadas em `Docs/SPEC-AULA-02.md` e `Docs/SPEC-AULA-03.md`, mas a interface de leitura interativa por tópicos, o controle gamificado de progresso e os painéis de exercícios de fixação com cálculo de nota e geração de assinatura digital SHA-256 ainda não haviam sido codificados em `modules/internet/index.html`.
+- **Solução Implementada:**
+  1. **Aula 02 (Navegando na Internet & História do HTML)**:
+     - Implementação da leitura em 6 tópicos interativos: 1. O Navegador, 2. Ferramentas da Janela Web, 3. Histórico e Limpeza, 4. Senhas e Anti-Phishing, 5. História do HTML e 6. Prática Bloco de Notas (`minha-pagina.html`).
+     - Ativação do controle gamificado por checkbox de leitura (`markTopicRead(2, x)`).
+     - Criação da avaliação didática com 5 questões de fixação, desbloqueada com senha `b002`, cálculo de nota (mínimo 8,0) e geração de comprovante assinado por SHA-256 (`QuizEngine.generateDigitalSignature`).
+     - Integração dos 4 botões de exportação (TXT, PDF, WhatsApp e E-mail).
+  2. **Aula 03 (Dominando o Google & Produtividade na Nuvem)**:
+     - Implementação da leitura em 7 tópicos interativos: 1. Ecossistema & Gmail, 2. Caixa de Entrada, 3. Menu 9 Pontinhos (Waffle), 4. Google Docs, 5. Google Planilhas, 6. Compartilhamento & Drive e 7. Operadores de Busca Avançados (`""`, `site:`, `filetype:`, `-`).
+     - Ativação do controle gamificado por checkbox de leitura (`markTopicRead(3, x)`).
+     - Criação da avaliação didática com 5 questões de fixação, desbloqueada com senha `c003`, cálculo de nota (mínimo 8,0) e geração de comprovante assinado por SHA-256.
+     - Integração dos 4 botões de exportação.
+  3. **Atualização da Tríade de Documentação SDD**: `ROADMAP.md`, `INDEX.md` e `DOCUMENTATION.md` sincronizados.
+- **Arquivos Modificados:**
+  - [modules/internet/index.html](file:///home/rangel/git-dev/aulas/modules/internet/index.html)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+### 🗓️ Registro #005 — 30/08/2026 (Módulo 5: Formulário Interativo Gerador de HTML e Atividade Prática de IA & Prompts na Aula 2)
+- **Problema Identificado:**
+  O Tópico 6 da Aula 2 continha apenas um bloco estático de instruções para digitação no Bloco de Notas. Para enriquecer a experiência pedagógica e acelerar a construção prática para alunos seniores e iniciantes, era necessário disponibilizar um formulário interativo de dados pessoais (Nome, Profissão, Escolaridade, Hobbies, Cidade, 3 Sites Favoritos) que gerasse o código HTML em tempo real com botões de copiar e baixar, além de introduzir uma atividade prática sobre Inteligência Artificial (IA) e Prompts com fontes acadêmicas e governamentais reconhecidas.
+- **Solução Implementada:**
+  1. **Seção 6.1 (Gerador Interativo de Home Page)**:
+     - Adição do formulário de campos de identificação e sites favoritos em `modules/internet/index.html`.
+     - Implementação das funções JavaScript `generateHomePageCode()`, `copyHomePageCode()` (Clipboard API) e `downloadHomePageFile()` (`minha-pagina.html` via Blob URL).
+  2. **Seção 6.2 (Atividade Prática de IA & Prompts)**:
+     - Explicação didática sobre o que é IA Generativa, o conceito de *Prompt* (comando/instrução) e seu funcionamento em linguagem acessível.
+     - Caixa com prompt pré-formatado pronto para cópia com o botão `copyAIPrompt()`, orientando a personalização de estilos, cores e acessibilidade no Google Gemini, ChatGPT ou Microsoft Copilot.
+     - Citação de leituras recomendadas de órgãos oficiais e acadêmicos: UNESCO (2023/2024), MEC/Gov.br (2024) e W3C.
+  3. **Atualização da Apostila PDF (`assets/js/pdf-lessons.js`)**: Atualização do capítulo 2.4 com as etapas do gerador interativo e da atividade de IA.
+  4. **Atualização da Tríade de Documentação SDD**: `ROADMAP.md`, `INDEX.md` e `DOCUMENTATION.md` sincronizados.
+- **Arquivos Criados/Modificados:**
+  - [modules/internet/index.html](file:///home/rangel/git-dev/aulas/modules/internet/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [Docs/SPEC-AULA-02.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-AULA-02.md)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados & Resultados:**
+  - Teste interativo do gerador de código HTML, cópia para a área de transferência e download do arquivo `.html`.
+  - Teste de cópia do prompt de IA.
+  - Confirmação de ausência de erros de sintaxe JS/HTML e encerramento de qualquer servidor local.
+
+### 🗓️ Registro #006 — 30/08/2026 (Refinamento PDF: Geração de Apostila PDF Individual Exclusiva por Aula)
+- **Problema Identificado:**
+  Ao finalizar qualquer uma das aulas (Aula 1, Aula 2 ou Aula 3) e clicar em `📑 Baixar Aula em PDF`, o sistema gerava um único arquivo PDF contendo todas as aulas do módulo agrupadas. Havia a necessidade de modularizar a geração para que cada aula emitisse uma apostila exclusiva contendo apenas o seu respectivo conteúdo e ilustrações.
+- **Solução Implementada:**
+  1. **Atribuição de `lessonNum` nas Seções do PDF**:
+     - Cada bloco do objeto `LESSONS.internet.sections` em `assets/js/pdf-lessons.js` recebeu a propriedade `lessonNum` correspondente (`1`, `2` ou `3`). As referências acadêmicas permaneceram com `lessonNum: null` para acompanhar todas as emissões.
+  2. **Filtragem Dinâmica no Motor PDF (`downloadLessonPDF`)**:
+     - Atualização do método `downloadLessonPDF(moduleId, subLessonId)` para receber o número da aula finalizada.
+     - Aplicação do filtro `data.sections.filter(...)` exibindo estritamente as seções pertinentes à aula selecionada.
+     - Ajuste dinâmico do cabeçalho da apostila: `Módulo 5 • Aula 01...`, `Módulo 5 • Aula 02...` ou `Módulo 5 • Aula 03...`.
+  3. **Atualização em `modules/internet/index.html`**:
+     - Ajuste nos botões de resultado do `calcFixation(lessonNum)` para chamar `window.PDFLessons.downloadLessonPDF('internet', ${lessonNum})`.
+  4. **Atualização da Tríade de Documentação SDD**: `ROADMAP.md`, `INDEX.md` e `DOCUMENTATION.md` sincronizados.
+- **Arquivos Modificados:**
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [modules/internet/index.html](file:///home/rangel/git-dev/aulas/modules/internet/index.html)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados & Resultados:**
+  - Validação de sintaxe com Node.js (`pdf-lessons.js: SYNTAX OK!`, `index.html: SYNTAX OK!`).
+  - Verificação do isolamento do conteúdo ao emitir a Aula 1, Aula 2 e Aula 3 separadamente.
+
+### 🗓️ Registro #007 — 30/08/2026 (Módulo 5: Enriquecimento Visual da Aula 3 com 12 Imagens Dedicadas em `a3/`)
+- **Problema Identificado:**
+  A Aula 3 ("Dominando o Google & Produtividade na Nuvem") possuía apenas um diagrama ilustrativo de busca. Havia 12 novas imagens explicativas salvas em `assets/img/interrnet/a3/` abrangendo o ecossistema Gmail, o botão "Escrever", o Menu dos 9 Pontinhos (Waffle), os logotipos e barras de ferramentas do Google Docs, Sheets, Slides e Drive, e as janelas de compartilhamento (Leitor vs Editor).
+- **Solução Implementada:**
+  1. **Enriquecimento em `modules/internet/index.html`**:
+     - **Fase 1 (Ecossistema & Gmail)**: Inserção de `gmail-imagem-foto-user-menu-google-fechado.png`.
+     - **Fase 2 (Caixa de Entrada)**: Inserção de `botao-escreve-email-gmail.png`.
+     - **Fase 3 (Menu 9 Pontinhos)**: Inserção em grid de `grade-menu-apps--google.png` e `dual-linha-grade-menu-apps--google.png`.
+     - **Fase 4 (Google Docs)**: Inserção do logotipo `google-docs.png` e da barra de ferramentas `barra-ferramentas-googlr-docs.png`.
+     - **Fase 5 (Google Planilhas)**: Inserção do logotipo `google-planilhas.png` e da barra de ferramentas `barra-ferramentas-planolha.png`.
+     - **Fase 6 (Compartilhamento & Drive)**: Inserção dos ícones de `google-driver.png` e `google-apesentacoes.png`, além de `botao-compartilhar-docs-google.png` e `configuracao-compartilhameto-documeto.png`.
+  2. **Atualização da Apostila PDF (`assets/js/pdf-lessons.js`)**:
+     - Mapeamento das 12 imagens no objeto `LESSONS.internet.sections` para a Aula 3.
+  3. **Atualização da Tríade de Documentação SDD**: `ROADMAP.md`, `INDEX.md` e `DOCUMENTATION.md` sincronizados.
+- **Arquivos Modificados:**
+  - [modules/internet/index.html](file:///home/rangel/git-dev/aulas/modules/internet/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados & Resultados:**
+  - Validação de sintaxe com Node.js (`pdf-lessons.js: SYNTAX OK!`, `index.html: SYNTAX OK!`).
+  - Verificação de exibição responsiva das imagens nas 7 fases da Aula 3 e na geração do PDF exclusivo da Aula 3.
+
+### 🗓️ Registro #008 — 30/08/2026 (Módulo 5: Inclusão do Passo a Passo Guiado de Criação e Upload no Google Drive)
+- **Problema Identificado:**
+  A Aula 3 carecia de um passo a passo explícito ensinando a criar pastas e documentos diretamente no Google Drive (`drive.google.com`) e como realizar o upload (subir) de arquivos e pastas inteiras do computador para a nuvem.
+- **Solução Implementada:**
+  1. **Tópico 3.6 (`modules/internet/index.html`)**:
+     - Adição do tutorial de **Criação Direta**: como utilizar o botão `+ Novo` para criar novas pastas organizadas e novos Documentos/Planilhas Google em branco.
+     - Adição do tutorial de **Upload (Subir do PC para a Nuvem)** detalhando 2 métodos práticos:
+       - *Método 1*: Pelo menu `+ Novo` -> `Fazer upload de arquivo` ou `Fazer upload de pasta`.
+       - *Método 2*: Por **Arrastar e Soltar** (Drag & Drop) de arquivos ou pastas diretamente da janela do computador para o navegador.
+  2. **Apostila PDF (`assets/js/pdf-lessons.js`)**:
+     - Atualização da Seção 3.4 com as instruções resumidas de criação e upload via menu `+ Novo` e arrastar e soltar.
+  3. **Atualização da Tríade de Documentação SDD**: `ROADMAP.md`, `INDEX.md` e `DOCUMENTATION.md` sincronizados.
+- **Arquivos Modificados:**
+  - [modules/internet/index.html](file:///home/rangel/git-dev/aulas/modules/internet/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados & Resultados:**
+  - Validação de sintaxe com Node.js (`pdf-lessons.js: SYNTAX OK!`, `index.html: SYNTAX OK!`).
+  - Verificação da formatação limpa e legível dos passos em caixas destacadas em verde e amarelo.
+
+
+
+

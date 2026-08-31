@@ -96,7 +96,7 @@ window.QuizEngine = (function() {
     lines.push("Professor Responsável: Marcos Rangel");
     lines.push(`Contato/E-mail: ${TEACHER_EMAIL}`);
     lines.push("WhatsApp Oficial: (19) 99130-6907");
-    lines.push("Portal de Aulas: WR Capacitação Profissional (Hospedado via GitHub Pages)");
+    lines.push("Portal de Aulas: WR Capacitação Profissional");
     lines.push("====================================================================");
 
     return lines.join("\n");

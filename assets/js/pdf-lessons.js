@@ -1,150 +1,274 @@
 /**
  * Portal Didático — Prof. Marcos Rangel
- * Gerador e Conteúdo Didático das Aulas em PDF (Print-Friendly PDF Generator)
+ * Gerador de Apostila Didática Completa e Estruturada em PDF (Print-Friendly PDF Generator)
+ * WR Capacitação Profissional
  */
 
 window.PDFLessons = (function() {
   "use strict";
 
   const LESSONS = {
-    windows: {
-      title: "Módulo 1: Sistema Operacional Windows",
-      subtitle: "Material Didático Oficial — Prof. Marcos Rangel",
+    internet: {
+      title: "Módulo 5: Internet, Navegação Segura e Produtividade na Nuvem",
+      subtitle: "Apostila Didática Oficial Completa — Prof. Marcos Rangel",
+      moduleName: "Internet & Segurança",
       sections: [
         {
-          heading: "1. O que é o Sistema Operacional?",
-          content: "O Sistema Operacional (S.O.) é o programa principal do computador. Ele gerencia o hardware (processador, memória, disco) e fornece a interface visual para o usuário interagir com programas e arquivos. O Windows é o S.O. mais utilizado no mundo em computadores pessoais e corporativos."
+          lessonNum: 1,
+          chapter: "AULA 01: INTRODUÇÃO À INTERNET E NAVEGAÇÃO SEGURA",
+          heading: "1.1 O que é a Internet & Origem Histórica",
+          content: `A Internet é uma rede mundial de computadores interconectada globalmente, permitindo a troca instantânea de dados, comunicação interpessoal, acesso a serviços bancários e compartilhamento de conteúdo.\n\n• Origem: A Internet nasceu na década de 1960 como o projeto militar norte-americano ARPANET.\n• A Grande Revolução (1989/1991): O cientista Tim Berners-Lee, no laboratório CERN na Suíça, criou a World Wide Web (WWW) e a linguagem HTML, permitindo navegar entre documentos através de links clicáveis (hiperlinks).`,
+          images: ["../../assets/img/interrnet/globo-conectado.jpeg", "../../assets/img/interrnet/cabo-marinho-robo-inspecionando.jpeg"],
+          boxType: "tip",
+          boxTitle: "💡 O que é a WWW?",
+          boxText: "A World Wide Web (WWW) é a teia de páginas que navegamos na Internet usando um navegador web."
         },
         {
-          heading: "2. Área de Trabalho e Explorador de Arquivos",
-          content: "A Área de Trabalho (Desktop) é a tela principal do Windows onde ficam os ícones de atalho e a Barra de Tarefas na parte inferior. O Explorador de Arquivos (File Explorer) permite organizar pastas, documentos, fotos e programas. Atalho para abrir o Explorador: Tecla Windows + E."
+          lessonNum: 1,
+          heading: "1.2 Classificação das Redes de Computadores",
+          content: `As redes de computadores são classificadas conforme a extensão geográfica que cobrem:\n\n• LAN (Local Area Network - Rede Local): Abrange residências, escritórios ou salas de aula (ex: o Wi-Fi da sua casa).\n• MAN (Metropolitan Area Network - Rede Metropolitana): Conecta bairros ou instituições em uma mesma cidade.\n• WAN (Wide Area Network - Rede de Longa Distância): Conecta cidades, estados, países ou continentes (ex: agências bancárias nacionais).\n• Internet: A maior rede de todas, unindo bilhões de dispositivos no planeta inteiro.`,
+          image: "../../assets/img/network-types.png"
         },
         {
-          heading: "3. Principais Atalhos de Teclado no Windows",
-          content: `• Ctrl + C: Copiar item ou texto selecionado\n• Ctrl + V: Colar item ou texto copiado\n• Ctrl + X: Recortar (mover) item selecionado\n• Ctrl + Z: Desfazer a última ação realizada\n• Alt + Tab: Alternar rapidamente entre janelas abertas\n• Tecla Windows + D: Mostrar ou ocultar a Área de Trabalho\n• Alt + F4: Fechar a janela ou programa ativo\n• Tecla Windows + L: Bloquear o computador imediatamente`
+          lessonNum: 1,
+          heading: "1.3 Principais Navegadores de Internet (Browsers)",
+          content: `Os navegadores são programas que interpretam o código HTML e exibem os sites na tela:\n\n1. Google Chrome: O mais utilizado no mundo, rápido e integrado à Conta Google.\n2. Mozilla Firefox: Focado em privacidade, código aberto e altamente personalizável.\n3. Microsoft Edge: Padrão do Windows, baseado no Chromium, otimizado para o sistema.\n4. Apple Safari: Padrão em dispositivos Apple (Mac, iPhone, iPad).\n5. Opera: Inclui recursos nativos como VPN gratuita integrada e bloqueador de anúncios.\n6. Brave: Focado em privacidade rigorosa, bloqueando rastreadores automaticamente.`,
+          image: "../../assets/img/interrnet/navegadores.png"
         },
         {
-          heading: "4. Lixeira e Exclusão de Arquivos",
-          content: "Ao apagar um arquivo com a tecla Delete, ele é movido para a Lixeira, onde pode ser restaurado caso necessário. Para apagar permanentemente sem passar pela Lixeira, utiliza-se Shift + Delete (atenção: não há como desfazer)."
+          lessonNum: 1,
+          heading: "1.4 Golpes Virtuais Comuns & Como se Proteger",
+          content: `• Phishing (Pescaria de Dados): Mensagens ou e-mails falsos se passando por bancos/lojas para roubar senhas.\n• Boleto Falso: Boletos alterados por criminosos. Solução: Confira sempre o nome e o CNPJ do beneficiário no banco antes de pagar.\n• Loja Online Falsa: Sites com preços absurdamente baixos. Solução: Pesquise no 'Reclame Aqui' e verifique se o endereço tem HTTPS.\n• Engenharia Social & Golpe do PIX: Manipulação por mensagens urgentes de supostos parentes no WhatsApp. Solução: Ligue de viva-voz antes de transferir qualquer valor.\n• Falso Suporte Técnico: Pop-ups alarmantes dizendo que o PC tem vírus. Lembre-se: A Microsoft NUNCA liga para você pedindo acesso remoto.`,
+          image: "../../assets/img/interrnet/site-falso1.png",
+          boxType: "warning",
+          boxTitle: "⚠️ Regra de Ouro da Segurança",
+          boxText: "Bancos e órgãos oficiais NUNCA pedem senhas completas ou códigos por e-mail, telefone ou WhatsApp!"
         },
         {
-          heading: "5. Boas Práticas e Segurança Básica",
-          content: "Mantenha o Windows Update sempre atualizado, utilize antivírus ativo (Windows Defender) e nunca compartilhe senhas de acesso. Sempre bloqueie o computador (Win + L) ao se ausentar do seu posto de trabalho."
+          lessonNum: 1,
+          heading: "1.5 Guia Prático de Navegação Segura",
+          content: `1. Mantenha Navegador, Antivírus e Sistema Operacional sempre atualizados.\n2. Verifique o Cadeado 🔒 e o prefixo 'https://' antes de digitar senhas ou dados bancários.\n3. Use Senhas Fortes e Únicas: Combine maiúsculas, minúsculas, números e símbolos (@#$%). Use gerenciadores de senha (Bitwarden, 1Password).\n4. Ative a Autenticação em Duas Etapas (2FA) em todas as suas contas digitais.\n5. Evite compras e acesso a bancos em redes Wi-Fi públicas sem VPN.`,
+          image: "../../assets/img/internet-security.png"
+        },
+        {
+          lessonNum: 2,
+          chapter: "AULA 02: NAVEGANDO NA INTERNET & HISTÓRIA DO HTML",
+          heading: "2.1 O Navegador como Janela para a Web & Código-Fonte",
+          content: `O navegador é a sua janela de acesso às páginas da Web. Toda página é construída em código HTML.\n\nComo visualizar o código de qualquer site:\n1. Clique com o botão direito do mouse em qualquer área neutra da página.\n2. Escolha a opção 'Exibir código-fonte da página' (ou 'Ver código-fonte').\n3. Uma nova aba abrirá exibindo o código HTML estrutural.`,
+          image: "../../assets/img/html-history.png"
+        },
+        {
+          lessonNum: 2,
+          heading: "2.2 Tour pelas Ferramentas do Navegador",
+          content: `• Barra de Endereços (URL): Onde você digita o site desejado (ex: www.google.com).\n• Botões de Controle: Seta para esquerda (←) volta; Seta para direita (→) avança; Círculo (↻) atualiza a página.\n• Atalhos de Abas: Ctrl + T abre nova aba; Ctrl + W fecha a aba atual.\n• Ajuste de Zoom: Pressione Ctrl e + para aumentar o texto; Ctrl e - para diminuir; Ctrl + 0 restaura o padrão 100%.`,
+          image: "../../assets/img/interrnet/barra-url.png"
+        },
+        {
+          lessonNum: 2,
+          heading: "2.3 Histórico de Navegação e Privacidade",
+          content: `O navegador registra a lista de todos os sites visitados por data.\n\n• Consultar Histórico: Pressione o atalho Ctrl + H no teclado.\n• Limpar Dados de Navegação: No menu do histórico, escolha 'Limpar dados', marque Histórico, Cookies e Cache, e confirme a exclusão.`,
+          image: "../../assets/img/interrnet/hitorico-chrome.png"
+        },
+        {
+          lessonNum: 2,
+          heading: "2.4 Atividades Práticas — Gerador de Home Page Pessoal & Inteligência Artificial (IA)",
+          content: `Passo a Passo Guiado de Criação de Páginas Web:\n\n• Atividade 6.1 — Gerador Interativo de Código HTML:\n1. Preencha seus dados de identificação (Nome Completo, Profissão/Ocupação, Escolaridade, Hobbies, Cidade e 3 Sites Favoritos).\n2. Clique no botão '⚡ Gerar Meu Código HTML Personalizado' para visualizar a estrutura construída em tempo real.\n3. Utilize os botões '📋 Copiar Código' ou '💾 Baixar HTML (minha-pagina.html)' para salvar o arquivo no seu computador.\n4. Dê duplo clique no arquivo salvo para abri-lo no seu navegador de internet!\n\n• Atividade 6.2 — Criando com Inteligência Artificial (IA & Prompts):\n1. Entenda o conceito: Inteligência Artificial é um assistente virtual que entende linguagem natural. Um 'Prompt' é a instrução ou comando que você envia para a IA.\n2. Copie o prompt pré-formatado da lição contendo suas preferências visuais e de cores.\n3. Cole em qualquer chat de IA (Google Gemini, ChatGPT, Copilot) e veja a IA criar uma Home Page ainda mais fluida e elegante para você!`,
+          image: "../../assets/img/interrnet/gerenciador-senha-chrome.png",
+          boxType: "code",
+          boxTitle: "💻 Atividade Prática Concluída",
+          boxText: "Parabéns! Você aprendeu a gerar código HTML personalizado e a interagir com Inteligência Artificial usando Prompts!"
+        },
+        {
+          lessonNum: 3,
+          chapter: "AULA 03: DOMINANDO O GOOGLE E PRODUTIVIDADE NA NUVEM",
+          heading: "3.1 O Ecossistema Google & A Conta Gmail",
+          content: `A Conta Google (Gmail) funciona como o seu passaporte digital único. Com um único e-mail e senha, você acessa e-mails, documentos, arquivos, vídeos e mapas de qualquer lugar do mundo.\n\n⚠️ Cuide bem da sua senha de e-mail e anote em um caderno seguro.`,
+          images: ["../../assets/img/interrnet/a3/gmail-imagem-foto-user-menu-google-fechado.png", "../../assets/img/interrnet/a3/botao-escreve-email-gmail.png"]
+        },
+        {
+          lessonNum: 3,
+          heading: "3.2 O Menu Mágico dos 9 Pontinhos (Waffle)",
+          content: `Ao entrar na sua Conta Google, no canto superior direito há um ícone com 9 pontinhos (Waffle). Ele dá acesso gratuito aos principais aplicativos:\n\n• 📄 Google Docs (Documentos): Editor de texto profissional (equivalente ao Word).\n• 📊 Google Sheets (Planilhas): Tabelas e cálculos automáticos (equivalente ao Excel).\n• 🖼️ Google Slides (Apresentações): Criação de slides visuais (equivalente ao PowerPoint).\n• 📁 Google Drive: Seu armário de arquivos na nuvem com 15 GB gratuitos.`,
+          images: ["../../assets/img/interrnet/a3/grade-menu-apps--google.png", "../../assets/img/interrnet/a3/dual-linha-grade-menu-apps--google.png"]
+        },
+        {
+          lessonNum: 3,
+          heading: "3.3 Recursos do Google Docs e Planilhas",
+          content: `• Salvamento Automático Contínuo: No Google Docs e Planilhas não existe o botão 'Salvar'. Cada letra ou número digitado é salvo na nuvem instantaneamente.\n• Google Planilhas: As células são identificadas por Colunas (A, B, C) e Linhas (1, 2, 3). Para somar valores, selecione as células e veja o resultado automático no canto inferior direito.`,
+          images: ["../../assets/img/interrnet/a3/barra-ferramentas-googlr-docs.png", "../../assets/img/interrnet/a3/barra-ferramentas-planolha.png"]
+        },
+        {
+          lessonNum: 3,
+          heading: "3.4 O Poder do Compartilhamento & Google Drive",
+          content: `Em vez de anexar arquivos pesados por e-mail, clique no botão azul 'Compartilhar':\n\n• Leitor: A pessoa pode apenas visualizar e ler o documento.\n• Editor: A pessoa pode alterar, escrever e trabalhar junto com você em tempo real.\n\n📁 Passo a Passo Guiado no Google Drive (drive.google.com):\n1. Criar Pastas e Docs: Clique no botão '+ Novo' -> Selecione 'Nova pasta' (para organizar) ou 'Documentos Google' / 'Planilhas Google' (para criar um arquivo novo).\n2. Subir (Upload) Arquivos e Pastas do PC:\n   • Método 1 (+ Novo): Clique em '+ Novo' -> Escolha 'Fazer upload de arquivo' (para 1 arquivo) ou 'Fazer upload de pasta' (para uma pasta inteira) e selecione no computador.\n   • Método 2 (Arrastar e Soltar): Abra a pasta do seu PC, clique no arquivo, segure e arraste diretamente para a tela do navegador no Google Drive!`,
+          images: ["../../assets/img/interrnet/a3/botao-compartilhar-docs-google.png", "../../assets/img/interrnet/a3/configuracao-compartilhameto-documeto.png"]
+        },
+        {
+          lessonNum: 3,
+          heading: "3.5 Operadores Avançados de Busca no Google",
+          content: `Torne suas pesquisas no Google infinitamente mais precisas usando os operadores:\n\n• Busca Exata: Use aspas duplas -> "informática para terceira idade"\n• Pesquisar em Site Específico: site:g1.globo.com tecnologia\n• Buscar Arquivos em PDF: filetype:pdf apostila redes\n• Excluir Palavras: manga -fruta (busca a história em quadrinhos descartando frutas)\n• Buscar no Título: intitle:segurança digital`,
+          image: "../../assets/img/google-search.png"
+        },
+        {
+          lessonNum: null,
+          chapter: "REFERÊNCIAS BIBLIOGRÁFICAS E ACADÊMICAS",
+          heading: "Leituras Recomendadas & Valor Acadêmico Reconhecido",
+          content: `1. Berners-Lee, T., Cailliau, R., Groff, J. F., & Pollermann, B. (1992). World-Wide Web: The Information Universe. Electronic Networking: Research, Applications and Policy, 2(1), 52-58.\n2. Brin, S., & Page, L. (1998). The Anatomy of a Large-Scale Hypertextual Web Search Engine. Computer Networks and ISDN Systems, 30(1-7), 107-117.\n3. Tanenbaum, A. S., & Wetherall, D. J. (2011). Computer Networks (5th ed.). Prentice Hall.\n4. Stallings, W. (2018). Data and Computer Communications (10th ed.). Pearson Education.\n5. W3C (World Wide Web Consortium). Web Content Accessibility Guidelines (WCAG) 2.2. W3C Recommendation.`,
+          boxType: "academic",
+          boxTitle: "🎓 Bibliografia de Referência",
+          boxText: "Material formulado com base em fontes acadêmicas e padrões internacionais do W3C."
+        }
+      ]
+    },
+    windows: {
+      title: "Módulo 1: Sistema Operacional Windows",
+      subtitle: "Apostila Didática Oficial Completa — Prof. Marcos Rangel",
+      moduleName: "Sistema Operacional Windows",
+      sections: [
+        {
+          chapter: "UNIDADE 1: CONCEITO E ESTRUTURA DO WINDOWS",
+          heading: "1.1 O que é o Sistema Operacional?",
+          content: "O Sistema Operacional (S.O.) é o software fundamental que gerencia o hardware do computador (processador, memória RAM, disco rígido/SSD) e possibilita a execução de aplicativos e a interação do usuário através de uma interface gráfica amigável."
+        },
+        {
+          heading: "1.2 Área de Trabalho, Janelas e Barra de Tarefas",
+          content: "A Área de Trabalho (Desktop) organiza os ícones de atalho e arquivos principais. A Barra de Tarefas exibe o Menu Iniciar, os programas fixados e a área de notificação com relógio e conexões."
+        },
+        {
+          heading: "1.3 Gerenciamento de Arquivos e Pastas (Explorador de Arquivos)",
+          content: "O Explorador de Arquivos (Tecla Windows + E) permite criar, renomear, mover, copiar e organizar pastas e documentos. Utilize nomes claros e estrutura em subpastas para manter seus arquivos organizados."
+        },
+        {
+          heading: "1.4 Guia Completo de Atalhos de Teclado",
+          content: `• Ctrl + C: Copiar item selecionado\n• Ctrl + V: Colar item copiado\n• Ctrl + X: Recortar (mover) item\n• Ctrl + Z: Desfazer a última ação\n• Alt + Tab: Alternar entre janelas abertas\n• Tecla Windows + D: Exibir ou ocultar a Área de Trabalho\n• Tecla Windows + E: Abrir o Explorador de Arquivos\n• Tecla Windows + L: Bloquear a estação de trabalho imediatamente\n• Alt + F4: Fechar o programa ativo`
+        },
+        {
+          heading: "1.5 Lixeira, Segurança e Manutenção Preventiva",
+          content: "Arquivos excluídos com a tecla Delete vão para a Lixeira e podem ser restaurados. Para apagar permanentemente, utilize Shift + Delete. Mantenha o Windows Defender ativo e o Windows Update atualizado."
         }
       ]
     },
     word: {
-      title: "Módulo 2: Microsoft Word — Editor de Textos",
-      subtitle: "Material Didático Oficial — Prof. Marcos Rangel",
+      title: "Módulo 2: Microsoft Word — Editor de Textos Profissional",
+      subtitle: "Apostila Didática Oficial Completa — Prof. Marcos Rangel",
+      moduleName: "Microsoft Word",
       sections: [
         {
-          heading: "1. Introdução ao Microsoft Word",
-          content: "O Microsoft Word é o processador de texto mais utilizado para a criação de documentos profissionais, relatórios, cartas, currículos e trabalhos acadêmicos."
+          chapter: "UNIDADE 1: EDIÇÃO E FORMATAÇÃO DE DOCUMENTOS",
+          heading: "1.1 Introdução ao Processamento de Texto",
+          content: "O Microsoft Word é o padrão da indústria para a criação de documentos impressos e digitais, como relatórios, cartas oficiais, contratos, livros e trabalhos científicos."
         },
         {
-          heading: "2. Formatação de Fonte e Parágrafos",
-          content: `Principais estilos de texto:\n• Negrito (Ctrl + N): Destaca palavras importantes.\n• Itálico (Ctrl + I): Utilizado para termos estrangeiros ou citações.\n• Sublinhado (Ctrl + S): Passa uma linha sob o texto.\n\nAlinhamentos de Parágrafo:\n• Alinhar à Esquerda (Ctrl + Q)\n• Centralizado (Ctrl + E)\n• Alinhar à Direita (Ctrl + G)\n• Justificado (Ctrl + J): Alinha margem esquerda e direita simultaneamente (padrão profissional e ABNT).`
+          heading: "1.2 Formatação de Fonte e Parágrafos",
+          content: `• Estilos de Texto: Negrito (Ctrl + N), Itálico (Ctrl + I), Sublinhado (Ctrl + S).\n• Alinhamentos de Parágrafo:\n  - Esquerda (Ctrl + Q)\n  - Centralizado (Ctrl + E)\n  - Direita (Ctrl + G)\n  - Justificado (Ctrl + J): Alinha margens esquerda e direita simultaneamente, essencial para documentos formais.`
         },
         {
-          heading: "3. Inserção de Tabelas, Imagens e Quebras",
-          content: "Na guia 'Inserir', você pode adicionar tabelas para organizar dados em linhas e colunas, imagens com ajuste de texto automático e Quebra de Página (Ctrl + Enter) para iniciar novos capítulos sem pressionar Enter repetidamente."
+          heading: "1.3 Tabelas, Imagens e Elementos Gráficos",
+          content: "Insira tabelas para organizar dados tabulares e ajuste a disposição do texto em torno de imagens inseridas. Utilize Quebra de Página (Ctrl + Enter) para iniciar novos capítulos corretamente."
         },
         {
-          heading: "4. Pincel de Formatação e Estilos",
-          content: "O Pincel de Formatação (guia Página Inicial) permite copiar rapidamente a cor, fonte e tamanho de um trecho de texto e aplicar em outro com um único clique."
+          heading: "1.4 Pincel de Formatação e Estilos Rápidos",
+          content: "O Pincel de Formatação copia todos os atributos visuais de um texto (fonte, tamanho, cor, espaçamento) e os aplica instantaneamente em outro trecho com um clique."
         },
         {
-          heading: "5. Normas ABNT Básicas",
-          content: "Fonte Arial ou Times New Roman tamanho 12 para o corpo do texto, espaçamento entre linhas de 1,5 cm e margens: Superior 3cm, Esquerda 3cm, Inferior 2cm e Direita 2cm."
+          heading: "1.5 Normas ABNT Fundamentais",
+          content: "• Fonte: Arial ou Times New Roman tamanho 12 para corpo do texto.\n• Espaçamento entre linhas: 1,5 cm.\n• Margens: Superior 3cm, Esquerda 3cm, Inferior 2cm, Direita 2cm."
         }
       ]
     },
     excel: {
-      title: "Módulo 3: Microsoft Excel — Planilhas Eletrônicas",
-      subtitle: "Material Didático Oficial — Prof. Marcos Rangel",
+      title: "Módulo 3: Microsoft Excel — Planilhas Eletrônicas e Análise de Dados",
+      subtitle: "Apostila Didática Oficial Completa — Prof. Marcos Rangel",
+      moduleName: "Microsoft Excel",
       sections: [
         {
-          heading: "1. Estrutura Fundamental da Planilha",
-          content: "O Excel organiza os dados em Colunas (identificadas por letras: A, B, C...) e Linhas (identificadas por números: 1, 2, 3...). O encontro de uma coluna com uma linha forma uma Célula (exemplo: A1, B5, C10)."
+          chapter: "UNIDADE 1: ESTRUTURA, FÓRMULAS E FUNÇÕES",
+          heading: "1.1 Matriz de Células, Linhas e Colunas",
+          content: "O Excel organiza informações em Colunas (letras: A, B, C...) e Linhas (números: 1, 2, 3...). O cruzamento de uma coluna com uma linha forma a Célula (exemplo: A1, B5, C10)."
         },
         {
-          heading: "2. Fórmulas e Operadores Matemáticos",
-          content: `Toda fórmula no Excel DEVE obrigatoriamente iniciar com o sinal de igual (=).\n• Adição: + (Ex: =A1+B1)\n• Subtração: - (Ex: =A1-B1)\n• Multiplicação: * (Ex: =A1*B1)\n• Divisão: / (Ex: =A1/B1)\n• Exponenciação: ^ (Ex: =A1^2)`
+          heading: "1.2 Fórmulas e Operadores Matemáticos",
+          content: `Toda fórmula ou função no Excel DEVE ser iniciada obrigatoriamente pelo sinal de igual (=).\n• Adição: + (Ex: =A1+B1)\n• Subtração: - (Ex: =A1-B1)\n• Multiplicação: * (Ex: =A1*B1)\n• Divisão: / (Ex: =A1/B1)\n• Potenciação: ^ (Ex: =A1^2)`
         },
         {
-          heading: "3. Funções Fundamentais do Excel",
-          content: `• =SOMA(A1:A10): Soma todos os valores no intervalo de A1 até A10.\n• =MÉDIA(A1:A10): Calcula a média aritmética dos valores.\n• =MÁXIMO(A1:A10): Retorna o maior valor encontrado no intervalo.\n• =MÍNIMO(A1:A10): Retorna o menor valor encontrado no intervalo.\n• =CONT.SE(A1:A10; ">=7"): Conta quantas células atendem ao critério especificado.`
+          heading: "1.3 Funções Essenciais do Excel",
+          content: `• =SOMA(A1:A10): Soma os valores do intervalo.\n• =MÉDIA(A1:A10): Calcula a média aritmética dos valores.\n• =MÁXIMO(A1:A10): Identifica o maior valor do intervalo.\n• =MÍNIMO(A1:A10): Identifica o menor valor do intervalo.\n• =CONT.SE(A1:A10; ">=7"): Conta a quantidade de células que atendem a um critério.`
         },
         {
-          heading: "4. Função Lógica =SE()",
-          content: `A função SE realiza um teste lógico e retorna um valor se for VERDADEIRO e outro se for FALSO.\nSintaxe: =SE(teste_lógico; valor_se_verdadeiro; valor_se_falso)\nExemplo: =SE(B2>=7; "APROVADO"; "REPROVADO")`
+          heading: "1.4 Tomada de Decisão com a Função Lógica =SE()",
+          content: `A função SE avalia uma condição e retorna um resultado para VERDADEIRO e outro para FALSO.\nSintaxe: =SE(teste_lógico; valor_se_verdadeiro; valor_se_falso)\nExemplo: =SE(B2>=7; "APROVADO"; "REPROVADO")`
         },
         {
-          heading: "5. Gráficos e Formatação Condicional",
-          content: "Gráficos de Colunas e Pizza transformam números em dados visuais de fácil compreensão. A Formatação Condicional altera automaticamente a cor da célula (ex: vermelho para notas baixas, verde para notas altas) de acordo com regras pré-definidas."
+          heading: "1.5 Gráficos e Formatação Condicional",
+          content: "Gráficos de colunas, barras e pizza transformam números brutos em informações visuais dinâmicas. A Formatação Condicional altera automaticamente a cor das células com base em regras personalizadas."
         }
       ]
     },
     powerpoint: {
-      title: "Módulo 4: Microsoft PowerPoint — Apresentações Visuais",
-      subtitle: "Material Didático Oficial — Prof. Marcos Rangel",
+      title: "Módulo 4: Microsoft PowerPoint — Apresentações Visuais Impactantes",
+      subtitle: "Apostila Didática Oficial Completa — Prof. Marcos Rangel",
+      moduleName: "Microsoft PowerPoint",
       sections: [
         {
-          heading: "1. Conceito e Objetivo do PowerPoint",
-          content: "O PowerPoint é a ferramenta de criação de apresentações de slides utilizada para expor ideias, projetos, aulas e relatórios de forma visualmente atraente e dinâmica."
+          chapter: "UNIDADE 1: CRIAÇÃO E APRESENTAÇÃO DE SLIDES",
+          heading: "1.1 Conceito de Comunicação Visual em Slides",
+          content: "O PowerPoint possibilita a estruturação de ideias, relatórios e aulas em sequências visuais dinâmicas compostas por slides."
         },
         {
-          heading: "2. Estrutura de Slides e Layouts",
-          content: "Cada apresentação é composta por uma sequência de Slides. Na guia 'Página Inicial' -> 'Novo Slide', é possível escolher layouts específicos como Slide de Título, Título e Conteúdo ou Duas Partes de Conteúdo."
+          heading: "1.2 Layouts e Estrutura de Conteúdo",
+          content: "Escolha layouts adequados para cada slide (Título, Título e Conteúdo, Comparação) para garantir clareza na transmissão da mensagem."
         },
         {
-          heading: "3. Transições e Animações",
-          content: `• Transição de Slides: Efeito visual aplicado quando se passa de um slide para o outro (ex: Esmaecer, Empurrar, Transição suave).\n• Animação de Objetos: Efeito aplicado a textos, imagens ou gráficos dentro de um mesmo slide para controlar a ordem de aparecimento dos elementos.`
+          heading: "1.3 Transições de Slides e Animações",
+          content: "• Transição de Slides: Efeitos visuais na passagem entre um slide e outro (ex: Esmaecer, Suave).\n• Animação de Objetos: Ordem e forma como textos, gráficos e imagens surgem dentro de um mesmo slide."
         },
         {
-          heading: "4. Modo de Exibição e Atalhos",
-          content: `• F5: Inicia a apresentação de slides desde o primeiro slide.\n• Shift + F5: Inicia a apresentação a partir do slide selecionado atualmente.\n• Tecla ESC: Encerra a exibição da apresentação a qualquer momento.`
+          heading: "1.4 Teclas de Atalho de Apresentação",
+          content: `• Tecla F5: Inicia a apresentação a partir do primeiro slide.\n• Shift + F5: Inicia a apresentação a partir do slide atual.\n• Tecla ESC: Interrompe a apresentação e retorna à edição.`
         },
         {
-          heading: "5. Boas Práticas para Apresentações Profissionais",
-          content: "Evite blocos de texto muito longos; prefira tópicos curtos (bullet points). Use bom contraste entre o fundo e a cor do texto e escolha imagens de alta qualidade para ilustrar os conceitos abordados."
-        }
-      ]
-    },
-    internet: {
-      title: "Módulo 5: Internet, Nuvem e Navegação Segura",
-      subtitle: "Material Didático Oficial — Prof. Marcos Rangel",
-      sections: [
-        {
-          heading: "1. O que é a Internet e a World Wide Web",
-          content: "A Internet é uma rede mundial de computadores conectada globalmente. A World Wide Web (WWW), criada por Tim Berners-Lee em 1989, é o sistema de páginas e hiperlinks que navegamos diariamente."
-        },
-        {
-          heading: "2. Tipos de Redes de Computadores",
-          content: `• LAN (Local Area Network): Rede local (ex: Wi-Fi da sua casa ou escritório).\n• MAN (Metropolitan Area Network): Rede metropolitana abrangendo uma cidade.\n• WAN (Wide Area Network): Rede de longa distância conectando países e continentes.`
-        },
-        {
-          heading: "3. Navegadores (Browsers) e Atalhos",
-          content: `Programas como Google Chrome, Microsoft Edge e Mozilla Firefox permitem acessar sites.\nAtalhos úteis:\n• Ctrl + T: Abre uma nova guia de navegação.\n• Ctrl + W: Fecha a guia atual.\n• Ctrl + Shift + N: Abre uma janela em Modo Anônimo (não salva histórico local).\n• Ctrl + D: Adiciona a página atual aos Favoritos.`
-        },
-        {
-          heading: "4. Prevenção Contra Golpes Virtuais",
-          content: `• Phishing: E-mails ou mensagens falsas que se passam por bancos para roubar senhas.\n• Boleto Falso: Confira sempre o beneficiário e o CNPJ antes de efetuar o pagamento.\n• Sites Falsos: Verifique se o endereço possui o cadeado de segurança (https://) e evite ofertas absurdamente baratas.`
-        },
-        {
-          heading: "5. Computação em Nuvem (Cloud Computing)",
-          content: "Serviços como Google Drive, OneDrive e Dropbox armazenam seus arquivos com segurança na nuvem, permitindo acessá-los de qualquer computador ou celular com internet."
+          heading: "1.5 Boas Práticas para Apresentações Profissionais",
+          content: "Utilize textos concisos em tópicos, mantenha alto contraste entre o texto e o fundo da tela e utilize imagens de alta definição que complementem a fala do apresentador."
         }
       ]
     }
   };
 
-  function downloadLessonPDF(moduleId) {
-    const data = LESSONS[moduleId] || LESSONS.windows;
+  function resolveImagePath(path) {
+    if (!path) return "";
+    if (path.startsWith("http://") || path.startsWith("https://") || path.startsWith("data:")) return path;
+    try {
+      return new URL(path, window.location.href).href;
+    } catch (e) {
+      return path;
+    }
+  }
+
+  function downloadLessonPDF(moduleId, subLessonId) {
+    const data = LESSONS[moduleId] || LESSONS.internet;
+    const lessonNum = (subLessonId && !isNaN(parseInt(subLessonId, 10))) ? parseInt(subLessonId, 10) : null;
+
+    let targetSections = data.sections;
+    let pdfTitle = data.title;
+    let pdfSubtitle = data.subtitle;
+
+    const lessonTitles = {
+      1: "Aula 01: Introdução à Internet e Navegação Segura",
+      2: "Aula 02: Navegando na Internet & História do HTML",
+      3: "Aula 03: Dominando o Google e Produtividade na Nuvem"
+    };
+
+    if (lessonNum) {
+      targetSections = data.sections.filter(sec => sec.lessonNum === null || sec.lessonNum === undefined || sec.lessonNum === lessonNum);
+      if (lessonTitles[lessonNum]) {
+        pdfTitle = `${data.moduleName} • ${lessonTitles[lessonNum]}`;
+        pdfSubtitle = `Apostila Didática Exclusiva — ${lessonTitles[lessonNum]} — Prof. Marcos Rangel`;
+      }
+    }
     
-    const printWin = window.open("", "_blank", "width=850,height=950");
+    const printWin = window.open("", "_blank", "width=900,height=980");
     if (!printWin) {
-      alert("Por favor, permita pop-ups no seu navegador para visualizar e baixar o PDF da aula.");
+      alert("Por favor, permita pop-ups no seu navegador para visualizar e baixar o PDF completo da aula.");
       return;
     }
 
@@ -153,110 +277,241 @@ window.PDFLessons = (function() {
       <html lang="pt-BR">
       <head>
         <meta charset="UTF-8">
-        <title>${data.title} — PDF Didático</title>
+        <title>${pdfTitle} — Apostila Didática Completa</title>
         <style>
-          @page { size: A4; margin: 20mm; }
+          @page {
+            size: A4;
+            margin: 18mm 15mm 18mm 15mm;
+          }
           body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: #1a1a1a;
-            line-height: 1.6;
+            color: #1F160F;
+            line-height: 1.65;
             margin: 0;
             padding: 24px;
-            background: #fff;
-          }
-          .header-pdf {
-            border-bottom: 3px solid #EA580C;
-            padding-bottom: 14px;
-            margin-bottom: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-          }
-          .header-pdf h1 {
-            font-size: 24px;
-            color: #8E2C07;
-            margin: 0 0 6px 0;
-          }
-          .header-pdf p {
-            font-size: 14px;
-            color: #666;
-            margin: 0;
-          }
-          .badge-wr {
-            background: #FFE4C7;
-            color: #8A5A17;
-            font-weight: bold;
-            font-size: 12px;
-            padding: 6px 12px;
-            border-radius: 6px;
-            text-transform: uppercase;
-          }
-          .section-box {
-            background: #FAFAFA;
-            border: 1px solid #E5E5E5;
-            border-left: 4px solid #EA580C;
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin-bottom: 18px;
-            page-break-inside: avoid;
-          }
-          .section-box h2 {
-            font-size: 17px;
-            color: #20130B;
-            margin-top: 0;
-            margin-bottom: 8px;
-          }
-          .section-box p {
-            font-size: 14px;
-            color: #333;
-            margin: 0;
-            white-space: pre-line;
-          }
-          .footer-pdf {
-            margin-top: 30px;
-            padding-top: 14px;
-            border-top: 1px solid #ddd;
-            font-size: 12px;
-            color: #777;
-            display: flex;
-            justify-content: space-between;
+            background: #FFFFFF;
+            font-size: 13.5px;
           }
           .btn-print {
             position: fixed;
             top: 16px;
             right: 16px;
             background: #EA580C;
-            color: #fff;
+            color: #FFFFFF;
             border: none;
-            padding: 12px 20px;
+            padding: 12px 24px;
             border-radius: 8px;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 14px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+            z-index: 9999;
+          }
+          .btn-print:hover {
+            background: #C2410C;
+          }
+          .header-banner {
+            border-bottom: 3px solid #EA580C;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .header-title h1 {
+            font-size: 22px;
+            color: #8E2C07;
+            margin: 0 0 4px 0;
+            font-weight: 700;
+          }
+          .header-title p {
+            font-size: 13px;
+            color: #666666;
+            margin: 0;
+          }
+          .badge-institution {
+            background: #FFF3E0;
+            border: 1.5px solid #EA580C;
+            color: #8E2C07;
+            font-weight: 700;
+            font-size: 11px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+          .chapter-title {
+            background: #1E130B;
+            color: #EA580C;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 700;
+            margin-top: 26px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            page-break-after: avoid;
+          }
+          .section-block {
+            background: #FFFDF9;
+            border: 1px solid #EADBCE;
+            border-left: 4px solid #EA580C;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            page-break-inside: avoid;
+          }
+          .section-block h3 {
+            font-size: 15px;
+            color: #1E130B;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-weight: 700;
+          }
+          .section-block p {
+            font-size: 13.5px;
+            color: #2D2118;
+            margin: 0;
+            white-space: pre-line;
+          }
+          .pdf-img-container {
+            text-align: center;
+            margin: 14px 0;
+            page-break-inside: avoid;
+          }
+          .pdf-img-container img {
+            max-width: 85%;
+            max-height: 220px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid #CBD5E1;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+          }
+          .pdf-img-grid {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 14px 0;
+            page-break-inside: avoid;
+          }
+          .pdf-img-grid img {
+            max-width: 46%;
+            max-height: 180px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid #CBD5E1;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+          }
+          .box-callout {
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-top: 12px;
+            font-size: 13px;
+          }
+          .box-tip {
+            background: #E6FFFA;
+            border: 1px solid #0D9488;
+            color: #0F766E;
+          }
+          .box-warning {
+            background: #FEF2F2;
+            border: 1px solid #EF4444;
+            color: #B91C1C;
+          }
+          .box-code {
+            background: #1E1E1E;
+            color: #4ADE80;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #333333;
+          }
+          .box-academic {
+            background: #F3E8FF;
+            border: 1px solid #9333EA;
+            color: #6B21A8;
+          }
+          .box-callout strong {
+            display: block;
+            margin-bottom: 4px;
+          }
+          .student-signature-box {
+            margin-top: 32px;
+            padding: 16px;
+            border: 1.5px dashed #CBD5E1;
+            border-radius: 8px;
+            background: #F8FAFC;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            page-break-inside: avoid;
+          }
+          .signature-line {
+            width: 50%;
+            border-top: 1px solid #475569;
+            text-align: center;
+            padding-top: 4px;
+            font-size: 11px;
+            color: #475569;
+          }
+          .footer-pdf {
+            margin-top: 28px;
+            padding-top: 12px;
+            border-top: 1px solid #E2E8F0;
+            font-size: 11px;
+            color: #64748B;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
           }
           @media print {
-            .btn-print { display: none; }
+            .btn-print { display: none !important; }
+            body { padding: 0; }
           }
         </style>
       </head>
       <body>
-        <button class="btn-print" onclick="window.print()">🖨️ Salvar como PDF / Imprimir</button>
+        <button class="btn-print" onclick="window.print()">🖨️ Salvar como PDF / Imprimir Apostila Completa</button>
         
-        <div class="header-pdf">
-          <div>
-            <h1>${data.title}</h1>
-            <p>${data.subtitle}</p>
+        <div class="header-banner">
+          <div class="header-title">
+            <h1>${pdfTitle}</h1>
+            <p>${pdfSubtitle}</p>
           </div>
-          <div class="badge-wr">WR CAPACITAÇÃO</div>
+          <div class="badge-institution">WR CAPACITAÇÃO PROFISSIONAL</div>
         </div>
 
-        ${data.sections.map(sec => `
-          <div class="section-box">
-            <h2>${sec.heading}</h2>
+        ${targetSections.map(sec => `
+          ${sec.chapter ? `<div class="chapter-title">${sec.chapter}</div>` : ''}
+          <div class="section-block">
+            <h3>${sec.heading}</h3>
             <p>${sec.content}</p>
-          </div>
+            ${sec.images && sec.images.length ? `
+              <div class="pdf-img-grid">
+                ${sec.images.map(img => `<img src="${resolveImagePath(img)}" alt="Ilustração Didática">`).join('')}
+              </div>
+            ` : sec.image ? `
+              <div class="pdf-img-container">
+                <img src="${resolveImagePath(sec.image)}" alt="Ilustração Didática">
+              </div>
+            ` : ''}
+            ${sec.boxTitle ? `
+              <div class="box-callout box-${sec.boxType || 'tip'}">
+                <strong>${sec.boxTitle}</strong>
+                <span>${sec.boxText}</span>
+              </div>
+            ` : ''}
         `).join('')}
+
+        <div class="student-signature-box">
+          <div>
+            <span style="font-weight:700; font-size:12px; color:#1E293B;">Comprovante de Estudo & Frequência</span><br>
+            <span style="font-size:11px; color:#64748B;">Portal Didático de Informática Básica • Prof. Marcos Rangel</span>
+          </div>
+          <div class="signature-line">
+            Assinatura do Aluno(a) / Data
+          </div>
+        </div>
 
         <div class="footer-pdf">
           <span>Prof. Marcos Rangel — okcomputer.use.linux@gmail.com</span>
@@ -267,7 +522,7 @@ window.PDFLessons = (function() {
           window.onload = function() {
             setTimeout(function() {
               window.print();
-            }, 400);
+            }, 500);
           };
         </script>
       </body>

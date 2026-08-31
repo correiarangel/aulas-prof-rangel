@@ -1,0 +1,50 @@
+# 🗺️ ROADMAP — Portal de Aulas de Informática Básica
+### Prof. Marcos Rangel | WR Capacitação Profissional
+
+---
+
+## 📌 Status Geral dos Módulos
+
+### 💻 Módulo 1: Sistema Operacional Windows
+- [x] Material Didático Interativo por Fases
+- [x] Exercício de Fixação Interativo
+- [x] Prova Final com Senha de Liberação (`a001`)
+- [x] Emissão de Comprovante TXT, PDF, WhatsApp e E-mail com SHA-256
+
+### 📝 Módulo 2: Microsoft Word
+- [x] Material Didático Interativo por Fases
+- [x] Exercício de Fixação Interativo
+- [x] Prova Final com Senha de Liberação (`b002`)
+- [x] Emissão de Comprovante TXT, PDF, WhatsApp e E-mail com SHA-256
+
+### 📊 Módulo 3: Microsoft Excel
+- [x] Material Didático Interativo por Fases
+- [x] Exercício de Fixação Interativo
+- [x] Prova Final com Senha de Liberação (`c003`)
+- [x] Emissão de Comprovante TXT, PDF, WhatsApp e E-mail com SHA-256
+
+### 📊 Módulo 4: Microsoft PowerPoint
+- [x] Material Didático Interativo por Fases
+- [x] Exercício de Fixação Interativo
+- [x] Prova Final com Senha de Liberação (`d004`)
+- [x] Emissão de Comprovante TXT, PDF, WhatsApp e E-mail com SHA-256
+
+### 🌐 Módulo 5: Internet & Segurança
+- [x] **Aula 01**: Introdução à Internet e Navegação Segura (Leitura em 6 Tópicos)
+- [x] **Aula 01**: Exercício de Fixação (5 Questões) com Validação e Assinatura Digital SHA-256
+- [x] **Aula 01**: Botões Finais Integrados (📄 TXT, 📑 PDF, 📱 WhatsApp `19 99130-6907`, ✉️ E-mail `okcomputer.use.linux@gmail.com`)
+- [x] **Aula 01**: Remoção de botão de PDF redundante no cabeçalho superior do Hub
+- [x] **Especificação SDD Geral**: Especificação da Arquitetura e Regras do Projeto (`Docs/SPEC-PROJECT-ARCHITECTURE.md`)
+- [x] **Especificação SDD Aula 02**: Navegando na Internet & História do HTML (`Docs/SPEC-AULA-02.md`) com 18 imagens mapeadas
+- [x] **Especificação SDD Aula 03**: Dominando o Google & Produtividade na Nuvem (`Docs/SPEC-AULA-03.md`) com Waffle e operadores
+- [x] **Gerador de PDF Apostila Individual por Aula**: Reestruturação do `assets/js/pdf-lessons.js` com suporte a filtragem dinâmica por aula (`lessonNum`) e imagens ilustrativas dedicadas.
+- [x] **Aula 02 (Implementação HTML)**: Navegando na Internet & História do HTML (6 Tópicos, Atividade do Bloco de Notas, 5 Questões e SHA-256 com senha `b002`)
+- [x] **Aula 02 (Formulário & IA)**: Formulário interativo gerador de HTML com botões de copiar/baixar + Atividade prática de Inteligência Artificial e Prompts didáticos com referências (UNESCO, MEC, W3C)
+- [x] **Aula 03 (Implementação HTML, Imagens `a3/` & Google Drive)**: Dominando o Google & Produtividade na Nuvem (7 Tópicos, Waffle 9 Pontinhos, Docs/Sheets/Slides/Drive, Passo a Passo Guiado de Criação e Upload de Pastas/Docs do PC, 12 imagens ilustrativas e SHA-256 com senha `c003`)
+- [x] **Aula 04**: Prova Final de Avaliação (`prova-internet.html`) com Senha (`d004`) e Assinatura Digital SHA-256
+
+---
+
+## 🔒 Diretrizes de Manutenção e Servidores de Teste
+- [x] Encerrar imediatamente qualquer servidor HTTP local (`python3 -m http.server`) após a realização de testes e capturas no navegador.
+- [x] Manter a Tríade de Documentação SDD (`ROADMAP.md`, `INDEX.md`, `DOCUMENTATION.md`) 100% atualizada a cada modificação.

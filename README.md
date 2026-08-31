@@ -59,7 +59,7 @@ Para conferir os padrões arquiteturais, diretrizes de design, fluxo pedagógico
     ├── word/                     # Módulo 2: Microsoft Word
     ├── excel/                    # Módulo 3: Microsoft Excel
     ├── powerpoint/               # Módulo 4: Microsoft PowerPoint
-    └── internet/                 # Módulo 5: Internet & Nuvem (4 Aulas)
+    └── internet/                 # Módulo 5: Internet & Segurança (4 Aulas)
         ├── index.html            # Hub do Módulo 5 + Aulas Teóricas (1, 2 e 3)
         └── prova-internet.html   # Aula 04: Avaliação Final do Módulo
 ```

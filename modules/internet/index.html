@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/style.css">
   <script src="../../assets/js/pdf-lessons.js"></script>
+  <script src="../../assets/js/quiz-engine.js"></script>
   <style>
     .fixation-panel {
       display: none;
@@ -72,15 +73,12 @@
       <div class="menu-hub-card">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
           <div>
-            <span class="eyebrow-badge"><span class="dot"></span> Catálogo de Aulas Gamificadas</span>
+            <span class="eyebrow-badge"><span class="dot"></span> Catálogo de Aulas Interativas</span>
             <h1 style="font-size:32px; color:var(--amber); margin:10px 0 6px 0;">📚 Módulo 5 — Menu de Aulas & Avaliação</h1>
             <p style="font-size:18px; color:var(--ink-light); margin:0;">
-              O Módulo de Internet possui conteúdo interativo gamificado. O acesso requer a senha informada em sala de aula pelo Professor Marcos Rangel.
+              O Módulo de Internet possui conteúdo didático interativo. O acesso requer a senha informada em sala de aula pelo Professor Marcos Rangel.
             </p>
           </div>
-          <button type="button" class="btn-pdf-download" onclick="window.PDFLessons.downloadLessonPDF('internet')" style="padding:12px 20px; font-size:15px;">
-            📄 Baixar Aula em PDF
-          </button>
         </div>
 
         <!-- Grade das Aulas do Módulo -->
@@ -178,7 +176,7 @@
       <div class="gamify-header-bar no-print">
         <div class="gamify-progress-container">
           <div class="gamify-progress-label">
-            <span>🎮 Progresso Gamificado da Aula 1</span>
+            <span>Progresso da Aula 1</span>
             <span id="gamify-percent-1">0% Concluído</span>
           </div>
           <div class="gamify-progress-track">
@@ -191,7 +189,7 @@
       </div>
 
       <article class="lesson-reading-card">
-        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 5 • Aula 1 Gamificada</span>
+        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 5 • Aula 1</span>
         <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 1: Introdução à Internet e Navegação Segura</h1>
 
         <!-- ÍNDICE DE TÓPICOS DA AULA 1 -->
@@ -459,7 +457,7 @@
         <div id="l1-fixation" class="fixation-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
             <div>
-              <span class="badge-trophy">🏆 Exercício Obrigatorio de Fixação</span>
+              <span class="badge-trophy">🏆 Exercício Obrigatório de Fixação</span>
               <h2 style="color:var(--teal-deep); font-size:26px; margin:8px 0 0 0;">📝 Avaliação Didática — Aula 1 (5 Questões)</h2>
             </div>
             <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">Nota Mínima: 8,0 (4 de 5 acertos)</span>
@@ -547,22 +545,962 @@
         </button>
       </div>
 
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DA AULA 2 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Aula 2</span>
+            <span id="gamify-percent-2">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-2"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-2">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura Pendente</span>
+        </div>
+      </div>
+
       <article class="lesson-reading-card">
         <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 5 • Aula 2</span>
-        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 2: História do HTML e sua Ligação com a Internet</h1>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 2: Navegando na Internet & História do HTML</h1>
 
+        <!-- ÍNDICE DE TÓPICOS DA AULA 2 -->
         <nav class="topic-tabs-bar no-print">
-          <button type="button" class="topic-tab-btn active" onclick="switchTopicPhase(2, 1)">1. O Surgimento do HTML</button>
-          <button type="button" class="topic-tab-btn" onclick="switchTopicPhase(2, 2)">2. A Estrutura de Tags</button>
-          <button type="button" class="topic-tab-btn" onclick="switchTopicPhase(2, 3)">3. Como o Navegador Interpreta</button>
-          <button type="button" class="topic-tab-btn" onclick="switchTopicPhase(2, 4)">4. O Padrão W3C</button>
+          <button type="button" class="topic-tab-btn active" id="tab-btn-2-1" onclick="switchTopicPhase(2, 1)">1. O Navegador</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-2-2" onclick="switchTopicPhase(2, 2)">2. Ferramentas da Janela</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-2-3" onclick="switchTopicPhase(2, 3)">3. Histórico & Limpeza</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-2-4" onclick="switchTopicPhase(2, 4)">4. Senhas & Anti-Phishing</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-2-5" onclick="switchTopicPhase(2, 5)">5. História do HTML</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-2-6" onclick="switchTopicPhase(2, 6)">6. Prática Bloco de Notas</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-2-fix" onclick="openFixationPanel(2)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
         </nav>
 
+        <!-- FASE 1 DA AULA 2 -->
         <section id="l2-phase-1" class="topic-phase-section active">
-          <h2>1. O Surgimento do HTML (1991)</h2>
-          <p>O HTML foi criado por Tim Berners-Lee em 1991 para conectar documentos via hiperlinks.</p>
-          <img src="../../assets/img/html-history.png" alt="Ilustração HTML" class="img-reduced">
+          <h2>1. O que é o Navegador & Principais Browsers</h2>
+          <p>
+            O <strong>navegador de internet</strong> (ou <em>web browser</em>) é o programa fundamental que funciona como a sua "janela para o mundo virtual". Ele faz a ponte entre o seu computador ou celular e os servidores onde os sites estão hospedados, traduzindo códigos complexos em telas visuais com textos, fotos e vídeos.
+          </p>
+
+          <img src="../../assets/img/interrnet/navegadores.png" alt="Comparativo de Navegadores" class="img-reduced">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Os Navegadores Mais Utilizados</h3>
+          <p>
+            No mercado atual existem diversos navegadores disponíveis gratuitamente. Cada um possui suas particularidades visual e de segurança:
+          </p>
+
+          <div class="browser-grid">
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/crhome.png" alt="Google Chrome">
+              <strong>Google Chrome</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Navegador mais popular do mundo, rápido e integrado à sua Conta Google.</p>
+            </div>
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/firefox.png" alt="Mozilla Firefox">
+              <strong>Mozilla Firefox</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Projeto de código aberto focado na proteção à privacidade e personalização.</p>
+            </div>
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/edge.png" alt="Microsoft Edge">
+              <strong>Microsoft Edge</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Navegador nativo do Windows 10/11, moderno e de alta eficiência de bateria.</p>
+            </div>
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/safare.png" alt="Safari">
+              <strong>Safari</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Navegador oficial da Apple para computadores Mac, iPhones e iPads.</p>
+            </div>
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/opera.png" alt="Opera">
+              <strong>Opera</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Inclui recursos inovadores como VPN gratuita e mensageiros na barra lateral.</p>
+            </div>
+            <div class="browser-card">
+              <img src="../../assets/img/interrnet/brava.png" alt="Brave">
+              <strong>Brave</strong>
+              <p style="font-size:13px; color:var(--ink-dark); margin-top:4px;">Focado em privacidade estrita com bloqueio automático de anúncios e rastreadores.</p>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que compreendi o papel do navegador e conheço os 6 principais browsers do mercado.</span>
+            <button type="button" class="read-check-btn" id="check-read-2-1" onclick="markTopicRead(2, 1)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(2, 2)">Ir para 2. Ferramentas da Janela →</button>
+          </div>
         </section>
+
+        <!-- FASE 2 DA AULA 2 -->
+        <section id="l2-phase-2" class="topic-phase-section">
+          <h2>2. Tour pelas Ferramentas da Janela Web</h2>
+          <p>
+            Para navegar com tranquilidade, é fundamental conhecer cada elemento visual da tela do navegador:
+          </p>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:18px;">A Barra de Endereços (URL)</h3>
+          <p>
+            A <strong>Barra de Endereços</strong> fica localizada no topo da janela. É nela que você digita o endereço exato do site desejado (conhecido como URL, ex: <code>www.google.com</code> ou <code>www.youtube.com</code>).
+          </p>
+          <img src="../../assets/img/interrnet/barra-url.png" alt="Barra de Endereços" class="img-reduced">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Botões de Controle de Navegação</h3>
+          <ul>
+            <li><strong>Seta para a Esquerda (← Voltar):</strong> Retorna à página anterior que você estava lendo.</li>
+            <li><strong>Seta para a Direita (→ Avançar):</strong> Avança para a página seguinte (caso tenha voltado anteriormente).</li>
+            <li><strong>Círculo em Seta (↻ Atualizar / Recarregar):</strong> Recarrega a página caso ela tenha travado ou não tenha carregado as fotos.</li>
+          </ul>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Navegação em Abas (Guias)</h3>
+          <p>
+            Você não precisa fechar um site para abrir outro! É possível manter várias páginas abertas ao mesmo tempo usando <strong>Abas (Guias)</strong>.
+          </p>
+          <img src="../../assets/img/interrnet/add-aba-chrome.png" alt="Adicionar Aba no Chrome" class="img-reduced">
+          <ul>
+            <li><strong>Abrir nova aba:</strong> Clique no sinal de mais (<strong>+</strong>) ao lado da aba atual ou pressione no teclado <code>Ctrl + T</code>.</li>
+            <li><strong>Fechar uma aba:</strong> Clique no "x" no canto da aba ou pressione <code>Ctrl + W</code>.</li>
+          </ul>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Ajuste de Zoom para Leitura Confortável</h3>
+          <p>Se as letras de um site estiverem muito pequenas, você pode ajustar o tamanho facilmente pelo teclado:</p>
+          <ul>
+            <li><strong>Aumentar o tamanho do texto (Zoom In):</strong> Mantenha pressionada a tecla <code>Ctrl</code> e aperte a tecla <code>+</code> (mais).</li>
+            <li><strong>Diminuir o tamanho do texto (Zoom Out):</strong> Mantenha pressionada a tecla <code>Ctrl</code> e aperte a tecla <code>-</code> (menos).</li>
+            <li><strong>Restaurar tamanho normal (100%):</strong> Pressione <code>Ctrl + 0</code> (zero).</li>
+          </ul>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que aprendi a usar a barra de URL, as abas, botões de controle e o ajuste de zoom.</span>
+            <button type="button" class="read-check-btn" id="check-read-2-2" onclick="markTopicRead(2, 2)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(2, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(2, 3)">Ir para 3. Histórico & Limpeza →</button>
+          </div>
+        </section>
+
+        <!-- FASE 3 DA AULA 2 -->
+        <section id="l2-phase-3" class="topic-phase-section">
+          <h2>3. Histórico de Navegação & Limpeza de Dados</h2>
+          <p>
+            O navegador memoriza automaticamente os endereços e datas de todos os sites que você visita. Essa memória é chamada de <strong>Histórico de Navegação</strong>.
+          </p>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:18px;">Como Consultar o Histórico</h3>
+          <p>Para rever um site que você visitou ontem ou semana passada:</p>
+          <ul>
+            <li>Pressione no teclado a combinação de teclas: <code>Ctrl + H</code> (Memory Shortcut: <em>H de History</em>).</li>
+            <li>Ou clique no menu de três pontinhos no canto superior direito e selecione <strong>Histórico</strong>.</li>
+          </ul>
+          <img src="../../assets/img/interrnet/hitorico-chrome.png" alt="Histórico do Chrome" class="img-reduced">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">O Menu Principal dos Três Pontinhos (⋮ / ≡)</h3>
+          <p>No canto superior direito de qualquer navegador, você encontra o botão do menu principal:</p>
+          <img src="../../assets/img/interrnet/menu-chrome-ferrametas.png" alt="Menu Chrome Ferramentas" class="img-reduced">
+          <img src="../../assets/img/interrnet/clicando-menu-firefox1.png" alt="Menu Firefox" class="img-reduced">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Protegendo sua Privacidade: Limpando Rastros</h3>
+          <p>Se você utiliza um computador compartilhado ou lan house, é essencial apagar seus rastros ao terminar:</p>
+          <ol>
+            <li>No Histórico (<code>Ctrl + H</code>), clique em <strong>Limpar dados de navegação</strong>.</li>
+            <li>Selecione o período (ex: "Todo o período").</li>
+            <li>Marque as opções: <em>Histórico de navegação</em>, <em>Cookies</em> e <em>Imagens/Arquivos em cache</em>.</li>
+            <li>Confirme clicando no botão <strong>Remover dados</strong>.</li>
+          </ol>
+          <img src="../../assets/img/interrnet/incialisacao-configuracaoe-crhome.png" alt="Configuração de Inicialização" class="img-reduced">
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi como consultar o histórico com Ctrl+H e como limpar dados de navegação.</span>
+            <button type="button" class="read-check-btn" id="check-read-2-3" onclick="markTopicRead(2, 3)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(2, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(2, 4)">Ir para 4. Senhas & Anti-Phishing →</button>
+          </div>
+        </section>
+
+        <!-- FASE 4 DA AULA 2 -->
+        <section id="l2-phase-4" class="topic-phase-section">
+          <h2>4. Gerenciador de Senhas & Proteção Contra Golpes</h2>
+          <p>
+            A segurança na navegação depende do seu cuidado com credenciais e da capacidade de identificar sites fraudulentos.
+          </p>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:18px;">Uso Correto do Gerenciador de Senhas</h3>
+          <p>
+            Os navegadores oferecem a opção de salvar senhas para que você não precise digitá-las todas as vezes.
+          </p>
+          <img src="../../assets/img/interrnet/gerenciador-senha-chrome.png" alt="Gerenciador de Senhas Chrome" class="img-reduced">
+          <div style="background:var(--paper-white); border:1.5px solid var(--amber-soft); border-radius:12px; padding:16px; margin:16px 0;">
+            <strong style="color:var(--amber);">⚠️ Regra de Segurança Importante:</strong>
+            <span>Salve senhas no navegador APENAS no seu computador pessoal ou celular próprio. NUNCA salve senhas em computadores públicos, de lan houses ou de uso coletivo!</span>
+          </div>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Como Identificar Sites Clonados (Phishing)</h3>
+          <p>
+            Criminosos criam páginas idênticas às de bancos ou grandes lojas para roubar senhas e cartões de crédito. Veja a comparação prática entre um site falso e um legítimo:
+          </p>
+          <img src="../../assets/img/interrnet/site-falso1.png" alt="Exemplo 1 de Phishing" class="img-reduced">
+          <img src="../../assets/img/interrnet/site-falso2.png" alt="Exemplo 2 de Phishing" class="img-reduced">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">O Símbolo do Cadeado 🔒 e o Protocolo HTTPS</h3>
+          <p>
+            Sempre olhe para a barra de endereços antes de digitar dados pessoais ou de pagamentos:
+          </p>
+          <ul>
+            <li><strong>Cadeado Fechado (🔒) + https://:</strong> Indica que as informações enviadas entre seu navegador e o site viajam de forma <strong>criptografada</strong> (protegida por códigos secretos que impedem que terceiros leiam o conteúdo).</li>
+            <li><strong>Alerta de "Não Seguro" (⚠️ HTTP):</strong> Significa que os dados viajam abertos e podem ser interceptados. NUNCA digite dados de cartão de crédito em sites sem HTTPS!</li>
+          </ul>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei identificar o cadeado HTTPS e compreendo o risco de salvar senhas em PCs públicos.</span>
+            <button type="button" class="read-check-btn" id="check-read-2-4" onclick="markTopicRead(2, 4)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(2, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(2, 5)">Ir para 5. História do HTML →</button>
+          </div>
+        </section>
+
+        <!-- FASE 5 DA AULA 2 -->
+        <section id="l2-phase-5" class="topic-phase-section">
+          <h2>5. História do HTML & Inspeção de Código-Fonte</h2>
+          <p>
+            Todas as páginas da internet — desde o Google até este portal de aulas — são escritas em uma linguagem chamada <strong>HTML</strong> (<em>HyperText Markup Language</em> - Linguagem de Marcação de Hipertexto).
+          </p>
+
+          <img src="../../assets/img/html-history.png" alt="História do HTML" class="img-reduced">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">A Origem da Linguagem da Web (1989 - 1991)</h3>
+          <p>
+            Em <strong>1989</strong>, o cientista britânico <strong>Tim Berners-Lee</strong> trabalhava no laboratório de física CERN, na Suíça. Ele precisava de uma maneira fácil para que cientistas do mundo todo pudessem compartilhar relatórios de pesquisas contendo textos e links diretos para outros documentos.
+          </p>
+          <p>
+            Em <strong>1991</strong>, Tim criou oficialmente a primeira versão do HTML e colocou no ar o primeiro site da história da humanidade.
+          </p>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Como Funciona uma Tag HTML?</h3>
+          <p>
+            O HTML utiliza marcas chamadas <strong>Tags</strong> (envoltas por sinais de menor <code>&lt;</code> e maior <code>&gt;</code>) para indicar ao navegador o papel de cada elemento na tela:
+          </p>
+          <ul>
+            <li><code>&lt;h1&gt;</code>Título Principal<code>&lt;/h1&gt;</code> — Define o título da página.</li>
+            <li><code>&lt;p&gt;</code>Este é um parágrafo de texto...<code>&lt;/p&gt;</code> — Define um parágrafo comum.</li>
+            <li><code>&lt;a href="https://..."&gt;Clique Aqui&lt;/a&gt;</code> — Cria um hiperlink clicável.</li>
+          </ul>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Como Ver o Código-Fonte de Qualquer Site</h3>
+          <p>Você pode ver o "esqueleto" de qualquer página da web agora mesmo:</p>
+          <ol>
+            <li>Clique com o <strong>botão direito do mouse</strong> em qualquer espaço vazio de uma página web.</li>
+            <li>Escolha a opção <strong>"Exibir código-fonte da página"</strong> (ou pressione <code>Ctrl + U</code>).</li>
+            <li>Uma nova aba abrirá mostrando todas as tags HTML originais que formam aquela página!</li>
+          </ol>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi o surgimento do HTML com Tim Berners-Lee e o funcionamento das tags.</span>
+            <button type="button" class="read-check-btn" id="check-read-2-5" onclick="markTopicRead(2, 5)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(2, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(2, 6)">Ir para 6. Prática Bloco de Notas →</button>
+          </div>
+        </section>
+
+        <!-- FASE 6 DA AULA 2 -->
+        <section id="l2-phase-6" class="topic-phase-section">
+          <h2>6. Atividade Prática — Criando sua Primeira Home Page Pessoal</h2>
+          <p>
+            Agora é a sua vez de se tornar um programador web! Siga as duas atividades práticas abaixo para criar sua própria página HTML e experimentar a criação com Inteligência Artificial:
+          </p>
+
+          <!-- ATIVIDADE 6.1: GERADOR INTERATIVO DE HOME PAGE -->
+          <div style="background:var(--paper-white); border:2px solid var(--teal); border-radius:16px; padding:24px; margin:20px 0; box-shadow:var(--shadow-sm);">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+              <span style="font-size:28px;">⚡</span>
+              <div>
+                <h3 style="color:var(--teal-deep); font-size:22px; margin:0;">6.1 Gerador de Código da sua Home Page Pessoal</h3>
+                <span style="font-size:14px; color:var(--ink-soft);">Preencha seus dados abaixo para montar seu código HTML personalizado em tempo real:</span>
+              </div>
+            </div>
+
+            <!-- FORMULÁRIO DE INPUTS -->
+            <div class="subcard-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin-bottom:20px;">
+              <div>
+                <label for="home-name" style="display:block; font-weight:600; font-size:14px; margin-bottom:4px; color:var(--teal-deep);">1. Nome Completo:</label>
+                <input type="text" id="home-name" placeholder="Ex: Maria da Silva" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--line-light); font-size:15px;">
+              </div>
+              <div>
+                <label for="home-profession" style="display:block; font-weight:600; font-size:14px; margin-bottom:4px; color:var(--teal-deep);">2. Profissão / Ocupação:</label>
+                <input type="text" id="home-profession" placeholder="Ex: Aposentada & Estudante de Informática" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--line-light); font-size:15px;">
+              </div>
+              <div>
+                <label for="home-education" style="display:block; font-weight:600; font-size:14px; margin-bottom:4px; color:var(--teal-deep);">3. Escolaridade:</label>
+                <input type="text" id="home-education" placeholder="Ex: Ensino Médio Concluído" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--line-light); font-size:15px;">
+              </div>
+              <div>
+                <label for="home-hobbies" style="display:block; font-weight:600; font-size:14px; margin-bottom:4px; color:var(--teal-deep);">4. Hobbies & Interesses:</label>
+                <input type="text" id="home-hobbies" placeholder="Ex: Jardinagem, Leitura e Culinária" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--line-light); font-size:15px;">
+              </div>
+              <div>
+                <label for="home-city" style="display:block; font-weight:600; font-size:14px; margin-bottom:4px; color:var(--teal-deep);">5. Cidade / Estado:</label>
+                <input type="text" id="home-city" placeholder="Ex: Campinas - SP" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--line-light); font-size:15px;">
+              </div>
+            </div>
+
+            <!-- SITES FAVORITOS -->
+            <h4 style="color:var(--amber); font-size:16px; margin:16px 0 8px 0;">🌐 Seus 3 Sites Favoritos:</h4>
+            <div class="subcard-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px; margin-bottom:20px;">
+              <div>
+                <label style="font-size:13px; font-weight:600;">Site 1 (Nome / Endereço):</label>
+                <input type="text" id="home-site1-name" value="Google - Pesquisas" style="width:100%; padding:8px; border-radius:6px; border:1px solid var(--line-light); font-size:14px; margin-bottom:4px;">
+                <input type="text" id="home-site1-url" value="https://www.google.com" style="width:100%; padding:8px; border-radius:6px; border:1px solid var(--line-light); font-size:13px; font-family:'JetBrains Mono';">
+              </div>
+              <div>
+                <label style="font-size:13px; font-weight:600;">Site 2 (Nome / Endereço):</label>
+                <input type="text" id="home-site2-name" value="YouTube - Vídeos" style="width:100%; padding:8px; border-radius:6px; border:1px solid var(--line-light); font-size:14px; margin-bottom:4px;">
+                <input type="text" id="home-site2-url" value="https://www.youtube.com" style="width:100%; padding:8px; border-radius:6px; border:1px solid var(--line-light); font-size:13px; font-family:'JetBrains Mono';">
+              </div>
+              <div>
+                <label style="font-size:13px; font-weight:600;">Site 3 (Nome / Endereço):</label>
+                <input type="text" id="home-site3-name" value="fast.com - Medidor de velocidade de conexão" style="width:100%; padding:8px; border-radius:6px; border:1px solid var(--line-light); font-size:14px; margin-bottom:4px;">
+                <input type="text" id="home-site3-url" value="https://fast.com/pt/" style="width:100%; padding:8px; border-radius:6px; border:1px solid var(--line-light); font-size:13px; font-family:'JetBrains Mono';">
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="generateHomePageCode()" style="width:100%; font-size:17px; padding:14px; margin-bottom:18px;">
+              ⚡ Gerar Meu Código HTML Personalizado
+            </button>
+
+            <!-- CAIXA DE CÓDIGO GERADO -->
+            <div id="home-code-box" style="display:none; background:#1E1E1E; border-radius:12px; padding:18px; margin-top:16px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+                <span style="color:#4ADE80; font-family:'JetBrains Mono'; font-size:14px; font-weight:700;">💻 Seu Código HTML Gerado (Pronto para Uso):</span>
+                <div style="display:flex; gap:8px;">
+                  <button type="button" class="btn btn-primary" id="btn-copy-home-code" onclick="copyHomePageCode()" style="font-size:13px; padding:8px 14px;">📋 Copiar Código</button>
+                  <button type="button" class="btn btn-amber" onclick="downloadHomePageFile()" style="font-size:13px; padding:8px 14px; background:var(--amber); color:#FFF;">💾 Baixar HTML (minha-pagina.html)</button>
+                </div>
+              </div>
+              <pre id="home-code-output" style="color:#4ADE80; font-family:'JetBrains Mono', monospace; font-size:13.5px; overflow-x:auto; margin:0; line-height:1.5; white-space:pre-wrap; word-break:break-word; max-height:400px;"></pre>
+            </div>
+          </div>
+
+          <!-- ATIVIDADE 6.2: CRIANDO COM INTELIGÊNCIA ARTIFICIAL (IA & PROMPTS) -->
+          <div style="background:var(--paper-white); border:2px solid var(--amber); border-radius:16px; padding:24px; margin:24px 0; box-shadow:var(--shadow-sm);">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+              <span style="font-size:32px;">🤖</span>
+              <div>
+                <h3 style="color:var(--amber); font-size:22px; margin:0;">6.2 Nova Atividade Prática: Criando com Inteligência Artificial (IA)</h3>
+                <span style="font-size:14px; color:var(--ink-soft);">Primeiro contato com a Inteligência Artificial e a arte de escrever Prompts</span>
+              </div>
+            </div>
+
+            <!-- EXPLICAÇÃO DIDÁTICA DE IA E PROMPTS -->
+            <div style="background:var(--bg-brown); border:1px solid var(--line-dark); border-radius:12px; padding:18px; margin-bottom:20px; color:var(--ink-light);">
+              <h4 style="color:var(--amber); font-size:18px; margin-top:0; margin-bottom:8px;">O que é Inteligência Artificial (IA) e o que é um Prompt?</h4>
+              <p style="font-size:15px; line-height:1.6; margin-bottom:10px;">
+                A <strong>Inteligência Artificial (IA)</strong> é uma tecnologia moderna capaz de conversar com você em português simples, tirando dúvidas, escrevendo textos e até criando códigos de computador completos em poucos segundos!
+              </p>
+              <p style="font-size:15px; line-height:1.6; margin-bottom:10px;">
+                <strong>O que é um Prompt?</strong> Um <em>Prompt</em> é a mensagem, comando ou instrução que você digita para conversar com a IA. Pense no <em>prompt</em> como um pedido de trabalho claro e detalhado que você faz para um assistente virtual extremamente rápido.
+              </p>
+              <p style="font-size:15px; line-height:1.6; margin:0;">
+                <strong>Como funciona na prática?</strong> Quanto mais detalhes e instruções você fornecer no seu <em>prompt</em>, mais bonita, organizada e personalizada será a resposta ou a página HTML gerada pela Inteligência Artificial.
+              </p>
+            </div>
+
+            <h4 style="color:var(--teal-deep); font-size:18px; margin-bottom:8px;">📋 Copie o Prompt Didático para Usar na Inteligência Artificial:</h4>
+            <p style="font-size:15px; color:var(--ink-dark); margin-bottom:12px;">
+              Copie a instrução abaixo e cole em qualquer robô de Inteligência Artificial gratuito (como <strong>Google Gemini</strong>, <strong>ChatGPT</strong> ou <strong>Microsoft Copilot</strong>) para criar uma Home Page ainda mais bonita, moderna e com as cores da sua preferência:
+            </p>
+
+            <!-- CAIXA DO PROMPT COPIÁVEL -->
+            <div style="background:#1E1E1E; border-radius:12px; padding:18px; margin-bottom:16px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <span style="color:var(--amber); font-family:'JetBrains Mono'; font-size:13px; font-weight:700;">🤖 Prompt Pronto para Copiar e Colar na IA:</span>
+                <button type="button" class="btn btn-primary" id="btn-copy-ai-prompt" onclick="copyAIPrompt()" style="font-size:13px; padding:6px 14px;">📋 Copiar Prompt para a IA</button>
+              </div>
+              <pre id="ai-prompt-text" style="color:#F1F5F9; font-family:'JetBrains Mono', monospace; font-size:13.5px; overflow-x:auto; margin:0; line-height:1.6; white-space:pre-wrap; word-break:break-word;">
+Atue como um programador e designer web profissional. Crie uma página pessoal (Home Page) completa em um único código HTML e CSS para mim.
+
+Minha página deve conter as seguintes informações pessoais:
+- Nome Completo: [DIGITE SEU NOME AQUI]
+- Profissão / Ocupação: [DIGITE SUA PROFISSÃO OU SE É APOSENTADO]
+- Escolaridade: [DIGITE SUA ESCOLARIDADE]
+- Cidade / Estado: [DIGITE SUA CIDADE]
+- Hobbies e Interesses: [DIGITE SEUS HOBBIES]
+- Meus Sites Favoritos: Google (https://www.google.com), YouTube (https://www.youtube.com) e Fast.com (https://fast.com/pt/).
+
+Instruções Estritas de Design e Visual:
+1. O design deve ser moderno, elegante, fluido e adaptado para leitura confortável de pessoas idosas ou iniciantes (fontes grandes e alto contraste).
+2. Utilize uma paleta de cores harmoniosa à sua escolha (tons de azul, verde ou laranja suave).
+3. Inclua efeitos visuais nos botões ao passar o ponteiro do mouse por cima.
+4. Forneça o código completo em um único bloco HTML para eu copiar e salvar no Bloco de Notas como 'minha-pagina-ia.html'.
+              </pre>
+            </div>
+
+            <!-- REFERÊNCIAS ACADÊMICAS SOBRE IA -->
+            <div style="background:var(--paper-white); border-left:4px solid var(--teal); border-radius:8px; padding:14px; margin-top:18px;">
+              <strong style="color:var(--teal-deep); font-size:14px; display:block; margin-bottom:6px;">🎓 Leituras Recomendadas & Fontes Acadêmicas Reconhecidas sobre IA:</strong>
+              <ul style="font-size:13px; color:var(--ink-soft); margin:0; padding-left:20px; line-height:1.6;">
+                <li><strong>UNESCO (2023/2024):</strong> <em>Guidance for Generative AI in Education and Research</em>. Organização das Nações Unidas para Educação (Manual global sobre uso ético e seguro de IA).</li>
+                <li><strong>MEC / Governo Digital (2024):</strong> <em>Guia Prático de Inteligência Artificial para Cidadania e Educação</em>. Ministério da Educação do Brasil.</li>
+                <li><strong>W3C (World Wide Web Consortium):</strong> <em>Web Standards, Accessible Design & AI Tools for Beginners</em>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Checkbox de Leitura Gamificada Tópico 6 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que concluí as atividades práticas do Bloco de Notas e da Inteligência Artificial (Aula 2).</span>
+            <button type="button" class="read-check-btn" id="check-read-2-6" onclick="markTopicRead(2, 6)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(2, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(2)">Ir para Exercício de Fixação 📝 →</button>
+          </div>
+        </section>
+
+        <!-- SEÇÃO SEPARADA: EXERCÍCIO DE FIXAÇÃO GAMIFICADO DA AULA 2 (5 QUESTÕES) -->
+        <div id="l2-fixation" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+            <div>
+              <span class="badge-trophy">🏆 Exercício Obrigatório de Fixação</span>
+              <h2 style="color:var(--teal-deep); font-size:26px; margin:8px 0 0 0;">📝 Avaliação Didática — Aula 2 (5 Questões)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">Nota Mínima: 8,0 (4 de 5 acertos)</span>
+          </div>
+
+          <p style="font-size:17px; color:var(--ink-dark); margin-bottom:24px;">
+            Responda às 5 questões abaixo e digite seu nome completo para assinar o comprovante de conclusão da Aula 2.
+          </p>
+
+          <div style="margin-bottom:24px;">
+            <label for="l2-student-name" style="display:block; font-weight:700; margin-bottom:8px; font-size:18px; color:var(--teal-deep);">Nome Completo do Aluno(a):</label>
+            <input type="text" id="l2-student-name" placeholder="Digite seu nome completo..." style="width:100%; padding:14px; border-radius:10px; border:2px solid var(--line-light); font-size:18px;">
+          </div>
+
+          <!-- Questão 1 -->
+          <div class="question-card-item">
+            <div class="q-title">1. Quem criou a World Wide Web (WWW) e a linguagem HTML em 1989/1991 no laboratório de pesquisas CERN?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 1, 0, this)"><span class="letter-badge">A</span><span>Bill Gates na empresa Microsoft</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 1, 1, this)"><span class="letter-badge">B</span><span>Tim Berners-Lee no laboratório CERN</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 1, 2, this)"><span class="letter-badge">C</span><span>Linus Torvalds no projeto Linux</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 1, 3, this)"><span class="letter-badge">D</span><span>Steve Jobs na empresa Apple</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 2 -->
+          <div class="question-card-item">
+            <div class="q-title">2. Qual é o atalho de teclado padronizado utilizado nos navegadores modernos para consultar o Histórico de navegação?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 2, 0, this)"><span class="letter-badge">A</span><span>Ctrl + J</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 2, 1, this)"><span class="letter-badge">B</span><span>Ctrl + Shift + N</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 2, 2, this)"><span class="letter-badge">C</span><span>Ctrl + H</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 2, 3, this)"><span class="letter-badge">D</span><span>Alt + F4</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 3 -->
+          <div class="question-card-item">
+            <div class="q-title">3. O que indica o símbolo de cadeado 🔒 e o prefixo 'https://' na barra de endereços do navegador?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 3, 0, this)"><span class="letter-badge">A</span><span>O site cobra taxa por minuto de navegação.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 3, 1, this)"><span class="letter-badge">B</span><span>A conexão é criptografada e segura para digitação de dados.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 3, 2, this)"><span class="letter-badge">C</span><span>O navegador está bloqueado e sem sinal de internet.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 3, 3, this)"><span class="letter-badge">D</span><span>O site é exclusivo para uso de órgãos do governo.</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 4 -->
+          <div class="question-card-item">
+            <div class="q-title">4. Como você pode ajustar o zoom do navegador para aumentar o tamanho do texto de uma página muito pequena?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 4, 0, this)"><span class="letter-badge">A</span><span>Pressionando a combinação Ctrl + Alt + Delete.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 4, 1, this)"><span class="letter-badge">B</span><span>Segurando a tecla Ctrl e pressionando a tecla + (mais).</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 4, 2, this)"><span class="letter-badge">C</span><span>Clicando com o botão direito e escolhendo Formatar.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 4, 3, this)"><span class="letter-badge">D</span><span>Desligando o monitor e ligando novamente.</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 5 -->
+          <div class="question-card-item">
+            <div class="q-title">5. Qual extensão de arquivo deve ser utilizada ao salvar seu código no Bloco de Notas para que o navegador o abra como uma página web?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 5, 0, this)"><span class="letter-badge">A</span><span>.docx</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 5, 1, this)"><span class="letter-badge">B</span><span>.pdf</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 5, 2, this)"><span class="letter-badge">C</span><span>.html</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(2, 5, 3, this)"><span class="letter-badge">D</span><span>.xlsx</span></button>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="calcFixation(2)" style="width:100%; font-size:18px; padding:16px;">Finalizar Exercício & Assinar Comprovante →</button>
+          <div id="l2-result-box" style="display:none; margin-top:20px;" class="signature-badge"></div>
+        </div>
+
+      </article>
+    </section>
+
+
+    <!-- ===================================================================
+         TELA 4: AULA 3 — DOMINANDO O GOOGLE & PRODUTIVIDADE NA NUVEM
+         =================================================================== -->
+    <section id="screen-lesson-3" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+      </div>
+
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DA AULA 3 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Aula 3</span>
+            <span id="gamify-percent-3">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-3"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-3">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura Pendente</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 5 • Aula 3</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 3: Dominando o Google & Produtividade na Nuvem</h1>
+
+        <!-- ÍNDICE DE TÓPICOS DA AULA 3 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-3-1" onclick="switchTopicPhase(3, 1)">1. Ecossistema & Gmail</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-3-2" onclick="switchTopicPhase(3, 2)">2. Caixa de Entrada</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-3-3" onclick="switchTopicPhase(3, 3)">3. Menu 9 Pontinhos</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-3-4" onclick="switchTopicPhase(3, 4)">4. Google Docs</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-3-5" onclick="switchTopicPhase(3, 5)">5. Google Planilhas</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-3-6" onclick="switchTopicPhase(3, 6)">6. Compartilhamento & Drive</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-3-7" onclick="switchTopicPhase(3, 7)">7. Operadores de Busca</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-3-fix" onclick="openFixationPanel(3)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- FASE 1 DA AULA 3 -->
+        <section id="l3-phase-1" class="topic-phase-section active">
+          <h2>1. O Ecossistema Google & Criando seu Gmail</h2>
+          <p>
+            A <strong>Conta Google (Gmail)</strong> é considerada a sua "chave digital" para o mundo online. Com um único endereço de e-mail e uma única senha, você tem acesso automático a uma suíte completa de aplicativos de produtividade na nuvem.
+          </p>
+
+          <img src="../../assets/img/interrnet/a3/gmail-imagem-foto-user-menu-google-fechado.png" alt="Topo do Gmail e Conta Google" class="img-reduced" style="margin:16px 0 !important;">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Passo a Passo para Criar sua Conta Gmail</h3>
+          <ol style="line-height:1.8;">
+            <li>Acesse o site oficial: <code>www.gmail.com</code> e clique no botão <strong>"Criar conta"</strong>.</li>
+            <li>Digite seu Nome e Sobrenome.</li>
+            <li>Escolha seu <strong>Nome de Usuário</strong> (exemplo: <code>seu.nome.aluno@gmail.com</code>).</li>
+            <li>Crie uma <strong>Senha Forte</strong> combinando letras maiúsculas, minúsculas, números e caracteres especiais (ex: <code>#</code>, <code>@</code>, <code>!</code>).</li>
+            <li>Cadastre um número de celular de recuperação para garantir que consiga redefinir a senha caso a esqueça.</li>
+          </ol>
+
+          <div style="background:var(--paper-white); border:1.5px solid var(--amber-soft); border-radius:12px; padding:16px; margin:16px 0;">
+            <strong style="color:var(--amber);">💡 Dica de Ouro do Prof. Marcos Rangel:</strong>
+            <span>Escreva o seu endereço de e-mail e senha em um caderno físico guardado em local seguro na sua casa. Nunca compartilhe sua senha com estranhos!</span>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que compreendi a importância da Conta Google como chave digital e a criação do Gmail.</span>
+            <button type="button" class="read-check-btn" id="check-read-3-1" onclick="markTopicRead(3, 1)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(3, 2)">Ir para 2. Caixa de Entrada →</button>
+          </div>
+        </section>
+
+        <!-- FASE 2 DA AULA 3 -->
+        <section id="l3-phase-2" class="topic-phase-section">
+          <h2>2. Conhecendo a Caixa de Entrada do Gmail</h2>
+          <p>
+            A tela do Gmail é dividida de forma intuitiva para facilitar o envio e a leitura de mensagens:
+          </p>
+
+          <img src="../../assets/img/interrnet/a3/botao-escreve-email-gmail.png" alt="Botão Escrever no Gmail" class="img-reduced" style="margin:16px 0 !important;">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:18px;">Seções Principais</h3>
+          <ul>
+            <li>✏️ <strong>Botão "Escrever" (ou +):</strong> Abre a janela para digitar e enviar uma nova mensagem de e-mail.</li>
+            <li>📥 <strong>Caixa de Entrada:</strong> Onde ficam armazenadas todas as mensagens recebidas de outras pessoas.</li>
+            <li>📤 <strong>Enviados:</strong> Guarda uma cópia de todos os e-mails que você já enviou.</li>
+            <li>⭐ <strong>Com Estrela / Favoritos:</strong> Para marcar mensagens importantes que você precisa ler mais tarde.</li>
+            <li>🗑️ <strong>Lixeira / Spam:</strong> Onde ficam e-mails apagados e mensagens suspeitas bloqueadas automaticamente.</li>
+          </ul>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que conheço as principais áreas e botões da Caixa de Entrada do Gmail.</span>
+            <button type="button" class="read-check-btn" id="check-read-3-2" onclick="markTopicRead(3, 2)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(3, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(3, 3)">Ir para 3. Menu 9 Pontinhos →</button>
+          </div>
+        </section>
+
+        <!-- FASE 3 DA AULA 3 -->
+        <section id="l3-phase-3" class="topic-phase-section">
+          <h2>3. O Menu Mágico dos 9 Pontinhos (Waffle)</h2>
+          <p>
+            No canto superior direito de qualquer serviço do Google (quando você está conectado à sua conta), existe um ícone formado por <strong>9 pontinhos organizados em grade (:::), apelidado de Waffle</strong>.
+          </p>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin:16px 0;">
+            <img src="../../assets/img/interrnet/a3/grade-menu-apps--google.png" alt="Menu 9 Pontinhos do Google" class="img-reduced" style="flex:1; min-width:240px; max-width:400px !important;">
+            <img src="../../assets/img/interrnet/a3/dual-linha-grade-menu-apps--google.png" alt="Aplicativos Google" class="img-reduced" style="flex:1; min-width:240px; max-width:400px !important;">
+          </div>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:18px;">Sua Gaveta de Ferramentas Gratuitas na Nuvem</h3>
+          <p>Ao clicar no Menu dos 9 Pontinhos, você abre uma janela com acesso direto a todos os aplicativos gratuitos:</p>
+          <ul>
+            <li>📄 <strong>Google Docs (Documentos):</strong> Editor de texto completo (substituto gratuito do Word).</li>
+            <li>📊 <strong>Google Sheets (Planilhas):</strong> Criador de tabelas e cálculos (substituto gratuito do Excel).</li>
+            <li>🖼️ <strong>Google Slides (Apresentações):</strong> Criador de slides visuais (substituto gratuito do PowerPoint).</li>
+            <li>📁 <strong>Google Drive:</strong> Seu disco rígido virtual na nuvem com 15 Gigabytes de espaço gratuito.</li>
+            <li>🗺️ <strong>Google Maps, YouTube e Fotos:</strong> Serviços de localização, entretenimento e armazenamento de imagens.</li>
+          </ul>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei localizar o menu dos 9 Pontinhos e conheço os aplicativos da nuvem Google.</span>
+            <button type="button" class="read-check-btn" id="check-read-3-3" onclick="markTopicRead(3, 3)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(3, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(3, 4)">Ir para 4. Google Docs →</button>
+          </div>
+        </section>
+
+        <!-- FASE 4 DA AULA 3 -->
+        <section id="l3-phase-4" class="topic-phase-section">
+          <h2>4. Google Docs — Escrevendo e Formatando na Nuvem</h2>
+          <p>
+            O <strong>Google Docs</strong> permite escrever relatórios, cartas, trabalhos acadêmicos e receitas diretamente pelo navegador de internet, sem precisar instalar nenhum programa no computador.
+          </p>
+
+          <div style="display:flex; align-items:center; gap:12px; margin:16px 0;">
+            <img src="../../assets/img/interrnet/a3/google-docs.png" alt="Google Docs" style="width:48px; height:48px; object-fit:contain;">
+            <h3 style="color:var(--teal-deep); font-size:22px; margin:0;">Editor de Textos Profissional da Nuvem</h3>
+          </div>
+
+          <img src="../../assets/img/interrnet/a3/barra-ferramentas-googlr-docs.png" alt="Barra de Ferramentas do Google Docs" class="img-reduced" style="margin:16px 0 !important;">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:18px;">O Grande Segredo: Salvamento Automático Instantâneo!</h3>
+          <div style="background:#E3F5EE; border:2px solid var(--success); border-radius:12px; padding:18px; margin:16px 0;">
+            <strong style="color:var(--success); font-size:18px;">✨ Nunca mais perca um trabalho por falta de energia!</strong>
+            <p style="margin:6px 0 0 0; color:var(--ink-dark);">
+              No Google Docs <strong>NÃO EXISTE o botão "Salvar"</strong>. Cada letra, palavra ou parágrafo que você digita é salvo automaticamente na nuvem em tempo real! Se o computador desligar de repente, ao religar seu texto estará exatamente como você deixou.
+            </p>
+          </div>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Recursos de Formatação de Texto</h3>
+          <ul>
+            <li><strong>Escolha de Fontes:</strong> Altere entre Arial, Times New Roman, Roboto, Georgia.</li>
+            <li><strong>Estilos Visuais:</strong> Aplique <strong>Negrito (B)</strong> para destacar, <em>Itálico (I)</em> para termos estrangeiros ou Sublinhado (U).</li>
+            <li><strong>Alinhamento:</strong> Alinhe seu texto à esquerda, centralizado (ótimo para títulos) ou justificado.</li>
+          </ul>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que compreendi o salvamento automático do Google Docs e suas ferramentas de formatação.</span>
+            <button type="button" class="read-check-btn" id="check-read-3-4" onclick="markTopicRead(3, 4)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(3, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(3, 5)">Ir para 5. Google Planilhas →</button>
+          </div>
+        </section>
+
+        <!-- FASE 5 DA AULA 3 -->
+        <section id="l3-phase-5" class="topic-phase-section">
+          <h2>5. Google Planilhas — Organizando Dados e Gastos</h2>
+          <p>
+            O <strong>Google Planilhas</strong> (Google Sheets) é ideal para montar listas de compras, controle de gastos mensais e tabelas organizadas.
+          </p>
+
+          <div style="display:flex; align-items:center; gap:12px; margin:16px 0;">
+            <img src="../../assets/img/interrnet/a3/google-planilhas.png" alt="Google Planilhas" style="width:48px; height:48px; object-fit:contain;">
+            <h3 style="color:var(--teal-deep); font-size:22px; margin:0;">Planilhas Eletrônicas e Cálculos Automáticos</h3>
+          </div>
+
+          <img src="../../assets/img/interrnet/a3/barra-ferramentas-planolha.png" alt="Barra de Ferramentas do Google Planilhas" class="img-reduced" style="margin:16px 0 !important;">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:18px;">Estrutura da Planilha</h3>
+          <p>Uma planilha é formada por uma grade de quadrinhos chamados <strong>Células</strong>:</p>
+          <ul>
+            <li><strong>Colunas (na vertical):</strong> Identificadas por letras maiúsculas (<strong>A, B, C, D...</strong>).</li>
+            <li><strong>Linhas (na horizontal):</strong> Identificadas por números (<strong>1, 2, 3, 4...</strong>).</li>
+            <li><strong>Endereço da Célula:</strong> A junção da coluna com a linha dá o nome da célula (ex: <code>A1</code> é a primeira célula do canto superior esquerdo).</li>
+          </ul>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Soma Automática Rápida</h3>
+          <p>
+            Para somar uma lista de valores no Google Planilhas, basta selecionar com o mouse as células contendo os números e olhar para o canto inferior direito da tela: a soma total aparecerá calculada instantaneamente!
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi a estrutura de células em linhas e colunas no Google Planilhas.</span>
+            <button type="button" class="read-check-btn" id="check-read-3-5" onclick="markTopicRead(3, 5)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(3, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(3, 6)">Ir para 6. Compartilhamento & Drive →</button>
+          </div>
+        </section>
+
+        <!-- FASE 6 DA AULA 3 -->
+        <section id="l3-phase-6" class="topic-phase-section">
+          <h2>6. O Poder do Compartilhamento & Google Drive</h2>
+          <p>
+            Antigamente, para enviar um documento a outra pessoa, era necessário anexar um arquivo pesado no e-mail. Na nuvem, o processo é muito mais simples e moderno!
+          </p>
+
+          <div style="display:flex; gap:20px; align-items:center; margin:16px 0; flex-wrap:wrap;">
+            <div style="display:flex; align-items:center; gap:8px; background:var(--paper-white); padding:8px 16px; border-radius:10px; border:1px solid var(--line-light);">
+              <img src="../../assets/img/interrnet/a3/google-driver.png" alt="Google Drive" style="width:40px; height:40px; object-fit:contain;">
+              <strong>Google Drive</strong>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; background:var(--paper-white); padding:8px 16px; border-radius:10px; border:1px solid var(--line-light);">
+              <img src="../../assets/img/interrnet/a3/google-apesentacoes.png" alt="Google Slides" style="width:40px; height:40px; object-fit:contain;">
+              <strong>Google Slides</strong>
+            </div>
+          </div>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:18px;">O Botão Azul "Compartilhar"</h3>
+          <p>
+            No canto superior direito de qualquer documento do Google Docs ou Planilhas, há um botão azul escrito <strong>Compartilhar</strong>:
+          </p>
+
+          <img src="../../assets/img/interrnet/a3/botao-compartilhar-docs-google.png" alt="Botão Compartilhar" class="img-reduced" style="margin:12px 0 !important; max-width:280px !important;">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Níveis de Permissão de Acesso</h3>
+          <p>Você decide o que a pessoa pode fazer no seu arquivo ao enviar o convite:</p>
+
+          <img src="../../assets/img/interrnet/a3/configuracao-compartilhameto-documeto.png" alt="Janela de Permissões de Compartilhamento" class="img-reduced" style="margin:16px 0 !important;">
+
+          <ul>
+            <li>👀 <strong>Leitor:</strong> A pessoa pode abrir e ler o documento, mas NÃO pode apagar nem alterar nenhuma palavra.</li>
+            <li>✏️ <strong>Editor:</strong> A pessoa ganha permissão para escrever, alterar e trabalhar junto com você no mesmo documento em tempo real!</li>
+          </ul>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">O Google Drive (Seu Armário na Nuvem)</h3>
+          <p>
+            O <strong>Google Drive</strong> centraliza todos os seus arquivos, fotos e documentos salvos. Você pode acessar seu Drive de qualquer computador do mundo, celular ou tablet digitando <code>drive.google.com</code>.
+          </p>
+
+          <div style="background:var(--paper-white); border:2px solid var(--teal); border-radius:14px; padding:20px; margin:20px 0;">
+            <h3 style="color:var(--teal-deep); font-size:20px; margin-top:0; margin-bottom:12px;">📁 Passo a Passo: Criar Pastas e Documentos Direto no Google Drive</h3>
+            <ol style="line-height:1.8; margin-bottom:16px;">
+              <li>Acesse <code>drive.google.com</code> no seu navegador.</li>
+              <li>No canto superior esquerdo, clique no botão grande colorido <strong>"+ Novo"</strong>.</li>
+              <li><strong>Para Criar uma Pasta Organizada:</strong> Clique em <strong>"Nova pasta"</strong>, digite o nome da pasta (exemplo: <em>Minhas Aulas de Informática</em>) e clique em <strong>"Criar"</strong>. Dê dois cliques na pasta para entrar nela.</li>
+              <li><strong>Para Criar um Documento em Branco:</strong> Clique em <strong>"+ Novo"</strong> e selecione <strong>"Documentos Google"</strong> ou <strong>"Planilhas Google"</strong>. Um arquivo novo abrirá em uma aba para você começar a digitar!</li>
+            </ol>
+
+            <h3 style="color:var(--teal-deep); font-size:20px; margin-top:20px; margin-bottom:12px;">☁️ Passo a Passo: Subir (Upload) Arquivos e Pastas do Computador para o Drive</h3>
+            <p style="margin-bottom:10px;">Você pode enviar qualquer arquivo (PDF, Fotos, Músicas, Vídeos, Word ou Excel) do seu computador para o Google Drive de 2 formas simples:</p>
+            
+            <div style="background:#F0FDFA; border-left:4px solid var(--teal); padding:12px 16px; border-radius:8px; margin-bottom:12px;">
+              <strong>Método 1 — Pelo Botão "+ Novo":</strong>
+              <ol style="margin:6px 0 0 0; padding-left:20px; line-height:1.7;">
+                <li>No Google Drive, clique no botão <strong>"+ Novo"</strong> (canto superior esquerdo).</li>
+                <li>Para enviar um arquivo único: Clique em <strong>"Fazer upload de arquivo"</strong>, navegue até a pasta do computador (ex: <em>Documentos</em>), selecione o arquivo e clique em <strong>"Abrir"</strong>.</li>
+                <li>Para enviar uma pasta inteira com vários arquivos: Clique em <strong>"Fazer upload de pasta"</strong>, escolha a pasta do computador e confirme.</li>
+              </ol>
+            </div>
+
+            <div style="background:#FFFBEB; border-left:4px solid var(--amber); padding:12px 16px; border-radius:8px;">
+              <strong>Método 2 — Arrastar e Soltar (Mais Rápido!):</strong>
+              <ol style="margin:6px 0 0 0; padding-left:20px; line-height:1.7;">
+                <li>Abra a pasta do seu computador onde está guardado o seu documento.</li>
+                <li>Clique com o botão esquerdo do mouse sobre o arquivo ou pasta, <strong>mantenha o botão pressionado e arraste</strong> para dentro da janela do Google Drive no navegador.</li>
+                <li>Solte o botão do mouse. Um aviso verde no canto inferior direito confirmará que o upload foi concluído com sucesso!</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que compreendi a diferença entre as permissões de Leitor e Editor no compartilhamento.</span>
+            <button type="button" class="read-check-btn" id="check-read-3-6" onclick="markTopicRead(3, 6)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(3, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(3, 7)">Ir para 7. Operadores de Busca →</button>
+          </div>
+        </section>
+
+        <!-- FASE 7 DA AULA 3 -->
+        <section id="l3-phase-7" class="topic-phase-section">
+          <h2>7. Operadores Avançados de Pesquisa no Google</h2>
+          <p>
+            Aprenda os segredos dos profissionais para encontrar exatamente o que você procura no Google em segundos!
+          </p>
+
+          <img src="../../assets/img/google-search.png" alt="Operadores do Google" class="img-reduced">
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Sintaxes Especiais de Pesquisa</h3>
+
+          <div class="subcard-grid">
+            <div class="subcard-item">
+              <h3>1. Busca Exata com Aspas (" ")</h3>
+              <p>Procura a frase exatamente na ordem em que foi digitada.</p>
+              <code>"informática para terceira idade"</code>
+            </div>
+
+            <div class="subcard-item">
+              <h3>2. Pesquisar em Site Específico (site:)</h3>
+              <p>Restringe a busca a um único portal de notícias ou site.</p>
+              <code>site:g1.globo.com tecnologia</code>
+            </div>
+
+            <div class="subcard-item">
+              <h3>3. Filtrar por Tipo de Arquivo (filetype:)</h3>
+              <p>Encontra diretamente arquivos em PDF, Word ou Excel.</p>
+              <code>filetype:pdf aula informatica basica</code>
+            </div>
+
+            <div class="subcard-item">
+              <h3>4. Exclusão de Palavras (- hífen)</h3>
+              <p>Elimina termos indesejados dos resultados da pesquisa.</p>
+              <code>manga -fruta</code> <span style="font-size:13px; color:var(--ink-soft);">(procura o quadrinho desconsiderando a fruta)</span>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que concluí a leitura completa dos 7 tópicos didáticos da Aula 3.</span>
+            <button type="button" class="read-check-btn" id="check-read-3-7" onclick="markTopicRead(3, 7)">
+              <span>☐ Marcar Leitura Completa</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(3, 6)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(3)">Ir para Exercício de Fixação 📝 →</button>
+          </div>
+        </section>
+
+        <!-- SEÇÃO SEPARADA: EXERCÍCIO DE FIXAÇÃO GAMIFICADO DA AULA 3 (5 QUESTÕES) -->
+        <div id="l3-fixation" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+            <div>
+              <span class="badge-trophy">🏆 Exercício Obrigatório de Fixação</span>
+              <h2 style="color:var(--teal-deep); font-size:26px; margin:8px 0 0 0;">📝 Avaliação Didática — Aula 3 (5 Questões)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">Nota Mínima: 8,0 (4 de 5 acertos)</span>
+          </div>
+
+          <p style="font-size:17px; color:var(--ink-dark); margin-bottom:24px;">
+            Responda às 5 questões abaixo e digite seu nome completo para assinar o comprovante de conclusão da Aula 3.
+          </p>
+
+          <div style="margin-bottom:24px;">
+            <label for="l3-student-name" style="display:block; font-weight:700; margin-bottom:8px; font-size:18px; color:var(--teal-deep);">Nome Completo do Aluno(a):</label>
+            <input type="text" id="l3-student-name" placeholder="Digite seu nome completo..." style="width:100%; padding:14px; border-radius:10px; border:2px solid var(--line-light); font-size:18px;">
+          </div>
+
+          <!-- Questão 1 -->
+          <div class="question-card-item">
+            <div class="q-title">1. Por que a criação de uma conta Gmail é considerada a "chave digital" para o ecossistema Google?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 1, 0, this)"><span class="letter-badge">A</span><span>Porque permite conectar um computador antigo à internet via cabo.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 1, 1, this)"><span class="letter-badge">B</span><span>Porque com um único e-mail e senha você acessa serviços como Docs, Sheets, Drive e YouTube.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 1, 2, this)"><span class="letter-badge">C</span><span>Porque substitui a necessidade de ter um provedor de internet.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 1, 3, this)"><span class="letter-badge">D</span><span>Porque apaga automaticamente as fotos antigas do celular.</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 2 -->
+          <div class="question-card-item">
+            <div class="q-title">2. Qual ícone no canto superior direito do Google dá acesso direto ao Docs, Sheets, Slides e Drive?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 2, 0, this)"><span class="letter-badge">A</span><span>O ícone da engrenagem de configurações.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 2, 1, this)"><span class="letter-badge">B</span><span>O Menu Mágico dos 9 Pontinhos (Waffle).</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 2, 2, this)"><span class="letter-badge">C</span><span>A barra de espaço do teclado.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 2, 3, this)"><span class="letter-badge">D</span><span>O botão de desligar o computador.</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 3 -->
+          <div class="question-card-item">
+            <div class="q-title">3. Como o Google Docs lida com o salvamento das alterações feitas pelo usuário durante a digitação?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 3, 0, this)"><span class="letter-badge">A</span><span>Exige que o usuário clique em Arquivo -&gt; Salvar a cada 5 minutos.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 3, 1, this)"><span class="letter-badge">B</span><span>Salva automaticamente na nuvem a cada caractere ou palavra digitada.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 3, 2, this)"><span class="letter-badge">C</span><span>Só salva se o usuário enviar o arquivo por e-mail para o professor.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 3, 3, this)"><span class="letter-badge">D</span><span>O Google Docs não salva dados e perde tudo ao fechar a janela.</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 4 -->
+          <div class="question-card-item">
+            <div class="q-title">4. Qual é a diferença entre conceder permissão de "Leitor" e permissão de "Editor" ao compartilhar um arquivo?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 4, 0, this)"><span class="letter-badge">A</span><span>O Leitor pode apagar o arquivo; o Editor só pode imprimir.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 4, 1, this)"><span class="letter-badge">B</span><span>O Leitor pode apenas visualizar o documento; o Editor pode alterar e escrever no texto em tempo real.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 4, 2, this)"><span class="letter-badge">C</span><span>Não há nenhuma diferença entre as duas permissões.</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 4, 3, this)"><span class="letter-badge">D</span><span>O Editor precisa pagar uma taxa mensal para cada alteração efetuada.</span></button>
+            </div>
+          </div>
+
+          <!-- Questão 5 -->
+          <div class="question-card-item">
+            <div class="q-title">5. Como você deve digitar no Google para procurar exatamente a frase "Informática para Terceira Idade" sem alterar a ordem das palavras?</div>
+            <div class="options-stack">
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 5, 0, this)"><span class="letter-badge">A</span><span>informatica + terceira + idade</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 5, 1, this)"><span class="letter-badge">B</span><span>[Informática para Terceira Idade]</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 5, 2, this)"><span class="letter-badge">C</span><span>"Informática para Terceira Idade" (usando aspas duplas em volta da frase)</span></button>
+              <button type="button" class="option-btn-card" onclick="selectFixOption(3, 5, 3, this)"><span class="letter-badge">D</span><span>site:google.com informatica</span></button>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="calcFixation(3)" style="width:100%; font-size:18px; padding:16px;">Finalizar Exercício & Assinar Comprovante →</button>
+          <div id="l3-result-box" style="display:none; margin-top:20px;" class="signature-badge"></div>
+        </div>
+
       </article>
     </section>
 
@@ -586,7 +1524,7 @@
   <footer class="portal-footer no-print">
     <div class="footer-container">
       <p style="font-size:15px; color:var(--ink-light); margin:0;">
-        <strong>Informática Básica — Módulo 5: Internet & Nuvem Gamificado</strong><br>
+        <strong>Informática Básica — Módulo 5: Internet & Segurança</strong><br>
         Desenvolvido pelo <strong>Prof. Marcos Rangel</strong> para a <strong>WR Capacitação Profissional</strong>.
       </p>
     </div>
@@ -603,17 +1541,119 @@
       4: "d004"
     };
 
-    const L1_CORRECT_ANSWERS = {
-      1: 1, // Tim Berners-Lee / ARPANET
-      2: 2, // LAN
-      3: 1, // Privacidade e bloqueadores
-      4: 1, // HTTPS Criptografado
-      5: 1  // Confirmar por ligação
+    const TOTAL_TOPICS_PER_LESSON = {
+      1: 6,
+      2: 6,
+      3: 7
+    };
+
+    const CORRECT_ANSWERS = {
+      1: { 1: 1, 2: 2, 3: 1, 4: 1, 5: 1 },
+      2: { 1: 1, 2: 2, 3: 1, 4: 1, 5: 2 },
+      3: { 1: 1, 2: 1, 3: 1, 4: 1, 5: 2 }
+    };
+
+    const LESSON_TITLES = {
+      1: "Módulo 5 • Aula 1: Introdução à Internet e Navegação Segura",
+      2: "Módulo 5 • Aula 2: Navegando na Internet & História do HTML",
+      3: "Módulo 5 • Aula 3: Dominando o Google & Produtividade na Nuvem"
+    };
+
+    const QUESTIONS_DATA = {
+      1: [
+        {
+          q: "1. Qual cientista criou a World Wide Web (WWW) em 1989 e qual projeto de rede deu origem à Internet nos anos 1960?",
+          options: ["Bill Gates e a rede Ethernet", "Tim Berners-Lee e a rede ARPANET", "Steve Jobs e a rede Bluetooth", "Mark Zuckerberg e a rede 5G"],
+          correct: 1
+        },
+        {
+          q: "2. Qual tipo de rede conecta dispositivos em pequenos espaços geográficos, como a rede Wi-Fi da sua casa ou de um escritório?",
+          options: ["WAN (Wide Area Network)", "MAN (Metropolitan Area Network)", "LAN (Local Area Network)", "VPN (Virtual Private Network)"],
+          correct: 2
+        },
+        {
+          q: "3. Qual das alternativas apresenta uma característica marcante dos navegadores Mozilla Firefox e Brave?",
+          options: ["São programas pagos que exigem assinatura mensal para acessar a web.", "Foco avançado em privacidade, segurança e bloqueio automático de rastreadores.", "Funcionam exclusivamente em computadores sem conexão com a internet.", "São de propriedade exclusiva da Microsoft."],
+          correct: 1
+        },
+        {
+          q: "4. O que indica a presença do cadeado 🔒 e do endereço começando com 'https://' no navegador?",
+          options: ["O site é pago e cobra por minuto de navegação.", "A conexão é criptografada e segura para digitação de dados.", "O navegador está infectado por um vírus.", "O site exige transferência imediata via PIX."],
+          correct: 1
+        },
+        {
+          q: "5. Ao receber uma mensagem urgente de um suposto familiar no WhatsApp pedindo PIX com um número novo, o que você deve fazer?",
+          options: ["Fazer a transferência bancária imediatamente.", "Confirmar por ligação de voz ou presencialmente antes de enviar qualquer valor.", "Enviar a senha do seu cartão de crédito pelo aplicativo.", "Apagar o aplicativo do banco do celular."],
+          correct: 1
+        }
+      ],
+      2: [
+        {
+          q: "1. Quem criou a World Wide Web (WWW) e a linguagem HTML em 1989/1991 no laboratório de pesquisas CERN?",
+          options: ["Bill Gates na empresa Microsoft", "Tim Berners-Lee no laboratório CERN", "Linus Torvalds no projeto Linux", "Steve Jobs na empresa Apple"],
+          correct: 1
+        },
+        {
+          q: "2. Qual é o atalho de teclado padronizado utilizado nos navegadores modernos para consultar o Histórico de navegação?",
+          options: ["Ctrl + J", "Ctrl + Shift + N", "Ctrl + H", "Alt + F4"],
+          correct: 2
+        },
+        {
+          q: "3. O que indica o símbolo de cadeado 🔒 e o prefixo 'https://' na barra de endereços do navegador?",
+          options: ["O site cobra taxa por minuto de navegação.", "A conexão é criptografada e segura para digitação de dados.", "O navegador está bloqueado e sem sinal de internet.", "O site é exclusivo para uso de órgãos do governo."],
+          correct: 1
+        },
+        {
+          q: "4. Como você pode ajustar o zoom do navegador para aumentar o tamanho do texto de uma página muito pequena?",
+          options: ["Pressionando a combinação Ctrl + Alt + Delete.", "Segurando a tecla Ctrl e pressionando a tecla + (mais).", "Clicando com o botão direito e escolhendo Formatar.", "Desligando o monitor e ligando novamente."],
+          correct: 1
+        },
+        {
+          q: "5. Qual extensão de arquivo deve ser utilizada ao salvar seu código no Bloco de Notas para que o navegador o abra como uma página web?",
+          options: [".docx", ".pdf", ".html", ".xlsx"],
+          correct: 2
+        }
+      ],
+      3: [
+        {
+          q: "1. Por que a criação de uma conta Gmail é considerada a \"chave digital\" para o ecossistema Google?",
+          options: ["Porque permite conectar um computador antigo à internet via cabo.", "Porque com um único e-mail e senha você acessa serviços como Docs, Sheets, Drive e YouTube.", "Porque substitui a necessidade de ter um provedor de internet.", "Porque apaga automaticamente as fotos antigas do celular."],
+          correct: 1
+        },
+        {
+          q: "2. Qual ícone no canto superior direito do Google dá acesso direto ao Docs, Sheets, Slides e Drive?",
+          options: ["O ícone da engrenagem de configurações.", "O Menu Mágico dos 9 Pontinhos (Waffle).", "A barra de espaço do teclado.", "O botão de desligar o computador."],
+          correct: 1
+        },
+        {
+          q: "3. Como o Google Docs lida com o salvamento das alterações feitas pelo usuário durante a digitação?",
+          options: ["Exige que o usuário clique em Arquivo -> Salvar a cada 5 minutos.", "Salva automaticamente na nuvem a cada caractere ou palavra digitada.", "Só salva se o usuário enviar o arquivo por e-mail para o professor.", "O Google Docs não salva dados e perde tudo ao fechar a janela."],
+          correct: 1
+        },
+        {
+          q: "4. Qual é a diferença entre conceder permissão de \"Leitor\" e permissão de \"Editor\" ao compartilhar um arquivo?",
+          options: ["O Leitor pode apagar o arquivo; o Editor só pode imprimir.", "O Leitor pode apenas visualizar o documento; o Editor pode alterar e escrever no texto em tempo real.", "Não há nenhuma diferença entre as duas permissões.", "O Editor precisa pagar uma taxa mensal para cada alteração efetuada."],
+          correct: 1
+        },
+        {
+          q: "5. Como você deve digitar no Google para procurar exatamente a frase \"Informática para Terceira Idade\" sem alterar a ordem das palavras?",
+          options: ["informatica + terceira + idade", "[Informática para Terceira Idade]", "\"Informática para Terceira Idade\" (usando aspas duplas em volta da frase)", "site:google.com informatica"],
+          correct: 2
+        }
+      ]
     };
 
     let targetLessonNum = 0;
-    let readTopics = { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false };
-    let selectedAnswers = { 1: null, 2: null, 3: null, 4: null, 5: null };
+    let readTopics = {
+      1: { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false },
+      2: { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false },
+      3: { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false }
+    };
+    let selectedAnswers = {
+      1: { 1: null, 2: null, 3: null, 4: null, 5: null },
+      2: { 1: null, 2: null, 3: null, 4: null, 5: null },
+      3: { 1: null, 2: null, 3: null, 4: null, 5: null }
+    };
 
     window.showScreen = function(screenId){
       document.querySelectorAll(".screen-view").forEach(s => s.classList.remove("active"));
@@ -639,28 +1679,29 @@
     };
 
     window.markTopicRead = function(lessonNum, topicNum){
-      readTopics[topicNum] = true;
+      readTopics[lessonNum][topicNum] = true;
       const btn = document.getElementById(`check-read-${lessonNum}-${topicNum}`);
       if(btn){
         btn.classList.add("checked");
         btn.innerHTML = `<span>✓ Leitura Concluída</span>`;
       }
-      updateGamifyProgress();
+      updateGamifyProgress(lessonNum);
     };
 
-    function updateGamifyProgress(){
-      const readCount = Object.values(readTopics).filter(Boolean).length;
-      const readPct = Math.round((readCount / 6) * 60); // 60% for reading
+    function updateGamifyProgress(lessonNum){
+      const totalTopics = TOTAL_TOPICS_PER_LESSON[lessonNum] || 6;
+      const readCount = Object.values(readTopics[lessonNum]).filter(Boolean).length;
+      const readPct = Math.round((readCount / totalTopics) * 60);
       let totalPct = readPct;
 
-      const bar = document.getElementById("gamify-bar-1");
-      const txt = document.getElementById("gamify-percent-1");
-      const badgeBox = document.getElementById("gamify-badge-box-1");
+      const bar = document.getElementById(`gamify-bar-${lessonNum}`);
+      const txt = document.getElementById(`gamify-percent-${lessonNum}`);
+      const badgeBox = document.getElementById(`gamify-badge-box-${lessonNum}`);
 
-      if(sessionStorage.getItem("l1_passed") === "true"){
+      if(sessionStorage.getItem(`l${lessonNum}_passed`) === "true"){
         totalPct = 100;
-        if(badgeBox) badgeBox.innerHTML = `<span class="badge-trophy">🏆 Aula 1 Concluída com Sucesso!</span>`;
-      } else if(readCount === 6 && badgeBox){
+        if(badgeBox) badgeBox.innerHTML = `<span class="badge-trophy">🏆 Aula ${lessonNum} Concluída com Sucesso!</span>`;
+      } else if(readCount === totalTopics && badgeBox){
         badgeBox.innerHTML = `<span class="eyebrow-badge" style="background:#E3F5EE; color:#2E8B6F; border-color:#2E8B6F;"><span class="dot" style="background:#2E8B6F;"></span> Leitura 100% — Faça o Teste</span>`;
       }
 
@@ -669,15 +1710,16 @@
     }
 
     window.openFixationPanel = function(lessonNum){
-      const readCount = Object.values(readTopics).filter(Boolean).length;
-      if(readCount < 6){
-        alert("⚠️ Por favor, leia e marque a leitura completa de todos os 6 tópicos da Aula 1 antes de realizar o exercício de fixação!");
+      const totalTopics = TOTAL_TOPICS_PER_LESSON[lessonNum] || 6;
+      const readCount = Object.values(readTopics[lessonNum]).filter(Boolean).length;
+      if(readCount < totalTopics){
+        alert(`⚠️ Por favor, leia e marque a leitura completa de todos os ${totalTopics} tópicos da Aula ${lessonNum} antes de realizar o exercício de fixação!`);
         return;
       }
 
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-phase-section`).forEach(s => s.classList.remove("active"));
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
-      
+
       const tabFix = document.getElementById(`tab-btn-${lessonNum}-fix`);
       if(tabFix) tabFix.classList.add("active");
 
@@ -728,66 +1770,232 @@
     }
 
     window.selectFixOption = function(lessonNum, qNum, optIdx, btnEl){
-      selectedAnswers[qNum] = optIdx;
+      selectedAnswers[lessonNum][qNum] = optIdx;
       const stack = btnEl.parentElement;
       stack.querySelectorAll(".option-btn-card").forEach(b => b.classList.remove("selected"));
       btnEl.classList.add("selected");
     };
 
-    window.calcFixation = function(lessonNum){
+    window.calcFixation = async function(lessonNum){
       const nameInput = document.getElementById(`l${lessonNum}-student-name`);
       const name = nameInput ? nameInput.value.trim() : "";
       if(!name){ alert("Digite seu nome completo para assinar o comprovante."); return; }
 
       let correctCount = 0;
+      const userAnsArr = [];
+      const correctAnsMap = CORRECT_ANSWERS[lessonNum];
+
       for(let q = 1; q <= 5; q++){
-        if(selectedAnswers[q] === null){
+        if(selectedAnswers[lessonNum][q] === null){
           alert(`Por favor, responda à Questão ${q} antes de enviar.`);
           return;
         }
-        if(selectedAnswers[q] === L1_CORRECT_ANSWERS[q]){
+        userAnsArr.push(selectedAnswers[lessonNum][q]);
+        if(selectedAnswers[lessonNum][q] === correctAnsMap[q]){
           correctCount++;
         }
       }
 
       const score = (correctCount / 5) * 10;
-      const passed = correctCount >= 4; // minimum 4/5 = 80%
+      const passed = correctCount >= 4;
 
       const resBox = document.getElementById(`l${lessonNum}-result-box`);
+      const moduleTitle = LESSON_TITLES[lessonNum] || `Módulo 5 • Aula ${lessonNum}`;
+
+      const signature = await window.QuizEngine.generateDigitalSignature(name, moduleTitle, score, 5, Date.now());
+
+      window[`l${lessonNum}ReportData`] = {
+        studentName: name,
+        moduleId: `internet-aula${lessonNum}`,
+        moduleTitle: moduleTitle,
+        correct: correctCount,
+        total: 5,
+        score: score,
+        passed: passed,
+        signature: signature,
+        answers: userAnsArr,
+        questions: QUESTIONS_DATA[lessonNum]
+      };
 
       if(passed){
-        sessionStorage.setItem("l1_passed", "true");
-        const badgeHub = document.getElementById("badge-lesson-1");
+        sessionStorage.setItem(`l${lessonNum}_passed`, "true");
+        const badgeHub = document.getElementById(`badge-lesson-${lessonNum}`);
         if(badgeHub) badgeHub.textContent = "🟢";
 
-        updateGamifyProgress();
-
-        const ts = new Date().toISOString();
-        const sig = `RANGEL-AULA1-PASS-${Math.floor(Math.random()*90000+10000)}-VERIFIED`;
+        updateGamifyProgress(lessonNum);
 
         resBox.innerHTML = `
-          <div style="background:#E3F5EE; border:2px solid var(--success); border-radius:12px; padding:20px; color:var(--ink-dark);">
-            <strong style="font-size:20px; color:var(--success);">🎉 PARABÉNS! Você foi APROVADO(A) na Aula 1 Gamificada!</strong><br><br>
-            <strong>Aluno(a):</strong> ${name}<br>
-            <strong>Acertos:</strong> ${correctCount} de 5 questões (Nota: ${score.toFixed(1)} / 10,0)<br>
-            <strong>Data:</strong> ${new Date().toLocaleString("pt-BR")}<br>
-            🔒 <strong>Assinatura Digital de Autenticidade:</strong> ${sig}
+          <div style="background:#E3F5EE; border:2px solid var(--success); border-radius:16px; padding:24px; color:var(--ink-dark); margin-top:20px;">
+            <strong style="font-size:22px; color:var(--success); display:block; margin-bottom:12px;">🎉 PARABÉNS! Você foi APROVADO(A) na Aula ${lessonNum}!</strong>
+            <p style="font-size:16px; margin-bottom:14px; line-height:1.6;">
+              <strong>Aluno(a):</strong> ${name}<br>
+              <strong>Acertos:</strong> ${correctCount} de 5 questões<br>
+              <strong>Nota Final:</strong> ${score.toFixed(1)} / 10,0<br>
+              <strong>Situação:</strong> APROVADO(A)<br>
+              <strong>Data:</strong> ${new Date(signature.timestamp).toLocaleDateString("pt-BR")} às ${new Date(signature.timestamp).toLocaleTimeString("pt-BR")}
+            </p>
+
+            <div style="background:var(--bg-brown); border:1px solid var(--amber); border-radius:12px; padding:14px; margin-bottom:20px; text-align:center;">
+              <span style="font-size:13px; color:var(--ink-soft); display:block; margin-bottom:4px;">🔒 Assinatura Digital Anti-Fraude (SHA-256):</span>
+              <strong style="font-family:'JetBrains Mono'; font-size:18px; color:var(--amber); display:block;">${signature.authCode}</strong>
+              <span style="font-size:11px; color:var(--ink-soft); word-break:break-all;">Hash: ${signature.fullHash}</span>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+              <button type="button" class="btn btn-primary" onclick="window.QuizEngine.downloadTxtReport(window.l${lessonNum}ReportData)">📄 Baixar Comprovante TXT</button>
+              <button type="button" class="btn btn-amber" style="background:var(--amber); color:#fff;" onclick="window.PDFLessons.downloadLessonPDF('internet', ${lessonNum})">📑 Baixar Aula em PDF</button>
+              <button type="button" class="btn" style="background:var(--whatsapp); color:#fff;" onclick="window.open(window.QuizEngine.buildWhatsAppUrl(window.l${lessonNum}ReportData), '_blank')">📱 Enviar WhatsApp (19 99130-6907)</button>
+              <button type="button" class="btn btn-ghost" style="background:var(--card-brown); color:var(--amber) !important; border:1px solid var(--amber);" onclick="window.QuizEngine.openGmailComposer(window.l${lessonNum}ReportData)">✉️ Enviar E-mail ao Professor</button>
+            </div>
           </div>
         `;
         resBox.style.display = "block";
       } else {
         resBox.innerHTML = `
-          <div style="background:var(--warn-bg); border:2px solid var(--warn); border-radius:12px; padding:20px; color:var(--ink-dark);">
-            <strong style="font-size:20px; color:var(--warn);">📘 Nota: ${score.toFixed(1)} / 10,0 (${correctCount} de 5 acertos)</strong><br><br>
-            A nota mínima para aprovação é 8,0 (4 de 5 acertos). Por favor, revise os tópicos da aula e tente novamente para obter o comprovante de conclusão!
+          <div style="background:var(--warn-bg); border:2px solid var(--warn); border-radius:16px; padding:24px; color:var(--ink-dark); margin-top:20px;">
+            <strong style="font-size:22px; color:var(--warn); display:block; margin-bottom:12px;">📘 Nota: ${score.toFixed(1)} / 10,0 (${correctCount} de 5 acertos)</strong>
+            <p style="font-size:16px; margin-bottom:14px;">
+              A nota mínima para aprovação é 8,0 (4 de 5 acertos). Por favor, revise os tópicos da aula e tente novamente para obter o comprovante de conclusão!
+            </p>
+
+            <div style="background:var(--bg-brown); border:1px solid var(--line-dark); border-radius:12px; padding:14px; margin-bottom:20px; text-align:center;">
+              <span style="font-size:13px; color:var(--ink-soft); display:block; margin-bottom:4px;">🔒 Assinatura Digital Anti-Fraude (SHA-256):</span>
+              <strong style="font-family:'JetBrains Mono'; font-size:18px; color:var(--amber); display:block;">${signature.authCode}</strong>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+              <button type="button" class="btn btn-primary" onclick="window.QuizEngine.downloadTxtReport(window.l${lessonNum}ReportData)">📄 Baixar Comprovante TXT</button>
+              <button type="button" class="btn btn-amber" style="background:var(--amber); color:#fff;" onclick="window.PDFLessons.downloadLessonPDF('internet', ${lessonNum})">📑 Baixar Aula em PDF</button>
+              <button type="button" class="btn" style="background:var(--whatsapp); color:#fff;" onclick="window.open(window.QuizEngine.buildWhatsAppUrl(window.l${lessonNum}ReportData), '_blank')">📱 Enviar WhatsApp (19 99130-6907)</button>
+              <button type="button" class="btn btn-ghost" style="background:var(--card-brown); color:var(--amber) !important; border:1px solid var(--amber);" onclick="window.QuizEngine.openGmailComposer(window.l${lessonNum}ReportData)">✉️ Enviar E-mail ao Professor</button>
+            </div>
           </div>
         `;
         resBox.style.display = "block";
       }
+    };
+
+    const passInputEl = document.getElementById("modal-pass-field");
+    if(passInputEl){
+      passInputEl.addEventListener("keydown", function(e){
+        if(e.key === "Enter"){
+          e.preventDefault();
+          const confirmBtn = document.getElementById("btn-confirm-unlock");
+          if(confirmBtn) confirmBtn.click();
+        }
+      });
+    }
+
+    window.generateHomePageCode = function(){
+      const name = document.getElementById("home-name").value.trim() || "[SEU NOME COMPLETO]";
+      const profession = document.getElementById("home-profession").value.trim() || "[SUA PROFISSÃO/OCUPAÇÃO]";
+      const education = document.getElementById("home-education").value.trim() || "[SUA ESCOLARIDADE]";
+      const hobbies = document.getElementById("home-hobbies").value.trim() || "[SEUS HOBBIES & INTERESSES]";
+      const city = document.getElementById("home-city").value.trim() || "[SUA CIDADE/ESTADO]";
+
+      const site1Name = document.getElementById("home-site1-name").value.trim() || "Google - Pesquisas";
+      const site1Url = document.getElementById("home-site1-url").value.trim() || "https://www.google.com";
+
+      const site2Name = document.getElementById("home-site2-name").value.trim() || "YouTube - Vídeos";
+      const site2Url = document.getElementById("home-site2-url").value.trim() || "https://www.youtube.com";
+
+      const site3Name = document.getElementById("home-site3-name").value.trim() || "fast.com - Medidor de velocidade de conexão";
+      const site3Url = document.getElementById("home-site3-url").value.trim() || "https://fast.com/pt/";
+
+      const code = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Primeira Página Web</title>
+</head>
+<body style="font-family:sans-serif; background:#F4F4F9; padding:20px;">
+
+    <h1 style="color:#EA580C;">Bem-vindo à Minha Página Pessoal!</h1>
+    <p>Meu nome é ${name} e estou aprendendo informática no curso do Prof. Marcos Rangel.</p>
+
+    <div style="background:#FFFFFF; border:1.5px solid #CBD5E1; border-radius:12px; padding:18px; margin:18px 0; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="color:#1E130B; margin-top:0; border-bottom:2px solid #EA580C; padding-bottom:6px;">📋 Sobre Mim:</h3>
+        <p><strong>Profissão/Ocupação:</strong> ${profession}</p>
+        <p><strong>Escolaridade:</strong> ${education}</p>
+        <p><strong>Cidade/Estado:</strong> ${city}</p>
+        <p><strong>Hobbies & Interesses:</strong> ${hobbies}</p>
+    </div>
+
+    <h2 style="color:#0D9488;">Meus Sites Favoritos:</h2>
+    <ul>
+        <li><a href="${site1Url}" target="_blank">${site1Name}</a></li>
+        <li><a href="${site2Url}" target="_blank">${site2Name}</a></li>
+        <li><a href="${site3Url}" target="_blank">${site3Name}</a></li>
+    </ul>
+
+</body>
+</html>`;
+
+      const outputEl = document.getElementById("home-code-output");
+      const boxEl = document.getElementById("home-code-box");
+
+      if(outputEl) outputEl.textContent = code;
+      if(boxEl) {
+        boxEl.style.display = "block";
+        boxEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    };
+
+    window.copyHomePageCode = function(){
+      const outputEl = document.getElementById("home-code-output");
+      if(!outputEl || !outputEl.textContent) return;
+
+      navigator.clipboard.writeText(outputEl.textContent).then(() => {
+        const btn = document.getElementById("btn-copy-home-code");
+        if(btn){
+          const oldText = btn.textContent;
+          btn.textContent = "✓ Código Copiado!";
+          btn.style.background = "var(--teal)";
+          setTimeout(() => {
+            btn.textContent = oldText;
+            btn.style.background = "";
+          }, 2000);
+        }
+      }).catch(err => {
+        alert("Copie o código manualmente selecionando o texto da caixa.");
+      });
+    };
+
+    window.downloadHomePageFile = function(){
+      const outputEl = document.getElementById("home-code-output");
+      if(!outputEl || !outputEl.textContent) return;
+
+      const blob = new Blob([outputEl.textContent], { type: "text/html;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "minha-pagina.html";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    };
+
+    window.copyAIPrompt = function(){
+      const promptEl = document.getElementById("ai-prompt-text");
+      if(!promptEl) return;
+
+      navigator.clipboard.writeText(promptEl.textContent).then(() => {
+        const btn = document.getElementById("btn-copy-ai-prompt");
+        if(btn){
+          const oldText = btn.textContent;
+          btn.textContent = "✓ Prompt Copiado!";
+          btn.style.background = "var(--teal)";
+          setTimeout(() => {
+            btn.textContent = oldText;
+            btn.style.background = "";
+          }, 2000);
+        }
+      }).catch(err => {
+        alert("Copie o prompt manualmente selecionando o texto.");
+      });
     };
 
   })();
   </script>
 </body>
 </html>
-
