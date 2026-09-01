@@ -10,12 +10,78 @@
   <script src="../../assets/js/pdf-lessons.js"></script>
   <script src="../../assets/js/quiz-engine.js"></script>
   <style>
-    .quiz-container { max-width: 800px; margin: 30px auto; padding: 0 16px; }
+    .quiz-container { max-width: 860px; margin: 30px auto; padding: 0 16px; }
     .screen-quiz { display: none; }
     .screen-quiz.active { display: block; animation: fadeIn 0.3s ease; }
     .result-badge-box { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 20px; }
     .result-badge-box.pass { background: var(--success-bg); }
     .result-badge-box.fail { background: var(--warn-bg); }
+
+    /* ESTILOS DO CERTIFICADO DIPLOMÁTICO HORIZONTAL (A4 LANDSCAPE) */
+    .certificate-landscape {
+      background: #FFFDF7;
+      border: 6px double #D4AF37;
+      outline: 2px solid #8E2C07;
+      outline-offset: -10px;
+      border-radius: 12px;
+      padding: 28px 36px;
+      margin: 24px 0;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.2);
+      font-family: 'Inter', sans-serif;
+    }
+    .certificate-seal-badge {
+      background: linear-gradient(135deg, #120B06, #2A1B10);
+      color: #FB923C;
+      border: 2px solid #D4AF37;
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      display: inline-block;
+    }
+    
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      html, body {
+        background: #FFFFFF !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 297mm;
+        height: 210mm;
+      }
+      .header-nav, .no-print, .quiz-container > section:not(#screen-result),
+      #res-badge, #res-title, #res-subtitle, #res-score, #signature-box,
+      .btn, footer, .pdf-lesson-box {
+        display: none !important;
+      }
+      .quiz-container, #screen-result, .menu-hub-card {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      #wr-certificate-card {
+        display: block !important;
+        width: 285mm !important;
+        height: 198mm !important;
+        margin: 6mm auto !important;
+        box-shadow: none !important;
+        box-sizing: border-box;
+        padding: 18px 28px !important;
+        border: 5px double #D4AF37 !important;
+        background: #FFFDF7 !important;
+        page-break-after: always;
+      }
+    }
   </style>
 </head>
 <body>
@@ -121,19 +187,90 @@
       </div>
     </section>
 
-    <!-- TELA 3 — RESULTADO COM ASSINATURA DIGITAL -->
+    <!-- TELA 3 — RESULTADO E CERTIFICADO DE CONCLUSÃO WR -->
     <section id="screen-result" class="screen-quiz">
       <div class="menu-hub-card">
         <div class="result-badge-box" id="res-badge"></div>
         <h1 id="res-title" style="font-size:32px; color:var(--amber);"></h1>
         <p id="res-subtitle" style="font-size:18px; color:var(--ink-light); margin-bottom:20px;"></p>
 
-        <div style="background:var(--bg-brown); border:1px solid var(--line-dark); border-radius:16px; padding:20px; text-align:center; margin-bottom:24px;">
-          <span style="font-size:16px; color:var(--ink-soft);">Nota Final do Aluno:</span><br>
-          <strong id="res-score" style="font-size:36px; color:var(--amber); font-family:'JetBrains Mono';">0,0 / 10,0</strong>
+        <!-- CERTIFICADO OFICIAL WR CAPACITAÇÃO (A4 LANDSCAPE / HORIZONTAL) -->
+        <div id="wr-certificate-card" class="certificate-landscape" style="display:none;">
+          <!-- Cabeçalho Institucional -->
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #D4AF37; padding-bottom:14px; margin-bottom:18px; flex-wrap:wrap; gap:12px;">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <img src="../../assets/img/professor-rangel.png" alt="Prof. Marcos Rangel" style="width:54px; height:54px; border-radius:50%; border:2px solid #EA580C; object-fit:cover;">
+              <div style="text-align:left;">
+                <span style="font-weight:700; font-size:16px; color:#8E2C07; letter-spacing:0.5px; display:block;">WR CAPACITAÇÃO PROFISSIONAL</span>
+                <span style="font-size:12px; color:#5A4232; font-weight:600;">Instituição de Ensino & Capacitação Técnica</span><br>
+                <a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" style="font-size:12px; color:#EA580C; text-decoration:none; font-weight:700;">www.wrcapacitacaoprofissional.net</a>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <span class="certificate-seal-badge">🎓 DIPLOMA DE CONCLUSÃO</span><br>
+              <span style="font-size:11px; color:#7A5E4D; margin-top:4px; display:block;">Portaria de Emissão Didática Presencial</span>
+            </div>
+          </div>
+
+          <!-- Título Solene -->
+          <h2 style="font-family:'Fraunces', serif; font-size:28px; color:#8E2C07; margin:14px 0 6px 0; text-transform:uppercase; letter-spacing:1.5px;">CERTIFICADO DE CONCLUSÃO DE MÓDULO</h2>
+          <p style="font-size:16px; color:#4A3528; margin:0 0 10px 0;">Certificamos para os devidos fins que o(a) aluno(a):</p>
+          
+          <!-- Nome do Aluno -->
+          <div style="margin:12px 0 16px 0;">
+            <h3 id="cert-student-name" style="font-family:'Fraunces', serif; font-size:32px; color:#20130B; border-bottom:2px solid #EA580C; display:inline-block; padding:0 32px 4px 32px; margin:0; text-transform:uppercase;"></h3>
+          </div>
+
+          <!-- Texto de Conclusão e Carga Horária -->
+          <p style="font-size:16px; color:#20130B; line-height:1.6; max-width:760px; margin:0 auto 20px auto;">
+            concluiu com pleno êxito e excelente aproveitamento todas as 12 Aulas componentes do <strong>Módulo 5: Internet, Segurança & Navegação Web</strong> no Portal Didático de Informática Básica emitido pela <strong>WR Capacitação Profissional</strong>.
+          </p>
+
+          <!-- Especificações Técnicas -->
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin:0 auto 24px auto; max-width:760px;">
+            <div style="background:#FFFFFF; border:1.5px solid #E6D2C1; border-radius:10px; padding:10px 14px;">
+              <span style="font-size:11.5px; color:#8A5A17; font-weight:700; display:block;">⏱️ CARGA HORÁRIA TOTAL</span>
+              <strong style="font-size:16px; color:#20130B;">18 Horas (12 Aulas de 1h30m)</strong>
+            </div>
+            <div style="background:#FFFFFF; border:1.5px solid #E6D2C1; border-radius:10px; padding:10px 14px;">
+              <span style="font-size:11.5px; color:#8A5A17; font-weight:700; display:block;">🏆 APROVEITAMENTO FINAL</span>
+              <strong id="cert-score-display" style="font-size:16px; color:#EA580C;">10,0 / 10,0</strong>
+            </div>
+            <div style="background:#FFFFFF; border:1.5px solid #E6D2C1; border-radius:10px; padding:10px 14px;">
+              <span style="font-size:11.5px; color:#8A5A17; font-weight:700; display:block;">🌐 ESCOLA EMISSORA</span>
+              <strong style="font-size:12px; color:#20130B;">wrcapacitacaoprofissional.net</strong>
+            </div>
+          </div>
+
+          <!-- Assinaturas Duplas Alinhadas Horizontalmente -->
+          <div style="display:flex; justify-content:space-around; align-items:flex-end; margin-top:28px; padding-top:16px; border-top:1px dashed #D4AF37;">
+            <div style="text-align:center; width:40%;">
+              <div style="border-top:1.5px solid #4A3528; padding-top:6px;">
+                <strong style="font-size:14px; color:#20130B; display:block;">Prof. Marcos Rangel</strong>
+                <span style="font-size:12px; color:#6B4E3D;">Desenvolvedor & Instrutor de Informática</span>
+              </div>
+            </div>
+            <div style="text-align:center; width:40%;">
+              <div style="border-top:1.5px solid #4A3528; padding-top:6px;">
+                <strong style="font-size:14px; color:#20130B; display:block;">WR Capacitação Profissional</strong>
+                <span style="font-size:12px; color:#6B4E3D;">Direção & Coordenação de Ensino</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rodapé de Autenticidade -->
+          <div style="margin-top:20px; font-size:11px; color:#7A5E4D; display:flex; justify-content:space-between; align-items:center; border-top:1px solid #E6D2C1; padding-top:10px;">
+            <span>🔒 Código de Autenticidade (SHA-256): <code id="cert-sha-code" style="color:#EA580C; font-weight:700;">WR-AUTH-OK</code></span>
+            <span>Verificação de Emissão: <a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" style="color:#8E2C07; text-decoration:none; font-weight:700;">wrcapacitacaoprofissional.net</a></span>
+          </div>
         </div>
 
-        <div class="signature-badge-box" id="signature-box" style="background:var(--bg-brown); border-color:var(--amber);">
+        <div style="background:var(--bg-brown); border:1px solid var(--line-dark); border-radius:16px; padding:18px; text-align:center; margin-bottom:20px;">
+          <span style="font-size:15px; color:var(--ink-soft);">Nota Final na Prova:</span><br>
+          <strong id="res-score" style="font-size:32px; color:var(--amber); font-family:'JetBrains Mono';">0,0 / 10,0</strong>
+        </div>
+
+        <div class="signature-badge-box" id="signature-box" style="background:var(--bg-brown); border-color:var(--amber); margin-bottom:24px;">
           <div class="signature-badge-header">
             <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
           </div>
@@ -143,9 +280,11 @@
           </div>
         </div>
 
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <!-- BARRA DE BOTÕES OFICIAIS -->
+        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
           <button type="button" class="btn btn-primary" id="btn-download-cert">📄 Baixar Comprovante TXT</button>
-          <button type="button" class="btn" style="background:var(--whatsapp); color:#fff;" id="btn-wa-res">📱 Enviar WhatsApp (19 99130-6907)</button>
+          <button type="button" class="btn" style="background:var(--amber); color:#120B06; font-weight:700;" id="btn-download-pdf-cert">📑 Baixar Certificado PDF</button>
+          <button type="button" class="btn" style="background:var(--whatsapp); color:#fff;" id="btn-wa-res">📱 Enviar WhatsApp</button>
           <button type="button" class="btn btn-ghost" style="background:var(--card-brown); color:var(--amber) !important;" id="btn-email-res">✉️ Enviar E-mail ao Professor</button>
         </div>
       </div>
@@ -363,15 +502,25 @@
       const badge = document.getElementById("res-badge");
       const title = document.getElementById("res-title");
       const sub = document.getElementById("res-subtitle");
+      const certCard = document.getElementById("wr-certificate-card");
 
       if(passed){
         badge.className = "result-badge-box pass"; badge.textContent = "🎉";
         title.textContent = `Parabéns, ${state.name.split(" ")[0]}!`;
-        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões e foi APROVADO(A) na Avaliação Final do Módulo Internet.`;
+        sub.textContent = `Você foi APROVADO(A) na Avaliação Final do Módulo Internet com nota ${score.toFixed(1)}! Seu Diploma Solene da WR Capacitação Profissional (18 Horas Aulas) está disponível abaixo.`;
+        
+        if(certCard){
+          certCard.style.display = "block";
+          document.getElementById("cert-student-name").textContent = state.name;
+          document.getElementById("cert-score-display").textContent = `${score.toFixed(1)} / 10,0`;
+          const shaEl = document.getElementById("cert-sha-code");
+          if(shaEl) shaEl.textContent = state.signature.authCode;
+        }
       } else {
         badge.className = "result-badge-box fail"; badge.textContent = "📘";
         title.textContent = `Atenção, ${state.name.split(" ")[0]}.`;
-        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões (nota ${score.toFixed(1)}). A nota mínima para aprovação é 7,0. Revise a aula em PDF com o Prof. Marcos Rangel!`;
+        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões (nota ${score.toFixed(1)}). A nota mínima para aprovação é 7,0. Revise a aula em PDF com o Prof. Marcos Rangel e tente novamente!`;
+        if(certCard) certCard.style.display = "none";
       }
 
       showQuizScreen("screen-result");
@@ -440,6 +589,10 @@
 
     document.getElementById("btn-download-cert").onclick = function(){
       window.QuizEngine.downloadTxtReport(getReportData());
+    };
+
+    document.getElementById("btn-download-pdf-cert").onclick = function(){
+      window.print();
     };
 
     document.getElementById("btn-wa-res").onclick = function(){

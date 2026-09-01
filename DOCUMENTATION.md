@@ -280,7 +280,9 @@ Todos os módulos contam com o painel retrátil expansível com as credenciais d
   1. **Especificação SDD (`Docs/SPEC-AULA-08-WINDOWS.md`)**:
      - Documentação formal do plano pedagógico, imagens mapeadas (image1 a image28), senhas de acesso e gabarito do quiz.
   2. **Hub do Módulo Windows & Aula 8 (`modules/windows/index.html`)**:
-     - Criação do catálogo visual das **12 Aulas**: Aulas 1 a 7 e 9 a 11 com aviso `🔒 Em Construção`, Aula 08 `🔓 Liberada` (senha `wr0926`) e Aula 12 `📝 Prova Final de Avaliação`.
+     - Criação do catálogo visual das **12 Aulas**: Aulas 1 a 7 e 9 a 12 com aviso `🔒 Em Construção`; **exclusivamente a Aula 08 está `🔓 Liberada`**.
+     - **Desabilitação da Aula 12**: A Aula 12 (Prova Final do Módulo) foi desabilitada e marcada como `🔒 Em Construção`, permitindo acesso liberado apenas para a Aula 8.
+     - **Ajuste de Contraste e Legibilidade (WCAG)**: Correção da variável `--ink-soft` em `assets/css/style.css` para `#D9C3B0` e inclusão da classe `.img-caption` (`#4A3528`), garantindo leitura nítida e sem esforço visual em todos os cartões e legendas.
      - Implementação da Aula 08 didática por 5 tópicos interativos ("Diagnóstico de RAM", "Restauração Win 11/10", "Ponto de Restauração", "Criar Pendrive USB", "Formatar Pendrive") com seções "🖐️ Passo a Passo Prático no Seu Computador", atalhos `<kbd>`, caixas de alerta e **todas as 28 imagens** ilustrativas mapeadas.
      - **Reorganização dos Tópicos 2 e 3**: Transferência da imagem `image19.jpg` ("Menu de recuperação do Windows 10") para o Tópico 2 com a explicação explícita de que a restauração padrão é equivalente no Windows 10 e no Windows 11 (mudando apenas a interface visual dos menus), concentrando o Tópico 3 exclusivamente no recurso de Pontos de Restauração (Painel de Controle e comando `rstrui`).
      - **Modal Customizado de Senha (UI/UX)**: Substituição do `prompt()` nativo pelo modal HTML/CSS customizado `#password-modal` (idêntico ao padrão do Módulo Internet). A exibição visível da senha no subtítulo, nos cards e nos alertas foi 100% removida, garantindo que o aluno solicite a senha presencialmente ao professor em sala de aula.
@@ -291,7 +293,11 @@ Todos os módulos contam com o painel retrátil expansível com as credenciais d
       - **Encadeamento Passo a Passo no PDF (`assets/js/pdf-lessons.js`)**: Eliminação de imagens acumuladas no final das seções. Cada passo explicativo possui agora sua própria imagem acoplada com legenda em itálico ("📷 Legenda..."), garantindo a sequência didática ideal ("Explica -> Mostra Imagem com Legenda").
       - **Aumento do Dimensionamento de Imagens**: Imagens configuradas com dimensão ampla e nítida (`max-height: 480px`, `max-width: 96%`), com estilos visuais para teclas `<kbd>`, avisos em caixas e formatação idêntica ao portal.
       - **Botão `🖨️ Imprimir Aula Completa (HTML Origem)`**: Adicionada a opção de impressão direta da aula completa no formato HTML original da tela (com a folha de estilos `@media print` abrindo todos os tópicos da aula em sequência, ocultando apenas menus e botões).
-  5. **Atualização da Tríade de Documentação SDD**: `ROADMAP.md`, `INDEX.md` e `DOCUMENTATION.md` sincronizados.
+   5. **Certificado Didático Solene WR em Formato Horizontal (A4 Landscape) (`modules/internet/prova-internet.html`)**:
+      - **Certificado Solene A4 Landscape**: Reformulação visual completa no formato horizontal (297mm x 210mm) com moldura solene diplomática em borda dupla dourada/terracota (`#D4AF37` / `#8E2C07`), ocupando 100% da folha A4 deitada na impressão ou PDF (`@media print { @page { size: A4 landscape; margin: 0; } }`).
+      - **Informações Institucionais Oficiais da Escola**: Inclusão destacada da **WR Capacitação Profissional** com o website oficial [www.wrcapacitacaoprofissional.net](https://www.wrcapacitacaoprofissional.net/), carga horária total de **18 Horas Aulas** (12 Aulas de 1h30min), nota do aluno, SHA-256 e dupla de assinaturas alinhadas (Prof. Marcos Rangel e Direção da Escola).
+      - **Simplificação dos Botões de Ação**: Remoção do botão de postagem em redes sociais para evitar ambiguidades, mantendo os 4 botões nativos diretos e 100% funcionais (`📄 Baixar Comprovante TXT`, `📑 Baixar Certificado PDF`, `📱 Enviar WhatsApp`, `✉️ Enviar E-mail`).
+   6. **Atualização da Tríade de Documentação SDD**: `ROADMAP.md`, `INDEX.md` e `DOCUMENTATION.md` sincronizados.
 - **Arquivos Modificados:**
   - [Docs/SPEC-AULA-08-WINDOWS.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-AULA-08-WINDOWS.md)
   - [modules/windows/index.html](file:///home/rangel/git-dev/aulas/modules/windows/index.html)

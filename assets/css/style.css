@@ -12,9 +12,9 @@
   --bg-beige: #FAF2EA;
   --paper-beige: #FFF9F2;
   --paper-white: #FFFFFF;
-  --ink-dark: #20130B;
+  --ink-dark: #1E120A;
   --ink-light: #F4E8DC;
-  --ink-soft: #A38470;
+  --ink-soft: #D9C3B0;
   --teal: #EA580C; /* Primary Terracotta Orange */
   --teal-deep: #8E2C07;
   --amber: #FB923C;
@@ -645,8 +645,18 @@ a:hover {
 
 .modal-subtitle {
   font-size: 15px;
-  color: var(--ink-soft);
+  color: #F4E8DC;
   margin-bottom: 24px;
+}
+
+.img-caption {
+  font-size: 14px;
+  color: #4A3528 !important;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  font-style: italic;
 }
 
 .modal-input {
