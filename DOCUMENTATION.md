@@ -273,6 +273,33 @@ Todos os módulos contam com o painel retrátil expansível com as credenciais d
   - Validação de sintaxe com Node.js (`pdf-lessons.js: SYNTAX OK!`, `index.html: SYNTAX OK!`).
   - Verificação da formatação limpa e legível dos passos em caixas destacadas em verde e amarelo.
 
-
-
-
+### 🗓️ Registro #009 — 01/09/2026 (Módulo 1 Windows: Catálogo de 12 Aulas, Implementação Interativa da Aula 8 com 28 Imagens, Quiz de 5 Questões e Botões de PDF no Topo)
+- **Problema Identificado:**
+  O Módulo 1 (Windows) possuía apenas uma tela de prova única de 10 questões sem suporte ao catálogo de aulas interativas nem ao formato quiz adotado no Módulo de Internet. Havia a necessidade de estruturar o catálogo com as 12 aulas do módulo (marcando as aulas sem conteúdo como `🔒 Em Construção`), disponibilizar a Aula 8 (Diagnóstico de Memória, Restauração do Sistema e Mídia USB) 100% didática por tópicos com as 28 imagens da pasta `assets/img/windows/Aula8/`, criar um quiz de fixação de 5 questões com nota e assinatura SHA-256 (liberado pela senha `wr0926`), e posicionar o botão `📑 Baixar Apostila Didática em PDF` no início/topo das aulas em todos os módulos (Windows e Internet).
+- **Solução Implementada:**
+  1. **Especificação SDD (`Docs/SPEC-AULA-08-WINDOWS.md`)**:
+     - Documentação formal do plano pedagógico, imagens mapeadas (image1 a image28), senhas de acesso e gabarito do quiz.
+  2. **Hub do Módulo Windows & Aula 8 (`modules/windows/index.html`)**:
+     - Criação do catálogo visual das **12 Aulas**: Aulas 1 a 7 e 9 a 11 com aviso `🔒 Em Construção`, Aula 08 `🔓 Liberada` (senha `wr0926`) e Aula 12 `📝 Prova Final de Avaliação`.
+     - Implementação da Aula 08 didática por 5 tópicos interativos ("Diagnóstico de RAM", "Restauração Win 11/10", "Ponto de Restauração", "Criar Pendrive USB", "Formatar Pendrive") com seções "🖐️ Passo a Passo Prático no Seu Computador", atalhos `<kbd>`, caixas de alerta e **todas as 28 imagens** ilustrativas mapeadas.
+     - **Reorganização dos Tópicos 2 e 3**: Transferência da imagem `image19.jpg` ("Menu de recuperação do Windows 10") para o Tópico 2 com a explicação explícita de que a restauração padrão é equivalente no Windows 10 e no Windows 11 (mudando apenas a interface visual dos menus), concentrando o Tópico 3 exclusivamente no recurso de Pontos de Restauração (Painel de Controle e comando `rstrui`).
+     - **Modal Customizado de Senha (UI/UX)**: Substituição do `prompt()` nativo do navegador pelo modal HTML/CSS customizado `#password-modal` (idêntico ao padrão do Módulo Internet), com suporte à tecla `<kbd>Enter</kbd>` e foco automático.
+     - Exercício de Fixação em Quiz de 5 Questões com dicas do professor, nota de 0 a 10.0, Assinatura Digital SHA-256 e botões de exportação (TXT, PDF, WhatsApp, E-mail).
+  3. **Posicionamento do Botão de PDF no Topo de Todas as Aulas**:
+     - Inclusão do botão `📑 Baixar Apostila Didática em PDF` no topo/cabeçalho de leitura da Aula 8 do Módulo Windows e retroativamente nas Aulas 1, 2 e 3 do **Módulo Internet** (`modules/internet/index.html`).
+   4. **Aprimoramento Visual da Apostila PDF & Impressão Direta (HTML Origem)**:
+      - **Encadeamento Passo a Passo no PDF (`assets/js/pdf-lessons.js`)**: Eliminação de imagens acumuladas no final das seções. Cada passo explicativo possui agora sua própria imagem acoplada com legenda em itálico ("📷 Legenda..."), garantindo a sequência didática ideal ("Explica -> Mostra Imagem com Legenda").
+      - **Aumento do Dimensionamento de Imagens**: Imagens configuradas com dimensão ampla e nítida (`max-height: 480px`, `max-width: 96%`), com estilos visuais para teclas `<kbd>`, avisos em caixas e formatação idêntica ao portal.
+      - **Botão `🖨️ Imprimir Aula Completa (HTML Origem)`**: Adicionada a opção de impressão direta da aula completa no formato HTML original da tela (com a folha de estilos `@media print` abrindo todos os tópicos da aula em sequência, ocultando apenas menus e botões).
+  5. **Atualização da Tríade de Documentação SDD**: `ROADMAP.md`, `INDEX.md` e `DOCUMENTATION.md` sincronizados.
+- **Arquivos Modificados:**
+  - [Docs/SPEC-AULA-08-WINDOWS.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-AULA-08-WINDOWS.md)
+  - [modules/windows/index.html](file:///home/rangel/git-dev/aulas/modules/windows/index.html)
+  - [modules/internet/index.html](file:///home/rangel/git-dev/aulas/modules/internet/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados & Resultados:**
+  - Validação de sintaxe Node.js em `pdf-lessons.js` e `quiz-engine.js` (`SYNTAX OK`).
+  - Script Python de auditoria física de imagens confirmando 32 referências válidas em `modules/windows/index.html`.

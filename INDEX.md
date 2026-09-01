@@ -4,19 +4,19 @@
 ---
 
 ## 📅 Trabalho em Andamento & Último Status
-- **Data:** 30/08/2026
-- **Status:** Formulário Gerador de HTML e Atividade Prática de IA & Prompts Concluídos (Módulo 5 100% Completo)
+- **Data:** 01/09/2026
+- **Status:** Módulo 1 (Windows) Atualizado com Catálogo de 12 Aulas, Aula 08 Didática Interativa por Tópicos (28 Imagens + Quiz de 5 Questões) e Posicionamento do Botão de PDF no Topo de Todos os Módulos Concluído
 - **Últimas Alterações:**
-  - Carregamento e cumprimento estrito das diretrizes do `global-start-skill` (v6.0).
-  - Implementação na **Aula 02** (Tópico 6) do **Formulário Interativo Gerador de Código HTML**: inputs para Nome Completo, Profissão/Ocupação, Escolaridade, Hobbies/Interesses, Cidade/Estado e 3 Sites Favoritos (Google, YouTube, fast.com).
-  - Adição dos botões `⚡ Gerar Meu Código HTML Personalizado`, `📋 Copiar Código` (via Clipboard API) e `💾 Baixar HTML (minha-pagina.html)` (Blob URL download).
-  - Adição da **Atividade Prática de Inteligência Artificial (IA)**: explicação didática sobre o conceito de IA Generativa e o que é um *Prompt*, caixa com prompt pronto pré-formatado com especificações visuais/acessíveis para copiar e colar em IAs (Google Gemini, ChatGPT, Copilot) e botão `📋 Copiar Prompt para a IA`.
-  - Inclusão de referências acadêmicas e governamentais reconhecidas em Português sobre IA em Educação (UNESCO 2023/2024, MEC/Gov.br 2024, W3C).
-  - Modularização do gerador de apostilas PDF (`assets/js/pdf-lessons.js`): cada aula (Aula 1, Aula 2 ou Aula 3) gera estritamente a sua apostila individual com conteúdo e imagens ilustrativas exclusivas.
-  - Inclusão das 12 imagens dedicadas da pasta `assets/img/interrnet/a3/` enriquecendo visualmente as 7 fases da **Aula 03** (Gmail, Botão Escrever, Menu 9 Pontinhos/Waffle, Docs, Sheets, Slides, Drive e Compartilhamento) no portal e na apostila PDF.
-  - Adição do **Passo a Passo Guiado de Criação e Upload no Google Drive**: instrução detalhada de como criar pastas e documentos direto na nuvem via `+ Novo` e como subir (upload) arquivos e pastas inteiras do computador (via menu e por arrastar e soltar).
-  - Atualização da Tríade de Documentação (`DOCUMENTATION.md` Registro #008, `ROADMAP.md` e `INDEX.md`).
-- **Próxima Tarefa:** Módulo 5 e Portal 100% operacionais e finalizados. Prontos para publicação/uso em aula presencial.
+  - Cumprimento estrito do pipeline de 10 fases do `global-start-skill` (v6.0).
+  - Estruturação da especificação SDD em `Docs/SPEC-AULA-08-WINDOWS.md`.
+  - Reestruturação do Hub de Aulas do Módulo 1 Windows (`modules/windows/index.html`) para exibir as **12 Aulas** do catálogo (Aulas 1-7 e 9-11 com marcação `🔒 Em Construção`, Aula 08 `🔓 Liberada` com senha `wr0926` e Aula 12 `📝 Prova Final`).
+  - Implementação da **Aula 08** ("Diagnóstico de Memória, Restauração do Sistema e Criando Mídia de Instalação no Windows") com foco na **Prática Orientada / Mão na Massa**, atalhos visuais `<kbd>`, avisos de segurança e **todas as 28 imagens** ilustrativas mapeadas da pasta `assets/img/windows/Aula8/`.
+  - Implementação do **Exercício de Fixação (Quiz de 5 Questões)** na Aula 8 com dicas do professor, nota de 0 a 10.0, Assinatura Digital SHA-256 e botões de exportação (TXT, PDF, WhatsApp, E-mail).
+  - **Ajuste Ergonomico de Interface**: Posicionamento do botão `📑 Baixar Apostila Didática em PDF` no início/topo de todas as aulas (Windows e Internet).
+  - Atualização do motor de PDF (`assets/js/pdf-lessons.js`) com os dados da Aula 8 do Windows.
+  - Atualização da Tríade de Documentação SDD (`DOCUMENTATION.md` Registro #009, `ROADMAP.md` e `INDEX.md`).
+- **Próxima Tarefa:** Módulos 1 e 5 operacionais e preparados para aulas presenciais de informática básica.
+
 
 ---
 

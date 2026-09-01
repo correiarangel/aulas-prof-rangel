@@ -126,6 +126,196 @@ window.PDFLessons = (function() {
       moduleName: "Sistema Operacional Windows",
       sections: [
         {
+          lessonNum: 8,
+          chapter: "AULA 08: DIAGNÓSTICO DE MEMÓRIA, RESTAURAÇÃO DO SISTEMA E MÍDIA DE INSTALAÇÃO",
+          heading: "8.1 Diagnóstico de Memória RAM do Windows (Teste de Memória)",
+          content: "A memória RAM é responsável pela velocidade e execução dos programas. Se o computador trava com frequência ou apresenta telas azuis, execute a ferramenta nativa de teste do Windows:",
+          steps: [
+            {
+              text: "1. Pressione a combinação de teclas <kbd>Win</kbd> + <kbd>S</kbd> no teclado para abrir a busca do Windows e digite 'Diagnóstico de Memória do Windows'. Clique no aplicativo localizado.",
+              image: "../../assets/img/windows/Aula8/image7.jpg",
+              caption: "Janela nativa do Diagnóstico de Memória do Windows com opção de reinicialização."
+            },
+            {
+              text: "2. Selecione a opção 'Reiniciar agora e verificar problemas'. O computador será reiniciado em ambiente seguro para varredura completa da memória física.",
+              image: null,
+              caption: null
+            }
+          ],
+          boxType: "warning",
+          boxTitle: "⚠️ Autorização Prévia em Sala de Aula",
+          boxText: "Aguarde a orientação do Professor Marcos Rangel antes de reiniciar os computadores do laboratório."
+        },
+        {
+          lessonNum: 8,
+          heading: "8.2 Restauração Padrão do Windows 11 e Windows 10",
+          content: "A restauração padrão é ideal para resolver lentidões severas e erros de sistema. O procedimento é equivalente no Windows 10 e Windows 11:",
+          steps: [
+            {
+              text: "• Passo a Passo no Windows 11: Pressione <kbd>Win</kbd> + <kbd>I</kbd> > acesse Sistema > Recuperação > clique em 'Restaurar o computador'.",
+              image: "../../assets/img/windows/Aula8/image21.jpg",
+              caption: "Acessando o menu de Configurações > Sistema > Recuperação no Windows 11."
+            },
+            {
+              text: "• Painel de Recuperação do Windows 11 com destaque ao botão Restaurar o computador:",
+              image: "../../assets/img/windows/Aula8/image16.jpg",
+              caption: "Painel de Recuperação do Windows 11 destacando a opção Restaurar o computador."
+            },
+            {
+              text: "• Passo a Passo no Windows 10: Acesse Configurações (<kbd>Win</kbd> + <kbd>I</kbd>) > Atualização e Segurança > Recuperação > no campo 'Restaurar o PC', clique em 'Começar'.",
+              image: "../../assets/img/windows/Aula8/image19.jpg",
+              caption: "Menu de recuperação e restauração do sistema no Windows 10."
+            },
+            {
+              text: "• Definindo a Estratégia de Arquivos (Manter vs Remover): Escolha entre 'Manter meus arquivos' (preserva fotos e documentos) ou 'Remover tudo' (limpeza de fábrica).",
+              image: "../../assets/img/windows/Aula8/image18.jpg",
+              caption: "Janela de escolha entre 'Manter meus arquivos' e 'Remover tudo'."
+            }
+          ]
+        },
+        {
+          lessonNum: 8,
+          heading: "8.3 Restauração por Ponto de Restauração (Painel de Controle e rstrui)",
+          content: "O Ponto de Restauração permite voltar o computador a uma data anterior em que funcionava perfeitamente, sem afetar seus arquivos recentes:",
+          steps: [
+            {
+              text: "1. Acesse o Painel de Controle no menu de busca e selecione 'Sistema e Segurança'.",
+              image: "../../assets/img/windows/Aula8/image26.jpg",
+              caption: "Acessando a seção Sistema e Segurança no Painel de Controle."
+            },
+            {
+              text: "2. Na Central de Ações (ou Recuperação), clique em 'Restaurar um estado anterior do computador'.",
+              image: "../../assets/img/windows/Aula8/image20.jpg",
+              caption: "Opção Restaurar um estado anterior do computador na Central de Ações."
+            },
+            {
+              text: "3. Na janela do assistente, clique em 'Abrir Restauração de Sistema'.",
+              image: "../../assets/img/windows/Aula8/image4.jpg",
+              caption: "Tela inicial do assistente nativo de Restauração do Sistema."
+            },
+            {
+              text: "4. Clique no botão 'Avançar' para visualizar a lista de pontos de restauração salvos.",
+              image: "../../assets/img/windows/Aula8/image13.jpg",
+              caption: "Avançando para a seleção de pontos salvos."
+            },
+            {
+              text: "5. Selecione o ponto de restauração com base na data e hora em que a máquina funcionava perfeitamente e confirme.",
+              image: "../../assets/img/windows/Aula8/image25.jpg",
+              caption: "Lista de Pontos de Restauração gravados por Data e Hora."
+            }
+          ],
+          boxType: "code",
+          boxTitle: "⚡ Comando Rápido no Teclado",
+          boxText: "Pressione Win + R, digite 'rstrui' e aperte Enter para abrir o assistente de restauração diretamente!"
+        },
+        {
+          lessonNum: 8,
+          heading: "8.4 Criando Pendrive USB de Instalação do Windows (Media Creation Tool)",
+          content: "Criação de Mídia de Boot Oficial USB através da Media Creation Tool da Microsoft:",
+          steps: [
+            {
+              text: "1. Acesse o site oficial da Microsoft para baixar a ferramenta do Windows 10.",
+              image: "../../assets/img/windows/Aula8/image24.png",
+              caption: "Página oficial de download do Windows 10 no site da Microsoft."
+            },
+            {
+              text: "2. Clique no botão 'Baixar agora a ferramenta'.",
+              image: "../../assets/img/windows/Aula8/image12.png",
+              caption: "Botão de download do instalador da Media Creation Tool."
+            },
+            {
+              text: "3. Para o Windows 11, acesse a página equivalente oficial da Microsoft.",
+              image: "../../assets/img/windows/Aula8/image15.png",
+              caption: "Página oficial de download do Windows 11."
+            },
+            {
+              text: "4. Na pasta Downloads, clique com o botão direito no instalador e selecione 'Executar como administrador'.",
+              image: "../../assets/img/windows/Aula8/image8.png",
+              caption: "Executando a Media Creation Tool como administrador."
+            },
+            {
+              text: "5. Leia e aceite os Termos de licença aplicáveis.",
+              image: "../../assets/img/windows/Aula8/image22.png",
+              caption: "Aceitando os Termos de Licença da Microsoft."
+            },
+            {
+              text: "6. Na pergunta 'O que você deseja fazer?', marque 'Criar mídia de instalação (pen drive, DVD ou arquivo ISO)'.",
+              image: "../../assets/img/windows/Aula8/image27.png",
+              caption: "Seleção da opção Criar mídia de instalação."
+            },
+            {
+              text: "7. Selecione Idioma, Edição e Arquitetura (64 bits ou 32 bits).",
+              image: "../../assets/img/windows/Aula8/image3.png",
+              caption: "Definição de Idioma, Edição e Arquitetura do sistema."
+            },
+            {
+              text: "8. Selecione a mídia a ser usada: 'Unidade flash USB'.",
+              image: "../../assets/img/windows/Aula8/image6.png",
+              caption: "Escolha do tipo de mídia: Unidade flash USB."
+            },
+            {
+              text: "9. Selecione a letra correspondente ao pendrive USB conectado (mínimo de 8 GB).",
+              image: "../../assets/img/windows/Aula8/image5.png",
+              caption: "Seleção da unidade flash USB conectada ao computador."
+            },
+            {
+              text: "10. Aguarde o download dos arquivos de instalação do Windows.",
+              image: "../../assets/img/windows/Aula8/image9.png",
+              caption: "Progresso do download dos arquivos da imagem do Windows."
+            },
+            {
+              text: "11. Aguarde a gravação da mídia de boot no pendrive.",
+              image: "../../assets/img/windows/Aula8/image14.png",
+              caption: "Progresso da criação da mídia de instalação no pendrive."
+            },
+            {
+              text: "12. Mensagem de conclusão: 'Sua unidade flash USB está pronta'. Clique em Concluir.",
+              image: "../../assets/img/windows/Aula8/image11.png",
+              caption: "Conclusão: Sua unidade flash USB está pronta para uso."
+            },
+            {
+              text: "13. Em caso de instalação do Windows 11, aceite os termos no assistente de instalação.",
+              image: "../../assets/img/windows/Aula8/image23.png",
+              caption: "Aceitando os termos de licença durante a instalação do Windows 11."
+            },
+            {
+              text: "14. Selecione o tipo de instalação (Atualização ou Personalizada).",
+              image: "../../assets/img/windows/Aula8/image28.png",
+              caption: "Escolha entre Atualização ou Instalação Personalizada."
+            },
+            {
+              text: "15. Escolha a partição de disco para a instalação do sistema.",
+              image: "../../assets/img/windows/Aula8/image17.png",
+              caption: "Seleção da partição do disco rígido para instalação do Windows."
+            }
+          ]
+        },
+        {
+          lessonNum: 8,
+          heading: "8.5 Resolução de Erros & Formatação do Pendrive em FAT32",
+          content: "Se a ferramenta apresentar erro ao gravar no pendrive, formate a unidade em FAT32 antes de tentar novamente:",
+          steps: [
+            {
+              text: "1. No Explorador de Arquivos (<kbd>Win</kbd> + <kbd>E</kbd>), clique com o botão direito sobre o ícone do Pendrive e escolha 'Formatar...'.",
+              image: "../../assets/img/windows/Aula8/image2.png",
+              caption: "Menu de contexto do Pendrive com opção Formatar no Explorador de Arquivos."
+            },
+            {
+              text: "2. Em Sistema de arquivos, selecione 'FAT32 (Padrão)' e clique em 'Iniciar'.",
+              image: "../../assets/img/windows/Aula8/image10.png",
+              caption: "Janela de Formatação: Seleção do Sistema de arquivos FAT32 (Padrão)."
+            },
+            {
+              text: "3. Confirme o aviso de exclusão dos dados do pendrive.",
+              image: "../../assets/img/windows/Aula8/image1.png",
+              caption: "Aviso de alerta: A formatação apaga permanentemente todos os dados do pendrive."
+            }
+          ],
+          boxType: "warning",
+          boxTitle: "⚠️ Cuidado com Seus Dados",
+          boxText: "Confirme se não há arquivos pessoais importantes no pendrive antes de clicar em Formatar."
+        },
+        {
           chapter: "UNIDADE 1: CONCEITO E ESTRUTURA DO WINDOWS",
           heading: "1.1 O que é o Sistema Operacional?",
           content: "O Sistema Operacional (S.O.) é o software fundamental que gerencia o hardware do computador (processador, memória RAM, disco rígido/SSD) e possibilita a execução de aplicativos e a interação do usuário através de uma interface gráfica amigável."
@@ -403,42 +593,57 @@ window.PDFLessons = (function() {
             padding-bottom: 6px;
           }
           .section-block p {
-            font-size: 13.5px;
+            font-size: 14px;
             color: #20130B;
             margin: 0;
             white-space: pre-line;
             line-height: 1.7;
           }
+          kbd {
+            background-color: #2D251E;
+            color: #FFFDF9;
+            border: 1px solid #422A1A;
+            border-radius: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.88em;
+            padding: 3px 7px;
+            display: inline-block;
+            white-space: nowrap;
+          }
           .pdf-img-container {
             text-align: center;
-            margin: 16px 0 10px 0;
+            margin: 20px 0 14px 0;
             page-break-inside: avoid;
           }
           .pdf-img-container img {
-            max-width: 85%;
-            max-height: 230px;
+            max-width: 96%;
+            max-height: 480px;
+            width: auto;
+            height: auto;
             object-fit: contain;
             border-radius: 10px;
             border: 1.5px solid #E6D2C1;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             background: #FFFFFF;
             padding: 4px;
           }
           .pdf-img-grid {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 16px;
             flex-wrap: wrap;
-            margin: 16px 0 10px 0;
+            margin: 20px 0 14px 0;
             page-break-inside: avoid;
           }
           .pdf-img-grid img {
-            max-width: 46%;
-            max-height: 190px;
+            max-width: 48%;
+            max-height: 380px;
+            width: auto;
+            height: auto;
             object-fit: contain;
             border-radius: 10px;
             border: 1.5px solid #E6D2C1;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             background: #FFFFFF;
             padding: 4px;
           }
@@ -542,7 +747,24 @@ window.PDFLessons = (function() {
           ${sec.chapter ? `<div class="chapter-title">${sec.chapter}</div>` : ''}
           <div class="section-block">
             <h3>${sec.heading}</h3>
-            <p>${sec.content}</p>
+            ${sec.content ? `<p style="font-size:14px; color:#20130B; margin-bottom:14px;">${sec.content}</p>` : ''}
+            
+            ${sec.steps && sec.steps.length ? `
+              <div class="steps-container">
+                ${sec.steps.map(st => `
+                  <div class="step-item-block" style="margin-top:14px; margin-bottom:18px; padding-bottom:12px; border-bottom:1px dashed #E6D2C1; page-break-inside:avoid;">
+                    <p style="font-size:13.5px; color:#20130B; margin-bottom:8px; line-height:1.6;">${st.text}</p>
+                    ${st.image ? `
+                      <div class="pdf-img-container" style="text-align:center; margin:14px 0 10px 0;">
+                        <img src="${resolveImagePath(st.image)}" alt="${st.caption || 'Ilustração Didática'}" style="max-width:96%; max-height:480px; width:auto; height:auto; object-fit:contain; border-radius:10px; border:1.5px solid #E6D2C1; box-shadow:0 4px 12px rgba(0,0,0,0.1); background:#FFFFFF; padding:4px;">
+                        ${st.caption ? `<p style="margin-top:6px; font-size:11.5px; color:#6B4E3D; text-align:center; font-style:italic;">📷 <em>${st.caption}</em></p>` : ''}
+                      </div>
+                    ` : ''}
+                  </div>
+                `).join('')}
+              </div>
+            ` : ''}
+
             ${sec.images && sec.images.length ? `
               <div class="pdf-img-grid">
                 ${sec.images.map(img => `<img src="${resolveImagePath(img)}" alt="Ilustração Didática">`).join('')}
@@ -552,6 +774,7 @@ window.PDFLessons = (function() {
                 <img src="${resolveImagePath(sec.image)}" alt="Ilustração Didática">
               </div>
             ` : ''}
+
             ${sec.boxTitle ? `
               <div class="box-callout box-${sec.boxType || 'tip'}">
                 <strong>${sec.boxTitle}</strong>

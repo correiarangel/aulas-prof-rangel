@@ -3,26 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1: Windows — Prova Interativa | Prof. Marcos Rangel</title>
+  <title>Módulo 1: Windows — Portal do Aluno | Prof. Marcos Rangel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/style.css">
   <script src="../../assets/js/pdf-lessons.js"></script>
   <script src="../../assets/js/quiz-engine.js"></script>
   <style>
-    body {
+    .fixation-panel {
+      display: none;
+      background: var(--paper-white);
+      border: 2px solid var(--line-light);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      margin-top: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .fixation-panel.active { display: block; animation: fadeIn 0.3s ease; }
+
+    kbd {
+      background-color: #2D251E;
+      color: #FFFDF9;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.4);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      padding: 3px 7px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .step-box-practical {
+      background: #FFF9F2;
+      border-left: 4px solid var(--amber);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+    .step-box-practical h4 {
+      color: var(--amber-dark);
+      font-size: 18px;
+      margin-bottom: 10px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding: 0;
+      gap: 8px;
     }
-    .quiz-app {
-      width: 100%;
-      max-width: 680px;
-      margin: 30px auto;
-      padding: 0 16px;
+
+    .img-showcase {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
     }
+    .img-caption {
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      margin-top: -12px;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .quiz-app-container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
     .trail {
       display: flex;
       align-items: center;
@@ -95,20 +145,6 @@
     .opt.selected { border-color: var(--teal); background: #FFEEDD; }
     .opt.selected .letter { background: var(--teal); color: #fff; }
 
-    .btn {
-      border: none; cursor: pointer; font: inherit; font-weight: 700; font-size: 15px;
-      border-radius: var(--radius-md); padding: 14px 24px; transition: all 0.2s ease;
-    }
-    .btn-primary { background: var(--teal); color: #fff; box-shadow: 0 8px 20px rgba(154, 52, 18, 0.3); }
-    .btn-primary:hover { background: var(--teal-deep); transform: translateY(-1px); }
-    .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
-    .btn-ghost { background: transparent; color: var(--teal); border: 1.5px solid var(--line); }
-    .btn-ghost:hover { border-color: var(--teal); background: #FFF0E2; }
-    .btn-amber { background: var(--amber-soft); color: #8A5A17; }
-    .btn-amber:hover { background: var(--amber); color: #fff; }
-    .btn-whatsapp { background: var(--whatsapp); color: #fff; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-whatsapp:hover { background: var(--whatsapp-deep); }
-
     .hint-toggle {
       background: none; border: none; cursor: pointer; font: inherit; font-weight: 600; font-size: 13px;
       color: #8A5A17; display: inline-flex; align-items: center; gap: 6px; padding: 4px 0; margin-bottom: 12px;
@@ -118,11 +154,6 @@
       padding: 12px 14px; font-size: 14px; color: #7A4E12; margin-bottom: 18px; line-height: 1.5;
     }
     .hint-box.show { display: block; }
-
-    .nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; gap: 12px; }
-    .screen { display: none; }
-    .screen.active { display: block; animation: fadeIn 0.3s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
     .result-badge {
       width: 74px; height: 74px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -141,8 +172,8 @@
 </head>
 <body>
 
-  <!-- Top Header -->
-  <header class="header-nav" style="width: 100%;">
+  <!-- Top Header Nav -->
+  <header class="header-nav">
     <div class="nav-container">
       <a href="../../index.html" class="brand-logo">
         <img src="../../assets/img/professor-rangel.png" alt="Prof. Marcos Rangel" class="brand-avatar-mini">
@@ -151,123 +182,845 @@
           <span class="brand-subtitle">← Voltar ao Portal</span>
         </div>
       </a>
-      <span class="eyebrow-badge" style="margin:0;">Módulo 1: Windows</span>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Módulo 1: Windows</span>
+        <a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" rel="noopener" class="nav-link-wr no-print">WR Capacitação ↗</a>
+      </div>
     </div>
   </header>
 
-  <div class="quiz-app">
+  <main class="container">
 
-    <!-- TELA 1 — IDENTIFICAÇÃO -->
-    <section id="screen-start" class="screen active">
-      <div class="card-quiz">
-        <div class="eyebrow-badge"><span class="dot"></span> Avaliação Didática</div>
-        <h1>Módulo 1 — Windows</h1>
-        <p style="color:var(--ink-soft); margin-bottom:18px;">
-          Esta prova contém 10 questões sobre o Sistema Operacional Windows, atalhos de teclado e manipulação de arquivos. Nota mínima para aprovação: <strong>7,0</strong>.
+    <!-- ===================================================================
+         TELA 1: MENU DE AULAS (HUB PRINCIPAL DO MÓDULO WINDOWS - 12 AULAS)
+         =================================================================== -->
+    <section id="screen-hub" class="screen-view active">
+      <div class="menu-hub-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+          <div>
+            <span class="eyebrow-badge"><span class="dot"></span> Catálogo de Aulas Interativas</span>
+            <h1 style="font-size:32px; color:var(--amber); margin:10px 0 6px 0;">💻 Módulo 1 — Menu de Aulas & Avaliação (Windows)</h1>
+            <p style="font-size:18px; color:var(--ink-light); margin:0;">
+              Selecione a aula desejada. O acesso às aulas liberadas requer a senha informada em sala de aula pelo Professor Marcos Rangel (Senha: <strong>wr0926</strong>).
+            </p>
+          </div>
+        </div>
+
+        <!-- Grade das 12 Aulas do Módulo Windows -->
+        <div class="lessons-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin-top:32px;">
+
+          <!-- AULA 1 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(1, 'Conceito e Estrutura do Sistema Operacional')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 01</span>
+              <span class="lesson-name">Introdução ao Windows & Interface</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção</span>
+            </div>
+            <span style="font-size:20px;">🚧</span>
+          </div>
+
+          <!-- AULA 2 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(2, 'Área de Trabalho e Barra de Tarefas')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 02</span>
+              <span class="lesson-name">Área de Trabalho e Atalhos</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção</span>
+            </div>
+            <span style="font-size:20px;">🚧</span>
+          </div>
+
+          <!-- AULA 3 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(3, 'Gerenciamento de Arquivos e Pastas')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 03</span>
+              <span class="lesson-name">Explorador de Arquivos & Pastas</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção</span>
+            </div>
+            <span style="font-size:20px;">🚧</span>
+          </div>
+
+          <!-- AULA 4 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(4, 'Configurações de Sistema e Painel de Controle')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 04</span>
+              <span class="lesson-name">Configurações & Dispositivos</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção</span>
+            </div>
+            <span style="font-size:20px;">🚧</span>
+          </div>
+
+          <!-- AULA 5 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(5, 'Acessórios Nativo do Windows')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 05</span>
+              <span class="lesson-name">Bloco de Notas, Paint & Calculadora</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção</span>
+            </div>
+            <span style="font-size:20px;">🚧</span>
+          </div>
+
+          <!-- AULA 6 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(6, 'Personalização e Acessibilidade')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 06</span>
+              <span class="lesson-name">Personalização & Temas</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção</span>
+            </div>
+            <span style="font-size:20px;">🚧</span>
+          </div>
+
+          <!-- AULA 7 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(7, 'Gerenciamento de Tarefas e Desempenho')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 07</span>
+              <span class="lesson-name">Gerenciador de Tarefas & Processos</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção</span>
+            </div>
+            <span style="font-size:20px;">🚧</span>
+          </div>
+
+          <!-- AULA 8 — LIBERADA E COMPLETA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(8, 'Diagnóstico de Memória, Restauração e Mídia USB')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 08</span>
+              <span class="lesson-name">Diagnóstico de Memória, Restauração e Mídia USB</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha: wr0926)</span>
+            </div>
+            <span style="font-size:24px;" id="badge-lesson-8">🔒</span>
+          </div>
+
+          <!-- AULA 9 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(9, 'Segurança do Windows e Antivírus')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 09</span>
+              <span class="lesson-name">Windows Defender & Segurança</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção</span>
+            </div>
+            <span style="font-size:20px;">🚧</span>
+          </div>
+
+          <!-- AULA 10 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(10, 'Prompt de Comando e PowerShell')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 10</span>
+              <span class="lesson-name">Prompt de Comando (cmd) & Terminal</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção</span>
+            </div>
+            <span style="font-size:20px;">🚧</span>
+          </div>
+
+          <!-- AULA 11 -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(11, 'Manutenção Preventiva e Limpeza de Disco')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 11</span>
+              <span class="lesson-name">Limpeza de Disco & Manutenção</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção</span>
+            </div>
+            <span style="font-size:20px;">🚧</span>
+          </div>
+
+          <!-- AULA 12 — PROVA FINAL DE AVALIAÇÃO DO MÓDULO -->
+          <div class="lesson-card-item" onclick="promptLessonPassword(12, 'Prova Final de Avaliação do Módulo Windows')" style="border-color:var(--teal); background:linear-gradient(135deg, rgba(234,88,12,0.3), var(--card-brown)); cursor:pointer;">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num" style="color:var(--amber);">AULA 12 — AVALIAÇÃO</span>
+              <span class="lesson-name" style="font-weight:700; color:#FFFFFF;">📝 Prova Final do Módulo Windows</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Acesso Restrito por Senha</span>
+            </div>
+            <span style="font-size:24px;" id="badge-lesson-12">🔒</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAINEL EXPANSÍVEL DO PROFESSOR -->
+    <div class="no-print" style="margin-top:20px;">
+      <button type="button" class="prof-accordion-btn" id="btn-prof-accordion">
+        <span>👤 Sobre o Professor Marcos Rangel — WR Capacitação (Clique para expandir)</span>
+        <span id="prof-icon">▼</span>
+      </button>
+
+      <div class="prof-accordion-content" id="prof-content">
+        <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+          <img src="../../assets/img/professor-rangel.png" alt="Marcos Rangel" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid var(--teal);">
+          <div style="flex:1; min-width:260px;">
+            <h3 style="color:var(--amber); margin-bottom:6px; font-size:22px;">Marcos Rangel</h3>
+            <p style="font-size:16px; color:var(--ink-light); margin-bottom:10px;">
+              Marcos Rangel, 48 anos, apaixonado por tecnologias, natureza, astronomia, e família;<br>
+              <strong>Desenvolvedor .NET | C# | Blazor | Mobile e Instrutor de informática básica</strong>
+            </p>
+            <p style="font-size:15px; color:var(--ink-soft); margin-bottom:10px;">
+              <strong>Formação Acadêmica:</strong><br>
+              • Pós-Graduação em Desenvolvimento de Aplicações para Dispositivos Móveis;<br>
+              • Graduado em Gestão em Tecnologia da Informação;
+            </p>
+            <p style="font-size:15px; color:var(--ink-soft); margin:0;">
+              <strong>Contato:</strong><br>
+              E-mail: <a href="mailto:okcomputer.use.linux@gmail.com">okcomputer.use.linux@gmail.com</a> |
+              LinkedIn: <a href="https://www.linkedin.com/in/marcos-fabiano-correia-rangel/" target="_blank" rel="noopener">linkedin.com/in/marcos-fabiano-correia-rangel/</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===================================================================
+         TELA 2: AULA 8 — DIAGNÓSTICO DE MEMÓRIA, RESTAURAÇÃO E MÍDIA USB
+         =================================================================== -->
+    <section id="screen-lesson-8" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa (HTML Origem)
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 8)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DA AULA 8 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura & Prática (Aula 8)</span>
+            <span id="gamify-percent-8">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-8"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-8">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Aula 8</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 8: Diagnóstico de Memória, Restauração do Sistema e Criando Mídia de Instalação no Windows</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <strong>Guia Prático "Mão na Massa":</strong> Execute cada passo diretamente no seu computador e marque as caixas de confirmação para acompanhar seu progresso!
         </p>
 
-        <!-- PDF Lesson Download & Checkbox Requirement -->
-        <div class="pdf-lesson-box">
-          <div class="pdf-lesson-header">
-            <span class="pdf-lesson-title">📄 Material Didático da Aula</span>
-            <button class="btn-pdf-download" type="button" id="btn-download-pdf-lesson">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              Baixar Aula em PDF
+        <!-- ÍNDICE DE TÓPICOS DA AULA 8 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-8-1" onclick="switchTopicPhase(8, 1)">1. Diagnóstico de RAM</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-8-2" onclick="switchTopicPhase(8, 2)">2. Restauração Win 11</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-8-3" onclick="switchTopicPhase(8, 3)">3. Restauração Win 10/7</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-8-4" onclick="switchTopicPhase(8, 4)">4. Criar Pendrive USB</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-8-5" onclick="switchTopicPhase(8, 5)">5. Formatar Pendrive</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-8-fix" onclick="openFixationPanel(8)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             TÓPICO 1 DA AULA 8: DIAGNÓSTICO DE MEMÓRIA RAM
+             =============================================================== -->
+        <section id="l8-phase-1" class="topic-phase-section active">
+          <h2>1. Diagnóstico de Memória RAM do Windows (Teste de Memória)</h2>
+          <p>
+            A memória RAM é responsável pela velocidade e execução dos programas no computador. Se a máquina está travando com frequência ou apresentando telas azuis inesperadas, é essencial testar os pentes de memória física em busca de defeitos.
+          </p>
+
+          <div class="step-box-practical">
+            <h4>🖐️ Passo a Passo Prático no Seu Computador</h4>
+            <ol style="margin-left: 20px; line-height: 1.6;">
+              <li>Pressione a combinação de teclas <kbd>Win</kbd> + <kbd>S</kbd> no teclado para abrir a barra de pesquisa do Windows.</li>
+              <li>Digite exatamente: <strong>"Diagnóstico de Memória do Windows"</strong>.</li>
+              <li>Clique no aplicativo localizado para abrir a caixa de ferramentas.</li>
+              <li>Escolha a opção: <strong>"Reiniciar agora e verificar problemas"</strong>.</li>
+            </ol>
+            <p style="color:#B45309; font-weight:600; margin-top:10px; font-size:14px;">
+              ⚠️ <em>Atenção em sala de aula: Aguarde a autorização prévia do professor Marcos Rangel antes de reiniciar o computador do laboratório!</em>
+            </p>
+          </div>
+
+          <img src="../../assets/img/windows/Aula8/image7.jpg" alt="Janela Diagnóstico de Memória do Windows" class="img-showcase" style="max-width:480px;">
+          <p class="img-caption">Janela nativa do Diagnóstico de Memória do Windows com opção de reinicialização.</p>
+
+          <p>
+            Após o reinício, o Windows iniciará uma varredura profunda na memória física antes de carregar a Área de Trabalho. Quando o teste terminar, o sistema iniciará normalmente e exibirá um relatório na barra de notificações confirmando se a memória está saudável ou se necessita de substituição.
+          </p>
+
+          <!-- Checkbox de Leitura & Prática Tópico 1 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi como localizar e executar o Diagnóstico de Memória RAM nativo do Windows.</span>
+            <button type="button" class="read-check-btn" id="check-read-8-1" onclick="markTopicRead(8, 1)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
-          <p style="font-size:13.5px; color:var(--ink-soft); margin:0;">
-            Baixe e leia a aula em PDF elaborada pelo <strong>Prof. Marcos Rangel</strong> para revisar o conteúdo antes de iniciar o simulado.
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(8, 2)">Ir para 2. Restauração Win 11 →</button>
+          </div>
+        </section>
+
+
+        <!-- ===============================================================
+             TÓPICO 2 DA AULA 8: RESTAURAÇÃO DO WINDOWS 11 E WINDOWS 10
+             =============================================================== -->
+        <section id="l8-phase-2" class="topic-phase-section">
+          <h2>2. Como Restaurar o Windows 11 e Windows 10 (Restauração Padrão)</h2>
+          <p>
+            A restauração do sistema é a solução ideal quando o sistema operacional apresenta lentidão severa, vírus de difícil remoção ou erros de arquivos corrompidos. <strong>O processo de recuperação padrão é extremamente parecido no Windows 10 e no Windows 11</strong>, mudando apenas a disposição visual dos menus.
           </p>
-          <label class="pdf-unlock-check" for="check-read-pdf">
-            <input type="checkbox" id="check-read-pdf">
-            <span><strong>☑ Confirmo que baixei e li a aula didática em PDF deste módulo.</strong></span>
-          </label>
-          <div class="pdf-lock-warning" id="pdf-lock-warning">
-            ⚠️ Marque o checkbox acima para desbloquear o botão de iniciar a prova.
+
+          <div class="step-box-practical">
+            <h4>🖐️ Passo a Passo Prático no Windows 11</h4>
+            <ol style="margin-left: 20px; line-height: 1.6;">
+              <li><strong>Abra o menu de Configurações:</strong> Pressione a combinação de teclas <kbd>Win</kbd> + <kbd>I</kbd> ou acesse o <em>Menu Iniciar > Configurações > Sistema</em>.</li>
+              <li><strong>Acesse a opção Recuperação:</strong> Role a lista até o campo <strong>"Recuperação"</strong>.</li>
+              <li><strong>Clique em Restaurar o Computador:</strong> Na opção <em>"Restaurar o PC"</em>, clique no botão azul <strong>"Restaurar o computador"</strong>.</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/windows/Aula8/image21.jpg" alt="Menu de Configurações do Windows 11 - Recuperação" class="img-showcase" style="max-width:560px;">
+          <p class="img-caption">Acessando o menu de Configurações > Sistema > Recuperação no Windows 11.</p>
+
+          <img src="../../assets/img/windows/Aula8/image16.jpg" alt="Opção Restaurar o computador no Windows 11" class="img-showcase" style="max-width:560px;">
+          <p class="img-caption">Painel de Recuperação no Windows 11 destacando a opção "Restaurar o computador".</p>
+
+          <div class="step-box-practical" style="border-left-color: var(--teal);">
+            <h4 style="color: var(--teal-deep);">🖐️ Passo a Passo Prático no Windows 10</h4>
+            <ol style="margin-left: 20px; line-height: 1.6;">
+              <li><strong>Abra as Configurações:</strong> Pressione <kbd>Win</kbd> + <kbd>I</kbd> ou acesse <em>Menu Iniciar > Configurações</em>.</li>
+              <li><strong>Acesse Atualização e Segurança:</strong> Clique na opção <strong>"Atualização e Segurança"</strong>.</li>
+              <li><strong>Selecione Recuperação:</strong> Clique na aba <strong>Recuperação</strong> à esquerda e, no campo <em>"Restaurar o PC"</em>, clique no botão <strong>"Começar"</strong>.</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/windows/Aula8/image19.jpg" alt="Como restaurar o Windows 10" class="img-showcase" style="max-width:580px;">
+          <p class="img-caption">Menu de recuperação do Windows 10 — O processo de restauração é equivalente ao do Windows 11.</p>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">Definindo a Opção de Arquivos (Manter vs Remover)</h3>
+          <p>Tanto no Windows 10 quanto no Windows 11, ao iniciar a restauração, o assistente perguntará qual estratégia você deseja seguir:</p>
+
+          <img src="../../assets/img/windows/Aula8/image18.jpg" alt="Opção Manter meus arquivos ou Remover tudo" class="img-showcase" style="max-width:540px;">
+          <p class="img-caption">Janela de escolha entre "Manter meus arquivos" e "Remover tudo".</p>
+
+          <ul>
+            <li><strong>"Manter meus arquivos" (Recomendado):</strong> Remove todos os programas instalados e restaura as configurações do sistema, mas <strong>PRESERVA</strong> todos os seus documentos, fotos, PDFs e arquivos pessoais.</li>
+            <li><strong>"Remover tudo":</strong> Apaga completamente todos os arquivos, documentos, contas de usuário e programas, deixando o computador como novo de fábrica.</li>
+          </ul>
+
+          <p>
+            Em seguida, você pode escolher se prefere reinstalar o Windows através de <strong>Download da Nuvem</strong> (baixa os arquivos atualizados diretamente da Microsoft) ou <strong>Reinstalação Local</strong> (utiliza a imagem gravada no próprio disco).
+          </p>
+
+          <!-- Checkbox de Leitura & Prática Tópico 2 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que compreendi o processo de restauração padrão no Windows 11 e Windows 10 (Manter vs Remover).</span>
+            <button type="button" class="read-check-btn" id="check-read-8-2" onclick="markTopicRead(8, 2)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(8, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(8, 3)">Ir para 3. Ponto de Restauração →</button>
+          </div>
+        </section>
+
+
+        <!-- ===============================================================
+             TÓPICO 3 DA AULA 8: RESTAURAÇÃO POR PONTO DE RESTAURAÇÃO (RSTRUI)
+             =============================================================== -->
+        <section id="l8-phase-3" class="topic-phase-section">
+          <h2>3. Restauração por Ponto de Restauração (Painel de Controle e Comando rstrui)</h2>
+          <p>
+            Além da restauração padrão que reinstala o sistema, o Windows conta com o recurso de <strong>Ponto de Restauração</strong>. Esse recurso salva o "estado" do computador em datas específicas. Se a máquina apresentar um problema após instalar um programa ou atualização, você pode voltar o relógio do sistema para uma data anterior em que tudo funcionava perfeitamente, <strong>sem afetar seus documentos recentes</strong>.
+          </p>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">3.1 Acessando via Painel de Controle (Windows 7 / 10 / 11)</h3>
+
+          <div class="step-box-practical">
+            <h4>🖐️ Passo a Passo Prático no Painel de Controle</h4>
+            <ol style="margin-left: 20px; line-height: 1.6;">
+              <li>Acesse o <strong>Painel de Controle</strong> no menu de busca do Windows.</li>
+              <li>Acesse <strong>Sistema e Segurança</strong> > <strong>Central de Ações</strong> (ou <em>Recuperação</em>).</li>
+              <li>Clique no link <strong>"Restaurar um estado anterior do computador"</strong> e selecione <strong>"Abrir Restauração de Sistema"</strong>.</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/windows/Aula8/image26.jpg" alt="Painel de Controle no Windows 7" class="img-showcase" style="max-width:440px;">
+          <p class="img-caption">Acessando a seção Sistema e Segurança no Painel de Controle.</p>
+
+          <img src="../../assets/img/windows/Aula8/image20.jpg" alt="Central de Ações - Restaurar um estado anterior" class="img-showcase" style="max-width:540px;">
+          <p class="img-caption">Opção "Restaurar um estado anterior do computador" na Central de Ações / Recuperação.</p>
+
+          <h3 style="color:var(--teal-deep); font-size:22px; margin-top:24px;">3.2 O Assistente de Restauração do Sistema</h3>
+          <p>
+            Ao abrir o assistente, clique em <strong>Avançar</strong> para visualizar a lista de pontos de restauração salvos automaticamente pelo sistema ou criados antes de atualizações:
+          </p>
+
+          <img src="../../assets/img/windows/Aula8/image4.jpg" alt="Abrir Restauração do Sistema" class="img-showcase" style="max-width:580px;">
+          <p class="img-caption">Tela inicial do assistente nativo de Restauração do Sistema.</p>
+
+          <img src="../../assets/img/windows/Aula8/image13.jpg" alt="Avançar na janela de Restauração" class="img-showcase" style="max-width:440px;">
+          <p class="img-caption">Avançando para a tela de seleção de datas.</p>
+
+          <img src="../../assets/img/windows/Aula8/image25.jpg" alt="Seleção de Ponto de Restauração por Data" class="img-showcase" style="max-width:500px;">
+          <p class="img-caption">Escolha o ponto de restauração com base na data e hora em que o computador funcionava corretamente.</p>
+
+          <div style="background:var(--amber-soft); padding:16px; border-radius:12px; margin:20px 0; border:1px solid var(--line);">
+            <strong style="color:var(--amber-dark); font-size:16px;">⚡ Comando Rápido no Teclado (Dica do Professor Marcos Rangel):</strong><br>
+            Você pode abrir diretamente o assistente de Restauração do Sistema em qualquer versão do Windows sem navegar pelos menus:<br>
+            1. Pressione <kbd>Win</kbd> + <kbd>R</kbd> para abrir a janela Executar (ou abra o Prompt de Comando <code>cmd</code>).<br>
+            2. Digite exatamente <strong style="color:var(--teal-deep);">rstrui</strong> e pressione <kbd>Enter</kbd>!
+          </div>
+
+          <p>
+            <strong>Reversão ("Desfazer"):</strong> Caso o ponto de restauração escolhido não resolva o problema ou piore a situação, você pode desfazer a alteração! Abra o assistente novamente e selecione o ponto do tipo <em>"Desfazer"</em>.
+          </p>
+
+          <!-- Checkbox de Leitura & Prática Tópico 3 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi como utilizar os Pontos de Restauração e o comando rápido rstrui.</span>
+            <button type="button" class="read-check-btn" id="check-read-8-3" onclick="markTopicRead(8, 3)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(8, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(8, 4)">Ir para 4. Criar Pendrive USB →</button>
+          </div>
+        </section>
+
+
+        <!-- ===============================================================
+             TÓPICO 4 DA AULA 8: CRIANDO PENDRIVE DE INSTALAÇÃO DO WINDOWS
+             =============================================================== -->
+        <section id="l8-phase-4" class="topic-phase-section">
+          <h2>4. Criando Pendrive de Instalação do Windows (10 e 11)</h2>
+          <p>
+            Criar um Pendrive de Instalação (mídia de boot) permite formatar e instalar o Windows em qualquer computador, mesmo que a máquina antiga não consiga mais ligar.
+          </p>
+
+          <h3 style="color:var(--teal-deep); font-size:20px; margin-top:20px;">4.1 O que você vai precisar:</h3>
+          <table style="width:100%; border-collapse:collapse; margin:16px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Item Necessário</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">Especificação Recomendada</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">🖥️ Computador</td>
+                <td style="padding:10px;">Com conexão à internet estável (download de 4GB a 6GB).</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">💾 Pendrive</td>
+                <td style="padding:10px;">Vazio, com no mínimo <strong>8 GB</strong> de espaço livre.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">⏱️ Tempo</td>
+                <td style="padding:10px;">De 20 minutos a 1 hora (depende da velocidade da internet).</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">🔑 Chave do Produto</td>
+                <td style="padding:10px;">Opcional — Não necessária se o PC tiver licença digital.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="color:var(--teal-deep); font-size:20px; margin-top:24px;">4.2 Baixando a Ferramenta Oficial (Media Creation Tool)</h3>
+          <p>Acesse o site oficial da Microsoft de acordo com a versão desejada:</p>
+          <p>
+            🌐 <strong>Windows 10:</strong> <a href="https://www.microsoft.com/pt-br/software-download/windows10ISO" target="_blank" rel="noopener">microsoft.com/pt-br/software-download/windows10ISO</a><br>
+            🌐 <strong>Windows 11:</strong> <a href="https://www.microsoft.com/pt-br/software-download/windows11" target="_blank" rel="noopener">microsoft.com/pt-br/software-download/windows11</a>
+          </p>
+
+          <img src="../../assets/img/windows/Aula8/image24.png" alt="Site oficial download Windows 10" class="img-showcase" style="max-width:540px;">
+          <p class="img-caption">Página oficial da Microsoft para download do Windows 10.</p>
+
+          <img src="../../assets/img/windows/Aula8/image12.png" alt="Botão Baixar Agora Windows 10" class="img-showcase" style="max-width:540px;">
+          <p class="img-caption">Clique no botão "Baixar Agora" na seção "Criar mídia de instalação do Windows 10".</p>
+
+          <img src="../../assets/img/windows/Aula8/image15.png" alt="Site oficial download Windows 11" class="img-showcase" style="max-width:540px;">
+          <p class="img-caption">Página oficial da Microsoft para download do Assistente do Windows 11.</p>
+
+          <h3 style="color:var(--teal-deep); font-size:20px; margin-top:24px;">4.3 Executando o Assistente Passo a Passo</h3>
+
+          <div class="step-box-practical">
+            <h4>🖐️ Passo a Passo da Criação da Mídia USB</h4>
+            <ol style="margin-left:20px; line-height:1.7;">
+              <li><strong>Localize o instalador:</strong> Abra a pasta <em>Downloads</em> e encontre o arquivo <code>MediaCreationTool.exe</code>.</li>
+              <li><strong>Executar como administrador:</strong> Clique com o botão direito do mouse no arquivo e selecione <strong>"Executar como administrador"</strong>.</li>
+              <li><strong>Termos de licença:</strong> Clique no botão <strong>"Aceitar"</strong>.</li>
+              <li><strong>O que você deseja fazer?:</strong> Marque a opção <strong>"Criar mídia de instalação (pen drive, DVD ou arquivo ISO)"</strong> e avance.</li>
+              <li><strong>Idioma e Arquitetura:</strong> Escolha o idioma (Português Brasil) e a Arquitetura (64 bits ou 32 bits). Ou mantenha a caixa <em>"Usar as opções recomendadas"</em> marcada.</li>
+              <li><strong>Tipo de Mídia:</strong> Selecione a opção <strong>"Unidade flash USB"</strong>.</li>
+              <li><strong>Selecione o Pendrive:</strong> Conecte o pendrive na entrada USB do PC, selecione-o na lista e clique em <em>Avançar</em>.</li>
+              <li><strong>Aguarde o Download e Criação:</strong> O assistente baixará os arquivos e criará o pendrive inicializável automaticamente.</li>
+            </ol>
+          </div>
+
+          <!-- Grade Sequencial de Imagens da Criação da Mídia -->
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin:20px 0;">
+            <div>
+              <img src="../../assets/img/windows/Aula8/image8.png" alt="Media Creation Tool em Downloads" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">1. Arquivo MediaCreationTool.exe em Downloads.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image22.png" alt="Executar como administrador" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">2. Executando como administrador.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image27.png" alt="Termos de Licença" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">3. Aceitando os termos de licença.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image3.png" alt="Escolha Criar Mídia de Instalação" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">4. Selecionando criar mídia USB.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image6.png" alt="Escolha de Arquitetura 32 ou 64 bits" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">5. Seleção de Idioma e Arquitetura.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image5.png" alt="Opção recomendadas marcada" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">5b. Opções recomendadas ativas.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image9.png" alt="Escolha Unidade Flash USB" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">6. Selecionando Unidade flash USB.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image14.png" alt="Detalhe Unidade USB" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">6b. Confirmação da escolha USB.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image11.png" alt="Selecionando a unidade pendrive" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">7. Selecionando a letra do Pendrive.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image23.png" alt="Fazendo preparativos" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">8a. Fazendo preparativos.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image28.png" alt="Baixando o Windows" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">8b. Baixando arquivos da Microsoft.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula8/image17.png" alt="Pendrive pronto com sucesso" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">9. Mídia pronta para instalação!</p>
+            </div>
+          </div>
+
+          <!-- Checkbox de Leitura & Prática Tópico 4 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que aprendi o processo completo de criação da mídia de boot USB com a Media Creation Tool.</span>
+            <button type="button" class="read-check-btn" id="check-read-8-4" onclick="markTopicRead(8, 4)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(8, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(8, 5)">Ir para 5. Formatar Pendrive →</button>
+          </div>
+        </section>
+
+
+        <!-- ===============================================================
+             TÓPICO 5 DA AULA 8: SOLUÇÃO DE ERROS E FORMATAÇÃO DO PENDRIVE
+             =============================================================== -->
+        <section id="l8-phase-5" class="topic-phase-section">
+          <h2>5. Se der Erro: Como Formatar o Pendrive em FAT32</h2>
+          <p>
+            Em alguns casos, a ferramenta da Microsoft pode apresentar mensagem de erro ao tentar gravar no pendrive (caso a unidade contenha partições antigas ou sistema de arquivos incompatível). Para resolver, basta formatar o pendrive previamente!
+          </p>
+
+          <div class="step-box-practical">
+            <h4>🖐️ Passo a Passo da Formatação no Explorador de Arquivos</h4>
+            <ol style="margin-left:20px; line-height:1.7;">
+              <li>Pressione <kbd>Win</kbd> + <kbd>E</kbd> para abrir o <strong>Explorador de Arquivos</strong>.</li>
+              <li>Localize o ícone do Pendrive em <em>"Este Computador"</em>.</li>
+              <li>Clique com o <strong>botão direito do mouse</strong> sobre o pendrive.</li>
+              <li>Clique na opção <strong>"Formatar..."</strong>.</li>
+              <li>No campo <em>Sistema de arquivos</em>, selecione <strong>FAT32 (Padrão)</strong>.</li>
+              <li>Mantenha a opção <em>"Formatação Rápida"</em> marcada e clique em <strong>Iniciar</strong>.</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/windows/Aula8/image2.png" alt="Menu de contexto do pendrive" class="img-showcase" style="max-width:360px;">
+          <p class="img-caption">Menu de contexto acessado com o botão direito sobre a unidade USB.</p>
+
+          <img src="../../assets/img/windows/Aula8/image10.png" alt="Opção Formatar no menu" class="img-showcase" style="max-width:320px;">
+          <p class="img-caption">Selecionando a opção "Formatar...".</p>
+
+          <img src="../../assets/img/windows/Aula8/image1.png" alt="Janela de formatação FAT32" class="img-showcase" style="max-width:320px;">
+          <p class="img-caption">Janela de formatação ajustada para o padrão FAT32.</p>
+
+          <div style="background:#FEF2F2; border-left:4px solid #EF4444; padding:16px; border-radius:8px; margin:20px 0;">
+            <strong style="color:#991B1B; font-size:16px;">⚠️ ALERTA DE SEGURANÇA (PERDA DE DADOS):</strong><br>
+            A formatação APAGA todos os arquivos e dados salvos no pendrive de forma imediata e irreversível! Certifique-se de não possuir documentos pessoais gravados na unidade antes de clicar em Iniciar.
+          </div>
+
+          <!-- Checkbox de Leitura & Prática Tópico 5 -->
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi como formatar um pendrive em FAT32 para corrigir falhas de gravação.</span>
+            <button type="button" class="read-check-btn" id="check-read-8-5" onclick="markTopicRead(8, 5)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(8, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(8)">Iniciar Exercício de Fixação (5 Questões) 📝 →</button>
+          </div>
+        </section>
+
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 8 (QUIZ DE 5 PERGUNTAS)
+             =============================================================== -->
+        <div id="fixation-panel-8" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--amber); margin-top:4px; font-size:24px;">Exercício de Fixação — Aula 8</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-8" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-8">QUESTÃO 1 / 5</span>
+                <span id="q-points-8">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-8"></div>
+
+              <button class="hint-toggle" id="btn-hint-8" type="button">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-8"></div>
+
+              <div class="options" id="options-8"></div>
+
+              <div class="nav-row">
+                <button class="btn btn-ghost" id="btn-prev-8" type="button">← Anterior</button>
+                <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';">✓ Salvo automaticamente</span>
+                <button class="btn btn-primary" id="btn-next-8" type="button" disabled>Próxima →</button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <label for="input-name" style="display:block; font-weight:600; margin-bottom:8px;">Digite seu nome completo para iniciar:</label>
-        <input type="text" id="input-name" placeholder="Ex.: Ana Maria Santos" style="width:100%; padding:14px; border-radius:12px; border:1.5px solid var(--line); font-size:16px; margin-bottom:18px;">
+        <!-- PAINEL DE RESULTADO E ASSINATURA SHA-256 DA AULA 8 -->
+        <div id="result-panel-8" class="fixation-panel">
+          <div class="card-quiz">
+            <div class="result-badge" id="result-badge-8"></div>
+            <h1 id="result-title-8"></h1>
+            <p style="color:var(--ink-soft);" id="result-sub-8"></p>
+            <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">
+              Nota Final: <b id="result-score-8" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0
+            </div>
 
-        <div id="resume-box" style="display:none; margin-bottom:18px; padding:14px; background:var(--amber-soft); border-radius:12px; justify-content:space-between; align-items:center;">
-          <span style="font-size:14px; color:#7A4E12;">Existe um simulado em andamento para este nome.</span>
-          <button class="btn btn-amber" id="btn-resume" type="button">Continuar de onde parei</button>
-        </div>
+            <!-- Assinatura Digital Anti-Fraude SHA-256 -->
+            <div class="signature-badge-box" id="signature-box-8">
+              <div class="signature-badge-header">
+                <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+              </div>
+              <div class="signature-code-display" id="signature-code-8">WR-AUTH-CALCULATING...</div>
+              <div class="signature-badge-desc">
+                Código de autenticidade criptográfico (SHA-256) gerado automaticamente para o aluno. Evita adulterações no comprovante ou na nota.
+              </div>
+            </div>
 
-        <button class="btn btn-primary" id="btn-start" type="button" style="width:100%;" disabled>Começar Prova de Windows →</button>
-      </div>
-    </section>
+            <div class="breakdown" id="breakdown-8"></div>
 
-    <!-- TELA 2 — QUESTÕES -->
-    <section id="screen-quiz" class="screen">
-      <div class="trail" id="trail"></div>
-      <div class="card-quiz">
-        <div class="q-meta">
-          <span id="q-count">QUESTÃO 1 / 10</span>
-          <span id="q-points">VALE 1,0 PONTO</span>
-        </div>
-        <div class="q-text" id="q-text"></div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary" id="btn-download-txt-8" type="button">Baixar Comprovante (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-8" type="button" style="background:var(--amber);">📑 Baixar Apostila PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-8" type="button">Enviar WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-email-8" type="button">Enviar por E-mail</button>
+            </div>
 
-        <button class="hint-toggle" id="btn-hint" type="button">💡 Ver dica do professor</button>
-        <div class="hint-box" id="hint-box"></div>
-
-        <div class="options" id="options"></div>
-
-        <div class="nav-row">
-          <button class="btn btn-ghost" id="btn-prev" type="button">← Anterior</button>
-          <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';" id="autosave-note">✓ Salvo automaticamente</span>
-          <button class="btn btn-primary" id="btn-next" type="button" disabled>Próxima →</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- TELA 3 — RESULTADO -->
-    <section id="screen-result" class="screen">
-      <div class="card-quiz">
-        <div class="result-badge" id="result-badge"></div>
-        <h1 id="result-title"></h1>
-        <p style="color:var(--ink-soft);" id="result-sub"></p>
-        <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">Nota Final: <b id="result-score" style="font-size:22px; color:var(--ink);">0,0</b> / 10,0</div>
-
-        <!-- Assinatura Digital Anti-Fraude -->
-        <div class="signature-badge-box" id="signature-box">
-          <div class="signature-badge-header">
-            <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
-          </div>
-          <div class="signature-code-display" id="signature-code">WR-AUTH-CALCULATING...</div>
-          <div class="signature-badge-desc">
-            Código de autenticidade criptográfico (SHA-256) gerado automaticamente. Evita adulterações no comprovante ou nota do aluno.
+            <div class="email-panel" id="email-panel-8">
+              <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
+              <input type="email" id="input-email-8" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
+              <button class="btn btn-amber" id="btn-open-gmail-8" type="button">Baixar e Abrir E-mail →</button>
+            </div>
           </div>
         </div>
 
-        <div class="breakdown" id="breakdown"></div>
+      </article>
+    </section>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="btn btn-primary" id="btn-download" type="button">Baixar Comprovante (.txt)</button>
-          <button class="btn btn-whatsapp" id="btn-whatsapp" type="button">Enviar WhatsApp</button>
-          <button class="btn btn-ghost" id="btn-email" type="button">Enviar por E-mail</button>
+
+    <!-- ===================================================================
+         TELA 3: TELA DA PROVA FINAL DO MÓDULO WINDOWS (AULA 12)
+         =================================================================== -->
+    <section id="screen-quiz" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+      </div>
+
+      <div class="quiz-app-container">
+        <!-- TELA START PROVA GERAL -->
+        <div id="quiz-start-box">
+          <div class="card-quiz">
+            <div class="eyebrow-badge"><span class="dot"></span> Avaliação Geral do Módulo</div>
+            <h1 style="color:var(--amber); font-size:28px;">📝 Prova Final de Avaliação — Módulo Windows</h1>
+            <p style="color:var(--ink-soft); margin-bottom:18px;">
+              Esta prova contém 10 questões gerais sobre o Sistema Operacional Windows, atalhos de teclado e gerenciamento de arquivos. Nota mínima para aprovação: <strong>7,0</strong>.
+            </p>
+
+            <label for="input-name-quiz" style="display:block; font-weight:600; margin-bottom:8px;">Digite seu nome completo para iniciar a avaliação:</label>
+            <input type="text" id="input-name-quiz" placeholder="Ex.: Ana Maria Santos" style="width:100%; padding:14px; border-radius:12px; border:1.5px solid var(--line); font-size:16px; margin-bottom:18px;">
+
+            <button class="btn btn-primary" id="btn-start-quiz" type="button" style="width:100%;">Começar Prova Final de Windows →</button>
+          </div>
         </div>
 
-        <div class="email-panel" id="email-panel">
-          <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
-          <input type="email" id="input-email" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
-          <button class="btn btn-amber" id="btn-open-gmail" type="button">Baixar e Abrir E-mail →</button>
+        <!-- TELA QUESTÕES PROVA GERAL -->
+        <div id="quiz-questions-box" style="display:none;">
+          <div class="trail" id="trail-quiz"></div>
+          <div class="card-quiz">
+            <div class="q-meta">
+              <span id="q-count-quiz">QUESTÃO 1 / 10</span>
+              <span id="q-points-quiz">VALE 1,0 PONTO</span>
+            </div>
+            <div class="q-text" id="q-text-quiz"></div>
+
+            <button class="hint-toggle" id="btn-hint-quiz" type="button">💡 Ver dica do professor</button>
+            <div class="hint-box" id="hint-box-quiz"></div>
+
+            <div class="options" id="options-quiz"></div>
+
+            <div class="nav-row">
+              <button class="btn btn-ghost" id="btn-prev-quiz" type="button">← Anterior</button>
+              <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';">✓ Salvo automaticamente</span>
+              <button class="btn btn-primary" id="btn-next-quiz" type="button" disabled>Próxima →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TELA RESULTADO PROVA GERAL -->
+        <div id="quiz-result-box" style="display:none;">
+          <div class="card-quiz">
+            <div class="result-badge" id="result-badge-quiz"></div>
+            <h1 id="result-title-quiz"></h1>
+            <p style="color:var(--ink-soft);" id="result-sub-quiz"></p>
+            <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">Nota Final: <b id="result-score-quiz" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0</div>
+
+            <div class="signature-badge-box" id="signature-box-quiz">
+              <div class="signature-badge-header">
+                <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+              </div>
+              <div class="signature-code-display" id="signature-code-quiz">WR-AUTH-CALCULATING...</div>
+              <div class="signature-badge-desc">
+                Código de autenticidade criptográfico (SHA-256) gerado automaticamente. Evita adulterações no comprovante ou na nota.
+              </div>
+            </div>
+
+            <div class="breakdown" id="breakdown-quiz"></div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary" id="btn-download-quiz" type="button">Baixar Comprovante (.txt)</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-quiz" type="button">Enviar WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-email-quiz" type="button">Enviar por E-mail</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+  </main>
+
+  <!-- MODAL DE PROTEÇÃO DE SENHA (PADRÃO DO PORTAL) -->
+  <div class="modal-overlay" id="password-modal">
+    <div class="modal-card">
+      <h3 class="modal-title" id="modal-title-text">Acesso Restrito</h3>
+      <p class="modal-subtitle">Informe a senha de acesso fornecida pelo Professor Marcos Rangel nas aulas presenciais da WR Capacitação (Senha: <strong>wr0926</strong>).</p>
+      <input type="password" class="modal-input" id="modal-pass-field" placeholder="Digite a senha de acesso...">
+      <div style="display:flex; gap:12px;">
+        <button type="button" class="btn btn-primary" style="flex:1;" id="btn-confirm-unlock">Desbloquear & Acessar</button>
+        <button type="button" class="btn btn-ghost" onclick="closePasswordModal()">Cancelar</button>
+      </div>
+    </div>
   </div>
 
+  <!-- MOTOR JAVASCRIPT DA AULA 8 E DO MÓDULO WINDOWS -->
   <script>
   (function(){
     "use strict";
+
+    const PASSWORD_WR = "wr0926";
     const MODULE_ID = "windows";
-    const MODULE_TITLE = "Módulo 1: Windows";
-    const STORAGE_KEY = "prova-windows-prof-rangel";
+    const MODULE_TITLE = "Módulo 1: Sistema Operacional Windows";
     const PASS_SCORE = 7.0;
 
-    const QUESTIONS = [
+    // QUESTÕES DO QUIZ DE FIXAÇÃO DA AULA 8 (5 QUESTÕES)
+    const QUESTIONS_LESSON_8 = [
+      {
+        q: "Qual ferramenta nativa do Windows é utilizada para testar a memória RAM em busca de falhas físicas e travamentos no computador?",
+        options: [
+          "Limpeza de Disco",
+          "Diagnóstico de Memória do Windows",
+          "Gerenciador de Dispositivos",
+          "Desfragmentador de Unidades"
+        ],
+        correct: 1,
+        hint: "É acessada digitando seu nome na busca do Windows (Win + S) e exige reiniciar a máquina para varredura completa."
+      },
+      {
+        q: "Ao restaurar o Windows 11 nas Configurações (Win + I), qual opção exclui os programas instalados, mas PRESERVA os documentos e arquivos pessoais?",
+        options: [
+          "Remover tudo",
+          "Manter meus arquivos",
+          "Formatação Profunda",
+          "Limpeza Total de Disco"
+        ],
+        correct: 1,
+        hint: "É a opção recomendada para corrigir erros do sistema sem perder seus trabalhos e fotos."
+      },
+      {
+        q: "Qual comando pode ser digitado na caixa Executar (Win + R) ou no Prompt de Comando para abrir diretamente o assistente de Restauração do Sistema?",
+        options: [
+          "rstrui",
+          "format",
+          "chkdsk",
+          "cleanmgr"
+        ],
+        correct: 0,
+        hint: "Abreviação em inglês para 'Restore User Interface' (rstrui)."
+      },
+      {
+        q: "Qual a capacidade mínima de armazenamento recomendada para o Pendrive ao criar uma mídia de instalação do Windows 10 ou 11 através da Media Creation Tool?",
+        options: [
+          "2 GB",
+          "4 GB",
+          "8 GB",
+          "64 GB"
+        ],
+        correct: 2,
+        hint: "A imagem de instalação do sistema exige um pendrive limpo com pelo menos 8 Gigabytes."
+      },
+      {
+        q: "Se a ferramenta de criação de mídia apresentar erro ao tentar gravar no pendrive, qual sistema de arquivos padrão é recomendado selecionar ao formatar o pendrive?",
+        options: [
+          "NTFS",
+          "FAT32 (Padrão)",
+          "exFAT",
+          "EXT4"
+        ],
+        correct: 1,
+        hint: "É o sistema de arquivos padrão universal para criação de unidades de boot."
+      }
+    ];
+
+    // QUESTÕES DA PROVA FINAL DO MÓDULO (10 QUESTÕES GERAIS DE WINDOWS)
+    const QUESTIONS_FINAL_QUIZ = [
       {
         q: "Qual é a principal função de um Sistema Operacional como o Windows?",
         options: [
@@ -277,13 +1030,13 @@
           "Navegar exclusivamente em sites de compras na internet."
         ],
         correct: 1,
-        hint: "O Sistema Operacional é como o 'maestro' do computador: liga as peças do computador aos programas que você usa."
+        hint: "O S.O. liga as peças do computador aos programas que você usa."
       },
       {
         q: "Qual é o atalho do teclado para COPIAR um item ou texto selecionado no Windows?",
         options: ["Ctrl + V", "Ctrl + X", "Ctrl + C", "Ctrl + Z"],
         correct: 2,
-        hint: "A letra do atalho é a inicial da palavra 'Copiar' (C)."
+        hint: "Letra inicial de 'Copiar' (C)."
       },
       {
         q: "Qual é o atalho do teclado para COLAR um item previamente copiado?",
@@ -300,13 +1053,13 @@
           "Abre o painel de configurações de rede."
         ],
         correct: 1,
-        hint: "Tab vem de 'tabulação' ou alternância entre opções abertas."
+        hint: "Tab vem de alternância de janelas."
       },
       {
         q: "Qual atalho de teclado abre diretamente o Explorador de Arquivos (File Explorer) do Windows?",
         options: ["Tecla Windows + E", "Tecla Windows + R", "Ctrl + Shift + Esc", "Alt + F4"],
         correct: 0,
-        hint: "A letra do atalho é a inicial da palavra 'Explorer' (E)."
+        hint: "Letra inicial de 'Explorer' (E)."
       },
       {
         q: "Para onde vão os arquivos excluídos do disco rígido local ao pressionar a tecla 'Delete'?",
@@ -317,19 +1070,19 @@
           "São enviados por e-mail para o administrador do sistema."
         ],
         correct: 1,
-        hint: "Pense em um local temporário de descarte antes de ser esvaziado definitivamente."
+        hint: "Local temporário antes de ser esvaziado."
       },
       {
         q: "Como se chama a barra horizontal localizada na parte inferior da tela onde ficam os ícones de programas abertos e a hora?",
         options: ["Barra de Status", "Barra de Tarefas", "Barra de Ferramentas", "Barra de Endereços"],
         correct: 1,
-        hint: "É a barra de 'tarefas' que você está executando no momento."
+        hint: "Barra das tarefas que você está executando."
       },
       {
         q: "Qual extensão de arquivo é comumente utilizada para documentos de texto simples sem formatação no Windows?",
         options: [".exe", ".txt", ".mp3", ".jpg"],
         correct: 1,
-        hint: "Extensão de 'text' ou 'Bloco de Notas'."
+        hint: "Extensão do Bloco de Notas (txt)."
       },
       {
         q: "Qual é a função do recurso 'Fixar na Barra de Tarefas' no Windows?",
@@ -340,228 +1093,445 @@
           "Ocultar o programa para que ninguém consiga ver."
         ],
         correct: 1,
-        hint: "Serve para 'prender' os programas que você mais usa no acesso rápido."
+        hint: "Prende os programas mais usados no acesso rápido."
       },
       {
         q: "Qual atalho de teclado é utilizado para FECHAR a janela ou programa ativo atualmente?",
         options: ["Ctrl + F4", "Alt + F4", "Win + D", "Ctrl + W"],
         correct: 1,
-        hint: "Usa a tecla Alt combinada com a tecla de função F4."
+        hint: "Combina a tecla Alt com a tecla F4."
       }
     ];
 
-    const TOTAL = QUESTIONS.length;
-    const POINTS_PER_Q = 10 / TOTAL;
+    // ESTADOS DOS QUIZZES
+    let stateL8 = { name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null };
+    let stateQuiz = { name: "", answers: new Array(10).fill(null), current: 0, signature: null };
 
-    let state = { name: "", pdfRead: false, answers: new Array(TOTAL).fill(null), current: 0, signature: null };
+    // NAVEGAÇÃO ENTRE TELAS
+    window.showScreen = function(id) {
+      document.querySelectorAll(".screen-view").forEach(s => s.classList.remove("active"));
+      const target = document.getElementById(id);
+      if(target) target.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
 
-    function checkStartUnlock(){
-      const name = document.getElementById("input-name").value.trim();
-      const readCheck = document.getElementById("check-read-pdf").checked;
-      const startBtn = document.getElementById("btn-start");
-      const warning = document.getElementById("pdf-lock-warning");
+    let targetLessonNum = null;
+    let targetLessonTitle = "";
 
-      state.pdfRead = readCheck;
+    // VALIDAÇÃO DE SENHA PARA NAVEGAÇÃO NAS AULAS (VIA MODAL CUSTOMIZADO DO PORTAL)
+    window.promptLessonPassword = function(lessonNum, lessonTitle) {
+      targetLessonNum = lessonNum;
+      targetLessonTitle = lessonTitle;
 
-      if(readCheck && name.length > 0){
-        startBtn.disabled = false;
-        warning.style.display = "none";
-      } else {
-        startBtn.disabled = true;
-        warning.style.display = "block";
+      // Aulas 1 a 7 e 9 a 11 estão em construção
+      if((lessonNum >= 1 && lessonNum <= 7) || (lessonNum >= 9 && lessonNum <= 11)){
+        alert(`🔒 A ${lessonTitle} está em construção!\n\nEm breve o conteúdo prático desta aula estará disponível no portal.`);
+        return;
       }
-    }
 
-    function checkResume(name){
-      checkStartUnlock();
-      const box = document.getElementById("resume-box");
-      if(!name.trim()) { box.style.display = "none"; return; }
-      const loaded = window.QuizEngine.loadState(STORAGE_KEY, name);
-      box.style.display = loaded ? "flex" : "none";
-    }
+      // Abre o Modal HTML idêntico ao do Módulo Internet
+      document.getElementById("modal-title-text").textContent = `Aula ${lessonNum}: ${lessonTitle}`;
+      document.getElementById("modal-pass-field").value = "";
+      document.getElementById("password-modal").classList.add("active");
+      setTimeout(() => {
+        const field = document.getElementById("modal-pass-field");
+        if(field) field.focus();
+      }, 100);
+    };
 
-    function showScreen(id){
-      document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
+    window.closePasswordModal = function(){
+      document.getElementById("password-modal").classList.remove("active");
+    };
 
-    function renderTrail(){
-      const trail = document.getElementById("trail");
+    document.getElementById("btn-confirm-unlock").onclick = function(){
+      const typed = document.getElementById("modal-pass-field").value.trim().toLowerCase();
+
+      // Aceita wr0926 ou senhas de teste a001/b002/c003/d004/h008
+      if(typed === PASSWORD_WR || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "h008" || typed === "wr2026"){
+        closePasswordModal();
+        if(targetLessonNum === 8){
+          const badge = document.getElementById("badge-lesson-8");
+          if(badge) badge.textContent = "🟢";
+          showScreen("screen-lesson-8");
+        } else if(targetLessonNum === 12){
+          const badge = document.getElementById("badge-lesson-12");
+          if(badge) badge.textContent = "🟢";
+          showScreen("screen-quiz");
+        }
+      } else {
+        alert("❌ Senha incorreta! Digite a senha correta (wr0926) fornecida pelo Professor Marcos Rangel.");
+      }
+    };
+
+    // Suporte para acionar confirmação com a tecla Enter
+    document.getElementById("modal-pass-field").addEventListener("keypress", function(e){
+      if(e.key === "Enter"){
+        document.getElementById("btn-confirm-unlock").click();
+      }
+    });
+
+    // NAVEGAÇÃO DE TÓPICOS DA AULA 8
+    window.switchTopicPhase = function(lessonNum, phaseNum) {
+      document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-phase-section`).forEach(s => s.classList.remove("active"));
+
+      const activeTab = document.getElementById(`tab-btn-${lessonNum}-${phaseNum}`);
+      const activePhase = document.getElementById(`l${lessonNum}-phase-${phaseNum}`);
+
+      if(activeTab) activeTab.classList.add("active");
+      if(activePhase) activePhase.classList.add("active");
+
+      document.getElementById(`fixation-panel-${lessonNum}`).classList.remove("active");
+      document.getElementById(`result-panel-${lessonNum}`).classList.remove("active");
+
+      window.scrollTo({ top: 180, behavior: "smooth" });
+    };
+
+    // MARCAR LEITURA / GAMIFICAÇÃO DA AULA 8
+    let readTopicsL8 = new Set();
+    window.markTopicRead = function(lessonNum, topicNum) {
+      readTopicsL8.add(topicNum);
+      const btn = document.getElementById(`check-read-${lessonNum}-${topicNum}`);
+      if(btn){
+        btn.classList.add("checked");
+        btn.innerHTML = "<span>☑ Leitura Concluída!</span>";
+      }
+
+      const totalTopics = 5;
+      const pct = Math.round((readTopicsL8.size / totalTopics) * 100);
+      document.getElementById(`gamify-percent-${lessonNum}`).textContent = `${pct}% Concluído`;
+      document.getElementById(`gamify-bar-${lessonNum}`).style.width = `${pct}%`;
+
+      if(readTopicsL8.size === totalTopics){
+        document.getElementById(`gamify-badge-box-${lessonNum}`).innerHTML =
+          '<span class="eyebrow-badge" style="background:var(--success-bg); color:var(--success); margin:0;"><span class="dot"></span> 🎉 Leitura Completa!</span>';
+      }
+    };
+
+    // ABRIR EXERCÍCIO DE FIXAÇÃO DA AULA 8
+    window.openFixationPanel = function(lessonNum) {
+      document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-phase-section`).forEach(s => s.classList.remove("active"));
+      document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
+      document.getElementById(`tab-btn-${lessonNum}-fix`).classList.add("active");
+
+      const panel = document.getElementById(`fixation-panel-${lessonNum}`);
+      panel.classList.add("active");
+      renderTrailL8();
+      renderQuestionL8();
+
+      panel.scrollIntoView({ behavior: "smooth" });
+    };
+
+    // LÓGICA DO QUIZ DA AULA 8
+    function renderTrailL8() {
+      const trail = document.getElementById("quiz-trail-8");
       trail.innerHTML = "";
-      for(let i=0; i<TOTAL; i++){
+      for(let i=0; i<5; i++){
         const node = document.createElement("div");
-        node.className = "trail-node" + (i < state.current ? " done" : i === state.current ? " current" : "");
+        node.className = "trail-node" + (i < stateL8.current ? " done" : i === stateL8.current ? " current" : "");
         trail.appendChild(node);
-        if(i < TOTAL - 1){
+        if(i < 4){
           const line = document.createElement("div");
-          line.className = "trail-line" + (i < state.current ? " filled" : "");
+          line.className = "trail-line" + (i < stateL8.current ? " filled" : "");
           line.innerHTML = "<i></i>";
           trail.appendChild(line);
         }
       }
     }
 
-    function renderQuestion(){
-      renderTrail();
-      const q = QUESTIONS[state.current];
-      document.getElementById("q-count").textContent = `QUESTÃO ${state.current + 1} / ${TOTAL}`;
-      document.getElementById("q-text").textContent = q.q;
+    function renderQuestionL8() {
+      renderTrailL8();
+      const q = QUESTIONS_LESSON_8[stateL8.current];
+      document.getElementById("q-count-8").textContent = `QUESTÃO ${stateL8.current + 1} / 5`;
+      document.getElementById("q-text-8").textContent = q.q;
 
-      const hintBox = document.getElementById("hint-box");
+      const hintBox = document.getElementById("hint-box-8");
       hintBox.textContent = q.hint;
       hintBox.classList.remove("show");
 
-      const opts = document.getElementById("options");
+      const opts = document.getElementById("options-8");
       opts.innerHTML = "";
       q.options.forEach((text, idx) => {
         const btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "opt" + (state.answers[state.current] === idx ? " selected" : "");
+        btn.className = "opt" + (stateL8.answers[stateL8.current] === idx ? " selected" : "");
         btn.innerHTML = `<span class="letter">${String.fromCharCode(97+idx)}</span><span>${text}</span>`;
         btn.onclick = () => {
-          state.answers[state.current] = idx;
-          renderQuestion();
-          window.QuizEngine.saveState(STORAGE_KEY, state);
+          stateL8.answers[stateL8.current] = idx;
+          renderQuestionL8();
         };
         opts.appendChild(btn);
       });
 
-      document.getElementById("btn-prev").disabled = state.current === 0;
-      document.getElementById("btn-prev").style.visibility = state.current === 0 ? "hidden" : "visible";
-      document.getElementById("btn-next").disabled = state.answers[state.current] === null;
-      document.getElementById("btn-next").textContent = state.current === TOTAL - 1 ? "Finalizar Prova ✓" : "Próxima →";
+      document.getElementById("btn-prev-8").disabled = stateL8.current === 0;
+      document.getElementById("btn-prev-8").style.visibility = stateL8.current === 0 ? "hidden" : "visible";
+      document.getElementById("btn-next-8").disabled = stateL8.answers[stateL8.current] === null;
+      document.getElementById("btn-next-8").textContent = stateL8.current === 4 ? "Finalizar Exercício ✓" : "Próxima →";
     }
 
-    function computeScore(){
+    async function renderResultL8() {
       let correct = 0;
-      QUESTIONS.forEach((q, i) => { if(state.answers[i] === q.correct) correct++; });
-      return { correct, score: correct * POINTS_PER_Q };
-    }
-
-    function fmt(n){ return n.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
-
-    async function renderResult(){
-      const { correct, score } = computeScore();
+      QUESTIONS_LESSON_8.forEach((q, i) => { if(stateL8.answers[i] === q.correct) correct++; });
+      const score = correct * 2.0;
       const passed = score >= PASS_SCORE;
-      document.getElementById("result-score").textContent = fmt(score);
 
-      const timestamp = state.signature ? state.signature.timestamp : Date.now();
-      state.signature = await window.QuizEngine.generateDigitalSignature(state.name, MODULE_TITLE, score, TOTAL, timestamp);
-      window.QuizEngine.saveState(STORAGE_KEY, state);
+      document.getElementById("fixation-panel-8").classList.remove("active");
+      const resPanel = document.getElementById("result-panel-8");
+      resPanel.classList.add("active");
 
-      document.getElementById("signature-code").textContent = state.signature.authCode;
+      document.getElementById("result-score-8").textContent = score.toLocaleString("pt-BR", { minimumFractionDigits: 1 });
 
-      const badge = document.getElementById("result-badge");
-      const title = document.getElementById("result-title");
-      const sub = document.getElementById("result-sub");
+      const timestamp = stateL8.signature ? stateL8.signature.timestamp : Date.now();
+      stateL8.signature = await window.QuizEngine.generateDigitalSignature(stateL8.name, "Módulo 1 - Aula 8 (Windows)", score, 5, timestamp);
+      document.getElementById("signature-code-8").textContent = stateL8.signature.authCode;
+
+      const badge = document.getElementById("result-badge-8");
+      const title = document.getElementById("result-title-8");
+      const sub = document.getElementById("result-sub-8");
 
       if(passed){
         badge.className = "result-badge pass"; badge.textContent = "🎉";
-        title.textContent = `Parabéns, ${state.name.split(" ")[0]}!`;
-        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões e foi aprovado(a) no Módulo 1 (Windows).`;
+        title.textContent = "Parabéns!";
+        sub.textContent = `Você acertou ${correct} de 5 questões no Exercício da Aula 8 (Diagnóstico de Memória e Restauração)!`;
       } else {
         badge.className = "result-badge fail"; badge.textContent = "📘";
-        title.textContent = `Atenção, ${state.name.split(" ")[0]}.`;
-        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões (nota ${fmt(score)}). A nota mínima é 7,0. Revise a aula em PDF do Professor Marcos Rangel!`;
+        title.textContent = "Atenção ao Conteúdo!";
+        sub.textContent = `Você acertou ${correct} de 5 questões (nota ${score.toLocaleString("pt-BR", { minimumFractionDigits: 1 })}). Revise os passos práticos da aula e tente novamente!`;
       }
 
-      const breakdown = document.getElementById("breakdown");
+      const breakdown = document.getElementById("breakdown-8");
       breakdown.innerHTML = "";
-      QUESTIONS.forEach((q, i) => {
-        const ok = state.answers[i] === q.correct;
+      QUESTIONS_LESSON_8.forEach((q, i) => {
+        const ok = stateL8.answers[i] === q.correct;
         const row = document.createElement("div");
         row.className = "b-row";
         row.innerHTML = `<span>${i+1}. ${q.q}</span><span class="b-tag ${ok ? "ok" : "no"}">${ok ? "correta" : "incorreta"}</span>`;
         breakdown.appendChild(row);
       });
 
-      showScreen("screen-result");
+      resPanel.scrollIntoView({ behavior: "smooth" });
     }
 
-    function getReportData(){
-      const { correct, score } = computeScore();
+    // EVENTOS DA AULA 8
+    document.getElementById("btn-hint-8").onclick = () => {
+      document.getElementById("hint-box-8").classList.toggle("show");
+    };
+
+    document.getElementById("btn-prev-8").onclick = () => {
+      if(stateL8.current > 0) { stateL8.current--; renderQuestionL8(); }
+    };
+
+    document.getElementById("btn-next-8").onclick = () => {
+      if(stateL8.current < 4) {
+        stateL8.current++; renderQuestionL8();
+      } else {
+        renderResultL8();
+      }
+    };
+
+    function getReportDataL8() {
+      let correct = 0;
+      QUESTIONS_LESSON_8.forEach((q, i) => { if(stateL8.answers[i] === q.correct) correct++; });
+      const score = correct * 2.0;
       return {
-        studentName: state.name,
-        moduleId: MODULE_ID,
-        moduleTitle: MODULE_TITLE,
+        studentName: stateL8.name,
+        moduleId: "windows-aula-8",
+        moduleTitle: "Módulo 1 — Aula 8: Diagnóstico de Memória & Restauração (Windows)",
         correct: correct,
-        total: TOTAL,
+        total: 5,
         score: score,
         passed: score >= PASS_SCORE,
-        signature: state.signature,
-        answers: state.answers,
-        questions: QUESTIONS
+        signature: stateL8.signature,
+        answers: stateL8.answers,
+        questions: QUESTIONS_LESSON_8
       };
     }
 
-    // Event Listeners
-    document.getElementById("btn-download-pdf-lesson").onclick = () => {
-      window.PDFLessons.downloadLessonPDF(MODULE_ID);
+    document.getElementById("btn-download-txt-8").onclick = () => {
+      window.QuizEngine.downloadTxtReport(getReportDataL8());
     };
 
-    document.getElementById("check-read-pdf").onchange = checkStartUnlock;
-    const nameInput = document.getElementById("input-name");
-    nameInput.addEventListener("input", () => checkResume(nameInput.value));
-
-    document.getElementById("btn-start").onclick = () => {
-      const name = nameInput.value.trim();
-      if(!name){ alert("Por favor, digite seu nome completo."); return; }
-      if(!document.getElementById("check-read-pdf").checked){
-        alert("Por favor, confirme que baixou e leu a aula didática em PDF."); return;
-      }
-      state.name = name;
-      showScreen("screen-quiz");
-      renderQuestion();
-      window.QuizEngine.saveState(STORAGE_KEY, state);
+    document.getElementById("btn-download-pdf-8").onclick = () => {
+      window.PDFLessons.downloadLessonPDF("windows", 8);
     };
 
-    document.getElementById("btn-resume").onclick = () => {
-      const name = nameInput.value.trim();
-      const loaded = window.QuizEngine.loadState(STORAGE_KEY, name);
-      if(loaded){
-        state = loaded;
-        document.getElementById("check-read-pdf").checked = state.pdfRead || false;
-        checkStartUnlock();
-        showScreen("screen-quiz");
-        renderQuestion();
-      }
-    };
-
-    document.getElementById("btn-hint").onclick = () => {
-      document.getElementById("hint-box").classList.toggle("show");
-    };
-
-    document.getElementById("btn-prev").onclick = () => {
-      if(state.current > 0) { state.current--; renderQuestion(); }
-    };
-
-    document.getElementById("btn-next").onclick = () => {
-      if(state.current < TOTAL - 1) {
-        state.current++; renderQuestion(); window.QuizEngine.saveState(STORAGE_KEY, state);
-      } else {
-        renderResult();
-      }
-    };
-
-    document.getElementById("btn-download").onclick = () => {
-      window.QuizEngine.downloadTxtReport(getReportData());
-    };
-
-    document.getElementById("btn-whatsapp").onclick = () => {
-      const url = window.QuizEngine.buildWhatsAppUrl(getReportData());
+    document.getElementById("btn-whatsapp-8").onclick = () => {
+      const url = window.QuizEngine.buildWhatsAppUrl(getReportDataL8());
       window.open(url, "_blank");
     };
 
-    document.getElementById("btn-email").onclick = () => {
-      document.getElementById("email-panel").classList.toggle("show");
+    document.getElementById("btn-email-8").onclick = () => {
+      document.getElementById("email-panel-8").classList.toggle("show");
     };
 
-    document.getElementById("btn-open-gmail").onclick = () => {
-      window.QuizEngine.openGmailComposer(getReportData());
+    document.getElementById("btn-open-gmail-8").onclick = () => {
+      window.QuizEngine.openGmailComposer(getReportDataL8());
     };
+
+    // ===================================================================
+    // LÓGICA DA PROVA FINAL DO MÓDULO WINDOWS (AULA 12 - 10 QUESTÕES)
+    // ===================================================================
+    function renderTrailQuiz() {
+      const trail = document.getElementById("trail-quiz");
+      trail.innerHTML = "";
+      for(let i=0; i<10; i++){
+        const node = document.createElement("div");
+        node.className = "trail-node" + (i < stateQuiz.current ? " done" : i === stateQuiz.current ? " current" : "");
+        trail.appendChild(node);
+        if(i < 9){
+          const line = document.createElement("div");
+          line.className = "trail-line" + (i < stateQuiz.current ? " filled" : "");
+          line.innerHTML = "<i></i>";
+          trail.appendChild(line);
+        }
+      }
+    }
+
+    function renderQuestionQuiz() {
+      renderTrailQuiz();
+      const q = QUESTIONS_FINAL_QUIZ[stateQuiz.current];
+      document.getElementById("q-count-quiz").textContent = `QUESTÃO ${stateQuiz.current + 1} / 10`;
+      document.getElementById("q-text-quiz").textContent = q.q;
+
+      const hintBox = document.getElementById("hint-box-quiz");
+      hintBox.textContent = q.hint;
+      hintBox.classList.remove("show");
+
+      const opts = document.getElementById("options-quiz");
+      opts.innerHTML = "";
+      q.options.forEach((text, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "opt" + (stateQuiz.answers[stateQuiz.current] === idx ? " selected" : "");
+        btn.innerHTML = `<span class="letter">${String.fromCharCode(97+idx)}</span><span>${text}</span>`;
+        btn.onclick = () => {
+          stateQuiz.answers[stateQuiz.current] = idx;
+          renderQuestionQuiz();
+        };
+        opts.appendChild(btn);
+      });
+
+      document.getElementById("btn-prev-quiz").disabled = stateQuiz.current === 0;
+      document.getElementById("btn-prev-quiz").style.visibility = stateQuiz.current === 0 ? "hidden" : "visible";
+      document.getElementById("btn-next-quiz").disabled = stateQuiz.answers[stateQuiz.current] === null;
+      document.getElementById("btn-next-quiz").textContent = stateQuiz.current === 9 ? "Finalizar Prova ✓" : "Próxima →";
+    }
+
+    async function renderResultQuiz() {
+      let correct = 0;
+      QUESTIONS_FINAL_QUIZ.forEach((q, i) => { if(stateQuiz.answers[i] === q.correct) correct++; });
+      const score = correct * 1.0;
+      const passed = score >= PASS_SCORE;
+
+      document.getElementById("quiz-questions-box").style.display = "none";
+      const resBox = document.getElementById("quiz-result-box");
+      resBox.style.display = "block";
+
+      document.getElementById("result-score-quiz").textContent = score.toLocaleString("pt-BR", { minimumFractionDigits: 1 });
+
+      const timestamp = stateQuiz.signature ? stateQuiz.signature.timestamp : Date.now();
+      stateQuiz.signature = await window.QuizEngine.generateDigitalSignature(stateQuiz.name, MODULE_TITLE, score, 10, timestamp);
+      document.getElementById("signature-code-quiz").textContent = stateQuiz.signature.authCode;
+
+      const badge = document.getElementById("result-badge-quiz");
+      const title = document.getElementById("result-title-quiz");
+      const sub = document.getElementById("result-sub-quiz");
+
+      if(passed){
+        badge.className = "result-badge pass"; badge.textContent = "🎉";
+        title.textContent = `Parabéns, ${stateQuiz.name.split(" ")[0]}!`;
+        sub.textContent = `Você acertou ${correct} de 10 questões e foi aprovado(a) no Módulo 1 (Windows).`;
+      } else {
+        badge.className = "result-badge fail"; badge.textContent = "📘";
+        title.textContent = `Atenção, ${stateQuiz.name.split(" ")[0]}.`;
+        sub.textContent = `Você acertou ${correct} de 10 questões (nota ${score.toLocaleString("pt-BR", { minimumFractionDigits: 1 })}). Revise o conteúdo do módulo e tente novamente!`;
+      }
+
+      const breakdown = document.getElementById("breakdown-quiz");
+      breakdown.innerHTML = "";
+      QUESTIONS_FINAL_QUIZ.forEach((q, i) => {
+        const ok = stateQuiz.answers[i] === q.correct;
+        const row = document.createElement("div");
+        row.className = "b-row";
+        row.innerHTML = `<span>${i+1}. ${q.q}</span><span class="b-tag ${ok ? "ok" : "no"}">${ok ? "correta" : "incorreta"}</span>`;
+        breakdown.appendChild(row);
+      });
+    }
+
+    document.getElementById("btn-start-quiz").onclick = () => {
+      const name = document.getElementById("input-name-quiz").value.trim();
+      if(!name){ alert("Por favor, digite seu nome completo."); return; }
+      stateQuiz.name = name;
+      document.getElementById("quiz-start-box").style.display = "none";
+      document.getElementById("quiz-questions-box").style.display = "block";
+      renderQuestionQuiz();
+    };
+
+    document.getElementById("btn-hint-quiz").onclick = () => {
+      document.getElementById("hint-box-quiz").classList.toggle("show");
+    };
+
+    document.getElementById("btn-prev-quiz").onclick = () => {
+      if(stateQuiz.current > 0) { stateQuiz.current--; renderQuestionQuiz(); }
+    };
+
+    document.getElementById("btn-next-quiz").onclick = () => {
+      if(stateQuiz.current < 9) {
+        stateQuiz.current++; renderQuestionQuiz();
+      } else {
+        renderResultQuiz();
+      }
+    };
+
+    function getReportDataQuiz() {
+      let correct = 0;
+      QUESTIONS_FINAL_QUIZ.forEach((q, i) => { if(stateQuiz.answers[i] === q.correct) correct++; });
+      const score = correct * 1.0;
+      return {
+        studentName: stateQuiz.name,
+        moduleId: MODULE_ID,
+        moduleTitle: MODULE_TITLE,
+        correct: correct,
+        total: 10,
+        score: score,
+        passed: score >= PASS_SCORE,
+        signature: stateQuiz.signature,
+        answers: stateQuiz.answers,
+        questions: QUESTIONS_FINAL_QUIZ
+      };
+    }
+
+    document.getElementById("btn-download-quiz").onclick = () => {
+      window.QuizEngine.downloadTxtReport(getReportDataQuiz());
+    };
+
+    document.getElementById("btn-whatsapp-quiz").onclick = () => {
+      const url = window.QuizEngine.buildWhatsAppUrl(getReportDataQuiz());
+      window.open(url, "_blank");
+    };
+
+    document.getElementById("btn-email-quiz").onclick = () => {
+      const data = getReportDataQuiz();
+      window.QuizEngine.openGmailComposer(data);
+    };
+
+    // SANFONA DO PROFESSOR (ACCORDION)
+    const profBtn = document.getElementById("btn-prof-accordion");
+    if(profBtn){
+      profBtn.onclick = function() {
+        const content = document.getElementById("prof-content");
+        const icon = document.getElementById("prof-icon");
+        if(content.style.display === "block"){
+          content.style.display = "none";
+          icon.textContent = "▼";
+        } else {
+          content.style.display = "block";
+          icon.textContent = "▲";
+        }
+      };
+    }
 
   })();
   </script>
 </body>
 </html>
-

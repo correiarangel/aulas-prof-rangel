@@ -6,10 +6,12 @@
 ## 📌 Status Geral dos Módulos
 
 ### 💻 Módulo 1: Sistema Operacional Windows
-- [x] Material Didático Interativo por Fases
-- [x] Exercício de Fixação Interativo
-- [x] Prova Final com Senha de Liberação (`a001`)
-- [x] Emissão de Comprovante TXT, PDF, WhatsApp e E-mail com SHA-256
+- [x] Catálogo Geral do Módulo em **12 Aulas** (Aulas 1-7 e 9-11 com selo `🔒 Em Construção`, Aula 08 `🔓 Liberada` e Aula 12 `📝 Prova Final`)
+- [x] **Aula 08**: Diagnóstico de Memória, Restauração do Sistema e Criação de Mídia de Instalação no Windows (Leitura Prática "Mão na Massa" em 5 Tópicos com 28 imagens ilustrativas)
+- [x] **Aula 08**: Exercício de Fixação em Formato Quiz (5 Questões) com Dicas, Validação de Nota e Assinatura Digital SHA-256 (Senha `wr0926`)
+- [x] **Interface Ergonomicamente Ajustada**: Botão `📑 Baixar Apostila Didática em PDF` posicionado no início/topo das aulas em todos os módulos (Windows e Internet)
+- [x] Emissão de Comprovantes TXT, Apostila PDF, WhatsApp e E-mail com SHA-256
+
 
 ### 📝 Módulo 2: Microsoft Word
 - [x] Material Didático Interativo por Fases
