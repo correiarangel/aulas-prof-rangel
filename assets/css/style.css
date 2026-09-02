@@ -1331,7 +1331,18 @@ a:hover {
   .phase-nav-row, .modal-overlay, .portal-footer, .no-print, .btn, .gamify-header-bar, .read-check-box { display: none !important; }
   .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
   .lesson-reading-card { background: #FFFFFF !important; box-shadow: none !important; border: none !important; padding: 0 !important; }
-  .topic-phase-section { display: block !important; }
+  .topic-phase-section { display: block !important; page-break-inside: avoid !important; break-inside: avoid !important; margin-bottom: 28px !important; border-bottom: 1px solid #E2E8F0 !important; padding-bottom: 20px !important; }
+  .img-reduced, .lesson-reading-card img {
+    display: block !important;
+    max-width: 82% !important;
+    max-height: 420px !important;
+    margin: 18px auto !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
 }
 
 

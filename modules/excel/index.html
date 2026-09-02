@@ -3,82 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3: Excel — Prova Interativa | Prof. Marcos Rangel</title>
+  <title>Módulo 3: Microsoft Excel | Prof. Marcos Rangel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/style.css">
   <script src="../../assets/js/pdf-lessons.js"></script>
   <script src="../../assets/js/quiz-engine.js"></script>
   <style>
-    body { display: flex; flex-direction: column; align-items: center; padding: 0; }
-    .quiz-app { width: 100%; max-width: 680px; margin: 30px auto; padding: 0 16px; }
-    .trail { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; padding: 0 4px; }
-    .trail-node { width: 12px; height: 12px; border-radius: 50%; background: var(--node-off); transition: all 0.3s ease; }
-    .trail-node.done { background: var(--teal); box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.15); }
-    .trail-node.current { background: var(--amber); transform: scale(1.35); box-shadow: 0 0 0 5px rgba(251, 146, 60, 0.3); }
-    .trail-line { flex: 1; height: 2px; background: var(--node-off); margin: 0 4px; position: relative; overflow: hidden; }
-    .trail-line i { position: absolute; inset: 0; background: var(--teal); width: 0%; transition: width 0.4s ease; }
-    .trail-line.filled i { width: 100%; }
+    /* Estilos Temáticos Verde Excel */
+    :root {
+      --excel-green: #16A34A;
+      --excel-green-dark: #15803D;
+      --excel-green-light: #DCFCE7;
+      --excel-green-border: #86EFAC;
+    }
 
-    .card-quiz { background: var(--paper); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--line); padding: 40px 36px 34px; }
-    @media (max-width: 560px) { .card-quiz { padding: 26px 20px; } }
+    .badge-excel-green {
+      background: rgba(22, 163, 74, 0.15);
+      color: #22C55E;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
 
-    .pdf-lesson-box { background: #f8fafc; border: 1px solid var(--line); padding: 16px; border-radius: 12px; margin-bottom: 24px; }
-    .pdf-lesson-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-    .pdf-lesson-title { font-weight: 700; color: var(--teal-deep); }
-    .btn-pdf-download { background: #fff; border: 1px solid var(--line); padding: 8px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; display: flex; align-items: center; gap: 6px; }
-    .pdf-unlock-check { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 14px; cursor: pointer; }
-    .pdf-lock-warning { color: var(--warn); font-size: 12px; margin-top: 8px; font-weight: 600; }
+    /* Componente Simulador Grid Inspector */
+    .grid-inspector-container {
+      background: #FFFFFF;
+      border: 2px solid var(--excel-green);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 24px 0;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      color: #1F2937;
+    }
 
-    .signature-badge-box { margin: 20px 0; padding: 16px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; font-size: 12px; }
-    .signature-badge-header { color: #166534; font-weight: 700; margin-bottom: 8px; }
-    .signature-code-display { font-family: 'JetBrains Mono', monospace; background: #fff; padding: 8px; border-radius: 4px; word-break: break-all; margin: 8px 0; color: #166534; }
+    .grid-inspector-header {
+      background: #F0FDF4;
+      border: 1px solid var(--excel-green-border);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
 
-    .q-meta { display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-soft); margin-bottom: 12px; }
-    .q-text { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(19px, 3.5vw, 23px); line-height: 1.35; color: var(--teal-deep); margin-bottom: 20px; }
-    .options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
-    .opt { display: flex; align-items: flex-start; gap: 12px; width: 100%; background: #FFFBF6; border: 1.5px solid var(--line); border-radius: var(--radius-md); padding: 14px 16px; cursor: pointer; font: inherit; font-size: 15px; color: var(--ink); text-align: left; transition: all 0.2s ease; }
-    .opt:hover { border-color: var(--amber); background: #FFF6EC; }
-    .opt .letter { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--line); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; color: var(--ink-soft); }
-    .opt.selected { border-color: var(--teal); background: #FFEEDD; }
-    .opt.selected .letter { background: var(--teal); color: #fff; }
+    .cell-name-box {
+      background: #FFFFFF;
+      border: 1.5px solid var(--excel-green);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      color: var(--excel-green-dark);
+      font-size: 15px;
+      min-width: 60px;
+      text-align: center;
+    }
 
-    .btn { border: none; cursor: pointer; font: inherit; font-weight: 700; font-size: 15px; border-radius: var(--radius-md); padding: 14px 24px; transition: all 0.2s ease; }
-    .btn-primary { background: var(--teal); color: #fff; box-shadow: 0 8px 20px rgba(154, 52, 18, 0.3); }
-    .btn-primary:hover { background: var(--teal-deep); transform: translateY(-1px); }
-    .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
-    .btn-ghost { background: transparent; color: var(--teal); border: 1.5px solid var(--line); }
-    .btn-ghost:hover { border-color: var(--teal); background: #FFF0E2; }
-    .btn-amber { background: var(--amber-soft); color: #8A5A17; }
-    .btn-amber:hover { background: var(--amber); color: #fff; }
-    .btn-whatsapp { background: var(--whatsapp); color: #fff; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-whatsapp:hover { background: var(--whatsapp-deep); }
+    .formula-bar-display {
+      flex: 1;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: #334155;
+      min-width: 180px;
+      overflow-x: auto;
+    }
 
-    .hint-toggle { background: none; border: none; cursor: pointer; font: inherit; font-weight: 600; font-size: 13px; color: #8A5A17; display: inline-flex; align-items: center; gap: 6px; padding: 4px 0; margin-bottom: 12px; }
-    .hint-box { display: none; background: var(--amber-soft); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; color: #7A4E12; margin-bottom: 18px; line-height: 1.5; }
-    .hint-box.show { display: block; }
+    .excel-sheet-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      background: #FFFFFF;
+    }
 
-    .nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; gap: 12px; }
-    .screen { display: none; }
-    .screen.active { display: block; animation: fadeIn 0.3s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .excel-sheet-table th {
+      background: #E2E8F0;
+      color: #475569;
+      font-weight: 700;
+      border: 1px solid #CBD5E1;
+      padding: 8px;
+      text-align: center;
+      user-select: none;
+    }
 
-    .result-badge { width: 74px; height: 74px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: 18px; }
-    .result-badge.pass { background: var(--success-bg); }
-    .result-badge.fail { background: var(--warn-bg); }
-    .breakdown { margin: 16px 0 24px; border-top: 1px solid var(--line); }
-    .b-row { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; }
-    .b-tag { font-weight: 700; font-size: 12px; padding: 3px 9px; border-radius: 99px; }
-    .b-tag.ok { background: var(--success-bg); color: var(--success); }
-    .b-tag.no { background: var(--warn-bg); color: var(--warn); }
-    .email-panel { margin-top: 14px; padding: 16px; border-radius: 12px; border: 1.5px dashed var(--line); background: #FBFCFC; display: none; }
-    .email-panel.show { display: block; }
+    .excel-sheet-table td {
+      border: 1px solid #E2E8F0;
+      padding: 8px 10px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      min-width: 70px;
+      height: 36px;
+      vertical-align: middle;
+    }
+
+    .excel-sheet-table td:hover {
+      background: #F1F5F9;
+    }
+
+    .excel-sheet-table td.active-cell {
+      outline: 2px solid var(--excel-green);
+      outline-offset: -2px;
+      background: #F0FDF4 !important;
+      font-weight: 600;
+    }
+
+    .align-left { text-align: left; }
+    .align-right { text-align: right; color: #065F46; font-weight: 600; }
+    .align-center { text-align: center; }
+
+    .type-badge-indicator {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .type-text { background: #E0F2FE; color: #0369A1; }
+    .type-number { background: #DCFCE7; color: #15803D; }
+    .type-date { background: #FEF3C7; color: #B45309; }
+
+    .test-input-box {
+      margin-top: 14px;
+      padding: 12px;
+      background: #F8FAFC;
+      border-radius: 8px;
+      border: 1px solid #E2E8F0;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .test-input-box input {
+      flex: 1;
+      min-width: 200px;
+      padding: 10px 14px;
+      border: 1.5px solid #94A3B8;
+      border-radius: 6px;
+      font-size: 15px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Top Header -->
-  <header class="header-nav" style="width: 100%;">
+  <!-- Top Header Nav -->
+  <header class="header-nav">
     <div class="nav-container">
       <a href="../../index.html" class="brand-logo">
         <img src="../../assets/img/professor-rangel.png" alt="Prof. Marcos Rangel" class="brand-avatar-mini">
@@ -87,398 +167,1036 @@
           <span class="brand-subtitle">← Voltar ao Portal</span>
         </div>
       </a>
-      <span class="eyebrow-badge" style="margin:0;">Módulo 3: Excel</span>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span class="badge-excel-green"><span class="dot"></span> Módulo 3: Excel</span>
+        <a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" rel="noopener" class="nav-link-wr no-print">WR Capacitação ↗</a>
+      </div>
     </div>
   </header>
 
-  <div class="quiz-app">
+  <main class="container">
 
-    <!-- TELA 1 — IDENTIFICAÇÃO -->
-    <section id="screen-start" class="screen active">
-      <div class="card-quiz">
-        <div class="eyebrow-badge"><span class="dot"></span> Avaliação Didática</div>
-        <h1>Módulo 3 — Microsoft Excel</h1>
-        <p style="color:var(--ink-soft); margin-bottom:18px;">
-          Esta prova contém 10 questões sobre planilhas eletrônicas, cálculo de fórmulas, funções básicas (SOMA, MÉDIA, SE) e gráficos. Nota mínima para aprovação: <strong>7,0</strong>.
-        </p>
+    <!-- ===================================================================
+         TELA 1: MENU DE AULAS (HUB PRINCIPAL DO MÓDULO EXCEL)
+         =================================================================== -->
+    <section id="screen-hub" class="screen-view active">
+      <div class="menu-hub-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+          <div>
+            <span class="badge-excel-green"><span class="dot"></span> Trilha Didático-Prática de Planilhas</span>
+            <h1 style="font-size:32px; color:var(--amber); margin:10px 0 6px 0;">📊 Módulo 3 — Microsoft Excel</h1>
+            <p style="font-size:18px; color:var(--ink-light); margin:0;">
+              Aprenda a criar planilhas eletrônicas, fórmulas matemáticas, funções lógicas, tabelas dinâmicas e dashboards. O acesso requer a senha presencial fornecida pelo Professor Marcos Rangel.
+            </p>
+          </div>
+        </div>
 
-        <!-- PDF Lesson Download & Checkbox Requirement -->
-        <div class="pdf-lesson-box">
-          <div class="pdf-lesson-header">
-            <span class="pdf-lesson-title">📄 Material Didático da Aula</span>
-            <button class="btn-pdf-download" type="button" id="btn-download-pdf-lesson">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              Baixar Aula em PDF
+        <!-- Grade das 13 Aulas do Módulo -->
+        <div class="lessons-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin-top:32px;">
+
+          <!-- AULA 01 — LIBERADA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(1, 'Introdução ao Excel, Interface, Tipos de Dados e Navegação')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num" style="color:var(--excel-green);">AULA 01</span>
+              <span class="lesson-name">Introdução ao Excel & Interface</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `xa001`)</span>
+            </div>
+            <span style="font-size:22px;" id="badge-lesson-1">🔒</span>
+          </div>
+
+          <!-- AULA 02 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 02: Operações Básicas & Fórmulas Simples')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 02</span>
+              <span class="lesson-name">Operações Básicas & Fórmulas</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xb002`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 03 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 03: Exercícios Práticos & Formatação Condicional')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 03</span>
+              <span class="lesson-name">Exercícios Práticos & Formatação</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xc003`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 04 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 04: Funções Lógicas Avançadas (SE, E, OU)')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 04</span>
+              <span class="lesson-name">Funções Lógicas (SE, E, OU)</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xd004`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 05 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 05: Funções de Pesquisa & Referência (PROCV, PROCX)')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 05</span>
+              <span class="lesson-name">Pesquisa (PROCV, PROCX)</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xe005`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 06 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 06: Datas e Horas no Excel')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 06</span>
+              <span class="lesson-name">Datas e Horas no Excel</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xf006`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 07 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 07: Contas Pessoais & Tabela Dinâmica')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 07</span>
+              <span class="lesson-name">Tabelas Dinâmicas & Filtros</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xg007`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 08 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 08: Controle de Vendas (SOMASE / SOMASES)')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 08</span>
+              <span class="lesson-name">Agrupamento (SOMASE, CONT.SE)</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xh008`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 09 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 09: Macros & Introdução ao VBA')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 09</span>
+              <span class="lesson-name">Macros & Introdução ao VBA</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xi009`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 10 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 10: Revisão Geral & Preparatório')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">AULA 10</span>
+              <span class="lesson-name">Revisão Geral & Exercícios</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xj010`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 11 — PROJETO PARTE 1 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 11: Projeto Vendas — Estruturação do Banco de Dados')" style="border-color:var(--excel-green);">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num" style="color:var(--excel-green);">AULA 11 — PROJETO (PARTE 1)</span>
+              <span class="lesson-name">Projeto Vendas: Estruturação</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xk011`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 12 — PROJETO PARTE 2 -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 12: Projeto Vendas — Automação e Regras')" style="border-color:var(--excel-green);">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num" style="color:var(--excel-green);">AULA 12 — PROJETO (PARTE 2)</span>
+              <span class="lesson-name">Projeto Vendas: Automação</span>
+              <span style="font-size:12px; color:var(--ink-soft); margin-top:4px;">🔒 Em Construção (Senha `xl012`)</span>
+            </div>
+            <span style="font-size:22px;">🚧</span>
+          </div>
+
+          <!-- AULA 13 — PROJETO FINAL & DASHBOARD -->
+          <div class="lesson-card-item" onclick="alertLockedLesson('Aula 13: Projeto Vendas — Dashboard & Conclusão')" style="border-color:var(--amber); background:linear-gradient(135deg, rgba(22,163,74,0.25), var(--card-brown));">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num" style="color:var(--amber);">AULA 13 — PROJETO FINAL</span>
+              <span class="lesson-name">Projeto Vendas: Dashboard & Conclusão</span>
+              <span style="font-size:12px; color:var(--amber); font-weight:700; margin-top:4px;">🔒 Entrega do Projeto (Senha `xm013`)</span>
+            </div>
+            <span style="font-size:22px;">🏆</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAINEL EXPANSÍVEL DO PROFESSOR (COMPARTILHADO) -->
+    <div class="no-print">
+      <button type="button" class="prof-accordion-btn" id="btn-prof-accordion">
+        <span>👤 Sobre o Professor Marcos Rangel — WR Capacitação (Clique para expandir)</span>
+        <span id="prof-icon">▼</span>
+      </button>
+
+      <div class="prof-accordion-content" id="prof-content">
+        <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+          <img src="../../assets/img/professor-rangel.png" alt="Marcos Rangel" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid var(--teal);">
+          <div style="flex:1; min-width:260px;">
+            <h3 style="color:var(--amber); margin-bottom:6px; font-size:22px;">Marcos Rangel</h3>
+            <p style="font-size:16px; color:var(--ink-light); margin-bottom:10px;">
+              Marcos Rangel, 48 anos, apaixonado por tecnologias, natureza, astronomia, e família;<br>
+              <strong>Desenvolvedor .NET | C# | Blazor | Mobile e Instrutor de informática básica</strong>
+            </p>
+            <p style="font-size:15px; color:var(--ink-soft); margin-bottom:10px;">
+              <strong>Formação Acadêmica:</strong><br>
+              • Pós-Graduação em Desenvolvimento de Aplicações para Dispositivos Móveis;<br>
+              • Graduado em Gestão em Tecnologia da Informação;
+            </p>
+            <p style="font-size:15px; color:var(--ink-soft); margin:0;">
+              <strong>Contato:</strong><br>
+              E-mail: <a href="mailto:okcomputer.use.linux@gmail.com">okcomputer.use.linux@gmail.com</a> |
+              LinkedIn: <a href="https://www.linkedin.com/in/marcos-fabiano-correia-rangel/" target="_blank" rel="noopener">linkedin.com/in/marcos-fabiano-correia-rangel/</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===================================================================
+         TELA 2: AULA 01 — INTRODUÇÃO AO EXCEL, INTERFACE E NAVEGAÇÃO
+         =================================================================== -->
+    <section id="screen-lesson-1" class="screen-view">
+
+      <!-- Topo da Aula com Botões de Ação -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('excel', 1)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Progresso Gamificada -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <span class="gamify-progress-label" id="gamify-label-1">Progresso da Leitura: 0% (Tópico 1 de 6)</span>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-fill-1" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-1" style="margin-left: 16px;">
+          <span class="eyebrow-badge" style="background:rgba(255,255,255,0.1); color:var(--ink-soft);">Em Andamento</span>
+        </div>
+      </div>
+
+      <!-- Cartão de Leitura Didática da Aula 1 -->
+      <article class="lesson-reading-card">
+        <span class="badge-excel-green">Módulo 3 • Aula 01</span>
+        <h1 style="font-size:32px; color:var(--ink-dark); margin:12px 0 16px 0;">Introdução ao Excel, Interface, Tipos de Dados e Navegação</h1>
+
+        <!-- Abas de Navegação de Tópicos -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-l1-1" onclick="switchTopicPhase(1, 1)">1. O que é Excel & Aplicações</button>
+          <button type="button" class="topic-tab-btn" id="tab-l1-2" onclick="switchTopicPhase(1, 2)">2. Anatomia da Interface</button>
+          <button type="button" class="topic-tab-btn" id="tab-l1-3" onclick="switchTopicPhase(1, 3)">3. Planilhas vs Pastas</button>
+          <button type="button" class="topic-tab-btn" id="tab-l1-4" onclick="switchTopicPhase(1, 4)">4. Tipos de Dados & Simulador</button>
+          <button type="button" class="topic-tab-btn" id="tab-l1-5" onclick="switchTopicPhase(1, 5)">5. Edição (F2) & Atalhos</button>
+          <button type="button" class="topic-tab-btn" id="tab-l1-6" onclick="switchTopicPhase(1, 6)">6. Salvando (.xlsx)</button>
+          <button type="button" class="topic-tab-btn" id="tab-l1-7" onclick="openFixationPanel(1)" style="background:var(--amber-soft); color:#7A4E12; font-weight:700;">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- FASE / TÓPICO 1 -->
+        <section id="l1-phase-1" class="topic-phase-section active">
+          <h2>1.1 O que é o Microsoft Excel e Suas Aplicações no Dia a Dia</h2>
+          <p>
+            O <strong>Microsoft Excel</strong> é um programa de <strong>planilha eletrônica</strong> desenvolvido para organizar informações em tabelas virtuais, realizar cálculos matemáticos automáticos, analisar dados e criar gráficos profissionais.
+          </p>
+          <p>
+            Antes do surgimento dos computadores, a contabilidade e os controles financeiros eram feitos manualmente em grandes cadernos de papel milimetrado. Qualquer alteração exigia apagar e recalcular todas as somas à mão. Lançado originalmente em 1985, o Excel revolucionou o mundo do trabalho ao fazer com que o computador recalcule instantaneamente milhares de valores.
+          </p>
+
+          <img src="../../assets/img/excel/a1/excel_aula1_01_visao_geral.png" alt="Visão Geral de uma Planilha no Excel" class="img-reduced">
+
+          <div style="background:#F0FDF4; border:1.5px solid var(--excel-green); border-radius:12px; padding:18px; margin:20px 0;">
+            <h3 style="color:var(--excel-green-dark); margin-top:0;">💡 Para que serve o Excel no cotidiano?</h3>
+            <ul style="margin:0; padding-left:20px; line-height:1.7; color:#1F2937;">
+              <li><strong>Controle de Orçamento Doméstico:</strong> Registrar receitas, contas de luz, água e supermercado com soma automática.</li>
+              <li><strong>Controle de Estoque de Loja:</strong> Saber exatamente a quantidade de mercadorias disponíveis e quando repor.</li>
+              <li><strong>Boletim Escolar & Notas:</strong> Calcular médias aritméticas de alunos e indicar quem foi aprovado ou reprovado.</li>
+              <li><strong>Folha de Pagamento:</strong> Calcular salários brutos, descontos de INSS/impostos e salário líquido.</li>
+              <li><strong>Emissão de Gráficos:</strong> Transformar números brutos em relatórios visuais de pizza, barras ou linhas.</li>
+            </ul>
+          </div>
+
+          <div class="read-check-box no-print">
+            <button type="button" class="read-check-btn" id="btn-read-l1-1" onclick="markTopicRead(1, 1)">
+              ◯ Marcar Tópico 1 como Lido
             </button>
           </div>
-          <p style="font-size:13.5px; color:var(--ink-soft); margin:0;">
-            Baixe e leia a aula em PDF elaborada pelo <strong>Prof. Marcos Rangel</strong> para revisar o conteúdo antes de iniciar o simulado.
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 2)">Ir para Tópico 2: Anatomia da Interface →</button>
+          </div>
+        </section>
+
+        <!-- FASE / TÓPICO 2 -->
+        <section id="l1-phase-2" class="topic-phase-section">
+          <h2>1.2 Anatomia da Interface do Excel e Elementos Principais</h2>
+          <p>
+            Ao abrir o Microsoft Excel, somos apresentados a uma janela organizada com elementos específicos para o manuseio de planilhas. Compreender cada parte da interface é o primeiro passo para dominar o programa.
           </p>
-          <label class="pdf-unlock-check" for="check-read-pdf">
-            <input type="checkbox" id="check-read-pdf">
-            <span><strong>☑ Confirmo que baixei e li a aula didática em PDF deste módulo.</strong></span>
-          </label>
-          <div class="pdf-lock-warning" id="pdf-lock-warning">
-            ⚠️ Marque o checkbox acima para desbloquear o botão de iniciar a prova.
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin:20px 0;">
+            <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:16px; border-radius:10px;">
+              <h4 style="color:var(--excel-green-dark); margin:0 0 6px 0;">📌 1. Barra de Título</h4>
+              <p style="font-size:14.5px; margin:0; color:#475569;">Fica no topo da tela e exibe o nome do arquivo atualmente aberto (ex: <code>Pasta1.xlsx</code>) e o nome do programa.</p>
+            </div>
+            <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:16px; border-radius:10px;">
+              <h4 style="color:var(--excel-green-dark); margin:0 0 6px 0;">📌 2. Faixa de Opções (Ribbon)</h4>
+              <p style="font-size:14.5px; margin:0; color:#475569;">Menu superior com abas (<em>Página Inicial, Inserir, Fórmulas, Dados</em>) que agrupam todos os botões e ferramentas.</p>
+            </div>
+            <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:16px; border-radius:10px;">
+              <h4 style="color:var(--excel-green-dark); margin:0 0 6px 0;">📌 3. Caixa de Nome</h4>
+              <p style="font-size:14.5px; margin:0; color:#475569;">Mostra a coordenada exata da célula selecionada no momento (ex: <code>A1</code>, <code>B5</code>, <code>C10</code>).</p>
+            </div>
+            <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:16px; border-radius:10px;">
+              <h4 style="color:var(--excel-green-dark); margin:0 0 6px 0;">📌 4. Barra de Fórmulas</h4>
+              <p style="font-size:14.5px; margin:0; color:#475569;">Espaço onde digitamos e visualizamos o conteúdo real ou a fórmula por trás de uma célula (ex: <code>=SOMA(B2:B10)</code>).</p>
+            </div>
+            <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:16px; border-radius:10px;">
+              <h4 style="color:var(--excel-green-dark); margin:0 0 6px 0;">📌 5. Grade de Células (Sheet Grid)</h4>
+              <p style="font-size:14.5px; margin:0; color:#475569;">A grande área de trabalho quadriculada. Colunas são identificadas por <strong>LETRAS (A, B, C...)</strong> e Linhas por <strong>NÚMEROS (1, 2, 3...)</strong>.</p>
+            </div>
+            <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:16px; border-radius:10px;">
+              <h4 style="color:var(--excel-green-dark); margin:0 0 6px 0;">📌 6. Barra de Status</h4>
+              <p style="font-size:14.5px; margin:0; color:#475569;">Fica no rodapé da janela e mostra a soma, média e contagem rápida dos números selecionados sem precisar fazer fórmulas.</p>
+            </div>
           </div>
-        </div>
 
-        <label for="input-name" style="display:block; font-weight:600; margin-bottom:8px;">Digite seu nome completo para iniciar:</label>
-        <input type="text" id="input-name" placeholder="Ex.: Juliana Paes" style="width:100%; padding:14px; border-radius:12px; border:1.5px solid var(--line); font-size:16px; margin-bottom:18px;">
+          <img src="../../assets/img/excel/a1/excel_aula1_02_anatomia_interface.png" alt="Anatomia da Interface do Microsoft Excel" class="img-reduced">
 
-        <div id="resume-box" style="display:none; margin-bottom:18px; padding:14px; background:var(--amber-soft); border-radius:12px; justify-content:space-between; align-items:center;">
-          <span style="font-size:14px; color:#7A4E12;">Existe um simulado em andamento para este nome.</span>
-          <button class="btn btn-amber" id="btn-resume" type="button">Continuar de onde parei</button>
-        </div>
+          <div class="read-check-box no-print">
+            <button type="button" class="read-check-btn" id="btn-read-l1-2" onclick="markTopicRead(1, 2)">
+              ◯ Marcar Tópico 2 como Lido
+            </button>
+          </div>
 
-        <button class="btn btn-primary" id="btn-start" type="button" style="width:100%;" disabled>Começar Prova de Excel →</button>
-      </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 1)">← Voltar ao Tópico 1</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 3)">Ir para Tópico 3: Planilhas vs Pastas →</button>
+          </div>
+        </section>
+
+        <!-- FASE / TÓPICO 3 -->
+        <section id="l1-phase-3" class="topic-phase-section">
+          <h2>1.3 Diferença entre Planilhas (Abas) e Pastas de Trabalho</h2>
+          <p>
+            Uma das dúvidas mais comuns de quem está começando no Excel é a diferença entre os termos <strong>Pasta de Trabalho</strong> e <strong>Planilha</strong>.
+          </p>
+
+          <div style="display:flex; gap:20px; flex-wrap:wrap; margin:20px 0;">
+            <div style="flex:1; min-width:260px; background:#FFFBF6; border:1.5px solid var(--line-light); padding:20px; border-radius:12px;">
+              <h3 style="color:var(--amber); margin-top:0;">📘 Pasta de Trabalho (Workbook)</h3>
+              <p style="font-size:15px; color:var(--ink-dark); line-height:1.6;">
+                É o <strong>ARQUIVO COMPLETO</strong> salvo no seu computador ou pen drive (com extensão <code>.xlsx</code>).<br><br>
+                <em>Analogia didática:</em> Pense na Pasta de Trabalho como se fosse um <strong>CADERNO DE ANOTAÇÕES ENCADERNADO</strong>.
+              </p>
+            </div>
+
+            <div style="flex:1; min-width:260px; background:#F0FDF4; border:1.5px solid var(--excel-green-border); padding:20px; border-radius:12px;">
+              <h3 style="color:var(--excel-green-dark); margin-top:0;">📑 Planilha (Worksheet / Tab)</h3>
+              <p style="font-size:15px; color:var(--ink-dark); line-height:1.6;">
+                É uma <strong>ABA INDIVIDUAL</strong> de trabalho localizada na parte inferior da tela (ex: <code>Plan1</code>, <code>Vendas_Jan</code>, <code>Resumo</code>).<br><br>
+                <em>Analogia didática:</em> Pense na Planilha como as <strong>PÁGINAS/FOLHAS INDIVIDUAIS</strong> de papel dentro desse caderno. Um único arquivo pode conter dezenas de planilhas.
+              </p>
+            </div>
+          </div>
+
+          <img src="../../assets/img/excel/a1/excel_aula1_03_abas_planilhas.png" alt="Abas de Planilhas e Pasta de Trabalho no Excel" class="img-reduced">
+
+          <div class="read-check-box no-print">
+            <button type="button" class="read-check-btn" id="btn-read-l1-3" onclick="markTopicRead(1, 3)">
+              ◯ Marcar Tópico 3 como Lido
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 2)">← Voltar ao Tópico 2</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 4)">Ir para Tópico 4: Tipos de Dados & Simulador →</button>
+          </div>
+        </section>
+
+        <!-- FASE / TÓPICO 4 (COM SIMULADOR INTERATIVO GRID INSPECTOR) -->
+        <section id="l1-phase-4" class="topic-phase-section">
+          <h2>1.4 Tipos de Dados e Alinhamento Automático no Excel</h2>
+          <p>
+            O Excel reconhece automaticamente o tipo de informação que você digita em uma célula e aplica um <strong>alinhamento padrão</strong>. Esse comportamento é fundamental para sabermos se o Excel entendeu o dado como um valor calculável ou apenas como texto.
+          </p>
+
+          <table style="width:100%; border-collapse:collapse; margin:20px 0; background:#FFF; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden;">
+            <thead>
+              <tr style="background:#F1F5F9; color:#334155; text-align:left;">
+                <th style="padding:10px 14px; border-bottom:2px solid #CBD5E1;">Tipo de Dado</th>
+                <th style="padding:10px 14px; border-bottom:2px solid #CBD5E1;">Exemplos</th>
+                <th style="padding:10px 14px; border-bottom:2px solid #CBD5E1;">Alinhamento Automático</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #E2E8F0;">
+                <td style="padding:10px 14px;"><strong>Texto (Rótulo)</strong></td>
+                <td style="padding:10px 14px;">"Maria Silva", "Produtos", "São Paulo"</td>
+                <td style="padding:10px 14px; color:#0369A1; font-weight:700;">⬅️ Alinhado à ESQUERDA</td>
+              </tr>
+              <tr style="border-bottom:1px solid #E2E8F0;">
+                <td style="padding:10px 14px;"><strong>Número / Moeda</strong></td>
+                <td style="padding:10px 14px;">150, 2500.50, R$ 45,00</td>
+                <td style="padding:10px 14px; color:#15803D; font-weight:700;">➡️ Alinhado à DIREITA</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 14px;"><strong>Data / Hora</strong></td>
+                <td style="padding:10px 14px;">15/09/2026, 14:30</td>
+                <td style="padding:10px 14px; color:#B45309; font-weight:700;">➡️ Alinhado à DIREITA</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <img src="../../assets/img/excel/a1/excel_aula1_04_tipos_dados.png" alt="Alinhamento Automático de Tipos de Dados no Excel" class="img-reduced">
+
+          <!-- SIMULADOR INTERATIVO GRID INSPECTOR -->
+          <div class="grid-inspector-container">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap;">
+              <h3 style="margin:0; color:var(--excel-green-dark); font-size:18px;">🖥️ Simulador Interativo — Grid Inspector (Grade do Excel)</h3>
+              <span class="type-badge-indicator type-number">Simulador Ativo</span>
+            </div>
+            <p style="font-size:13.5px; color:#475569; margin-bottom:12px;">
+              Clique nas células da grade para inspecionar a coordenada na <strong>Caixa de Nome</strong> ou digite valores abaixo para ver o Excel alinhar automaticamente!
+            </p>
+
+            <div class="grid-inspector-header">
+              <span style="font-size:12px; font-weight:700; color:#64748B;">Caixa de Nome:</span>
+              <div class="cell-name-box" id="sim-cell-name">B3</div>
+              <span style="font-size:12px; font-weight:700; color:#64748B; margin-left:10px;">Barra de Fórmulas:</span>
+              <div class="formula-bar-display" id="sim-formula-bar">85.50</div>
+            </div>
+
+            <div style="overflow-x:auto;">
+              <table class="excel-sheet-table" id="sim-table">
+                <thead>
+                  <tr>
+                    <th style="width:40px;">#</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                    <th>F</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1</th>
+                    <td class="align-left" onclick="selectSimCell(this, 'A1', 'Produto')">Produto</td>
+                    <td class="align-right" onclick="selectSimCell(this, 'B1', 'Preço')">Preço</td>
+                    <td class="align-right" onclick="selectSimCell(this, 'C1', 'Qtd')">Qtd</td>
+                    <td class="align-left" onclick="selectSimCell(this, 'D1', '')"></td>
+                    <td class="align-left" onclick="selectSimCell(this, 'E1', '')"></td>
+                    <td class="align-left" onclick="selectSimCell(this, 'F1', '')"></td>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <td class="align-left" onclick="selectSimCell(this, 'A2', 'Notebook')">Notebook</td>
+                    <td class="align-right" onclick="selectSimCell(this, 'B2', '3500.00')">3500.00</td>
+                    <td class="align-right" onclick="selectSimCell(this, 'C2', '2')">2</td>
+                    <td class="align-left" onclick="selectSimCell(this, 'D2', '')"></td>
+                    <td class="align-left" onclick="selectSimCell(this, 'E2', '')"></td>
+                    <td class="align-left" onclick="selectSimCell(this, 'F2', '')"></td>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+                    <td class="align-left" onclick="selectSimCell(this, 'A3', 'Mouse Sem Fio')">Mouse Sem Fio</td>
+                    <td class="align-right active-cell" id="cell-B3" onclick="selectSimCell(this, 'B3', '85.50')">85.50</td>
+                    <td class="align-right" onclick="selectSimCell(this, 'C3', '5')">5</td>
+                    <td class="align-left" onclick="selectSimCell(this, 'D3', '')"></td>
+                    <td class="align-left" onclick="selectSimCell(this, 'E3', '')"></td>
+                    <td class="align-left" onclick="selectSimCell(this, 'F3', '')"></td>
+                  </tr>
+                  <tr>
+                    <th>4</th>
+                    <td class="align-left" onclick="selectSimCell(this, 'A4', 'Teclado USB')">Teclado USB</td>
+                    <td class="align-right" onclick="selectSimCell(this, 'B4', '120.00')">120.00</td>
+                    <td class="align-right" onclick="selectSimCell(this, 'C4', '3')">3</td>
+                    <td class="align-left" onclick="selectSimCell(this, 'D4', '')"></td>
+                    <td class="align-left" onclick="selectSimCell(this, 'E4', '')"></td>
+                    <td class="align-left" onclick="selectSimCell(this, 'F4', '')"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Caixa de Teste de Digitação Dinâmica -->
+            <div class="test-input-box">
+              <span style="font-size:13.5px; font-weight:700;">Digite um valor para testar na célula ativa (<span id="sim-active-coord">B3</span>):</span>
+              <input type="text" id="sim-user-input" placeholder="Ex: Maria, 250.50 ou 15/09/2026">
+              <button type="button" class="btn btn-primary" style="padding:8px 16px; font-size:14px;" onclick="applySimValue()">Inserir na Grade ↵</button>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <button type="button" class="read-check-btn" id="btn-read-l1-4" onclick="markTopicRead(1, 4)">
+              ◯ Marcar Tópico 4 como Lido
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 3)">← Voltar ao Tópico 3</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 5)">Ir para Tópico 5: Edição & Atalhos →</button>
+          </div>
+        </section>
+
+        <!-- FASE / TÓPICO 5 -->
+        <section id="l1-phase-5" class="topic-phase-section">
+          <h2>1.5 Inserção, Edição de Célula (F2) e Atalhos de Navegação</h2>
+          <p>
+            No Excel, a navegação ágil pelo teclado economiza tempo precioso. Aprender a confirmar a digitação e editar células sem apagar seu conteúdo original é essencial.
+          </p>
+
+          <h3>⌨️ Teclas de Confirmação de Entrada</h3>
+          <ul>
+            <li><kbd>Enter</kbd>: Confirma a digitação e move o cursor para a <strong>CÉLULA DE BAIXO</strong>.</li>
+            <li><kbd>Tab</kbd>: Confirma a digitação e move o cursor para a <strong>CÉLULA DA DIREITA</strong>.</li>
+            <li><kbd>Shift</kbd> + <kbd>Enter</kbd>: Confirma e move o cursor para a <strong>CÉLULA DE CIMA</strong>.</li>
+            <li><kbd>Shift</kbd> + <kbd>Tab</kbd>: Confirma e move o cursor para a <strong>CÉLULA DA ESQUERDA</strong>.</li>
+          </ul>
+
+          <div style="background:#FFFEE0; border:1.5px solid #FACC15; padding:18px; border-radius:12px; margin:20px 0;">
+            <h3 style="color:#854D0E; margin-top:0;">⚡ O Segredo da Tecla F2 (Editar Célula)</h3>
+            <p style="font-size:15px; color:#713F12; margin:0; line-height:1.6;">
+              Se você clicar em uma célula preenchida e simplesmente começar a digitar uma nova palavra, o Excel <strong>APAGARÁ TUDO</strong> o que já estava lá!<br><br>
+              Para modificar apenas uma parte do texto sem apagar nada: selecione a célula e pressione a tecla <strong><kbd>F2</kbd></strong> do teclado. O cursor de texto piscará dentro da célula permitindo fazer edições pontuais.
+            </p>
+          </div>
+
+          <img src="../../assets/img/excel/a1/excel_aula1_05_edicao_f2.png" alt="Modo de Edição de Célula com Tecla F2" class="img-reduced">
+
+          <h3>🚀 Atalhos de Navegação Rápida</h3>
+          <ul>
+            <li><kbd>Ctrl</kbd> + <kbd>Setas de Direção (↑ ↓ ← →)</kbd>: Salta instantaneamente para a última célula preenchida daquela linha ou coluna.</li>
+            <li><kbd>Ctrl</kbd> + <kbd>Home</kbd>: Salta diretamente para a primeira célula da planilha (Célula <code>A1</code>).</li>
+            <li><kbd>Esc</kbd>: Cancela qualquer digitação em andamento e restaura o valor original da célula.</li>
+          </ul>
+
+          <div class="read-check-box no-print">
+            <button type="button" class="read-check-btn" id="btn-read-l1-5" onclick="markTopicRead(1, 5)">
+              ◯ Marcar Tópico 5 como Lido
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 4)">← Voltar ao Tópico 4</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 6)">Ir para Tópico 6: Salvando Arquivos →</button>
+          </div>
+        </section>
+
+        <!-- FASE / TÓPICO 6 -->
+        <section id="l1-phase-6" class="topic-phase-section">
+          <h2>1.6 Salvando Pastas de Trabalho (.xlsx vs .csv)</h2>
+          <p>
+            Após criar ou alterar uma planilha no Excel, é indispensável salvar o arquivo para não perder suas informações.
+          </p>
+
+          <h3>💾 Como Salvar uma Pasta de Trabalho</h3>
+          <ol style="line-height:1.8;">
+            <li>Pressione a combinação de teclas <strong><kbd>Ctrl</kbd> + <kbd>S</kbd></strong> (ou clique no ícone de disquete no canto superior esquerdo).</li>
+            <li>Escolha a pasta do computador onde deseja guardar o arquivo (ex: <em>Documentos</em> ou <em>Área de Trabalho</em>).</li>
+            <li>Digite um nome claro para o arquivo (ex: <code>Controle_Financeiro_2026</code>) e clique em <strong>Salvar</strong>.</li>
+          </ol>
+
+          <h3>📁 Principais Formatos de Arquivo do Excel</h3>
+          <ul>
+            <li><strong>.xlsx (Pasta de Trabalho do Excel)</strong>: O formato padrão oficial. Preserva todas as fórmulas, cores, gráficos, formatações e múltiplas abas.</li>
+            <li><strong>.csv (Valores Separados por Vírgulas)</strong>: Arquivo de texto simples usado para importar ou exportar dados entre sistemas bancários e softwares de gestão. Não guarda cores nem fórmulas.</li>
+            <li><strong>.pdf (Documento PDF)</strong>: Formato estático ideal para enviar relatórios por e-mail ou WhatsApp sem que o destinatário possa alterar os números.</li>
+          </ul>
+
+          <img src="../../assets/img/excel/a1/excel_aula1_06_salvar_como.png" alt="Janela Salvar Como e Formatos de Arquivo no Excel" class="img-reduced">
+
+          <div class="read-check-box no-print">
+            <button type="button" class="read-check-btn" id="btn-read-l1-6" onclick="markTopicRead(1, 6)">
+              ◯ Marcar Tópico 6 como Lido
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 5)">← Voltar ao Tópico 5</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(1)">Ir para Exercício de Fixação (5 Perguntas) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- PAINEL DO EXERCÍCIO DE FIXAÇÃO (5 PERGUNTAS) -->
+        <section id="l1-fixation" class="fixation-panel" style="display:none; margin-top:30px;">
+          <div style="background:var(--card-brown); border:2px solid var(--excel-green); border-radius:16px; padding:28px;">
+            <span class="badge-excel-green">Exercício de Fixação • Aula 01</span>
+            <h2 style="font-size:26px; color:var(--amber); margin:10px 0 6px 0;">📝 Quiz de Avaliação da Aula 01 (5 Questões)</h2>
+            <p style="font-size:16px; color:var(--ink-light); margin-bottom:20px;">
+              Responda às 5 questões abaixo para testar seus conhecimentos. Nota mínima para aprovação e liberação da Assinatura Criptográfica: <strong>7,0 / 10,0</strong>.
+            </p>
+
+            <div style="margin-bottom:24px;">
+              <label for="l1-student-name" style="display:block; font-weight:700; color:var(--amber); margin-bottom:6px;">Digite seu Nome Completo para o Comprovante:</label>
+              <input type="text" id="l1-student-name" placeholder="Ex.: Ana Maria da Silva" style="width:100%; max-width:480px; padding:12px; border-radius:8px; border:1px solid var(--line-dark); font-size:16px; background:#FFF;">
+            </div>
+
+            <!-- QUESTÃO 1 -->
+            <div class="question-card-item">
+              <div class="q-title">1. Com qual símbolo OBRIGATÓRIO deve iniciar qualquer fórmula ou função no Microsoft Excel?</div>
+              <div class="options-stack">
+                <div class="option-btn-card" onclick="selectFixOption(1, 1, 0, this)">
+                  <span class="letter-badge">A</span> Símbolo de mais (+)
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 1, 1, this)">
+                  <span class="letter-badge">B</span> Símbolo de igual (=)
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 1, 2, this)">
+                  <span class="letter-badge">C</span> Símbolo de arroba (@)
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 1, 3, this)">
+                  <span class="letter-badge">D</span> Símbolo de jogo da velha (#)
+                </div>
+              </div>
+            </div>
+
+            <!-- QUESTÃO 2 -->
+            <div class="question-card-item">
+              <div class="q-title">2. Como é identificada uma célula localizada na Coluna B e na Linha 5 no Excel?</div>
+              <div class="options-stack">
+                <div class="option-btn-card" onclick="selectFixOption(1, 2, 0, this)">
+                  <span class="letter-badge">A</span> 5B
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 2, 1, this)">
+                  <span class="letter-badge">B</span> B5
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 2, 2, this)">
+                  <span class="letter-badge">C</span> B:5
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 2, 3, this)">
+                  <span class="letter-badge">D</span> 5-B
+                </div>
+              </div>
+            </div>
+
+            <!-- QUESTÃO 3 -->
+            <div class="question-card-item">
+              <div class="q-title">3. Ao digitar um número puro (ex: 150) e um texto (ex: "Contas") em células sem formatação prévia, como o Excel alinha automaticamente esses conteúdos?</div>
+              <div class="options-stack">
+                <div class="option-btn-card" onclick="selectFixOption(1, 3, 0, this)">
+                  <span class="letter-badge">A</span> Texto à direita e Número à esquerda
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 3, 1, this)">
+                  <span class="letter-badge">B</span> Ambos centralizados
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 3, 2, this)">
+                  <span class="letter-badge">C</span> Texto à esquerda e Número à direita
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 3, 3, this)">
+                  <span class="letter-badge">D</span> Ambos alinhados à direita
+                </div>
+              </div>
+            </div>
+
+            <!-- QUESTÃO 4 -->
+            <div class="question-card-item">
+              <div class="q-title">4. Qual é a diferença correta entre uma "Planilha" e uma "Pasta de Trabalho" no Excel?</div>
+              <div class="options-stack">
+                <div class="option-btn-card" onclick="selectFixOption(1, 4, 0, this)">
+                  <span class="letter-badge">A</span> A Planilha é o arquivo salvo no computador e a Pasta de Trabalho é um gráfico
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 4, 1, this)">
+                  <span class="letter-badge">B</span> A Planilha é uma aba individual e a Pasta de Trabalho é o arquivo completo (.xlsx) que contém várias planilhas
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 4, 2, this)">
+                  <span class="letter-badge">C</span> Não existe diferença, ambos são exatamente a mesma coisa
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 4, 3, this)">
+                  <span class="letter-badge">D</span> A Pasta de Trabalho é apenas para impressões em PDF
+                </div>
+              </div>
+            </div>
+
+            <!-- QUESTÃO 5 -->
+            <div class="question-card-item">
+              <div class="q-title">5. Qual tecla de atalho permite EDITAR o conteúdo de uma célula sem apagar o texto ou valor que já estava digitado?</div>
+              <div class="options-stack">
+                <div class="option-btn-card" onclick="selectFixOption(1, 5, 0, this)">
+                  <span class="letter-badge">A</span> F2
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 5, 1, this)">
+                  <span class="letter-badge">B</span> F5
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 5, 2, this)">
+                  <span class="letter-badge">C</span> Delete
+                </div>
+                <div class="option-btn-card" onclick="selectFixOption(1, 5, 3, this)">
+                  <span class="letter-badge">D</span> Esc
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="calcFixation(1)" style="width:100%; margin-top:20px; font-size:18px;">
+              Finalizar Exercício & Assinar Comprovante →
+            </button>
+
+            <div id="l1-result-box" style="display:none; margin-top:24px;"></div>
+          </div>
+        </section>
+
+      </article>
     </section>
 
-    <!-- TELA 2 — QUESTÕES -->
-    <section id="screen-quiz" class="screen">
-      <div class="trail" id="trail"></div>
-      <div class="card-quiz">
-        <div class="q-meta">
-          <span id="q-count">QUESTÃO 1 / 10</span>
-          <span id="q-points">VALE 1,0 PONTO</span>
-        </div>
-        <div class="q-text" id="q-text"></div>
+  </main>
 
-        <button class="hint-toggle" id="btn-hint" type="button">💡 Ver dica do professor</button>
-        <div class="hint-box" id="hint-box"></div>
-
-        <div class="options" id="options"></div>
-
-        <div class="nav-row">
-          <button class="btn btn-ghost" id="btn-prev" type="button">← Anterior</button>
-          <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';" id="autosave-note">✓ Salvo automaticamente</span>
-          <button class="btn btn-primary" id="btn-next" type="button" disabled>Próxima →</button>
-        </div>
+  <!-- MODAL DE PROTEÇÃO DE SENHA -->
+  <div class="modal-overlay" id="password-modal">
+    <div class="modal-card">
+      <h3 class="modal-title" id="modal-title-text">Acesso Restrito</h3>
+      <p class="modal-subtitle">Informe a senha de acesso fornecida pelo Professor Marcos Rangel nas aulas presenciais da WR Capacitação.</p>
+      <input type="password" class="modal-input" id="modal-pass-field" placeholder="Digite a senha de acesso (ex: xa001)...">
+      <div style="display:flex; gap:12px;">
+        <button type="button" class="btn btn-primary" style="flex:1;" id="btn-confirm-unlock">Desbloquear & Acessar</button>
+        <button type="button" class="btn btn-ghost" onclick="closePasswordModal()">Cancelar</button>
       </div>
-    </section>
-
-    <!-- TELA 3 — RESULTADO -->
-    <section id="screen-result" class="screen">
-      <div class="card-quiz">
-        <div class="result-badge" id="result-badge"></div>
-        <h1 id="result-title"></h1>
-        <p style="color:var(--ink-soft);" id="result-sub"></p>
-        <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">Nota Final: <b id="result-score" style="font-size:22px; color:var(--ink);">0,0</b> / 10,0</div>
-
-        <!-- Assinatura Digital Anti-Fraude -->
-        <div class="signature-badge-box" id="signature-box">
-          <div class="signature-badge-header">
-            <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
-          </div>
-          <div class="signature-code-display" id="signature-code">WR-AUTH-CALCULATING...</div>
-          <div class="signature-badge-desc">
-            Código de autenticidade criptográfico (SHA-256) gerado automaticamente. Evita adulterações no comprovante ou nota do aluno.
-          </div>
-        </div>
-
-        <div class="breakdown" id="breakdown"></div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="btn btn-primary" id="btn-download" type="button">Baixar Comprovante (.txt)</button>
-          <button class="btn btn-whatsapp" id="btn-whatsapp" type="button">Enviar WhatsApp</button>
-          <button class="btn btn-ghost" id="btn-email" type="button">Enviar por E-mail</button>
-        </div>
-
-        <div class="email-panel" id="email-panel">
-          <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
-          <input type="email" id="input-email" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
-          <button class="btn btn-amber" id="btn-open-gmail" type="button">Baixar e Abrir E-mail →</button>
-        </div>
-      </div>
-    </section>
-
+    </div>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="portal-footer no-print">
+    <div class="footer-container">
+      <p style="font-size:15px; color:var(--ink-light); margin:0;">
+        <strong>Informática Básica — Módulo 3: Microsoft Excel</strong><br>
+        Desenvolvido pelo <strong>Prof. Marcos Rangel</strong> para a <strong>WR Capacitação Profissional</strong>.
+      </p>
+    </div>
+  </footer>
 
   <script>
   (function(){
     "use strict";
-    const MODULE_ID = "excel";
-    const MODULE_TITLE = "Módulo 3: Microsoft Excel";
-    const STORAGE_KEY = "prova-excel-prof-rangel";
-    const PASS_SCORE = 7.0;
 
-    const QUESTIONS = [
-      {
-        q: "Com qual símbolo OBRIGATÓRIO deve iniciar qualquer fórmula ou função no Microsoft Excel?",
-        options: ["Símbolo de mais (+)", "Símbolo de igual (=)", "Símbolo de arroba (@)", "Símbolo de jogo da velha (#)"],
-        correct: 1,
-        hint: "Sem esse símbolo na frente, o Excel entende o que você digitou apenas como um texto comum."
-      },
-      {
-        q: "Como é identificada uma célula localizada na Coluna B e na Linha 5 no Excel?",
-        options: ["5B", "B5", "B:5", "5-B"],
-        correct: 1,
-        hint: "Primeiro vem a letra da coluna, depois o número da linha."
-      },
-      {
-        q: "Qual é a função correta para SOMAR todos os valores contidos no intervalo de células da célula A1 até a célula A10?",
-        options: ["=SOMAR(A1:A10)", "=SUM(A1..A10)", "=SOMA(A1:A10)", "=ADICIONAR(A1;A10)"],
-        correct: 2,
-        hint: "A função se chama 'SOMA' e o intervalo contínuo é separado por dois-pontos (:)."
-      },
-      {
-        q: "Qual operador matemático é utilizado para realizar uma operação de MULTIPLICAÇÃO no Excel?",
-        options: ["Letra X", "Asterisco (*)", "Barra (/)", "Ponto (.)"],
-        correct: 1,
-        hint: "É o símbolo de estrela/asterisco no teclado numérico."
-      },
-      {
-        q: "Qual é o resultado da fórmula =5+2*3 digitada no Excel?",
-        options: ["21", "11", "10", "30"],
-        correct: 1,
-        hint: "O Excel respeita a regra da matemática: resolve a multiplicação (2*3=6) primeiro e depois soma o 5."
-      },
-      {
-        q: "Qual função calcula a média aritmética de um grupo de números no Excel?",
-        options: ["=MEDIAN(A1:A5)", "=CALCULARMEDIA(A1:A5)", "=MÉDIA(A1:A5)", "=DIVIDIR(A1:A5)"],
-        correct: 2,
-        hint: "Tem acento agudo na letra E."
-      },
-      {
-        q: "O que faz a função lógica =SE(A1>=7; 'Aprovado'; 'Reprovado')?",
-        options: [
-          "Soma o valor 7 à célula A1.",
-          "Verifica se a nota em A1 é maior ou igual a 7: se for, escreve 'Aprovado'; senão, escreve 'Reprovado'.",
-          "Multiplica a célula A1 por 7.",
-          "Apaga o conteúdo da célula A1 caso seja menor que 7."
-        ],
-        correct: 1,
-        hint: "É uma estrutura condicional: faz um teste e retorna uma resposta dependendo do resultado."
-      },
-      {
-        q: "Qual recurso do Excel permite alterar automaticamente a cor de fundo de uma célula (ex: ficar vermelha se o valor for negativo)?",
-        options: ["Formatação de Tabela", "Formatação Condicional", "Estilos de Célula", "Filtro Automático"],
-        correct: 1,
-        hint: "Aplica uma formatação que depende de uma 'condição'."
-      },
-      {
-        q: "Como se representa um INTERVALO CONTÍNUO de células do Excel que vai da célula C2 até a célula C20?",
-        options: ["C2 a C20", "C2;C20", "C2:C20", "C2-C20"],
-        correct: 2,
-        hint: "O sinal de dois-pontos significa 'até'."
-      },
-      {
-        q: "Qual tipo de gráfico é ideal para mostrar a proporção das partes em relação a um todo (em porcentagem)?",
-        options: ["Gráfico de Linhas", "Gráfico de Colunas", "Gráfico de Pizza (Setores)", "Gráfico de Área"],
-        correct: 2,
-        hint: "Tem o formato circular fatiado igual a uma pizza."
-      }
+    // Matriz de Senhas das 13 Aulas do Módulo Excel
+    const PASSWORDS = {
+      1: "xa001",
+      2: "xb002",
+      3: "xc003",
+      4: "xd004",
+      5: "xe005",
+      6: "xf006",
+      7: "xg007",
+      8: "xh008",
+      9: "xi009",
+      10: "xj010",
+      11: "xk011",
+      12: "xl012",
+      13: "xm013"
+    };
+
+    // Gabarito Oficial da Aula 01 (Índices 0-based: 1=B, 1=B, 2=C, 1=B, 0=A)
+    const GABARITO_L1 = [1, 1, 2, 1, 0];
+
+    const QUESTOES_L1 = [
+      { q: "1. Com qual símbolo OBRIGATÓRIO deve iniciar qualquer fórmula ou função no Microsoft Excel?", options: ["Símbolo de mais (+)", "Símbolo de igual (=)", "Símbolo de arroba (@)", "Símbolo de jogo da velha (#)"], correct: 1 },
+      { q: "2. Como é identificada uma célula localizada na Coluna B e na Linha 5 no Excel?", options: ["5B", "B5", "B:5", "5-B"], correct: 1 },
+      { q: "3. Ao digitar um número puro (ex: 150) e um texto (ex: 'Contas') em células sem formatação prévia, como o Excel alinha automaticamente esses conteúdos?", options: ["Texto à direita e Número à esquerda", "Ambos centralizados", "Texto à esquerda e Número à direita", "Ambos alinhados à direita"], correct: 2 },
+      { q: "4. Qual é a diferença correta entre uma 'Planilha' e uma 'Pasta de Trabalho' no Excel?", options: ["A Planilha é o arquivo salvo no computador e a Pasta de Trabalho é um gráfico", "A Planilha é uma aba individual e a Pasta de Trabalho é o arquivo completo (.xlsx) que contém várias planilhas", "Não existe diferença, ambos são exatamente a mesma coisa", "A Pasta de Trabalho é apenas para impressões em PDF"], correct: 1 },
+      { q: "5. Qual tecla de atalho permite EDITAR o conteúdo de uma célula sem apagar o texto ou valor que já estava digitado?", options: ["F2", "F5", "Delete", "Esc"], correct: 0 }
     ];
 
-    const TOTAL = QUESTIONS.length;
-    const POINTS_PER_Q = 10 / TOTAL;
+    let targetLessonNum = 1;
+    let readStatus = { 1: [false, false, false, false, false, false] };
+    let userAnswers = { 1: [null, null, null, null, null] };
 
-    let state = { name: "", pdfRead: false, answers: new Array(TOTAL).fill(null), current: 0, signature: null };
-
-    function checkStartUnlock(){
-      const name = document.getElementById("input-name").value.trim();
-      const readCheck = document.getElementById("check-read-pdf").checked;
-      const startBtn = document.getElementById("btn-start");
-      const warning = document.getElementById("pdf-lock-warning");
-
-      state.pdfRead = readCheck;
-
-      if(readCheck && name.length > 0){
-        startBtn.disabled = false;
-        warning.style.display = "none";
-      } else {
-        startBtn.disabled = true;
-        warning.style.display = "block";
+    // Navegação entre Telas
+    window.showScreen = function(id) {
+      document.querySelectorAll(".screen-view").forEach(s => s.classList.remove("active"));
+      const target = document.getElementById(id);
+      if(target) {
+        target.classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
-    }
+    };
 
-    function checkResume(name){
-      checkStartUnlock();
-      const box = document.getElementById("resume-box");
-      if(!name.trim()) { box.style.display = "none"; return; }
-      const loaded = window.QuizEngine.loadState(STORAGE_KEY, name);
-      box.style.display = loaded ? "flex" : "none";
-    }
+    window.alertLockedLesson = function(title) {
+      alert(`🔒 A ${title} está em construção!\n\nNo momento, a Aula 01 está totalmente disponível para estudo.`);
+    };
 
-    function showScreen(id){
-      document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
+    // Modal de Senha
+    window.promptLessonPassword = function(num, title) {
+      targetLessonNum = num;
+      document.getElementById("modal-title-text").textContent = `Aula ${num < 10 ? '0' + num : num}: ${title}`;
+      const input = document.getElementById("modal-pass-field");
+      input.value = "";
+      document.getElementById("password-modal").classList.add("active");
+      setTimeout(() => input.focus(), 100);
+    };
 
-    function renderTrail(){
-      const trail = document.getElementById("trail");
-      trail.innerHTML = "";
-      for(let i=0; i<TOTAL; i++){
-        const node = document.createElement("div");
-        node.className = "trail-node" + (i < state.current ? " done" : i === state.current ? " current" : "");
-        trail.appendChild(node);
-        if(i < TOTAL - 1){
-          const line = document.createElement("div");
-          line.className = "trail-line" + (i < state.current ? " filled" : "");
-          line.innerHTML = "<i></i>";
-          trail.appendChild(line);
+    window.closePasswordModal = function() {
+      document.getElementById("password-modal").classList.remove("active");
+    };
+
+    document.getElementById("btn-confirm-unlock").onclick = function() {
+      const typed = document.getElementById("modal-pass-field").value.trim().toLowerCase();
+      const expected = PASSWORDS[targetLessonNum];
+
+      if(typed === expected || typed === "wr2026") {
+        closePasswordModal();
+        const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
+        if(badge) badge.textContent = "🟢";
+
+        showScreen(`screen-lesson-${targetLessonNum}`);
+      } else {
+        alert("❌ Senha incorreta. Verifique a senha presencial fornecida pelo Professor Marcos Rangel!");
+      }
+    };
+
+    // Acionar enter no input da senha
+    document.getElementById("modal-pass-field").addEventListener("keydown", function(e){
+      if(e.key === "Enter"){
+        e.preventDefault();
+        document.getElementById("btn-confirm-unlock").click();
+      }
+    });
+
+    // Sanfona do Professor
+    const btnProf = document.getElementById("btn-prof-accordion");
+    if(btnProf){
+      btnProf.onclick = function(){
+        const content = document.getElementById("prof-content");
+        const icon = document.getElementById("prof-icon");
+        if(content.style.maxHeight){
+          content.style.maxHeight = null;
+          icon.textContent = "▼";
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          icon.textContent = "▲";
         }
-      }
-    }
-
-    function renderQuestion(){
-      renderTrail();
-      const q = QUESTIONS[state.current];
-      document.getElementById("q-count").textContent = `QUESTÃO ${state.current + 1} / ${TOTAL}`;
-      document.getElementById("q-text").textContent = q.q;
-
-      const hintBox = document.getElementById("hint-box");
-      hintBox.textContent = q.hint;
-      hintBox.classList.remove("show");
-
-      const opts = document.getElementById("options");
-      opts.innerHTML = "";
-      q.options.forEach((text, idx) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "opt" + (state.answers[state.current] === idx ? " selected" : "");
-        btn.innerHTML = `<span class="letter">${String.fromCharCode(97+idx)}</span><span>${text}</span>`;
-        btn.onclick = () => {
-          state.answers[state.current] = idx;
-          renderQuestion();
-          window.QuizEngine.saveState(STORAGE_KEY, state);
-        };
-        opts.appendChild(btn);
-      });
-
-      document.getElementById("btn-prev").disabled = state.current === 0;
-      document.getElementById("btn-prev").style.visibility = state.current === 0 ? "hidden" : "visible";
-      document.getElementById("btn-next").disabled = state.answers[state.current] === null;
-      document.getElementById("btn-next").textContent = state.current === TOTAL - 1 ? "Finalizar Prova ✓" : "Próxima →";
-    }
-
-    function computeScore(){
-      let correct = 0;
-      QUESTIONS.forEach((q, i) => { if(state.answers[i] === q.correct) correct++; });
-      return { correct, score: correct * POINTS_PER_Q };
-    }
-
-    function fmt(n){ return n.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
-
-    async function renderResult(){
-      const { correct, score } = computeScore();
-      const passed = score >= PASS_SCORE;
-      document.getElementById("result-score").textContent = fmt(score);
-
-      const timestamp = state.signature ? state.signature.timestamp : Date.now();
-      state.signature = await window.QuizEngine.generateDigitalSignature(state.name, MODULE_TITLE, score, TOTAL, timestamp);
-      window.QuizEngine.saveState(STORAGE_KEY, state);
-
-      document.getElementById("signature-code").textContent = state.signature.authCode;
-
-      const badge = document.getElementById("result-badge");
-      const title = document.getElementById("result-title");
-      const sub = document.getElementById("result-sub");
-
-      if(passed){
-        badge.className = "result-badge pass"; badge.textContent = "🎉";
-        title.textContent = `Parabéns, ${state.name.split(" ")[0]}!`;
-        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões e foi aprovado(a) no Módulo 3 (Microsoft Excel).`;
-      } else {
-        badge.className = "result-badge fail"; badge.textContent = "📘";
-        title.textContent = `Atenção, ${state.name.split(" ")[0]}.`;
-        sub.textContent = `Você acertou ${correct} de ${TOTAL} questões (nota ${fmt(score)}). A nota mínima é 7,0. Revise a aula em PDF do Professor Marcos Rangel!`;
-      }
-
-      const breakdown = document.getElementById("breakdown");
-      breakdown.innerHTML = "";
-      QUESTIONS.forEach((q, i) => {
-        const ok = state.answers[i] === q.correct;
-        const row = document.createElement("div");
-        row.className = "b-row";
-        row.innerHTML = `<span>${i+1}. ${q.q}</span><span class="b-tag ${ok ? "ok" : "no"}">${ok ? "correta" : "incorreta"}</span>`;
-        breakdown.appendChild(row);
-      });
-
-      showScreen("screen-result");
-    }
-
-    function getReportData(){
-      const { correct, score } = computeScore();
-      return {
-        studentName: state.name,
-        moduleId: MODULE_ID,
-        moduleTitle: MODULE_TITLE,
-        correct: correct,
-        total: TOTAL,
-        score: score,
-        passed: score >= PASS_SCORE,
-        signature: state.signature,
-        answers: state.answers,
-        questions: QUESTIONS
       };
     }
 
-    // Event Listeners
-    document.getElementById("btn-download-pdf-lesson").onclick = () => {
-      window.PDFLessons.downloadLessonPDF(MODULE_ID);
+    // Troca de Tópicos Didáticos
+    window.switchTopicPhase = function(lessonNum, phaseNum) {
+      const container = document.getElementById(`screen-lesson-${lessonNum}`);
+      if(!container) return;
+
+      container.querySelectorAll(".topic-phase-section").forEach(s => s.classList.remove("active"));
+      container.querySelectorAll(".topic-tab-btn").forEach(b => b.classList.remove("active"));
+
+      const targetSection = document.getElementById(`l${lessonNum}-phase-${phaseNum}`);
+      const targetTab = document.getElementById(`tab-l${lessonNum}-${phaseNum}`);
+
+      if(targetSection) targetSection.classList.add("active");
+      if(targetTab) targetTab.classList.add("active");
+
+      document.getElementById(`l${lessonNum}-fixation`).style.display = "none";
+      window.scrollTo({ top: 200, behavior: "smooth" });
     };
 
-    document.getElementById("check-read-pdf").onchange = checkStartUnlock;
-    const nameInput = document.getElementById("input-name");
-    nameInput.addEventListener("input", () => checkResume(nameInput.value));
-
-    document.getElementById("btn-start").onclick = () => {
-      const name = nameInput.value.trim();
-      if(!name){ alert("Por favor, digite seu nome completo."); return; }
-      if(!document.getElementById("check-read-pdf").checked){
-        alert("Por favor, confirme que baixou e leu a aula didática em PDF."); return;
+    // Marcação de Leitura e Gamificação
+    window.markTopicRead = function(lessonNum, topicNum) {
+      readStatus[lessonNum][topicNum - 1] = true;
+      const btn = document.getElementById(`btn-read-l${lessonNum}-${topicNum}`);
+      if(btn) {
+        btn.classList.add("checked");
+        btn.textContent = `✓ Tópico ${topicNum} Concluído`;
       }
-      state.name = name;
-      showScreen("screen-quiz");
-      renderQuestion();
-      window.QuizEngine.saveState(STORAGE_KEY, state);
+      updateGamification(lessonNum);
     };
 
-    document.getElementById("btn-resume").onclick = () => {
-      const name = nameInput.value.trim();
-      const loaded = window.QuizEngine.loadState(STORAGE_KEY, name);
-      if(loaded){
-        state = loaded;
-        document.getElementById("check-read-pdf").checked = state.pdfRead || false;
-        checkStartUnlock();
-        showScreen("screen-quiz");
-        renderQuestion();
+    function updateGamification(lessonNum) {
+      const readCount = readStatus[lessonNum].filter(Boolean).length;
+      const totalTopics = 6;
+      const pct = Math.round((readCount / totalTopics) * 60); // 60% por leitura, 40% por exercício
+
+      const fill = document.getElementById(`gamify-fill-${lessonNum}`);
+      const label = document.getElementById(`gamify-label-${lessonNum}`);
+      if(fill) fill.style.width = `${pct}%`;
+      if(label) label.textContent = `Progresso da Leitura: ${pct}% (${readCount} de ${totalTopics} Tópicos lidos)`;
+    }
+
+    // Abertura do Exercício de Fixação
+    window.openFixationPanel = function(lessonNum) {
+      const readCount = readStatus[lessonNum].filter(Boolean).length;
+      if(readCount < 6) {
+        alert(`⚠️ Por favor, leia e marque como concluídos todos os 6 tópicos da Aula 01 antes de realizar o exercício de fixação!\n\nProgresso atual: ${readCount} de 6 tópicos.`);
+        return;
       }
+
+      const container = document.getElementById(`screen-lesson-${lessonNum}`);
+      container.querySelectorAll(".topic-phase-section").forEach(s => s.classList.remove("active"));
+      container.querySelectorAll(".topic-tab-btn").forEach(b => b.classList.remove("active"));
+
+      document.getElementById(`tab-l${lessonNum}-7`).classList.add("active");
+      const fixPanel = document.getElementById(`l${lessonNum}-fixation`);
+      fixPanel.style.display = "block";
+      fixPanel.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    document.getElementById("btn-hint").onclick = () => {
-      document.getElementById("hint-box").classList.toggle("show");
+    // Seleção de Opção no Quiz
+    window.selectFixOption = function(lessonNum, qNum, optIdx, element) {
+      userAnswers[lessonNum][qNum - 1] = optIdx;
+      const questionCard = element.closest(".question-card-item");
+      questionCard.querySelectorAll(".option-btn-card").forEach(opt => opt.classList.remove("selected"));
+      element.classList.add("selected");
     };
 
-    document.getElementById("btn-prev").onclick = () => {
-      if(state.current > 0) { state.current--; renderQuestion(); }
-    };
+    // Cálculo do Exercício & Emissão de SHA-256
+    window.calcFixation = async function(lessonNum) {
+      const studentName = document.getElementById(`l${lessonNum}-student-name`).value.trim();
+      if(!studentName) {
+        alert("Por favor, digite seu Nome Completo para gerar o comprovante com Assinatura Digital!");
+        document.getElementById(`l${lessonNum}-student-name`).focus();
+        return;
+      }
 
-    document.getElementById("btn-next").onclick = () => {
-      if(state.current < TOTAL - 1) {
-        state.current++; renderQuestion(); window.QuizEngine.saveState(STORAGE_KEY, state);
+      const answers = userAnswers[lessonNum];
+      if(answers.includes(null)) {
+        alert("Por favor, responda a todas as 5 questões antes de finalizar!");
+        return;
+      }
+
+      let correctCount = 0;
+      answers.forEach((ans, idx) => {
+        if(ans === GABARITO_L1[idx]) correctCount++;
+      });
+
+      const score = (correctCount / 5) * 10;
+      const passed = score >= 7.0;
+
+      // Gerar Assinatura Criptográfica SHA-256
+      const moduleTitle = `Módulo 3 • Aula 01: Introdução ao Excel, Interface, Tipos de Dados e Navegação`;
+      const signature = await window.QuizEngine.generateDigitalSignature(studentName, moduleTitle, score, 5, Date.now());
+
+      window.l1ReportData = {
+        studentName: studentName,
+        moduleId: `excel-aula-01`,
+        moduleTitle: moduleTitle,
+        correct: correctCount,
+        total: 5,
+        score: score,
+        passed: passed,
+        signature: signature,
+        answers: answers,
+        questions: QUESTOES_L1
+      };
+
+      // Atualizar progresso gamificado para 100%
+      if(passed) {
+        document.getElementById(`gamify-fill-${lessonNum}`).style.width = "100%";
+        document.getElementById(`gamify-label-${lessonNum}`).textContent = "🏆 Aula 01 Concluída com Sucesso! (100%)";
+        document.getElementById(`gamify-badge-box-${lessonNum}`).innerHTML = `<span class="badge-trophy" style="background:#22C55E; color:#FFF; padding:4px 12px; border-radius:99px; font-weight:700; font-size:13px;">🏆 Aprovado(a)</span>`;
+      }
+
+      const resBox = document.getElementById(`l${lessonNum}-result-box`);
+
+      if(passed) {
+        resBox.innerHTML = `
+          <div style="background:#F0FDF4; border:2px solid var(--excel-green); border-radius:16px; padding:24px; color:var(--ink-dark); margin-top:20px;">
+            <strong style="font-size:24px; color:var(--excel-green-dark); display:block; margin-bottom:12px;">🎉 PARABÉNS, ${studentName.toUpperCase()}!</strong>
+            <p style="font-size:16px; margin-bottom:14px; line-height:1.6;">
+              Você foi <strong>APROVADO(A)</strong> no Exercício de Fixação da Aula 01 com nota <strong>${score.toFixed(1)} / 10,0</strong> (${correctCount} de 5 acertos)!
+            </p>
+
+            <div style="background:var(--bg-brown); border:1px solid var(--excel-green); border-radius:12px; padding:16px; margin-bottom:20px; text-align:center;">
+              <span style="font-size:13px; color:var(--ink-soft); display:block; margin-bottom:4px;">🔒 Assinatura Digital Anti-Fraude (SHA-256):</span>
+              <strong style="font-family:'JetBrains Mono'; font-size:18px; color:var(--amber); display:block;">${signature.authCode}</strong>
+              <span style="font-size:11px; color:var(--ink-soft); word-break:break-all;">Hash: ${signature.fullHash}</span>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+              <button type="button" class="btn btn-primary" onclick="window.QuizEngine.downloadTxtReport(window.l1ReportData)">📄 Baixar Comprovante TXT</button>
+              <button type="button" class="btn btn-amber" style="background:var(--amber); color:#fff;" onclick="window.PDFLessons.downloadLessonPDF('excel', 1)">📑 Baixar Aula em PDF</button>
+              <button type="button" class="btn" style="background:var(--whatsapp); color:#fff;" onclick="window.open(window.QuizEngine.buildWhatsAppUrl(window.l1ReportData), '_blank')">📱 Enviar WhatsApp (19 99130-6907)</button>
+              <button type="button" class="btn btn-ghost" style="background:var(--card-brown); color:var(--amber) !important; border:1px solid var(--amber);" onclick="window.QuizEngine.openGmailComposer(window.l1ReportData)">✉️ Enviar E-mail ao Professor</button>
+            </div>
+          </div>
+        `;
       } else {
-        renderResult();
+        resBox.innerHTML = `
+          <div style="background:var(--warn-bg); border:2px solid var(--warn); border-radius:16px; padding:24px; color:var(--ink-dark); margin-top:20px;">
+            <strong style="font-size:22px; color:var(--warn); display:block; margin-bottom:12px;">📘 Nota: ${score.toFixed(1)} / 10,0 (${correctCount} de 5 acertos)</strong>
+            <p style="font-size:16px; margin-bottom:14px;">
+              A nota mínima para aprovação é 7,0 (4 de 5 acertos). Por favor, revise os tópicos da aula e tente novamente para obter o comprovante de conclusão!
+            </p>
+
+            <div style="background:var(--bg-brown); border:1px solid var(--line-dark); border-radius:12px; padding:14px; margin-bottom:20px; text-align:center;">
+              <span style="font-size:13px; color:var(--ink-soft); display:block; margin-bottom:4px;">🔒 Assinatura Digital Anti-Fraude (SHA-256):</span>
+              <strong style="font-family:'JetBrains Mono'; font-size:18px; color:var(--amber); display:block;">${signature.authCode}</strong>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+              <button type="button" class="btn btn-primary" onclick="window.QuizEngine.downloadTxtReport(window.l1ReportData)">📄 Baixar Comprovante TXT</button>
+              <button type="button" class="btn btn-amber" style="background:var(--amber); color:#fff;" onclick="window.PDFLessons.downloadLessonPDF('excel', 1)">📑 Baixar Aula em PDF</button>
+              <button type="button" class="btn" style="background:var(--whatsapp); color:#fff;" onclick="window.open(window.QuizEngine.buildWhatsAppUrl(window.l1ReportData), '_blank')">📱 Enviar WhatsApp (19 99130-6907)</button>
+              <button type="button" class="btn btn-ghost" style="background:var(--card-brown); color:var(--amber) !important; border:1px solid var(--amber);" onclick="window.QuizEngine.openGmailComposer(window.l1ReportData)">✉️ Enviar E-mail ao Professor</button>
+            </div>
+          </div>
+        `;
       }
+      resBox.style.display = "block";
+      resBox.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    document.getElementById("btn-download").onclick = () => {
-      window.QuizEngine.downloadTxtReport(getReportData());
+    // Lógica do Simulador Grid Inspector
+    let activeCellCoord = "B3";
+    let cellDataMap = {
+      "A1": { val: "Produto", align: "left", type: "text" },
+      "B1": { val: "Preço", align: "right", type: "text" },
+      "C1": { val: "Qtd", align: "right", type: "text" },
+      "A2": { val: "Notebook", align: "left", type: "text" },
+      "B2": { val: "3500.00", align: "right", type: "number" },
+      "C2": { val: "2", align: "right", type: "number" },
+      "A3": { val: "Mouse Sem Fio", align: "left", type: "text" },
+      "B3": { val: "85.50", align: "right", type: "number" },
+      "C3": { val: "5", align: "right", type: "number" },
+      "A4": { val: "Teclado USB", align: "left", type: "text" },
+      "B4": { val: "120.00", align: "right", type: "number" },
+      "C4": { val: "3", align: "right", type: "number" }
     };
 
-    document.getElementById("btn-whatsapp").onclick = () => {
-      const url = window.QuizEngine.buildWhatsAppUrl(getReportData());
-      window.open(url, "_blank");
+    window.selectSimCell = function(element, coord, val) {
+      document.querySelectorAll("#sim-table td").forEach(td => td.classList.remove("active-cell"));
+      element.classList.add("active-cell");
+      activeCellCoord = coord;
+
+      document.getElementById("sim-cell-name").textContent = coord;
+      document.getElementById("sim-active-coord").textContent = coord;
+      document.getElementById("sim-formula-bar").textContent = element.textContent || val || "";
+      document.getElementById("sim-user-input").value = element.textContent || val || "";
     };
 
-    document.getElementById("btn-email").onclick = () => {
-      document.getElementById("email-panel").classList.toggle("show");
-    };
+    window.applySimValue = function() {
+      const inputVal = document.getElementById("sim-user-input").value.trim();
+      if(!inputVal) return;
 
-    document.getElementById("btn-open-gmail").onclick = () => {
-      window.QuizEngine.openGmailComposer(getReportData());
+      const activeCell = document.querySelector("#sim-table td.active-cell");
+      if(!activeCell) return;
+
+      // Determinar o tipo de dado e alinhamento
+      let isNumber = !isNaN(Number(inputVal.replace(",", ".")));
+      let isDate = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/.test(inputVal);
+
+      activeCell.textContent = inputVal;
+      activeCell.classList.remove("align-left", "align-right");
+
+      if(isNumber || isDate) {
+        activeCell.classList.add("align-right");
+      } else {
+        activeCell.classList.add("align-left");
+      }
+
+      document.getElementById("sim-formula-bar").textContent = inputVal;
     };
 
   })();

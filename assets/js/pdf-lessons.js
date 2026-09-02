@@ -372,25 +372,47 @@ window.PDFLessons = (function() {
       moduleName: "Microsoft Excel",
       sections: [
         {
-          chapter: "UNIDADE 1: ESTRUTURA, FÓRMULAS E FUNÇÕES",
-          heading: "1.1 Matriz de Células, Linhas e Colunas",
-          content: "O Excel organiza informações em Colunas (letras: A, B, C...) e Linhas (números: 1, 2, 3...). O cruzamento de uma coluna com uma linha forma a Célula (exemplo: A1, B5, C10)."
+          lessonNum: 1,
+          chapter: "AULA 01: INTRODUÇÃO AO EXCEL, INTERFACE E NAVEGAÇÃO",
+          heading: "1.1 O que é o Microsoft Excel & Aplicações Práticas",
+          content: "O Microsoft Excel é a planilha eletrônica líder mundial para organização de dados, cálculos automáticos, análises financeiras e gráficos.\n\n• Origem e Conceito: Lançado originalmente em 1985, substituiu o cálculo manual em papel por tabelas inteligentes em computador.\n• Aplicações no Dia a Dia: Controle de orçamento doméstico, controle de estoque, folha de pagamento, boletim escolar e emissão de relatórios dinâmicos.",
+          image: "../../assets/img/excel/a1/excel_aula1_01_visao_geral.png",
+          caption: "Visão Geral de uma Planilha Financeira no Excel"
         },
         {
-          heading: "1.2 Fórmulas e Operadores Matemáticos",
-          content: `Toda fórmula ou função no Excel DEVE ser iniciada obrigatoriamente pelo sinal de igual (=).\n• Adição: + (Ex: =A1+B1)\n• Subtração: - (Ex: =A1-B1)\n• Multiplicação: * (Ex: =A1*B1)\n• Divisão: / (Ex: =A1/B1)\n• Potenciação: ^ (Ex: =A1^2)`
+          lessonNum: 1,
+          heading: "1.2 Anatomia da Interface & Elementos Principais",
+          content: "• Barra de Título: Exibe o nome do arquivo (ex: Pasta1.xlsx).\n• Faixa de Opções (Ribbon): Agrupa os comandos em abas (Página Inicial, Inserir, Fórmulas, Dados).\n• Caixa de Nome: Mostra a coordenada exata da célula selecionada (ex: A1, B5).\n• Barra de Fórmulas: Exibe o conteúdo real ou a fórmula oculta na célula.\n• Grade de Planilha: Matriz dividida em Colunas (identificadas por letras A, B, C...) e Linhas (identificadas por números 1, 2, 3...).\n• Barra de Status: Exibe contagem, soma e média rápida dos valores selecionados.",
+          image: "../../assets/img/excel/a1/excel_aula1_02_anatomia_interface.png",
+          caption: "Anatomia da Interface do Microsoft Excel"
         },
         {
-          heading: "1.3 Funções Essenciais do Excel",
-          content: `• =SOMA(A1:A10): Soma os valores do intervalo.\n• =MÉDIA(A1:A10): Calcula a média aritmética dos valores.\n• =MÁXIMO(A1:A10): Identifica o maior valor do intervalo.\n• =MÍNIMO(A1:A10): Identifica o menor valor do intervalo.\n• =CONT.SE(A1:A10; ">=7"): Conta a quantidade de células que atendem a um critério.`
+          lessonNum: 1,
+          heading: "1.3 Diferença entre Planilhas (Abas) e Pastas de Trabalho",
+          content: "• Pasta de Trabalho: É o arquivo completo salvo no computador com a extensão .xlsx (pense como um caderno de anotações).\n• Planilha (Sheet): É uma aba individual de trabalho contida dentro do arquivo (pense como as folhas de papel desse caderno, ex: Plan1, Plan2, Vendas, Resumo).",
+          image: "../../assets/img/excel/a1/excel_aula1_03_abas_planilhas.png",
+          caption: "Abas de Planilhas e Pasta de Trabalho"
         },
         {
-          heading: "1.4 Tomada de Decisão com a Função Lógica =SE()",
-          content: `A função SE avalia uma condição e retorna um resultado para VERDADEIRO e outro para FALSO.\nSintaxe: =SE(teste_lógico; valor_se_verdadeiro; valor_se_falso)\nExemplo: =SE(B2>=7; "APROVADO"; "REPROVADO")`
+          lessonNum: 1,
+          heading: "1.4 Tipos de Dados e Alinhamento Automático",
+          content: "O Excel reconhece o tipo de dado digitado e ajusta o alinhamento automaticamente para evitar erros de cálculo:\n\n• Texto (Rótulos/Nomes): Alinhado automaticamente à ESQUERDA da célula.\n• Números e Moeda: Alinhados automaticamente à DIREITA da célula.\n• Datas e Horas: Alinhadas automaticamente à DIREITA da célula (ex: 15/09/2026).",
+          image: "../../assets/img/excel/a1/excel_aula1_04_tipos_dados.png",
+          caption: "Alinhamento Automático de Tipos de Dados"
         },
         {
-          heading: "1.5 Gráficos e Formatação Condicional",
-          content: "Gráficos de colunas, barras e pizza transformam números brutos em informações visuais dinâmicas. A Formatação Condicional altera automaticamente a cor das células com base em regras personalizadas."
+          lessonNum: 1,
+          heading: "1.5 Inserção, Edição com F2 e Navegação Ágil pelo Teclado",
+          content: "• Enter: Confirma a digitação e move o cursor para a CÉLULA DE BAIXO.\n• Tab: Confirma a digitação e move o cursor para a CÉLULA DA DIREITA.\n• Tecla F2: Coloca o cursor piscando dentro da célula para EDITAR sem apagar o texto existente.\n• Tecla Esc: Cancela a edição e restaura o valor original.\n• Ctrl + Setas: Salta instantaneamente para a última célula preenchida da coluna ou linha.",
+          image: "../../assets/img/excel/a1/excel_aula1_05_edicao_f2.png",
+          caption: "Modo de Edição de Célula com Tecla F2"
+        },
+        {
+          lessonNum: 1,
+          heading: "1.6 Salvando Pastas de Trabalho (.xlsx vs .csv)",
+          content: "• Atalho Ctrl + S: Salva as alterações da Pasta de Trabalho.\n• Formato .xlsx: Formato padrão moderno do Excel que preserva fórmulas, cores e formatações.\n• Formato .csv: Arquivo de texto separado por vírgulas, ideal para exportação entre sistemas.",
+          image: "../../assets/img/excel/a1/excel_aula1_06_salvar_como.png",
+          caption: "Janela Salvar Como e Formatos de Arquivo"
         }
       ]
     },

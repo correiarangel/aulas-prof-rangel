@@ -20,10 +20,14 @@
 - [x] Emissão de Comprovante TXT, PDF, WhatsApp e E-mail com SHA-256
 
 ### 📊 Módulo 3: Microsoft Excel
-- [x] Material Didático Interativo por Fases
-- [x] Exercício de Fixação Interativo
-- [x] Prova Final com Senha de Liberação (`c003`)
-- [x] Emissão de Comprovante TXT, PDF, WhatsApp e E-mail com SHA-256
+- [x] **Especificação SDD Mestre**: Arquitetura do Módulo Excel em 13 Aulas, Design Tokens Verde Excel, Matriz de Senhas (`xa001`-`xm013`) e Simulador Interativo (`Docs/SPEC-EXCEL-MASTER.md`)
+- [x] **Especificação SDD Aula 01**: Introdução ao Excel, Interface, Tipos de Dados, Navegação e Quiz de 5 Questões (`Docs/SPEC-EXCEL-AULA-01.md`)
+- [x] **Auditoria SDD Pré-Implementação**: 12 achados corrigidos (senhas, quizzes de 5 questões em todas as aulas, nota 7.0, hierarquia documental)
+- [x] **Material Didático Interativo Aula 01**: Implementação HTML/JS do Hub de 13 Aulas, Conteúdo Didático da Aula 01, Simulador Grid Inspector e Quiz de 5 Questões (`modules/excel/index.html`)
+- [ ] Exercícios de Fixação e Quizzes das Aulas 02 a 13
+
+
+
 
 ### 📊 Módulo 4: Microsoft PowerPoint
 - [x] Material Didático Interativo por Fases

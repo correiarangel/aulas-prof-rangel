@@ -309,3 +309,128 @@ Todos os módulos contam com o painel retrátil expansível com as credenciais d
 - **Testes Executados & Resultados:**
   - Validação de sintaxe Node.js em `pdf-lessons.js` e `quiz-engine.js` (`SYNTAX OK`).
   - Script Python de auditoria física de imagens confirmando 32 referências válidas em `modules/windows/index.html`.
+
+### 🗓️ Registro #010 — 01/09/2026 (Módulo 3 Microsoft Excel: Especificação SDD Mestre e SDD Aula 01)
+- **Problema Identificado:**
+  O Módulo 3 (Excel) necessitava do planejamento mestre da arquitetura pedagógica em 13 aulas a partir dos materiais da pasta `AulaOrigem/excel/`, bem como da especificação detalhada da Aula 01 (Introdução ao Excel, Interface, Tipos de Dados e Navegação), simulador interativo de dados e matriz de senhas.
+- **Solução Implementada:**
+  1. **Centralização da Arquitetura Global ([SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md))**:
+     - Consolidação da especificação-pai do portal, estruturando a matriz dos **5 Módulos Didáticos** (Windows, Word, Excel, PowerPoint, Internet), os tokens visuais globais, a convenção unificada de senhas presenciais e as regras de geração de PDF e impressão.
+  2. **Especificação SDD Mestre do Excel ([SPEC-EXCEL-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-MASTER.md))**:
+     - Mapeamento completo das 13 aulas do catálogo do Excel a partir da especificação-pai.
+     - Tokens de design em verde Excel (`#16A34A`), regras do Simulador Interativo de Planilha (Grid Inspector) e motor criptográfico SHA-256.
+  3. **Especificação SDD Aula 01 (`Docs/SPEC-EXCEL-AULA-01.md`)**:
+     - Detalhamento didático dos 6 tópicos da Aula 1 (Conceito de Planilha Eletrônica, Anatomia da Interface, Pastas vs Planilhas, Tipos de Dados e Alinhamento Automático, Navegação e Atalhos `<kbd>`, Salvamento `.xlsx`).
+     - Requisitos do Simulador Interativo Grid Inspector e Quiz de 5 Questões com Gabarito e Dicas.
+  4. **Atualização da Tríade de Documentação SDD**: Sincronização em `ROADMAP.md`, `INDEX.md` e `DOCUMENTATION.md`.
+- **Arquivos Criados/Modificados:**
+  - [Docs/SPEC-EXCEL-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-MASTER.md)
+  - [Docs/SPEC-EXCEL-AULA-01.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-01.md)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados & Resultados:**
+  - Verificação de consistência de links de especificação `file://`.
+
+### 🗓️ Registro #011 — 01/09/2026 (Módulo 3 Microsoft Excel: Auditoria SDD Pré-Implementação e Correção de 12 Achados)
+- **Problema Identificado:**
+  Antes de iniciar a implementação do código do Módulo Excel, foi necessário auditar os 3 documentos SDD (`SPEC-PROJECT-ARCHITECTURE.md`, `SPEC-EXCEL-MASTER.md`, `SPEC-EXCEL-AULA-01.md`) para garantir consistência visual, didática e técnica com os módulos já operacionais (Internet e Windows).
+- **Solução Implementada:**
+  1. **Auditoria Completa**: Identificação de 12 achados organizados em 3 categorias (Desalinhamentos Críticos, Lacunas Didáticas, Melhorias Estruturais).
+  2. **Correção de Senhas**: Padrão de senhas atualizado de `e001`-`e013` para `xa001`-`xm013` (letra `x` + letra incremental + número incremental de 3 dígitos), aprovado pelo professor.
+  3. **Padronização de Quizzes**: Todas as 13 aulas passam a ter **5 questões** no Quiz de Fixação (inclusive Aulas 11, 12 e 13 do Projeto Prático, que anteriormente tinham 3 questões).
+  4. **Nota Mínima**: Confirmada como **7.0** para todos os quizzes de fixação (≥ 4 acertos de 5 questões).
+  5. **Questões Legadas**: As 10 questões da prova legada antiga (`modules/excel/index.html` original) foram aprovadas para reutilização nas aulas relevantes.
+  6. **Hierarquia Documental**: Adicionado link pai (`🔗 Especificação Pai`) no SDD Aula 01 apontando para o SDD Master.
+  7. **Seção 5.1 de Quizzes**: Nova seção adicionada ao SDD Master padronizando as regras obrigatórias de todos os quizzes.
+- **Arquivos Modificados:**
+  - [Docs/SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md) — Senhas atualizadas
+  - [Docs/SPEC-EXCEL-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-MASTER.md) — Senhas, quizzes de 5 questões, seção 5.1
+  - [Docs/SPEC-EXCEL-AULA-01.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-01.md) — Link pai, senha, nota mínima
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md) — Auditoria registrada
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md) — Status atualizado
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md) — Registro #011
+- **Testes Executados & Resultados:**
+  - Verificação cruzada de todas as senhas entre os 3 documentos SDD.
+  - Confirmação de alinhamento visual e didático com o padrão dos módulos Internet e Windows.
+
+### 🗓️ Registro #012 — 02/09/2026 (Módulo 3 Microsoft Excel: Implementação do Hub de 13 Aulas, Aula 01 Didática Interativa, Simulador Grid Inspector e Quiz com SHA-256)
+- **Problema Identificado:**
+  O arquivo `modules/excel/index.html` continha uma prova legada no formato antigo de 10 questões e necessitava ser reconstruído para integrar o Hub de 13 Aulas do Módulo Excel, o material didático da Aula 01 dividida em 6 tópicos interativos, o simulador de grade e o quiz de fixação com assinatura digital criptográfica SHA-256.
+- **Solução Implementada:**
+  1. **Reconstrução Completa de [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)**:
+     - **Tela 1 (Hub Principal)**: Catálogo com as 13 Aulas do Módulo Excel. Aula 01 liberada (senha `xa001`), Aulas 02 a 13 com o selo `🔒 Em Construção`.
+     - **Modal de Senha Presencial (`#password-modal`)**: Validação de senha presencial (`xa001` a `xm013` ou `wr2026`) com feedback visual.
+     - **Painel do Professor Marcos Rangel**: Sanfona expansível com biografia, formação e contatos.
+     - **Tela 2 (Aula 01 Didática Interativa)**:
+       - Header com navegação (`Voltar ao Menu`, `Imprimir Aula`, `Baixar Apostila PDF`).
+       - Trilha de progresso gamificada (0% a 100%).
+       - 6 Tópicos Didáticos em abas interativas (O que é Excel & Aplicações, Anatomia da Interface, Planilhas vs Pastas, Tipos de Dados, Edição/Atalhos e Salvamento `.xlsx`).
+       - **Simulador Interativo Grid Inspector**: Componente de planilha HTML/CSS/JS (grade 6x4) com **Caixa de Nome** ativa, **Barra de Fórmulas** e campo de teste que classifica e alinha automaticamente os tipos de dados (Texto à esquerda, Números/Moeda e Datas à direita).
+       - Trava pedagógica de leitura obrigatória (`markTopicRead`).
+     - **Quiz de Fixação (5 Questões)**: Pergunta com 4 alternativas e nota mínima de aprovação **7,0 / 10,0**.
+     - **Motor Criptográfico SHA-256**: Emissão de código hash de autenticidade no formato `WR-XXXX-XXXX` e botões de exportação em TXT, PDF, WhatsApp e E-mail.
+  2. **Atualização do Gerador de PDF ([assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js))**: Adicionada a propriedade `lessonNum: 1` em todas as seções do Excel para viabilizar a geração da apostila PDF individual por aula (`window.PDFLessons.downloadLessonPDF('excel', 1)`).
+  3. **Validação Técnica**: Execução de validação de balanço de tags HTML via script Python (0 tags não fechadas).
+- **Arquivos Modificados:**
+  - [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+
+---
+
+### 📝 Registro Cronológico #15 — Integração de Imagens Didáticas na Aula 01 do Excel
+- **Data:** 02/09/2026
+- **Responsável:** Agente Full Stack (Antigravity AI)
+- **Problema:** A Aula 01 do Módulo Excel apresentava apenas texto e o simulador interativo, carecendo de ilustrações visuais capturadas da interface real do programa para proporcionar um estudo mais suave e fluido.
+- **Solução Implementada:**
+  1. Mapeamento das necessidades visuais da Aula 01 em 6 telas e ferramentas essenciais do Excel.
+  2. Recebimento e verificação das 6 imagens capturadas e salvas em [assets/img/excel/a1/](file:///home/rangel/git-dev/aulas/assets/img/excel/a1/):
+     - `excel_aula1_01_visao_geral.png`: Visão geral de uma planilha financeira no Excel.
+     - `excel_aula1_02_anatomia_interface.png`: Captura de tela inteira destacando a anatomia da interface.
+     - `excel_aula1_03_abas_planilhas.png`: Close nas abas de planilhas e no botão `+` (nova planilha).
+     - `excel_aula1_04_tipos_dados.png`: Exemplo de alinhamento automático de texto, número e data.
+     - `excel_aula1_05_edicao_f2.png`: Célula no modo de edição com o cursor ativado pela tecla F2.
+     - `excel_aula1_06_salvar_como.png`: Janela de Salvar Como e lista de formatos de arquivo (`.xlsx`, `.csv`, `.pdf`).
+  3. Inserção das imagens no HTML [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html) nos tópicos 1 a 6 utilizando a classe CSS `.img-reduced` para garantir visual fluido, bordas arredondadas, sombra suave e responsividade em todos os tamanhos de tela.
+  4. **Otimização do Layout de Impressão (`@media print` em [assets/css/style.css](file:///home/rangel/git-dev/aulas/assets/css/style.css))**: Adicionadas regras de quebra de página limpa (`page-break-inside: avoid; break-inside: avoid;`), alinhamento centralizado com margens controladas e limite de altura (`max-height: 420px`), evitando que imagens fiquem cortadas ou desorganizadas entre páginas na impressão direta.
+  5. **Mapeamento no Gerador de PDF ([assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js))**: Mapeadas as 6 imagens com suas respectivas legendas didáticas no motor de geração de apostilas PDF da Aula 01 do Excel.
+- **Arquivos Modificados:**
+  - [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)
+  - [assets/css/style.css](file:///home/rangel/git-dev/aulas/assets/css/style.css)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados & Resultados:**
+  - Validação de caminhos das imagens (`../../assets/img/excel/a1/...`): Todos os 6 arquivos validados e acessíveis.
+  - Verificação do layout de impressão `@media print` e motor de PDF `pdf-lessons.js`: Renderização fluida, sequencial e sem cortes acidentais de imagem.
+
+---
+
+### 📝 Registro Cronológico #16 — Formalização do Modelo-Base Padronizado de Aula (Master Lesson Blueprint)
+- **Data:** 02/09/2026
+- **Responsável:** Agente Full Stack (Antigravity AI)
+- **Problema:** Com a conclusão bem-sucedida das aulas dos módulos Windows, Internet e Excel (Aula 01), fazia-se necessário registrar e formalizar a estrutura padrão adotada como modelo arquitetural mestre para guiar o desenvolvimento das aulas restantes (Excel Aulas 02 a 13, Word, PowerPoint, etc.).
+- **Solução Implementada:**
+  1. Formalização da Seção 7 ("Modelo-Base Padronizado de Aula — Master Lesson Blueprint") em [Docs/SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md).
+  2. Definição dos 7 componentes mandatórios de toda aula:
+     - Header com botões de navegação, impressão HTML contínua e download de Apostila PDF.
+     - Barra de progresso gamificada de leitura (0% a 100%).
+     - Menu de abas de tópicos pedagógicos (`topic-tabs-bar`) com destaque no exercício de fixação.
+     - Tópicos didáticos com estilo senior-friendly, caixas pedagógicas (dicas/alertas/atalhos `<kbd>`), imagens capturadas `.img-reduced` e trava de leitura.
+     - Simulador interativo dedicado (ex: *Grid Inspector* no Excel).
+     - Quiz de Fixação de 5 perguntas com nota mínima 7.0, validação SHA-256 e exportação em TXT/PDF/WhatsApp/E-mail.
+     - Otimização de impressão `@media print` sem cortes de imagens e acoplamento no motor `pdf-lessons.js`.
+- **Arquivos Modificados:**
+  - [Docs/SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados & Resultados:**
+  - Auditoria SDD de especificação arquitetural: 100% de conformidade com os pilares pedagógicos e técnicos do portal.
+
+
+
+
+
