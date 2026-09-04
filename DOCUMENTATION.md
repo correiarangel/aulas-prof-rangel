@@ -414,15 +414,15 @@ Todos os módulos contam com o painel retrátil expansível com as credenciais d
 - **Responsável:** Agente Full Stack (Antigravity AI)
 - **Problema:** Com a conclusão bem-sucedida das aulas dos módulos Windows, Internet e Excel (Aula 01), fazia-se necessário registrar e formalizar a estrutura padrão adotada como modelo arquitetural mestre para guiar o desenvolvimento das aulas restantes (Excel Aulas 02 a 13, Word, PowerPoint, etc.).
 - **Solução Implementada:**
-  1. Formalização da Seção 7 ("Modelo-Base Padronizado de Aula — Master Lesson Blueprint") em [Docs/SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md).
-  2. Definição dos 7 componentes mandatórios de toda aula:
-     - Header com botões de navegação, impressão HTML contínua e download de Apostila PDF.
-     - Barra de progresso gamificada de leitura (0% a 100%).
-     - Menu de abas de tópicos pedagógicos (`topic-tabs-bar`) com destaque no exercício de fixação.
-     - Tópicos didáticos com estilo senior-friendly, caixas pedagógicas (dicas/alertas/atalhos `<kbd>`), imagens capturadas `.img-reduced` e trava de leitura.
-     - Simulador interativo dedicado (ex: *Grid Inspector* no Excel).
-     - Quiz de Fixação de 5 perguntas com nota mínima 7.0, validação SHA-256 e exportação em TXT/PDF/WhatsApp/E-mail.
-     - Otimização de impressão `@media print` sem cortes de imagens e acoplamento no motor `pdf-lessons.js`.
+   1. Formalização da Seção 7 ("Modelo-Base Padronizado de Aula — Master Lesson Blueprint") em [Docs/SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md).
+   2. Definição dos 7 componentes mandatórios de toda aula:
+      - Header com botões de navegação, impressão HTML contínua e download de Apostila PDF.
+      - Barra de progresso gamificada de leitura (0% a 100%).
+      - Menu de abas de tópicos pedagógicos (`topic-tabs-bar`) com destaque no exercício de fixação.
+      - Tópicos didáticos com estilo senior-friendly, caixas pedagógicas (dicas/alertas/atalhos `<kbd>`), imagens capturadas `.img-reduced` e trava de leitura.
+      - Simulador interativo dedicado (ex: *Grid Inspector* no Excel).
+      - Quiz de Fixação de 5 perguntas com nota mínima 7.0, validação SHA-256 e exportação em TXT/PDF/WhatsApp/E-mail.
+      - Otimização de impressão `@media print` sem cortes de imagens e acoplamento no motor `pdf-lessons.js`.
 - **Arquivos Modificados:**
   - [Docs/SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md)
   - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
@@ -430,7 +430,186 @@ Todos os módulos contam com o painel retrátil expansível com as credenciais d
 - **Testes Executados & Resultados:**
   - Auditoria SDD de especificação arquitetural: 100% de conformidade com os pilares pedagógicos e técnicos do portal.
 
+### 📝 Registro Cronológico #17 — Correção do ROADMAP e INDEX: Alinhamento ao Estado Real dos Módulos
+- **Data:** 02/09/2026
+- **Problema:** O `ROADMAP.md` marcava os módulos Word (2) e PowerPoint (4) como "completos" e o módulo Windows (1) como parcialmente avançado, quando na realidade: (a) Word e PowerPoint possuem APENAS um simulado/prova de 10 questões, sem material didático interativo por aulas; (b) Windows possui apenas a Aula 08 implementada (11 aulas restantes pendentes); (c) Excel possui apenas a Aula 01. Apenas o módulo Internet está completo. As senhas `b002` (Word) e `d004` (PowerPoint) citadas eram, na verdade, senhas do módulo Internet — os simulados Word/PowerPoint desbloqueiam por checkbox de leitura do PDF, sem senha própria.
+- **Solução Implementada:**
+  1. Reescrita das seções dos Módulos 2 (Word) e 4 (PowerPoint) no `ROADMAP.md` para refletir o estado "Não iniciado (apenas simulado/prova)" e adição explícita das tarefas pendentes (material didático interativo conforme o Master Lesson Blueprint).
+  2. Reescrita da seção do Módulo 1 (Windows) adicionando a pendência das 11 aulas restantes.
+  3. Adição da tarefa explícita da Aula 02 como PRÓXIMA TAREFA no Módulo 3 (Excel).
+  4. Inserção da tabela "GRÁFICO REAL DO PROGRESSO DOS MÓDULOS" no `INDEX.md` com o estado verdadeiro de cada módulo.
+- **Arquivos Modificados:**
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
+  - [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados & Resultados:**
+  - Auditoria manual do conteúdo real de cada `modules/*/index.html` (Word/PowerPoint = apenas simulado de 10 questões; Windows = 1 aula; Excel = 1 aula).
 
+### 📝 Registro Cronológico #18 — Especificação SDD da Aula 02 (Operações Básicas & Fórmulas Simples)
+- **Data:** 02/09/2026
+- **Escopo:** Elaboração da especificação técnica e pedagógica (SDD) da Aula 02 do Módulo Excel, seguindo as Fases 0-2 do pipeline obrigatório do `global-start-skill` (planejar → validar → especificar ANTES de implementar).
+- **Conteúdo Especificado:**
+  1. **6 Tópicos Didáticos**: (1) Operações matemáticas básicas (`+`, `-`, `*`, `/`); (2) Fórmulas simples & controle de gastos; (3) Referência relativa × absoluta (`$A$1` / tecla `F4`); (4) Alça de preenchimento automático; (5) Copiar fórmulas entre células; (6) 7 Exercícios práticos com fórmulas (loja, folha de pagamento/INSS, combustível, impostos, comissões, estoque com alerta, parcelas).
+  2. **Novo Simulador Interativo "Fórmula Builder"**: cálculo em tempo real dos 4 operadores + modo demonstração de referência absoluta (`=B2*(1-$C$2)` replicado nas linhas).
+  3. **Quiz de Fixação (5 questões)**: gabarito oficial mapeado em `GABARITO_L2 = [1, 2, 1, 1, 1]`, nota mínima 7,0/10,0, validação SHA-256 e exportação TXT/PDF/WhatsApp/E-mail.
+  4. **Senha de Liberação**: `xb002` (oculta na interface).
+  5. **Plano de Implementação (Fase 3)**: blocos de mudança em `modules/excel/index.html` (hub + tela da aula + simulador + quiz), `assets/js/pdf-lessons.js` e tríade de documentação.
+- **Arquivos Modificados:**
+  - **Criado**: [Docs/SPEC-EXCEL-AULA-02.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-02.md)
+  - **Atualizado**: [Docs/SPEC-EXCEL-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-MASTER.md) (status da Aula 02 → "Especificada (Fase 2)")
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md) · [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md) · [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Pendência:** A implementação HTML/JS da Aula 02 (Fase 3) não foi iniciada, conforme escopo acordado ("apenas a SPEC"). Aguarda validação formal do professor antes da codificação.
 
+### 📝 Registro Cronológico #19 — Implementação da Aula 02 (Operações Básicas & Fórmulas Simples) — Simulador Fórmula Builder + PDF
+- **Data:** 02/09/2026
+- **Escopo:** Execução da Fase 3 (Implementar) da Aula 02 do Módulo Excel, seguindo o Master Lesson Blueprint e a SPEC [SPEC-EXCEL-AULA-02.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-02.md), autorizada pelo professor.
+- **Implementado em [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html):**
+  1. **Hub**: card da Aula 02 alterado de "🚧 Em Construção" para "🔓 Aula Liberada (Senha xb002)" com `promptLessonPassword(2, 'Operações Básicas & Fórmulas Simples')`.
+  2. **Seção `screen-lesson-2`** (após a Aula 01): barra de progresso gamificada (`gamify-*`), abas `tab-l2-1..6`, 6 tópicos (`l2-phase-1..6`), painel de fixação `l2-fixation` com 5 questões e botão "Finalizar Exercício & Assinar Comprovante".
+  3. **Simulador Interativo "Fórmula Builder"**: valores editáveis A1/B1, painel dos 4 operadores (`+ - * /`) com resultado em tempo real, barra de fórmulas personalizada com parser seguro (referências relativas e absolutas `$C$2`, função `SOMA`, percentuais `%`, operadores, tratamento de divisão por zero e expressões inválidas), modo demonstração de referência absoluta `=B2*(1-$C$2)`.
+  4. **Quiz de 5 Questões**: com `GABARITO_L2 = [1, 2, 1, 1, 1]`, `QUESTOES_L2`, estado `readStatus[2]`/`userAnswers[2]` e nota mínima 7,0/10,0 — herda a infraestrutura SHA-256 e exportação TXT/PDF/WhatsApp/E-mail do `quiz-engine.js`.
+  5. **Refatorações**: `openFixationPanel` generalizado com `lessonTitleMap`; `calcFixation` reescrito com lookup por `lessonNum` (`lessonData` com `reportKey` `l1ReportData`/`l2ReportData`), eliminando lógica hardcoded da Aula 01.
+- **Implementado em [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js):** 6 seções didáticas da Aula 02 adicionadas ao bloco `excel` (operadores, fórmulas simples, referências relativa/absoluta, alça de preenchimento, copiar fórmulas, 7 exercícios práticos) e correção do mapeamento de títulos para ser **module-aware** (`moduleLessonTitles`), evitando que os títulos da Internet sobrescrevessem os títulos do Excel.
+- **Verificação Automatizada:** `node --check` (sintaxe JS válida), parser HTML balanceado, render headless em Chrome sem erros de runtime com Fórmula Builder inicializado corretamente (soma=15, sub=5, mult=50, div=2, custom=15), e 10/10 casos de teste do parser de fórmulas passando (incluindo `SOMA`, `$` absoluto e `%`).
+- **Arquivos Modificados:**
+  - [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [Docs/SPEC-EXCEL-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-MASTER.md) · [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md) · [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md) · [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Pendência:** Validação visual/interativa final pelo professor e continuação das Aulas 03 a 13.
 
+### 📝 Registro Cronológico #20 — Reforço Didático das Aulas 01 e 02 (Operadores na Aula 1, Função SOMA e 7 Planilhas Desenhadas na Aula 2)
+- **Data:** 02/09/2026
+- **Escopo:** Reforço da base pedagógica das Aulas 01 e 02 do Módulo Excel para que cada tópico fixe melhor os conceitos (tipos de dados, operadores e funções), com planilhas resolvidas desenhadas em PNG + tabela HTML + passo a passo.
+- **Solução Implementada:**
+  1. **Aula 01 §1.2**: imagem da anatomia da janela ampliada via classe CSS `.img-anatomia` (`max-width: 96% !important`) para melhor visualização.
+  2. **Aula 01 §1.4**: expandido com base sólida sobre tipos de dados — Texto, Número/Moeda, Data/Hora, Porcentagem, Lógico e Fórmula, com coluna "Usado para", alerta sobre "número que não soma" (alinhamento à esquerda = texto) e menção à Caixa de Nome/Barra de Fórmulas.
+  3. **Aula 01 Tópico 7 (NOVO)**: seção `l1-phase-7` — tabela de operadores (`+ - * / %`), regra de ordem e parênteses, imagem `aula1_07_operadores_basicos.png`, tabela `.mini-sheet` de compras e bloco teaser de funções; botão de navegação do Tópico 6 atualizado.
+  4. **Refatoração dinâmica da gamificação/guarda**: `readStatus = { 1: [7 falses], 2: [6 falses] }`; `openFixationPanel` usa `readStatus[lessonNum].length` para a guarda e `totalTopics + 1` para a aba de exercício de fixação (`tab-l1-8`, `tab-l2-7`); `updateGamification` usa `totalTopics = readStatus[lessonNum].length`.
+  5. **Aula 02 §2.2**: bloco "🧩 O que é uma FUNÇÃO?" (sintaxe `=NOME(argumentos)`, intervalo `:`, exemplo `SOMA()`) + planilha "Lista de Gatos" com `=SOMA(C2:C6)` → 20, imagem `aula2_gatos_soma.png`.
+  6. **Aula 02 §2.6**: reescrito com os 7 exercícios, cada um com **PNG da planilha resolvida, tabela HTML `.mini-sheet` preenchida (5 linhas) e passo a passo `<ol>`**. Exercício 5 corrigido para consistência pedagógica (percentual fixo em `$C$1` usado em todas as linhas; comissões 750/425/600/300/525; totais 52000/2600).
+  7. **Imagens PNG geradas** (`assets/img/excel/a2/`, via `/tmp/gen_sheets2.py` com PIL e fontes DejaVu): `aula1_07_operadores_basicos.png`, `aula2_gatos_soma.png`, `aula2_ex1_loja_roupas.png`, `aula2_ex2_folha_pagamento.png`, `aula2_ex3_combustivel.png`, `aula2_ex4_impostos.png`, `aula2_ex5_comissoes.png`, `aula2_ex6_estoque.png`, `aula2_ex7_parcelas.png` (todas verificadas com conteúdo/cores).
+  8. **Motor de PDF** (`assets/js/pdf-lessons.js`): seção 1.7 (operadores), §1.4 (tipos de dados expandidos, com "número que não soma"), §2.2 (Lista de Gatos + SOMA) e §2.6 (array `images` com os 7 PNGs).
+- **Verificação Automatizada:** `node --check` (sintaxe JS válida); parser HTML balanceado (0 erros, pilha vazia); render headless em Chrome sem erros de runtime — Aula 01 com 7 tópicos + aba `tab-l1-8`, progresso "7 de 7" e painel de fixação abrindo pela guarda dinâmica; Aula 02 com "6 de 6", guarda bloqueando antes da leitura e `tab-l2-7` abrindo o painel; imagens confirmadas carregando (anatomia 639px, operadores 600x318, gatos 550x382, 7 exercícios carregados); PDF end-to-end validado (seções 1.7/1.4 presentes na Aula 1; gatos + 7 imagens `aula2_ex*` na Aula 2).
+- **Arquivos Modificados:**
+  - [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [assets/img/excel/a2/](file:///home/rangel/git-dev/aulas/assets/img/excel/a2/) (9 PNGs novos/regenerados)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md) · [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md) · [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Pendência:** Validação visual/interativa final pelo professor; continuação das Aulas 03 a 13.
 
+### 📝 Registro Cronológico #21 — Substituição do PNG de Operadores por Tabela Estilo Excel + Atividade de Controle de Gastos Pessoais (Aula 01, Tópico 7)
+- **Data:** 02/09/2026
+- **Escopo:** Corrigir a baixa qualidade pedagógica/visual do PNG de operadores da Aula 01 e cumprir o pedido do professor de *"criar uma tabela em html e desenhá-la parecida ao excel"*, além de *"fazer o aluno criar a planilha para controlar gasto pessoal"* usando os operadores básicos e a função `=SOMA()`.
+- **Solução Implementada:**
+  1. **Tela (Aula 01, Tópico 7)**: removido o `<img aula1_07_operadores_basicos.png>`. Substituído por um **worksheet HTML estilo Excel** (`.excel-sheet-preview`): barra de título verde "Sheet1 — Planilha de Compras", linha de letras de coluna (A–E), linha de cabeçalho, 5 linhas de dados com fórmulas de referência relativa (`=B2*C2*(1-D2)`) e linha **TOTAL GERAL** com `=SOMA(E2:E6) → R$ 72,80`.
+  2. **Nova ATIVIDADE PRÁTICA — "Controle de Gastos Pessoais"** no Tópico 7: passo a passo guiado para o aluno criar no Excel real sua planilha pessoal cobrindo todos os operadores básicos (`*` no subtotal `=C3*D3`, `-` no saldo `=C10-E8`, `/` no rateio `=C7/2`, `%` na poupança `=C11*10%`, `+` embutido em `=SOMA()`) + função `=SOMA(E3:E7)`. Inclui tabela "Como deve ficar a sua planilha" (`.mini-sheet`) com exemplo resolvido (total R$ 2.560,00; saldo R$ 940,00).
+  3. **PDF** (`assets/js/pdf-lessons.js`, seção 1.7): removidos `image`/`caption` (PNG ruim). `content` reescrito descrevendo a planilha estilo Excel (`=SOMA(E2:E6) → R$ 72,80`) e `steps[]` adicionados com o roteiro completo da Atividade de Controle de Gastos Pessoais.
+  4. **Arquivo órfão**: excluído `assets/img/excel/a2/aula1_07_operadores_basicos.png` (não é mais referenciado em tela nem em PDF).
+- **Verificação Automatizada:**
+  - `node --check assets/js/pdf-lessons.js` → sintaxe válida.
+  - Parser HTML balanceado → 0 erros, pilha vazia.
+  - Render headless em Chrome (Tópico 7): `img` de operadores = **0**, `.excel-sheet-preview` = **1**, tabela = **8 linhas** (letras A–E + cabeçalho + 5 dados + TOTAL), `=SOMA(E2:E6)` presente, "CONTROLE DE GASTOS PESSOAIS" e `=SOMA(E3:E7)` presentes, **0 erros de JS**, fase visível.
+  - PDF Aula 01 gerado: `hasBadImage: false` (PNG removido do PDF), `hasActivity: true`, `hasSomaE3E7: true`, `hasSomaE2E6: true`.
+  - PNG órfão: 0 referências restantes na tela e no motor de PDF, arquivo deletado.
+- **Arquivos Modificados:**
+  - [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - `assets/img/excel/a2/aula1_07_operadores_basicos.png` (excluído)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md) · [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md) · [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+
+### 📝 Registro Cronológico #22 — Implementação da Aula 03 (Funções de Cálculo: SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT) — Simulador Function Lab + PDF
+- **Data:** 02/09/2026
+- **Escopo:** Execução da Fase 3 (Implementar) da Aula 03 do Módulo Excel, seguindo a SPEC [SPEC-EXCEL-AULA-03.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-03.md) (aprovada pelo professor com base no material real `Aula-3-Excel_Exercicios_Praticos.html`) e o padrão estrutural da Aula 02.
+- **Ajuste do SDD Mestre:** linha do catálogo Excel da Aula 03 realinhada de "Exercícios Práticos & Formatação" para **"Funções de Cálculo Essenciais"** (resolvida divergência com o catálogo, priorizando o conteúdo real da fonte).
+- **Implementado em [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html):**
+  1. **Hub**: card da Aula 03 alterado de "🚧 Em Construção (Senha xc003)" para "🔓 Aula Liberada (Senha xc003)" com `promptLessonPassword(3, 'Funções de Cálculo: SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT.VALORES, CONT.NÚM')` e badge `badge-lesson-3`.
+  2. **Seção `screen-lesson-3`** (após a Aula 02): barra de progresso gamificada (`gamify-*` ids `gamify-label-3/fill-3/badge-box-3`), abas `tab-l3-1..7`, **6 tópicos** (`l3-phase-1..6`), painel de fixação `l3-fixation`.
+  3. **6 Tópicos Didáticos**: (1) Função SOMA; (2) Função MÉDIA; (3) MÁXIMO & MÍNIMO; (4) CONT.VALORES & CONT.NÚM (tabela `.mini-sheet` da equipe de vendas); (5) **Lab de Funções** (simulador interativo); (6) 4 Exercícios Guiados (Custos, Estoque, Vendas, Contagem).
+  4. **Novo Simulador Interativo "Function Lab"**: nova classe `.function-lab-container` (CSS inline no arquivo) — planilha de custos da empresa ABC com 6 categorias × 3 meses de **valores editáveis** que recalculam em tempo real `SOMA` (linha/coluna), `MÉDIA` (energia), `MÁXIMO` e `MÍNIMO`; **Modo Contadoras** alternável (`flSetCounter`) demonstrando `CONT.NÚM(B2:B8)` = 6 vs `CONT.VALORES(A2:A8)` = 7.
+  5. **Quiz de 5 Questões**: `GABARITO_L3 = [1, 2, 1, 1, 0]`, `QUESTOES_L3`, estado `readStatus[3]` (6 tópicos)/`userAnswers[3]`, nota mínima 7,0/10,0, `lessonData[3]` com `reportKey: "l3ReportData"` — herda a infraestrutura SHA-256 e exportação TXT/PDF/WhatsApp/E-mail.
+- **Implementado em [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js):** bloco `excel` ganhou 6 seções didáticas da Aula 03 (`lessonNum: 3`), registro `3` em `moduleLessonTitles.excel` ("Aula 03: Funções de Cálculo — SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT.VALORES, CONT.NÚM") para geração da apostila por `downloadLessonPDF('excel', 3)`.
+- **Verificação Automatizada:** `node --check` (sintaxe JS válida no `index.html` e `pdf-lessons.js`), parser HTML balanceado e confirmação de que todos os IDs referenciados pelo JS (`gamify-*`, `tab-l3-*`, `l3-phase-*`, `btn-read-l3-*`, `flb*`, `fl-*`) existem no DOM da Aula 03.
+- **Arquivos Modificados:**
+  - [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md) · [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md) · [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Pendência:** Validação visual/interativa final pelo professor; continuação das Aulas 04 a 13.
+
+### 📝 Registro Cronológico #23 — Refinamentos Visuais da Aula 03 (Contraste e Planilhas Desenhadas no Site e na Apostila PDF)
+- **Data:** 02/09/2026
+- **Escopo:** Correções de legibilidade e enriquecimento visual da Aula 03 Excel após revisão do professor — garantindo que os "desenhos" das planilhas apareçam tanto na tela quanto no PDF didático, incluindo também os **exercícios**.
+- **Correção de contraste** ([modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)): texto do intro da Aula 03 usava `color:var(--ink-light)` (tom claro `#F4E8DC`) sobre o fundo claro do `.lesson-reading-card` (`--paper-beige` `#FFF9F2`), ficando quase invisível. Corrigido para `color:var(--ink-dark)` (verificado via DOM dump headless).
+- **Planilhas desenhadas no site** (`.excel-sheet-preview`/`.mini-sheet`): desenho estilo Excel (título, letras de coluna A–E, cabeçalho, 3+ linhas, linha de total) adicionado aos Tópicos 1 (SOMA — `=SOMA(B2:D4) → R$ 9.050,00`), 2 (MÉDIA — `=MÉDIA(B2:B4) → 395,00`) e 3 (MÁXIMO/MÍNIMO — `=MÁXIMO(B2:D6) → 8.500,00` e `=MÍNIMO(B2:D6) → 110,00`), além do bloco azul "📌 Observação" com a dica: **se `MÍNIMO()` não funcionar, usar `=MINIMOA(intervalo)`** (função antiga, Excel de versões anteriores).
+- **Planilhas desenhadas no PDF** ([assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)): tabelas HTML com **estilos inline** (barras de título coloridas, linhas de coluna, células com borda, linha de total destacada) adicionadas às seções 3.1 (SOMA), 3.2 (MÉDIA), 3.3 (MÁXIMO/MÍNIMO + nota MINIMOA) e, em seguida, aos **4 Exercícios Guiados (3.6)** — Custos (6 categorias/3 meses), Estoque (Est. Final = inicial+entradas−saídas), Vendas (5 vendedores × 6 meses com TOTAL/MÉDIA) e Contagem (7 funcionários com `CONT.NÚM`/`CONT.VALORES`). Strings convertidas para template literals (backticks) por conterem HTML multi-linha; tabelas/`<div>` dentro de `<p>` fazem o browser auto-fechar o `<p>` e renderizam corretamente na janela de impressão.
+- **Verificação Automatizada:** `node --check assets/js/pdf-lessons.js` (SYNTAX OK); geração do HTML de impressão da Aula 03 capturado via harness Node e renderizado em Chrome headless confirmou as 7 tabelas de planilha (3 tópicos + 4 exercícios) com todos os títulos e fórmulas-chave (`=SOMA(B2:D7)`, `=MÁXIMO(B2:G6)`, `=CONT.NÚM(B2:B8)`, `=MINIMOA(intervalo)`, etc.) e **0 erros de JS**.
+- **Arquivos Modificados:**
+  - [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md) · [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md) · [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Pendência / Próximo Passo:** Prosseguir à **Aula 04 do Excel** (Exercícios de Fixação e Quizzes, seguindo o pipeline SDD). Aula 03 Excel concluída e documentada.
+
+### 📝 Registro Cronológico #24 — Especificação SDD da Aula 04 (Funções Lógicas Avançadas: SE, E, OU, NÃO, SE aninhado e Formatação Condicional)
+- **Data:** 03/09/2026
+- **Escopo:** Elaboração da especificação técnica e pedagógica (SDD) da Aula 04 do Módulo Excel, seguindo as Fases 0-2 do pipeline obrigatório do `global-start-skill` (planejar → validar → especificar ANTES de implementar), com base no material real `Aula-4-Excel Funções Lógicas Avançadas` (`Aula-4-Excel Funções Lógicas Avançadas-Atual .md` e `Aula-4-ExcelFunesLgicasAvanadasAtual.html`).
+- **Conteúdo Especificado:**
+  1. **7 Tópicos Didáticos**: (1) Revisão Rápida da Função SE (`=SE(teste_lógico; valor_se_verdadeiro; valor_se_falso)`); (2) SE + E — todas as condições verdadeiras (`=SE(E(B2>=7; C2>=75); "Aprovado"; "Reprovado")`); (3) SE + OU — pelo menos uma condição (`=SE(OU(B2>=9; C2="Sim"); "Tem bônus"; "Sem bônus")` + tabela comparativa E × OU); (4) SE aninhado — múltiplos resultados (classificação Excelente/Bom/Regular/Reprovado); (5) Função NÃO — inverte condição (`=SE(NÃO(B2>=7); "Precisa de reforço"; "OK")` + equivalências); (6) Formatação Condicional com Fórmulas (passo a passo de 4 etapas, uso do `$` na coluna, múltiplas regras, Gerenciar Regras); (7) Exercício Prático Financeiro — Classificação de Clientes (SE aninhado em `E2` + Formatação Condicional com 3 cores Verde escuro/Azul claro/Vermelho).
+  2. **Novo Simulador Interativo "Logic Lab"**: paleta editável de alunos (nota/frequência) recalculando em tempo real; painel de comparação SE simples / SE+E / SE+OU / SE aninhado sobre os mesmos dados; **Modo NÃO** (inversão lógica com alternador); mini-demonstração de Formatação Condicional com células coloridas.
+  3. **Quiz de Fixação (5 questões)**: gabarito oficial mapeado em `GABARITO_L4 = [1, 2, 1, 2, 3]`, nota mínima 7,0/10,0, validação SHA-256 e exportação TXT/PDF/WhatsApp/E-mail.
+  4. **Senha de Liberação**: `xd004` (oculta na interface).
+  5. **Plano de Implementação (Fase 3)**: blocos de mudança em `modules/excel/index.html` (hub + tela da aula + simulador + quiz), `assets/js/pdf-lessons.js` e tríade de documentação.
+- **Arquivos Modificados:**
+  - **Criado**: [Docs/SPEC-EXCEL-AULA-04.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-04.md)
+  - **Atualizado**: [Docs/SPEC-EXCEL-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-MASTER.md) (status da Aula 04 → "Especificada (Fase 2)")
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md) · [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md) · [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Testes Executados:** Auditoria do material fonte (`.md` + `.html`) confirmando os 7 tópicos e o exercício financeiro; verificação de consistência com o padrão das Aulas 02 e 03 (senha `xd004`, 5 questões, nota 7.0).
+- **Pendência:** A implementação HTML/JS da Aula 04 (Fase 3) **não foi iniciada** conforme escopo acordado ("apenas a SPEC"). Aguarda validação formal do professor antes da codificação. → **Resolvida** em Registro #25.
+
+### 📝 Registro Cronológico #25 — Implementação (Fase 3) da Aula 04 (Funções Lógicas Avançadas: SE, E, OU, NÃO, SE aninhado e Formatação Condicional) — Simulador Logic Lab + PDF
+- **Data:** 03/09/2026
+- **Escopo:** Execução da Fase 3 (Implementar) da Aula 04 do Módulo Excel, seguindo a SPEC [SPEC-EXCEL-AULA-04.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-04.md) (aprovada pelo professor com base no material real `Aula-4-Excel Funções Lógicas Avançadas-Atual .md`) e o padrão estrutural da Aula 03.
+- **Implementado em [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html):**
+  1. **Hub**: card da Aula 04 alterado de bloqueado para "🔓 Aula Liberada (Senha `xd004`)" com `promptLessonPassword(4, 'Funções Lógicas Avançadas: SE, E, OU, NÃO, SE aninhado e Formatação Condicional')`, badge `badge-lesson-4` e número verde.
+  2. **Seção `screen-lesson-4`** (após a Aula 03): barra de progresso gamificada (`gamify-label-4/fill-4/badge-box-4`), abas `tab-l4-1..8`, **7 tópicos** (`l4-phase-1..7`), painel de fixação `l4-fixation`.
+  3. **7 Tópicos Didáticos**: (1) Revisão Rápida da Função SE; (2) SE + E — todas verdadeiras; (3) SE + OU — pelo menos uma (tabela comparativa E × OU); (4) SE aninhado — múltiplos resultados (Excelente/Bom/Regular/Reprovado); (5) Função NÃO — inverte condição + equivalências; (6) **Logic Lab** (simulador interativo); (7) Exercício Financeiro — Classificação de Clientes (SE aninhado em `E2` + Formatação Condicional com 3 cores).
+  4. **Novo Simulador Interativo "Logic Lab"**: classe `.function-lab-container` reutilizada + novas classes `.lc-ok/.lc-bad/.lc-mid/.fc-cell/.fc-green/.fc-red`. Paleta editável de 3 alunos (nota 0-10 / frequência 0-100) com recalculo **em tempo real** (`runLogicLab`) de `SE` (aprovado), `SE+E` (nota e freq), `SE+OU` (bônus), `SE aninhado` (4 níveis); **Modo NÃO** (`lcSetNegation`) que inverte todos os resultados lógicos (Verdadeiro ↔ Falso), demonstrando a função `NÃO()`; **mini-demo de Formatação Condicional** (`lcToggleCfDemo`) alternando células da coluna Situação entre regra verde (`=SE(nota>=7)`) e vermelha — as cores mudam sozinhas conforme os dados.
+  5. **Quiz de 5 Questões**: `GABARITO_L4 = [0, 1, 1, 2, 0]`, `QUESTOES_L4`, estado `readStatus[4]` (7 tópicos)/`userAnswers[4]`, nota mínima 7,0/10,0, `lessonData[4]` com `reportKey: "l4ReportData"` — herda a infraestrutura SHA-256 e exportação TXT/PDF/WhatsApp/E-mail.
+  > 📌 **Nota sobre o gabarito**: o item 3 do Registro #24 citava `GABARITO_L4 = [1, 2, 1, 2, 3]` (planejado na SPEC). Durante a implementação, seguindo o padrão das Aulas 01-03 (quiz renderizado estaticamente no HTML, com opções indexadas por `selectFixOption(4, q, optIdx, this)`), o gabarito **efetivamente implementado** é `GABARITO_L4 = [0, 1, 1, 2, 0]`, validado via Chrome headless (5/5 acertos → nota 10,0).
+- **Implementado em [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js):** bloco `excel` ganhou **7 seções** da Aula 04 (`lessonNum: 4`) com planilhas desenhadas em HTML estilo Excel (Aprovação de Alunos, Nota+Frequência, Comparativo E×OU, Classificação de Notas, Reforço Escolar, Classificação de Clientes) e a fórmula `=$E2=` das 3 regras de Formatação Condicional; registro `4` em `moduleLessonTitles.excel` ("Aula 04: Funções Lógicas Avançadas — SE, E, OU, NÃO, SE Aninhado e Formatação Condicional") para `downloadLessonPDF('excel', 4)`.
+- **Verificação Automatizada:** `node --check` (sintaxe JS válida no `index.html` e `pdf-lessons.js`); **Chrome headless** (via Chrome DevTools Protocol): desbloqueio com senha `xd004`, aba Aula 04 visível, Logic Lab recalculando SE/E/OU/SE aninhado corretamente, Modo NÃO invertendo resultados, gamificação 60%→100%, `openFixationPanel` abrindo sem alert (7/7 tópicos), e quiz 5/5 → **nota 10,0 aprovado com SHA-256** (`WR-999A-...`) — **0 erros JS**.
+- **Arquivos Modificados:**
+  - [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md) · [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md) · [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Pendência:** Validação visual/interativa final pelo professor; continuação das Aulas 06 a 13 do Excel.
+
+### 📝 Registro Cronológico #26 — Implementação (Fase 3) da Aula 05 (Funções de Pesquisa & Referência: PROCV, PROCH, ÍNDICE, CORRESP e ÍNDICE+CORRESP) — Simulador Lookup Lab + PDF
+- **Data:** 03/09/2026
+- **Escopo:** Execução da Fase 3 (Implementar) da Aula 05 do Módulo Excel, seguindo o material real `Aula-5-Funcoes_Pesquisa_Referencia.html` (36 KB: PROCV, PROCH, CORRESP, ÍNDICE, dupla ÍNDICE+CORRESP e 5 tarefas práticas respondidas) e o padrão estrutural das Aulas 03/04.
+- **Implementado em [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html):**
+  1. **Hub**: card da Aula 05 alterado para "🔓 Aula Liberada (Senha `xe005`)" com `promptLessonPassword(5, 'Funções de Pesquisa & Referência: PROCV, PROCH, ÍNDICE e CORRESP')`.
+  2. **Seção `screen-lesson-5`**: barra de progresso gamificada (`gamify-label-5/fill-5/badge-box-5`), abas `tab-l5-1..8`, **7 tópicos** (`l5-phase-1..7`), painel de fixação `l5-fixation`.
+  3. **7 Tópicos Didáticos**: (1) PROCV — busca vertical; (2) PROCH — busca horizontal; (3) ÍNDICE — retorna valor por coordenadas; (4) CORRESP — encontra a posição; (5) ÍNDICE + CORRESP — a combinação poderosa (busca em qualquer direção); (6) **Lookup Lab** (simulador interativo); (7) Exercício Prático — Loja de Produtos Eletrônicos (5 tarefas + gabarito).
+  4. **Regra de Design**: todas as tabelas de planilha seguiram a diretriz do usuário — **linha separada de letras de coluna acima do cabeçalho** (sem o estilo inline "A — Cliente").
+  5. **Novo Simulador Interativo "Lookup Lab"**: tabela de 4 produtos editáveis (Código/Produto/Preço, ids `ll-code-*`/`ll-prod-*`/`ll-price-*`), campo de busca `ll-search` e resultado `ll-result`; `runLookupLab()` procura o código na primeira coluna e retorna produto e preço da mesma linha, exibindo a fórmula `=PROCV("102"; A:B; 2; FALSO)` — demonstra ao vivo o comportamento do PROCV.
+  6. **Quiz de 5 Questões**: `GABARITO_L5 = [1, 0, 2, 0, 2]`, `QUESTOES_L5`, estado `readStatus[5]` (7 tópicos)/`userAnswers[5]`, nota mínima 7,0/10,0, `lessonData[5]` com `reportKey: "l5ReportData"` — herda a infraestrutura SHA-256 e exportação TXT/PDF/WhatsApp/E-mail. `lessonTitleMap` do `openFixationPanel` ganhou a chave `5` (aba do quiz `tab-l5-8` = `totalTopics(7)+1`).
+- **Implementado em [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js):** bloco `excel` ganhou **7 seções** da Aula 05 (`lessonNum: 5`) com planilhas desenhadas em HTML estilo Excel (Tabela de Produtos, Metas Mensais, Frutas, Funcionários, Loja de Eletrônicos — todas com linha de letras de coluna + cabeçalho limpo), gabarito das 5 tarefas e resumo de quando usar cada função; registro `5` em `moduleLessonTitles.excel` ("Aula 05: Funções de Pesquisa e Referência — PROCV, PROCH, ÍNDICE, CORRESP") para `downloadLessonPDF('excel', 5)`.
+- **Verificação Automatizada:** `node --check` (sintaxe JS válida no `index.html` e `pdf-lessons.js`); validação de equilíbrio de tags HTML (0 erros, 0 tags não fechadas); conferência de todos os IDs de referência JS presentes no HTML.
+- **Arquivos Modificados:**
+  - [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)
+  - [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)
+  - [Docs/SPEC-EXCEL-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-MASTER.md) (status Aula 05 → "✅ Implementada (Fase 3)")
+  - [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md) · [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md) · [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Pendência:** Validação visual/interativa final pelo professor; continuação das Aulas 06 a 13 do Excel.
+
+### 📝 Registro Cronológico #27 — Ajuste Interativo do PROCV (Tópico 1) e Reestruturação do Lookup Lab para Tabela de Funcionários (Aula 05)
+- **Data:** 03/09/2026
+- **Escopo:** Ajuste solicitado pelo professor após a implementação da Aula 05: (a) tornar o exemplo de PROCV do Tópico 1 interativo "como no Lab" (busca ao vivo, sem botão); (b) reestruturar o simulador Lookup Lab (Tópico 6) de uma tabela de produtos para uma **tabela de funcionários** com colunas Código/Funcionário/Salário/Cargo/Qt. Filhos/Data Admissão, mantendo o campo de busca com botão e exibindo o resultado **empilhado** (Funcionário, Salário, Cargo, Qt. Filhos, Data Admissão).
+- **Implementado em [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html):**
+  1. **Exemplo PROCV (Tópico 5.1):** novo bloco interativo "🖥️ Teste você mesmo — PROCV em ação" com `Buscar Código:` + campo `provq-code` (evento `oninput="runProvExample()"`, **sem botão**) e resultado `provq-result`. Nova função `window.runProvExample()`: procura o código na mini-tabela (101–104) e mostra **Produto + Preço**, empilhados, exibindo `=PROCV("102"; A2:C5; 2; FALSO)`; com mensagem de "não encontrou" + sugestão de códigos válidos. Inicializada automaticamente ao abrir a aula.
+  2. **Lookup Lab (Tópico 5.6):** tabela de 4 linhas editáveis reestruturada para as colunas **Linha | Código | Funcionário | Salário | Cargo | Qt. Filhos | Data Admissão** com novos ids `ll-code-*`, `ll-func-*`, `ll-salary-*`, `ll-role-*`, `ll-kids-*`, `ll-hire-*` (dados de exemplo: Ana Souza, Bruno Lima, Carla Dias, Diego Melo). Mantido `Buscar Código: ll-search` **+ botão Procurar** e resultado `ll-result`. `runLookupLab()` reescrito para ler os novos campos e exibir o resultado **empilhado** (Funcionário, Salário, Cargo, Qt. Filhos, Data Admissão), mostrando `=PROCV("102"; A:G; 2; FALSO)`.
+  3. **Limpeza:** IDs antigos `ll-prod-*`/`ll-price-*` totalmente removidos do HTML e do JS (0 referências remanescentes).
+- **Verificação Automatizada (Chrome headless):** PROCV exemplo → código `103` retorna "Borracha" e código `999` exibe "não encontrou"; Lookup Lab → código `102` retorna Bruno Lima, R$ 5.200,00, Supervisor, 1 filho e 15/07/2020; 0 erros de página. `node --check` (sintaxe JS OK); HTML balanceado (0 erros de tags); todos os novos IDs (`provq-code`, `provq-result`, `ll-code/func/salary/role/kids/hire-1..4`, `ll-search`, `ll-result`) únicos.
+- **Arquivos Modificados:**
+  - [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)
+  - [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
+- **Pendência:** Validação visual/interativa final pelo professor; continuação das Aulas 06 a 13 do Excel.

@@ -20,11 +20,11 @@ O currículo foi consolidado a partir do acervo original em [AulaOrigem/excel/](
 
 | Aula # | Título da Aula | Conteúdo Temático Principal | Senha Secreta | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Aula 01** | Introdução ao Excel & Interface | O que é Excel, Células/Linhas/Colunas, Planilhas vs Pastas, Tipos de Dados, Navegação, Salvamento (.xlsx) | `xa001` | 🔓 Especificada (Fase 2) |
-| **Aula 02** | Operações Básicas & Fórmulas | Operadores (+, -, *, /), Fórmulas Simples, Referências Relativas e Absolutas ($A$1 / F4), Alça de Preenchimento, Funções SOMA, MÉDIA, MÁXIMO, MÍNIMO | `xb002` | 🔒 Planejada |
-| **Aula 03** | Exercícios Práticos & Formatação | Boletim Escolar, Controle Financeiro, Formatação Condicional, Estilos de Célula e Tabelas Visuais | `xc003` | 🔒 Planejada |
-| **Aula 04** | Funções Lógicas Avançadas | Função SE, E, OU, SEERRO, SEs encadeados e Tomada de Decisão Automatizada | `xd004` | 🔒 Planejada |
-| **Aula 05** | Funções de Pesquisa & Referência | PROCV, PROCH, CORRESP, ÍNDICE e Introdução ao PROCX moderno | `xe005` | 🔒 Planejada |
+| **Aula 01** | Introdução ao Excel & Interface | O que é Excel, Células/Linhas/Colunas, Planilhas vs Pastas, Tipos de Dados, Navegação, Salvamento (.xlsx) | `xa001` | ✅ Implementada (Fase 3) — Simulador "Grid Inspector" + Quiz/Comprovante SHA-256 ativos |
+| **Aula 02** | Operações Básicas & Fórmulas | Operadores (+, -, *, /), Fórmulas Simples, Referências Relativas e Absolutas ($A$1 / F4), Alça de Preenchimento, Copiar Fórmulas e 7 Exercícios Práticos | `xb002` | ✅ Implementada (Fase 3) — Simulador "Fórmula Builder" + Quiz/Comprovante SHA-256 ativos |
+| **Aula 03** | Funções de Cálculo Essenciais | SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT.VALORES e CONT.NÚM aplicadas em Exercícios Práticos (Custos, Estoque, Vendas e Contagem) | `xc003` | ✅ Implementada (Fase 3) — Simulador "Function Lab" + Quiz/Comprovante SHA-256 ativos, planilhas desenhadas no site e no PDF |
+| **Aula 04** | Funções Lógicas Avançadas | Função SE, E, OU, NÃO, SE aninhado e Formatação Condicional com Fórmulas | `xd004` | ✅ Implementada (Fase 3) — `Docs/SPEC-EXCEL-AULA-04.md` |
+| **Aula 05** | Funções de Pesquisa & Referência | PROCV, PROCH, CORRESP, ÍNDICE, CORRESP e combinação ÍNDICE + CORRESP + Simulador "Lookup Lab" | `xe005` | ✅ Implementada (Fase 3) — Simulador "Lookup Lab" + Quiz/Comprovante SHA-256 ativos, planilhas desenhadas no site e no PDF |
 | **Aula 06** | Datas e Horas no Excel | Funções DIA, MÊS, ANO, HOJE, AGORA, DIATRABALHO, Cálculos de Horas e Formatação de Tempo | `xf006` | 🔒 Planejada |
 | **Aula 07** | Contas Pessoais & Tabela Dinâmica | Criação de Tabela Dinâmica, Campos, Filtros, Segmentação de Dados (Slicers) e Gráficos Dinâmicos | `xg007` | 🔒 Planejada |
 | **Aula 08** | Controle de Vendas (SOMASE / SOMASES) | Agrupamento condicional com SOMASE, SOMASES, CONT.SE, CONT.SES e MÉDIASE | `xh008` | 🔒 Planejada |
