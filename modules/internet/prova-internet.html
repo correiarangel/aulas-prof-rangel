@@ -17,7 +17,7 @@
     .result-badge-box.pass { background: var(--success-bg); }
     .result-badge-box.fail { background: var(--warn-bg); }
 
-    /* ESTILOS DO CERTIFICADO DIPLOMÁTICO HORIZONTAL (A4 LANDSCAPE) */
+    /* ESTILOS DO CERTIFICADO HORIZONTAL (A4 LANDSCAPE) */
     .certificate-landscape {
       background: #FFFDF7;
       border: 6px double #D4AF37;
@@ -42,12 +42,119 @@
       letter-spacing: 1px;
       display: inline-block;
     }
-    
+
+    /* ===== MOBILE: miniatura do certificado + redução de cards encadeados ===== */
+    .cert-thumb-wrap { position: relative; width: 100%; }
+    .btn-cert-toggle { display: none; align-items: center; gap: 6px; }
+
+    @media (max-width: 767px) {
+      .cert-thumb-wrap {
+        margin: 0;
+        max-height: 340px;
+        overflow: hidden;
+        border-radius: 14px;
+        box-shadow: var(--shadow-sm);
+      }
+      .cert-thumb-wrap.expanded {
+        max-height: none;
+        overflow: visible;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .cert-thumb-wrap:not(.expanded)::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        height: 76px;
+        background: linear-gradient(to top, rgba(255, 253, 247, 0.96), transparent);
+        pointer-events: none;
+      }
+      .btn-cert-toggle { display: inline-flex; }
+
+      /* desfazer "card dentro de card dentro de card" SEM perder contraste:
+         o question-card-item precisa manter fundo claro (texto preto legível),
+         pois o menu-hub-card atrás dele é marrom escuro */
+      .menu-hub-card { padding: 20px 14px; }
+      .menu-hub-card .question-card-item {
+        background: var(--paper-beige) !important;
+        border: 1.5px solid var(--line-light) !important;
+        box-shadow: none !important;
+        padding: 18px !important;
+        margin-bottom: 16px !important;
+      }
+      .option-btn-card { font-size: 16px; padding: 14px; }
+      .pdf-lesson-box { padding: 14px; }
+    }
+
+    @media (max-width: 640px) {
+      .certificate-landscape { padding: 18px 14px !important; }
+      .certificate-landscape h2 { font-size: 17px !important; letter-spacing: 0.5px !important; margin: 10px 0 4px 0 !important; }
+      .certificate-landscape h3 { font-size: 20px !important; }
+      .certificate-landscape p { font-size: 13px !important; line-height: 1.5 !important; }
+      .certificate-landscape div[style*="grid-template-columns:repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+    }
+
+    /* ===== MOBILE: certificado em modo escuro (texto claro sobre fundo escuro) ===== */
+    @media screen and (max-width: 767px) {
+      .certificate-landscape {
+        background: var(--bg-brown) !important;
+        outline-color: #4A3528 !important;
+      }
+      .certificate-landscape,
+      .certificate-landscape div,
+      .certificate-landscape span,
+      .certificate-landscape p,
+      .certificate-landscape strong {
+        color: var(--ink-light) !important;
+      }
+      .certificate-landscape h2,
+      .certificate-landscape h3 {
+        color: #FFFDF7 !important;
+      }
+      .certificate-landscape h3 { border-bottom-color: var(--amber) !important; }
+      .certificate-landscape a,
+      .certificate-landscape code {
+        color: var(--amber) !important;
+      }
+      .certificate-landscape span[style*="color:#8A5A17"] {
+        color: var(--amber) !important;
+      }
+      .certificate-landscape strong[style*="color:#EA580C"],
+      .certificate-landscape span[style*="color:#EA580C"] {
+        color: var(--amber) !important;
+      }
+      .certificate-landscape div[style*="background:#FFFFFF"] {
+        background: var(--card-brown) !important;
+        border-color: #5A4232 !important;
+      }
+      .certificate-landscape div[style*="border-top:1.5px solid #4A3528"] {
+        border-top-color: #D4AF37 !important;
+      }
+      .certificate-landscape div[style*="border-top:1px solid #E6D2C1"] {
+        border-top-color: #5A4232 !important;
+      }
+      .cert-thumb-wrap:not(.expanded)::after {
+        background: linear-gradient(to top, rgba(30, 19, 11, 0.96), transparent);
+      }
+    }
+
     @media print {
       @page {
         size: A4 landscape;
         margin: 0;
       }
+      .cert-thumb-wrap {
+        max-height: none !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: auto !important;
+        margin: 0 !important;
+      }
+      .cert-thumb-wrap::after { display: none !important; }
       html, body {
         background: #FFFFFF !important;
         margin: 0 !important;
@@ -195,6 +302,7 @@
         <p id="res-subtitle" style="font-size:18px; color:var(--ink-light); margin-bottom:20px;"></p>
 
         <!-- CERTIFICADO OFICIAL WR CAPACITAÇÃO (A4 LANDSCAPE / HORIZONTAL) -->
+        <div class="cert-thumb-wrap" id="cert-thumb-wrap">
         <div id="wr-certificate-card" class="certificate-landscape" style="display:none;">
           <!-- Cabeçalho Institucional -->
           <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #D4AF37; padding-bottom:14px; margin-bottom:18px; flex-wrap:wrap; gap:12px;">
@@ -207,7 +315,7 @@
               </div>
             </div>
             <div style="text-align:right;">
-              <span class="certificate-seal-badge">🎓 DIPLOMA DE CONCLUSÃO</span><br>
+              <span class="certificate-seal-badge">🎓 CERTIFICADO DE CONCLUSÃO</span><br>
               <span style="font-size:11px; color:#7A5E4D; margin-top:4px; display:block;">Portaria de Emissão Didática Presencial</span>
             </div>
           </div>
@@ -264,6 +372,7 @@
             <span>Verificação de Emissão: <a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" style="color:#8E2C07; text-decoration:none; font-weight:700;">wrcapacitacaoprofissional.net</a></span>
           </div>
         </div>
+        </div>
 
         <div style="background:var(--bg-brown); border:1px solid var(--line-dark); border-radius:16px; padding:18px; text-align:center; margin-bottom:20px;">
           <span style="font-size:15px; color:var(--ink-soft);">Nota Final na Prova:</span><br>
@@ -282,6 +391,7 @@
 
         <!-- BARRA DE BOTÕES OFICIAIS -->
         <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+          <button type="button" class="btn btn-cert-toggle no-print" id="btn-cert-toggle">🔍 Ampliar Certificado</button>
           <button type="button" class="btn btn-primary" id="btn-download-cert">📄 Baixar Comprovante TXT</button>
           <button type="button" class="btn" style="background:var(--amber); color:#120B06; font-weight:700;" id="btn-download-pdf-cert">📑 Baixar Certificado PDF</button>
           <button type="button" class="btn" style="background:var(--whatsapp); color:#fff;" id="btn-wa-res">📱 Enviar WhatsApp</button>
@@ -507,7 +617,7 @@
       if(passed){
         badge.className = "result-badge-box pass"; badge.textContent = "🎉";
         title.textContent = `Parabéns, ${state.name.split(" ")[0]}!`;
-        sub.textContent = `Você foi APROVADO(A) na Avaliação Final do Módulo Internet com nota ${score.toFixed(1)}! Seu Diploma Solene da WR Capacitação Profissional (18 Horas Aulas) está disponível abaixo.`;
+        sub.textContent = `Você foi APROVADO(A) na Avaliação Final do Módulo Internet com nota ${score.toFixed(1)}! Seu Certificado de Conclusão da WR Capacitação Profissional (18 Horas Aulas) está disponível abaixo.`;
         
         if(certCard){
           certCard.style.display = "block";
@@ -594,6 +704,15 @@
     document.getElementById("btn-download-pdf-cert").onclick = function(){
       window.print();
     };
+
+    const certToggleBtn = document.getElementById("btn-cert-toggle");
+    if(certToggleBtn){
+      certToggleBtn.onclick = function(){
+        const wrap = document.getElementById("cert-thumb-wrap");
+        const isExpanded = wrap.classList.toggle("expanded");
+        certToggleBtn.innerHTML = isExpanded ? "− Recolher Miniatura" : "🔍 Ampliar Certificado";
+      };
+    }
 
     document.getElementById("btn-wa-res").onclick = function(){
       const url = window.QuizEngine.buildWhatsAppUrl(getReportData());

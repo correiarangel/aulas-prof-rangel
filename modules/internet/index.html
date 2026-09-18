@@ -43,6 +43,57 @@
       border: none !important;
       box-shadow: none !important;
     }
+
+    /* ===== MOBILE: desfazer "card dentro de card dentro de card" + miniaturas ===== */
+    @media (max-width: 767px) {
+      .menu-hub-card { padding: 20px 14px; }
+      .lesson-reading-card { padding: 20px 14px; }
+
+      .browser-grid { gap: 10px; }
+      .browser-card {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 10px 4px;
+      }
+
+      .subcard-item {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 16px 4px;
+        border-bottom: 1px dashed var(--line-light);
+      }
+      .subcard-item:hover { transform: none; border-color: var(--teal); }
+      .subcard-item:last-child { border-bottom: none; }
+
+      .fixation-panel {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 24px;
+      }
+      .fixation-panel .question-card-item {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 18px 0;
+        margin-bottom: 0;
+        border-top: 2px solid var(--amber-soft);
+      }
+      .option-btn-card { font-size: 16px; padding: 14px; }
+
+      /* caixas de código viram preview com rolagem (miniatura) */
+      #home-code-output { max-height: 240px !important; overflow-y: auto; }
+      #ai-prompt-text { max-height: 260px !important; overflow-y: auto; }
+
+      /* caixas de destaque deixam de parecer cards dentro do papel */
+      .lesson-reading-card div[style*="box-shadow:var(--shadow-sm)"] {
+        box-shadow: none !important;
+      }
+    }
   </style>
 </head>
 <body>

@@ -359,6 +359,8 @@ a:hover {
 .topic-phase-section {
   display: none;
   animation: fadeIn 0.3s ease;
+  scroll-margin-top: 92px;
+  scroll-margin-bottom: 24px;
 }
 
 .topic-phase-section.active {
@@ -1017,6 +1019,23 @@ a:hover {
   .img-reduced,
   .lesson-reading-card img {
     max-width: 95% !important;
+  }
+}
+
+/* Faixa de fases fixa no topo do mobile — navegação sempre visível durante a aula */
+@media (max-width: 767px) {
+  .topic-tabs-bar {
+    position: sticky;
+    top: 70px;
+    z-index: 60;
+    background: var(--paper-white);
+    padding: 10px 2px 12px 2px;
+    margin: 0 0 20px 0;
+    border-bottom: 2px solid var(--line-light);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.07);
+  }
+  .topic-phase-section {
+    scroll-margin-top: 150px;
   }
 }
 

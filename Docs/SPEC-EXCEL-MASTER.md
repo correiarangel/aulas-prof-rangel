@@ -25,9 +25,9 @@ O currículo foi consolidado a partir do acervo original em [AulaOrigem/excel/](
 | **Aula 03** | Funções de Cálculo Essenciais | SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT.VALORES e CONT.NÚM aplicadas em Exercícios Práticos (Custos, Estoque, Vendas e Contagem) | `xc003` | ✅ Implementada (Fase 3) — Simulador "Function Lab" + Quiz/Comprovante SHA-256 ativos, planilhas desenhadas no site e no PDF |
 | **Aula 04** | Funções Lógicas Avançadas | Função SE, E, OU, NÃO, SE aninhado e Formatação Condicional com Fórmulas | `xd004` | ✅ Implementada (Fase 3) — `Docs/SPEC-EXCEL-AULA-04.md` |
 | **Aula 05** | Funções de Pesquisa & Referência | PROCV, PROCH, CORRESP, ÍNDICE, CORRESP e combinação ÍNDICE + CORRESP + Simulador "Lookup Lab" | `xe005` | ✅ Implementada (Fase 3) — Simulador "Lookup Lab" + Quiz/Comprovante SHA-256 ativos, planilhas desenhadas no site e no PDF |
-| **Aula 06** | Datas e Horas no Excel | Funções DIA, MÊS, ANO, HOJE, AGORA, DIATRABALHO, Cálculos de Horas e Formatação de Tempo | `xf006` | 🔒 Planejada |
-| **Aula 07** | Contas Pessoais & Tabela Dinâmica | Criação de Tabela Dinâmica, Campos, Filtros, Segmentação de Dados (Slicers) e Gráficos Dinâmicos | `xg007` | 🔒 Planejada |
-| **Aula 08** | Controle de Vendas (SOMASE / SOMASES) | Agrupamento condicional com SOMASE, SOMASES, CONT.SE, CONT.SES e MÉDIASE | `xh008` | 🔒 Planejada |
+| **Aula 06** | Datas e Horas no Excel | Funções HOJE, AGORA, DATA, DIA, MÊS, ANO, DIAS360 e DIAS.ÚTEIS aplicadas em idades, prazos, agenda de contatos e alertas automáticos + Simulador "Date & Time Lab" | `xf006` | 📝 Especificada (Fase 0-2 concluída) — `Docs/SPEC-EXCEL-AULA-06.md` |
+| **Aula 07** | Contas Pessoais & Tabela Dinâmica | Criação de Tabela Dinâmica, Campos, Filtros, Segmentação de Dados (Slicers) e Gráficos Dinâmicos | `xg007` | 🟡 Em implementação (Fase 3) — `Docs/SPEC-EXCEL-AULA-07.md` — requer ajuste do Pivot Lab e validação em navegador |
+| **Aula 08** | Controle de Vendas (SOMASE / SOMASES) | Agrupamento condicional com SOMASE, SOMASES, CONT.SE, CONT.SES e MÉDIASE | `xh008` | ✅ Implementada e validada (Fase 3 concluída) — `Docs/SPEC-EXCEL-AULA-08.md` — Simulador "Sales Lab" + Quiz/Comprovante SHA-256 ativos, validado em Chrome headless (28/28) (⚠️ fonte cobre somente SOMASE; SOMASES/CONT.SE/CONT.SES/MÉDIASE = extensão futura) |
 | **Aula 09** | Macros & Introdução ao VBA | Gravador de Macros, Botões de Ação, Guia Desenvolvedor e Introdução ao código VBA | `xi009` | 🔒 Planejada |
 | **Aula 10** | Revisão Geral & Preparatório | Exercícios Integrados de Funções, Formatações e Tabelas Dinâmicas preparatórios para a Prova | `xj010` | 🔒 Planejada |
 | **Aula 11** | Projeto Vendas: Estruturação | Modelagem de Banco de Dados no Excel, Cadastro de Clientes, Produtos e Vendas + **Quiz de Fixação (5 Questões)** | `xk011` | 🔒 Planejada |
@@ -93,6 +93,20 @@ Cada aula do Módulo Excel contará com um **Simulador Interativo em HTML/CSS/JS
 
 - **Posicionamento**: O botão `📑 Baixar Apostila Didática em PDF` fica visível no início do cartão da aula (topo), permitindo ao aluno guardar o material de estudo.
 - **Exportação do PDF**: Alimentado dinamicamente pelo motor `assets/js/pdf-lessons.js` com o conteúdo abrangente do módulo.
+
+---
+
+## ⚖️ 6.1 Normas Obrigatórias de Toda Aula (Regra permanente — "gravar e aprender")
+
+Estas normas aplicam-se a **TODAS** as aulas do módulo (e, por extensão, do portal) e devem ser verificadas/auditadas antes de considerar a aula concluída:
+
+1. **FASE 0 sempre presente**: toda aula começa com um bloco introdutório tutorial explicando *o que vamos fazer* e *como vamos fazer*, com **roteiro numerado em passo a passo**. Os **checks são distribuídos** — posicionados no fim de cada fase, junto da instrução que executa aquele passo (cada passo é um check que só libera o próximo). **Proibido agrupar todos os checks num único bloco.** Público: iniciante absoluto em nível prático (sem glossário extenso nem lista de materiais desnecessária).
+2. **Imagens/ilustrações reais obrigatórias no PDF**: todo PDF gerado (`downloadLessonPDF`) deve conter **imagens ou ilustrações HTML reais dentro das seções**. É proibido emitir somente texto citando uma imagem ("Referência de imagem: ...").
+3. **Ilustração HTML embutida via campo `sec.html`**: mini-planilhas, mapas mentais e diagramas vão no campo `html` da seção, renderizados como `<div class="pdf-html-illustration">${sec.html}</div>` e estilizados pelas classes portadas no `<style>` do popup (`.mini-sheet`, `.fun-highlight`, `.es-sheet-box`, `.es-sheet-titlebar`).
+4. **Aula 07**: usar os PNGs reais de `assets/img/excel/a7/` nos campos `image`/`images`.
+5. **Validação de sintaxe**: agente deve rodar `node --check assets/js/pdf-lessons.js` (e checagem do script inline do HTML) após qualquer edição antes de declarar conclusão.
+
+> A execução detalhada da Aula 08 segue em `Docs/SDD-AULA-08-SIMPLIFICACAO.md` (seções de Requisitos Obrigatórios e Auditoria).
 
 ---
 

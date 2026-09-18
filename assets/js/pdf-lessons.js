@@ -426,6 +426,33 @@ window.PDFLessons = (function() {
         {
           lessonNum: 2,
           chapter: "AULA 02: OPERAÇÕES BÁSICAS & FÓRMULAS SIMPLES",
+          heading: "2.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: "FASE 0 — para quem nunca mexeu em fórmulas: esta aula ensina a fazer o Excel calcular sozinho, começando do zero. Você digita números nas células, escreve fórmulas com o sinal de igual (=) e o Excel resolve a conta.\n\nO QUE VAMOS FAZER (objetivo):\n• Digitar números em células quadriculadas (A1, B1...), um número por caixinha.\n• Escrever fórmulas começando com = usando os 4 operadores: + (soma), - (subtração), * (multiplicação, asterisco) e / (divisão, barra).\n• Usar referências de célula: RELATIVA (A1) e ABSOLUTA ($A$1 com a tecla F4).\n• Preencher sequências e copiar fórmulas com a Alça de Preenchimento (ou Ctrl+C/Ctrl+V).\n• Reproduzir os 7 exercícios práticos e conferir cada resultado.\n\nCOMO VAMOS FAZER (a escada de 8 degraus):\n1. Planilha em branco → 2. Digitar os números → 3. Primeira fórmula com = → 4. Referências de célula → 5. Referência absoluta ($) → 6. Alça de Preenchimento → 7. Copiar fórmulas → 8. Os 7 exercícios.",
+          html: `<div style="margin:16px 0;">
+  <div style="font-weight:800; color:#166534; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 8 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">1</strong> Criar planilha em branco</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">2</strong> Digitar os números</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">3</strong> Primeira fórmula (= + − * /)</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">4</strong> Referências de célula</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">5</strong> Travar referência ($ + F4)</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">6</strong> Alça de Preenchimento</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">7</strong> Copiar fórmulas</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">8</strong> Os 7 exercícios</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo tem um check no fim da fase onde ele é executado — só avance depois de concluir o anterior.</p>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin:14px 0 8px 0;">🏁 O QUE VOCÊ VAI CONSEGUIR NO FINAL</div>
+  <div style="border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; background:#FFFFFF; font-family:'JetBrains Mono',monospace; font-size:12px; max-width:320px;">
+    <div style="background:#16A34A; color:#fff; font-weight:700; padding:6px 12px; text-align:center;">Primeira Fórmula</div>
+    <table style="border-collapse:collapse; width:100%;">
+      <tr style="background:#DCFCE7;"><td style="padding:5px 12px; border:1px solid #CBD5E1;">A1</td><td style="padding:5px 12px; border:1px solid #CBD5E1;">10</td></tr>
+      <tr><td style="padding:5px 12px; border:1px solid #CBD5E1;">B1</td><td style="padding:5px 12px; border:1px solid #CBD5E1;">5</td></tr>
+      <tr style="background:#DCFCE7;"><td style="padding:5px 12px; border:1px solid #CBD5E1;">C1</td><td style="padding:5px 12px; border:1px solid #CBD5E1;">=A1+B1 → 15</td></tr>
+    </table>
+  </div>`
+        },
+        {
+          lessonNum: 2,
           heading: "2.1 Os Quatro Operadores Matemáticos Básicos",
           content: "Toda fórmula do Excel começa com o sinal de igual (=).\n\n• Adição (+): =A1+B1 → soma dois valores.\n• Subtração (-): =A1-B1 → subtrai um valor do outro.\n• Multiplicação (*): =A1*B1 → usa o ASTERISCO, não o 'x' da calculadora.\n• Divisão (/): =A1/B1 → usa a BARRA, não o símbolo ÷.\n\nExemplo com A1=10 e B1=5: soma=15, subtração=5, multiplicação=50, divisão=2.\n\nEXERCÍCIO: Em uma planilha em branco, digite 10 em A1, 5 em B1 e a fórmula =A1+B1 em C1. O resultado 15 aparecerá automaticamente."
         },
@@ -468,6 +495,34 @@ window.PDFLessons = (function() {
         {
           lessonNum: 3,
           chapter: "AULA 03: FUNÇÕES DE CÁLCULO — SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT.VALORES, CONT.NÚM",
+          heading: "3.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: "FASE 0 — esta aula ensina as FUNÇÕES de cálculo do Excel: fórmulas prontas que o programa já conhece. No lugar de =B2+B3+B4, você escreve =SOMA(B2:B4) e o Excel soma sozinho.\n\nO QUE VAMOS FAZER (objetivo):\n• Somar um intervalo inteiro com =SOMA(intervalo).\n• Calcular a média com =MÉDIA(intervalo).\n• Achar o maior e o menor valor com =MÁXIMO() e =MÍNIMO().\n• Contar células preenchidas e numéricas com =CONT.VALORES() e =CONT.NÚM().\n• Testar tudo no Lab de Funções interativo e reproduzir os 4 exercícios práticos.\n\nCOMO VAMOS FAZER (a escada de 7 degraus):\n1. Planilha em branco → 2. =SOMA → 3. =MÉDIA → 4. =MÁXIMO & =MÍNIMO → 5. =CONT.VALORES & =CONT.NÚM → 6. Lab de Funções → 7. Os 4 exercícios.",
+          html: `<div style="margin:16px 0;">
+  <div style="font-weight:800; color:#166534; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 7 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">1</strong> Criar planilha em branco</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">2</strong> =SOMA()</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">3</strong> =MÉDIA()</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">4</strong> =MÁXIMO & =MÍNIMO</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">5</strong> =CONT.VALORES & =CONT.NÚM</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">6</strong> Lab de Funções</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">7</strong> Os 4 exercícios</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo tem um check no fim da fase onde ele é executado — só avance depois de concluir o anterior.</p>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin:14px 0 8px 0;">🏁 O QUE VOCÊ VAI CONSEGUIR NO FINAL</div>
+  <div style="border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; background:#FFFFFF; font-family:'JetBrains Mono',monospace; font-size:12px; max-width:320px;">
+    <div style="background:#16A34A; color:#fff; font-weight:700; padding:6px 12px; text-align:center;">Minhas Funções</div>
+    <table style="border-collapse:collapse; width:100%;">
+      <tr style="background:#DCFCE7;"><td style="padding:5px 12px; border:1px solid #CBD5E1;">=SOMA(B2:B4)</td><td style="padding:5px 12px; border:1px solid #CBD5E1; text-align:right;">600</td></tr>
+      <tr><td style="padding:5px 12px; border:1px solid #CBD5E1;">=MÉDIA(B2:B4)</td><td style="padding:5px 12px; border:1px solid #CBD5E1; text-align:right;">200</td></tr>
+      <tr style="background:#DCFCE7;"><td style="padding:5px 12px; border:1px solid #CBD5E1;">=MÁXIMO(B2:B4)</td><td style="padding:5px 12px; border:1px solid #CBD5E1; text-align:right;">300</td></tr>
+      <tr><td style="padding:5px 12px; border:1px solid #CBD5E1;">=MÍNIMO(B2:B4)</td><td style="padding:5px 12px; border:1px solid #CBD5E1; text-align:right;">100</td></tr>
+      <tr style="background:#FEF3C7; font-weight:700;"><td style="padding:5px 12px; border:1px solid #CBD5E1;">=CONT.VALORES(A2:A4)</td><td style="padding:5px 12px; border:1px solid #CBD5E1; text-align:right;">3 preenchidas</td></tr>
+    </table>
+  </div>`
+        },
+        {
+          lessonNum: 3,
           heading: "3.1 A Função SOMA() — Some Intervalos em Segundos",
           content: `A função SOMA() é a mais usada do Excel. Ela soma todos os valores dentro de um intervalo de células.\n\n• Sintaxe: =SOMA(intervalo)\n• Em vez de digitar =B2+B3+B4+B5+B6, escreva =SOMA(B2:B6).\n• O intervalo é a sequência de células separadas por dois-pontos (:). Ex.: B2:B7 = 'da célula B2 até a B7'.\n• Você pode somar um retângulo inteiro de uma vez com =SOMA(B2:D7).\n\nEXEMPLO — Gastos com Aluguel (3 meses): aluguel de R$ 2.500,00 nas células B2, C2 e D2. Digite =SOMA(B2:D2) → R$ 7.500,00.\n\nATIVIDADE PRÁTICA: Em B2, B3 e B4 digite 100, 200 e 300. Clique em B5 e digite =SOMA(B2:B4) e pressione Enter → 600. Mude B2 para 150 e o total vira 650 automaticamente!
 
@@ -767,6 +822,424 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
           lessonNum: 4,
           heading: "4.7 Exercício Prático — Classificação de Clientes (Situação do Mundo Real)",
           content: `CENÁRIO: Você trabalha no setor financeiro de uma empresa e precisa classificar clientes automaticamente com base nos pagamentos. A planilha tem: nome do cliente, valor pago, status do pagamento e a data. Sua missão: criar a coluna SITUAÇÃO que classifica cada cliente automaticamente.\n\nESTRUTURA DA PLANILHA — Classificação de Clientes:\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Classificação de Clientes (Exercício 7)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">D</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">E</td>\n    </tr>\n    <tr>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Cliente</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Valor (R$)</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Pago?</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Data Pgto.</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Situação</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Empresa ABC</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">1.200</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">10/03/2025</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Loja XYZ</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">350</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">15/03/2025</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Mercado Sol</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">800</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">—</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Padaria Luz</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">200</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">—</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>\n  </table>\n</div>\n\nREGRAS DE CLASSIFICAÇÃO:\n• Pagou e valor >= R$ 500 → "Cliente Premium"\n• Pagou e valor < R$ 500 → "Cliente Regular"\n• Não pagou → "Em aberto"\n\nCONSTRUINDO A FÓRMULA PASSO A PASSO:\nPasso 1 — Verificar o pagamento com SE simples: =SE(C2="Sim"; "Pagou"; "Não pagou")\nPasso 2 — Dentro do "Pagou", usar SE aninhado para o valor — fórmula completa na célula E2:\n=SE(C2="Sim"; SE(B2>=500; "Cliente Premium"; "Cliente Regular"); "Em aberto")\n\nLENDO A FÓRMULA EM VOZ ALTA:\n• SE C2 for "Sim" (pagou) → entra no segundo SE: SE B2 >= 500 → "Cliente Premium", senão "Cliente Regular"\n• SE C2 não for "Sim" → "Em aberto"\n\nRESULTADO ESPERADO:\n• Empresa ABC (1.200, Sim) → Cliente Premium\n• Loja XYZ (350, Sim) → Cliente Regular\n• Mercado Sol (800, Não) → Em aberto\n• Padaria Luz (200, Não) → Em aberto\n\nFORMATAÇÃO CONDICIONAL PARA O EXERCÍCIO — colorir a coluna Situação (E2:E20) com 3 cores:\n• Regra 1: =$E2="Cliente Premium" → Verde escuro (pagou e é grande cliente)\n• Regra 2: =$E2="Cliente Regular" → Azul claro (pagou e é cliente normal)\n• Regra 3: =$E2="Em aberto" → Vermelho (pagamento pendente)\n\nCOMO CRIAR AS 3 REGRAS: Selecione E2:E20 (coluna Situação) → Página Inicial → Formatação Condicional → Nova Regra... → Escolha "Usar uma fórmula..." e insira a fórmula da Regra 1 → Clique em Formatar... → Preenchimento → escolha Verde escuro → OK. Repita para a Regra 2 (azul) e Regra 3 (vermelho). Verifique em Gerenciar Regras se todas as 3 aparecem.\n\nTESTANDO: mude C2 de "Sim" para "Não" e veja a cor mudar para vermelho automaticamente. Mude B2 de 1200 para 200 e veja "Cliente Premium" virar "Cliente Regular". A cor muda sozinha conforme os dados mudam — isso é a magia da Formatação Condicional!`
+        },
+        {
+          lessonNum: 6,
+          chapter: "AULA 06: DATAS E HORAS NO EXCEL — HOJE, AGORA, DATA, DIA, MÊS, ANO, DIAS360, DIAS.ÚTEIS",
+          heading: "6.1 Função HOJE() — A Data de Hoje",
+          content: `A função HOJE() mostra a data de hoje. Todos os dias, quando você abrir a planilha, essa data se atualiza sozinha — você não precisa digitar nada.\n\nSINTAXE: =HOJE()\n\nNão recebe nenhum argumento (parênteses vazios). Exemplo: digite =HOJE() na célula A1 e o resultado será a data de hoje (ex.: 24/10/2025).\n\nAPLICAÇÕES PRÁTICAS:\n• Saber se um documento ainda está dentro do prazo de validade.\n• Calcular a idade de uma pessoa.\n• Verificar quantos dias faltam para um prazo terminar.\n\nPASSO A PASSO:\n1. Clique em uma célula vazia (ex.: A1).\n2. Digite exatamente: =HOJE().\n3. Pressione Enter.\n4. A célula vai mostrar a data de hoje.`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.2 Função AGORA() — Data e Hora",
+          content: `A função AGORA() mostra a data e também a hora exata em que você abriu ou atualizou a planilha.\n\nSINTAXE: =AGORA()\n\nExemplo: digite =AGORA() em uma célula e o resultado será algo como 24/10/2025 14:30.\n\nTABELA COMPARATIVA HOJE × AGORA:\n• =HOJE() — Somente a data (dia/mês/ano).\n• =AGORA() — A data e também a hora.`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.3 Função DATA() — Montar uma Data Customizada",
+          content: `A função DATA() monta uma data escolhida por você, informando o ano, o mês e o dia.\n\nSINTAXE: =DATA( ano ; mês ; dia )\n\nA ordem dos argumentos é ANO, MÊS, DIA — não confunda com o formato brasileiro (dia/mês/ano).\n\nEXEMPLO — NATAL:\n=DATA(2025;12;25) → 25/12/2025 (Natal).\n\nPASSO A PASSO:\n1. Em uma célula, digite: =DATA(2025;12;25).\n2. Pressione Enter.\n3. O Excel vai montar a data 25/12/2025 automaticamente.\n\nDICA: você também pode usar números de outras células. Se A1 tem o ano, B1 o mês e C1 o dia, a fórmula fica =DATA(A1;B1;C1).`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.4 Funções DIA(), MÊS() e ANO() — Extrair Partes da Data",
+          content: `Essas funções pegam uma data que já existe e retiram dela só o dia, só o mês ou só o ano.\n\nTABELA DE SINTAXE:\n• =DIA(data) — O número do dia.\n• =MÊS(data) — O número do mês.\n• =ANO(data) — O número do ano.\n\nEXEMPLO — Se A1 tem 15/06/2025:\n• =DIA(A1) → 15\n• =MÊS(A1) → 6\n• =ANO(A1) → 2025\n\nAPLICAÇÃO PRÁTICA — ANIVERSARIANTE DO MÊS:\n=SE( MÊS(A1) = MÊS(HOJE()) ; "Aniversariante do mês" ; "" )\n\nCompara o mês da data de nascimento (A1) com o mês de hoje. Se forem iguais, escreve o aviso; senão, deixa em branco.`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.5 Função DIAS360() — Dias no Calendário Comercial",
+          content: `A função DIAS360() calcula quantos dias existem entre duas datas usando um calendário comercial (todo mês tem 30 dias, ano = 360 dias). Muito usada em cálculos financeiros e contratos.\n\nSINTAXE: =DIAS360( data_inicial ; data_final ; método )\n\nO 3º argumento (método) é opcional:\n• FALSO ou vazio → método americano (o mais comum).\n• VERDADEIRO → método europeu.\n\nEXEMPLO — A1 = 01/01/2025, B1 = 31/12/2025:\n• =DIAS360(A1;B1) → 360 dias (método americano).\n• =DIAS360(A1;B1;VERDADEIRO) → 359 dias (método europeu).\n• =B1-A1 → 364 dias (contagem real do calendário).\n\nDICA: use =B1-A1 quando quiser a diferença real de dias no calendário normal. Use =DIAS360() apenas quando o cálculo exigir o padrão comercial de 30 dias por mês.`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.6 Função DIAS.ÚTEIS() — Dias Úteis para Prazos",
+          content: `A função DIAS.ÚTEIS() conta apenas os dias de segunda a sexta-feira entre duas datas — ideal para prazos de trabalho.\n\nSINTAXE: =DIAS.ÚTEIS( data_inicial ; data_final )\n\nEXEMPLO — PRAZO DE PROJETO: Início = 01/11/2025, Fim = 30/11/2025:\n• Total de dias: =B12-B11 → 29 dias.\n• Dias úteis: =DIAS.ÚTEIS(B11;B12) → 20 dias.\n• Dias comerciais (30 dias/mês): =DIAS360(B11;B12) → 29 dias.\n\nDICA: a função =DIAS.ÚTEIS() funciona normalmente no Excel 2010 e versões posteriores.`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.7 Exercício Prático — Agenda de Contatos e Alertas",
+          content: `CENÁRIO: montar uma planilha simples que guarda o nome, telefone e data de nascimento de algumas pessoas, calculando automaticamente a idade e há quantos dias você não fala com elas.\n\nESTRUTURA DA PLANILHA — AGENDA DE CONTATOS (A1:I3):\n• A: ID | B: Nome | C: Telefone | D: Data Nasc. | E: Idade | F: Última Ligação | G: Dias sem Contato\n• Linha 2 — 1 | João Silva | (11) 98765-4321 | 15/03/1985 | =ANO(HOJE())-ANO(D2) | 10/10/2025 | =HOJE()-F2\n• Linha 3 — 2 | Maria Santos | (11) 97654-3210 | 22/07/1990 | =ANO(HOJE())-ANO(D3) | 20/10/2025 | =HOJE()-F3\n\nFÓRMULAS EXPLICADAS:\n• Coluna Idade (ex.: E2): =ANO(HOJE())-ANO(D2) → pega o ano de hoje e subtrai o ano de nascimento.\n• Coluna Dias sem Contato (ex.: G2): =HOJE()-F2 → calcula quantos dias se passaram desde a última ligação.\n\nDICA: a fórmula de idade é simplificada e pode errar por até 1 ano em alguns casos (quando o aniversário da pessoa ainda não chegou no ano atual). Para uma turma iniciante isso é suficiente; a correção pode ser vista em uma aula futura.\n\n🔔 ALERTAS AUTOMÁTICOS:\n• Aniversário do mês (coluna H): =SE(MÊS(D2)=MÊS(HOJE()); "Aniversariante!"; "")\n• Contato urgente (coluna I, >15 dias): =SE(G2>15; "Ligar urgente!"; "")\n\n📊 PAINEL DE ESTATÍSTICAS:\n• Data de hoje: =HOJE()\n• Total de contatos: =CONT.NÚM(A2:A6)\n• Idade média: =MÉDIA(E2:E6)\n• Idade mais alta: =MÁXIMO(E2:E6)\n• Idade mais baixa: =MÍNIMO(E2:E6)\n• Média de dias sem contato: =MÉDIA(G2:G6)\n\nO QUE CADA FUNÇÃO FAZ:\n• CONT.NÚM — conta quantas células têm números preenchidos.\n• MÉDIA — calcula a média dos valores.\n• MÁXIMO e MÍNIMO — encontram o maior e o menor valor da lista.\n\n📅 CÁLCULO DE PRAZO DE PROJETO:\n• Início do Projeto: 01/11/2025 (digite direto na célula).\n• Fim do Projeto: 30/11/2025 (digite direto na célula).\n• Total de dias: =B12-B11.\n• Dias úteis: =DIAS.ÚTEIS(B11;B12).\n• Dias comerciais (30 dias/mês): =DIAS360(B11;B12).\n\n✏️ EXERCÍCIOS PARA PRATICAR:\n1. Crie uma planilha com a sua data de nascimento e calcule quantos dias você já viveu (use =HOJE()-sua_data).\n2. Liste 5 amigos com as datas de nascimento deles e descubra quem faz aniversário este mês.\n3. Calcule quantos dias úteis ainda faltam até o final deste ano.\n4. Crie um alerta para contatos que você não liga há mais de 30 dias.\n5. Monte um contador de dias para uma data importante para você (casamento, formatura, viagem, etc.).`
+        },
+        {
+          lessonNum: 7,
+          chapter: "AULA 07: CONTAS PESSOAIS & TABELA DINÂMICA — PLANILHA BASE, CAMPOS, FILTROS E ESTRUTURA DE TÓPICOS",
+          heading: "7.1 Preparação da Planilha de Lançamentos",
+          content: `O primeiro passo para controlar as suas contas pessoais é criar uma planilha organizada com 11 campos que servirão de base para a Tabela Dinâmica.\n\nCAMPOS DA PLANILHA BASE:\nData | Ano | Tipo de Lançamento | Grupo | Conta | Valor | Forma de Pagamento | Descrição | Dia | Mês | Ano Lançamento\n\nPASSO A PASSO:\n1. Abra uma planilha nova no Excel.\n2. Na linha 1, digite os 11 títulos acima.\n3. Renomeie a aba Plan1 para Lançamento.\n4. Preencha com os seus lançamentos do mês (receitas e despesas).\n\nTABELA DE EXEMPLO (Aba: Lançamento):\n• A: Data | B: Ano | C: Tipo de Lançamento | D: Grupo | E: Conta | F: Valor | G: Forma de Pagamento | H: Descrição | I: Dia | J: Mês | K: Ano Lançamento\n• Linha 2 — 05/01/2025 | =ANO(A2) | RECEITA | Salário (Fixo) | Empresa | 3.500,00 | PIX | Salário do mês | =DIA(A2) | =MÊS(A2) | =ANO(A2)\n• Linha 3 — 08/01/2025 | =ANO(A3) | DESPESA | Alimentação | Mercado | 450,00 | DÉBITO | Compras do mês | =DIA(A3) | =MÊS(A3) | =ANO(A3)\n• Linha 4 — 10/01/2025 | =ANO(A4) | DESPESA | Transporte | Posto | 200,00 | BOLETO | Combustível | =DIA(A4) | =MÊS(A4) | =ANO(A4)\n• Linha 5 — 15/01/2025 | =ANO(A5) | DESPESA | Moradia | Aluguel | 1.200,00 | TRANSFERÊNCIA | Aluguel do apartamento | =DIA(A5) | =MÊS(A5) | =ANO(A5)`
+        },
+        {
+          lessonNum: 7,
+          heading: "7.2 Funções de Data na Base — DIA(), MÊS() e ANO()",
+          content: `Em vez de digitar dia, mês e ano separadamente, usamos funções de data para extrair as informações automaticamente do campo Data.\n\nFUNÇÕES USADAS NA BASE:\n• Coluna Dia (I): =DIA(A2) → O dia da data do lançamento.\n• Coluna Mês (J): =MÊS(A2) → O número do mês (1 a 12).\n• Coluna Ano Lançamento (K): =ANO(A2) → O ano do lançamento.\n• Coluna Ano (B): =ANO(A2) → O ano, usado depois como Filtro na pivô.\n\nEXEMPLO — Data 15/06/2025 na célula A2:\n• =DIA(A2) → 15\n• =MÊS(A2) → 6\n• =ANO(A2) → 2025\n\nDICA: você também pode usar =HOJE() no cabeçalho da planilha para mostrar sempre a data de hoje.`
+        },
+        {
+          lessonNum: 7,
+          heading: "7.3 Validação de Dados (Lista) para o Tipo de Lançamento",
+          content: `Para evitar erros de digitação e padronizar os lançamentos, criamos uma lista suspensa (dropdown) com os tipos permitidos: BOLETO; DÉBITO; PIX; TRANSFERÊNCIA.\n\nCAMINHO DO MENU:\nDados → Validação de Dados → Permitir: Lista\n\nEm Fonte, digite: BOLETO;DÉBITO;PIX;TRANSFERÊNCIA\n\nPASSO A PASSO:\n1. Selecione as células do campo Tipo de Lançamento.\n2. Acesse Dados → Validação de Dados.\n3. Em Permitir, escolha Lista.\n4. Em Fonte, digite: BOLETO;DÉBITO;PIX;TRANSFERÊNCIA.\n5. Confirme. Agora aparece uma seta dropdown em cada célula, padronizando o cadastro.`
+        },
+        {
+          lessonNum: 7,
+          heading: "7.4 Renomear a Aba de Análise e Criar a Tabela Dinâmica",
+          content: `Agora que a base de lançamentos está pronta, vamos criar uma segunda aba chamada Análise para receber a Tabela Dinâmica.\n\nCAMINHO DO MENU:\nPlan2 → renomear para Análise, depois Inserir → Tabela Dinâmica\n\nPASSO A PASSO:\n1. Clique na aba Plan2 e renomeie para Análise.\n2. Estando na aba Análise, acesse o menu Inserir → Tabela Dinâmica.\n3. O Excel vai abrir a janela de criação da Tabela Dinâmica.`,
+          image: '../../assets/img/excel/a7/image1.png'
+        },
+        {
+          lessonNum: 7,
+          heading: "7.5 Selecionar o Intervalo (Tabela/Intervalo)",
+          content: `Na janela Criar Tabela Dinâmica, precisamos indicar qual intervalo de dados deve ser usado, apontando para a tabela Lançamento.\n\nO QUE PREENCHER:\n• Tabela/Intervalo: selecione a tabela Lançamento (ex.: Lançamento!$A$1:$K$5).\n• Onde colocar: escolha Nova Planilha ou a aba Análise.\n• Clique em OK para criar a tabela dinâmica vazia.\n\nPASSO A PASSO:\n1. Na janela Criar Tabela Dinâmica, coloque o cursor no campo Tabela/Intervalo.\n2. Selecione na planilha a aba Lançamento para apontar o intervalo completo.\n3. Confirme clicando em OK.`,
+          image: '../../assets/img/excel/a7/image3.png'
+        },
+        {
+          lessonNum: 7,
+          heading: "7.6 Configuração dos Campos da Tabela Dinâmica",
+          content: `Com a Tabela Dinâmica criada, usamos o painel Lista de Campos para arrastar cada campo para a área certa. Colocamos TIPO DE LANÇAMENTO em Linhas, para as receitas e despesas virarem os grupos das linhas.\n\nCONFIGURAÇÃO DOS CAMPOS:\n• FILTROS: Ano.\n• LINHAS: TIPO DE LANÇAMENTO → Grupo → Conta → Valor → Mês.\n• VALORES: Valor (Soma).\n\nPASSO A PASSO:\n1. Insira TIPO DE LANÇAMENTO na área Linhas.\n2. Com Tipo selecionado, selecione também os demais campos: Grupo, Conta, Valor e Mês (conforme a imagem de referência).\n3. Arraste Valor para Valores (Soma).\n4. Arraste Ano para Filtros (veremos mais adiante).`,
+          images: ['../../assets/img/excel/a7/image12.png', '../../assets/img/excel/a7/image9.png', '../../assets/img/excel/a7/image4.png', '../../assets/img/excel/a7/image6.png', '../../assets/img/excel/a7/image11.png']
+        },
+        {
+          lessonNum: 7,
+          heading: "7.7 Ordenação dos Dados (Decrescente)",
+          content: `Para facilitar a leitura, vamos ordenar a Tabela Dinâmica em ordem decrescente: a maior categoria vem primeiro.\n\nPASSOS DA ORDENAÇÃO:\n1. Selecione a linha Receitas como indicado na imagem.\n2. Acesse Dados → Classificar.\n3. Escolha Ordem decrescente (do maior para o menor).`,
+          images: ['../../assets/img/excel/a7/image2.png', '../../assets/img/excel/a7/image16.png', '../../assets/img/excel/a7/image7.png']
+        },
+        {
+          lessonNum: 7,
+          heading: "7.8 Visualização, Filtros e Estrutura de Tópicos",
+          content: `Vamos deixar a tabela mais limpa: ocultamos as linhas de grade e os cabeçalhos na aba Exibir. Também vemos como filtrar por ano arrastando o campo Ano para Filtros e como usar a Estrutura de Tópicos para expandir/recolher com os botões + / −.\n\nOCULTAR LINHAS E GRADES:\n• Na aba Exibir, desmarque Linhas e Grades para ocultar os cabeçalhos de linha/coluna e as linhas de grade.\n• Se a lista de campos sumir: clique em uma célula da tabela com o botão direito e escolha a última opção → Mostrar Lista de Campos.\n• Arraste a coluna Ano para a área FILTROS → agora dá para filtrar por ano (ex.: 2025, 2026).\n\nESTRUTURA DE TÓPICOS (AGRUPAMENTO):\n• Selecione a linha Receita.\n• Acesse Dados → Estrutura de tópicos.\n• Aparecem os botões + e − para expandir ou ocultar as linhas de detalhe.\n• Clique em − para ocultar os detalhes e + para expandir novamente.`,
+          images: ['../../assets/img/excel/a7/image8.png', '../../assets/img/excel/a7/image5.png', '../../assets/img/excel/a7/image13.png']
+        },
+        {
+          lessonNum: 7,
+          heading: "7.9 Exercício Prático — Contas Pessoais com Tabela Dinâmica",
+          content: `Vamos montar passo a passo o seu controle de contas pessoais completo com a Tabela Dinâmica de análise.\n\nPASSO 1 — PLANILHA BASE:\nCrie a base de lançamentos com os 11 campos (Data | Ano | Tipo de Lançamento | Grupo | Conta | Valor | Forma de Pagamento | Descrição | Dia | Mês | Ano Lançamento) e renomeie Plan1 → Lançamento.\n\nPASSO 2 — FUNÇÕES DE DATA:\n• Ano (para filtro): =ANO(A2)\n• Dia: =DIA(A2)\n• Mês: =MÊS(A2)\n• Ano Lançamento: =ANO(A2)\n\nPASSO 3 — VALIDAÇÃO DE DADOS:\nAplique Dados → Validação de Dados → Lista com a fonte BOLETO;DÉBITO;PIX;TRANSFERÊNCIA no campo Tipo de Lançamento.\n\nPASSO 4 — CRIAR A TABELA DINÂMICA:\nRenomeie Plan2 → Análise, acesse Inserir → Tabela Dinâmica, selecione a tabela Lançamento e configure os campos: TIPO DE LANÇAMENTO, Grupo, Conta, Valor e Mês nas Linhas, Valor em Valores e Ano em Filtros.\n\nPASSO 5 — ORDENAR, OCULTAR E AGRUPAR:\n1. Ordene em ordem decrescente (Dados → Classificar).\n2. Na aba Exibir, desmarque Linhas e Grades.\n3. Filtre por ano usando o campo Ano na área de Filtros.\n4. Use a Estrutura de Tópicos (Dados → Estrutura de tópicos) com os botões + / − para ocultar os detalhes.\n\n✏️ EXERCÍCIOS PARA PRATICAR:\n1. Monte a planilha de Contas Pessoais com os seus próprios lançamentos do mês (preencha os 11 campos).\n2. Use as funções =DIA(), =MÊS() e =ANO() para preencher as colunas derivadas de data.\n3. Aplique Validação de Dados (Lista) nos tipos: BOLETO; DÉBITO; PIX; TRANSFERÊNCIA.\n4. Crie a Tabela Dinâmica na aba Análise, colocando TIPO DE LANÇAMENTO e depois Grupo, Conta, Valor e Mês em Linhas.\n5. Classifique em ordem decrescente, filtre por um ano e use os botões + / − da Estrutura de Tópicos para ocultar os detalhes.\n\n🔒 REGRA DE OURO:\nUma base bem organizada (com Validação de Dados e funções de data) é o segredo para uma Tabela Dinâmica confiável. Arraste os campos para Linhas para agrupar, para Filtros para recortar por ano e use a Estrutura de Tópicos para expandir ou ocultar os detalhes.`,
+          images: ['../../assets/img/excel/a7/image10.png', '../../assets/img/excel/a7/image15.png', '../../assets/img/excel/a7/image14.png']
+        },
+      {
+          lessonNum: 8,
+          chapter: "AULA 08: CONTROLE DE ESTOQUE COM A FUNÇÃO SOMASE — TABELAS, VALIDAÇÃO DE DADOS, FÓRMULAS, TOTAIS E TABELA DINÂMICA",
+          heading: "8.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `Esta aula ensina, para quem nunca mexeu no Excel, a construir do zero o controle de estoque de uma pequena loja. Você será o(a) dono(a) da loja e precisa descobrir quanto tem em estoque, quanto isso vale em reais e quando repor.\n\nO QUE VAMOS FAZER (objetivo):\n• Criar uma pasta de trabalho com 4 abas: Produtos, Fornecedores, Estoque e Resumo.\n• Na aba Estoque, transformar uma lista comum em uma Tabela inteligente que calcula sozinha Estoque Atual, Valor em Estoque e Status.\n• Usar listas suspensas (Validação de Dados) para evitar erros de digitação.\n• Criar uma consulta por fornecedor com a função SOMASE.\n• Gerar um painel de análise com Tabela Dinâmica.\n\nCOMO VAMOS FAZER (a escada de 9 degraus):\nO projeto é uma escada. Cada degrau usa o que foi feito no anterior — siga SEMPRE na ordem de 1 a 9:\n1. Tabela de Produtos → 2. Tabela de Fornecedores → 3. Dados de Estoque → 4. Virar Tabela → 5. Fórmulas → 6. SOMASE → 7. Classificar & Filtrar → 8. Linha de Totais → 9. Tabela Dinâmica.`,
+          html: `<div style="margin:16px 0;">
+  <div style="font-weight:800; color:#166534; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 9 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">1</strong> Tabela de Produtos</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">2</strong> Tabela de Fornecedores</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">3</strong> Dados de Estoque</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">4</strong> Virar Tabela (Ctrl+T)</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">5</strong> Fórmulas</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">6</strong> SOMASE</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">7</strong> Classificar & Filtrar</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">8</strong> Linha de Totais</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">9</strong> Tabela Dinâmica</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada degrau tem um check no fim da fase onde ele é executado — só avance depois de concluir o anterior.</p>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin:16px 0 8px 0;">🏁 O QUE VOCÊ VAI CONSEGUIR NO FINAL</div>
+  <div class="es-sheet-box" style="max-width:460px;">
+    <div class="es-sheet-titlebar">Aba “Resumo” — Estoque por Fornecedor (Tabela Dinâmica)</div>
+    <table class="mini-sheet">
+      <tr><td><strong>TechDistrib</strong></td><td style="text-align:right;">R$ 28.100,00</td></tr>
+      <tr><td><strong>MoveisPro</strong></td><td style="text-align:right;">R$ 4.020,00</td></tr>
+      <tr><td><strong>InfoPlus</strong></td><td style="text-align:right;">R$ 1.530,00</td></tr>
+      <tr><td><strong>AtacadoMax</strong></td><td style="text-align:right;">R$ 1.160,00</td></tr>
+      <tr style="background:#FEF3C7; font-weight:700;"><td><strong>Total Geral</strong></td><td style="text-align:right;">R$ 34.810,00</td></tr>
+    </table>
+  </div>
+  <p style="font-size:12.5px; color:#475569; margin-top:10px;">Nada disso é digitado à mão: são as funcionetes SOMASE e a Tabela Dinâmica que fazem as somas automaticamente.</p>
+</div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.1 Etapa 1 — Criar a Tabela de Produtos",
+          content: `O primeiro passo do projeto é criar uma tabela de apoio de Produtos em uma aba separada. Essa tabela não recebe estoque diretamente — ela serve como fonte da lista suspensa de produtos usada na Tabela de Dados de Estoque (Etapa 3).\n\nPASSO A PASSO:\n1. Abra uma planilha nova no Excel.\n2. Em uma aba separada, crie a coluna Produtos.\n3. Digite os itens: Cadeira | Mesa | Monitor | Mouse | Teclado | Notebook.\n4. Mantenha essa aba como tabela de apoio — ela vai alimentar a lista suspensa da coluna Produto.`,
+          html: `<div class="es-sheet-box" style="max-width:300px;">
+            <div class="es-sheet-titlebar">Aba “Produtos” — Tabela de Apoio</div>
+            <table class="mini-sheet">
+              <tr><th>Produtos</th></tr>
+              <tr><td>Cadeira</td></tr>
+              <tr><td>Mesa</td></tr>
+              <tr><td>Monitor</td></tr>
+              <tr><td>Mouse</td></tr>
+              <tr><td>Teclado</td></tr>
+              <tr><td>Notebook</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.2 Etapa 2 — Criar a Tabela de Fornecedores",
+          content: `Da mesma forma, crie uma tabela de apoio com os nomes dos fornecedores. Ela alimentará a lista suspensa da coluna Fornecedor da Tabela de Estoque.\n\nVALORES DA TABELA DE APOIO — FORNECEDORES:\nTechDistrib | InfoPlus | MoveisPro | AtacadoMax\n\nPOR QUE AS TABELAS DE APOIO?\nAs tabelas de apoio (Produtos e Fornecedores) alimentam, por Validação de Dados, as listas suspensas da Tabela de Estoque. Qualquer produto ou fornecedor novo criado nessas abas passa a aparecer automaticamente nas listas.`,
+          html: `<div class="es-sheet-box" style="max-width:300px;">
+            <div class="es-sheet-titlebar">Aba “Fornecedores” — Tabela de Apoio</div>
+            <table class="mini-sheet">
+              <tr><th>Fornecedores</th></tr>
+              <tr><td>TechDistrib</td></tr>
+              <tr><td>InfoPlus</td></tr>
+              <tr><td>MoveisPro</td></tr>
+              <tr><td>AtacadoMax</td></tr>
+            </table>
+            <div style="padding:8px 12px; font-size:11.5px; color:#475569;">→ Fonte das listas suspensas de Produto e Fornecedor, respectivamente.</div>
+          </div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.3 Etapa 3 — Criar a Tabela de Dados de Estoque",
+          content: `Agora montamos a planilha principal de estoque. Aqui entram a Validação de Dados (listas suspensas), os dados de exemplo e a conversão do intervalo em uma Tabela formatável.\n\nO QUE É A VALIDAÇÃO DE DADOS:\nA Validação de Dados cria uma lista suspensa dentro da célula, para que o usuário escolha um valor em vez de digitar livremente. Isso evita erros de digitação, nomes escritos de formas diferentes e categorias inventadas.\n\nCAMINHO DO MENU:\nDados → Ferramentas de Dados → Validação de Dados → Aba Configurações → Permitir: Lista\n\nCOMO ACESSAR A VALIDAÇÃO DE DADOS:\n1. Clique na célula (ou selecione o intervalo) onde a lista deve aparecer — por exemplo, a coluna Fornecedor.\n2. Vá até a guia Dados, no grupo Ferramentas de Dados.\n3. Clique em Validação de Dados.\n4. Na aba Configurações, em Permitir, escolha a opção Lista.\n5. No campo Fonte, selecione a coluna da tabela de apoio correspondente (coluna Fornecedores para o campo Fornecedor e coluna Produtos para o campo Produto).\n6. Clique em OK.\n\nPOR QUE USAR AS TABELAS DE APOIO COMO FONTE?\nAo apontar a Fonte para o intervalo da tabela de apoio (em vez de digitar os nomes diretamente na caixa), qualquer produto ou fornecedor novo criado nessa tabela passa a aparecer automaticamente na lista suspensa — sem precisar editar a validação novamente.\n\nCRIAR A LISTA DE CATEGORIA:\nA Categoria tem apenas dois valores fixos. Na Validação de Dados da coluna Categoria, em Fonte, digite diretamente: Informática;Móveis\n\nPREPARAR OS DADOS INICIAIS:\nCrie a planilha principal com os cabeçalhos na linha 1: Produto | Categoria | Fornecedor | Entradas | Saídas | Preço Unit. (R$). Nas colunas Produto, Categoria e Fornecedor, use a Validação de Dados.\n\nDADOS DE EXEMPLO (linhas 2 a 9 — 8 itens):\nNotebook | Informática | TechDistrib | 10 | 3 | 3.500\nMonitor | Informática | TechDistrib | 5 | 2 | 1.200\nMouse | Informática | InfoPlus | 40 | 30 | 45\nTeclado | Informática | InfoPlus | 25 | 16 | 120\nCadeira | Móveis | MoveisPro | 12 | 4 | 280\nMesa | Móveis | MoveisPro | 3 | 1 | 890\nCadeira | Móveis | AtacadoMax | 8 | 6 | 280\nTeclado | Informática | AtacadoMax | 15 | 10 | 120\n\nCONVERTER EM TABELA:\nSelecione todos os dados A1:F9 (produto, categoria, fornecedor, entradas, saídas e preço) e pressione Ctrl+T, marcando a opção Minha tabela tem cabeçalhos. O nome da tabela será definido na Etapa 4.`,
+          html: `<div class="es-sheet-box">
+            <div class="es-sheet-titlebar">Aba “Estoque” — Dados de Entrada (A1:F9, 8 linhas)</div>
+            <table class="mini-sheet">
+              <tr><th>A Produto</th><th>B Categoria</th><th>C Fornecedor</th><th>D Entradas</th><th>E Saídas</th><th>F Preço Unit. (R$)</th></tr>
+              <tr><td>Notebook</td><td>Informática</td><td>TechDistrib</td><td style="text-align:right;">10</td><td style="text-align:right;">3</td><td style="text-align:right;">3500</td></tr>
+              <tr><td>Monitor</td><td>Informática</td><td>TechDistrib</td><td style="text-align:right;">5</td><td style="text-align:right;">2</td><td style="text-align:right;">1200</td></tr>
+              <tr><td>Mouse</td><td>Informática</td><td>InfoPlus</td><td style="text-align:right;">40</td><td style="text-align:right;">30</td><td style="text-align:right;">45</td></tr>
+              <tr><td>Teclado</td><td>Informática</td><td>InfoPlus</td><td style="text-align:right;">25</td><td style="text-align:right;">16</td><td style="text-align:right;">120</td></tr>
+              <tr><td>Cadeira</td><td>Móveis</td><td>MoveisPro</td><td style="text-align:right;">12</td><td style="text-align:right;">4</td><td style="text-align:right;">280</td></tr>
+              <tr><td>Mesa</td><td>Móveis</td><td>MoveisPro</td><td style="text-align:right;">3</td><td style="text-align:right;">1</td><td style="text-align:right;">890</td></tr>
+              <tr><td>Cadeira</td><td>Móveis</td><td>AtacadoMax</td><td style="text-align:right;">8</td><td style="text-align:right;">6</td><td style="text-align:right;">280</td></tr>
+              <tr><td>Teclado</td><td>Informática</td><td>AtacadoMax</td><td style="text-align:right;">15</td><td style="text-align:right;">10</td><td style="text-align:right;">120</td></tr>
+            </table>
+          </div>
+          <div class="fun-highlight">
+            <strong>Validação de Dados aplicada antes de digitar (Dados → Validação de Dados → Permitir: Lista):</strong><br>
+            • Produto ← aba “Produtos” (tabela de apoio) &nbsp;|&nbsp; • Categoria ← valores fixos: Informática;Móveis &nbsp;|&nbsp; • Fornecedor ← aba “Fornecedores” (tabela de apoio)
+          </div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.4 Etapa 4 — Aplicar Estilos de Tabela",
+          content: `Com os dados convertidos em Tabela, vamos aprimorar a visualização e nomear a tabela para que as fórmulas usem referências estruturadas como TabelaEstoque[Valor em Estoque].\n\nESCOLHER UM ESTILO:\nCom a tabela selecionada, vá em Design de Tabela e escolha um estilo (sugestão: Médio 6 ou Médio 15).\n\nPERSONALIZAR OPÇÕES DE ESTILO:\n• Marque: Linhas em Tiras (faixas alternadas).\n• Marque: Primeira Coluna (destaque).\n• Marque: Linha de Totais.\n\nNOMEAR A TABELA:\nEm Design de Tabela, no campo Nome da Tabela, digite: TabelaEstoque. Esse nome será usado nas fórmulas com referências estruturadas.`,
+          html: `<div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Aba “Estoque” — convertida em Tabela (Ctrl+T sobre A1:F9)</div>
+            <table class="mini-sheet">
+              <tr><th>Produto</th><th>Categoria</th><th>Fornecedor</th><th>Entradas</th><th>Saídas</th><th>Preço Unit.</th></tr>
+              <tr style="background:#F0FDF4;"><td>Notebook</td><td>Informática</td><td>TechDistrib</td><td style="text-align:right;">10</td><td style="text-align:right;">3</td><td style="text-align:right;">3500</td></tr>
+              <tr style="background:#FFFFFF;"><td>Monitor</td><td>Informática</td><td>TechDistrib</td><td style="text-align:right;">5</td><td style="text-align:right;">2</td><td style="text-align:right;">1200</td></tr>
+              <tr style="background:#F0FDF4;"><td style="font-weight:700; color:#15803D;">Mouse</td><td>Informática</td><td>InfoPlus</td><td style="text-align:right;">40</td><td style="text-align:right;">30</td><td style="text-align:right;">45</td></tr>
+            </table>
+            <div style="padding:8px 12px; font-size:11.5px; color:#475569;">Faixas alternadas (Linhas em Tiras) e destaque com <strong>Nome da Tabela = TabelaEstoque</strong>.</div>
+          </div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.5 Etapa 5 — Adicionar Fórmulas na Tabela",
+          content: `Agora calculamos os valores automaticamente. Com as referências estruturadas [@Coluna], o Excel replica a fórmula para toda a coluna ao pressionar Enter.\n\nCALCULAR O ESTOQUE ATUAL:\nClique na célula G2 (coluna Estoque Atual) e digite:\n=[@Entradas]-[@Saídas]\nPressione Enter — a fórmula será aplicada automaticamente a toda a coluna.\n\nCALCULAR O VALOR EM ESTOQUE:\nCrie uma nova coluna H chamada Valor em Estoque:\n=[@[Estoque Atual]]*[@[Preço Unit. (R$)]]\n\nADICIONAR COLUNA DE STATUS DO ESTOQUE:\nCrie uma coluna I chamada Status. Como temos três faixas (Baixo, Médio, Alto), usamos um SE aninhado:\n=SE([@[Estoque Atual]]<=5;"Baixo";SE([@[Estoque Atual]]<=15;"Médio";"Alto"))\n\nRESUMO DAS FÓRMULAS DA TabelaEstoque:\n• Estoque Atual (G): =[@Entradas]-[@Saídas] → Entradas − Saídas.\n• Valor em Estoque (H): =[@[Estoque Atual]]*[@[Preço Unit. (R$)]] → Estoque × Preço Unitário.\n• Status (I): =SE([@[Estoque Atual]]<=5;"Baixo";SE([@[Estoque Atual]]<=15;"Médio";"Alto")) → Baixo se menor ou igual a 5; Médio se menor ou igual a 15; senão Alto.`,
+          html: `<div class="fun-highlight">
+            <strong>As 3 fórmulas da TabelaEstoque (uma por troço):</strong><br>
+            1️⃣ Estoque Atual (G): <code>= [@Entradas] - [@Saídas]</code><br>
+            2️⃣ Valor em Estoque (H): <code>= [@[Estoque Atual]] * [@[Preço Unit. (R$)]]</code><br>
+            3️⃣ Status (I): <code>= SE( [@[Estoque Atual]]&lt;=5 ; &quot;Baixo&quot; ; SE( [@[Estoque Atual]]&lt;=15 ; &quot;Médio&quot; ; &quot;Alto&quot; ) )</code>
+          </div>
+          <div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">Resultado com 1 Enter — as colunas G, H e I calculam tudo sozinhas</div>
+            <table class="mini-sheet">
+              <tr><th>Produto</th><th>G Estoque Atual</th><th>H Valor em Estoque</th><th>I Status</th></tr>
+              <tr><td>Notebook</td><td style="text-align:right;">7</td><td style="text-align:right;">R$ 24.500,00</td><td style="text-align:center;">Médio</td></tr>
+              <tr><td>Monitor</td><td style="text-align:right;">3</td><td style="text-align:right;">R$ 3.600,00</td><td style="text-align:center;">Baixo</td></tr>
+              <tr><td>Mouse</td><td style="text-align:right;">10</td><td style="text-align:right;">R$ 450,00</td><td style="text-align:center;">Médio</td></tr>
+              <tr><td>Teclado</td><td style="text-align:right;">9</td><td style="text-align:right;">R$ 1.080,00</td><td style="text-align:center;">Médio</td></tr>
+              <tr><td>Cadeira</td><td style="text-align:right;">8</td><td style="text-align:right;">R$ 2.240,00</td><td style="text-align:center;">Médio</td></tr>
+              <tr><td>Cadeira</td><td style="text-align:right;">2</td><td style="text-align:right;">R$ 560,00</td><td style="text-align:center;">Baixo</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.6 Etapa 6 — Consulta Rápida por Fornecedor (SOMASE)",
+          content: `Criamos um pequeno campo de consulta: você escolhe o nome de um fornecedor em uma lista suspensa, e o valor em estoque fornecido por ele aparece automaticamente em outra célula. Isso é feito com a função SOMASE.\n\nENTENDENDO A FUNÇÃO SOMASE:\n=SOMASE( intervalo_critério ; critério ; intervalo_soma )\n• intervalo_critério: onde o Excel vai procurar a condição — a coluna Fornecedor da TabelaEstoque.\n• critério: o valor procurado — o nome escolhido no campo de consulta.\n• intervalo_soma: os valores que serão somados quando o critério for encontrado — a coluna Valor em Estoque da TabelaEstoque.\n\nMONTAR O CAMPO DE CONSULTA:\n1. Escolha duas células livres na planilha, por exemplo B2 (entrada) e C2 (resultado).\n2. Em B2, aplique Validação de Dados (Lista), usando a Tabela Fornecedores da Etapa 2 como Fonte — assim você escolhe o nome em vez de digitar.\n3. Em C2, digite a fórmula:\n=SOMASE( TabelaEstoque[Fornecedor] ; B2 ; TabelaEstoque[Valor em Estoque] )\n4. Pressione Enter. O valor em C2 mostra o valor em estoque do fornecedor selecionado em B2.\n5. Troque o nome em B2 e observe o resultado em C2 mudar automaticamente. Exemplo: MoveisPro retorna R$ 4.020,00.\n\nPOR QUE REFERENCIAR A CÉLULA B2 E NÃO DIGITAR O NOME DIRETO NA FÓRMULA?\nUsando =SOMASE(TabelaEstoque[Fornecedor];B2;TabelaEstoque[Valor em Estoque]) em vez de =SOMASE(TabelaEstoque[Fornecedor];"MoveisPro";TabelaEstoque[Valor em Estoque]), a fórmula não muda quando você troca o fornecedor — só o conteúdo da célula B2 muda. Isso transforma a fórmula em um painel de consulta reutilizável.`,
+          html: `<div class="es-sheet-box" style="max-width:360px;">
+            <div class="es-sheet-titlebar">Campo de Consulta — aba “Estoque”</div>
+            <table class="mini-sheet">
+              <tr><th style="width:60%;">B2 (escolha o fornecedor)</th><th>C2 (resultado SOMASE)</th></tr>
+              <tr><td style="font-weight:700;">▾ MoveisPro</td><td style="text-align:right; font-weight:700; background:#F0FDF4;">R$ 4.020,00</td></tr>
+            </table>
+          </div>
+          <div class="fun-highlight">
+            <strong>Fórmula em C2:</strong> <code>=SOMASE( TabelaEstoque[Fornecedor] ; B2 ; TabelaEstoque[Valor em Estoque] )</code><br>
+            Troque o nome em B2 (via lista suspensa) e o resultado muda — <strong>a fórmula nunca muda</strong>.
+          </div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.7 Etapa 7 — Classificação e Filtragem Avançadas",
+          content: `Para analisar o estoque com mais facilidade, usamos ordenação e filtros na TabelaEstoque.\n\nCLASSIFICAÇÃO SIMPLES:\n1. Clique na seta ao lado de Valor em Estoque.\n2. Escolha: Classificar do Maior para o Menor.\n\nCLASSIFICAÇÃO PERSONALIZADA (MÚLTIPLOS NÍVEIS):\nVá em Dados → Classificar e configure:\n• 1º nível: Fornecedor (A a Z).\n• 2º nível: Valor em Estoque (maior → menor).\n\nFILTRAGEM POR CATEGORIA:\n1. Clique na seta de Categoria.\n2. Desmarque Móveis (mostrará somente Informática).\n\nFILTRAGEM POR VALOR:\n1. Clique na seta de Valor em Estoque.\n2. Vá em Filtros de Número → Maior que...\n3. Digite: 5000.\n\nFILTROS MÚLTIPLOS (PRATIQUE COMBINANDO):\n• Filtro A: Categoria = Informática.\n• Filtro B: Fornecedor = TechDistrib ou MoveisPro.\n• Filtro C: Estoque Atual > 4.\n\n🖥️ No menu interativo da aula (Sales Lab), use os botões Classificar Valor, Filtro Categoria e Valor > 5.000 para experimentar esses passos na grade interativa.`,
+          html: `<div class="fun-highlight">
+            <strong>Os 3 filtros principais da Etapa 7:</strong><br>
+            • <strong>Valor em Estoque → Filtros de Número → Maior que…</strong> → 5000<br>
+            • <strong>Categoria → desmarcar Móveis</strong> (mostra só Informática)<br>
+            • <strong>Classificação personalizada</strong>: 1º nível Fornecedor (A a Z) + 2º nível Valor em Estoque (maior → menor)
+          </div>`
+          ,
+        },
+        {
+          lessonNum: 8,
+          heading: "8.8 Etapa 8 — Linha de Totais com Funções",
+          content: `A Linha de Totais mostra automaticamente as totalizações de cada coluna no rodapé da Tabela — com Soma para valores numéricos e Contagem para textos.\n\nATIVAR LINHA DE TOTAIS:\nEm Design de Tabela, marque: Linha de Totais.\n\nCONFIGURAR TOTALIZAÇÕES:\n• Coluna Entradas → Soma.\n• Coluna Saídas → Soma.\n• Coluna Valor em Estoque → Soma.\n• Coluna Fornecedor → Contagem.\n\n🖥️ No menu interativo da aula (Sales Lab), clique em Linha de Totais para alternar as totalizações: Soma de Entradas, Saídas e Valor em Estoque, e Contagem de Fornecedor.`,
+          html: `<div class="es-sheet-box" style="max-width:620px;">
+            <div class="es-sheet-titlebar">Rodapé da TabelaEstoque com Linha de Totais ativa</div>
+            <table class="mini-sheet">
+              <tr><th>Produto</th><th>Categoria</th><th>Fornecedor</th><th>Entradas</th><th>Saídas</th><th>Preço Unit.</th><th>Valor</th></tr>
+              <tr><td>Notebook</td><td>Informática</td><td>TechDistrib</td><td style="text-align:right;">10</td><td style="text-align:right;">3</td><td style="text-align:right;">3500</td><td style="text-align:right;">24.500</td></tr>
+              <tr style="background:#F0FDF4;"><td>Cadeira</td><td>Móveis</td><td>AtacadoMax</td><td style="text-align:right;">8</td><td style="text-align:right;">6</td><td style="text-align:right;">280</td><td style="text-align:right;">560</td></tr>
+              <tr style="background:#FEF3C7; font-weight:700;"><td>Total</td><td></td><td>8 (Contagem)</td><td style="text-align:right;">118</td><td style="text-align:right;">72</td><td></td><td style="text-align:right;">34.810</td></tr>
+            </table>
+            <div style="padding:8px 12px; font-size:11.5px; color:#475569;">Clique na célula do Total e escolha Soma / Contagem para cada coluna.</div>
+          </div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.9 Etapa 9 — Criar Tabela Dinâmica",
+          content: `A Tabela Dinâmica consolida o estoque em segundos: por fornecedor, por categoria e por produto — sem escrever nenhuma fórmula manual de soma.\n\nINSERIR TABELA DINÂMICA:\n1. Clique em qualquer célula da tabela.\n2. Vá em: Inserir → Tabela Dinâmica.\n3. Escolha: Nova Planilha.\n4. Clique em OK.\n\nPRIMEIRA ANÁLISE — ESTOQUE POR FORNECEDOR:\n1. Arraste Fornecedor para LINHAS.\n2. Arraste Valor em Estoque para VALORES (configurar como Soma).\n\nSEGUNDA ANÁLISE — ESTOQUE POR CATEGORIA E PRODUTO:\nCrie outra tabela dinâmica em uma nova planilha:\n• LINHAS: Categoria, depois Produto.\n• VALORES: Soma de Valor em Estoque.\n• COLUNAS: Fornecedor.\n\nFORMATAR AS TABELAS DINÂMICAS:\n• Aplique um estilo de tabela dinâmica.\n• Formate os valores como moeda: R$ 0,00.\n• Adicione Segmentação de Dados (Fornecedor e Categoria) para filtrar visualmente.`,
+          html: `<div class="es-sheet-box" style="max-width:480px;">
+            <div class="es-sheet-titlebar">Aba “Resumo” — Tabela Dinâmica: Linhas (Categoria → Produto) e Valores (Soma de Valor)</div>
+            <table class="mini-sheet">
+              <tr><th>Rótulos de Linha</th><th style="text-align:right;">Soma de Valor em Estoque</th></tr>
+              <tr><td><strong>Informática</strong></td><td style="text-align:right;"><strong>R$ 30.230,00</strong></td></tr>
+              <tr><td style="padding-left:22px;">&nbsp;&nbsp;Notebook</td><td style="text-align:right;">R$ 24.500,00</td></tr>
+              <tr><td style="padding-left:22px;">&nbsp;&nbsp;Monitor</td><td style="text-align:right;">R$ 3.600,00</td></tr>
+              <tr><td style="padding-left:22px;">&nbsp;&nbsp;Mouse</td><td style="text-align:right;">R$ 450,00</td></tr>
+              <tr><td style="padding-left:22px;">&nbsp;&nbsp;Teclado</td><td style="text-align:right;">R$ 1.680,00</td></tr>
+              <tr><td><strong>Móveis</strong></td><td style="text-align:right;"><strong>R$ 4.580,00</strong></td></tr>
+              <tr><td style="padding-left:22px;">&nbsp;&nbsp;Cadeira</td><td style="text-align:right;">R$ 2.800,00</td></tr>
+              <tr><td style="padding-left:22px;">&nbsp;&nbsp;Mesa</td><td style="text-align:right;">R$ 1.780,00</td></tr>
+              <tr style="background:#FEF3C7; font-weight:700;"><td><strong>Total Geral</strong></td><td style="text-align:right;"><strong>R$ 34.810,00</strong></td></tr>
+            </table>
+          </div>
+          <p style="font-size:12.5px; color:#475569;">Formate os valores como moeda (R$ 0,00) e adicione Segmentação de Dados (Fornecedor e Categoria) para filtrar com um clique.</p>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.10 Resumo da Aula — Controle de Estoque com SOMASE",
+          content: `PARA FIXAR O APRENDIZADO:\n• Tabelas de apoio (Produtos e Fornecedores) alimentam as listas suspensas da Tabela de Estoque via Validação de Dados — itens novos aparecem automaticamente.\n• Validação de Dados (Dados → Validação de Dados → Permitir: Lista): a Fonte pode ser uma coluna de apoio (Fornecedor/Produto) ou valores fixos separados por ponto e vírgula (Categoria: Informática;Móveis).\n• Converter dados em Tabela (Inserir → Tabela ou Ctrl+T, marcando Minha tabela tem cabeçalhos, sobre o intervalo A1:F9) habilita referências estruturadas como TabelaEstoque[Valor em Estoque].\n• Fórmulas estruturadas: Estoque Atual =[@Entradas]-[@Saídas], Valor em Estoque =[@[Estoque Atual]]*[@[Preço Unit. (R$)]] e Status =SE([@[Estoque Atual]]<=5;"Baixo";SE([@[Estoque Atual]]<=15;"Médio";"Alto")).\n• SOMASE: =SOMASE(TabelaEstoque[Fornecedor];B2;TabelaEstoque[Valor em Estoque]) permite consultar o valor em estoque de um fornecedor referenciando a célula do nome, sem alterar a fórmula.\n• Classificação e filtros: classificar Valor em Estoque do maior para o menor, classificação personalizada e filtros por categoria e por valor (Valor em Estoque > 5000).\n• Linha de Totais (Design de Tabela): Soma para Entradas, Saídas e Valor em Estoque; Contagem para Fornecedor.\n• Tabela Dinâmica (Inserir → Tabela Dinâmica): Estoque por Fornecedor (LINHAS: Fornecedor; VALORES: Soma de Valor em Estoque) e Estoque por Categoria e Produto (LINHAS: Categoria e Produto; COLUNAS: Fornecedor), formatadas como moeda e com Segmentação de Dados.\n\n🔒 REGRA DE OURO:\nUma base bem organizada — com tabelas de apoio, Validação de Dados e referências estruturadas — torna as consultas (SOMASE), os filtros e as Tabelas Dinâmicas confiáveis e automáticos.`
+        },
+        {
+          lessonNum: 9,
+          chapter: "AULA 09: MACROS & INTRODUÇÃO AO VBA — AVENTURA CAPIBERICA",
+          heading: "9.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `Nesta aula vamos ativar a aba Desenvolvedor do Excel, gravar a primeira Macro sem digitar código e entrar no Editor VBA (VBE) para escrever nossa primeira sub-rotina com MsgBox — ambientados na história do herói Capiberica no Reino do Excel. É a base introdutória: ao final, você vai executar um programa VBA que mostra uma mensagem na tela.
+
+O caminho tem 6 passos — cada passo é uma fase da história e uma ferramenta do Excel:
+1. Ler a história e planejar — entender o que são Macros e VBA com a Aventura Capiberica
+2. Entender o que são Macros e VBA — o "robô auxiliar" e a "língua secreta" do Excel
+3. Ativar a aba Desenvolvedor — onde ficam os botões de macro
+4. Gravar a Primeira Macro — gravar um passo a passo para o Excel repetir
+5. Abrir e navegar no Editor VBA (VBE) — o "laboratório" onde escrevemos código
+6. Escrever e executar a sub-rotina "Hello World" — criar um módulo, digitar Sub...End Sub e exibir a caixa de mensagem
+
+Cada degrau tem um check no fim da fase — marque como concluído só depois de terminar a leitura e os exercícios daquela fase.
+Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
+          html: `<div style="margin:16px 0;">
+            <p style="text-align:center;font-weight:700;font-size:1.1em;">🗺️ O ROTEIRO DOS 6 PASSOS</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0;">
+              <span style="background:#E8F5E9;color:#1B5E20;padding:6px 12px;border-radius:16px;font-size:0.9em;">1. Ler a história</span>
+              <span style="background:#E3F2FD;color:#0D47A1;padding:6px 12px;border-radius:16px;font-size:0.9em;">2. Macros & VBA</span>
+              <span style="background:#FFF3E0;color:#E65100;padding:6px 12px;border-radius:16px;font-size:0.9em;">3. Aba Desenvolvedor</span>
+              <span style="background:#F3E5F5;color:#4A148C;padding:6px 12px;border-radius:16px;font-size:0.9em;">4. Gravar Macro</span>
+              <span style="background:#E0F7FA;color:#006064;padding:6px 12px;border-radius:16px;font-size:0.9em;">5. Editor VBE</span>
+              <span style="background:#FCE4EC;color:#880E4F;padding:6px 12px;border-radius:16px;font-size:0.9em;">6. Sub-rotina "Hello World"</span>
+            </div>
+            <p style="text-align:center;margin-top:8px;font-size:0.9em;color:#555;">Cada degrau tem um check no fim da fase.</p>
+          </div>
+          <div class="es-sheet-box" style="max-width:480px;">
+            <div class="es-sheet-titlebar">Aventura Capiberica — O que você vai criar</div>
+            <table class="mini-sheet">
+              <tr><th>Conquista</th><th>Resultado ao final da aula</th></tr>
+              <tr><td>Aba Desenvolvedor</td><td>Ativada e visível</td></tr>
+              <tr><td>Macro gravada</td><td>Formatador Automático</td></tr>
+              <tr><td>Sub-rotina</td><td>"Hello World" com MsgBox</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 9,
+          heading: "9.1 Macros & VBA — A História da Capiberica",
+          content: `Uma Macro é um conjunto de instruções gravadas no Excel que o computador repete automaticamente — como um robô auxiliar que executa uma sequência de passos para você.\n\nVBA (Visual Basic for Applications) é a "linguagem" por trás das Macros. É o código que o Excel interpreta para executar tarefas.\n\nNa Aventura Capiberica, o herói do Reino do Excel grava os passos de formatar 100 tabelas de impostos e o Excel passa a repetir tudo sozinho — essa é a Macro. Para criar comandos do zero (como mostrar uma mensagem), Capiberica precisa aprender a linguagem VBA.\n\nTERMOS IMPORTANTES:\n• Módulo: uma "folha em branco" onde guardamos o código VBA.\n• Sub-rotina (Sub): um bloco de código com nome, que começa com Sub e termina com End Sub.\n• Objeto: uma parte do Excel que podemos manipular (planilha, intervalo de células, botão).`,
+          html: `<div class="fun-highlight">
+            <strong>História do Capiberica no VBA:</strong><br>
+            • <strong>Macro</strong> → sequência de passos gravada, repetida automaticamente<br>
+            • <strong>VBA</strong> → a "língua secreta" que o Excel entende<br>
+            • <strong>Módulo</strong> → onde guardamos o código (Inserir → Módulo)<br>
+            • <strong>Sub-rotina</strong> → Sub ... End Sub com um nome<br>
+            • <strong>MsgBox</strong> → exibe uma caixa de mensagem
+          </div>`
+        },
+        {
+          lessonNum: 9,
+          heading: "9.2 Ativar a Aba Desenvolvedor",
+          content: `Antes de criar macros, precisamos liberar a aba "Desenvolvedor" no Excel — ela fica escondida por padrão.\n\nPASSO A PASSO:\n1. Clique em Arquivo → Opções.\n2. Na janela que abre, clique em Personalizar Faixa de Opções.\n3. Na coluna da direita, marque a caixa ao lado de Desenvolvedor.\n4. Clique em OK.\n\nPronto! Agora aparece uma nova aba no Excel chamada Desenvolvedor, com os botões de Gravar Macro, Editor VBA e outros recursos de programação.`,
+          html: `<div class="es-sheet-box" style="max-width:500px;">
+            <div class="es-sheet-titlebar">Arquivo → Opções → Personalizar Faixa de Opções</div>
+            <table class="mini-sheet">
+              <tr><th>Coluna da Direita</th><th>Marcar?</th></tr>
+              <tr><td>Página Inicial</td><td>✓</td></tr>
+              <tr><td>Inserir</td><td>✓</td></tr>
+              <tr><td>Desenvolvedor</td><td>✅ marque esta!</td></tr>
+              <tr><td>Fórmulas</td><td>✓</td></tr>
+            </table>
+            <div style="padding:8px;font-size:0.85em;color:#555;">Após marcar, clique OK — a aba Desenvolvedor aparece na faixa de opções.</div>
+          </div>`,
+          images: ['../../assets/img/excel/a9/image4.png', '../../assets/img/excel/a9/image1.png', '../../assets/img/excel/a9/image6.png', '../../assets/img/excel/a9/image7.png']
+        },
+        {
+          lessonNum: 9,
+          heading: "9.3 Gravar a Primeira Macro",
+          content: `A forma mais simples de criar uma Macro é gravar: o Excel observa cada passo que você faz e anota tudo para repetir depois.\n\nPASSO A PASSO:\n1. Vá à aba Desenvolvedor → clique em Gravar Macro.\n2. Dê um nome à Macro (ex: "FormatacaoCapiberica") — sem espaços.\n3. Escolha um atalho de teclado (opcional, ex: Ctrl+Shift+C).\n4. Clique em OK — o Excel começa a gravar.\n5. Faça as ações que quer automatizar (ex: formatar células, colorir cabeçalhos).\n6. Quando terminar, clique em Parar Gravação (aba Desenvolvedor).\n\nPara executar a Macro: aba Desenvolvedor → Macros → selecione a macro → Executar.\n\nDICA: A gravação tem uma limitação — ela só repete exatamente os mesmos passos. Para criar algo mais inteligente (decisões, repetições, memória), precisamos do Editor VBA.`,
+          html: `<div class="fun-highlight">
+            <strong>Os 3 estados de uma Macro:</strong><br>
+            1️⃣ <strong>Gravando</strong> → Excel observa e anota cada clique<br>
+            2️⃣ <strong>Parada</strong> → Macro salva, pronta para executar<br>
+            3️⃣ <strong>Executando</strong> → Excel repete tudo automaticamente
+          </div>
+          <div class="es-sheet-box" style="max-width:420px;">
+            <div class="es-sheet-titlebar">Diálogo "Gravar Macro"</div>
+            <table class="mini-sheet">
+              <tr><td>Nome:</td><td>FormatacaoCapiberica</td></tr>
+              <tr><td>Atalho:</td><td>Ctrl+Shift+C</td></tr>
+              <tr><td>Salvar em:</td><td>Esta Pasta de Trabalho</td></tr>
+              <tr><td>Descrição:</td><td>Formata o cabeçalho da tabela</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 9,
+          heading: "9.4 O Editor VBA (VBE) — O Laboratório do Programador",
+          content: `O Editor VBA (VBE) é onde escrevemos e editamos o código das macros. É o "laboratório" do programador — uma tela separada do Excel onde escrevemos instruções em VBA.\n\nCOMO ABRIR:\n• Atalho: Alt + F11\n• Ou: Aba Desenvolvedor → Visual Basic\n\nDENTRO DO VBE:\n• Painel Esquerdo (Project Explorer): mostra as pastas e módulos do projeto.\n• Janela de Código: onde digitamos o código (Sub...End Sub).\n• Menu Ferramentas → Referências: bibliotecas extras (não vamos usar agora).\n\nPara inserir um módulo novo: clique com o botão direito no Project Explorer → Inserir → Módulo.\n\nO primeiro programa que vamos escrever é um Sub que exibe uma mensagem na tela — o "Olá Mundo" do VBA.`,
+          html: `<div class="es-sheet-box" style="max-width:540px;">
+            <div class="es-sheet-titlebar">Editor VBA — Estrutura</div>
+            <table class="mini-sheet">
+              <tr><th>Painel</th><th>O que mostra</th></tr>
+              <tr><td>Project Explorer (esquerda)</td><td>VBAProject → Módulos → Module1</td></tr>
+              <tr><td>Janela de Código (direita)</td><td>Sub OlaMundo() ... End Sub</td></tr>
+              <tr><td>Propriedades (abaixo)</td><td>Nome do módulo, nome do formulário</td></tr>
+            </table>
+          </div>
+          <div class="fun-highlight">
+            <strong>Seu primeiro código VBA:</strong><br>
+            <code>Sub OlaMundo()</code><br>
+            <code>&nbsp;&nbsp;MsgBox "Olá, Capiberica!"</code><br>
+            <code>End Sub</code><br>
+            <br>
+            Execute com F5 ou botão ▶️ — aparece uma caixa de mensagem!
+          </div>`,
+          images: ['../../assets/img/excel/a9/image3.png', '../../assets/img/excel/a9/image12.png']
+        },
+        {
+          lessonNum: 9,
+          heading: "9.5 Sub-rotinas — Seu Primeiro Programa em VBA",
+          content: `Agora que o Editor VBA está aberto, vamos escrever o "Olá Mundo" do Capiberica — o primeiro programa que qualquer pessoa escreve ao aprender uma nova linguagem.\n\nPASSO A PASSO:\n1. No painel esquerdo (Project Explorer), clique com o botão direito no nome do seu arquivo.\n2. Selecione Inserir → Módulo. Uma janela branca se abre à direita.\n3. No painel Propriedades (abaixo à esquerda), renomeie o módulo (ex: ModHelloWorld).\n4. Digite o código abaixo na janela de Código:\n\nSub MeuPrimeiroPrograma()\n    MsgBox "Olá! Eu sou o Capiberica e estou programando no VBA!"\nEnd Sub\n\nCOMO EXECUTAR:\n• Clique dentro do código e aperte F5.\n• Ou: aba Desenvolvedor → Macros → selecione MeuPrimeiroPrograma → Executar.\n\nUma caixa de mensagem aparece com o texto do Capiberica! 🎉\n\nO QUE ACONTECEU?\n• Sub e End Sub delimitam uma sub-rotina (um "pedaço de programa") — tudo entre eles é executado quando você manda rodar.\n• MsgBox exibe uma caixa de mensagem — o jeito mais simples de ver que o código funcionou.`,
+          html: `<div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">Código: MeuPrimeiroPrograma</div>
+            <div style="padding:10px 14px;font-family:'Courier New',monospace;font-size:0.9em;background:#F8FAFC;line-height:1.7;">
+              <span style="color:#7C3AED;">Sub</span> <span style="color:#2563EB;">MeuPrimeiroPrograma</span>()<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#7C3AED;">MsgBox</span> "Olá! Eu sou o Capiberica e estou programando no VBA!"<br>
+              <span style="color:#7C3AED;">End Sub</span>
+            </div>
+          </div>
+          <div class="fun-highlight">
+            <strong>💡 O que aconteceu?</strong><br>
+            <code>Sub</code> e <code>End Sub</code> delimitam a <strong>sub-rotina</strong>. O <code>MsgBox</code> exibe a caixa de mensagem — F5 executa.
+          </div>`,
+          images: ['../../assets/img/excel/a9/image14.png', '../../assets/img/excel/a9/image11.png', '../../assets/img/excel/a9/image8.png', '../../assets/img/excel/a9/image16.png', '../../assets/img/excel/a9/image5.png']
+        },
+        {
+          lessonNum: 9,
+          heading: "9.6 Resumo da Aula — Macros, VBA e a Sub-rotina do Capiberica",
+          content: `PARA FIXAR O APRENDIZADO:\n• Macros são sequências de ações gravadas no Excel que o computador repete automaticamente (robô auxiliar).\n• VBA (Visual Basic for Applications) é a linguagem de programação do Excel — permite criar comandos além da gravação simples.\n• A aba Desenvolvedor (Arquivo → Opções → Personalizar Faixa de Opções → marcar Desenvolvedor) libera os botões de gravação e do Editor VBA.\n• Gravar Macro: Desenvolvedor → Gravar Macro → nome → OK → fazer ações → Parar Gravação → Macros → Executar.\n• Editor VBA (Alt+F11 ou Desenvolvedor → Visual Basic): painel Project Explorer (esquerda) + Janela de Código (direita) + Propriedades (abaixo) + Inserir → Módulo.\n• Sub-rotina: bloco de código com nome entre Sub e End Sub.\n• MsgBox: exibe uma caixa de mensagem — o "Hello World" do VBA, executado com F5.\n\n🔒 REGRA DE OURO:\nCom a aba Desenvolvedor, a gravação de macros e o Editor VBA (VBE), você montou a base da automação do Excel. Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços de repetição.`
         }
       ]
     },
@@ -832,7 +1305,11 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
         2: "Aula 02: Operações Básicas & Fórmulas Simples",
         3: "Aula 03: Funções de Cálculo — SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT.VALORES, CONT.NÚM",
         4: "Aula 04: Funções Lógicas Avançadas — SE, E, OU, NÃO, SE Aninhado e Formatação Condicional",
-        5: "Aula 05: Funções de Pesquisa e Referência — PROCV, PROCH, ÍNDICE, CORRESP"
+        5: "Aula 05: Funções de Pesquisa e Referência — PROCV, PROCH, ÍNDICE, CORRESP",
+        6: "Aula 06: Datas e Horas no Excel — HOJE, AGORA, DATA, DIA, MÊS, ANO, DIAS360, DIAS.ÚTEIS",
+        7: "Aula 07: Contas Pessoais & Tabela Dinâmica — Planilha Base, Campos, Filtros e Estrutura de Tópicos",
+        8: "Aula 08: Controle de Estoque com a Função SOMASE — Tabelas, Validação de Dados, Fórmulas, Totais e Tabela Dinâmica",
+        9: "Aula 09: Macros & Introdução ao VBA — Aventura Capiberica: Aprendendo Lógica de Programação no Excel"
       }
     };
 
@@ -1113,6 +1590,54 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
             justify-content: space-between;
             align-items: center;
           }
+          /* ═══ Ilustrações HTML embutidas no PDF (mini-planilhas, mapas mentais e diagramas) ═══ */
+          .pdf-html-illustration {
+            margin: 16px 0;
+            page-break-inside: avoid;
+          }
+          .mini-sheet {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            font-size: 12px;
+            background: #FFFFFF;
+          }
+          .mini-sheet th {
+            background: #E2E8F0;
+            color: #475569;
+            border: 1px solid #CBD5E1;
+            padding: 6px;
+            text-align: center;
+          }
+          .mini-sheet td {
+            border: 1px solid #E2E8F0;
+            padding: 6px 9px;
+          }
+          .fun-highlight {
+            background: #F0FDF4;
+            border: 1.5px solid #86EFAC;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 14px 0;
+            page-break-inside: avoid;
+          }
+          .es-sheet-box {
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #FFFFFF;
+            margin: 12px 0;
+            page-break-inside: avoid;
+          }
+          .es-sheet-titlebar {
+            background: #217346;
+            color: #FFFFFF;
+            font-weight: 700;
+            padding: 9px 14px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            text-align: left;
+          }
           @media print {
             .btn-print { display: none !important; }
             body { padding: 0; }
@@ -1138,6 +1663,7 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
           <div class="section-block">
             <h3>${sec.heading}</h3>
             ${sec.content ? `<p style="font-size:14px; color:#20130B; margin-bottom:14px;">${sec.content}</p>` : ''}
+            ${sec.html ? `<div class="pdf-html-illustration">${sec.html}</div>` : ''}
             
             ${sec.steps && sec.steps.length ? `
               <div class="steps-container">
