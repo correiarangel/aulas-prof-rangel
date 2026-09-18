@@ -43,6 +43,21 @@
       display: inline-block;
     }
 
+    /* ===== BARRA DE NAVEGAÇÃO ENTRE QUESTÕES (Voltar / Progresso Salvo / Próxima) ===== */
+    .exam-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .exam-nav-row .exam-autosave {
+      font-size: 13px;
+      color: var(--ink-soft);
+      font-family: 'JetBrains Mono', monospace;
+      white-space: nowrap;
+    }
+
     /* ===== MOBILE: miniatura do certificado + redução de cards encadeados ===== */
     .cert-thumb-wrap { position: relative; width: 100%; }
     .btn-cert-toggle { display: none; align-items: center; gap: 6px; }
@@ -87,6 +102,22 @@
     }
 
     @media (max-width: 640px) {
+      .exam-nav-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .exam-nav-row .btn {
+        width: 100%;
+        text-align: center;
+      }
+      .exam-nav-row .exam-autosave {
+        text-align: center;
+        padding: 4px 0;
+        white-space: normal;
+        order: 2;
+      }
+      .exam-nav-row .btn-primary { order: 0; }
+      .exam-nav-row .btn-ghost { order: 1; }
       .certificate-landscape { padding: 18px 14px !important; }
       .certificate-landscape h2 { font-size: 17px !important; letter-spacing: 0.5px !important; margin: 10px 0 4px 0 !important; }
       .certificate-landscape h3 { font-size: 20px !important; }
@@ -286,9 +317,9 @@
           <div class="options-stack" id="q-options-container"></div>
         </div>
 
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:24px;">
-          <button type="button" class="btn btn-ghost" id="btn-prev-q" style="background:#FFF9F2;">← Anterior</button>
-          <span style="font-size:13px; color:var(--ink-soft); font-family:'JetBrains Mono';" id="autosave-label">✓ Progresso Salvo</span>
+        <div class="exam-nav-row">
+          <button type="button" class="btn btn-ghost" id="btn-prev-q" style="background:#FFF9F2;">← Voltar / Anterior</button>
+          <span class="exam-autosave" id="autosave-label">✓ Progresso Salvo</span>
           <button type="button" class="btn btn-primary" id="btn-next-q" disabled>Próxima Questão →</button>
         </div>
       </div>
