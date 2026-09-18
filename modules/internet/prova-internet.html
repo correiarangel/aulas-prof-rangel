@@ -88,16 +88,23 @@
 
       /* desfazer "card dentro de card dentro de card" SEM perder contraste:
          o question-card-item precisa manter fundo claro (texto preto legível),
-         pois o menu-hub-card atrás dele é marrom escuro */
-      .menu-hub-card { padding: 20px 14px; }
+         pois o menu-hub-card atrás dele é marrom escuro.
+         Em mobile o card branco do quiz + respostas ocupa a largura máxima
+         possível (apenas ~4px de margem de cada lado, sem "efeito linguiça") */
+      .quiz-container {
+        max-width: 100%;
+        margin: 12px 4px;
+        padding: 0;
+      }
+      .menu-hub-card { padding: 16px 4px; }
       .menu-hub-card .question-card-item {
         background: var(--paper-beige) !important;
         border: 1.5px solid var(--line-light) !important;
         box-shadow: none !important;
-        padding: 18px !important;
+        padding: 16px 12px !important;
         margin-bottom: 16px !important;
       }
-      .option-btn-card { font-size: 16px; padding: 14px; }
+      .option-btn-card { font-size: 16px; padding: 14px 10px; }
       .pdf-lesson-box { padding: 14px; }
     }
 
