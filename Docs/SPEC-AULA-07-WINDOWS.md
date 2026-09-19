@@ -24,9 +24,8 @@ A **Aula 7 do Módulo Windows — "Segurança e Antivírus"** é um módulo de a
 | :--- | :--- | :--- | :--- |
 | **Módulo 1 / Aula 07** | Segurança e Antivírus no Windows | `wr0726` | 🔒 Oculta (Acesso Restrito) |
 | **Módulo 1 / Complemento 7A** | Backup Automático com Arquivo .BAT | `wr0726` | 🔒 Oculta (Acesso Restrito) |
-| **Módulo 1 / Complemento 7B** | Tutorial: Como Criar Pendrive/DVD de Instalação | `wr0726` | 🔒 Oculta (Acesso Restrito) |
 
-> A mesma senha `wr0726` libera a Aula 7 e os dois complementos vinculados (7A e 7B). A Aula 8 continua com `wr0926`, e as senhas de teste `a001/b002/c003/d004/h008/wr2026` também desbloqueiam a Aula 7 e complementos no ambiente de desenvolvimento.
+> A mesma senha `wr0726` libera a Aula 7 e o complemento vinculado (7A). A Aula 8 continua com `wr0926`, e as senhas de teste `a001/b002/c003/d004/h008/wr2026` também desbloqueiam a Aula 7 e complementos no ambiente de desenvolvimento.
 
 ---
 

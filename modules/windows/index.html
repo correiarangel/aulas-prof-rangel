@@ -288,16 +288,6 @@
             <span style="font-size:24px;" id="badge-lesson-71">🔒</span>
           </div>
 
-          <!-- COMPLEMENTO 7B — TUTORIAL DE CRIAÇÃO DE MÍDIA -->
-          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(82, 'Complemento 7B — Tutorial: Criar Mídia de Instalação do Windows')">
-            <div style="display:flex; flex-direction:column;">
-              <span class="lesson-num">COMPLEMENTO 7B</span>
-              <span class="lesson-name">Tutorial: Criar Pendrive/DVD de Instalação</span>
-              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Atividade Complementar (Senha em Aula)</span>
-            </div>
-            <span style="font-size:24px;" id="badge-lesson-82">🔒</span>
-          </div>
-
           <!-- AULA 8 — LIBERADA E COMPLETA -->
           <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(8, 'Diagnóstico de Memória, Restauração e Mídia USB')">
             <div style="display:flex; flex-direction:column;">
@@ -306,6 +296,16 @@
               <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha em Aula)</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-8">🔒</span>
+          </div>
+
+          <!-- COMPLEMENTO 8A — TUTORIAL DE CRIAÇÃO DE MÍDIA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(81, 'Complemento 8A — Tutorial: Criar Mídia de Instalação do Windows')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">COMPLEMENTO 8A</span>
+              <span class="lesson-name">Tutorial: Criar Pendrive/DVD de Instalação</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Atividade Complementar (Senha em Aula)</span>
+            </div>
+            <span style="font-size:24px;" id="badge-lesson-81">🔒</span>
           </div>
 
           <!-- AULA 9 -->
@@ -424,6 +424,16 @@
         <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
           <strong>Guia Prático "Mão na Massa":</strong> Execute cada passo diretamente no seu computador e marque as caixas de confirmação para acompanhar seu progresso!
         </p>
+
+        <!-- ATALHO DO COMPLEMENTO 8A (TUTORIAL DE MÍDIA DE INSTALAÇÃO) -->
+        <div style="display:flex; flex-direction:column; gap:12px; background:var(--paper-white); border:1.5px solid var(--line-light); border-radius:14px; padding:16px 18px; margin:6px 0 22px 0;">
+          <span class="eyebrow-badge" style="margin:0; background:#E7F0F5; color:var(--teal-deep); border:none;"><span class="dot"></span> 📌 Atividade Complementar desta Aula</span>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+            <button type="button" class="btn btn-ghost no-print" onclick="promptLessonPassword(81, 'Complemento 8A — Tutorial: Como Criar Pendrive/DVD de Instalação do Windows')" style="justify-content:flex-start; text-align:left; font-size:14.5px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+              🔒 Complemento 8A — Tutorial: Criar Mídia de Instalação do Windows
+            </button>
+          </div>
+        </div>
 
         <!-- ÍNDICE DE TÓPICOS DA AULA 8 -->
         <nav class="topic-tabs-bar no-print">
@@ -1001,9 +1011,6 @@
           <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
             <button type="button" class="btn btn-ghost no-print" onclick="promptLessonPassword(71, 'Complemento 7A — Backup Automático com Arquivo .BAT')" style="justify-content:flex-start; text-align:left; font-size:14.5px; background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
               🔒 Complemento 7A — Backup Automático com Arquivo .BAT
-            </button>
-            <button type="button" class="btn btn-ghost no-print" onclick="promptLessonPassword(82, 'Complemento 7B — Tutorial: Como Criar Pendrive/DVD de Instalação do Windows')" style="justify-content:flex-start; text-align:left; font-size:14.5px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
-              🔒 Complemento 7B — Tutorial: Criar Mídia de Instalação do Windows
             </button>
           </div>
         </div>
@@ -1833,42 +1840,42 @@
     </section>
 
     <!-- ===================================================================
-         TELA 6: COMPLEMENTO 7B — TUTORIAL DE CRIAÇÃO DE MÍDIA DE INSTALAÇÃO
+         TELA 6: COMPLEMENTO 8A — TUTORIAL DE CRIAÇÃO DE MÍDIA DE INSTALAÇÃO
          =================================================================== -->
-    <section id="screen-lesson-82" class="screen-view">
+    <section id="screen-lesson-81" class="screen-view">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
-        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-lesson-7')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
-          ← Voltar para a Aula 7
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-lesson-8')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar para a Aula 8
         </button>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
             🖨️ Imprimir Aula Completa (HTML Origem)
           </button>
-          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 72)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 81)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
             📑 Baixar Apostila PDF
           </button>
         </div>
       </div>
 
-      <!-- PAINEL GAMIFICADO DE PROGRESSO DO COMPLEMENTO 7B -->
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DO COMPLEMENTO 8A -->
       <div class="gamify-header-bar no-print">
         <div class="gamify-progress-container">
           <div class="gamify-progress-label">
-            <span>Progresso da Leitura & Prática (Complemento 7B)</span>
-            <span id="gamify-percent-72">0% Concluído</span>
+            <span>Progresso da Leitura & Prática (Complemento 8A)</span>
+            <span id="gamify-percent-81">0% Concluído</span>
           </div>
           <div class="gamify-progress-track">
-            <div class="gamify-progress-fill" id="gamify-bar-72"></div>
+            <div class="gamify-progress-fill" id="gamify-bar-81"></div>
           </div>
         </div>
-        <div id="gamify-badge-box-72">
+        <div id="gamify-badge-box-81">
           <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
         </div>
       </div>
 
       <article class="lesson-reading-card">
-        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Complemento 7B</span>
-        <h1 style="font-size:30px; color:var(--teal-deep); margin-bottom:8px;">Complemento 7B: Tutorial de Criação de Mídia de Instalação</h1>
+        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Complemento 8A</span>
+        <h1 style="font-size:30px; color:var(--teal-deep); margin-bottom:8px;">Complemento 8A: Tutorial de Criação de Mídia de Instalação</h1>
         <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
           <strong>Guia Prático "Mão na Massa":</strong> Aprenda a criar seu próprio <strong>pendrive de instalação do Windows</strong> com a ferramenta oficial da Microsoft (Media Creation Tool). Curso online + Instalação + Formatação.
         </p>
@@ -1899,21 +1906,21 @@
           </p>
         </div>
 
-        <!-- ÍNDICE DE TÓPICOS DO COMPLEMENTO 7B -->
+        <!-- ÍNDICE DE TÓPICOS DO COMPLEMENTO 8A -->
         <nav class="topic-tabs-bar no-print">
-          <button type="button" class="topic-tab-btn active" id="tab-btn-72-1" onclick="switchTopicPhase(82, 1)">1. Intro</button>
-          <button type="button" class="topic-tab-btn" id="tab-btn-72-2" onclick="switchTopicPhase(82, 2)">2. Baixando</button>
-          <button type="button" class="topic-tab-btn" id="tab-btn-72-3" onclick="switchTopicPhase(82, 3)">3. Assistente</button>
-          <button type="button" class="topic-tab-btn" id="tab-btn-72-4" onclick="switchTopicPhase(82, 4)">4. Idioma/Edição</button>
-          <button type="button" class="topic-tab-btn" id="tab-btn-72-5" onclick="switchTopicPhase(82, 5)">5. USB vs ISO</button>
-          <button type="button" class="topic-tab-btn" id="tab-btn-72-6" onclick="switchTopicPhase(82, 6)">6. Erro FAT32</button>
-          <button type="button" class="topic-tab-btn" id="tab-btn-72-fix" onclick="openFixationPanel(72)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+          <button type="button" class="topic-tab-btn active" id="tab-btn-81-1" onclick="switchTopicPhase(81, 1)">1. Intro</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-81-2" onclick="switchTopicPhase(81, 2)">2. Baixando</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-81-3" onclick="switchTopicPhase(81, 3)">3. Assistente</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-81-4" onclick="switchTopicPhase(81, 4)">4. Idioma/Edição</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-81-5" onclick="switchTopicPhase(81, 5)">5. USB vs ISO</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-81-6" onclick="switchTopicPhase(81, 6)">6. Erro FAT32</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-81-fix" onclick="openFixationPanel(81)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
         </nav>
 
         <!-- ===============================================================
-             TÓPICO 1 DO COMPLEMENTO 7B: INTRODUÇÃO E MATERIAL
+             TÓPICO 1 DO COMPLEMENTO 8A: INTRODUÇÃO E MATERIAL
              =============================================================== -->
-        <section id="l72-phase-1" class="topic-phase-section active">
+        <section id="l81-phase-1" class="topic-phase-section active">
           <h2>1. Introdução a este tutorial</h2>
           <p>
             Para instalar o Windows em um computador é preciso de uma <strong>mídia de instalação</strong> — normalmente um <strong>pendrive</strong> que contenha os arquivos de instalação do sistema. A ferramenta oficial e gratuita da Microsoft que cria essa mídia é a <strong>Media Creation Tool</strong>.
@@ -1931,35 +1938,35 @@
             </ul>
           </div>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image1.png" alt="Início do tutorial de mídia" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image1.png" alt="Início do tutorial de mídia" class="img-showcase" style="max-width:460px;">
           <p class="img-caption">Tela de introdução do tutorial: o material necessário aparece na guia superior.</p>
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que entendi o que é a Media Creation Tool e que tenho um pendrive de 8 GB.</span>
-            <button type="button" class="read-check-btn" id="check-read-82-1" onclick="markTopicRead(82, 1)">
+            <button type="button" class="read-check-btn" id="check-read-81-1" onclick="markTopicRead(81, 1)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
 
           <div class="phase-nav-row no-print">
             <span></span>
-            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(82, 2)">Ir para 2. Baixando a Ferramenta →</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(81, 2)">Ir para 2. Baixando a Ferramenta →</button>
           </div>
         </section>
 
         <!-- ===============================================================
-             TÓPICO 2 DO COMPLEMENTO 7B: BAIXANDO A FERRAMENTA
+             TÓPICO 2 DO COMPLEMENTO 8A: BAIXANDO A FERRAMENTA
              =============================================================== -->
-        <section id="l72-phase-2" class="topic-phase-section">
+        <section id="l81-phase-2" class="topic-phase-section">
           <h2>2. Baixando a Media Creation Tool</h2>
           <p>
             A ferramenta é baixada do site oficial da Microsoft. Lembre-se: baixe <strong>somente do site oficial</strong> (<code>microsoft.com</code>) para evitar versões falsas que podem conter vírus.
           </p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image1.png" alt="Localizando o link da ferramenta no site da Microsoft" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image1.png" alt="Localizando o link da ferramenta no site da Microsoft" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Na página de download do Windows, localize o item "Ferramenta de Criação de Mídia" e clique em <strong>Baixar agora</strong>.</p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image3.png" alt="Ferramenta selecionada para download" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image3.png" alt="Ferramenta selecionada para download" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Arquivo <code>MediaCreationTool_22H2.exe</code> selecionado — clique em <strong>Salvar</strong>.</p>
 
           <div class="step-box-practical">
@@ -1967,38 +1974,38 @@
             <p style="margin-top:6px;">Se o navegador perguntar sobre o arquivo, escolha <strong>Salvar</strong>. Após o download, você pode clicar duas vezes no arquivo baixado (na pasta Download) para iniciar a instalação da ferramenta.</p>
           </div>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image2.png" alt="Arquivo do Media Creation Tool salvo na pasta Download" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image2.png" alt="Arquivo do Media Creation Tool salvo na pasta Download" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[3]</strong> O arquivo aparece na pasta Download aguardando execução.</p>
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que baixei o arquivo MediaCreationTool do site oficial da Microsoft.</span>
-            <button type="button" class="read-check-btn" id="check-read-82-2" onclick="markTopicRead(82, 2)">
+            <button type="button" class="read-check-btn" id="check-read-81-2" onclick="markTopicRead(81, 2)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
 
           <div class="phase-nav-row no-print">
-            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(82, 1)">← Voltar</button>
-            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(82, 3)">Ir para 3. Executando o Assistente →</button>
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(81, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(81, 3)">Ir para 3. Executando o Assistente →</button>
           </div>
         </section>
 
         <!-- ===============================================================
-             TÓPICO 3 DO COMPLEMENTO 7B: EXECUTANDO O ASSISTENTE
+             TÓPICO 3 DO COMPLEMENTO 8A: EXECUTANDO O ASSISTENTE
              =============================================================== -->
-        <section id="l72-phase-3" class="topic-phase-section">
+        <section id="l81-phase-3" class="topic-phase-section">
           <h2>3. Executando o Assistente de Instalação</h2>
           <p>
             Ao abrir a ferramenta, um <strong>assistente</strong> se inicia. A primeira tela apenas informa sobre o que está sendo aplicado (avisos legais de licença). O aluno deve clicar em <strong>Aceitar</strong> para continuar.
           </p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image5.png" alt="Assistente da Media Creation Tool iniciado" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image5.png" alt="Assistente da Media Creation Tool iniciado" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Aplicando alterações: clique em <strong>Aceitar</strong> para continuar.</p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image4.png" alt="Preparando tudo da ferramenta de criação de mídia" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image4.png" alt="Preparando tudo da ferramenta de criação de mídia" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> A tela mostra "Preparando tudo" — aguarde a próxima etapa.</p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image7.png" alt="Avisos e termos de licença da Microsoft" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image7.png" alt="Avisos e termos de licença da Microsoft" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Leia os avisos de licença e clique em <strong>Aceitar</strong>.</p>
 
           <div style="background:var(--paper-white); border:1.5px dashed var(--teal); border-radius:12px; padding:14px 16px; margin:14px 0;" class="step-box-practical">
@@ -2006,38 +2013,38 @@
             <p style="margin-top:6px;">Marque a opção <strong>"Criar mídia de instalação (pendrive USB, DVD ou arquivo ISO) para outro computador"</strong> e clique em <strong>Avançar</strong>.</p>
           </div>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image6.png" alt="Opção criar mídia de instalação selecionada" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image6.png" alt="Opção criar mídia de instalação selecionada" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Opção "Criar mídia de instalação..." selecionada → clique em <strong>Avançar</strong>.</p>
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que executei o assistente, aceitei os termos e escolhi a opção de criar mídia de instalação.</span>
-            <button type="button" class="read-check-btn" id="check-read-82-3" onclick="markTopicRead(82, 3)">
+            <button type="button" class="read-check-btn" id="check-read-81-3" onclick="markTopicRead(81, 3)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
 
           <div class="phase-nav-row no-print">
-            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(82, 2)">← Voltar</button>
-            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(82, 4)">Ir para 4. Idioma, Edição e Arquitetura →</button>
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(81, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(81, 4)">Ir para 4. Idioma, Edição e Arquitetura →</button>
           </div>
         </section>
 
         <!-- ===============================================================
-             TÓPICO 4 DO COMPLEMENTO 7B: IDIOMA, EDIÇÃO E ARQUITETURA
+             TÓPICO 4 DO COMPLEMENTO 8A: IDIOMA, EDIÇÃO E ARQUITETURA
              =============================================================== -->
-        <section id="l72-phase-4" class="topic-phase-section">
+        <section id="l81-phase-4" class="topic-phase-section">
           <h2>4. Escolhendo Idioma, Edição e Arquitetura</h2>
           <p>
             O assistente pergunta sobre <strong>idioma</strong> (Português Brasileiro) e <strong>edição e arquitetura</strong> (o "formato" do Windows a ser baixado). O padrão marcado (<strong>"Usar as opções recomendadas para este computador"</strong>) é quase sempre o correto.
           </p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image9.png" alt="Seleção de idioma e edição" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image9.png" alt="Seleção de idioma e edição" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Clique em <strong>Usar as opções recomendadas</strong> para este computador.</p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image8.png" alt="Idioma Português Brasil selecionado" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image8.png" alt="Idioma Português Brasil selecionado" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Idioma <strong>Português Brasil</strong> selecionado automaticamente → clique em <strong>Avançar</strong>.</p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image12.png" alt="Detalhes da instalação confirmados" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image12.png" alt="Detalhes da instalação confirmados" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Confira os detalhes da instalação (idioma, edição, arquitetura) e clique em <strong>Avançar</strong>.</p>
 
           <div style="background:var(--amber-soft); padding:16px; border-radius:12px; margin:18px 0; border:1px solid var(--line);">
@@ -2047,21 +2054,21 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que selecionei as opções recomendadas (idioma, edição e arquitetura) no assistente.</span>
-            <button type="button" class="read-check-btn" id="check-read-82-4" onclick="markTopicRead(82, 4)">
+            <button type="button" class="read-check-btn" id="check-read-81-4" onclick="markTopicRead(81, 4)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
 
           <div class="phase-nav-row no-print">
-            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(82, 3)">← Voltar</button>
-            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(82, 5)">Ir para 5. USB vs ISO →</button>
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(81, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(81, 5)">Ir para 5. USB vs ISO →</button>
           </div>
         </section>
 
         <!-- ===============================================================
-             TÓPICO 5 DO COMPLEMENTO 7B: USB VS ARQUIVO ISO
+             TÓPICO 5 DO COMPLEMENTO 8A: USB VS ARQUIVO ISO
              =============================================================== -->
-        <section id="l72-phase-5" class="topic-phase-section">
+        <section id="l81-phase-5" class="topic-phase-section">
           <h2>5. Pendrive USB ou Arquivo ISO?</h2>
           <p>
             Chegou a hora da escolha mais importante: <strong>como a mídia será criada</strong>. Existem duas opções:
@@ -2071,42 +2078,42 @@
             <li><strong>Arquivo ISO</strong> — baixa um arquivo de imagem que pode ser gravado em DVD ou montado como se fosse um CD; útil para guardar ou instalar sem pendrive.</li>
           </ul>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image10.png" alt="Opção pendrive USB selecionada" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image10.png" alt="Opção pendrive USB selecionada" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Opção <strong>Pendrive USB</strong> selecionada (recomendada) → clique em <strong>Avançar</strong>.</p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image11.png" alt="Escolha da unidade de pen drive" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image11.png" alt="Escolha da unidade de pen drive" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Selecione a <strong>unidade do pendrive</strong> e clique em <strong>Avançar</strong>.</p>
 
           <div style="background:var(--paper-white); border:1.5px dashed var(--teal); border-radius:12px; padding:14px 16px; margin:14px 0;">
             <strong style="color:var(--teal-deep);">⚠️ Aviso importante:</strong> tudo o que estiver no pendrive será <strong>apagado</strong> durante a gravação. Use um pendrive reserva.
           </div>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image13.png" alt="Aguarde enquanto o pendrive é preparado" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image13.png" alt="Aguarde enquanto o pendrive é preparado" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[2]</strong> "Aguarde enquanto o pendrive está sendo preparado" — o download e a gravação podem levar vários minutos.</p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image14.png" alt="Progresso do download do Windows" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image14.png" alt="Progresso do download do Windows" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> Barra de progresso do download do Windows para o pendrive.</p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image15.png" alt="Ferramenta concluída com sucesso" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image15.png" alt="Ferramenta concluída com sucesso" class="img-showcase" style="max-width:460px;">
           <p class="img-caption"><strong>[1]</strong> <strong>Ferramenta concluída com êxito</strong> — o pendrive está pronto!</p>
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que escolhi a opção de pendrive USB e a ferramenta concluiu a gravação com êxito.</span>
-            <button type="button" class="read-check-btn" id="check-read-82-5" onclick="markTopicRead(82, 5)">
+            <button type="button" class="read-check-btn" id="check-read-81-5" onclick="markTopicRead(81, 5)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
 
           <div class="phase-nav-row no-print">
-            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(82, 4)">← Voltar</button>
-            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(82, 6)">Ir para 6. Erro FAT32 →</button>
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(81, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(81, 6)">Ir para 6. Erro FAT32 →</button>
           </div>
         </section>
 
         <!-- ===============================================================
-             TÓPICO 6 DO COMPLEMENTO 7B: ERRO "UNIDADE COM 8 GB" / FAT32
+             TÓPICO 6 DO COMPLEMENTO 8A: ERRO "UNIDADE COM 8 GB" / FAT32
              =============================================================== -->
-        <section id="l72-phase-6" class="topic-phase-section">
+        <section id="l81-phase-6" class="topic-phase-section">
           <h2>6. Resolvendo o Erro de Formatação (FAT32)</h2>
           <p>
             Às vezes, ao tentar gravar, aparece a mensagem: <strong>"A unidade precisa ter pelo menos 8 GB"</strong>. Isso acontece porque o pendrive é pequeno (menos de 8 GB) ou está formatado em um sistema de arquivos que a ferramenta não aceita (ex.: <code>NTFS</code> <em>exFat</em>). A solução é <strong>reformatar o pendrive como FAT32</strong>.
@@ -2123,13 +2130,13 @@
             </ol>
           </div>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image16.png" alt="Erro de unidade deve ter pelo menos 8 GB" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image16.png" alt="Erro de unidade deve ter pelo menos 8 GB" class="img-showcase" style="max-width:460px;">
           <p class="img-caption">Erro "a unidade precisa ter pelo menos 8 GB" — típico de pendrive pequeno ou formato incompatível.</p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image17.png" alt="Formatar pendrive com botão direito" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image17.png" alt="Formatar pendrive com botão direito" class="img-showcase" style="max-width:460px;">
           <p class="img-caption">Clique com o botão direito na unidade do pendrive e escolha <strong>Formatar…</strong>.</p>
 
-          <img src="../../assets/img/windows/Aula7TutorialMidia/image18.png" alt="Selecionando FAT32 na janela de formatação" class="img-showcase" style="max-width:460px;">
+          <img src="../../assets/img/windows/Aula8TutorialMidia/image18.png" alt="Selecionando FAT32 na janela de formatação" class="img-showcase" style="max-width:460px;">
           <p class="img-caption">Janela de formatação: selecione o sistema de arquivos <strong>FAT32</strong> e clique em <strong>Iniciar</strong>.</p>
 
           <div style="background:var(--amber-soft); padding:16px; border-radius:12px; margin:18px 0; border:1px solid var(--line);">
@@ -2138,85 +2145,85 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que aprendi a resolver o erro de formatação formatando o pendrive como FAT32.</span>
-            <button type="button" class="read-check-btn" id="check-read-82-6" onclick="markTopicRead(82, 6)">
+            <button type="button" class="read-check-btn" id="check-read-81-6" onclick="markTopicRead(81, 6)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
 
           <div class="phase-nav-row no-print">
-            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(82, 5)">← Voltar</button>
-            <button type="button" class="btn btn-primary" onclick="openFixationPanel(72)">Iniciar Exercício de Fixação (5 Questões) 📝 →</button>
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(81, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(81)">Iniciar Exercício de Fixação (5 Questões) 📝 →</button>
           </div>
         </section>
 
         <!-- ===============================================================
-             PAINEL DO EXERCÍCIO DE FIXAÇÃO DO COMPLEMENTO 7B
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DO COMPLEMENTO 8A
              =============================================================== -->
-        <div id="fixation-panel-72" class="fixation-panel">
+        <div id="fixation-panel-81" class="fixation-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
             <div>
               <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
-              <h2 style="color:var(--amber); margin-top:4px; font-size:24px;">Exercício de Fixação — Complemento 7B</h2>
+              <h2 style="color:var(--amber); margin-top:4px; font-size:24px;">Exercício de Fixação — Complemento 8A</h2>
             </div>
             <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
           </div>
 
           <div class="quiz-app-container">
-            <div id="quiz-trail-72" class="trail"></div>
+            <div id="quiz-trail-81" class="trail"></div>
             <div class="card-quiz">
               <div class="q-meta">
-                <span id="q-count-72">QUESTÃO 1 / 5</span>
-                <span id="q-points-72">VALE 2,0 PONTOS</span>
+                <span id="q-count-81">QUESTÃO 1 / 5</span>
+                <span id="q-points-81">VALE 2,0 PONTOS</span>
               </div>
-              <div class="q-text" id="q-text-72"></div>
+              <div class="q-text" id="q-text-81"></div>
 
-              <button class="hint-toggle" id="btn-hint-72" type="button">💡 Ver dica do professor</button>
-              <div class="hint-box" id="hint-box-72"></div>
+              <button class="hint-toggle" id="btn-hint-81" type="button">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-81"></div>
 
-              <div class="options" id="options-72"></div>
+              <div class="options" id="options-81"></div>
 
               <div class="nav-row">
-                <button class="btn btn-ghost" id="btn-prev-72" type="button">← Anterior</button>
+                <button class="btn btn-ghost" id="btn-prev-81" type="button">← Anterior</button>
                 <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';">✓ Salvo automaticamente</span>
-                <button class="btn btn-primary" id="btn-next-72" type="button" disabled>Próxima →</button>
+                <button class="btn btn-primary" id="btn-next-81" type="button" disabled>Próxima →</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- PAINEL DE RESULTADO E ASSINATURA SHA-256 DO COMPLEMENTO 7B -->
-        <div id="result-panel-72" class="fixation-panel">
+        <!-- PAINEL DE RESULTADO E ASSINATURA SHA-256 DO COMPLEMENTO 8A -->
+        <div id="result-panel-81" class="fixation-panel">
           <div class="card-quiz">
-            <div class="result-badge" id="result-badge-72"></div>
-            <h1 id="result-title-72"></h1>
-            <p style="color:var(--ink-soft);" id="result-sub-72"></p>
+            <div class="result-badge" id="result-badge-81"></div>
+            <h1 id="result-title-81"></h1>
+            <p style="color:var(--ink-soft);" id="result-sub-81"></p>
             <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">
-              Nota Final: <b id="result-score-72" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0
+              Nota Final: <b id="result-score-81" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0
             </div>
 
-            <div class="signature-badge-box" id="signature-box-72">
+            <div class="signature-badge-box" id="signature-box-81">
               <div class="signature-badge-header">
                 <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
               </div>
-              <div class="signature-code-display" id="signature-code-72">WR-AUTH-CALCULATING...</div>
+              <div class="signature-code-display" id="signature-code-81">WR-AUTH-CALCULATING...</div>
               <div class="signature-badge-desc">
                 Código de autenticidade criptográfico (SHA-256) gerado automaticamente para o aluno. Evita adulterações no comprovante ou na nota.
               </div>
             </div>
 
-            <div class="breakdown" id="breakdown-72"></div>
+            <div class="breakdown" id="breakdown-81"></div>
 
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <button class="btn btn-primary" id="btn-download-txt-72" type="button">Baixar Comprovante (.txt)</button>
-              <button class="btn btn-primary" id="btn-download-pdf-72" type="button" style="background:var(--amber);">📑 Baixar Apostila PDF</button>
-              <button class="btn btn-whatsapp" id="btn-whatsapp-72" type="button">Enviar WhatsApp</button>
-              <button class="btn btn-ghost" id="btn-email-72" type="button">Enviar por E-mail</button>
+              <button class="btn btn-primary" id="btn-download-txt-81" type="button">Baixar Comprovante (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-81" type="button" style="background:var(--amber);">📑 Baixar Apostila PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-81" type="button">Enviar WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-email-81" type="button">Enviar por E-mail</button>
             </div>
 
-            <div class="email-panel" id="email-panel-72">
+            <div class="email-panel" id="email-panel-81">
               <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
-              <input type="email" id="input-email-72" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
-              <button class="btn btn-amber" id="btn-open-gmail-72" type="button">Baixar e Abrir E-mail →</button>
+              <input type="email" id="input-email-81" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
+              <button class="btn btn-amber" id="btn-open-gmail-81" type="button">Baixar e Abrir E-mail →</button>
             </div>
           </div>
         </div>
@@ -2419,8 +2426,8 @@
       }
     ];
 
-    // QUESTÕES DO QUIZ DE FIXAÇÃO DO COMPLEMENTO 7B (5 QUESTÕES)
-    const QUESTIONS_LESSON_72 = [
+    // QUESTÕES DO QUIZ DE FIXAÇÃO DO COMPLEMENTO 8A (5 QUESTÕES)
+    const QUESTIONS_LESSON_81 = [
       {
         q: "Qual é a ferramenta OFICIAL da Microsoft para criar mídia de instalação do Windows?",
         options: [
@@ -2567,8 +2574,8 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      // Aulas liberadas: 7 (com complementos 71/72) e 8. Demais estão em construção!
-      const OPEN_LESSONS = [7, 8, 71, 72];
+      // Aulas liberadas: 7 (com complemento 71) e 8 (com complemento 81). Demais estão em construção!
+      const OPEN_LESSONS = [7, 8, 71, 81];
       if(!OPEN_LESSONS.includes(lessonNum)){
         alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, apenas a Aula 07 e a Aula 08 estão disponíveis no portal.`);
         return;
@@ -2591,13 +2598,13 @@
     document.getElementById("btn-confirm-unlock").onclick = function(){
       const typed = document.getElementById("modal-pass-field").value.trim().toLowerCase();
 
-      // Aceita wr0926 (Aula 8) / wr0726 (Aula 7 e complementos) ou senhas de teste a001/b002/c003/d004/h008/wr2026
+      // Aceita wr0926 (Aula 8 e Complemento 8A) / wr0726 (Aula 7 e Complemento 7A) ou senhas de teste a001/b002/c003/d004/h008/wr2026
       if(typed === PASSWORD_WR || typed === PASSWORD_A7 || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "h008" || typed === "wr2026"){
         closePasswordModal();
         const routes = {
           7:  "screen-lesson-7",
           71: "screen-lesson-71",
-          72: "screen-lesson-82",
+          81: "screen-lesson-81",
           8:  "screen-lesson-8",
           12: "screen-quiz"
         };
@@ -2635,9 +2642,9 @@
       if(activePhase) activePhase.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    // MARCAR LEITURA / GAMIFICAÇÃO (AULA 7, 8, COMPLEMENTOS 71 e 72)
-    const TOTAL_TOPICS = { 7: 7, 8: 5, 71: 4, 72: 6 };
-    const SEQUENTIAL_LESSONS = { 7: true, 71: true, 72: true };
+    // MARCAR LEITURA / GAMIFICAÇÃO (AULA 7, 8, COMPLEMENTOS 71 e 81)
+    const TOTAL_TOPICS = { 7: 7, 8: 5, 71: 4, 81: 6 };
+    const SEQUENTIAL_LESSONS = { 7: true, 71: true, 81: true };
     let readTopics = {};
     function getReadSet(lessonNum){
       if(!readTopics[lessonNum]) readTopics[lessonNum] = new Set();
@@ -2674,7 +2681,7 @@
 
     // Inicialização da trava sequencial: desabilita todos os checks exceto o primeiro
     (function initSequentialGating(){
-      [7, 71, 72].forEach(function(lessonNum){
+[7, 71, 81].forEach(function(lessonNum){
         const total = TOTAL_TOPICS[lessonNum] || 0;
         for(let i = 1; i <= total; i++){
           const btn = document.getElementById(`check-read-${lessonNum}-${i}`);
@@ -2683,7 +2690,7 @@
       });
     })();
 
-    // ABRIR EXERCÍCIO DE FIXAÇÃO (AULA 7, 8, COMPLEMENTOS 71 e 72)
+    // ABRIR EXERCÍCIO DE FIXAÇÃO (AULA 7, 8, COMPLEMENTOS 71 e 81)
     window.openFixationPanel = function(lessonNum) {
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-phase-section`).forEach(s => s.classList.remove("active"));
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
@@ -2849,12 +2856,12 @@
     };
 
     // ===================================================================
-    // MOTOR GENÉRICO DE QUIZ DE FIXAÇÃO (AULA 7 E COMPLEMENTOS 71/72)
+    // MOTOR GENÉRICO DE QUIZ DE FIXAÇÃO (AULA 7 E COMPLEMENTOS 71/81)
     // ===================================================================
     const QUIZ_CFG = {
       7:  { questions: QUESTIONS_LESSON_7,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-7",  title: "Módulo 1 — Aula 7: Segurança e Antivírus no Windows",                          sig: "Módulo 1 - Aula 7 (Windows)" },
       71: { questions: QUESTIONS_LESSON_71, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-71", title: "Módulo 1 — Complemento 7A: Backup Automático com Arquivo .BAT",                  sig: "Módulo 1 - Complemento 7A (Windows)" },
-      72: { questions: QUESTIONS_LESSON_72, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-72", title: "Módulo 1 — Complemento 7B: Tutorial de Criação de Mídia de Instalação",        sig: "Módulo 1 - Complemento 7B (Windows)" }
+      81: { questions: QUESTIONS_LESSON_81, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-81", title: "Módulo 1 — Complemento 8A: Tutorial de Criação de Mídia de Instalação",        sig: "Módulo 1 - Complemento 8A (Windows)" }
     };
 
     function renderTrailGen(lessonNum) {
@@ -2972,8 +2979,8 @@
       };
     }
 
-    // EVENTOS DOS QUIZZES DA AULA 7 E COMPLEMENTOS (7, 71, 72)
-    [7, 71, 72].forEach(function(lessonNum){
+    // EVENTOS DOS QUIZZES DA AULA 7 E COMPLEMENTOS (7, 71, 81)
+    [7, 71, 81].forEach(function(lessonNum){
       document.getElementById(`btn-hint-${lessonNum}`).onclick = () => {
         document.getElementById(`hint-box-${lessonNum}`).classList.toggle("show");
       };

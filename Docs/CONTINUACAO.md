@@ -3,26 +3,26 @@
 > Proposito: registrar fielmente onde paramos para que qualquer sessão futura continue sem perder contexto.
 > Este arquivo deve ser **atualizado ao fim de cada sessão** com: concluído, pendente, localizadores e validações.
 
-## ✅ SESSÃO ATUAL — COMEÇAR AQUI (resumo de hoje, 18/09/2026)
+## ✅ SESSÃO ATUAL — COMEÇAR AQUI (resumo de hoje, 19/09/2026)
 
-Escopo de hoje: **Aula 07 do Módulo Windows (Segurança e Antivírus) + Complementos 7A (Backup .BAT) e 7B (Tutorial Mídia de Instalação)**.
+Escopo de hoje: **transferir o Complemento 7B (Tutorial de Mídia de Instalação) da Aula 7 para a Aula 8, como Complemento 8A (lesson id `81`)**, corrigindo o estado meio-migrado que deixava o gating de leitura/quiz quebrado e o card do hub como "Em Construção".
 
 **Concluído e validado hoje (não refazer):**
-1. **Telas de aula no `modules/windows/index.html`** — `screen-lesson-7` (FASE 0 tutorial 7 passos + 7 fases distribuidas `l7-phase-1..7`, checks `check-read-7-1..7` distribuídos no fim de cada fase, quiz com 5 questões), `screen-lesson-71` (FASE 0 4 passos + 4 fases + checks `check-read-71-1..4`), `screen-lesson-72` (FASE 0 6 passos + 6 fases + checks `check-read-72-1..6`), todas com `downloadLessonPDF("windows", N)` e senha `wr0726`. Sessão valida: scripts inline extraídos passam em `node --check`; `main.js` do módulo passou em `node --check` (SCRIPT_OK_FINAL); sem IDs duplicados nos 3 screens (`uniq -d` vazio).
-2. **Gating sequencial no módulo Windows**: `SEQUENTIAL_LESSONS = {7:true, 71:true, 72:true}` no `main.js` — `markTopicRead` habilita o próximo check; `TOTAL_TOPICS = {7:7, 71:4, 72:6}`; IIFE `initSequentialGating` desabilita todos os checks (exceto o 1º) no load. Aula 08 segue sem trava.
-3. **`assets/js/pdf-lessons.js`**: 
-   - `moduleLessonTitles.windows` com `{7, 71, 72, 8}` (títulos das aulas/tópicos).
-   - `LESSONS.windows.sections` ganhou entradas **Aula 7** (7 tópicos — imagens de `Aula7/imageN.png`), **Complemento 7A** (4 tópicos — `Aula7ComplementoBackup/imageN.png` + `sec.html` ilustrativo para tópicos sem imagem), **Complemento 7B** (6 tópicos — `Aula7TutorialMidia/imageN.png`), todas com `steps`/imagens reais e caixas (`boxType: "tip"/"warning"`), inseridas antes da seção "UNIDADE 1".
-   - `node path script: "node --check assets/js/pdf-lessons.js"` → PDFLESSONS_OK; tudo validado.
-4. **`Docs/`** — criados 3 specs no padrão da SPEC-AULA-08-WINDOWS:
-   - `SPEC-AULA-07-WINDOWS.md` — 7 tópicos, mapeamento de 28 imagens, quiz 5×2,0 = 10,0 com senha `wr0726`.
-   - `SPEC-COMPLEMENTO-7A-WINDOWS.md` — Backup .BAT/xcopy genérico (`xcopy`, script backup.bat), 4 tópicos + quiz 5×2,0.
-   - `SPEC-COMPLEMENTO-7B-WINDOWS.md` — Media Creation Tool / pendrive FAT32 / pendrive bootável, 6 tópicos + quiz 5×2,0.
-   - `CONTINUACAO.md` atualizado (este arquivo).
+1. **`modules/windows/index.html` — migração 7B→8A** (id `81`, tela `screen-lesson-81`):
+   - Hub: card do complemento reorganizado logo após a Aula 8, com `promptLessonPassword(81, 'Complemento 8A — Tutorial: Criar Mídia de Instalação do Windows')` e `badge-lesson-81`.
+   - Aula 7: removido o atalho "Complemento 7B" da caixa de atividades complementares (ficou só o 7A).
+   - Aula 8: adicionada a caixa "📌 Atividade Complementar desta Aula" com atalho para `81` (entre o parágrafo do Guia Prático e a `<nav>` de tópicos).
+   - Complemento: `screen-lesson-81`, botão voltar → `showScreen('screen-lesson-8')` "← Voltar para a Aula 8", 6 fases `l81-phase-1..6`, 6 checks `check-read-81-1..6` distribuídos no fim de cada fase, 7 tabs `tab-btn-81-1..6` + fixação, `openFixationPanel(81)`, `markTopicRead(81, N)`, `switchTopicPhase(81, ...)`, quiz `quiz-trail-81`, painel de resultado/fixação `-81`, `downloadLessonPDF("windows", 81)`.
+   - JS (inline): `OPEN_LESSONS = [7, 8, 71, 81]`, rota `81: "screen-lesson-81"`, `TOTAL_TOPICS = {7:7, 8:5, 71:4, 81:6}`, `SEQUENTIAL_LESSONS = {7:true, 71:true, 81:true}`, loops de gating/eventos `[7, 71, 81]`, `QUESTIONS_LESSON_81`, chave `81` no `QUIZ_CFG` (`moduleId: "windows-aula-81"`, sig "Módulo 1 - Complemento 8A (Windows)"). **Senha do complemento = `wr0926`** (compartilha com a Aula 8, corrigido o comentário; `wr0726` continua só para 7/7A).
+   - Comentários de tela/quizzes renomeados (COMPLEMENTO 8A).
+2. **`assets/img/windows/`: pasta `Aula7TutorialMidia/` → `Aula8TutorialMidia/`** (`git mv`, image1..18) e todas as refs em `index.html`, `pdf-lessons.js` e specs atualizadas.
+3. **`assets/js/pdf-lessons.js`**: seções do complemento `lessonNum: 72 → 81` (6 tópicos, capítulo "COMPLEMENTO 8A: TUTORIAL DE CRIAÇÃO DE MÍDIA DE INSTALAÇÃO", headings `8A.1..6`, imagens `Aula8TutorialMidia/`); `moduleLessonTitles.windows` com `{7, 8, 71, 81}`.
+4. **`Docs/`**: `SPEC-COMPLEMENTO-7B-WINDOWS.md` → `SPEC-COMPLEMENTO-8A-WINDOWS.md` (`git mv`) com título/ SPEC-008A, senha `wr0926`, `check-read-81`, `SEQUENTIAL/TOTAL_TOPICS[81]`, `downloadLessonPDF('windows', 81)`, pasta `Aula8TutorialMidia/`. `SPEC-AULA-07-WINDOWS.md` sem a linha do 7B ("7A e 7B" → "7A"). `SPEC-AULA-08-WINDOWS.md` ganhou linha do Complemento 8A (`wr0926`).
+5. **Validações (todas OK)**: script inline extraído de `modules/windows/index.html` passa em `node --check`; `node --check assets/js/pdf-lessons.js` OK; grep confirma zero refs remanescentes a 7B/72/82/screen-lesson-82 (`wr0726` é senha legítima da 7/7A); sem IDs duplicados (`uniq -d` vazio); `check-read-81`×6, `l81-phase`×6, `tab-btn-81`×7, `switchTopicPhase(81,`×16, `markTopicRead(81,`×6, `openFixationPanel(81)`×2 conferidos.
 
 **Pendências para a próxima sessão (ordem sugerida):**
-- [ ] **Teste visual manual em navegador (mobile/desktop) da Aula 07 + 71 + 72** e conferência dos PDFs gerados (imagens reais em todas as fases), seguindo as regras do `AGENTS.md`.
-- [ ] Conferir se os estilos das novas telas (`screen-lesson-7/71/72`) usam apenas classes das `REGRAS MOBILE GLOBAIS`; caso alguma regra de padding por aula tenha sido criada, migrar para o bloco global de `style.css` (regra 3 do AGENTS).
+- [ ] **Teste visual manual em navegador (mobile/desktop)** da Aula 8 + Complemento 8A: abrir o card do hub, conferir gating sequencial (marcar `check-read-81-1..6` → liberar fixação/quiz), responder o quiz de 5 questões e gerar o PDF de `downloadLessonPDF('windows', 81)` conferindo as 6 seções com imagens reais de `Aula8TutorialMidia/`.
+- [ ] Conferir fluxo da Aula 7 (sem o atalho 7B) e o PDF de `windows`, 7` para garantir que nada dependia das seções antigas.
 - [ ] Registrar na próxima sessão o resultado do teste manual antes de iniciar qualquer nova tarefa.
 
 ---

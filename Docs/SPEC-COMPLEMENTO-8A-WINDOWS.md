@@ -1,12 +1,12 @@
-# 🏛️ SPEC-007B — Especificação Técnica e Pedagógica do Complemento 7B (Windows)
+# 🏛️ SPEC-008A — Especificação Técnica e Pedagógica do Complemento 8A (Windows)
 ### Módulo 1: Sistema Operacional Windows | Prof. Marcos Rangel — WR Capacitação Profissional
-### Complemento 7B: Tutorial — Como Criar Pendrive/DVD de Instalação do Windows
+### Complemento 8A: Tutorial — Como Criar Pendrive/DVD de Instalação do Windows
 
 ---
 
 ## 🎯 1. Visão Geral e Objetivos Pedagógicos
 
-O **Complemento 7B — "Tutorial de Criação de Mídia de Instalação"** é um guia **Prático Orientado ("Mão na Massa")** que ensina a preparar um pendrive ou DVD com os arquivos de instalação do Windows usando a **Media Creation Tool** oficial da Microsoft (mesmo procedimento explorado na Aula 8, agora em formato passo a passo didático).
+O **Complemento 8A — "Tutorial de Criação de Mídia de Instalação"** é um guia **Prático Orientado ("Mão na Massa")** que ensina a preparar um pendrive ou DVD com os arquivos de instalação do Windows usando a **Media Creation Tool** oficial da Microsoft (mesmo procedimento explorado na Aula 8, agora em formato passo a passo didático).
 
 ### Core Topics (6 Tópicos Didáticos):
 1. **Introdução e Material Necessário**: O que é uma mídia de instalação e o material exigido (pendrive ≥ 8 GB + internet).
@@ -22,15 +22,15 @@ O **Complemento 7B — "Tutorial de Criação de Mídia de Instalação"** é um
 
 | Módulo / Aula | Nome Temático | Senha Secreta de Liberação | Exibição na Interface |
 | :--- | :--- | :--- | :--- |
-| **Módulo 1 / Complemento 7B** | Tutorial: Como Criar Pendrive/DVD de Instalação do Windows | `wr0726` | 🔒 Oculta (Acesso Restrito) |
+| **Módulo 1 / Complemento 8A** | Tutorial: Como Criar Pendrive/DVD de Instalação do Windows | `wr0926` | 🔒 Oculta (Acesso Restrito) |
 
-> Compartilha a senha da Aula 7 (`wr0726`). Desbloqueio via modal portal padrão; senhas de teste `a001/b002/c003/d004/h008/wr2026` também aceitas.
+> Compartilha a senha da Aula 8 (`wr0926`). Desbloqueio via modal portal padrão; senhas de teste `a001/b002/c003/d004/h008/wr2026` também aceitas.
 
 ---
 
 ## 🖼️ 3. Mapeamento das Imagens Ilustrativas
 
-As imagens estão localizadas na pasta `assets/img/windows/Aula7TutorialMidia/`:
+As imagens estão localizadas na pasta `assets/img/windows/Aula8TutorialMidia/`:
 
 | Tópico | Nome do Arquivo | Função Pedagógica / Tela Exibida |
 | :--- | :--- | :--- |
@@ -59,8 +59,8 @@ As imagens estão localizadas na pasta `assets/img/windows/Aula7TutorialMidia/`:
 ## ➡️ 4. Fluxo de Aprendizagem (FASE 0 + Checks Distribuídos)
 
 - **FASE 0 (Bloco Introdutório Tutorial)**: objetivo + roteiro numerado em **6 passos** no topo do complemento, com "Resultado esperado" em caixa tracejada.
-- **Checks distribuídos**: cada um dos 6 tópicos possui `check-read-72-N` ao FINAL da fase correspondente.
-- **Trava sequencial**: `SEQUENTIAL_LESSONS[72] = true`, `TOTAL_TOPICS[72] = 6`; apenas `check-read-72-1` inicia liberado.
+- **Checks distribuídos**: cada um dos 6 tópicos possui `check-read-81-N` ao FINAL da fase correspondente.
+- **Trava sequencial**: `SEQUENTIAL_LESSONS[81] = true`, `TOTAL_TOPICS[81] = 6`; apenas `check-read-81-1` inicia liberado.
 
 ---
 
@@ -115,6 +115,6 @@ As imagens estão localizadas na pasta `assets/img/windows/Aula7TutorialMidia/`:
 
 ## 🎨 6. Regras de Design e Ergonomia de Tela
 
-- **Botão de PDF no Início**: `📑 Baixar Apostila PDF` (`downloadLessonPDF('windows', 72)`) no topo do cartão e em `btn-download-pdf-72` do painel resultado.
+- **Botão de PDF no Início**: `📑 Baixar Apostila PDF` (`downloadLessonPDF('windows', 81)`) no topo do cartão e em `btn-download-pdf-81` do painel resultado.
 - **Destaque visual da seção "Relembrando"**: o alerta sobre gravação apagar todo o pendrive usa caixa de aviso `warning` destacada.
 - **Mobile**: regulado apenas pelo bloco `/* REGRAS MOBILE GLOBAIS */` do `assets/css/style.css`.

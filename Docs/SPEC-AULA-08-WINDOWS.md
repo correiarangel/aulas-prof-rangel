@@ -21,6 +21,9 @@ A **Aula 8 do Módulo Windows** é um módulo de aprendizado **Prático Orientad
 | Módulo / Aula | Nome Temático | Senha Secreta de Liberação | Exibição na Interface |
 | :--- | :--- | :--- | :--- |
 | **Módulo 1 / Aula 08** | Diagnóstico de Memória, Restauração do Sistema e Criação de Mídia de Instalação no Windows | `wr0926` | 🔒 Oculta (Acesso Restrito) |
+| **Módulo 1 / Complemento 8A** | Tutorial: Como Criar Pendrive/DVD de Instalação | `wr0926` | 🔒 Oculta (Acesso Restrito) |
+
+> A mesma senha `wr0926` libera a Aula 8 e o complemento vinculado (8A). Senhas de teste `a001/b002/c003/d004/h008/wr2026` também desbloqueiam as aulas no ambiente de desenvolvimento.
 
 ---
 

@@ -539,14 +539,14 @@ window.PDFLessons = (function() {
           boxText: "/E copia também as subpastas; /I trata o destino como pasta; /Y substitui arquivos existentes sem perguntar."
         },
         {
-          lessonNum: 72,
-          chapter: "COMPLEMENTO 7B: TUTORIAL DE CRIAÇÃO DE MÍDIA DE INSTALAÇÃO",
-          heading: "7B.1 Introdução e Material Necessário",
+          lessonNum: 81,
+          chapter: "COMPLEMENTO 8A: TUTORIAL DE CRIAÇÃO DE MÍDIA DE INSTALAÇÃO",
+          heading: "8A.1 Introdução e Material Necessário",
           content: "Para instalar o Windows é preciso de uma mídia de instalação — normalmente um pendrive com os arquivos do sistema. A ferramenta oficial da Microsoft que cria essa mídia é a Media Creation Tool.",
           steps: [
             {
               text: "1. Material necessário: um pendrive com pelo menos 8 GB e um computador com acesso à internet.",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image1.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image1.png",
               caption: "Tela de introdução do tutorial, com o material necessário apresentado."
             }
           ],
@@ -555,72 +555,72 @@ window.PDFLessons = (function() {
           boxText: "Todo o conteúdo do pendrive será apagado durante a gravação. Use um pendrive reserva."
         },
         {
-          lessonNum: 72,
-          heading: "7B.2 Baixando a Media Creation Tool",
+          lessonNum: 81,
+          heading: "8A.2 Baixando a Media Creation Tool",
           content: "Baixe a ferramenta SOMENTE do site oficial da Microsoft (microsoft.com) para evitar versões falsas que podem conter vírus.",
           steps: [
             {
               text: "1. Clique em 'Baixar agora' no item 'Ferramenta de Criação de Mídia':",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image1.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image1.png",
               caption: "Localizando a Media Creation Tool na página de download da Microsoft."
             },
             {
               text: "2. Salve o arquivo MediaCreationTool_22H2.exe:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image3.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image3.png",
               caption: "Download do arquivo da ferramenta selecionado no navegador."
             },
             {
               text: "3. O arquivo aparece na pasta Download aguardando execução (clique duas vezes para abrir):",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image2.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image2.png",
               caption: "Arquivo da Media Creation Tool salvo na pasta Download."
             }
           ]
         },
         {
-          lessonNum: 72,
-          heading: "7B.3 Executando o Assistente de Instalação",
+          lessonNum: 81,
+          heading: "8A.3 Executando o Assistente de Instalação",
           content: "Ao abrir, a ferramenta inicia um assistente guiado. Basta aceitar os avisos de licença e escolher 'Criar mídia de instalação (pen drive USB, DVD ou arquivo ISO) para outro computador'.",
           steps: [
             {
               text: "1. Aplicando alterações: aguarde e aceite para continuar:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image5.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image5.png",
               caption: "Assistente da Media Creation Tool iniciando as alterações."
             },
             {
               text: "2. A tela 'Preparando tudo' abre a próxima etapa:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image4.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image4.png",
               caption: "Tela de preparação da ferramenta de criação de mídia."
             },
             {
               text: "3. Aceite os avisos e termos de licença da Microsoft:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image7.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image7.png",
               caption: "Avisos e termos de licença exibidos pela ferramenta."
             },
             {
               text: "4. Marque 'Criar mídia de instalação...' e clique em Avançar:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image6.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image6.png",
               caption: "Seleção da opção de criar mídia de instalação para outro computador."
             }
           ]
         },
         {
-          lessonNum: 72,
-          heading: "7B.4 Escolhendo Idioma, Edição e Arquitetura",
+          lessonNum: 81,
+          heading: "8A.4 Escolhendo Idioma, Edição e Arquitetura",
           content: "O assistente pergunta sobre idioma (Português Brasil), edição e arquitetura (64 ou 32 bits). O padrão recomendado é quase sempre o correto.",
           steps: [
             {
               text: "1. Clique em 'Usar as opções recomendadas para este computador':",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image9.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image9.png",
               caption: "Seleção da opção recomendada para o computador."
             },
             {
               text: "2. Confirme o idioma e clique em Avançar:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image8.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image8.png",
               caption: "Idioma selecionado no assistente da ferramenta."
             },
             {
               text: "3. Revise os detalhes da instalação (idioma, edição, arquitetura) e avance:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image12.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image12.png",
               caption: "Detalhes finais da instalação antes de iniciar a gravação."
             }
           ],
@@ -629,55 +629,55 @@ window.PDFLessons = (function() {
           boxText: "A maioria dos computadores modernos usa 64 bits. O padrão recomendado pelo assistente já seleciona a arquitetura correta automaticamente."
         },
         {
-          lessonNum: 72,
-          heading: "7B.5 Pendrive USB ou Arquivo ISO?",
+          lessonNum: 81,
+          heading: "8A.5 Pendrive USB ou Arquivo ISO?",
           content: "A ferramenta oferece duas formas: Pendrive USB (grava direto no pen drive — mais prático) ou Arquivo ISO (baixa uma imagem de disco para gravar em DVD depois ou montar como CD).",
           steps: [
             {
               text: "1. Selecione 'Unidade flash USB' e clique em Avançar:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image10.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image10.png",
               caption: "Escolha da opção Pendrive USB na ferramenta."
             },
             {
               text: "2. Selecione a letra da unidade USB conectada:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image11.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image11.png",
               caption: "Seleção da unidade flash USB para gravação da mídia."
             },
             {
               text: "3. Aguarde a preparação do pendrive:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image13.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image13.png",
               caption: "Aguarde enquanto o pendrive está sendo preparado."
             },
             {
               text: "4. Acompanhe o progresso do download do Windows:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image14.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image14.png",
               caption: "Barra de progresso do download dos arquivos de instalação."
             },
             {
               text: "5. Ao final, a mensagem 'Ferramenta concluída com êxito' confirma a mídia pronta:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image15.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image15.png",
               caption: "Tela de conclusão: a unidade flash USB está pronta para uso."
             }
           ]
         },
         {
-          lessonNum: 72,
-          heading: "7B.6 Resolvendo o Erro de Formatação (FAT32)",
+          lessonNum: 81,
+          heading: "8A.6 Resolvendo o Erro de Formatação (FAT32)",
           content: "Se aparecer a mensagem 'A unidade precisa ter pelo menos 8 GB', o pendrive pode ser pequeno ou estar em um formato incompatível. A solução é reformatar o pendrive em FAT32 e tentar novamente.",
           steps: [
             {
               text: "1. Erro típico de capacidade/formato do pendrive:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image16.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image16.png",
               caption: "Erro informando que a unidade deve ter pelo menos 8 GB."
             },
             {
               text: "2. No Explorador de Arquivos, clique com o botão direito no pendrive e escolha 'Formatar...':",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image17.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image17.png",
               caption: "Formatação do pendrive pelo menu de contexto do Explorador de Arquivos."
             },
             {
               text: "3. Em Sistema de arquivos, selecione FAT32 e clique em Iniciar:",
-              image: "../../assets/img/windows/Aula7TutorialMidia/image18.png",
+              image: "../../assets/img/windows/Aula8TutorialMidia/image18.png",
               caption: "Janela de formatação com o sistema de arquivos FAT32 selecionado."
             }
           ],
@@ -1679,7 +1679,7 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
         6: "Aula 06: Personalização e Acessibilidade",
         7: "Aula 07: Segurança e Antivírus no Windows",
         71: "Complemento 7A — Backup Automático com Arquivo .BAT",
-        72: "Complemento 7B — Tutorial: Como Criar Pendrive/DVD de Instalação do Windows",
+        81: "Complemento 8A — Tutorial: Como Criar Pendrive/DVD de Instalação do Windows",
         8: "Aula 08: Diagnóstico de Memória, Restauração do Sistema e Mídia de Instalação"
       },
       excel: {
