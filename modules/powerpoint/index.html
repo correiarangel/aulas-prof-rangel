@@ -21,7 +21,8 @@
     .trail-line.filled i { width: 100%; }
 
     .card-quiz { background: var(--paper); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--line); padding: 40px 36px 34px; }
-    @media (max-width: 560px) { .card-quiz { padding: 26px 20px; } }
+    /* padding mobile do .card-quiz é regulado pelo bloco "REGRAS MOBILE
+       GLOBAIS" (style.css @media max-width:767px, com !important) */
 
     .q-meta { display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-soft); margin-bottom: 12px; }
     .q-text { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(19px, 3.5vw, 23px); line-height: 1.35; color: var(--teal-deep); margin-bottom: 20px; }

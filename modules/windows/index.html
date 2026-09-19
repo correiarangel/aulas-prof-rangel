@@ -109,9 +109,8 @@
       border: 1px solid var(--line);
       padding: 40px 36px 34px;
     }
-    @media (max-width: 560px) {
-      .card-quiz { padding: 26px 20px; }
-    }
+    /* padding mobile do .card-quiz é regulado pelo bloco "REGRAS MOBILE
+       GLOBAIS" (style.css @media max-width:767px, com !important) */
 
     .q-meta {
       display: flex; justify-content: space-between; align-items: center;
@@ -269,14 +268,34 @@
             <span style="font-size:20px;">🚧</span>
           </div>
 
-          <!-- AULA 7 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(7, 'Gerenciamento de Tarefas e Desempenho')">
+          <!-- AULA 7 — LIBERADA E COMPLETA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(7, 'Segurança e Antivírus no Windows')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num">AULA 07</span>
-              <span class="lesson-name">Gerenciador de Tarefas & Processos</span>
-              <span style="font-size:13px; color:#F4E8DC; font-weight:600; margin-top:4px; opacity:0.95;">🔒 Em Construção</span>
+              <span class="lesson-name">Segurança e Antivírus no Windows</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha em Aula)</span>
             </div>
-            <span style="font-size:20px;">🚧</span>
+            <span style="font-size:24px;" id="badge-lesson-7">🔒</span>
+          </div>
+
+          <!-- COMPLEMENTO 7A — BACKUP AUTOMÁTICO COM .BAT -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(71, 'Complemento 7A — Backup Automático com Arquivo .BAT')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">COMPLEMENTO 7A</span>
+              <span class="lesson-name">Backup Automático com Arquivo .BAT</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Atividade Complementar (Senha em Aula)</span>
+            </div>
+            <span style="font-size:24px;" id="badge-lesson-71">🔒</span>
+          </div>
+
+          <!-- COMPLEMENTO 7B — TUTORIAL DE CRIAÇÃO DE MÍDIA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(82, 'Complemento 7B — Tutorial: Criar Mídia de Instalação do Windows')">
+            <div style="display:flex; flex-direction:column;">
+              <span class="lesson-num">COMPLEMENTO 7B</span>
+              <span class="lesson-name">Tutorial: Criar Pendrive/DVD de Instalação</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Atividade Complementar (Senha em Aula)</span>
+            </div>
+            <span style="font-size:24px;" id="badge-lesson-82">🔒</span>
           </div>
 
           <!-- AULA 8 — LIBERADA E COMPLETA -->
@@ -935,6 +954,1276 @@
       </div>
     </section>
 
+    <!-- ===================================================================
+         TELA 4: AULA 7 — SEGURANÇA E ANTIVÍRUS NO WINDOWS (LIBERADA)
+         =================================================================== -->
+    <section id="screen-lesson-7" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa (HTML Origem)
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 7)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DA AULA 7 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura & Prática (Aula 7)</span>
+            <span id="gamify-percent-7">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-7"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-7">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Aula 7</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 7: Segurança e Antivírus no Windows</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <strong>Guia Prático "Mão na Massa":</strong> Execute cada passo diretamente no seu computador e marque as caixas de confirmação para acompanhar seu progresso!
+        </p>
+
+        <!-- ATALHOS DOS COMPLEMENTOS DESTA AULA (7A e 7B) -->
+        <div style="display:flex; flex-direction:column; gap:12px; background:var(--paper-white); border:1.5px solid var(--line-light); border-radius:14px; padding:16px 18px; margin:6px 0 22px 0;">
+          <span class="eyebrow-badge" style="margin:0; background:#E7F0F5; color:var(--teal-deep); border:none;"><span class="dot"></span> 📌 Atividades Complementares desta Aula</span>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+            <button type="button" class="btn btn-ghost no-print" onclick="promptLessonPassword(71, 'Complemento 7A — Backup Automático com Arquivo .BAT')" style="justify-content:flex-start; text-align:left; font-size:14.5px; background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+              🔒 Complemento 7A — Backup Automático com Arquivo .BAT
+            </button>
+            <button type="button" class="btn btn-ghost no-print" onclick="promptLessonPassword(82, 'Complemento 7B — Tutorial: Como Criar Pendrive/DVD de Instalação do Windows')" style="justify-content:flex-start; text-align:left; font-size:14.5px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+              🔒 Complemento 7B — Tutorial: Criar Mídia de Instalação do Windows
+            </button>
+          </div>
+        </div>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Preparação Teórica e Prática</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Entender os recursos de segurança nativos do Windows: usar a Central de Segurança/Ações, manter o antivírus e o firewall ativos, conferir as atualizações, criar backups e pontos de restauração, e reconhecer os riscos da pirataria de programas e jogos. Compatível com <strong>Windows 7 / 10 / 11</strong>.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li>Abrir a Central de Segurança (Central de Ações no Windows 7) e ver o estado geral de proteção.</li>
+            <li>Verificar se o antivírus do Windows está ativado.</li>
+            <li>Fazer uma verificação rápida de vírus.</li>
+            <li>Conferir as atualizações de segurança no Windows Update.</li>
+            <li>Abrir o Firewall e confirmar que está ativado nas três redes.</li>
+            <li>Criar um Ponto de Restauração chamado "Teste de segurança".</li>
+            <li>Reconhecer os riscos da pirataria de programas e jogos.</li>
+          </ol>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
+            🏁 Resultado esperado: ao final da aula, seu computador estará com o antivírus ativo, firewall ligado nas três redes, atualizações verificadas, um ponto de restauração criado e você saberá identificar riscos de segurança, inclusive da pirataria de software.
+          </p>
+        </div>
+
+        <!-- ÍNDICE DE TÓPICOS DA AULA 7 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-7-1" onclick="switchTopicPhase(7, 1)">1. Central de Segurança</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-2" onclick="switchTopicPhase(7, 2)">2. Antivírus</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-3" onclick="switchTopicPhase(7, 3)">3. Atualizações</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-4" onclick="switchTopicPhase(7, 4)">4. Firewall</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-5" onclick="switchTopicPhase(7, 5)">5. Backup</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-6" onclick="switchTopicPhase(7, 6)">6. Ponto de Restauração</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-7" onclick="switchTopicPhase(7, 7)">7. Riscos da Pirataria</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-fix" onclick="openFixationPanel(7)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             TÓPICO 1 DA AULA 7: CENTRAL DE SEGURANÇA
+             =============================================================== -->
+        <section id="l7-phase-1" class="topic-phase-section active">
+          <h2>1. Central de Segurança do Windows</h2>
+          <p>
+            A <strong>Central de Segurança</strong> (chamada de <strong>"Central de Ações"</strong> no Windows 7) mostra, em um único lugar, o estado da proteção do computador: <strong>antivírus, firewall e atualizações do sistema</strong>. Se algo estiver desativado ou com pendência, o Windows exibe um alerta colorido (amarelo ou vermelho) na área de notificação.
+          </p>
+
+          <h3 style="color:var(--teal-deep); font-size:20px; margin-top:20px;">Como acessar</h3>
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Versão</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">Caminho para abrir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Windows 7</td>
+                <td style="padding:10px;">Painel de Controle &gt; Central de Ações</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Windows 10</td>
+                <td style="padding:10px;">Iniciar &gt; Segurança do Windows</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">Windows 11</td>
+                <td style="padding:10px;">Iniciar &gt; Configurações &gt; Privacidade e Segurança &gt; Segurança do Windows</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <img src="../../assets/img/windows/Aula7/image13.png" alt="Central de Ações do Windows 7" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption">Imagem 01/02 — Central de Segurança/Ações no Windows 7.</p>
+
+          <img src="../../assets/img/windows/Aula7/image2.png" alt="Segurança do Windows 10" class="img-showcase" style="max-width:480px;">
+          <p class="img-caption">Imagem 02/02 — Central de Segurança no Windows 10 (Segurança do Windows).</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que aprendi a abrir a Central de Segurança/Ações no Windows 7, 10 e 11 e a interpretar o status de proteção.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-1" onclick="markTopicRead(7, 1)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 2)">Ir para 2. Antivírus →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 2 DA AULA 7: ANTIVÍRUS DO WINDOWS
+             =============================================================== -->
+        <section id="l7-phase-2" class="topic-phase-section">
+          <h2>2. Antivírus do Windows</h2>
+          <p>
+            O antivírus protege o computador contra vírus, programas indesejados e ameaças que chegam pela internet ou por dispositivos conectados. O próprio Windows já traz uma solução embutida.
+          </p>
+
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Versão</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">Nome do antivírus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Windows 7</td>
+                <td style="padding:10px;">Microsoft Security Essentials (precisa instalar manualmente)</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">Windows 10/11</td>
+                <td style="padding:10px;"><strong>Windows Defender</strong> (já vem instalado)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="color:var(--teal-deep); font-size:20px; margin-top:20px;">Como verificar se está ativo</h3>
+          <ol style="margin-left:20px; line-height:1.7;">
+            <li>Acesse a <strong>Segurança do Windows</strong>.</li>
+            <li>Vá em <strong>"Proteção contra vírus e ameaças"</strong>.</li>
+            <li>Veja se aparece a mensagem: <em>"Sem ações necessárias"</em>.</li>
+            <li>Ou, na barra de ferramentas do Windows 10, clique no <strong>ícone do antivírus</strong> (veja a imagem a seguir).</li>
+          </ol>
+
+          <img src="../../assets/img/windows/Aula7/image4.png" alt="Ícone do Windows Defender na barra de tarefas" class="img-showcase" style="max-width:320px;">
+          <p class="img-caption">Imagem 03 — Ícone do Windows Defender, Windows 10.</p>
+
+          <h3 style="color:var(--teal-deep); font-size:20px; margin-top:20px;">Como fazer um escaneamento</h3>
+          <ul style="margin-left:20px; line-height:1.7;">
+            <li>Clique em <strong>"Verificar agora"</strong> para uma verificação rápida.</li>
+            <li>Ou vá em <strong>"Opções de verificação"</strong> para uma análise completa.</li>
+          </ul>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin:18px 0;">
+            <div>
+              <img src="../../assets/img/windows/Aula7/image14.png" alt="Windows Defender no Windows 7" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">Imagem 04 — Windows Defender (Windows 7).</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula7/image16.png" alt="Windows Defender no Windows 10" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">Imagem 05 — Windows Defender (Windows 10).</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula7/image17.png" alt="Windows Defender após encontrar vírus" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">Imagem 06 — Windows Defender após encontrar uma ameaça.</p>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que verifiquei o Windows Defender no meu computador e realizei uma verificação rápida de vírus.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-2" onclick="markTopicRead(7, 2)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 3)">Ir para 3. Atualizações →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 3 DA AULA 7: ATUALIZAÇÕES DE SEGURANÇA
+             =============================================================== -->
+        <section id="l7-phase-3" class="topic-phase-section">
+          <h2>3. Atualizações de Segurança</h2>
+          <p>
+            Manter o sistema atualizado corrige <strong>falhas de segurança</strong> e melhora a estabilidade do computador. Muitos vírus aproveitam buracos de segurança antigos que já foram corrigidos nas versões mais recentes do Windows.
+          </p>
+
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Versão</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">Como acessar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Windows 7</td>
+                <td style="padding:10px;">Painel de Controle &gt; Windows Update</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">Windows 10/11</td>
+                <td style="padding:10px;">Iniciar &gt; Configurações &gt; Atualização e Segurança &gt; "Verificar atualizações"</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="background:var(--amber-soft); padding:16px; border-radius:12px; margin:18px 0; border:1px solid var(--line);">
+            <strong style="color:var(--amber-dark); font-size:16px;">💡 Dica do Professor Marcos Rangel:</strong><br>
+            Mantenha o recurso de <strong>atualizações automáticas sempre ativado</strong> e, de vez em quando, clique manualmente em "Verificar atualizações" para garantir que o sistema esteja em dia.
+          </div>
+
+          <div style="background:var(--paper-white); border:1.5px dashed var(--teal); border-radius:12px; padding:14px 16px; margin:14px 0;">
+            <strong style="color:var(--teal-deep);">🖥️ Onde verificar na prática:</strong> Windows 10/11 → <em>Iniciar &gt; Configurações &gt; Atualização e Segurança</em>, botão azul <em>"Verificar atualizações"</em>. Windows 7 → <em>Painel de Controle &gt; Windows Update</em>.
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que acessei o Windows Update no meu computador e cliquei em "Verificar atualizações".</span>
+            <button type="button" class="read-check-btn" id="check-read-7-3" onclick="markTopicRead(7, 3)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 4)">Ir para 4. Firewall →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 4 DA AULA 7: FIREWALL DO WINDOWS
+             =============================================================== -->
+        <section id="l7-phase-4" class="topic-phase-section">
+          <h2>4. Firewall do Windows</h2>
+          <p>
+            O firewall funciona como um <strong>muro de proteção</strong>: ele bloqueia conexões perigosas vindas da internet e ajuda a evitar invasões ao computador. Sem ele (ou com ele desativado), o computador fica exposto a ataques de rede.
+          </p>
+
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Versão</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">Caminho</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Windows 7</td>
+                <td style="padding:10px;">Painel de Controle &gt; Firewall do Windows</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">Windows 10/11</td>
+                <td style="padding:10px;">Segurança do Windows &gt; Firewall e Proteção de Rede</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Verifique se o firewall está <strong>Ativado</strong> nas <strong>três redes</strong>:
+          </p>
+          <ul style="margin-left:20px; line-height:1.8;">
+            <li><strong>Rede Doméstica</strong></li>
+            <li><strong>Rede Pública</strong></li>
+            <li><strong>Rede Privada</strong></li>
+          </ul>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:10px; padding:12px 16px; margin:12px 0;">
+            ✅ <strong>Firewall Ativo = PC Seguro!</strong> &nbsp;|&nbsp; ❌ <strong>Firewall Desativado = PC Inseguro!</strong>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin:18px 0;">
+            <div>
+              <img src="../../assets/img/windows/Aula7/image1.png" alt="Firewall do Windows 7" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">Imagem 07/08 — Firewall do Windows 7.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula7/image11.png" alt="Firewall do Windows 10" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">Imagem 08/08 — Firewall no Windows 10 (Firewall e Proteção de Rede).</p>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que abri o Firewall do meu computador e confirmei que está ativado nas três redes.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-4" onclick="markTopicRead(7, 4)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 5)">Ir para 5. Backup →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 5 DA AULA 7: FERRAMENTA DE BACKUP
+             =============================================================== -->
+        <section id="l7-phase-5" class="topic-phase-section">
+          <h2>5. Ferramenta de Backup</h2>
+          <p>
+            O backup protege seus arquivos: se o computador estragar, for roubado ou atacado por um vírus (como o ransomware, que criptografa os dados), você poderá <strong>recuperar tudo a partir da cópia</strong> feita anteriormente.
+          </p>
+
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Versão</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">Como configurar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Windows 7</td>
+                <td style="padding:10px;">Painel de Controle &gt; Backup e Restauração. Configure um backup para um HD externo ou pasta.</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">Windows 10/11</td>
+                <td style="padding:10px;">Iniciar &gt; Configurações &gt; Atualização e Segurança &gt; Backup. Ative o <strong>Histórico de Arquivos</strong> ou use "Backup e Restauração (Windows 7)", que ainda está disponível.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="background:var(--paper-white); border:1.5px dashed var(--teal); border-radius:12px; padding:14px 16px; margin:14px 0;">
+            <strong style="color:var(--teal-deep);">🛡️ Boa prática de segurança:</strong> faça backups com frequência e, sempre que possível, guarde uma cópia em outro local (HD externo, pendrive ou nuvem). Complemento com o passo a passo de backup automático disponível no atalho <strong>🔒 Complemento 7A</strong> no topo desta aula.
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi como acessar a ferramenta de Backup no meu Windows e a importância das cópias de segurança.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-5" onclick="markTopicRead(7, 5)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 6)">Ir para 6. Ponto de Restauração →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 6 DA AULA 7: CRIAR UM PONTO DE RESTAURAÇÃO
+             =============================================================== -->
+        <section id="l7-phase-6" class="topic-phase-section">
+          <h2>6. Criar um Ponto de Restauração</h2>
+          <p>
+            O <strong>Ponto de Restauração</strong> permite <strong>voltar o sistema no tempo</strong> caso algo dê errado — por exemplo, depois de uma instalação mal feita ou de uma infecção por vírus. Seus documentos recentes não são perdidos.
+          </p>
+
+          <div class="step-box-practical">
+            <h4>🖐️ Passo a Passo para Criar um Ponto de Restauração</h4>
+            <ol style="margin-left:20px; line-height:1.7;">
+              <li>Acesse <strong>Painel de Controle &gt; Sistema &gt; Configurações Avançadas</strong>.</li>
+              <li>Clique na aba <strong>"Proteção do Sistema"</strong>.</li>
+              <li>Clique em <strong>"Criar"</strong>.</li>
+              <li>Dê um nome, por exemplo: <strong>"Antes da atualização X"</strong>.</li>
+              <li>Clique em <strong>"Criar"</strong> e aguarde a conclusão.</li>
+            </ol>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin:18px 0;">
+            <div>
+              <img src="../../assets/img/windows/Aula7/image9.png" alt="Criar ponto de restauração no Windows 7" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">Imagem 09/10 — Criando ponto de restauração no Windows 7.</p>
+            </div>
+            <div>
+              <img src="../../assets/img/windows/Aula7/image15.png" alt="Criar ponto de restauração no Windows 10" class="img-showcase" style="margin:0 auto 8px auto;">
+              <p class="img-caption">Imagem 10/10 — Criando ponto de restauração no Windows 10.</p>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que criei no meu computador um ponto de restauração chamado "Teste de segurança".</span>
+            <button type="button" class="read-check-btn" id="check-read-7-6" onclick="markTopicRead(7, 6)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 7)">Ir para 7. Riscos da Pirataria →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 7 DA AULA 7: OS RISCOS DA PIRATARIA
+             =============================================================== -->
+        <section id="l7-phase-7" class="topic-phase-section">
+          <h2>7. Os Riscos da Pirataria</h2>
+          <p>
+            Usar programas e jogos piratas (crackeados) é <strong>perigoso</strong> e pode colocar todo o computador em risco. Veja os principais motivos para evitá-los:
+          </p>
+
+          <ol style="margin-left:20px; line-height:1.9;">
+            <li>Programas piratas costumam vir com <strong>vírus, spyware ou ransomware escondidos</strong>, já que o <em>crack</em> precisa desativar as proteções do sistema.</li>
+            <li>Sites e <em>ativadores</em> piratas são uma das formas mais comuns de infecção, mesmo com o antivírus ativado, pois pedem para o usuário <strong>liberar o arquivo manualmente</strong>.</li>
+            <li>Programas piratas <strong>não recebem atualizações de segurança oficiais</strong>, deixando o computador vulnerável a falhas já conhecidas.</li>
+            <li>Usar software pirata pode gerar <strong>perda de arquivos, roubo de senhas e problemas legais</strong>, além de prejudicar quem desenvolve o programa original.</li>
+          </ol>
+
+          <div style="background:#FEF2F2; border-left:4px solid #EF4444; padding:16px; border-radius:8px; margin:18px 0;">
+            <strong style="color:#991B1B; font-size:16px;">⚠️ REGRA DE OURO:</strong><br>
+            Baixe programas somente dos <strong>sites oficiais</strong> e mantenha o Windows Defender ativo. Se o Windows pedir para liberar um arquivo "crack", desconfie — é assim que a maioria das infecções acontece.
+          </div>
+
+          <p>
+            <strong>Exercício de fixação:</strong> agora que você conhece os quatro riscos da pirataria, complete a leitura dos tópicos anteriores (Central de Segurança, Antivírus, Atualizações, Firewall, Backup e Ponto de Restauração) e finalize com o exercício de 5 perguntas abaixo!
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que reconheço os riscos da pirataria de programas e jogos e sei evitá-los.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-7" onclick="markTopicRead(7, 7)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 6)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(7)">Iniciar Exercício de Fixação (5 Questões) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 7 (QUIZ DE 5 PERGUNTAS)
+             =============================================================== -->
+        <div id="fixation-panel-7" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--amber); margin-top:4px; font-size:24px;">Exercício de Fixação — Aula 7</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-7" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-7">QUESTÃO 1 / 5</span>
+                <span id="q-points-7">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-7"></div>
+
+              <button class="hint-toggle" id="btn-hint-7" type="button">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-7"></div>
+
+              <div class="options" id="options-7"></div>
+
+              <div class="nav-row">
+                <button class="btn btn-ghost" id="btn-prev-7" type="button">← Anterior</button>
+                <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';">✓ Salvo automaticamente</span>
+                <button class="btn btn-primary" id="btn-next-7" type="button" disabled>Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL DE RESULTADO E ASSINATURA SHA-256 DA AULA 7 -->
+        <div id="result-panel-7" class="fixation-panel">
+          <div class="card-quiz">
+            <div class="result-badge" id="result-badge-7"></div>
+            <h1 id="result-title-7"></h1>
+            <p style="color:var(--ink-soft);" id="result-sub-7"></p>
+            <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">
+              Nota Final: <b id="result-score-7" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0
+            </div>
+
+            <div class="signature-badge-box" id="signature-box-7">
+              <div class="signature-badge-header">
+                <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+              </div>
+              <div class="signature-code-display" id="signature-code-7">WR-AUTH-CALCULATING...</div>
+              <div class="signature-badge-desc">
+                Código de autenticidade criptográfico (SHA-256) gerado automaticamente para o aluno. Evita adulterações no comprovante ou na nota.
+              </div>
+            </div>
+
+            <div class="breakdown" id="breakdown-7"></div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary" id="btn-download-txt-7" type="button">Baixar Comprovante (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-7" type="button" style="background:var(--amber);">📑 Baixar Apostila PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-7" type="button">Enviar WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-email-7" type="button">Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-7">
+              <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
+              <input type="email" id="input-email-7" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
+              <button class="btn btn-amber" id="btn-open-gmail-7" type="button">Baixar e Abrir E-mail →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- ===================================================================
+         TELA 5: COMPLEMENTO 7A — BACKUP AUTOMÁTICO COM ARQUIVO .BAT
+         =================================================================== -->
+    <section id="screen-lesson-71" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-lesson-7')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar para a Aula 7
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa (HTML Origem)
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 71)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DO COMPLEMENTO 7A -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura & Prática (Complemento 7A)</span>
+            <span id="gamify-percent-71">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-71"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-71">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Complemento 7A</span>
+        <h1 style="font-size:30px; color:var(--teal-deep); margin-bottom:8px;">Complemento 7A: Criando um Backup Automático com Arquivo .BAT</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <strong>Guia Prático "Mão na Massa":</strong> Você vai criar um arquivo .bat que copia seus arquivos para o pendrive automaticamente. Compatível com <strong>Windows 7 / 10 / 11</strong>.
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Preparação Teórica e Prática</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo deste complemento</h2>
+          <ul style="color:var(--ink); font-size:15.5px; line-height:1.8; margin-left:20px;">
+            <li>Entender o que é um arquivo <strong>.bat</strong> e para que ele serve.</li>
+            <li>Criar e executar o primeiro script: um <strong>"Olá, Mundo!"</strong>.</li>
+            <li>Criar um <strong>script de backup simples</strong>, que copia arquivos de uma pasta para um pendrive.</li>
+            <li>Aprender a ajustar o script para a pasta e a letra do pendrive do próprio aluno.</li>
+          </ul>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li>Entender o que é um arquivo .bat e como ele executa comandos.</li>
+            <li>Praticar criando o script "Olá, Mundo!".</li>
+            <li>Montar o script de backup com o comando <code>xcopy</code>.</li>
+            <li>Executar o backup e conferir se os arquivos foram copiados para o pendrive.</li>
+          </ol>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
+            🏁 Resultado esperado: um arquivo <code>backup.bat</code> pronto no seu computador que, com um clique duplo, copia a pasta escolhida para o pendrive e confirma com a mensagem "Backup concluido!".
+          </p>
+        </div>
+
+        <!-- ÍNDICE DE TÓPICOS DO COMPLEMENTO 7A -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-71-1" onclick="switchTopicPhase(71, 1)">1. O que é um .BAT?</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-71-2" onclick="switchTopicPhase(71, 2)">2. "Olá, Mundo!"</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-71-3" onclick="switchTopicPhase(71, 3)">3. Script de Backup</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-71-4" onclick="switchTopicPhase(71, 4)">4. Executando e Conferindo</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-71-fix" onclick="openFixationPanel(71)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             TÓPICO 1 DO COMPLEMENTO 7A: O QUE É UM ARQUIVO .BAT?
+             =============================================================== -->
+        <section id="l71-phase-1" class="topic-phase-section active">
+          <h2>1. O que é um arquivo .BAT?</h2>
+          <p>
+            Um arquivo <strong>.bat</strong> ("batch", em inglês) é um arquivo de texto simples que guarda uma lista de <strong>comandos do Prompt de Comando do Windows</strong>. Quando o aluno dá dois cliques nesse arquivo, o Windows executa os comandos um a um, automaticamente — sem precisar digitar nada na hora.
+          </p>
+          <p>
+            Na prática, o .bat funciona como uma <strong>"receita"</strong>: você escreve o passo a passo uma única vez, salva, e depois basta clicar para repetir a tarefa sempre que quiser.
+          </p>
+
+          <img src="../../assets/img/windows/Aula7ComplementoBackup/image3.png" alt="Arquivo .bat guarda comandos do Prompt" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption">O arquivo .bat guarda comandos que o Prompt de Comando executa automaticamente.</p>
+
+          <div style="background:var(--amber-soft); padding:16px; border-radius:12px; margin:18px 0; border:1px solid var(--line);">
+            <strong style="color:var(--amber-dark); font-size:16px;">💡 Por que usar .bat para backup?</strong><br>
+            Porque transforma uma tarefa repetitiva (copiar arquivos manualmente) em um processo de <strong>um clique só</strong> — reduzindo erros e economizando tempo.
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi o que é um arquivo .bat e como ele executa comandos automaticamente.</span>
+            <button type="button" class="read-check-btn" id="check-read-71-1" onclick="markTopicRead(71, 1)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(71, 2)">Ir para 2. "Olá, Mundo!" →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 2 DO COMPLEMENTO 7A: PRIMEIRO SCRIPT "OLÁ, MUNDO!"
+             =============================================================== -->
+        <section id="l71-phase-2" class="topic-phase-section">
+          <h2>2. Primeiro Script: "Olá, Mundo!"</h2>
+          <p>
+            Antes de criar o script de backup, vamos praticar a criação de um arquivo .bat bem simples. Esse exercício mostra como <strong>escrever, salvar e executar</strong> um script — a base para todos os próximos.
+          </p>
+
+          <div class="step-box-practical">
+            <h4>🖐️ Passo a Passo</h4>
+            <ol style="margin-left:20px; line-height:1.7;">
+              <li>Abra o <strong>Bloco de Notas</strong> (Iniciar → digite "Bloco de Notas").</li>
+              <li>Digite exatamente o código abaixo:</li>
+            </ol>
+            <div style="background:#2D251E; color:#FFFDF9; font-family:'JetBrains Mono', monospace; border-radius:8px; padding:14px 16px; margin:10px 0; font-size:14px; line-height:1.6; overflow-x:auto;">
+              <span style="color:#6EE7B7;">@echo off</span><br>
+              <span style="color:#FDBA74;">echo</span> <span style="color:#FFFDF9;">Ola, Mundo!</span><br>
+              <span style="color:#FDBA74;">pause</span>
+            </div>
+            <ol start="3" style="margin-left:20px; line-height:1.7;">
+              <li>Clique em <strong>Arquivo → Salvar como</strong>.</li>
+              <li>Em "Nome do arquivo", digite: <code>ola_mundo.bat</code> (é importante trocar <code>.txt</code> por <code>.bat</code>).</li>
+              <li>Em "Tipo", selecione <strong>"Todos os arquivos"</strong> e salve na <strong>Área de Trabalho</strong>.</li>
+              <li>Dê <strong>dois cliques</strong> no arquivo <code>ola_mundo.bat</code> para executá-lo.</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/windows/Aula7ComplementoBackup/image5.png" alt="Script digitado no Bloco de Notas" class="img-showcase" style="max-width:420px;">
+          <p class="img-caption">O script digitado no Bloco de Notas.</p>
+
+          <img src="../../assets/img/windows/Aula7ComplementoBackup/image4.png" alt="Resultado Olá Mundo no Prompt de Comando" class="img-showcase" style="max-width:420px;">
+          <p class="img-caption">Resultado: uma janela preta (Prompt de Comando) mostra a mensagem "Ola, Mundo!".</p>
+
+          <div style="background:var(--paper-white); border:1.5px dashed var(--teal); border-radius:12px; padding:14px 16px; margin:14px 0;">
+            <strong style="color:var(--teal-deep);">💡 O que cada linha faz?</strong><br>
+            <code>@echo off</code> esconde os comandos e mostra só o resultado; <code>echo</code> escreve uma mensagem na tela; <code>pause</code> mantém a janela aberta até o aluno apertar uma tecla.
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que criei o arquivo ola_mundo.bat no meu computador e o executei com sucesso.</span>
+            <button type="button" class="read-check-btn" id="check-read-71-2" onclick="markTopicRead(71, 2)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(71, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(71, 3)">Ir para 3. Script de Backup →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 3 DO COMPLEMENTO 7A: SCRIPT DE BACKUP PARA PENDRIVE
+             =============================================================== -->
+        <section id="l71-phase-3" class="topic-phase-section">
+          <h2>3. Script de Backup para Pendrive</h2>
+          <p>
+            Agora que você já sabe criar e executar um .bat, vamos montar um script que copia arquivos de uma pasta do computador para um pendrive — o <strong>backup automático</strong>.
+          </p>
+
+          <h3 style="color:var(--teal-deep); font-size:20px; margin-top:18px;">Como funciona</h3>
+          <p>
+            O script usa o comando <strong><code>xcopy</code></strong>, que copia pastas inteiras (incluindo subpastas). O aluno só precisa ajustar <strong>duas informações</strong> no início do arquivo:
+          </p>
+          <ul style="margin-left:20px; line-height:1.8;">
+            <li><strong>ORIGEM</strong> — o caminho da pasta que ele quer copiar (backup).</li>
+            <li><strong>DESTINO</strong> — a letra do pendrive, seguida da pasta onde os arquivos serão salvos.</li>
+          </ul>
+
+          <img src="../../assets/img/windows/Aula7ComplementoBackup/image7.png" alt="Comando xcopy" class="img-showcase" style="max-width:440px;">
+          <p class="img-caption">O comando xcopy copia os arquivos da pasta de origem para o pendrive.</p>
+
+          <img src="../../assets/img/windows/Aula7ComplementoBackup/image6.png" alt="Como descobrir a letra do pendrive" class="img-showcase" style="max-width:440px;">
+          <p class="img-caption">Como descobrir a letra do pendrive antes de montar o script (no Explorador de Arquivos, "Este Computador").</p>
+
+          <div class="step-box-practical">
+            <h4>🖐️ Passo a Passo</h4>
+            <ol style="margin-left:20px; line-height:1.7;">
+              <li>Conecte o pendrive e <strong>anote a letra da unidade</strong>.</li>
+              <li>Abra o <strong>Bloco de Notas</strong> e digite o script abaixo:</li>
+            </ol>
+            <div style="background:#2D251E; color:#FFFDF9; font-family:'JetBrains Mono', monospace; border-radius:8px; padding:14px 16px; margin:10px 0; font-size:13.5px; line-height:1.6; overflow-x:auto;">
+              <span style="color:#6EE7B7;">@echo off</span><br>
+              <span style="color:#FCA5A5;">REM ==== Aluno: ajuste as duas linhas abaixo ====</span><br>
+              <span style="color:#FDBA74;">set</span> ORIGEM=<span style="color:#FCA5A5;">"C:\Usuarios\SeuNome\Documentos"</span><br>
+              <span style="color:#FDBA74;">set</span> DESTINO=<span style="color:#FCA5A5;">E:\Backup</span><br>
+              <span style="color:#FDBA74;">echo</span> Iniciando backup...<br>
+              <span style="color:#FDBA74;">xcopy</span> %ORIGEM% %DESTINO% /E /I /Y<br>
+              <span style="color:#FDBA74;">echo</span> Backup concluido!<br>
+              <span style="color:#FDBA74;">pause</span>
+            </div>
+            <ol start="3" style="margin-left:20px; line-height:1.7;">
+              <li><strong>Troque o caminho</strong> depois de <code>ORIGEM=</code> pelo caminho real da pasta que deseja copiar.</li>
+              <li><strong>Troque a letra</strong> <code>E:</code> depois de <code>DESTINO=</code> pela letra do pendrive do seu computador.</li>
+              <li>Salve como <code>backup.bat</code> (Tipo: "Todos os arquivos").</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/windows/Aula7ComplementoBackup/image2.png" alt="Script de backup no Bloco de Notas" class="img-showcase" style="max-width:440px;">
+          <p class="img-caption">Script de backup no Bloco de Notas — as linhas em vermelho são as que o aluno ajusta (ORIGEM e DESTINO).</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que montei o script backup.bat e ajustei as linhas ORIGEM e DESTINO com as minhas informações.</span>
+            <button type="button" class="read-check-btn" id="check-read-71-3" onclick="markTopicRead(71, 3)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(71, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(71, 4)">Ir para 4. Executando e Conferindo →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 4 DO COMPLEMENTO 7A: EXECUTANDO E CONFERINDO O BACKUP
+             =============================================================== -->
+        <section id="l71-phase-4" class="topic-phase-section">
+          <h2>4. Executando e Conferindo o Backup</h2>
+          <p>
+            Com tudo configurado, é hora de <strong>executar o backup</strong> e conferir se os arquivos chegaram ao pendrive.
+          </p>
+
+          <div class="step-box-practical">
+            <h4>🖐️ Passo a Passo da Execução</h4>
+            <ol style="margin-left:20px; line-height:1.7;">
+              <li>Com o pendrive conectado, dê <strong>dois cliques</strong> em <code>backup.bat</code>.</li>
+              <li>Aguarde a mensagem <strong>"Backup concluido!"</strong> na tela.</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/windows/Aula7ComplementoBackup/image1.png" alt="Prompt de Comando mostrando o backup concluído" class="img-showcase" style="max-width:440px;">
+          <p class="img-caption">O Prompt de Comando mostra cada arquivo copiado e confirma o fim do backup.</p>
+
+          <div style="background:var(--paper-white); border:1.5px dashed var(--teal); border-radius:12px; padding:14px 16px; margin:14px 0;">
+            <strong style="color:var(--teal-deep);">💡 O que significa /E /I /Y?</strong><br>
+            <code>/E</code> copia também as subpastas (mesmo vazias); <code>/I</code> trata o destino como pasta (evita erro de confirmação); <code>/Y</code> substitui arquivos existentes sem perguntar a cada um.
+          </div>
+
+          <div class="step-box-practical" style="border-left-color: var(--teal);">
+            <h4 style="color: var(--teal-deep);">✍️ Exercício Prático — Faça agora, no seu computador</h4>
+            <ol style="margin-left:20px; line-height:1.7;">
+              <li>Crie o script <code>ola_mundo.bat</code> e execute-o.</li>
+              <li>Crie uma pasta de teste chamada <strong>MeuBackupTeste</strong> com dois ou três arquivos dentro.</li>
+              <li>Crie o script <code>backup.bat</code>, ajustando ORIGEM para essa pasta de teste.</li>
+              <li>Conecte um pendrive, ajuste DESTINO com a letra correta e execute o script.</li>
+              <li>Confira no pendrive se os arquivos foram copiados corretamente.</li>
+            </ol>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que executei o backup no meu computador e confirmei no pendrive que os arquivos foram copiados.</span>
+            <button type="button" class="read-check-btn" id="check-read-71-4" onclick="markTopicRead(71, 4)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(71, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(71)">Iniciar Exercício de Fixação (5 Questões) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DO COMPLEMENTO 7A
+             =============================================================== -->
+        <div id="fixation-panel-71" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--amber); margin-top:4px; font-size:24px;">Exercício de Fixação — Complemento 7A</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-71" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-71">QUESTÃO 1 / 5</span>
+                <span id="q-points-71">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-71"></div>
+
+              <button class="hint-toggle" id="btn-hint-71" type="button">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-71"></div>
+
+              <div class="options" id="options-71"></div>
+
+              <div class="nav-row">
+                <button class="btn btn-ghost" id="btn-prev-71" type="button">← Anterior</button>
+                <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';">✓ Salvo automaticamente</span>
+                <button class="btn btn-primary" id="btn-next-71" type="button" disabled>Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL DE RESULTADO E ASSINATURA SHA-256 DO COMPLEMENTO 7A -->
+        <div id="result-panel-71" class="fixation-panel">
+          <div class="card-quiz">
+            <div class="result-badge" id="result-badge-71"></div>
+            <h1 id="result-title-71"></h1>
+            <p style="color:var(--ink-soft);" id="result-sub-71"></p>
+            <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">
+              Nota Final: <b id="result-score-71" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0
+            </div>
+
+            <div class="signature-badge-box" id="signature-box-71">
+              <div class="signature-badge-header">
+                <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+              </div>
+              <div class="signature-code-display" id="signature-code-71">WR-AUTH-CALCULATING...</div>
+              <div class="signature-badge-desc">
+                Código de autenticidade criptográfico (SHA-256) gerado automaticamente para o aluno. Evita adulterações no comprovante ou na nota.
+              </div>
+            </div>
+
+            <div class="breakdown" id="breakdown-71"></div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary" id="btn-download-txt-71" type="button">Baixar Comprovante (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-71" type="button" style="background:var(--amber);">📑 Baixar Apostila PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-71" type="button">Enviar WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-email-71" type="button">Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-71">
+              <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
+              <input type="email" id="input-email-71" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
+              <button class="btn btn-amber" id="btn-open-gmail-71" type="button">Baixar e Abrir E-mail →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- ===================================================================
+         TELA 6: COMPLEMENTO 7B — TUTORIAL DE CRIAÇÃO DE MÍDIA DE INSTALAÇÃO
+         =================================================================== -->
+    <section id="screen-lesson-82" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-lesson-7')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar para a Aula 7
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa (HTML Origem)
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 72)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DO COMPLEMENTO 7B -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura & Prática (Complemento 7B)</span>
+            <span id="gamify-percent-72">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-72"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-72">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Complemento 7B</span>
+        <h1 style="font-size:30px; color:var(--teal-deep); margin-bottom:8px;">Complemento 7B: Tutorial de Criação de Mídia de Instalação</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <strong>Guia Prático "Mão na Massa":</strong> Aprenda a criar seu próprio <strong>pendrive de instalação do Windows</strong> com a ferramenta oficial da Microsoft (Media Creation Tool). Curso online + Instalação + Formatação.
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Preparação Teórica e Prática</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo deste complemento</h2>
+          <ul style="color:var(--ink); font-size:15.5px; line-height:1.8; margin-left:20px;">
+            <li>Entender a importância e o funcionamento da ferramenta oficial <strong>Media Creation Tool</strong>.</li>
+            <li>Baixar e executar a ferramenta corretamente no computador.</li>
+            <li>Configurar <strong>idioma, edição e arquitetura</strong> da instalação.</li>
+            <li>Escolher entre <strong>pendrive USB ou arquivo ISO</strong> e resolver possíveis erros de formatação.</li>
+          </ul>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li>Entender o que é a Media Creation Tool e o que é necessário (material).</li>
+            <li>Baixar a ferramenta do site oficial da Microsoft.</li>
+            <li>Executar o assistente e aceitar os termos de licença.</li>
+            <li>Escolher idioma, edição e arquitetura da instalação.</li>
+            <li>Escolher entre gravar em pendrive USB ou baixar Arquivo ISO.</li>
+            <li>Resolver o erro "a unidade deve ter pelo menos 8 GB" (formatação FAT32).</li>
+          </ol>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
+            🏁 Resultado esperado: um pendrive pronto para instalar o Windows em qualquer computador, pronto para ser usado na aula de Formatação (Complemento 5B).
+          </p>
+        </div>
+
+        <!-- ÍNDICE DE TÓPICOS DO COMPLEMENTO 7B -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-72-1" onclick="switchTopicPhase(82, 1)">1. Intro</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-72-2" onclick="switchTopicPhase(82, 2)">2. Baixando</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-72-3" onclick="switchTopicPhase(82, 3)">3. Assistente</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-72-4" onclick="switchTopicPhase(82, 4)">4. Idioma/Edição</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-72-5" onclick="switchTopicPhase(82, 5)">5. USB vs ISO</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-72-6" onclick="switchTopicPhase(82, 6)">6. Erro FAT32</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-72-fix" onclick="openFixationPanel(72)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             TÓPICO 1 DO COMPLEMENTO 7B: INTRODUÇÃO E MATERIAL
+             =============================================================== -->
+        <section id="l72-phase-1" class="topic-phase-section active">
+          <h2>1. Introdução a este tutorial</h2>
+          <p>
+            Para instalar o Windows em um computador é preciso de uma <strong>mídia de instalação</strong> — normalmente um <strong>pendrive</strong> que contenha os arquivos de instalação do sistema. A ferramenta oficial e gratuita da Microsoft que cria essa mídia é a <strong>Media Creation Tool</strong>.
+          </p>
+          <p>
+            Ela funciona como um "assistente guiado": o aluno escolhe o pen pendrive, baixa o Windows e grava nele. A seguir, o passo a passo montado com o <strong>curso online em tempo real</strong> deste projeto. As letras <strong>[1], [2], [3]</strong> nas imagens indicam onde clicar.
+          </p>
+
+          <div style="background:var(--amber-soft); padding:16px; border-radius:12px; margin:18px 0; border:1px solid var(--line);">
+            <strong style="color:var(--amber-dark); font-size:16px;">📋 Material necessário</strong><br>
+            <ul style="margin:8px 0 0 20px; line-height:1.8;">
+              <li><strong>Pendrive</strong> com pelo menos <strong>8 GB</strong> de espaço (os dados serão apagados).</li>
+              <li>Computador com acesso à <strong>internet</strong> para baixar o Windows.</li>
+              <li>O próprio site oficial da Microsoft: <code>microsoft.com</code> → "Ferramenta de Criação de Mídia".</li>
+            </ul>
+          </div>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image1.png" alt="Início do tutorial de mídia" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption">Tela de introdução do tutorial: o material necessário aparece na guia superior.</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi o que é a Media Creation Tool e que tenho um pendrive de 8 GB.</span>
+            <button type="button" class="read-check-btn" id="check-read-82-1" onclick="markTopicRead(82, 1)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(82, 2)">Ir para 2. Baixando a Ferramenta →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 2 DO COMPLEMENTO 7B: BAIXANDO A FERRAMENTA
+             =============================================================== -->
+        <section id="l72-phase-2" class="topic-phase-section">
+          <h2>2. Baixando a Media Creation Tool</h2>
+          <p>
+            A ferramenta é baixada do site oficial da Microsoft. Lembre-se: baixe <strong>somente do site oficial</strong> (<code>microsoft.com</code>) para evitar versões falsas que podem conter vírus.
+          </p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image1.png" alt="Localizando o link da ferramenta no site da Microsoft" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Na página de download do Windows, localize o item "Ferramenta de Criação de Mídia" e clique em <strong>Baixar agora</strong>.</p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image3.png" alt="Ferramenta selecionada para download" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Arquivo <code>MediaCreationTool_22H2.exe</code> selecionado — clique em <strong>Salvar</strong>.</p>
+
+          <div class="step-box-practical">
+            <h4>🖐️ Dica de segurança (importante)</h4>
+            <p style="margin-top:6px;">Se o navegador perguntar sobre o arquivo, escolha <strong>Salvar</strong>. Após o download, você pode clicar duas vezes no arquivo baixado (na pasta Download) para iniciar a instalação da ferramenta.</p>
+          </div>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image2.png" alt="Arquivo do Media Creation Tool salvo na pasta Download" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[3]</strong> O arquivo aparece na pasta Download aguardando execução.</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que baixei o arquivo MediaCreationTool do site oficial da Microsoft.</span>
+            <button type="button" class="read-check-btn" id="check-read-82-2" onclick="markTopicRead(82, 2)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(82, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(82, 3)">Ir para 3. Executando o Assistente →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 3 DO COMPLEMENTO 7B: EXECUTANDO O ASSISTENTE
+             =============================================================== -->
+        <section id="l72-phase-3" class="topic-phase-section">
+          <h2>3. Executando o Assistente de Instalação</h2>
+          <p>
+            Ao abrir a ferramenta, um <strong>assistente</strong> se inicia. A primeira tela apenas informa sobre o que está sendo aplicado (avisos legais de licença). O aluno deve clicar em <strong>Aceitar</strong> para continuar.
+          </p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image5.png" alt="Assistente da Media Creation Tool iniciado" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Aplicando alterações: clique em <strong>Aceitar</strong> para continuar.</p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image4.png" alt="Preparando tudo da ferramenta de criação de mídia" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> A tela mostra "Preparando tudo" — aguarde a próxima etapa.</p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image7.png" alt="Avisos e termos de licença da Microsoft" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Leia os avisos de licença e clique em <strong>Aceitar</strong>.</p>
+
+          <div style="background:var(--paper-white); border:1.5px dashed var(--teal); border-radius:12px; padding:14px 16px; margin:14px 0;" class="step-box-practical">
+            <h4 style="color: var(--teal-deep);">🖐️ Na tela "O que você deseja fazer?"</h4>
+            <p style="margin-top:6px;">Marque a opção <strong>"Criar mídia de instalação (pendrive USB, DVD ou arquivo ISO) para outro computador"</strong> e clique em <strong>Avançar</strong>.</p>
+          </div>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image6.png" alt="Opção criar mídia de instalação selecionada" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Opção "Criar mídia de instalação..." selecionada → clique em <strong>Avançar</strong>.</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que executei o assistente, aceitei os termos e escolhi a opção de criar mídia de instalação.</span>
+            <button type="button" class="read-check-btn" id="check-read-82-3" onclick="markTopicRead(82, 3)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(82, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(82, 4)">Ir para 4. Idioma, Edição e Arquitetura →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 4 DO COMPLEMENTO 7B: IDIOMA, EDIÇÃO E ARQUITETURA
+             =============================================================== -->
+        <section id="l72-phase-4" class="topic-phase-section">
+          <h2>4. Escolhendo Idioma, Edição e Arquitetura</h2>
+          <p>
+            O assistente pergunta sobre <strong>idioma</strong> (Português Brasileiro) e <strong>edição e arquitetura</strong> (o "formato" do Windows a ser baixado). O padrão marcado (<strong>"Usar as opções recomendadas para este computador"</strong>) é quase sempre o correto.
+          </p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image9.png" alt="Seleção de idioma e edição" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Clique em <strong>Usar as opções recomendadas</strong> para este computador.</p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image8.png" alt="Idioma Português Brasil selecionado" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Idioma <strong>Português Brasil</strong> selecionado automaticamente → clique em <strong>Avançar</strong>.</p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image12.png" alt="Detalhes da instalação confirmados" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Confira os detalhes da instalação (idioma, edição, arquitetura) e clique em <strong>Avançar</strong>.</p>
+
+          <div style="background:var(--amber-soft); padding:16px; border-radius:12px; margin:18px 0; border:1px solid var(--line);">
+            <strong style="color:var(--amber-dark); font-size:16px;">💡 Arquitetura = 64 bits?</strong><br>
+            A maioria dos computadores modernos usa <strong>64 bits</strong>. O padrão recomendado pelo assistente já seleciona a arquitetura certa automaticamente — por isso é mais seguro deixar como está.
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que selecionei as opções recomendadas (idioma, edição e arquitetura) no assistente.</span>
+            <button type="button" class="read-check-btn" id="check-read-82-4" onclick="markTopicRead(82, 4)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(82, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(82, 5)">Ir para 5. USB vs ISO →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 5 DO COMPLEMENTO 7B: USB VS ARQUIVO ISO
+             =============================================================== -->
+        <section id="l72-phase-5" class="topic-phase-section">
+          <h2>5. Pendrive USB ou Arquivo ISO?</h2>
+          <p>
+            Chegou a hora da escolha mais importante: <strong>como a mídia será criada</strong>. Existem duas opções:
+          </p>
+          <ul style="margin-left:20px; line-height:1.8;">
+            <li><strong>Pendrive USB</strong> — grava diretamente no pen drive; é a forma mais prática para instalar em outro computador.</li>
+            <li><strong>Arquivo ISO</strong> — baixa um arquivo de imagem que pode ser gravado em DVD ou montado como se fosse um CD; útil para guardar ou instalar sem pendrive.</li>
+          </ul>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image10.png" alt="Opção pendrive USB selecionada" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Opção <strong>Pendrive USB</strong> selecionada (recomendada) → clique em <strong>Avançar</strong>.</p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image11.png" alt="Escolha da unidade de pen drive" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Selecione a <strong>unidade do pendrive</strong> e clique em <strong>Avançar</strong>.</p>
+
+          <div style="background:var(--paper-white); border:1.5px dashed var(--teal); border-radius:12px; padding:14px 16px; margin:14px 0;">
+            <strong style="color:var(--teal-deep);">⚠️ Aviso importante:</strong> tudo o que estiver no pendrive será <strong>apagado</strong> durante a gravação. Use um pendrive reserva.
+          </div>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image13.png" alt="Aguarde enquanto o pendrive é preparado" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[2]</strong> "Aguarde enquanto o pendrive está sendo preparado" — o download e a gravação podem levar vários minutos.</p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image14.png" alt="Progresso do download do Windows" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> Barra de progresso do download do Windows para o pendrive.</p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image15.png" alt="Ferramenta concluída com sucesso" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption"><strong>[1]</strong> <strong>Ferramenta concluída com êxito</strong> — o pendrive está pronto!</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que escolhi a opção de pendrive USB e a ferramenta concluiu a gravação com êxito.</span>
+            <button type="button" class="read-check-btn" id="check-read-82-5" onclick="markTopicRead(82, 5)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(82, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(82, 6)">Ir para 6. Erro FAT32 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 6 DO COMPLEMENTO 7B: ERRO "UNIDADE COM 8 GB" / FAT32
+             =============================================================== -->
+        <section id="l72-phase-6" class="topic-phase-section">
+          <h2>6. Resolvendo o Erro de Formatação (FAT32)</h2>
+          <p>
+            Às vezes, ao tentar gravar, aparece a mensagem: <strong>"A unidade precisa ter pelo menos 8 GB"</strong>. Isso acontece porque o pendrive é pequeno (menos de 8 GB) ou está formatado em um sistema de arquivos que a ferramenta não aceita (ex.: <code>NTFS</code> <em>exFat</em>). A solução é <strong>reformatar o pendrive como FAT32</strong>.
+          </p>
+
+          <div class="step-box-practical">
+            <h4>🖐️ Como formatar o pendrive em FAT32 (Windows 10/11)</h4>
+            <ol style="margin-left:20px; line-height:1.7;">
+              <li>Conecte o pendrive e abra o <strong>Explorador de Arquivos</strong>.</li>
+              <li>Clique com o <strong>botão direito na unidade do pendrive</strong> → escolha <strong>Formatar…</strong>.</li>
+              <li>Em "Sistema de arquivos", selecione <strong>FAT32</strong>.</li>
+              <li>Clique em <strong>Iniciar</strong> e aguarde a formatação terminar.</li>
+              <li>Tente novamente criar a mídia na ferramenta.</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image16.png" alt="Erro de unidade deve ter pelo menos 8 GB" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption">Erro "a unidade precisa ter pelo menos 8 GB" — típico de pendrive pequeno ou formato incompatível.</p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image17.png" alt="Formatar pendrive com botão direito" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption">Clique com o botão direito na unidade do pendrive e escolha <strong>Formatar…</strong>.</p>
+
+          <img src="../../assets/img/windows/Aula7TutorialMidia/image18.png" alt="Selecionando FAT32 na janela de formatação" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption">Janela de formatação: selecione o sistema de arquivos <strong>FAT32</strong> e clique em <strong>Iniciar</strong>.</p>
+
+          <div style="background:var(--amber-soft); padding:16px; border-radius:12px; margin:18px 0; border:1px solid var(--line);">
+            <strong style="color:var(--amber-dark); font-size:16px;">💡 Lembre-se:</strong> após formatar como FAT32 e criar a mídia, esse pendrive só será usado quando for <strong>formatar/instalar</strong> o Windows (visto na Aula 5B). Ele se torna um <strong>bootável</strong> — capaz de iniciar o computador direto do pendrive.
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que aprendi a resolver o erro de formatação formatando o pendrive como FAT32.</span>
+            <button type="button" class="read-check-btn" id="check-read-82-6" onclick="markTopicRead(82, 6)">
+              <span>☐ Marcar Leitura e Prática Concluídas</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(82, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(72)">Iniciar Exercício de Fixação (5 Questões) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DO COMPLEMENTO 7B
+             =============================================================== -->
+        <div id="fixation-panel-72" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--amber); margin-top:4px; font-size:24px;">Exercício de Fixação — Complemento 7B</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-72" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-72">QUESTÃO 1 / 5</span>
+                <span id="q-points-72">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-72"></div>
+
+              <button class="hint-toggle" id="btn-hint-72" type="button">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-72"></div>
+
+              <div class="options" id="options-72"></div>
+
+              <div class="nav-row">
+                <button class="btn btn-ghost" id="btn-prev-72" type="button">← Anterior</button>
+                <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';">✓ Salvo automaticamente</span>
+                <button class="btn btn-primary" id="btn-next-72" type="button" disabled>Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL DE RESULTADO E ASSINATURA SHA-256 DO COMPLEMENTO 7B -->
+        <div id="result-panel-72" class="fixation-panel">
+          <div class="card-quiz">
+            <div class="result-badge" id="result-badge-72"></div>
+            <h1 id="result-title-72"></h1>
+            <p style="color:var(--ink-soft);" id="result-sub-72"></p>
+            <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">
+              Nota Final: <b id="result-score-72" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0
+            </div>
+
+            <div class="signature-badge-box" id="signature-box-72">
+              <div class="signature-badge-header">
+                <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+              </div>
+              <div class="signature-code-display" id="signature-code-72">WR-AUTH-CALCULATING...</div>
+              <div class="signature-badge-desc">
+                Código de autenticidade criptográfico (SHA-256) gerado automaticamente para o aluno. Evita adulterações no comprovante ou na nota.
+              </div>
+            </div>
+
+            <div class="breakdown" id="breakdown-72"></div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary" id="btn-download-txt-72" type="button">Baixar Comprovante (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-72" type="button" style="background:var(--amber);">📑 Baixar Apostila PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-72" type="button">Enviar WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-email-72" type="button">Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-72">
+              <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
+              <input type="email" id="input-email-72" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
+              <button class="btn btn-amber" id="btn-open-gmail-72" type="button">Baixar e Abrir E-mail →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
   </main>
 
   <!-- MODAL DE PROTEÇÃO DE SENHA (PADRÃO DO PORTAL) -->
@@ -1016,6 +2305,161 @@
         ],
         correct: 1,
         hint: "É o sistema de arquivos padrão universal para criação de unidades de boot."
+      }
+    ];
+
+    // SENHA DA AULA 7 E COMPLEMENTOS (7A/7B)
+    const PASSWORD_A7 = "wr0726";
+
+    // QUESTÕES DO QUIZ DE FIXAÇÃO DA AULA 7 (5 QUESTÕES)
+    const QUESTIONS_LESSON_7 = [
+      {
+        q: "Qual é a função da Central de Segurança do Windows (Windows 7)?",
+        options: [
+          "Abrir jogos instalados no computador",
+          "Reúne em um único painel a proteção contra vírus, firewall, atualizações e manutenção do sistema",
+          "Melhorar o desempenho do processador",
+          "Instalar novos navegadores automaticamente"
+        ],
+        correct: 1,
+        hint: "Ela avisa quando falta alguma proteção e oferece atalhos para corrigir."
+      },
+      {
+        q: "Nos Windows 10 e 11, qual é o programa antivírus NATIVO do sistema que protege o computador em tempo real?",
+        options: [
+          "Norton",
+          "McAfee",
+          "Windows Defender (Microsoft Defender Antivírus)",
+          "Avast"
+        ],
+        correct: 2,
+        hint: "Ele já vem instalado no Windows e não precisa ser comprado."
+      },
+      {
+        q: "Para que serve o Firewall do Windows?",
+        options: [
+          "Criar documentos de texto",
+          "Aumentar a velocidade da internet",
+          "Bloquear a passagem de acessos não autorizados entre a internet e o computador",
+          "Aumentar o volume do som"
+        ],
+        correct: 2,
+        hint: "Funciona como um 'muro de proteção' que filtra o trânsito de rede."
+      },
+      {
+        q: "O que é um Ponto de Restauração do Sistema (Windows 7)?",
+        options: [
+          "Uma cópia de segurança do sistema criada automaticamente, permitindo 'voltar no tempo' para corrigir problemas",
+          "Um tipo de vírus escondido",
+          "Um formato de arquivo de imagem",
+          "Uma pasta para downloads"
+        ],
+        correct: 0,
+        hint: "Permite desfazer mudanças ruins (programas, drivers) sem perder arquivos recentes."
+      },
+      {
+        q: "Por que usar Windows pirata (crackeado) é perigoso?",
+        options: [
+          "Porque consome mais internet",
+          "Porque remove atualizações de segurança e o próprio 'crack' pode conter vírus",
+          "Porque deixa a tela colorida",
+          "Porque impede o uso do mouse"
+        ],
+        correct: 1,
+        hint: "O crack frequentemente desativa o Windows Update, deixando o computador vulnerável."
+      }
+    ];
+
+    // QUESTÕES DO QUIZ DE FIXAÇÃO DO COMPLEMENTO 7A (5 QUESTÕES)
+    const QUESTIONS_LESSON_71 = [
+      {
+        q: "O que é um arquivo .bat?",
+        options: [
+          "Uma imagem do sistema",
+          "Um arquivo de texto que contém comandos do Prompt de Comando executados automaticamente",
+          "Um vídeo de instruções",
+          "Uma planilha de cálculo"
+        ],
+        correct: 1,
+        hint: "batch = lote de comandos executados em sequência."
+      },
+      {
+        q: "Para que serve o comando 'pause' em um script .bat?",
+        options: [
+          "Pausa a execução e mantém a janela aberta até o usuário apertar uma tecla",
+          "Apaga todos os arquivos",
+          "Desliga o computador",
+          "Conecta à internet"
+        ],
+        correct: 0,
+        hint: "Sem o pause, a janela fecha na hora e não dá para ver o resultado."
+      },
+      {
+        q: "Qual comando copia pastas inteiras (incluindo subpastas) para fazer backup?",
+        options: ["copy", "del", "xcopy", "type"],
+        correct: 2,
+        hint: "É parecido com o 'copy', mas copia também as subpastas."
+      },
+      {
+        q: "O que significa a opção /Y no comando xcopy?",
+        options: [
+          "Apagar os arquivos",
+          "Substituir arquivos existentes sem perguntar",
+          "Criar um vírus",
+          "Formatar o pendrive"
+        ],
+        correct: 1,
+        hint: "Y de Yes — confirma automaticamente a substituição."
+      },
+      {
+        q: "Qual extensão um arquivo deve ter para funcionar como script de backup no Prompt de Comando?",
+        options: [".txt", ".doc", ".bat", ".jpg"],
+        correct: 2,
+        hint: "É a extensão dos arquivos 'batch' do Windows."
+      }
+    ];
+
+    // QUESTÕES DO QUIZ DE FIXAÇÃO DO COMPLEMENTO 7B (5 QUESTÕES)
+    const QUESTIONS_LESSON_72 = [
+      {
+        q: "Qual é a ferramenta OFICIAL da Microsoft para criar mídia de instalação do Windows?",
+        options: [
+          "Media Creation Tool",
+          "Windows Media Player",
+          "Paint",
+          "Word"
+        ],
+        correct: 0,
+        hint: "Baixe apenas do site oficial microsoft.com."
+      },
+      {
+        q: "Qual é a capacidade mínima recomendada do pendrive para criar a mídia de instalação?",
+        options: ["2 GB", "4 GB", "8 GB", "1 GB"],
+        correct: 2,
+        hint: "A imagem de instalação do sistema exige pelo menos 8 Gigabytes."
+      },
+      {
+        q: "Qual opção permite salvar o Windows como um Arquivo de Imagem para gravar depois em DVD?",
+        options: ["Pendrive USB", "Arquivo ISO", "Disquete", "CD-Rom"],
+        correct: 1,
+        hint: "Formato .iso — imagem de disco."
+      },
+      {
+        q: "Em qual sistema de arquivos o pendrive deve ser formatado quando a ferramenta apresentar o erro de '8 GB'?",
+        options: ["NTFS", "exFAT", "FAT32", "EXT4"],
+        correct: 2,
+        hint: "É o formato padrão universal para unidades de boot."
+      },
+      {
+        q: "Por que se deve buscar a Media Creation Tool apenas no site oficial da Microsoft?",
+        options: [
+          "Porque é mais rápida",
+          "Versões falsas podem conter vírus; a oficial é confiável e gratuita",
+          "Porque paga em dólar",
+          "Porque precisa de cartão de crédito"
+        ],
+        correct: 1,
+        hint: "Sites duvidosos podem espalhar malware camuflado de ferramenta."
       }
     ];
 
@@ -1123,14 +2567,15 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      // Apenas a Aula 8 está liberada no Módulo Windows por enquanto. Todas as demais (1 a 7 e 9 a 12) estão em construção!
-      if(lessonNum !== 8){
-        alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, apenas a Aula 08 está disponível no portal.`);
+      // Aulas liberadas: 7 (com complementos 71/72) e 8. Demais estão em construção!
+      const OPEN_LESSONS = [7, 8, 71, 72];
+      if(!OPEN_LESSONS.includes(lessonNum)){
+        alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, apenas a Aula 07 e a Aula 08 estão disponíveis no portal.`);
         return;
       }
 
       // Abre o Modal HTML idêntico ao do Módulo Internet
-      document.getElementById("modal-title-text").textContent = `Aula ${lessonNum}: ${lessonTitle}`;
+      document.getElementById("modal-title-text").textContent = (lessonNum >= 70) ? lessonTitle : `Aula ${lessonNum}: ${lessonTitle}`;
       document.getElementById("modal-pass-field").value = "";
       document.getElementById("password-modal").classList.add("active");
       setTimeout(() => {
@@ -1146,17 +2591,20 @@
     document.getElementById("btn-confirm-unlock").onclick = function(){
       const typed = document.getElementById("modal-pass-field").value.trim().toLowerCase();
 
-      // Aceita wr0926 ou senhas de teste a001/b002/c003/d004/h008
-      if(typed === PASSWORD_WR || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "h008" || typed === "wr2026"){
+      // Aceita wr0926 (Aula 8) / wr0726 (Aula 7 e complementos) ou senhas de teste a001/b002/c003/d004/h008/wr2026
+      if(typed === PASSWORD_WR || typed === PASSWORD_A7 || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "h008" || typed === "wr2026"){
         closePasswordModal();
-        if(targetLessonNum === 8){
-          const badge = document.getElementById("badge-lesson-8");
+        const routes = {
+          7:  "screen-lesson-7",
+          71: "screen-lesson-71",
+          72: "screen-lesson-82",
+          8:  "screen-lesson-8",
+          12: "screen-quiz"
+        };
+        if(routes[targetLessonNum]){
+          const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
           if(badge) badge.textContent = "🟢";
-          showScreen("screen-lesson-8");
-        } else if(targetLessonNum === 12){
-          const badge = document.getElementById("badge-lesson-12");
-          if(badge) badge.textContent = "🟢";
-          showScreen("screen-quiz");
+          showScreen(routes[targetLessonNum]);
         }
       } else {
         alert("❌ Senha incorreta. Por favor, verifique com o professor a senha desta aula.");
@@ -1184,31 +2632,58 @@
       document.getElementById(`fixation-panel-${lessonNum}`).classList.remove("active");
       document.getElementById(`result-panel-${lessonNum}`).classList.remove("active");
 
-      window.scrollTo({ top: 180, behavior: "smooth" });
+      if(activePhase) activePhase.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    // MARCAR LEITURA / GAMIFICAÇÃO DA AULA 8
-    let readTopicsL8 = new Set();
+    // MARCAR LEITURA / GAMIFICAÇÃO (AULA 7, 8, COMPLEMENTOS 71 e 72)
+    const TOTAL_TOPICS = { 7: 7, 8: 5, 71: 4, 72: 6 };
+    const SEQUENTIAL_LESSONS = { 7: true, 71: true, 72: true };
+    let readTopics = {};
+    function getReadSet(lessonNum){
+      if(!readTopics[lessonNum]) readTopics[lessonNum] = new Set();
+      return readTopics[lessonNum];
+    }
+
     window.markTopicRead = function(lessonNum, topicNum) {
-      readTopicsL8.add(topicNum);
+      const set = getReadSet(lessonNum);
+      set.add(topicNum);
+
       const btn = document.getElementById(`check-read-${lessonNum}-${topicNum}`);
       if(btn){
         btn.classList.add("checked");
         btn.innerHTML = "<span>☑ Leitura Concluída!</span>";
+        btn.disabled = true;
       }
 
-      const totalTopics = 5;
-      const pct = Math.round((readTopicsL8.size / totalTopics) * 100);
+      // Libera o próximo passo da sequência (cada check só libera o seguinte)
+      if(SEQUENTIAL_LESSONS[lessonNum]){
+        const nextBtn = document.getElementById(`check-read-${lessonNum}-${topicNum + 1}`);
+        if(nextBtn) nextBtn.disabled = false;
+      }
+
+      const totalTopics = TOTAL_TOPICS[lessonNum] || 5;
+      const pct = Math.round((set.size / totalTopics) * 100);
       document.getElementById(`gamify-percent-${lessonNum}`).textContent = `${pct}% Concluído`;
       document.getElementById(`gamify-bar-${lessonNum}`).style.width = `${pct}%`;
 
-      if(readTopicsL8.size === totalTopics){
+      if(set.size === totalTopics){
         document.getElementById(`gamify-badge-box-${lessonNum}`).innerHTML =
           '<span class="eyebrow-badge" style="background:var(--success-bg); color:var(--success); margin:0;"><span class="dot"></span> 🎉 Leitura Completa!</span>';
       }
     };
 
-    // ABRIR EXERCÍCIO DE FIXAÇÃO DA AULA 8
+    // Inicialização da trava sequencial: desabilita todos os checks exceto o primeiro
+    (function initSequentialGating(){
+      [7, 71, 72].forEach(function(lessonNum){
+        const total = TOTAL_TOPICS[lessonNum] || 0;
+        for(let i = 1; i <= total; i++){
+          const btn = document.getElementById(`check-read-${lessonNum}-${i}`);
+          if(btn) btn.disabled = i !== 1;
+        }
+      });
+    })();
+
+    // ABRIR EXERCÍCIO DE FIXAÇÃO (AULA 7, 8, COMPLEMENTOS 71 e 72)
     window.openFixationPanel = function(lessonNum) {
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-phase-section`).forEach(s => s.classList.remove("active"));
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
@@ -1216,8 +2691,13 @@
 
       const panel = document.getElementById(`fixation-panel-${lessonNum}`);
       panel.classList.add("active");
-      renderTrailL8();
-      renderQuestionL8();
+      if(lessonNum === 8){
+        renderTrailL8();
+        renderQuestionL8();
+      } else {
+        renderTrailGen(lessonNum);
+        renderQuestionGen(lessonNum);
+      }
 
       panel.scrollIntoView({ behavior: "smooth" });
     };
@@ -1367,6 +2847,172 @@
     document.getElementById("btn-open-gmail-8").onclick = () => {
       window.QuizEngine.openGmailComposer(getReportDataL8());
     };
+
+    // ===================================================================
+    // MOTOR GENÉRICO DE QUIZ DE FIXAÇÃO (AULA 7 E COMPLEMENTOS 71/72)
+    // ===================================================================
+    const QUIZ_CFG = {
+      7:  { questions: QUESTIONS_LESSON_7,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-7",  title: "Módulo 1 — Aula 7: Segurança e Antivírus no Windows",                          sig: "Módulo 1 - Aula 7 (Windows)" },
+      71: { questions: QUESTIONS_LESSON_71, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-71", title: "Módulo 1 — Complemento 7A: Backup Automático com Arquivo .BAT",                  sig: "Módulo 1 - Complemento 7A (Windows)" },
+      72: { questions: QUESTIONS_LESSON_72, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-72", title: "Módulo 1 — Complemento 7B: Tutorial de Criação de Mídia de Instalação",        sig: "Módulo 1 - Complemento 7B (Windows)" }
+    };
+
+    function renderTrailGen(lessonNum) {
+      const cfg = QUIZ_CFG[lessonNum];
+      const total = cfg.questions.length;
+      const trail = document.getElementById(`quiz-trail-${lessonNum}`);
+      trail.innerHTML = "";
+      for(let i=0; i<total; i++){
+        const node = document.createElement("div");
+        node.className = "trail-node" + (i < cfg.current ? " done" : i === cfg.current ? " current" : "");
+        trail.appendChild(node);
+        if(i < total - 1){
+          const line = document.createElement("div");
+          line.className = "trail-line" + (i < cfg.current ? " filled" : "");
+          line.innerHTML = "<i></i>";
+          trail.appendChild(line);
+        }
+      }
+    }
+
+    function renderQuestionGen(lessonNum) {
+      const cfg = QUIZ_CFG[lessonNum];
+      const total = cfg.questions.length;
+      renderTrailGen(lessonNum);
+      const q = cfg.questions[cfg.current];
+      document.getElementById(`q-count-${lessonNum}`).textContent = `QUESTÃO ${cfg.current + 1} / ${total}`;
+      document.getElementById(`q-text-${lessonNum}`).textContent = q.q;
+
+      const hintBox = document.getElementById(`hint-box-${lessonNum}`);
+      hintBox.textContent = q.hint;
+      hintBox.classList.remove("show");
+
+      const opts = document.getElementById(`options-${lessonNum}`);
+      opts.innerHTML = "";
+      q.options.forEach((text, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "opt" + (cfg.answers[cfg.current] === idx ? " selected" : "");
+        btn.innerHTML = `<span class="letter">${String.fromCharCode(97+idx)}</span><span>${text}</span>`;
+        btn.onclick = () => {
+          cfg.answers[cfg.current] = idx;
+          renderQuestionGen(lessonNum);
+        };
+        opts.appendChild(btn);
+      });
+
+      document.getElementById(`btn-prev-${lessonNum}`).disabled = cfg.current === 0;
+      document.getElementById(`btn-prev-${lessonNum}`).style.visibility = cfg.current === 0 ? "hidden" : "visible";
+      document.getElementById(`btn-next-${lessonNum}`).disabled = cfg.answers[cfg.current] === null;
+      document.getElementById(`btn-next-${lessonNum}`).textContent = cfg.current === total - 1 ? "Finalizar Exercício ✓" : "Próxima →";
+    }
+
+    async function renderResultGen(lessonNum) {
+      const cfg = QUIZ_CFG[lessonNum];
+      const total = cfg.questions.length;
+      let correct = 0;
+      cfg.questions.forEach((q, i) => { if(cfg.answers[i] === q.correct) correct++; });
+      const score = correct * 2.0;
+      const passed = score >= PASS_SCORE;
+
+      document.getElementById(`fixation-panel-${lessonNum}`).classList.remove("active");
+      const resPanel = document.getElementById(`result-panel-${lessonNum}`);
+      resPanel.classList.add("active");
+
+      document.getElementById(`result-score-${lessonNum}`).textContent = score.toLocaleString("pt-BR", { minimumFractionDigits: 1 });
+
+      const timestamp = cfg.signature ? cfg.signature.timestamp : Date.now();
+      cfg.signature = await window.QuizEngine.generateDigitalSignature(cfg.name, cfg.sig, score, total, timestamp);
+      document.getElementById(`signature-code-${lessonNum}`).textContent = cfg.signature.authCode;
+
+      const badge = document.getElementById(`result-badge-${lessonNum}`);
+      const title = document.getElementById(`result-title-${lessonNum}`);
+      const sub = document.getElementById(`result-sub-${lessonNum}`);
+
+      if(passed){
+        badge.className = "result-badge pass"; badge.textContent = "🎉";
+        title.textContent = "Parabéns!";
+        sub.textContent = `Você acertou ${correct} de ${total} questões no Exercício ${lessonNum >= 70 ? "Complemento" : "da Aula"} ${lessonNum}!`;
+      } else {
+        badge.className = "result-badge fail"; badge.textContent = "📘";
+        title.textContent = "Atenção ao Conteúdo!";
+        sub.textContent = `Você acertou ${correct} de ${total} questões (nota ${score.toLocaleString("pt-BR", { minimumFractionDigits: 1 })}). Revise os passos práticos e tente novamente!`;
+      }
+
+      const breakdown = document.getElementById(`breakdown-${lessonNum}`);
+      breakdown.innerHTML = "";
+      cfg.questions.forEach((q, i) => {
+        const ok = cfg.answers[i] === q.correct;
+        const row = document.createElement("div");
+        row.className = "b-row";
+        row.innerHTML = `<span>${i+1}. ${q.q}</span><span class="b-tag ${ok ? "ok" : "no"}">${ok ? "correta" : "incorreta"}</span>`;
+        breakdown.appendChild(row);
+      });
+
+      resPanel.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function getReportDataGen(lessonNum) {
+      const cfg = QUIZ_CFG[lessonNum];
+      const total = cfg.questions.length;
+      let correct = 0;
+      cfg.questions.forEach((q, i) => { if(cfg.answers[i] === q.correct) correct++; });
+      const score = correct * 2.0;
+      return {
+        studentName: cfg.name,
+        moduleId: cfg.moduleId,
+        moduleTitle: cfg.title,
+        correct: correct,
+        total: total,
+        score: score,
+        passed: score >= PASS_SCORE,
+        signature: cfg.signature,
+        answers: cfg.answers,
+        questions: cfg.questions
+      };
+    }
+
+    // EVENTOS DOS QUIZZES DA AULA 7 E COMPLEMENTOS (7, 71, 72)
+    [7, 71, 72].forEach(function(lessonNum){
+      document.getElementById(`btn-hint-${lessonNum}`).onclick = () => {
+        document.getElementById(`hint-box-${lessonNum}`).classList.toggle("show");
+      };
+
+      document.getElementById(`btn-prev-${lessonNum}`).onclick = () => {
+        const cfg = QUIZ_CFG[lessonNum];
+        if(cfg.current > 0) { cfg.current--; renderQuestionGen(lessonNum); }
+      };
+
+      document.getElementById(`btn-next-${lessonNum}`).onclick = () => {
+        const cfg = QUIZ_CFG[lessonNum];
+        if(cfg.current < cfg.questions.length - 1) {
+          cfg.current++; renderQuestionGen(lessonNum);
+        } else {
+          renderResultGen(lessonNum);
+        }
+      };
+
+      document.getElementById(`btn-download-txt-${lessonNum}`).onclick = () => {
+        window.QuizEngine.downloadTxtReport(getReportDataGen(lessonNum));
+      };
+
+      document.getElementById(`btn-download-pdf-${lessonNum}`).onclick = () => {
+        window.PDFLessons.downloadLessonPDF("windows", lessonNum);
+      };
+
+      document.getElementById(`btn-whatsapp-${lessonNum}`).onclick = () => {
+        const url = window.QuizEngine.buildWhatsAppUrl(getReportDataGen(lessonNum));
+        window.open(url, "_blank");
+      };
+
+      document.getElementById(`btn-email-${lessonNum}`).onclick = () => {
+        document.getElementById(`email-panel-${lessonNum}`).classList.toggle("show");
+      };
+
+      document.getElementById(`btn-open-gmail-${lessonNum}`).onclick = () => {
+        window.QuizEngine.openGmailComposer(getReportDataGen(lessonNum));
+      };
+    });
 
     // ===================================================================
     // LÓGICA DA PROVA FINAL DO MÓDULO WINDOWS (AULA 12 - 10 QUESTÕES)

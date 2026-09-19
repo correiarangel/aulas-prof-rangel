@@ -44,11 +44,12 @@
       box-shadow: none !important;
     }
 
-    /* ===== MOBILE: desfazer "card dentro de card dentro de card" + miniaturas ===== */
+    /* ===== MOBILE: desfazer "card dentro de card dentro de card" + miniaturas =====
+       NOTE: paddings laterais de .menu-hub-card, .lesson-reading-card,
+       .question-card-item e .option-btn-card são regulados pelo bloco
+       "REGRAS MOBILE GLOBAIS" (style.css @media max-width:767px, com
+       !important). Não duplicar aqui para não "estrangular" o mobile. */
     @media (max-width: 767px) {
-      .menu-hub-card { padding: 20px 14px; }
-      .lesson-reading-card { padding: 20px 14px; }
-
       .browser-grid { gap: 10px; }
       .browser-card {
         background: transparent;
@@ -83,7 +84,7 @@
         margin-bottom: 0;
         border-top: 2px solid var(--amber-soft);
       }
-      .option-btn-card { font-size: 16px; padding: 14px; }
+      .option-btn-card { font-size: 16px; }
 
       /* caixas de código viram preview com rolagem (miniatura) */
       #home-code-output { max-height: 240px !important; overflow-y: auto; }

@@ -3,24 +3,47 @@
 > Proposito: registrar fielmente onde paramos para que qualquer sessão futura continue sem perder contexto.
 > Este arquivo deve ser **atualizado ao fim de cada sessão** com: concluído, pendente, localizadores e validações.
 
-## 📌 PRÓXIMA SESSÃO — COMEÇAR AQUI (resumo de hoje, 17/09/2026)
+## ✅ SESSÃO ATUAL — COMEÇAR AQUI (resumo de hoje, 18/09/2026)
 
-Escopo trabalhado hoje: **somente o módulo Internet** (`modules/internet/`). Nada foi feito nos outros módulos.
+Escopo de hoje: **Aula 07 do Módulo Windows (Segurança e Antivírus) + Complementos 7A (Backup .BAT) e 7B (Tutorial Mídia de Instalação)**.
 
 **Concluído e validado hoje (não refazer):**
-1. Certificado: termo "DIPLOMA" → "CERTIFICADO" (selo + texto JS da aprovação).
-2. Miniatura do certificado no mobile (≤767px) com botão "🔍 Ampliar Certificado" (`#btn-cert-toggle`, alterna `.expanded` em `#cert-thumb-wrap`); `@page` A4 landscape restaurado no print após edição ter removido por engano.
-3. Certificado no mobile em **modo escuro** (decisão do usuário): `@media screen and (max-width:767px)` — fundo `var(--bg-brown)`, textos `var(--ink-light)`, acentos `var(--amber)`, boxes `var(--card-brown)`, fade da miniatura escuro. Desktop ≥768px e impressão seguem claros.
-4. Flatten "card dentro de card" no mobile (index + prova).
-5. Correção de contraste: pergunta da prova no mobile ficava **preta sobre marrom** — agora `question-card-item` mantém fundo `var(--paper-beige)` + borda `var(--line-light)` sem sombra (aplicado em `modules/internet/prova-internet.html` ~linha 76-86).
-6. Resposta da questão de prova sobre Google Docs: **B — "Salva automaticamente na nuvem a cada caractere ou palavra digitada"** (`correct:1` em `prova-internet.html:421-428`; fixação Aula 3 `index.html:1536-1542`).
+1. **Telas de aula no `modules/windows/index.html`** — `screen-lesson-7` (FASE 0 tutorial 7 passos + 7 fases distribuidas `l7-phase-1..7`, checks `check-read-7-1..7` distribuídos no fim de cada fase, quiz com 5 questões), `screen-lesson-71` (FASE 0 4 passos + 4 fases + checks `check-read-71-1..4`), `screen-lesson-72` (FASE 0 6 passos + 6 fases + checks `check-read-72-1..6`), todas com `downloadLessonPDF("windows", N)` e senha `wr0726`. Sessão valida: scripts inline extraídos passam em `node --check`; `main.js` do módulo passou em `node --check` (SCRIPT_OK_FINAL); sem IDs duplicados nos 3 screens (`uniq -d` vazio).
+2. **Gating sequencial no módulo Windows**: `SEQUENTIAL_LESSONS = {7:true, 71:true, 72:true}` no `main.js` — `markTopicRead` habilita o próximo check; `TOTAL_TOPICS = {7:7, 71:4, 72:6}`; IIFE `initSequentialGating` desabilita todos os checks (exceto o 1º) no load. Aula 08 segue sem trava.
+3. **`assets/js/pdf-lessons.js`**: 
+   - `moduleLessonTitles.windows` com `{7, 71, 72, 8}` (títulos das aulas/tópicos).
+   - `LESSONS.windows.sections` ganhou entradas **Aula 7** (7 tópicos — imagens de `Aula7/imageN.png`), **Complemento 7A** (4 tópicos — `Aula7ComplementoBackup/imageN.png` + `sec.html` ilustrativo para tópicos sem imagem), **Complemento 7B** (6 tópicos — `Aula7TutorialMidia/imageN.png`), todas com `steps`/imagens reais e caixas (`boxType: "tip"/"warning"`), inseridas antes da seção "UNIDADE 1".
+   - `node path script: "node --check assets/js/pdf-lessons.js"` → PDFLESSONS_OK; tudo validado.
+4. **`Docs/`** — criados 3 specs no padrão da SPEC-AULA-08-WINDOWS:
+   - `SPEC-AULA-07-WINDOWS.md` — 7 tópicos, mapeamento de 28 imagens, quiz 5×2,0 = 10,0 com senha `wr0726`.
+   - `SPEC-COMPLEMENTO-7A-WINDOWS.md` — Backup .BAT/xcopy genérico (`xcopy`, script backup.bat), 4 tópicos + quiz 5×2,0.
+   - `SPEC-COMPLEMENTO-7B-WINDOWS.md` — Media Creation Tool / pendrive FAT32 / pendrive bootável, 6 tópicos + quiz 5×2,0.
+   - `CONTINUACAO.md` atualizado (este arquivo).
 
-**Pendências do módulo Internet para a próxima sessão (ordem sugerida):**
-- [ ] **Teste manual em navegador (mobile + desktop)** de tudo acima: abrir a prova no mobile → responder questões (texto legível), ver miniatura do certificado → "Ampliar" → cancelar → imprimir (A4 claro); conferir fixações das aulas no mobile (listas sem "card dentro de card") e as caixas de código com rolagem (`#home-code-output` 240px, `#ai-prompt-text` 260px). Ambiente não tem playwright/puppeteer — instalar caso queira automatizar.
-- [ ] Avaliar se o flatten mobile do Internet deve virar bloco genérico em `assets/css/style.css` para os demais módulos (ver Pendência 8).
-- [ ] Nenhuma alteração pendente de código no Internet — tudo validado (`node --check` inline OK, CSS 45/45, `pdf-lessons.js` OK).
+**Pendências para a próxima sessão (ordem sugerida):**
+- [ ] **Teste visual manual em navegador (mobile/desktop) da Aula 07 + 71 + 72** e conferência dos PDFs gerados (imagens reais em todas as fases), seguindo as regras do `AGENTS.md`.
+- [ ] Conferir se os estilos das novas telas (`screen-lesson-7/71/72`) usam apenas classes das `REGRAS MOBILE GLOBAIS`; caso alguma regra de padding por aula tenha sido criada, migrar para o bloco global de `style.css` (regra 3 do AGENTS).
+- [ ] Registrar na próxima sessão o resultado do teste manual antes de iniciar qualquer nova tarefa.
 
-## Contexto / Objetivo de Longo Prazo
+---
+
+## 📜 SESSÃO ANTERIOR — RESUMO 18/09/2026 (regras mobile globais)
+
+Escopo de hoje: **regra mobile global de largura máxima** aplicada a TODOS os módulos (Excel, Windows, Word, PowerPoint, Internet) e registrada como norma para telas futuras.
+
+**Concluído e validado hoje (não refazer):**
+1. **`assets/css/style.css` ganhou o bloco `/* REGRAS MOBILE GLOBAIS */`** (antes de `@media print`, ~linha 1346): `@media (max-width:767px)` com `!important` que força em todas as telas `.container` (padding lat. 4px), `.menu-hub-card` (16px 4px), `.lesson-reading-card` (20px 6px), `.card-quiz` (20px 8px), `.question-card-item` (18px 8px), `.option-btn-card` (14px 10px), `.quiz-app`/`.quiz-container`/`.quiz-app-container` (max-width 100%, margin 0 4px, padding 0) e os internos do Excel (`.grid-inspector-container`, `.formula-builder-container`, `.function-lab-container` → 12px 10px). Colocado AO FINAL (antes do print) para vencer media queries antigas (900px/640px) e o padding inline dos módulos — fim do "efeito linguiça" no mobile.
+2. **Removido overrides móveis inline que contradiziam a regra** (fonte única = bloco global): `modules/internet/index.html` (removido `padding` de `.menu-hub-card`/`.lesson-reading-card`/`.option-btn-card` no `@media 767px`; mantida só a "des-nesting" de fundo/borda), `modules/windows/index.html`, `modules/word/index.html`, `modules/powerpoint/index.html` (removido `@media 560px .card-quiz` e comentado delegando ao bloco global). `modules/internet/prova-internet.html` mantém seus valores (já alinhados à regra).
+3. **`AGENTS.md` regra 6** gravada: "Mobile aproveita 100% da largura (regra global obrigatória)" — proíbe criar `@media` por aula com padding lateral maior e obriga editar somente o bloco global de `style.css`.
+
+**Pendências para a próxima sessão (ordem sugerida):**
+- [ ] **Teste visual manual (ou playwright/puppeteer, se instalado) em mobile (375/414px) e desktop** de cada módulo (Excel hub/9 aulas, Windows Aula 8, Word, PowerPoint, Internet hub/prova): confirmar largura máxima (~4px) nos cards sem perda de leitura (espaçamento de alternativas `.option-btn-card` 14px 10px, etc.).
+- [ ] Confirmar que o flatten "card dentro de card" de fundos/bordas (que segue sendo inline no módulo Internet) continua bom; avaliar se vale portar também a des-nesting de VISUAL (não só padding) para o bloco global.
+- [ ] Nada pendente de código conhecido — `node --check` dos scripts inline OK e CSS balanceado (ver "Validações").
+
+## Escopo das sessões anteriores
+
+### Sessão 17/09/2026 — módulo Internet
 
 Regra obrigatória gravada (AGENTS.md regra 1, SPEC-EXCEL-MASTER.md §6.1, SDD-AULA-08):
 - Toda aula tem FASE 0 com objetivo + **roteiro numerado**.
@@ -111,7 +134,7 @@ node /tmp/opencode/check-inline.js   # 4 scripts inline OK (o maior ~75k chars)
    - Aula 9 (a9, 11 imgs) usa `width:100%` inline (não é o `.img-reduced`) — revisar no PDF, pois o renderer `pdf-lessons.js` ~1675 já impõe `max-width:96%; max-height:480px`.
    - Obs.: no módulo Excel, **imagens existem hoje apenas em a1/a2/a7/a8/a9** (a8 = 5 imgs `image1..5`, ainda não usadas na tela). As aulas 3, 4, 5, 6 e 10 não têm imagens neste `index.html` — confirmar com o usuário onde ele viu as imagens pequenas (se na tela do navegador ou no preview PDF) antes de mexer, para não alterar o escopo.
    - **Ação da próxima sessão:** subir o cap do `.img-reduced` (ex.: 70% → ~90–100%) e/ou trocar os `max-width` inline da Aula 7 (420px → ~640–720px), validar tela + PDF (ver regra 2 do AGENTS.md).
-8. **DEFEITO TÉCNICO REGISTRADO — "cards encadeados" nos demais módulos:** o padrão de `card dentro de card dentro de card` (ex.: `.menu-hub-card` > `.question-card-item` > `.option-btn-card`; `.lesson-reading-card` > `.browser-card`/`.subcard-item`/`.question-card-item`; certificado inteiro dentro de `.menu-hub-card`) foi **corrigido hoje apenas no módulo Internet** via CSS mobile em `modules/internet/index.html` e `modules/internet/prova-internet.html`. **Pendente de aplicar o mesmo flatten (CSS mobile ≤767px) aos módulos Windows/Word/PowerPoint/Excel** em sessões futuras: auditar quais classes/inline styles repetem o padrão (`.fixation-panel`, `.question-card-item`, `.option-btn-card`, `.browser-card`, `.subcard-item`) e avaliar portar o bloco para `assets/css/style.css` de forma genérica (com teste visual por módulo antes).
+8. **DEFEITO TÉCNICO — "cards encadeados" nos demais módulos:** a parte de **padding/largura** foi resolvida globalmente em 18/09/2026 com o bloco `REGRAS MOBILE GLOBAIS` em `assets/css/style.css` (vale para Excel/Windows/Word/PowerPoint/Internet e telas futuras — ver regra 6 do AGENTS.md). Continua **pendente** (sessões futuras): aplicar/examinar a des-nesting de **visual** (fundos/bordas/sombras) nos módulos Windows/Word/PowerPoint/Excel no mobile, como já foi feito no Internet (`.browser-card`, `.subcard-item`, `.fixation-panel`, `.question-card-item` perdem caixa no mobile) — avaliar portar essa des-nesting para o bloco global de `style.css` de forma genérica (com teste visual por módulo antes).
 9. **Teste em navegador do módulo Internet (mobile + desktop)** das mudanças de hoje: pergunta da prova legível (fundo claro), miniatura + "Ampliar Certificado", certificado em modo escuro no mobile (impressão continua clara), flatten das fixações, caixas de código com rolagem. Sem playwright/puppeteer instalado no ambiente.
 
 ## Arquivos relevantes (localizadores aproximados — podem deslocar após edições)

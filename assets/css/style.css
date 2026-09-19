@@ -288,7 +288,7 @@ a:hover {
 
 @media (max-width: 640px) {
   .lesson-reading-card {
-    padding: 24px 16px;
+    padding: 18px 6px;
   }
 }
 
@@ -1341,6 +1341,91 @@ a:hover {
 .signature-badge-desc {
   font-size: 12.5px;
   color: #166534;
+}
+
+/* =========================================================
+ * REGRAS MOBILE GLOBAIS — APROVEITAR 100% DA LARGURA
+ * Norma obrigatória para TODAS as telas (aulas atuais e
+ * futuras) em dispositivos ≤767px:
+ *   → margem lateral máxima de 4px por lado (total ≤8px)
+ *   → wrapper .container sem padding lateral excedente
+ *   → cards externos (.menu-hub-card, .lesson-reading-card)
+ *     com padding lateral mínimo
+ *   → cards internos (.question-card-item, .card-quiz,
+ *     .option-btn-card) sem "efeito linguiça"
+ * Colocadas AO FINAL do CSS (antes do @media print) para
+ * vencer media queries anteriores (900px/640px) na cascata
+ * e garantir que TODAS as aulas – atuais e futuras –
+ * obedeçam à mesma regra sem duplicação por arquivo.
+ * ========================================================= */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100% !important;
+    padding: 24px 4px 48px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .menu-hub-card {
+    padding: 16px 4px !important;
+    border-radius: var(--radius-md);
+  }
+
+  .lesson-reading-card {
+    padding: 20px 6px !important;
+  }
+
+  .quiz-app,
+  .quiz-container,
+  .quiz-app-container {
+    max-width: 100% !important;
+    margin: 0 4px;
+    padding: 0;
+  }
+
+  .card-quiz {
+    padding: 20px 8px !important;
+  }
+
+  .question-card-item {
+    padding: 18px 8px !important;
+  }
+
+  .option-btn-card {
+    padding: 14px 10px !important;
+  }
+
+  /* Footers de quiz (Anterior / ✓ Salvo / Próxima) — 1 linha no mobile:
+     .nav-row é usado por TODOS os footers de quiz dos 5 módulos e não tem
+     regra CSS própria; sem flex os 3 itens caem em fluxo de bloco e
+     empilham em coluna no celular (bug reportado: "fica em coluna"). */
+  .nav-row {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+  .nav-row .btn {
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+  .nav-row > span {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  /* Excel internos — aproveitar largura sem perder respiro */
+  .grid-inspector-container,
+  .formula-builder-container,
+  .function-lab-container {
+    padding: 12px 10px !important;
+    border-radius: 10px;
+  }
 }
 
 /* PRINT STYLES */

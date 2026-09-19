@@ -9,6 +9,7 @@ Regras obrigatórias para qualquer agente/assistente que edite código neste rep
 3. **Ilustração HTML vai no campo `sec.html`** da seção, renderizado como `<div class="pdf-html-illustration">${sec.html}</div>`, usando as classes `.mini-sheet`, `.fun-highlight`, `.es-sheet-box`, `.es-sheet-titlebar` (CSS já portado para o `<style>` do popup).
 4. **Imagens de arquivo**: usar paths relativos `../../assets/img/excel/aN/...` (resolvidos via `resolveImagePath`/`new URL`).
 5. **Validar antes de concluir**: rodar `node --check assets/js/pdf-lessons.js` e checar o script inline do HTML após qualquer edição.
+6. **Mobile aproveita 100% da largura (regra global obrigatória)**: em viewport ≤767px o conteúdo de TODA tela (hub, leitura, quiz, prova, resultado) deve ocupar o máximo de largura, com no máximo ~4px de margem/padding lateral por lado (sem "efeito linguiça"). Central de verdade única: o bloco `/* REGRAS MOBILE GLOBAIS */` no fim de `assets/css/style.css` (`@media (max-width: 767px)`, com `!important` para vencer media queries antigas). Este bloco regula `.container` (4px), `.menu-hub-card` (16px 4px), `.lesson-reading-card` (20px 6px), `.card-quiz` (20px 8px), `.question-card-item` (18px 8px), `.option-btn-card` (14px 10px), `.quiz-app`/`.quiz-container`/`.quiz-app-container` (largura 100%). **Proibido** criar `@media` por aula que reintroduza padding lateral maior no mobile; se precisar ajustar, edite unicamente o bloco global de `style.css`.
 
 ## Referências
 - `Docs/SPEC-EXCEL-MASTER.md` → seção 6.1 "Normas Obrigatórias de Toda Aula".

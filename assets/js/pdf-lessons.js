@@ -316,6 +316,376 @@ window.PDFLessons = (function() {
           boxText: "Confirme se não há arquivos pessoais importantes no pendrive antes de clicar em Formatar."
         },
         {
+          lessonNum: 7,
+          chapter: "AULA 07: SEGURANÇA E ANTIVÍRUS NO WINDOWS",
+          heading: "7.1 Central de Segurança do Windows",
+          content: "A Central de Segurança (Windows 7) e a Segurança do Windows (Windows 10/11) reúnem em um único painel toda a proteção do computador: antivírus, firewall, atualizações e manutenção do sistema. Ela avisa quando falta alguma proteção e oferece atalhos para corrigir o problema.",
+          steps: [
+            {
+              text: "• Central de Segurança no Windows 7: reúne Firewall, Windows Update, Proteção contra vírus, Spyware e outras configurações de segurança.",
+              image: "../../assets/img/windows/Aula7/image13.png",
+              caption: "Central de Segurança do Windows 7 com todos os itens de proteção reunidos em um só painel."
+            },
+            {
+              text: "• Segurança do Windows no Windows 10/11: a nova central visual mostra 'Proteção contra vírus e ameaças', 'Proteção de conta', 'Firewall e proteção de rede' e muito mais.",
+              image: "../../assets/img/windows/Aula7/image2.png",
+              caption: "Central da Segurança do Windows 10/11: o painel moderno de proteção do sistema."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Dica Rápida",
+          boxText: "Acesse a Segurança do Windows digitando o nome 'Segurança do Windows' na busca (Win + S) ou diretamente por Configurações > Privacidade e Segurança."
+        },
+        {
+          lessonNum: 7,
+          heading: "7.2 Antivírus do Windows (Windows Defender)",
+          content: "O Windows Defender (Microsoft Defender Antivírus) é o antivírus NATIVO e gratuito dos Windows 10 e 11. Ele funciona em tempo real, verificando arquivos, downloads e programas antes que eles causem danos. No Windows 7, a central de segurança monitora os programas de proteção instalados.",
+          steps: [
+            {
+              text: "1. Abra a Segurança do Windows e acesse 'Proteção contra vírus e ameaças'.",
+              image: "../../assets/img/windows/Aula7/image14.png",
+              caption: "Windows Defender no Windows 7: proteção contra vírus e spyware ativa."
+            },
+            {
+              text: "2. No Windows 10/11, o Defender mostra o status da proteção em tempo real e permite executar verificações rápidas ou completas.",
+              image: "../../assets/img/windows/Aula7/image16.png",
+              caption: "Windows Defender no Windows 10/11: proteção em tempo real ativa."
+            },
+            {
+              text: "3. Quando encontra uma ameaça, o Defender bloqueia e remove o arquivo, exibindo o alerta de 'Ameaças encontradas — Ações executadas'.",
+              image: "../../assets/img/windows/Aula7/image17.png",
+              caption: "Windows Defender após encontrar um vírus: histórico de proteção com a ameaça removida."
+            }
+          ],
+          boxType: "warning",
+          boxTitle: "⚠️ Não Instale Dois Antivírus ao Mesmo Tempo",
+          boxText: "Ter dois antivírus ativos simultaneamente pode causar conflitos e deixar o sistema lento. Escolha um único programa de segurança confiável."
+        },
+        {
+          lessonNum: 7,
+          heading: "7.3 Atualizações de Segurança (Windows Update)",
+          content: "As atualizações do Windows corrigem falhas descobertas no sistema, fechando as 'portas de entrada' usadas por vírus e hackers. Manter o Windows Update ativo é um dos passos mais importantes da segurança.",
+          sec: `
+            <div class="fun-highlight">
+              <h4>🛡️ Por que atualizar é tão importante?</h4>
+              <ul>
+                <li>Corrige vulnerabilidades conhecidas (falhas de segurança).</li>
+                <li>Atualiza as definições de vírus do Windows Defender.</li>
+                <li>Melhora a estabilidade e o desempenho do sistema.</li>
+                <li>Adiciona novos recursos e compatibilidade com programas.</li>
+              </ul>
+            </div>
+            <div class="mini-sheet">
+              <div class="es-sheet-titlebar">COMO VERIFICAR ATUALIZAÇÕES</div>
+              <div class="es-sheet-box">
+                <p><strong>Windows 10/11:</strong> Configurações (Win + I) → Windows Update → "Verificar se há atualizações".</p>
+                <p><strong>Windows 7:</strong> Iniciar → Painel de Controle → Windows Update.</p>
+              </div>
+            </div>`
+        },
+        {
+          lessonNum: 7,
+          heading: "7.4 Firewall do Windows",
+          content: "O Firewall do Windows funciona como um 'muro de proteção' que filtra a entrada e a saída de dados da internet, bloqueando acessos não autorizados ao computador sem bloquear a navegação normal.",
+          steps: [
+            {
+              text: "• Firewall no Windows 7: a Central de Segurança indica quando o firewall está ativo e acessível.",
+              image: "../../assets/img/windows/Aula7/image1.png",
+              caption: "Firewall do Windows 7 ativo apontado pela Central de Segurança."
+            },
+            {
+              text: "• Firewall no Windows 10/11: exibe o status por tipo de rede (DNS, Rede pública, Rede privada) e permite abrir exceções para programas confiáveis.",
+              image: "../../assets/img/windows/Aula7/image11.png",
+              caption: "Firewall e proteção de rede no Windows 10/11 com as redes monitoradas."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Entendendo o Firewall",
+          boxText: "O firewall PERMITE os acessos autorizados (como navegar e baixar da página oficial) e BLOQUEIA as tentativas estranhas vindas da internet. Ele não impede o uso normal do computador."
+        },
+        {
+          lessonNum: 7,
+          heading: "7.5 Ferramenta de Backup do Windows",
+          content: "O Backup cria cópias de segurança dos seus arquivos para recuperá-los caso o computador seja perdido, roubado, infectado ou apresente falha no disco. No Windows 7 a ferramenta nativa é o 'Backup e Restauração'; no Windows 10/11 o recurso é o 'Histórico de Arquivos'.",
+          sec: `
+            <div class="mini-sheet">
+              <div class="es-sheet-titlebar">🖥️ FERRAMENTAS DE BACKUP NATIVAS</div>
+              <div class="es-sheet-box">
+                <p><strong>Windows 7:</strong> Painel de Controle → Sistema e Segurança → <strong>Backup e Restauração</strong>.</p>
+                <p><strong>Windows 10/11:</strong> Configurações → Contas → <strong>Backup do Windows</strong> ou <strong>Histórico de Arquivos</strong>.</p>
+              </div>
+            </div>
+            <div class="fun-highlight">
+              <h4>📦 Boas práticas de backup 📦</h4>
+              <ul>
+                <li>Copie para um <strong>pendrive ou HD externo</strong>, não só para o próprio disco.</li>
+                <li>Prefira o <strong>Complemento 7A</strong>, que ensina um backup .bat automático.</li>
+                <li>Faça backup em datas regulares (ex.: toda sexta-feira).</li>
+              </ul>
+            </div>`
+        },
+        {
+          lessonNum: 7,
+          heading: "7.6 Criar um Ponto de Restauração",
+          content: "Um Ponto de Restauração é uma 'fotografia' do sistema em uma data. Se um programa ou driver causar problemas, o aluno pode voltar o computador a um ponto anterior em que funcionava perfeitamente — sem perder documentos e fotos recentes.",
+          steps: [
+            {
+              text: "• Windows 7: Iniciar → digite 'Criar um ponto de restauração' → escolha a unidade de sistema → clique em 'Criar' → digite uma descrição da data.",
+              image: "../../assets/img/windows/Aula7/image9.png",
+              caption: "Criando um Ponto de Restauração nas Propriedades do Sistema do Windows 7."
+            },
+            {
+              text: "• Windows 10/11: Configurações → Sistema → Sobre → 'Proteção do Sistema' → Crie um ponto manual antes de instalar programas novos.",
+              image: "../../assets/img/windows/Aula7/image15.png",
+              caption: "Painel de Proteção do Sistema no Windows 10/11 com botão Criar."
+            }
+          ],
+          boxType: "code",
+          boxTitle: "⚡ Comando Rápido no Teclado",
+          boxText: "Pressione Win + R, digite 'rstrui' e aperte Enter para abrir o assistente de Restauração do Sistema — compatível com Windows 7, 10 e 11."
+        },
+        {
+          lessonNum: 7,
+          heading: "7.7 Os Riscos da Pirataria",
+          content: "Usar Windows pirata (crackeado) é extremamente perigoso: além de ser ilegal, o 'crack' pode conter vírus escondidos, e o sistema pirata geralmente desativa as atualizações de segurança — deixando o computador totalmente vulnerável.",
+          sec: `
+            <div class="mini-sheet">
+              <div class="es-sheet-titlebar">⚠️ OS PERIGOS DO WINDOWS PIRATA</div>
+              <div class="es-sheet-box">
+                <p><strong>1. Vírus no próprio crack:</strong> o 'ativador' pode roubar senhas e dados.</p>
+                <p><strong>2. Sem atualizações:</strong> o pirateador bloqueia o Windows Update, deixando falhas abertas.</p>
+                <p><strong>3. Sem suporte:</strong> nenhuma correção oficial chega ao sistema.</p>
+                <p><strong>4. Ilegal:</strong> o uso de software pirata é crime de violação de direitos autorais.</p>
+              </div>
+            </div>`,
+          boxType: "warning",
+          boxTitle: "🚫 Nunca Use 'Ativadores' ou Cracks",
+          boxText: "Se o crack promete 'ativar o Windows de graça', na prática ele entrega o computador nas mãos de cibercriminosos."
+        },
+        {
+          lessonNum: 71,
+          chapter: "COMPLEMENTO 7A: BACKUP AUTOMÁTICO COM ARQUIVO .BAT",
+          heading: "7A.1 O que é um arquivo .BAT?",
+          content: "Um arquivo .bat ('batch') é um arquivo de texto simples que guarda uma lista de comandos do Prompt de Comando do Windows. Ao dar dois cliques, o Windows executa os comandos em sequência automaticamente — funcionando como uma 'receita' de tarefas repetitivas.",
+          steps: [
+            {
+              text: "1. O arquivo .bat guarda comandos que o Prompt de Comando executa: é a base do script de backup.",
+              image: "../../assets/img/windows/Aula7ComplementoBackup/image3.png",
+              caption: "O arquivo .bat armazena os comandos executados pelo Prompt de Comando."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Por que usar .bat para backup?",
+          boxText: "Transforma uma tarefa repetitiva (copiar arquivos manualmente) em um processo de um clique só — reduzindo erros e economizando tempo."
+        },
+        {
+          lessonNum: 71,
+          heading: "7A.2 Primeiro Script: 'Olá, Mundo!'",
+          content: "Antes do backup, pratique criando um arquivo .bat simples: abra o Bloco de Notas, digite o script, salve como ola_mundo.bat (Tipo: Todos os arquivos) e execute com dois cliques.",
+          steps: [
+            {
+              text: "1. Digite o script no Bloco de Notas:",
+              image: "../../assets/img/windows/Aula7ComplementoBackup/image5.png",
+              caption: "Script 'echo Ola, Mundo!' e 'pause' digitados no Bloco de Notas."
+            },
+            {
+              text: "2. Execute o arquivo: uma janela preta mostra a mensagem 'Ola, Mundo!' e permanece aberta aguardando uma tecla.",
+              image: "../../assets/img/windows/Aula7ComplementoBackup/image4.png",
+              caption: "Resultado da execução: mensagem exibida e janela mantida aberta pelo comando pause."
+            }
+          ],
+          boxType: "code",
+          boxTitle: "⚡ Código do Script de Teste",
+          boxText: "@echo off\necho Ola, Mundo!\npause"
+        },
+        {
+          lessonNum: 71,
+          heading: "7A.3 Script de Backup do Pendrive (comando xcopy)",
+          content: "O comando xcopy copia pastas inteiras (incluindo subpastas). No script, o aluno ajusta apenas duas linhas: ORIGEM (pasta a copiar) e DESTINO (letra do pendrive).",
+          steps: [
+            {
+              text: "1. O comando xcopy copia os arquivos da pasta de origem para o pendrive:",
+              image: "../../assets/img/windows/Aula7ComplementoBackup/image7.png",
+              caption: "Explicação visual do comando xcopy copiando a pasta de origem para o destino."
+            },
+            {
+              text: "2. Descubra a letra do pendrive (ex.: E:) no Explorador de Arquivos (> Este Computador):",
+              image: "../../assets/img/windows/Aula7ComplementoBackup/image6.png",
+              caption: "Localizando a letra da unidade do pendrive no Explorador de Arquivos."
+            },
+            {
+              text: "3. Monte o script com as linhas ORIGEM e DESTINO ajustadas pelo aluno:",
+              image: "../../assets/img/windows/Aula7ComplementoBackup/image2.png",
+              caption: "Script backup.bat no Bloco de Notas, com as linhas ORIGEM e DESTINO destacadas para ajuste."
+            }
+          ],
+          boxType: "code",
+          boxTitle: "⚡ Código do Script de Backup",
+          boxText: "@echo off\nREM ==== Aluno: ajuste as duas linhas abaixo ====\nset ORIGEM=\"C:\\Usuarios\\SeuNome\\Documentos\"\nset DESTINO=E:\\Backup\necho Iniciando backup...\nxcopy %ORIGEM% %DESTINO% /E /I /Y\necho Backup concluido!\npause"
+        },
+        {
+          lessonNum: 71,
+          heading: "7A.4 Executando e Conferindo o Backup",
+          content: "Com o pendrive conectado, dê dois cliques em backup.bat e aguarde a mensagem 'Backup concluido!'. Depois confira no pendrive se os arquivos foram copiados.",
+          steps: [
+            {
+              text: "1. O Prompt de Comando mostra cada arquivo copiado e confirma o término do backup:",
+              image: "../../assets/img/windows/Aula7ComplementoBackup/image1.png",
+              caption: "Execução do backup.bat: arquivos copiados e mensagem de conclusão exibida."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 O que significa /E /I /Y?",
+          boxText: "/E copia também as subpastas; /I trata o destino como pasta; /Y substitui arquivos existentes sem perguntar."
+        },
+        {
+          lessonNum: 72,
+          chapter: "COMPLEMENTO 7B: TUTORIAL DE CRIAÇÃO DE MÍDIA DE INSTALAÇÃO",
+          heading: "7B.1 Introdução e Material Necessário",
+          content: "Para instalar o Windows é preciso de uma mídia de instalação — normalmente um pendrive com os arquivos do sistema. A ferramenta oficial da Microsoft que cria essa mídia é a Media Creation Tool.",
+          steps: [
+            {
+              text: "1. Material necessário: um pendrive com pelo menos 8 GB e um computador com acesso à internet.",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image1.png",
+              caption: "Tela de introdução do tutorial, com o material necessário apresentado."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "📋 Atenção ao Pendrive",
+          boxText: "Todo o conteúdo do pendrive será apagado durante a gravação. Use um pendrive reserva."
+        },
+        {
+          lessonNum: 72,
+          heading: "7B.2 Baixando a Media Creation Tool",
+          content: "Baixe a ferramenta SOMENTE do site oficial da Microsoft (microsoft.com) para evitar versões falsas que podem conter vírus.",
+          steps: [
+            {
+              text: "1. Clique em 'Baixar agora' no item 'Ferramenta de Criação de Mídia':",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image1.png",
+              caption: "Localizando a Media Creation Tool na página de download da Microsoft."
+            },
+            {
+              text: "2. Salve o arquivo MediaCreationTool_22H2.exe:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image3.png",
+              caption: "Download do arquivo da ferramenta selecionado no navegador."
+            },
+            {
+              text: "3. O arquivo aparece na pasta Download aguardando execução (clique duas vezes para abrir):",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image2.png",
+              caption: "Arquivo da Media Creation Tool salvo na pasta Download."
+            }
+          ]
+        },
+        {
+          lessonNum: 72,
+          heading: "7B.3 Executando o Assistente de Instalação",
+          content: "Ao abrir, a ferramenta inicia um assistente guiado. Basta aceitar os avisos de licença e escolher 'Criar mídia de instalação (pen drive USB, DVD ou arquivo ISO) para outro computador'.",
+          steps: [
+            {
+              text: "1. Aplicando alterações: aguarde e aceite para continuar:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image5.png",
+              caption: "Assistente da Media Creation Tool iniciando as alterações."
+            },
+            {
+              text: "2. A tela 'Preparando tudo' abre a próxima etapa:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image4.png",
+              caption: "Tela de preparação da ferramenta de criação de mídia."
+            },
+            {
+              text: "3. Aceite os avisos e termos de licença da Microsoft:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image7.png",
+              caption: "Avisos e termos de licença exibidos pela ferramenta."
+            },
+            {
+              text: "4. Marque 'Criar mídia de instalação...' e clique em Avançar:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image6.png",
+              caption: "Seleção da opção de criar mídia de instalação para outro computador."
+            }
+          ]
+        },
+        {
+          lessonNum: 72,
+          heading: "7B.4 Escolhendo Idioma, Edição e Arquitetura",
+          content: "O assistente pergunta sobre idioma (Português Brasil), edição e arquitetura (64 ou 32 bits). O padrão recomendado é quase sempre o correto.",
+          steps: [
+            {
+              text: "1. Clique em 'Usar as opções recomendadas para este computador':",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image9.png",
+              caption: "Seleção da opção recomendada para o computador."
+            },
+            {
+              text: "2. Confirme o idioma e clique em Avançar:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image8.png",
+              caption: "Idioma selecionado no assistente da ferramenta."
+            },
+            {
+              text: "3. Revise os detalhes da instalação (idioma, edição, arquitetura) e avance:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image12.png",
+              caption: "Detalhes finais da instalação antes de iniciar a gravação."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Arquitetura = 64 bits?",
+          boxText: "A maioria dos computadores modernos usa 64 bits. O padrão recomendado pelo assistente já seleciona a arquitetura correta automaticamente."
+        },
+        {
+          lessonNum: 72,
+          heading: "7B.5 Pendrive USB ou Arquivo ISO?",
+          content: "A ferramenta oferece duas formas: Pendrive USB (grava direto no pen drive — mais prático) ou Arquivo ISO (baixa uma imagem de disco para gravar em DVD depois ou montar como CD).",
+          steps: [
+            {
+              text: "1. Selecione 'Unidade flash USB' e clique em Avançar:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image10.png",
+              caption: "Escolha da opção Pendrive USB na ferramenta."
+            },
+            {
+              text: "2. Selecione a letra da unidade USB conectada:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image11.png",
+              caption: "Seleção da unidade flash USB para gravação da mídia."
+            },
+            {
+              text: "3. Aguarde a preparação do pendrive:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image13.png",
+              caption: "Aguarde enquanto o pendrive está sendo preparado."
+            },
+            {
+              text: "4. Acompanhe o progresso do download do Windows:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image14.png",
+              caption: "Barra de progresso do download dos arquivos de instalação."
+            },
+            {
+              text: "5. Ao final, a mensagem 'Ferramenta concluída com êxito' confirma a mídia pronta:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image15.png",
+              caption: "Tela de conclusão: a unidade flash USB está pronta para uso."
+            }
+          ]
+        },
+        {
+          lessonNum: 72,
+          heading: "7B.6 Resolvendo o Erro de Formatação (FAT32)",
+          content: "Se aparecer a mensagem 'A unidade precisa ter pelo menos 8 GB', o pendrive pode ser pequeno ou estar em um formato incompatível. A solução é reformatar o pendrive em FAT32 e tentar novamente.",
+          steps: [
+            {
+              text: "1. Erro típico de capacidade/formato do pendrive:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image16.png",
+              caption: "Erro informando que a unidade deve ter pelo menos 8 GB."
+            },
+            {
+              text: "2. No Explorador de Arquivos, clique com o botão direito no pendrive e escolha 'Formatar...':",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image17.png",
+              caption: "Formatação do pendrive pelo menu de contexto do Explorador de Arquivos."
+            },
+            {
+              text: "3. Em Sistema de arquivos, selecione FAT32 e clique em Iniciar:",
+              image: "../../assets/img/windows/Aula7TutorialMidia/image18.png",
+              caption: "Janela de formatação com o sistema de arquivos FAT32 selecionado."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Lembre-se:",
+          boxText: "Após criar a mídia, o pendrive fica 'bootável' — capaz de iniciar o computador direto dele, pronto para reutilizar na aula de Formatação."
+        },
+        {
           chapter: "UNIDADE 1: CONCEITO E ESTRUTURA DO WINDOWS",
           heading: "1.1 O que é o Sistema Operacional?",
           content: "O Sistema Operacional (S.O.) é o software fundamental que gerencia o hardware do computador (processador, memória RAM, disco rígido/SSD) e possibilita a execução de aplicativos e a interação do usuário através de uma interface gráfica amigável."
@@ -1300,6 +1670,18 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
     // Títulos específicos por módulo (para não sobrescrever com títulos da Internet)
     const moduleLessonTitles = {
       internet: lessonTitles,
+      windows: {
+        1: "Aula 01: Conceito e Estrutura do Sistema Operacional (Windows)",
+        2: "Aula 02: Área de Trabalho e Barra de Tarefas",
+        3: "Aula 03: Gerenciamento de Arquivos e Pastas",
+        4: "Aula 04: Configurações de Sistema e Painel de Controle",
+        5: "Aula 05: Acessórios Nativos do Windows",
+        6: "Aula 06: Personalização e Acessibilidade",
+        7: "Aula 07: Segurança e Antivírus no Windows",
+        71: "Complemento 7A — Backup Automático com Arquivo .BAT",
+        72: "Complemento 7B — Tutorial: Como Criar Pendrive/DVD de Instalação do Windows",
+        8: "Aula 08: Diagnóstico de Memória, Restauração do Sistema e Mídia de Instalação"
+      },
       excel: {
         1: "Aula 01: Introdução ao Excel, Interface, Tipos de Dados e Navegação",
         2: "Aula 02: Operações Básicas & Fórmulas Simples",
