@@ -61,27 +61,46 @@ window.QuizEngine = (function() {
   function buildReportText(data) {
     const { studentName, moduleTitle, correct, total, score, passed, signature, answers, questions } = data;
     const now = signature ? new Date(signature.timestamp) : new Date();
+    // Entregas de projeto (Aulas 11 e 12) não têm questões: o bloco muda de texto.
+    const isDelivery = typeof data.fileName === "string" && data.fileName !== "";
+    const unitLabel = isDelivery ? "passos" : "questões";
+    const scoreLabel = isDelivery
+      ? `Conclusão: ${correct} de ${total} passos concluídos`
+      : `Nota Final: ${score.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} / 10,0`;
+    const statusLabel = isDelivery
+      ? (passed ? "PROJETO ENTREGUE" : "ENTREGA PENDENTE (conclua todos os passos)")
+      : (passed ? "APROVADO(A)" : "REPROVADO(A) (Nota mínima: 7,0)");
 
     const lines = [
       "====================================================================",
       "   WR CAPACITAÇÃO PROFISSIONAL — PROFESSOR MARCOS RANGEL",
-      "   COMPROVANTE OFICIAL DE AVALIAÇÃO DIDÁTICA INTERATIVA",
+      isDelivery
+        ? "   COMPROVANTE OFICIAL DE ENTREGA DE PROJETO PRÁTICO"
+        : "   COMPROVANTE OFICIAL DE AVALIAÇÃO DIDÁTICA INTERATIVA",
       "====================================================================",
       `Aluno(a): ${studentName}`,
       `Módulo: ${moduleTitle}`,
       `Data e Hora: ${now.toLocaleDateString("pt-BR")} às ${now.toLocaleTimeString("pt-BR")}`,
-      `Acertos: ${correct} de ${total} questões`,
-      `Nota Final: ${score.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} / 10,0`,
-      `Situação: ${passed ? "APROVADO(A)" : "REPROVADO(A) (Nota mínima: 7,0)"}`,
+      isDelivery ? `Progresso: ${correct} de ${total} ${unitLabel}` : `Acertos: ${correct} de ${total} ${unitLabel}`,
+      scoreLabel,
+      `Situação: ${statusLabel}`
+    ];
+
+    if (isDelivery) {
+      lines.push(`Arquivo entregue: ${data.fileName}`);
+      lines.push(`Tamanho do arquivo: ${data.fileSize || "—"}`);
+    }
+
+    lines.push(
       "--------------------------------------------------------------------",
       "🔒 ASSINATURA DIGITAL ANTI-FRAUDE (VERIFICAÇÃO DE AUTENTICIDADE):",
       `Código de Autenticidade: ${signature ? signature.authCode : "N/A"}`,
       `Hash SHA-256: ${signature ? signature.fullHash : "N/A"}`,
       "--------------------------------------------------------------------",
-      "DETALHAMENTO DA PROVA:"
-    ];
+      isDelivery ? "ETAPAS CONCLUÍDAS DO PROJETO:" : "DETALHAMENTO DA PROVA:"
+    );
 
-    if (questions && answers) {
+    if (!isDelivery && questions && answers) {
       questions.forEach((q, i) => {
         const isOk = answers[i] === q.correct;
         const selectedOpt = answers[i] !== null ? q.options[answers[i]] : "Não respondida";
@@ -90,6 +109,16 @@ window.QuizEngine = (function() {
         lines.push(`  Resposta Assinalada: ${selectedOpt}`);
         lines.push("");
       });
+    }
+
+    if (isDelivery) {
+      // `correct` = quantos passos foram de fato concluidos. Marcar todos como
+      // [CONCLUÍDO] numa entrega parcial contradiria o "Progresso: X de Y" acima.
+      for (let i = 1; i <= total; i++) {
+        const done = i <= correct;
+        lines.push(`  Passo ${i}: ${done ? "[CONCLUÍDO ✓]" : "[PENDENTE ✗]"}`);
+      }
+      lines.push("");
     }
 
     lines.push("--------------------------------------------------------------------");

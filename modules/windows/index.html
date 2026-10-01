@@ -13,6 +13,9 @@
     .fixation-panel {
       display: none;
       background: var(--paper-white);
+      /* Sem isto o painel herdava color:var(--ink-light) do <body> e TODO
+         texto sem cor explícita ficava claro sobre branco. */
+      color: var(--ink-dark);
       border: 2px solid var(--line-light);
       border-radius: var(--radius-md);
       padding: 32px;
@@ -20,6 +23,94 @@
       box-shadow: var(--shadow-sm);
     }
     .fixation-panel.active { display: block; animation: fadeIn 0.3s ease; }
+
+    /* ================================================================
+       PAINEL DEDICADO "SAIBA MAIS — LINUX" (Aula 1, fora da prova)
+       ================================================================ */
+    .linux-panel {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1400;
+      background: rgba(18, 11, 6, 0.94);
+      padding: 24px 16px;
+      overflow-y: auto;
+    }
+    .linux-panel.active { display: block; animation: fadeIn 0.25s ease; }
+    .linux-panel-card {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--paper-white);
+      border: 2px solid var(--line-light);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+      /* Sem cor explícita o cartão herdava --ink-light do body: os
+         parágrafos ficavam 1,21:1 (ilegíveis). */
+      color: var(--ink-dark);
+    }
+    .linux-panel-card h2, .linux-panel-card h3, .linux-panel-card h4 { color: var(--teal-deep); }
+    .linux-panel-card table { color: var(--ink-dark); }
+    .linux-panel-card th { color: var(--teal-deep); }
+    .linux-panel-card a { color: var(--teal-deep); font-weight: 600; }
+    .linux-tab-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      border-bottom: 2px solid var(--line-light);
+      margin: 18px 0 20px;
+    }
+    .linux-tab-btn {
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-dark);
+      background: var(--paper-beige);
+      border: 1px solid var(--line-light);
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      padding: 10px 14px;
+      cursor: pointer;
+    }
+    .linux-tab-btn.active {
+      /* Branco sobre --amber dava 2,26:1. Texto escuro sobre o mesmo âmbar
+         dá 8,10:1 e mantém a aba ativa em destaque. */
+      background: var(--amber);
+      border-color: var(--amber);
+      color: var(--ink-dark);
+      font-weight: 700;
+    }
+    .linux-tab-body { display: none; }
+    .linux-tab-body.active { display: block; }
+    .linux-fact {
+      background: var(--paper-beige);
+      border-left: 4px solid var(--teal);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      margin: 12px 0;
+      font-size: 15px;
+      color: var(--ink-dark);
+    }
+    .linux-card {
+      background: var(--paper-white);
+      border: 1px solid var(--line-light);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin: 12px 0;
+      color: var(--ink-dark);
+    }
+    .linux-card h4 { margin: 0 0 6px; color: var(--teal-deep); font-size: 16px; }
+    .linux-card p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink-dark); }
+    .linux-term {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      background: var(--card-brown);
+      /* fundo escuro DENTRO de card claro: precisa da cor clara explícita,
+         senão herda o --ink-light redefinido e some (1,1:1). */
+      color: var(--ink-on-dark);
+      border-radius: 6px;
+      padding: 2px 6px;
+    }
 
     kbd {
       background-color: #2D251E;
@@ -115,7 +206,9 @@
     .q-meta {
       display: flex; justify-content: space-between; align-items: center;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px; color: var(--ink-soft); margin-bottom: 12px;
+      /* --ink-soft dava 1,7:1 sobre branco. --ink-muted = 10,7:1. */
+      font-size: 12px; color: var(--ink-muted); margin-bottom: 12px;
+      font-weight: 600; letter-spacing: 0.02em;
     }
     .q-text {
       font-family: 'Fraunces', serif;
@@ -139,10 +232,10 @@
     .opt .letter {
       flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
       background: var(--line); display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 13px; color: var(--ink-soft);
+      font-weight: 700; font-size: 13px; color: var(--ink-muted);
     }
     .opt.selected { border-color: var(--teal); background: #FFEEDD; }
-    .opt.selected .letter { background: var(--teal); color: #fff; }
+    .opt.selected .letter { background: var(--teal-btn); color: #fff; }
 
     .hint-toggle {
       background: none; border: none; cursor: pointer; font: inherit; font-weight: 600; font-size: 13px;
@@ -165,7 +258,7 @@
     .b-tag { font-weight: 700; font-size: 12px; padding: 3px 9px; border-radius: 99px; }
     .b-tag.ok { background: var(--success-bg); color: var(--success); }
     .b-tag.no { background: var(--warn-bg); color: var(--warn); }
-    .email-panel { margin-top: 14px; padding: 16px; border-radius: 12px; border: 1.5px dashed var(--line); background: #FBFCFC; display: none; }
+    .email-panel { margin-top: 14px; padding: 16px; border-radius: 12px; border: 1.5px dashed var(--line); background: #FBFCFC; color: var(--ink-dark); display: none; }
     .email-panel.show { display: block; }
   </style>
 </head>
@@ -208,14 +301,14 @@
         <!-- Grade das 12 Aulas do Módulo Windows -->
         <div class="lessons-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin-top:32px;">
 
-          <!-- AULA 1 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(1, 'Conceito e Estrutura do Sistema Operacional')">
+          <!-- AULA 1 — LIBERADA E COMPLETA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(1, 'A História e o Funcionamento dos Computadores')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num">AULA 01</span>
-              <span class="lesson-name">Introdução ao Windows & Interface</span>
-              <span style="font-size:13px; color:#F4E8DC; font-weight:600; margin-top:4px; opacity:0.95;">🔒 Em Construção</span>
+              <span class="lesson-name">A História e o Funcionamento dos Computadores</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha em Aula)</span>
             </div>
-            <span style="font-size:20px;">🚧</span>
+            <span style="font-size:24px;" id="badge-lesson-1">🔒</span>
           </div>
 
           <!-- AULA 2 -->
@@ -814,7 +907,7 @@
           <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
             <div>
               <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
-              <h2 style="color:var(--amber); margin-top:4px; font-size:24px;">Exercício de Fixação — Aula 8</h2>
+              <h2 style="color:var(--amber-deep); margin-top:4px; font-size:24px;">Exercício de Fixação — Aula 8</h2>
             </div>
             <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
           </div>
@@ -962,6 +1055,616 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- ===================================================================
+         TELA 3: AULA 1 — A HISTÓRIA E O FUNCIONAMENTO DOS COMPUTADORES (LIBERADA)
+         =================================================================== -->
+    <section id="screen-lesson-1" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa (HTML Origem)
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 1)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DA AULA 1 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura (Aula 1)</span>
+            <span id="gamify-percent-1">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-1"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-1">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura Pendente</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Aula 1</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 1: A História e o Funcionamento dos Computadores</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <em>Da Segunda Guerra Mundial ao computador que você usa hoje.</em> Leia com calma e marque cada tópico concluído para acompanhar seu progresso!
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l1-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Entender <strong>de onde vieram os computadores</strong>, <strong>como eles pensam por dentro</strong> (apenas 0 e 1) e <strong>de que peças são feitos</strong> (hardware e software) — para nunca mais olhar para a sua máquina como algo mágico.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li>Voltar no tempo: a Guerra e o primeiro computador (ENIAC).</li>
+            <li>Os nomes que mudaram tudo: Turing, Bill Gates e Steve Jobs.</li>
+            <li>Como o computador "pensa": o código binário (0 e 1).</li>
+            <li>O caminho da informação: Entrada &rarr; Processamento &rarr; Saída.</li>
+            <li>Hardware &times; Software: o que se toca e o que se vê na tela.</li>
+            <li>As peças do computador e o Sistema Operacional.</li>
+          </ol>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
+            🏁 Resultado esperado: ao final da aula, você será capaz de apontar para qualquer computador e dizer <strong>qual peça faz o quê</strong> — e por que a tela só funciona se existir um <strong>sistema operacional</strong>.
+          </p>
+          <p style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px; margin-top:10px; font-size:14.5px; color:var(--teal-deep);">
+            ⚙️ <strong>Preparação:</strong> nenhum programa é necessário — é só leitura. Se quiser, fique com o seu próprio computador do lado e observe as peças enquanto lê.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro desta aula e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-1" onclick="markTopicRead(1, 1)">
+              <span>☐ Entendi o roteiro — começar a aula!</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 1)">Ir para 1. História dos Computadores →</button>
+          </div>
+        </div>
+
+        <!-- ÍNDICE DE TÓPICOS DA AULA 1 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-1-1" onclick="switchTopicPhase(1, 1)">1. História</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-2" onclick="switchTopicPhase(1, 2)">2. Nomes da História</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-3" onclick="switchTopicPhase(1, 3)">3. Código Binário</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-4" onclick="switchTopicPhase(1, 4)">4. Entrada &rarr; Saída</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-5" onclick="switchTopicPhase(1, 5)">5. Hardware &times; Software</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-6" onclick="switchTopicPhase(1, 6)">6. Sistemas Operacionais</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-1-fix" onclick="openFixationPanel(1)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             TÓPICO 1 DA AULA 1: A HISTÓRIA DOS COMPUTADORES
+             =============================================================== -->
+        <section id="l1-phase-1" class="topic-phase-section active">
+          <h2>1. A História dos Computadores</h2>
+          <p>
+            Os computadores não surgiram prontos como os conhecemos hoje. Eles nasceram de uma necessidade muito séria: durante a <strong>Segunda Guerra Mundial (1939&ndash;1945)</strong>, era preciso resolver cálculos complexos rapidamente &mdash; e foi aí que tudo começou.
+          </p>
+
+          <img src="../../assets/img/windows/Aula1/image6.png" alt="Programadoras operando o ENIAC, o primeiro computador eletrônico da história" class="img-showcase" style="max-width:520px;">
+          <p class="img-caption">Imagem 01/07 — Programadoras operam o primeiro computador eletrônico da história, o ENIAC &bull; Foto: ARL Technical Library / U.S. Army.</p>
+
+          <h3 style="color:var(--teal-deep); font-size:20px; margin-top:20px;">O ENIAC: fevereiro de 1946</h3>
+          <p>
+            O <strong>ENIAC</strong> foi apresentado em <strong>fevereiro de 1946</strong> e é considerado o primeiro computador eletrônico da história. Ele ocupava uma sala inteira e pesava toneladas. O detalhe mais surpreendente: ele <strong>não tinha programa</strong> &mdash; as <strong>programadoras</strong> (mulheres que reconfiguravam a máquina na mão, conectando cabos e botões) eram responsáveis por dizer ao computador o que ele deveria fazer.
+          </p>
+
+          <img src="../../assets/img/windows/Aula1/image1.png" alt="Alan Turing e a máquina Enigma" class="img-showcase" style="max-width:520px;">
+          <p class="img-caption">Imagem 02/07 — Alan Turing e a m&aacute;quina Enigma, usada pelos alem&atilde;es na Segunda Guerra Mundial para codificar mensagens.</p>
+
+          <p>
+            Nessa mesma &eacute;poca, o matem&aacute;tico brit&acirc;nico <strong>Alan Turing</strong> criou uma m&aacute;quina capaz de "quebrar" os c&oacute;digos do exerc&iacute;ito &mdash; o trabalho dele &eacute; a base de tudo o que chamamos hoje de <strong>computa&ccedil;&atilde;o</strong>.
+          </p>
+
+          <div style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:14px 16px; margin:18px 0; font-size:15px; color:var(--teal-deep);">
+            💡 <strong>Para ver:</strong> o filme <em>O Jogo da Imita&ccedil;&atilde;o</em> conta essa mesma &eacute;poca e mostra por que o trabalho de Turing foi t&atilde;o importante.
+          </div>
+
+          <div class="es-sheet-box" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">📋 Resumo do Tópico 1</div>
+            <p style="margin:0; font-size:14.5px; color:var(--ink);">
+              <strong>1939&ndash;1945</strong> — Guerra: surgem os primeiros computadores &bull;
+              <strong>1946</strong> — ENIAC, o primeiro computador eletr&ocirc;nico, operado por programadoras &bull;
+              <strong>Turing</strong> — cria a base do c&aacute;lculo autom&aacute;tico.
+            </p>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi de onde vieram os computadores e o papel do ENIAC e de Turing.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-2" onclick="markTopicRead(1, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="document.getElementById('l1-fase-0').scrollIntoView({behavior:'smooth', block:'start'})">← Voltar ao Início da Aula</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 2)">Ir para 2. Nomes da História →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 2 DA AULA 1: OS NOMES QUE MUDARAM TUDO
+             =============================================================== -->
+        <section id="l1-phase-2" class="topic-phase-section">
+          <h2>2. Os Nomes que Mudaram Tudo</h2>
+          <p>
+            Com o passar das d&eacute;cadas, a tecnologia evoluiu r&aacute;pidamente &mdash; e dois nomes marcaram essa hist&oacute;ria para sempre:
+          </p>
+
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Ano</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">O que aconteceu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">1975</td>
+                <td style="padding:10px;"><strong>Bill Gates funda a Microsoft</strong> &mdash; em 1985 lan&ccedil;a o Windows 1.0, popularizando os sistemas operacionais em computadores pessoais.</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">1976</td>
+                <td style="padding:10px;"><strong>Steve Jobs cofunda a Apple</strong> &mdash; lan&ccedil;a o Apple I e, d&eacute;cadas depois, revoluciona a interface gr&aacute;fica e populariza o iPhone (2007).</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <img src="../../assets/img/windows/Aula1/image7.png" alt="Bill Gates com o logo do Windows 1.0 e Steve Jobs com o Apple I" class="img-showcase" style="max-width:560px;">
+          <p class="img-caption">Imagem 03/07 — Bill Gates (com o logo do Windows 1.0 ao fundo) e Steve Jobs (com o Apple I).</p>
+
+          <div style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:14px 16px; margin:18px 0; font-size:15px; color:var(--amber-dark);">
+            💡 <strong>Para lembrar:</strong> Gates levou o <strong>sistema operacional</strong> para dentro do computador de mesa de todo mundo; Jobs levou a <strong>interface gr&aacute;fica</strong> (a janela com bot&otilde;es e &iacacute;cones que voc&ecirc; usa hoje) e depois o telefone.
+          </div>
+
+          <div class="es-sheet-box" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">📋 Resumo do Tópico 2</div>
+            <p style="margin:0; font-size:14.5px; color:var(--ink);">
+              <strong>1975</strong> — Microsoft (Gates) &bull; <strong>1985</strong> — Windows 1.0 &bull;
+              <strong>1976</strong> — Apple (Jobs) &bull; <strong>2007</strong> — iPhone.
+            </p>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei por que Bill Gates e Steve Jobs s&atilde;o nomes inesquec&iacute;veis dessa hist&oacute;ria.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-3" onclick="markTopicRead(1, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 3)">Ir para 3. Código Binário →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 3 DA AULA 1: O CÓDIGO BINÁRIO
+             =============================================================== -->
+        <section id="l1-phase-3" class="topic-phase-section">
+          <h2>3. Como o Computador "Pensa": o C&oacute;digo Bin&aacute;rio</h2>
+          <p>
+            Por mais avan&ccedil;ado que pare&ccedil;a, um computador &eacute;, no fundo, uma <strong>grande calculadora</strong>. Toda a informa&ccedil;&atilde;o que ele processa &mdash; textos, fotos, v&iacute;deos, sons &mdash; &eacute; transformada em apenas <strong>dois estados poss&iacute;veis</strong>:
+          </p>
+
+          <div class="mini-sheet" style="margin:16px 0;">
+            <div class="es-sheet-titlebar">C&oacute;digo Bin&aacute;rio &mdash; a &uacute;nica linguagem da m&aacute;quina</div>
+            <table style="width:100%; border-collapse:collapse; font-size:15px;">
+              <thead>
+                <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                  <th style="padding:10px; text-align:center; color:var(--amber);">Estado</th>
+                  <th style="padding:10px; text-align:center; color:var(--ink);">C&oacute;digo</th>
+                  <th style="padding:10px; text-align:left; color:var(--ink);">O que acontece na m&aacute;quina</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--line);">
+                  <td style="padding:10px; text-align:center; font-weight:700;">Ligado</td>
+                  <td style="padding:10px; text-align:center; font-family:'JetBrains Mono'; font-weight:700;">1</td>
+                  <td style="padding:10px;">Corrente el&eacute;trica passa &rarr; o circuito est&aacute; "ligado".</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px; text-align:center; font-weight:700;">Desligado</td>
+                  <td style="padding:10px; text-align:center; font-family:'JetBrains Mono'; font-weight:700;">0</td>
+                  <td style="padding:10px;">N&atilde;o passa corrente &rarr; o circuito est&aacute; "desligado".</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            &Eacute; essa combina&ccedil;&atilde;o de zeros e uns que forma o <strong>c&oacute;digo bin&aacute;rio</strong>, a linguagem que todo computador entende por tr&aacute;s das telas. Um &iacute;cone, uma m&uacute;sica, uma foto &mdash; tudo acaba virar uma enorme lista de 0 e 1 antes de aparecer na tela.
+          </p>
+
+          <div style="background:#FDF2F2; border-left:4px solid #991B1B; border-radius:10px; padding:14px 16px; margin:18px 0; font-size:15px; color:#991B1B;">
+            <strong>⚠️ Aten&ccedil;&atilde;o:</strong> 1 <strong>bit</strong> &eacute; um &uacute;nico d&iacute;gito bin&aacute;rio (0 ou 1). <strong>8 bits formam 1 byte</strong> &mdash; e um byte s&oacute; representa um caractere. &Eacute; assim que um arquivo de 1 MB (1.048.576 bytes) ainda cabia em um disquete de 1,44 MB.
+          </div>
+
+          <div class="es-sheet-box" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">📋 Resumo do Tópico 3</div>
+            <p style="margin:0; font-size:14.5px; color:var(--ink);">
+              Computador = grande calculadora &bull; 2 estados: <strong>1 (ligado)</strong> e <strong>0 (desligado)</strong> &bull;
+              8 bits = 1 byte = 1 caractere.
+            </p>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi o que &eacute; c&oacute;digo bin&aacute;rio e por que o computador s&oacute; entende 0 e 1.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-4" onclick="markTopicRead(1, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 4)">Ir para 4. Entrada → Saída →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 4 DA AULA 1: ENTRADA → PROCESSAMENTO → SAÍDA
+             =============================================================== -->
+        <section id="l1-phase-4" class="topic-phase-section">
+          <h2>4. O Caminho da Informa&ccedil;&atilde;o: Entrada &rarr; Processamento &rarr; Sa&iacute;da</h2>
+          <p>
+            Todo processamento de dados segue um caminho simples, dividido em <strong>tr&ecirc;s etapas</strong>:
+          </p>
+
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Etapa</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">O que acontece</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Entrada</td>
+                <td style="padding:10px;">O que o computador <strong>recebe</strong> do usu&aacute;rio &mdash; teclado, mouse, microfone, c&acirc;mera, entre outros.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Processamento</td>
+                <td style="padding:10px;">O que o computador <strong>faz</strong> com a informa&ccedil;&atilde;o recebida, usando o processador (CPU) para calcular e tomar decis&otilde;es.</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">Sa&iacute;da</td>
+                <td style="padding:10px;">O <strong>resultado</strong> que aparece para o usu&aacute;rio &mdash; monitor, som, impressora, entre outros.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <img src="../../assets/img/windows/Aula1/image5.png" alt="Teclado e mouse de entrada, processador no centro e monitor de saída" class="img-showcase" style="max-width:520px;">
+          <p class="img-caption">Imagem 04/07 — teclado/mouse (Entrada) &rarr; um &iacute;cone de processador (Processamento) &rarr; um monitor (Sa&iacute;da).</p>
+
+          <div style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:14px 16px; margin:18px 0; font-size:15px; color:var(--teal-deep);">
+            💡 <strong>Pense assim:</strong> &eacute; exatamente o mesmo caminho do seu dedo no teclado at&eacute; a letra aparecer na tela. Sem entrada, n&atilde;o h&aacute; processamento; sem processamento, n&atilde;o h&aacute; sa&iacute;da.
+          </div>
+
+          <div class="es-sheet-box" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">📋 Resumo do Tópico 4</div>
+            <p style="margin:0; font-size:14.5px; color:var(--ink);">
+              <strong>Entrada</strong> (teclado, mouse, microfone, c&acirc;mera) &rarr;
+              <strong>Processamento</strong> (CPU calcula e decide) &rarr;
+              <strong>Sa&iacute;da</strong> (monitor, som, impressora).
+            </p>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que consigo explicar as tr&ecirc;s etapas: entrada, processamento e sa&iacute;da.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-5" onclick="markTopicRead(1, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 5)">Ir para 5. Hardware &times; Software →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 5 DA AULA 1: HARDWARE × SOFTWARE E AS PEÇAS DO COMPUTADOR
+             =============================================================== -->
+        <section id="l1-phase-5" class="topic-phase-section">
+          <h2>5. Hardware &times; Software e as Pe&ccedil;as do Computador</h2>
+          <p>
+            Todo computador &eacute; formado por <strong>duas partes que trabalham juntas</strong> &mdash; uma que voc&ecirc; pode <strong>tocAR</strong>, e outra que voc&ecirc; s&oacute; <strong>vê funcionando na tela</strong>:
+          </p>
+
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">HARDWARE (parte f&iacute;sica)</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">SOFTWARE (parte l&oacute;gica)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px;">Teclado</td>
+                <td style="padding:10px;">Navegadores de internet</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px;">Mouse</td>
+                <td style="padding:10px;">Editores de texto</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px;">Monitor</td>
+                <td style="padding:10px;">Sistema operacional</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px;">Processador</td>
+                <td style="padding:10px;">Aplicativos e jogos</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;">Mem&oacute;ria RAM</td>
+                <td style="padding:10px;">Antiv&iacute;rus</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <img src="../../assets/img/windows/Aula1/image4.png" alt="Rela&ccedil;&atilde;o entre hardware e software no computador" class="img-showcase" style="max-width:600px;">
+          <p class="img-caption">Imagem 05/07 — Hardware (a parte f&iacute;sica que voc&ecirc; toca) e software (a parte l&oacute;gica que voc&ecirc; ve funcionando): um n&atilde;o funciona sozinho sem o outro.</p>
+
+          <!-- ATIVIDADE INTERATIVA: TERMÔMETRO DO HARDWARE -->
+          <div class="es-sheet-box no-print" style="margin:20px 0;">
+            <div class="es-sheet-titlebar">🌡️ Atividade: Termômetro do Hardware — toque ou n&atilde;o toque?</div>
+            <p style="margin:0 0 12px 0; font-size:14.5px; color:var(--ink);">
+              Para cada item, clique em <strong>"&Eacute; hardware"</strong> ou <strong>"&Eacute; software"</strong>. Sua pontua&ccedil;&atilde;o aparece no fim.
+            </p>
+            <div id="w1-thermo" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:10px;"></div>
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:14px;">
+              <div id="w1-thermo-score" style="font-family:'JetBrains Mono'; font-size:16px; color:var(--teal-deep); font-weight:700;">0 / 10 acertos</div>
+              <button type="button" class="btn btn-ghost" id="btn-thermo-1-reset" onclick="resetThermometer()" style="font-size:13px; padding:8px 14px;">↺ Recomeçar</button>
+            </div>
+            <div id="w1-thermo-board" style="margin-top:14px; font-size:14px; color:var(--ink-soft);"></div>
+          </div>
+
+          <h3 style="color:var(--teal-deep); font-size:20px; margin-top:22px;">As 6 pe&ccedil;as principais do computador</h3>
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Pe&ccedil;a</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">Fun&ccedil;&atilde;o</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Placa-m&atilde;e</td>
+                <td style="padding:10px;">Conecta e integra todos os componentes do computador entre si.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Processador (CPU)</td>
+                <td style="padding:10px;">&Eacute; o "c&eacute;rebro" do computador &mdash; realiza os c&aacute;lculos e comandos.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Mem&oacute;ria RAM</td>
+                <td style="padding:10px;">Mem&oacute;ria tempor&aacute;ria que guarda informa&ccedil;&otilde;es enquanto o computador est&aacute; ligado.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">HD / SSD</td>
+                <td style="padding:10px;">Onde os dados e programas ficam armazenados. O SSD, lan&ccedil;ado em 2008, &eacute; mais r&aacute;pido e moderno que o HD tradicional.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Placa de v&iacute;deo</td>
+                <td style="padding:10px;">Respons&aacute;vel pelo processamento gr&aacute;fico &mdash; essencial para jogos e edi&ccedil;&atilde;o de v&iacute;deos.</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">Fonte de alimenta&ccedil;&atilde;o</td>
+                <td style="padding:10px;">Fornece energia el&eacute;trica para o funcionamento de todos os componentes.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <img src="../../assets/img/windows/Aula1/image2.png" alt="Placa-m&atilde;e com processador, mem&oacute;ria RAM, HD/SSD, placa de v&iacute;deo e fonte" class="img-showcase" style="max-width:600px;">
+          <p class="img-caption">Imagem 06/07 — As pe&ccedil;as que formam o computador: placa-m&atilde;e, processador, RAM, HD/SSD, placa de v&iacute;deo e fonte.</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei a diferen&ccedil;a entre hardware e software e para que serve cada uma das 6 pe&ccedil;as principais.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-6" onclick="markTopicRead(1, 6)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(1, 6)">Ir para 6. Sistemas Operacionais →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 6 DA AULA 1: O SISTEMA OPERACIONAL
+             =============================================================== -->
+        <section id="l1-phase-6" class="topic-phase-section">
+          <h2>6. O Sistema Operacional: o "Gerente" do Computador</h2>
+          <p>
+            O <strong>sistema operacional</strong> &eacute; o programa respons&aacute;vel por <strong>gerenciar o hardware e os outros programas</strong> do computador. &Eacute; ele que permite que voc&ecirc; interaja com a m&aacute;quina atrav&eacute;s de <strong>telas, &iacute;cones e menus</strong> &mdash; sem ele, o computador seria apenas "uma tela preta".
+          </p>
+
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Ano</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">Marco do sistema operacional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">1971</td>
+                <td style="padding:10px;"><strong>Unix</strong> &mdash; surgem os primeiros sistemas operacionais.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">1981</td>
+                <td style="padding:10px;"><strong>IBM PC</strong> &mdash; traz o conceito de computador pessoal.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">1985</td>
+                <td style="padding:10px;"><strong>Windows 1.0</strong> &mdash; sistema operacional gr&aacute;fico da Microsoft.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">1991</td>
+                <td style="padding:10px;"><strong>Linux</strong> &mdash; criado por Linus Torvalds, gratuito e aberto.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">2007</td>
+                <td style="padding:10px;"><strong>iOS</strong> &mdash; lan&ccedil;ado pela Apple junto com o iPhone.</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">2008</td>
+                <td style="padding:10px;"><strong>Android</strong> &mdash; sistema operacional do Google para dispositivos m&oacute;veis.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <img src="../../assets/img/windows/Aula1/image3.png" alt="Logotipos dos sistemas operacionais Unix, IBM PC, Windows, Linux, iOS e Android" class="img-showcase" style="max-width:600px;">
+          <p class="img-caption">Imagem 07/07 &mdash; Logotipos do Unix, IBM PC, Windows, Linux, iOS e Android.</p>
+
+          <h3 style="color:var(--teal-deep); font-size:20px; margin-top:20px;">Os principais tipos de sistema operacional hoje</h3>
+          <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;">
+            <thead>
+              <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line);">
+                <th style="padding:10px; text-align:left; color:var(--amber);">Sistema</th>
+                <th style="padding:10px; text-align:left; color:var(--ink);">Onde ele &eacute; usado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Windows</td>
+                <td style="padding:10px;">O mais popular em computadores pessoais no mundo todo.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">Linux</td>
+                <td style="padding:10px;">Livre e gratuito, muito usado em servidores e por programadores.</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:10px; font-weight:700;">macOS</td>
+                <td style="padding:10px;">Sistema exclusivo para computadores da Apple.</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; font-weight:700;">Android / iOS</td>
+                <td style="padding:10px;">Sistemas operacionais voltados para celulares e tablets.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="no-print" style="margin:22px 0 6px; padding:18px; background:var(--paper-beige); border:2px dashed var(--teal); border-radius:var(--radius-md);">
+            <h3 style="margin:0 0 6px; color:var(--teal-deep); font-size:19px;">Curiosidade da aula: e o Linux, como &eacute;?</h3>
+            <p style="margin:0 0 14px; font-size:15px;">
+              O Linux apareceu na tabela acima como um sistema <strong>livre, gratuito e aberto</strong>. Muita gente usa Linux todos os dias &mdash; e a maioria nunca percebeu. Se quiser entender <strong>o que ele &eacute;, como funciona por dentro e por que ele costuma ser uma escolha t&atilde;o boa</strong>, abra a aba extra abaixo. <strong>N&atilde;o entra na prova</strong>: &eacute; só conhecimento.
+            </p>
+            <button type="button" class="btn btn-primary" id="btn-saiba-mais-linux" onclick="openLinuxPanel()" style="background:var(--teal); color:#FFFDF9;">
+              🐧 Saiba mais sobre o Linux →
+            </button>
+          </div>
+
+          <p>
+            <strong>Exerc&iacute;cio de fixa&ccedil;&atilde;o:</strong> agora que voc&ecirc; conhece a hist&oacute;ria, o c&oacute;digo bin&aacute;rio, o caminho da informa&ccedil;&atilde;o, as pe&ccedil;as e o sistema operacional, finalize a leitura dos t&oacute;picos anteriores e termine com o exerc&iacute;cio de 5 perguntas abaixo!
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendo o que &eacute; um sistema operacional e que ele "gerencia" o computador.</span>
+            <button type="button" class="read-check-btn" id="check-read-1-7" onclick="markTopicRead(1, 7)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(1, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(1)">Iniciar Exercício de Fixação (5 Questões) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 1 (QUIZ DE 5 PERGUNTAS)
+             =============================================================== -->
+        <div id="fixation-panel-1" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--amber-deep); margin-top:4px; font-size:24px;">Exercício de Fixação — Aula 1</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-1" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-1">QUESTÃO 1 / 5</span>
+                <span id="q-points-1">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-1"></div>
+
+              <button class="hint-toggle" id="btn-hint-1" type="button">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-1"></div>
+
+              <div class="options" id="options-1"></div>
+
+              <div class="nav-row">
+                <button class="btn btn-ghost" id="btn-prev-1" type="button">← Anterior</button>
+                <span style="display:inline-flex; flex-direction:column; align-items:center; gap:4px;">
+                  <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';">✓ Salvo automaticamente</span>
+                  <button class="btn btn-ghost" id="btn-restart-1" type="button" style="font-size:11px; padding:5px 10px;">↺ Recomeçar o exercício</button>
+                </span>
+                <button class="btn btn-primary" id="btn-next-1" type="button" disabled>Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL DE RESULTADO E ASSINATURA SHA-256 DA AULA 1 -->
+        <div id="result-panel-1" class="fixation-panel">
+          <div class="card-quiz">
+            <div class="result-badge" id="result-badge-1"></div>
+            <h1 id="result-title-1"></h1>
+            <p style="color:var(--ink-soft);" id="result-sub-1"></p>
+            <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">
+              Nota Final: <b id="result-score-1" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0
+            </div>
+
+            <div class="signature-badge-box" id="signature-box-1">
+              <div class="signature-badge-header">
+                <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+              </div>
+              <div class="signature-code-display" id="signature-code-1">WR-AUTH-CALCULATING...</div>
+              <div class="signature-badge-desc">
+                Código de autenticidade criptográfico (SHA-256) gerado automaticamente para o aluno. Evita adulterações no comprovante ou na nota.
+              </div>
+            </div>
+
+            <div class="breakdown" id="breakdown-1"></div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary" id="btn-download-txt-1" type="button">Baixar Comprovante (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-1" type="button" style="background:var(--amber);">📑 Baixar Apostila PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-1" type="button">Enviar WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-email-1" type="button">Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-1">
+              <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
+              <input type="email" id="input-email-1" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
+              <button class="btn btn-amber" id="btn-open-gmail-1" type="button">Baixar e Abrir E-mail →</button>
+            </div>
+          </div>
+        </div>
+
+
+      </article>
     </section>
 
     <!-- ===================================================================
@@ -1425,7 +2128,7 @@
           <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
             <div>
               <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
-              <h2 style="color:var(--amber); margin-top:4px; font-size:24px;">Exercício de Fixação — Aula 7</h2>
+              <h2 style="color:var(--amber-deep); margin-top:4px; font-size:24px;">Exercício de Fixação — Aula 7</h2>
             </div>
             <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
           </div>
@@ -1771,7 +2474,7 @@
           <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
             <div>
               <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
-              <h2 style="color:var(--amber); margin-top:4px; font-size:24px;">Exercício de Fixação — Complemento 7A</h2>
+              <h2 style="color:var(--amber-deep); margin-top:4px; font-size:24px;">Exercício de Fixação — Complemento 7A</h2>
             </div>
             <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
           </div>
@@ -2163,7 +2866,7 @@
           <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
             <div>
               <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
-              <h2 style="color:var(--amber); margin-top:4px; font-size:24px;">Exercício de Fixação — Complemento 8A</h2>
+              <h2 style="color:var(--amber-deep); margin-top:4px; font-size:24px;">Exercício de Fixação — Complemento 8A</h2>
             </div>
             <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
           </div>
@@ -2243,6 +2946,175 @@
         <button type="button" class="btn btn-primary" style="flex:1;" id="btn-confirm-unlock">Desbloquear & Acessar</button>
         <button type="button" class="btn btn-ghost" onclick="closePasswordModal()">Cancelar</button>
       </div>
+
+    </div>
+  </div>
+
+  <!-- ===============================================================
+       PAINEL DEDICADO — "SAIBA MAIS: LINUX" (conteúdo extra, fora da prova)
+       Fonte: https://www.vivaolinux.com.br/linux/ (Viva o Linux)
+       =============================================================== -->
+  <div id="linux-panel" class="linux-panel no-print" role="dialog" aria-modal="true" aria-labelledby="linux-panel-title">
+    <div class="linux-panel-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; border-bottom:2px solid var(--line-light); padding-bottom:12px;">
+        <div>
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Conteúdo Extra · Fora da Avaliação</span>
+          <h2 id="linux-panel-title" style="color:var(--teal); margin-top:4px; font-size:26px;">🐧 Saiba Mais: o Linux</h2>
+        </div>
+        <button type="button" class="btn btn-ghost" onclick="closeLinuxPanel()" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ✕ Fechar
+        </button>
+      </div>
+
+      <div class="linux-tab-bar" role="tablist" aria-label="Abas sobre o Linux">
+        <button type="button" class="linux-tab-btn active" id="linux-tab-btn-1" onclick="switchLinuxTab(1)" role="tab" aria-selected="true">1. O que é</button>
+        <button type="button" class="linux-tab-btn" id="linux-tab-btn-2" onclick="switchLinuxTab(2)" role="tab" aria-selected="false">2. Como funciona</button>
+        <button type="button" class="linux-tab-btn" id="linux-tab-btn-3" onclick="switchLinuxTab(3)" role="tab" aria-selected="false">3. Vantagens</button>
+        <button type="button" class="linux-tab-btn" id="linux-tab-btn-4" onclick="switchLinuxTab(4)" role="tab" aria-selected="false">4. Praticar</button>
+      </div>
+
+      <!-- ABA 1 — O QUE É -->
+      <div id="linux-tab-body-1" class="linux-tab-body active" role="tabpanel">
+        <p style="font-size:16px; line-height:1.6;">
+          <strong>GNU/Linux</strong> é uma família de <strong>sistemas operacionais livres</strong>. Ele é formado por tr&ecirc;s coisas que trabalham juntas:
+        </p>
+
+        <div class="linux-card">
+          <h4>🧠 O kernel Linux — o "c&eacute;rebro"</h4>
+          <p>O kernel é o n&uacute;cleo que conversa direto com o <strong>hardware</strong>: ele administra a mem&oacute;ria, os programas em execu&ccedil;&atilde;o, os dispositivos (teclado, mouse, impressora, disco) e as permiss&otilde;es dos arquivos. S&oacute; com o kernel n&atilde;o se chega a um computador us&aacute;vel.</p>
+        </div>
+
+        <div class="linux-card">
+          <h4>🛠️ O projeto GNU — as ferramentas b&aacute;sicas</h4>
+          <p>S&atilde; o conjunto de comandos e programas que voc&ecirc; usa no terminal e em segundo plano. O nome vem de <em>GNU's Not Unix</em> &mdash; "GNU n&atilde;o &eacute; Unix".</p>
+        </div>
+
+        <div class="linux-card">
+          <h4>📦 A distribui&ccedil;&atilde;o — o "kit completo"</h4>
+          <p>Junta o kernel, as ferramentas, os aplicativos, o instalador e o gerenciador de pacotes. &Eacute; a <strong>distribui&ccedil;&atilde;o</strong>: Ubuntu, Debian, Linux Mint, Fedora, openSUSE. Todas usam o mesmo kernel &mdash; o que muda &eacute; o "kit" e a interface.</p>
+        </div>
+
+        <div class="linux-fact">
+          <strong>Software livre</strong> significa poder <strong>usar, estudar, modificar e compartilhar</strong>. Ningu&eacute;m precisa pagar licen&ccedil;a para instalar o sistema, e o c&oacute;digo &eacute; p&uacute;blico para qualquer pessoa conferir se h&aacute; algo escondido.
+        </div>
+      </div>
+
+      <!-- ABA 2 — COMO FUNCIONA -->
+      <div id="linux-tab-body-2" class="linux-tab-body" role="tabpanel">
+        <h3 style="color:var(--teal-deep); font-size:19px; margin-top:0;">A diferen&ccedil;a que voc&ecirc; sente na pr&aacute;tica</h3>
+        <p style="font-size:15.5px; line-height:1.6;">
+          No Windows, para instalar um programa voc&ecirc; quase sempre baixa um arquivo <span class="linux-term">.exe</span> de um site e clica duas vezes &mdash; um clique errado e o sistema pede permiss&atilde;o de administrador. No Linux, os programas t&ecirc;m um <strong>cat&aacute;logo oficial</strong> (o <strong>reposit&oacute;rio</strong>), e a instala&ccedil;&atilde;o &eacute; feita por um comando ou por um &iacute;cone &uacute;nico, com seguran&ccedil;a e checagem.
+        </p>
+
+        <div class="linux-card">
+          <h4>📚 Reposit&oacute;rio e gerenciador de pacotes</h4>
+          <p>O gerenciador de pacotes <strong>instala, atualiza e remove</strong> programas a partir dos reposit&oacute;rios oficiais da distribui&ccedil;&atilde;o. &Eacute; o equivalente a uma "loja confi&aacute;vel" j&aacute; instalada no sistema &mdash; por isso muitos usu&aacute;rios nem instalam nada de fora, e o computador fica mais seguro.</p>
+        </div>
+
+        <div class="linux-card">
+          <h4>🔑 Usu&aacute;rios e permiss&otilde;es: a prote&ccedil;&atilde;o vem por desenho</h3>
+          <p>Cada pessoa tem um <strong>usu&aacute;rio</strong> pr&oacute;prio, e s&oacute; o administrador mexe no sistema. Se voc&ecirc; abrir um arquivo estranho, ele n&atilde;o consegue alterar o sistema inteiro &mdash; a prote&ccedil;&atilde;o existe <em>antes</em> do antiv&iacute;rus agir.</p>
+        </div>
+
+        <div class="linux-card">
+          <h4>🖼️ A interface &eacute; uma escolha, n&atilde;o um imposi&ccedil;&atilde;o</h3>
+          <p>Ambientes como <strong>GNOME</strong>, <strong>KDE Plasma</strong> e <strong>XFCE</strong> mudam a apar&ecirc;ncia e o comportamento do ambiente gr&aacute;fico <strong>sem trocar o sistema inteiro</strong>. Trocar de interface &eacute; como trocar de tema.</p>
+        </div>
+
+        <div class="linux-card">
+          <h4>⌨️ O terminal</h4>
+          <p>&Eacute; o lugar onde o Linux mostra sua verdadeira pot&ecirc;ncia. Comandos como <span class="linux-term">ls</span> (listar), <span class="linux-term">cd</span> (entrar numa pasta), <span class="linux-term">cp</span> (copiar) e <span class="linux-term">sudo</span> (executar como administrador) resolvem em segundos tarefas que no Windows exigem v&aacute;rios cliques.</p>
+        </div>
+
+        <div class="linux-fact">
+          <strong>Teste antes de trocar:</strong> rode uma distribui&ccedil;&atilde;o em <strong>m&aacute;quina virtual</strong>, <strong>pendrive live</strong> ou computador secund&aacute;rio. Assim voc&ecirc; conhece o sistema sem arriscar o seu dia a dia.
+        </div>
+      </div>
+
+      <!-- ABA 3 — VANTAGENS -->
+      <div id="linux-tab-body-3" class="linux-tab-body" role="tabpanel">
+        <p style="font-size:16px; line-height:1.6;">
+          N&atilde;o &eacute; que o Linux seja "milagroso". Ele resolve problemas de um jeito diferente &mdash; e, em v&aacute;rias situa&ccedil;&otilde;es do dia a dia, resolve melhor e mais barato:
+        </p>
+
+        <table style="width:100%; border-collapse:collapse; margin:16px 0; font-size:14.5px;">
+          <thead>
+            <tr style="background:var(--paper-beige); border-bottom:2px solid var(--line-light);">
+              <th style="padding:10px; text-align:left; color:var(--teal-deep); white-space:nowrap;">Aspecto</th>
+              <th style="padding:10px; text-align:left; color:var(--teal-deep);">No Windows</th>
+              <th style="padding:10px; text-align:left; color:var(--teal-deep);">No Linux</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line-light);">
+              <td style="padding:10px; font-weight:700;">Licen&ccedil;a</td>
+              <td style="padding:10px;">Paga (ou atualiza&ccedil;&otilde;es recorrentes em vers&otilde;es novas).</td>
+              <td style="padding:10px;">Gratuito e de c&oacute;digo aberto.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line-light);">
+              <td style="padding:10px; font-weight:700;">Instala&ccedil;&atilde;o de programas</td>
+              <td style="padding:10px;">Baixar <span class="linux-term">.exe</span> de sites variados.</td>
+              <td style="padding:10px;">Reposit&oacute;rio oficial, com checagem de integridade.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line-light);">
+              <td style="padding:10px; font-weight:700;">Seguran&ccedil;a b&aacute;sica</td>
+              <td style="padding:10px;">O usu&aacute;rio &eacute; administrador; permiss&otilde;o ampla por padr&atilde;o.</td>
+              <td style="padding:10px;">Usu&aacute;rio comum x administrador, separado por padr&atilde;o.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line-light);">
+              <td style="padding:10px; font-weight:700;">Velocidade</td>
+              <td style="padding:10px;">Engorda com o tempo; exige hardware mais novo.</td>
+              <td style="padding:10px;">Roda bem at&eacute; em m&aacute;quinas antigas (com uma distro leve).</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line-light);">
+              <td style="padding:10px; font-weight:700;">Estabilidade</td>
+              <td style="padding:10px;">Rein&iacute;cios e atualiza&ccedil;&otilde;es frequentes.</td>
+              <td style="padding:10px;">Servidores ficam dias ou semanas no ar.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line-light);">
+              <td style="padding:10px; font-weight:700;">Controle da m&aacute;quina</td>
+              <td style="padding:10px;">Coleta de dados e servi&ccedil;os de fundo comuns.</td>
+              <td style="padding:10px;">Tudo deslig&aacute;vel; c&oacute;digo p&uacute;blico para auditar.</td>
+            </tr>
+            <tr>
+              <td style="padding:10px; font-weight:700;">Interface</td>
+              <td style="padding:10px;">Um visual &uacute;nico, acoplado ao sistema.</td>
+              <td style="padding:10px;">GNOME, KDE, XFCE&hellip; troc&aacute;veis livremente.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="linux-fact">
+          <strong>Resumo honesto:</strong> o Linux n&atilde;o serve para tudo e para todo mundo. Quem depende de programas muito espec&iacute;ficos (ou de jogos com prote&ccedil;&atilde;o anticopia) pode encontrar limita&ccedil;&otilde;es. Mas para <strong>navegar, estudar, trabalhar com documentos, usar a internet e manter o computador seguro e leve</strong>, ele &eacute; uma &oacute;tima escolha.
+        </div>
+      </div>
+
+      <!-- ABA 4 — PRATICAR -->
+      <div id="linux-tab-body-4" class="linux-tab-body" role="tabpanel">
+        <h3 style="color:var(--teal-deep); font-size:19px; margin-top:0;">Para ir mais fundo</h3>
+
+        <div class="linux-card">
+          <h4>🌐 Fonte desta aula</h4>
+          <p>Viva o Linux &mdash; a maior comunidade GNU/Linux da Am&eacute;rica Latina, no ar desde 2002. O texto desta aba foi adaptado do guia oficial do site:<br>
+            <a href="https://www.vivaolinux.com.br/linux/" target="_blank" rel="noopener" style="color:var(--teal-deep); font-weight:600;">www.vivaolinux.com.br/linux</a>
+          </p>
+        </div>
+
+        <div class="linux-card">
+          <h4>📹 V&iacute;deo de apoio (opcional)</h4>
+          <p>H&aacute; no acervo da pr&oacute;pria aula um v&iacute;deo cl&aacute;sico de hist&oacute;ria do Linux (<em>Historia_Linux.flv</em>, 7min48s). O arquivo &eacute; de 2009 e est&aacute; num formato que os navegadores atuais n&atilde;o reproduzem; se quiser assistir, <strong>baixe o arquivo e abra no VLC</strong> (tocador de v&iacute;deo gratuito). Nada disso &eacute; obrigat&oacute;rio &mdash; o texto acima j&aacute; explica o essencial.</p>
+        </div>
+
+        <div class="linux-card">
+          <h4>🧪 Desafio de curiosidade (sem nota)</h4>
+          <p>Se quiser experimentar sem risco: baixe uma distribui&ccedil;&atilde;o e rode em <strong>m&aacute;quina virtual</strong> ou <strong>pendrive live</strong>. Depois abra o terminal e digite <span class="linux-term">uname -o</span> &mdash; a resposta ser&aacute; <strong>GNU/Linux</strong>. Curiosidade satisfeita.</p>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;">
+          <button type="button" class="btn btn-ghost" onclick="closeLinuxPanel()">← Voltar para a Aula 1</button>
+          <button type="button" class="btn btn-primary" onclick="closeLinuxPanel(); openFixationPanel(1);">Ir para o Exercício de Fixação 📝</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -2314,6 +3186,68 @@
         hint: "É o sistema de arquivos padrão universal para criação de unidades de boot."
       }
     ];
+
+    // QUESTÕES DO QUIZ DE FIXAÇÃO DA AULA 1 (5 QUESTÕES)
+    const QUESTIONS_LESSON_1 = [
+      {
+        q: "O que significa a palavra BINÁRIO no computador?",
+        options: [
+          "Que ele usa apenas dois números: 0 e 1",
+          "Que ele só trabalha com números pares",
+          "Que ele tem apenas dois botões",
+          "Que ele é sempre mais rápido"
+        ],
+        correct: 0,
+        hint: "Todo computador entende somente dois estados: ligado (1) e desligado (0)."
+      },
+      {
+        q: "Qual destas peças do computador tem a função de FORNECER A ENERGIA para todas as outras funcionarem?",
+        options: [
+          "Placa de vídeo",
+          "Monitor",
+          "Fonte de alimentação",
+          "Memória RAM"
+        ],
+        correct: 2,
+        hint: "Ela alimenta todas as outras peças — sem energia elétrica nada liga."
+      },
+      {
+        q: "O ENIAC, considerado o primeiro computador eletrônico da história, foi apresentado em qual data?",
+        options: [
+          "Fevereiro de 1946",
+          "1975",
+          "1985",
+          "2007"
+        ],
+        correct: 0,
+        hint: "Foi em fevereiro de 1946, ainda no contexto da Segunda Guerra Mundial."
+      },
+      {
+        q: "O teclado e o mouse são exemplos de qual etapa do processamento da informação?",
+        options: [
+          "Saída",
+          "Processamento",
+          "Entrada",
+          "Armazenamento"
+        ],
+        correct: 2,
+        hint: "Entrada é o que o computador RECEBE de você."
+      },
+      {
+        q: "Qual programa é responsável por GERENCIAR o hardware e permitir que você use o computador?",
+        options: [
+          "O antivírus",
+          "O navegador de internet",
+          "O sistema operacional",
+          "O bloqueador de tela"
+        ],
+        correct: 2,
+        hint: "Ele é a ponte entre você, os aplicativos e as peças físicas (hardware)."
+      }
+    ];
+
+    // SENHA DA AULA 1 (HISTÓRIA E FUNCIONAMENTO DOS COMPUTADORES)
+    const PASSWORD_A1 = "wr0126";
 
     // SENHA DA AULA 7 E COMPLEMENTOS (7A/7B)
     const PASSWORD_A7 = "wr0726";
@@ -2574,10 +3508,10 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      // Aulas liberadas: 7 (com complemento 71) e 8 (com complemento 81). Demais estão em construção!
-      const OPEN_LESSONS = [7, 8, 71, 81];
+      // Aulas liberadas: 1, 7 (com complemento 71) e 8 (com complemento 81). Demais estão em construção!
+      const OPEN_LESSONS = [1, 7, 8, 71, 81];
       if(!OPEN_LESSONS.includes(lessonNum)){
-        alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, apenas a Aula 07 e a Aula 08 estão disponíveis no portal.`);
+        alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, as Aulas 01, 07 e 08 estão disponíveis no portal.`);
         return;
       }
 
@@ -2598,10 +3532,11 @@
     document.getElementById("btn-confirm-unlock").onclick = function(){
       const typed = document.getElementById("modal-pass-field").value.trim().toLowerCase();
 
-      // Aceita wr0926 (Aula 8 e Complemento 8A) / wr0726 (Aula 7 e Complemento 7A) ou senhas de teste a001/b002/c003/d004/h008/wr2026
-      if(typed === PASSWORD_WR || typed === PASSWORD_A7 || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "h008" || typed === "wr2026"){
+      // Aceita wr0126 (Aula 1) / wr0726 (Aula 7 e Complemento 7A) / wr0926 (Aula 8 e Complemento 8A) ou senhas de teste a001/b002/c003/d004/h008/wr2026
+      if(typed === PASSWORD_WR || typed === PASSWORD_A7 || typed === PASSWORD_A1 || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "h008" || typed === "wr2026"){
         closePasswordModal();
         const routes = {
+          1:  "screen-lesson-1",
           7:  "screen-lesson-7",
           71: "screen-lesson-71",
           81: "screen-lesson-81",
@@ -2642,9 +3577,9 @@
       if(activePhase) activePhase.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    // MARCAR LEITURA / GAMIFICAÇÃO (AULA 7, 8, COMPLEMENTOS 71 e 81)
-    const TOTAL_TOPICS = { 7: 7, 8: 5, 71: 4, 81: 6 };
-    const SEQUENTIAL_LESSONS = { 7: true, 71: true, 81: true };
+    // MARCAR LEITURA / GAMIFICAÇÃO (AULA 1, 7, 8 E COMPLEMENTOS 71 e 81)
+    const TOTAL_TOPICS = { 1: 7, 7: 7, 8: 5, 71: 4, 81: 6 };
+    const SEQUENTIAL_LESSONS = { 1: true, 7: true, 71: true, 81: true };
     let readTopics = {};
     function getReadSet(lessonNum){
       if(!readTopics[lessonNum]) readTopics[lessonNum] = new Set();
@@ -2681,7 +3616,7 @@
 
     // Inicialização da trava sequencial: desabilita todos os checks exceto o primeiro
     (function initSequentialGating(){
-[7, 71, 81].forEach(function(lessonNum){
+      [1, 7, 71, 81].forEach(function(lessonNum){
         const total = TOTAL_TOPICS[lessonNum] || 0;
         for(let i = 1; i <= total; i++){
           const btn = document.getElementById(`check-read-${lessonNum}-${i}`);
@@ -2702,11 +3637,157 @@
         renderTrailL8();
         renderQuestionL8();
       } else {
+        restoreQuizGen(lessonNum);
         renderTrailGen(lessonNum);
         renderQuestionGen(lessonNum);
       }
 
       panel.scrollIntoView({ behavior: "smooth" });
+    };
+
+    // ===================================================================
+    // PAINEL DEDICADO "SAIBA MAIS: LINUX" (Aula 1)
+    // Conteúdo extra fora da avaliação: o que é, como funciona, vantagens
+    // e como praticar. Fonte: https://www.vivaolinux.com.br/linux/
+    // ===================================================================
+    window.switchLinuxTab = function(tab) {
+      for (let i = 1; i <= 4; i++) {
+        const body = document.getElementById(`linux-tab-body-${i}`);
+        const btn = document.getElementById(`linux-tab-btn-${i}`);
+        if (body) body.classList.toggle("active", i === tab);
+        if (btn) {
+          btn.classList.toggle("active", i === tab);
+          btn.setAttribute("aria-selected", i === tab ? "true" : "false");
+        }
+      }
+      const card = document.querySelector("#linux-panel .linux-panel-card");
+      if (card) card.scrollIntoView({ block: "start", behavior: "smooth" });
+    };
+
+    window.openLinuxPanel = function() {
+      document.getElementById("linux-panel").classList.add("active");
+      document.body.style.overflow = "hidden";
+      window.switchLinuxTab(1);
+    };
+
+    window.closeLinuxPanel = function() {
+      document.getElementById("linux-panel").classList.remove("active");
+      document.body.style.overflow = "";
+    };
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") {
+        const panel = document.getElementById("linux-panel");
+        if (panel && panel.classList.contains("active")) window.closeLinuxPanel();
+      }
+    });
+
+    // ===================================================================
+    // ATIVIDADE INTERATIVA DA AULA 1: TERMÔMETRO DO HARDWARE
+    // (classifica 10 itens em hardware ou software e mostra a placa-mãe)
+    // ===================================================================
+    const THERMO_ITEMS = [
+      { label: "Teclado",                 answer: "hardware" },
+      { label: "Mouse",                  answer: "hardware" },
+      { label: "Monitor",                 answer: "hardware" },
+      { label: "Processador (CPU)",       answer: "hardware" },
+      { label: "Memória RAM",             answer: "hardware" },
+      { label: "Sistema operacional",      answer: "software" },
+      { label: "Navegador de internet",    answer: "software" },
+      { label: "Editor de texto",         answer: "software" },
+      { label: "Antivírus",               answer: "software" },
+      { label: "Jogo instalado",          answer: "software" }
+    ];
+    let thermoState = {};
+
+    window.buildThermometer = function() {
+      const box = document.getElementById("w1-thermo");
+      if(!box || box.dataset.built === "1") return;
+      box.dataset.built = "1";
+      THERMO_ITEMS.forEach(function(item, idx) {
+        const card = document.createElement("div");
+        card.id = `thermo-item-${idx}`;
+        card.style.cssText = "display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; background:var(--paper-white); border:1.5px solid var(--line-light); border-radius:10px; padding:10px 12px;";
+        const name = document.createElement("span");
+        name.style.cssText = "font-size:14.5px; font-weight:700; color:var(--ink);";
+        name.textContent = item.label;
+        const btns = document.createElement("div");
+        btns.style.cssText = "display:flex; gap:6px;";
+        ["hardware", "software"].forEach(function(kind) {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "btn btn-ghost thermo-btn";
+          b.dataset.kind = kind;
+          b.style.cssText = "font-size:12.5px; padding:6px 10px; border:1px solid var(--line-dark); background:var(--card-brown); color:var(--amber) !important;";
+          b.textContent = (kind === "hardware") ? "🖐️ É hardware" : "💻 É software";
+          b.onclick = () => answerThermometer(idx, kind);
+          btns.appendChild(b);
+        });
+        card.appendChild(name);
+        card.appendChild(btns);
+        box.appendChild(card);
+      });
+    };
+
+    function answerThermometer(idx, kind) {
+      thermoState[idx] = kind;
+      const right = THERMO_ITEMS[idx].answer;
+      const card = document.getElementById(`thermo-item-${idx}`);
+      if(!card) return;
+      card.querySelectorAll(".thermo-btn").forEach(function(b) {
+        b.classList.remove("checked", "wrong");
+        if(b.dataset.kind === kind){
+          b.classList.add(kind === right ? "checked" : "wrong");
+          b.style.background = (kind === right) ? "var(--success-bg)" : "#FDF2F2";
+          b.style.color = (kind === right) ? "var(--success)" : "#991B1B";
+        } else {
+          b.style.background = "var(--card-brown)";
+          b.style.color = "var(--amber) !important";
+        }
+      });
+      card.style.borderColor = (kind === right) ? "var(--success)" : "#991B1B";
+      updateThermometerScore();
+    }
+
+    function updateThermometerScore() {
+      let hits = 0;
+      let answered = 0;
+      let hardwareFound = 0;
+      THERMO_ITEMS.forEach(function(item, idx) {
+        if(thermoState[idx] === undefined) return;
+        answered++;
+        if(thermoState[idx] === item.answer){
+          hits++;
+          if(item.answer === "hardware") hardwareFound++;
+        }
+      });
+
+      const label = document.getElementById("w1-thermo-score");
+      if(label) label.textContent = `${hits} / ${THERMO_ITEMS.length} acertos`;
+
+      const board = document.getElementById("w1-thermo-board");
+      if(board){
+        if(answered === 0){
+          board.innerHTML = "<em>Clique em cada item para classificar. As 5 peças de hardware acenderão na placa-mãe.</em>";
+        } else if(hits === THERMO_ITEMS.length){
+          board.innerHTML = "<strong>🏆 Perfeito! Você separou tudo: 5 peças de hardware e 5 programas de software.</strong>";
+        } else {
+          board.innerHTML = `Peças de hardware <strong>acertadas: ${hardwareFound}/5</strong> — é só isso que a placa-mãe precisa conectar para o computador funcionar.`;
+        }
+      }
+    }
+
+    window.resetThermometer = function() {
+      thermoState = {};
+      document.querySelectorAll("#w1-thermo > div").forEach(function(card) {
+        card.style.borderColor = "var(--line-light)";
+        card.querySelectorAll(".thermo-btn").forEach(function(b) {
+          b.classList.remove("checked", "wrong");
+          b.style.background = "var(--card-brown)";
+          b.style.color = "var(--amber) !important";
+        });
+      });
+      updateThermometerScore();
     };
 
     // LÓGICA DO QUIZ DA AULA 8
@@ -2859,6 +3940,7 @@
     // MOTOR GENÉRICO DE QUIZ DE FIXAÇÃO (AULA 7 E COMPLEMENTOS 71/81)
     // ===================================================================
     const QUIZ_CFG = {
+      1:  { questions: QUESTIONS_LESSON_1,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-1",  title: "Módulo 1 — Aula 1: A História e o Funcionamento dos Computadores",             sig: "Módulo 1 - Aula 1 (Windows)" },
       7:  { questions: QUESTIONS_LESSON_7,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-7",  title: "Módulo 1 — Aula 7: Segurança e Antivírus no Windows",                          sig: "Módulo 1 - Aula 7 (Windows)" },
       71: { questions: QUESTIONS_LESSON_71, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-71", title: "Módulo 1 — Complemento 7A: Backup Automático com Arquivo .BAT",                  sig: "Módulo 1 - Complemento 7A (Windows)" },
       81: { questions: QUESTIONS_LESSON_81, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-81", title: "Módulo 1 — Complemento 8A: Tutorial de Criação de Mídia de Instalação",        sig: "Módulo 1 - Complemento 8A (Windows)" }
@@ -2882,6 +3964,46 @@
       }
     }
 
+    // PERSISTÊNCIA DO EXERCÍCIO (LocalStorage via QuizEngine) — o rodapé do
+    // quiz exibe "✓ Salvo automaticamente", então o estado das respostas precisa
+    // realmente ser gravado. Mesmo padrão dos módulos Word e PowerPoint.
+    function persistQuizGen(lessonNum){
+      const cfg = QUIZ_CFG[lessonNum];
+      window.QuizEngine.saveState(cfg.moduleId, {
+        name: cfg.name, lessonNum, answers: cfg.answers, current: cfg.current,
+        signature: cfg.signature
+      });
+    }
+
+    function restoreQuizGen(lessonNum){
+      const cfg = QUIZ_CFG[lessonNum];
+      const saved = window.QuizEngine.loadState(cfg.moduleId, cfg.name);
+      const valido = saved && saved.lessonNum === lessonNum && Array.isArray(saved.answers)
+        && saved.answers.length === cfg.questions.length;
+      if(!valido){
+        // sem progresso gravado (primeira vez ou exercício reiniciado): começa limpo
+        cfg.answers = new Array(cfg.questions.length).fill(null);
+        cfg.current = 0;
+        cfg.signature = null;
+        return false;
+      }
+      cfg.answers = saved.answers;
+      cfg.current = Math.min(Math.max(parseInt(saved.current, 10) || 0, 0), cfg.questions.length - 1);
+      cfg.signature = saved.signature || null;
+      return true;
+    }
+
+    // Recomeça o exercício: zera memória + LocalStorage e re-renderiza.
+    function restartQuizGen(lessonNum){
+      const cfg = QUIZ_CFG[lessonNum];
+      localStorage.removeItem(`${cfg.moduleId}:${cfg.name.toLowerCase().trim()}`);
+      restoreQuizGen(lessonNum);
+      document.getElementById(`result-panel-${lessonNum}`).classList.remove("active");
+      document.getElementById(`fixation-panel-${lessonNum}`).classList.add("active");
+      renderTrailGen(lessonNum);
+      renderQuestionGen(lessonNum);
+    }
+
     function renderQuestionGen(lessonNum) {
       const cfg = QUIZ_CFG[lessonNum];
       const total = cfg.questions.length;
@@ -2903,6 +4025,7 @@
         btn.innerHTML = `<span class="letter">${String.fromCharCode(97+idx)}</span><span>${text}</span>`;
         btn.onclick = () => {
           cfg.answers[cfg.current] = idx;
+          persistQuizGen(lessonNum);
           renderQuestionGen(lessonNum);
         };
         opts.appendChild(btn);
@@ -2930,6 +4053,7 @@
 
       const timestamp = cfg.signature ? cfg.signature.timestamp : Date.now();
       cfg.signature = await window.QuizEngine.generateDigitalSignature(cfg.name, cfg.sig, score, total, timestamp);
+      persistQuizGen(lessonNum);
       document.getElementById(`signature-code-${lessonNum}`).textContent = cfg.signature.authCode;
 
       const badge = document.getElementById(`result-badge-${lessonNum}`);
@@ -2979,21 +4103,24 @@
       };
     }
 
-    // EVENTOS DOS QUIZZES DA AULA 7 E COMPLEMENTOS (7, 71, 81)
-    [7, 71, 81].forEach(function(lessonNum){
+    // EVENTOS DOS QUIZZES DA AULA 1, AULA 7 E COMPLEMENTOS (1, 7, 71, 81)
+    [1, 7, 71, 81].forEach(function(lessonNum){
       document.getElementById(`btn-hint-${lessonNum}`).onclick = () => {
         document.getElementById(`hint-box-${lessonNum}`).classList.toggle("show");
       };
 
+      const btnRestart = document.getElementById(`btn-restart-${lessonNum}`);
+      if(btnRestart) btnRestart.onclick = () => { restartQuizGen(lessonNum); };
+
       document.getElementById(`btn-prev-${lessonNum}`).onclick = () => {
         const cfg = QUIZ_CFG[lessonNum];
-        if(cfg.current > 0) { cfg.current--; renderQuestionGen(lessonNum); }
+        if(cfg.current > 0) { cfg.current--; persistQuizGen(lessonNum); renderQuestionGen(lessonNum); }
       };
 
       document.getElementById(`btn-next-${lessonNum}`).onclick = () => {
         const cfg = QUIZ_CFG[lessonNum];
         if(cfg.current < cfg.questions.length - 1) {
-          cfg.current++; renderQuestionGen(lessonNum);
+          cfg.current++; persistQuizGen(lessonNum); renderQuestionGen(lessonNum);
         } else {
           renderResultGen(lessonNum);
         }
@@ -3183,6 +4310,10 @@
         }
       };
     }
+
+    // ATIVIDADE INTERATIVA DA AULA 1 — MONTAGEM INICIAL DO TERMÔMETRO
+    window.buildThermometer();
+    updateThermometerScore();
 
   })();
   </script>

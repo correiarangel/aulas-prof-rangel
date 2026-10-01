@@ -126,6 +126,282 @@ window.PDFLessons = (function() {
       moduleName: "Sistema Operacional Windows",
       sections: [
         {
+          lessonNum: 1,
+          chapter: "AULA 01: A HISTÓRIA E O FUNCIONAMENTO DOS COMPUTADORES",
+          heading: "1.0 FASE 0 — Antes de Começar",
+          content: "Objetivo desta aula: entender de onde vieram os computadores, como eles pensam por dentro (apenas 0 e 1) e de que peças são feitos (hardware e software) — para nunca mais olhar para a sua máquina como algo mágico.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">ROTEIRO DA AULA (6 PASSOS)</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>#</th><th>Passo a Passo</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Voltar no tempo: a Guerra e o primeiro computador (ENIAC).</td></tr>
+                  <tr><td>2</td><td>Os nomes que mudaram tudo: Turing, Bill Gates e Steve Jobs.</td></tr>
+                  <tr><td>3</td><td>Como o computador "pensa": o código binário (0 e 1).</td></tr>
+                  <tr><td>4</td><td>O caminho da informação: Entrada &rarr; Processamento &rarr; Saída.</td></tr>
+                  <tr><td>5</td><td>Hardware &times; Software: o que se toca e o que se vê na tela.</td></tr>
+                  <tr><td>6</td><td>As peças do computador e o Sistema Operacional.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>🏁 Resultado esperado ao final da aula</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Apontar para qualquer computador e dizer <strong>qual peça faz o quê</strong> — e por que a tela só funciona se existir um <strong>sistema operacional</strong>.</p>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula1/image6.png",
+              caption: "Abertura da aula: programadoras operam o primeiro computador eletrônico da história, o ENIAC (Foto: ARL Technical Library / U.S. Army)."
+            }
+          ],
+          imagesWide: true
+        },
+        {
+          lessonNum: 1,
+          heading: "1.1 A História dos Computadores (da Guerra ao ENIAC)",
+          content: "Os computadores não surgiram prontos como os conhecemos hoje. Eles nasceram de uma necessidade muito séria: durante a Segunda Guerra Mundial (1939-1945) era preciso resolver cálculos complexos rapidamente — e foi aí que tudo começou.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">RESUMO DO TÓPICO 1</div>
+              <table class="mini-sheet">
+                <tbody>
+                  <tr><td><strong>1939–1945</strong></td><td>Guerra Mundial — surgem os primeiros computadores</td></tr>
+                  <tr><td><strong>Fev/1946</strong></td><td>ENIAC, o primeiro computador eletrônico, operado por programadoras</td></tr>
+                  <tr><td><strong>Alan Turing</strong></td><td>Cria a base do cálculo automático ao decifrar a máquina Enigma</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula1/image1.png",
+              caption: "Alan Turing e a máquina Enigma, usada pelos alemães na Segunda Guerra Mundial para codificar mensagens."
+            }
+          ],
+          imagesWide: true,
+          boxType: "tip",
+          boxTitle: "💡 Para ver",
+          boxText: "O filme O Jogo da Imitação conta essa mesma época e mostra por que o trabalho de Turing foi tão importante para a computação."
+        },
+        {
+          lessonNum: 1,
+          heading: "1.2 Os Nomes que Mudaram Tudo: Bill Gates e Steve Jobs",
+          content: "Com o passar das décadas a tecnologia evoluiu rapidamente — e dois nomes marcaram essa história para sempre.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">LINHA DO TEMPO DAS DUAS EMPRESAS</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Ano</th><th>O que aconteceu</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>1975</strong></td><td><strong>Bill Gates funda a Microsoft</strong> — em 1985 lança o Windows 1.0, popularizando os sistemas operacionais em computadores pessoais</td></tr>
+                  <tr><td><strong>1976</strong></td><td><strong>Steve Jobs cofunda a Apple</strong> — lança o Apple I e, décadas depois, revoluciona a interface gráfica e populariza o iPhone (2007)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula1/image7.png",
+              caption: "Bill Gates (com o logo do Windows 1.0 ao fundo) e Steve Jobs (com o Apple I)."
+            }
+          ],
+          imagesWide: true,
+          boxType: "tip",
+          boxTitle: "💡 Para lembrar",
+          boxText: "Gates levou o sistema operacional para dentro do computador de mesa de todo mundo; Jobs levou a interface gráfica (a janela com botões e ícones que você usa hoje) e depois o telefone."
+        },
+        {
+          lessonNum: 1,
+          heading: "1.3 Como o Computador \"Pensa\": o Código Binário",
+          content: "Por mais avançado que pareça, um computador é, no fundo, uma grande calculadora. Toda a informação que ele processa — textos, fotos, vídeos, sons — é transformada em apenas dois estados possíveis: ligado (1) e desligado (0).",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">CÓDIGO BINÁRIO — A ÚNICA LINGUAGEM DA MÁQUINA</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Estado</th><th>Código</th><th>O que acontece na máquina</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Ligado</strong></td><td>1</td><td>Corrente elétrica passa — o circuito está "ligado"</td></tr>
+                  <tr><td><strong>Desligado</strong></td><td>0</td><td>Não passa corrente — o circuito está "desligado"</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>⚠️ Atenção: bit e byte</h4>
+              <ul>
+                <li><strong>1 bit</strong> = um único dígito binário (0 ou 1).</li>
+                <li><strong>8 bits</strong> = <strong>1 byte</strong>, que representa um caractere.</li>
+                <li>É assim que um arquivo de 1 MB (1.048.576 bytes) ainda cabia em um disquete de 1,44 MB.</li>
+              </ul>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Resumo do Tópico 3",
+          boxText: "Computador = grande calculadora • 2 estados: 1 (ligado) e 0 (desligado) • 8 bits = 1 byte = 1 caractere."
+        },
+        {
+          lessonNum: 1,
+          heading: "1.4 O Caminho da Informação: Entrada &rarr; Processamento &rarr; Saída",
+          content: "Todo processamento de dados segue um caminho simples, dividido em três etapas: entrada, processamento e saída.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">AS 3 ETAPAS DE TODO PROCESSAMENTO</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Etapa</th><th>O que acontece</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Entrada</strong></td><td>O que o computador RECEBE do usuário — teclado, mouse, microfone, câmera</td></tr>
+                  <tr><td><strong>Processamento</strong></td><td>O que o computador FAZ com a informação, usando o processador (CPU) para calcular e tomar decisões</td></tr>
+                  <tr><td><strong>Saída</strong></td><td>O RESULTADO que aparece para o usuário — monitor, som, impressora</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula1/image5.png",
+              caption: "Teclado/mouse (Entrada) &rarr; um ícone de processador (Processamento) &rarr; um monitor (Saída)."
+            }
+          ],
+          imagesWide: true,
+          boxType: "tip",
+          boxTitle: "💡 Pense assim",
+          boxText: "É exatamente o caminho do seu dedo no teclado até a letra aparecer na tela. Sem entrada não há processamento; sem processamento não há saída."
+        },
+        {
+          lessonNum: 1,
+          heading: "1.5 Hardware &times; Software e as Peças do Computador",
+          content: "Todo computador é formado por duas partes que trabalham juntas — uma que você pode TOCAR (hardware) e outra que você só VÊ funcionando na tela (software).",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">HARDWARE (PARTE FÍSICA) &times; SOFTWARE (PARTE LÓGICA)</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Hardware (parte física)</th><th>Software (parte lógica)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Teclado</td><td>Navegadores de internet</td></tr>
+                  <tr><td>Mouse</td><td>Editores de texto</td></tr>
+                  <tr><td>Monitor</td><td>Sistema operacional</td></tr>
+                  <tr><td>Processador</td><td>Aplicativos e jogos</td></tr>
+                  <tr><td>Memória RAM</td><td>Antivírus</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">AS 6 PEÇAS PRINCIPAIS DO COMPUTADOR</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Peça</th><th>Função</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Placa-mãe</strong></td><td>Conecta e integra todos os componentes entre si</td></tr>
+                  <tr><td><strong>Processador (CPU)</strong></td><td>É o "cérebro" — realiza os cálculos e comandos</td></tr>
+                  <tr><td><strong>Memória RAM</strong></td><td>Memória temporária enquanto o computador está ligado</td></tr>
+                  <tr><td><strong>HD / SSD</strong></td><td>Onde ficam armazenados os dados e programas (SSD, 2008, é mais rápido que o HD)</td></tr>
+                  <tr><td><strong>Placa de vídeo</strong></td><td>Processamento gráfico — essencial para jogos e edição de vídeos</td></tr>
+                  <tr><td><strong>Fonte de alimentação</strong></td><td>Fornece energia elétrica para todos os componentes</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula1/image4.png",
+              caption: "Hardware (a parte física que você toca) e software (a parte lógica que você vê funcionando): um não funciona sozinho sem o outro."
+            },
+            {
+              src: "../../assets/img/windows/Aula1/image2.png",
+              caption: "As peças que formam o computador: placa-mãe, processador, RAM, HD/SSD, placa de vídeo e fonte."
+            }
+          ],
+          imagesWide: true
+        },
+        {
+          lessonNum: 1,
+          heading: "1.6 O Sistema Operacional: o \"Gerente\" do Computador",
+          content: "O sistema operacional é o programa responsável por gerenciar o hardware e os outros programas do computador. É ele que permite que você interaja com a máquina através de telas, ícones e menus.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">LINHA DO TEMPO DOS SISTEMAS OPERACIONAIS</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Ano</th><th>Marco</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1971</td><td><strong>Unix</strong> — surgem os primeiros sistemas operacionais</td></tr>
+                  <tr><td>1981</td><td><strong>IBM PC</strong> — traz o conceito de computador pessoal</td></tr>
+                  <tr><td>1985</td><td><strong>Windows 1.0</strong> — sistema operacional gráfico da Microsoft</td></tr>
+                  <tr><td>1991</td><td><strong>Linux</strong> — criado por Linus Torvalds, gratuito e aberto</td></tr>
+                  <tr><td>2007</td><td><strong>iOS</strong> — lançado pela Apple junto com o iPhone</td></tr>
+                  <tr><td>2008</td><td><strong>Android</strong> — sistema operacional do Google para dispositivos móveis</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">OS PRINCIPAIS TIPOS DE SISTEMA OPERACIONAL HOJE</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Sistema</th><th>Onde ele é usado</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Windows</strong></td><td>O mais popular em computadores pessoais no mundo todo</td></tr>
+                  <tr><td><strong>Linux</strong></td><td>Livre e gratuito, muito usado em servidores e por programadores</td></tr>
+                  <tr><td><strong>macOS</strong></td><td>Sistema exclusivo para computadores da Apple</td></tr>
+                  <tr><td><strong>Android / iOS</strong></td><td>Sistemas operacionais voltados para celulares e tablets</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">SAIBA MAIS — O LINUX (CONTEÚDO EXTRA, FORA DA PROVA)</div>
+              <p><strong>GNU/Linux</strong> é uma família de sistemas operacionais <strong>livres</strong>, formada por três partes que trabalham juntas:</p>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Parte</th><th>O que faz</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Kernel Linux</strong></td><td>O núcleo: conversa com o hardware e gerencia memória, processos, dispositivos, arquivos e permissões</td></tr>
+                  <tr><td><strong>Projeto GNU</strong></td><td>As ferramentas básicas de linha de comando e de sistema</td></tr>
+                  <tr><td><strong>Distribuição</strong></td><td>O kit completo: kernel + ferramentas + aplicativos + instalador + repositórios (Ubuntu, Debian, Linux Mint, Fedora, openSUSE)</td></tr>
+                </tbody>
+              </table>
+              <div class="fun-highlight"><strong>Software livre</strong> = poder <strong>usar, estudar, modificar e compartilhar</strong>. Ninguém paga licença para instalar, e o código é público para qualquer pessoa conferir.</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Aspecto</th><th>No Windows</th><th>No Linux</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Licença</strong></td><td>Paga</td><td>Gratuito e de código aberto</td></tr>
+                  <tr><td><strong>Instalar programas</strong></td><td>Baixar .exe de sites variados</td><td>Repositório oficial, com checagem de integridade</td></tr>
+                  <tr><td><strong>Segurança</strong></td><td>Usuário costuma ser administrador</td><td>Usuário comum separado do administrador</td></tr>
+                  <tr><td><strong>Velocidade</strong></td><td>Engorda com o tempo</td><td>Roda bem em máquinas antigas</td></tr>
+                  <tr><td><strong>Estabilidade</strong></td><td>Reinícios frequentes</td><td>Servidores ficam dias ou semanas no ar</td></tr>
+                  <tr><td><strong>Interface</strong></td><td>Um visual único</td><td>GNOME, KDE, XFCE trocáveis</td></tr>
+                </tbody>
+              </table>
+              <p><em>Resumo honesto:</em> o Linux não serve para tudo — quem depende de programas muito específicos pode encontrar limitações. Mas para navegar, estudar, trabalhar com documentos e manter o computador seguro e leve, é uma ótima escolha. Na tela da aula existe o botão <strong>"🐧 Saiba mais sobre o Linux"</strong> (Fase 6) com a versão completa em 4 abas. <em>Fonte: Viva o Linux — www.vivaolinux.com.br/linux</em></p>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula1/image3.png",
+              caption: "Logotipos do Unix, IBM PC, Windows, Linux, iOS e Android."
+            }
+          ],
+          imagesWide: true,
+          boxType: "tip",
+          boxTitle: "💡 Resumo do Tópico 6",
+          boxText: "Sem sistema operacional o computador seria apenas uma tela preta: é ele que gerencia o hardware e transforma a máquina em algo que você consegue usar."
+        },
+        {
           lessonNum: 8,
           chapter: "AULA 08: DIAGNÓSTICO DE MEMÓRIA, RESTAURAÇÃO DO SISTEMA E MÍDIA DE INSTALAÇÃO",
           heading: "8.1 Diagnóstico de Memória RAM do Windows (Teste de Memória)",
@@ -684,27 +960,6 @@ window.PDFLessons = (function() {
           boxType: "tip",
           boxTitle: "💡 Lembre-se:",
           boxText: "Após criar a mídia, o pendrive fica 'bootável' — capaz de iniciar o computador direto dele, pronto para reutilizar na aula de Formatação."
-        },
-        {
-          chapter: "UNIDADE 1: CONCEITO E ESTRUTURA DO WINDOWS",
-          heading: "1.1 O que é o Sistema Operacional?",
-          content: "O Sistema Operacional (S.O.) é o software fundamental que gerencia o hardware do computador (processador, memória RAM, disco rígido/SSD) e possibilita a execução de aplicativos e a interação do usuário através de uma interface gráfica amigável."
-        },
-        {
-          heading: "1.2 Área de Trabalho, Janelas e Barra de Tarefas",
-          content: "A Área de Trabalho (Desktop) organiza os ícones de atalho e arquivos principais. A Barra de Tarefas exibe o Menu Iniciar, os programas fixados e a área de notificação com relógio e conexões."
-        },
-        {
-          heading: "1.3 Gerenciamento de Arquivos e Pastas (Explorador de Arquivos)",
-          content: "O Explorador de Arquivos (Tecla Windows + E) permite criar, renomear, mover, copiar e organizar pastas e documentos. Utilize nomes claros e estrutura em subpastas para manter seus arquivos organizados."
-        },
-        {
-          heading: "1.4 Guia Completo de Atalhos de Teclado",
-          content: `• Ctrl + C: Copiar item selecionado\n• Ctrl + V: Colar item copiado\n• Ctrl + X: Recortar (mover) item\n• Ctrl + Z: Desfazer a última ação\n• Alt + Tab: Alternar entre janelas abertas\n• Tecla Windows + D: Exibir ou ocultar a Área de Trabalho\n• Tecla Windows + E: Abrir o Explorador de Arquivos\n• Tecla Windows + L: Bloquear a estação de trabalho imediatamente\n• Alt + F4: Fechar o programa ativo`
-        },
-        {
-          heading: "1.5 Lixeira, Segurança e Manutenção Preventiva",
-          content: "Arquivos excluídos com a tecla Delete vão para a Lixeira e podem ser restaurados. Para apagar permanentemente, utilize Shift + Delete. Mantenha o Windows Defender ativo e o Windows Update atualizado."
         }
       ]
     },
@@ -744,6 +999,63 @@ window.PDFLessons = (function() {
         {
           lessonNum: 1,
           chapter: "AULA 01: INTRODUÇÃO AO EXCEL, INTERFACE E NAVEGAÇÃO",
+          heading: "1.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Você vai aprender a usar o Microsoft Excel do zero: abrir o programa, entender cada parte da tela, digitar dados sem medo, editar com o teclado e salvar o seu trabalho. No fim você terá a planilha de compras funcionando, com o total de cada item calculado por você e o total geral automático.
+
+COMO VAMOS FAZER (os 7 passos):
+1. O que é o Excel e onde ele é usado
+2. Anatomia da interface e elementos principais
+3. Planilha (aba) × Pasta de Trabalho
+4. Tipos de dados e alinhamento automático
+5. Inserir, editar com F2 e navegar pelo teclado
+6. Salvar a pasta de trabalho (.xlsx vs .csv)
+7. Operadores básicos e a função =SOMA()
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Abra o Excel em uma pasta de trabalho em branco (Plan1) e deixe a janela maximizada.
+• Confira se as Faixas de Opções (Arquivo, Página Inicial, Inserir, Fórmulas, Dados) estão visíveis no topo.
+• Se alguma faixa sumiu: Arquivo → Opções → Faixa de Opções e marque as abas que quiser de volta.
+
+O QUE VOCÊ VAI CONSEGUIR NO FINAL:
+Uma pasta salva em .xlsx com a planilha de compras montada: total de cada item calculado por multiplicação com desconto e total geral pela função SOMA — sem nenhuma conta digitada à mão.`,
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12px; color:#475569; margin:0 0 10px 0;">O objetivo desta aula é usar o Excel do zero (interface, tipos de dados, edição com F2, salvamento) e sair com uma planilha de compras com totais calculados por fórmula.</p>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 7 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">1</strong> O que é o Excel e onde ele é usado</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">2</strong> Anatomia da interface e elementos principais</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">3</strong> Planilha (aba) × Pasta de Trabalho</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">4</strong> Tipos de dados e alinhamento automático</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">5</strong> Inserir, editar com F2 e navegar pelo teclado</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">6</strong> Salvar a pasta de trabalho (.xlsx vs .csv)</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">7</strong> Operadores básicos e a função =SOMA()</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo tem um check no fim da fase onde ele é executado — o próximo só abre depois que o anterior for concluído.</p>
+  <div class="es-sheet-box" style="max-width:470px; background:#F7FEF9;">
+    <div class="es-sheet-titlebar">⚙️ FAIXA DE PREPARAÇÃO — antes do Tópico 1</div>
+    <ol style="font-size:11.5px; color:#374151; line-height:1.6; margin:0; padding-left:18px;">
+      <li>Abra o Excel em uma <strong>pasta de trabalho em branco</strong> (Plan1), maximizado.</li>
+      <li>Confira se as Faixas de Opções (Arquivo, Página Inicial, Inserir, Fórmulas, Dados) estão visíveis.</li>
+      <li>Se sumiu: <strong>Arquivo → Opções → Faixa de Opções</strong>.</li>
+    </ol>
+  </div>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin:16px 0 8px 0;">🏁 O QUE VOCÊ VAI CONSEGUIR NO FINAL</div>
+  <p style="font-size:12px; color:#475569; margin:0 0 8px 0;">Total de cada item por multiplicação com desconto e total geral pela SOMA — nenhuma conta digitada à mão:</p>
+  <div class="es-sheet-box" style="max-width:470px;">
+    <div class="es-sheet-titlebar">Planilha de Compras (operadores + SOMA)</div>
+    <table class="mini-sheet">
+      <tr><th>Item</th><th>Preço</th><th>Qtd</th><th>Desc.</th><th>Total</th></tr>
+      <tr><td>Caderno</td><td>12,00</td><td>2</td><td>5%</td><td>=B2*C2*(1-D2)</td></tr>
+      <tr><td>Caneta</td><td>2,50</td><td>5</td><td>0%</td><td>=B3*C3*(1-D3)</td></tr>
+      <tr><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td></tr>
+      <tr style="background:#FEF3C7; font-weight:700;"><td>TOTAL</td><td></td><td></td><td></td><td>=SOMA(E2:E6)</td></tr>
+    </table>
+  </div>
+</div>`
+        },
+        {
+          lessonNum: 1,
           heading: "1.1 O que é o Microsoft Excel & Aplicações Práticas",
           content: "O Microsoft Excel é a planilha eletrônica líder mundial para organização de dados, cálculos automáticos, análises financeiras e gráficos.\n\n• Origem e Conceito: Lançado originalmente em 1985, substituiu o cálculo manual em papel por tabelas inteligentes em computador.\n• Aplicações no Dia a Dia: Controle de orçamento doméstico, controle de estoque, folha de pagamento, boletim escolar e emissão de relatórios dinâmicos.",
           image: "../../assets/img/excel/a1/excel_aula1_01_visao_geral.png",
@@ -1121,6 +1433,63 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
         {
           lessonNum: 4,
           chapter: "AULA 04: FUNÇÕES LÓGICAS AVANÇADAS — SE, E, OU, NÃO, SE ANINHADO E FORMATAÇÃO CONDICIONAL",
+          heading: "4.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Você vai transformar a planilha em um decisor automático: a partir de agora é o Excel que pergunta, decide e responde sozinho. Vai dominar SE() e suas companheiras E(), OU() e NÃO(), aprender o SE aninhado, treinar tudo no Logic Lab e fechar classificando automaticamente os clientes de uma empresa por valor e situação de pagamento.
+
+COMO VAMOS FAZER (os 7 passos):
+1. Revisão rápida da função SE()
+2. SE + E — todas as condições precisam ser verdadeiras
+3. SE + OU — pelo menos uma condição basta
+4. SE aninhado — múltiplos resultados possíveis
+5. NÃO() — inverter uma condição
+6. Logic Lab — simulador interativo
+7. Exercício prático: situação do cliente
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Renomeie a aba Plan1 para Notas.
+• Em A1, B1 e C1 digite Aluno, Nota e Frequência %; preencha as linhas 2 a 4 com Ana 8,5/90, Carlos 5,0/95 e Maria 7,0/60.
+• Formate a coluna B como Número (2 casas): comparação de texto nunca será avaliada com >=7.
+
+O QUE VOCÊ VAI CONSEGUIR NO FINAL:
+Uma planilha que classifica sozinha: notas viram Excelente/Bom/Regular/Reprovado e clientes viram Cliente Premium, Cliente Regular ou Em aberto — sem você reavaliar linha por linha.`,
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12px; color:#475569; margin:0 0 10px 0;">O objetivo desta aula é transformar a planilha em um decisor automático com SE(), E(), OU(), NÃO() e SE aninhado, fechando com a classificação de clientes do setor financeiro.</p>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 7 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">1</strong> Revisão rápida da função SE()</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">2</strong> SE + E — todas as condições verdadeiras</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">3</strong> SE + OU — pelo menos uma condição basta</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">4</strong> SE aninhado — múltiplos resultados</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">5</strong> NÃO() — inverter uma condição</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">6</strong> Logic Lab — simulador interativo</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">7</strong> Exercício: situação do cliente</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo tem um check no fim da fase onde ele é executado — o próximo só abre depois que o anterior for concluído.</p>
+  <div class="es-sheet-box" style="max-width:470px; background:#F7FEF9;">
+    <div class="es-sheet-titlebar">⚙️ FAIXA DE PREPARAÇÃO — antes do Tópico 1</div>
+    <ol style="font-size:11.5px; color:#374151; line-height:1.6; margin:0; padding-left:18px;">
+      <li>Renomeie a aba <strong>Plan1</strong> para <strong>Notas</strong>.</li>
+      <li>Cabeçalhos: <em>Aluno</em>, <em>Nota</em>, <em>Frequência %</em> com Ana 8,5/90, Carlos 5,0/95 e Maria 7,0/60.</li>
+      <li>Formate a coluna B como <strong>Número</strong> (2 casas decimais).</li>
+    </ol>
+  </div>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin:16px 0 8px 0;">🏁 O QUE VOCÊ VAI CONSEGUIR NO FINAL</div>
+  <p style="font-size:12px; color:#475569; margin:0 0 8px 0;">A mesma fórmula decide o nível da nota e a situação do cliente, sem intervenção manual:</p>
+  <div class="es-sheet-box" style="max-width:470px;">
+    <div class="es-sheet-titlebar">Classificação de Clientes (exercício 7)</div>
+    <table class="mini-sheet">
+      <tr><th>Cliente</th><th>Valor</th><th>Pago?</th><th>Situação</th></tr>
+      <tr><td>Empresa ABC</td><td>1.200</td><td>Sim</td><td>Cliente Premium</td></tr>
+      <tr><td>Loja XYZ</td><td>350</td><td>Sim</td><td>Cliente Regular</td></tr>
+      <tr><td>Mercado Sol</td><td>800</td><td>Não</td><td>Em aberto</td></tr>
+      <tr><td>Padaria Luz</td><td>200</td><td>Não</td><td>Em aberto</td></tr>
+    </table>
+  </div>
+</div>`
+        },
+        {
+          lessonNum: 4,
           heading: "4.1 Revisão Rápida da Função SE()",
           content: `A função SE() é a base de tudo nesta aula. Ela faz uma pergunta ao Excel e devolve um resultado dependendo da resposta: VERDADEIRO ou FALSO.\n\nPense assim: é como perguntar ao Excel — Se isso for verdade, faça X; caso contrário, faça Y.\n\nSINTAXE: =SE( teste_lógico ; valor_se_verdadeiro ; valor_se_falso ) — 3 partes separadas por ponto e vírgula.\n\nEXEMPLO — Aluno aprovado ou reprovado: =SE(B2>=7; "Aprovado"; "Reprovado"). Se a nota em B2 for >= 7, escreve "Aprovado". Senão, "Reprovado".\n\nPLANILHA — Aprovação de Alunos (Função SE):\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Aprovação de Alunos (Função SE)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Resultado</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">8,5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Aprovado</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carlos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Reprovado</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Maria</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">7,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Aprovado</td></tr>\n  </table>\n</div>`,
           boxType: "tip",
@@ -1130,6 +1499,63 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
         {
           lessonNum: 5,
           chapter: "AULA 05: FUNÇÕES DE PESQUISA E REFERÊNCIA — PROCV, PROCH, ÍNDICE E CORRESP",
+          heading: "5.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Você vai aprender a procurar dados dentro da planilha em vez de ficar caçando linha por linha — é o recurso que transforma o Excel em um sistema de consulta. Vai dominar PROCV (busca vertical), PROCH (busca horizontal), ÍNDICE (valor por coordenada), CORRESP (posição) e a combinação ÍNDICE + CORRESP, a única que devolve uma coluna situada à esquerda do valor procurado. No fim, monta as 5 tarefas de uma loja de eletrônicos.
+
+COMO VAMOS FAZER (os 7 passos):
+1. PROCV — busca vertical
+2. PROCH — busca horizontal
+3. ÍNDICE — valor por coordenadas
+4. CORRESP — encontra a posição
+5. ÍNDICE + CORRESP — a combinação poderosa
+6. Lookup Lab — simulador de busca
+7. Exercício: loja de eletrônicos
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Renomeie a aba Plan1 para Produtos.
+• Respeite o ponto e vírgula ao digitar: é ele que separa as partes da fórmula.
+• Use sempre FALSO no último argumento com dados.
+
+O QUE VOCÊ VAI CONSEGUIR NO FINAL:
+Um buscador de produtos que responde em segundos o que antes exigia procura manual, e a certeza de que ÍNDICE + CORRESP funciona mesmo quando a coluna que você quer está à esquerda do valor procurado.`,
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12px; color:#475569; margin:0 0 10px 0;">O objetivo desta aula é procurar dados dentro da planilha com PROCV, PROCH, ÍNDICE e CORRESP, e usar ÍNDICE + CORRESP para buscar inclusive colunas à esquerda do valor procurado.</p>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 7 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">1</strong> PROCV — busca vertical</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">2</strong> PROCH — busca horizontal</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">3</strong> ÍNDICE — valor por coordenadas</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">4</strong> CORRESP — encontra a posição</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">5</strong> ÍNDICE + CORRESP — a combinação poderosa</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">6</strong> Lookup Lab — simulador de busca</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">7</strong> Exercício: loja de eletrônicos</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo tem um check no fim da fase onde ele é executado — o próximo só abre depois que o anterior for concluído.</p>
+  <div class="es-sheet-box" style="max-width:470px; background:#F7FEF9;">
+    <div class="es-sheet-titlebar">⚙️ FAIXA DE PREPARAÇÃO — antes do Tópico 1</div>
+    <ol style="font-size:11.5px; color:#374151; line-height:1.6; margin:0; padding-left:18px;">
+      <li>Renomeie a aba <strong>Plan1</strong> para <strong>Produtos</strong>.</li>
+      <li>Separe os argumentos com <strong>ponto e vírgula</strong>.</li>
+      <li>Use <strong>FALSO</strong> no último argumento com dados.</li>
+    </ol>
+  </div>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin:16px 0 8px 0;">🏁 O QUE VOCÊ VAI CONSEGUIR NO FINAL</div>
+  <p style="font-size:12px; color:#475569; margin:0 0 8px 0;">O PROCV responde pelas colunas à direita; o ÍNDICE + CORRESP alcança qualquer direção:</p>
+  <div class="es-sheet-box" style="max-width:470px;">
+    <div class="es-sheet-titlebar">Loja de Produtos Eletrônicos — busca por E002</div>
+    <table class="mini-sheet">
+      <tr><th>Célula</th><th>Fórmula</th><th>Resultado</th></tr>
+      <tr><td>H2</td><td>=PROCV(G2;A:B;2;FALSO)</td><td>Teclado Mecânico</td></tr>
+      <tr><td>H3</td><td>=PROCV(G2;A:E;4;FALSO)</td><td>R$ 349,90</td></tr>
+      <tr><td>H4</td><td>=PROCV(G2;A:E;5;FALSO)</td><td>23</td></tr>
+      <tr><td>H7</td><td>=ÍNDICE(D:D;CORRESP(G7;B:B;0))</td><td>R$ 349,90</td></tr>
+    </table>
+  </div>
+</div>`
+        },
+        {
+          lessonNum: 5,
           heading: "5.1 PROCV — Busca Vertical (A Estrela do Excel)",
           content: `A função PROCV é a ferramenta mais usada para buscar dados no Excel. Ela procura um valor na PRIMEIRA COLUNA de uma tabela e retorna um valor de OUTRA coluna na mesma linha.\n\nPense nela como um índice de um livro: você procura a palavra na coluna (a primeira) e ela aponta o conteúdo que está do lado, na mesma linha.\n\nSINTAXE: =PROCV( valor_procurado ; matriz_tabela ; núm_coluna ; [procurar_intervalo] )\n\nARGUMENTOS:\n• valor_procurado: o que você quer encontrar (ex: 102 — código do produto).\n• matriz_tabela: a tabela onde procurar (ex: A2:C5).\n• núm_coluna: qual coluna retornar, 1, 2, 3... (ex: 2 = retorna a 2ª coluna).\n• procurar_intervalo: FALSO = exato | VERDADEIRO = aproximado. Use SEMPRE FALSO para dados.\n\nPROCURANDO UM CÓDIGO EM E2 PARA OBTER O NOME DO PRODUTO AUTOMATICAMENTE:\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Tabela de Produtos (A1:C5)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>\n    </tr>\n    <tr>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Código</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Produto</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Preço</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">101</td><td style="border:1px solid #E2E8F0; padding:6px;">Caneta</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 2,50</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">102</td><td style="border:1px solid #E2E8F0; padding:6px;">Caderno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 15,00</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">4</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">103</td><td style="border:1px solid #E2E8F0; padding:6px;">Borracha</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 1,50</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">104</td><td style="border:1px solid #E2E8F0; padding:6px;">Lápis</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 1,00</td></tr>\n  </table>\n</div>\n\nFÓRMULA: =PROCV(E2; A2:C5; 2; FALSO)\n\nPASSO A PASSO:\n1) E2 = você digita 102.\n2) A2:C5 = Excel procura na primeira coluna (coluna A).\n3) Encontra o 102 na linha 3.\n4) 2 = retorna a 2ª coluna (coluna B) da mesma linha.\n5) RESULTADO: Caderno.\n\n⚠️ DICA DE OURO: Use SEMPRE FALSO (0) para dados corretos. VERDADEIRO (1) é apenas para tabelas ordenadas e buscas aproximadas (raro).`
         },
@@ -1196,6 +1622,61 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
         {
           lessonNum: 6,
           chapter: "AULA 06: DATAS E HORAS NO EXCEL — HOJE, AGORA, DATA, DIA, MÊS, ANO, DIAS360, DIAS.ÚTEIS",
+          heading: "6.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Você vai colocar o calendário dentro do Excel: a data de hoje, a data e a hora do instante, datas montadas por você e o cálculo automático de prazos, idade e dias úteis. Vai sair daqui com uma Agenda de Contatos que calcula sozinha a idade de cada pessoa e há quantos dias você não fala com ela.
+
+COMO VAMOS FAZER (os 7 passos):
+1. HOJE() — a data de hoje
+2. AGORA() — data e hora
+3. DATA() — montar uma data sob medida
+4. DIA(), MÊS() e ANO() — extrair partes da data
+5. DIAS360() — calendário comercial
+6. DIAS.ÚTEIS() — dias úteis para prazos
+7. Agenda de Contatos e alertas
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Renomeie a aba Plan1 para Agenda.
+• Em A1 digite 01/01/2025 e em B1 31/12/2025 (exemplo do calendário comercial); para dias úteis use 01/11/2025 e 30/11/2025.
+• Confira o formato em Formatar Célula → Data: sem data válida, as funções de prazo não têm o que calcular.
+
+O QUE VOCÊ VAI CONSEGUIR NO FINAL:
+Uma Agenda de Contatos que se atualiza sozinha: a idade avança todo ano e a coluna Dias sem Contato avança todo dia, avisando quem está há tempo demais sem conversa.`,
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12px; color:#475569; margin:0 0 10px 0;">O objetivo desta aula é colocar o calendário dentro do Excel com HOJE(), AGORA(), DATA(), DIA/MÊS/ANO, DIAS360() e DIAS.ÚTEIS(), fechando com uma Agenda de Contatos que calcula idade e dias sem contato.</p>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 7 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">1</strong> HOJE() — a data de hoje</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">2</strong> AGORA() — data e hora</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">3</strong> DATA() — montar uma data sob medida</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">4</strong> DIA(), MÊS() e ANO() — extrair partes</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">5</strong> DIAS360() — calendário comercial</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">6</strong> DIAS.ÚTEIS() — dias úteis para prazos</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">7</strong> Agenda de Contatos e alertas</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo tem um check no fim da fase onde ele é executado — o próximo só abre depois que o anterior for concluído.</p>
+  <div class="es-sheet-box" style="max-width:470px; background:#F7FEF9;">
+    <div class="es-sheet-titlebar">⚙️ FAIXA DE PREPARAÇÃO — antes do Tópico 1</div>
+    <ol style="font-size:11.5px; color:#374151; line-height:1.6; margin:0; padding-left:18px;">
+      <li>Renomeie a aba <strong>Plan1</strong> para <strong>Agenda</strong>.</li>
+      <li>Datas do exemplo: <code>01/01/2025</code> e <code>31/12/2025</code>.</li>
+      <li>Confira o formato em <strong>Formatar Célula → Data</strong>.</li>
+    </ol>
+  </div>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin:16px 0 8px 0;">🏁 O QUE VOCÊ VAI CONSEGUIR NO FINAL</div>
+  <p style="font-size:12px; color:#475569; margin:0 0 8px 0;">A idade avança todo ano e os dias sem contato avançam todo dia — sem refazer conta:</p>
+  <div class="es-sheet-box" style="max-width:470px;">
+    <div class="es-sheet-titlebar">Agenda de Contatos (A1:I3)</div>
+    <table class="mini-sheet">
+      <tr><th>ID</th><th>Nome</th><th>Data Nasc.</th><th>Idade</th><th>Dias s/ Contato</th></tr>
+      <tr><td>1</td><td>João Silva</td><td>15/03/1985</td><td>=ANO(HOJE())-ANO(D2)</td><td>=HOJE()-F2</td></tr>
+      <tr><td>2</td><td>Maria Santos</td><td>22/07/1990</td><td>=ANO(HOJE())-ANO(D3)</td><td>=HOJE()-F3</td></tr>
+    </table>
+  </div>
+</div>`
+        },
+        {
+          lessonNum: 6,
           heading: "6.1 Função HOJE() — A Data de Hoje",
           content: `A função HOJE() mostra a data de hoje. Todos os dias, quando você abrir a planilha, essa data se atualiza sozinha — você não precisa digitar nada.\n\nSINTAXE: =HOJE()\n\nNão recebe nenhum argumento (parênteses vazios). Exemplo: digite =HOJE() na célula A1 e o resultado será a data de hoje (ex.: 24/10/2025).\n\nAPLICAÇÕES PRÁTICAS:\n• Saber se um documento ainda está dentro do prazo de validade.\n• Calcular a idade de uma pessoa.\n• Verificar quantos dias faltam para um prazo terminar.\n\nPASSO A PASSO:\n1. Clique em uma célula vazia (ex.: A1).\n2. Digite exatamente: =HOJE().\n3. Pressione Enter.\n4. A célula vai mostrar a data de hoje.`
         },
@@ -1232,6 +1713,68 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
         {
           lessonNum: 7,
           chapter: "AULA 07: CONTAS PESSOAIS & TABELA DINÂMICA — PLANILHA BASE, CAMPOS, FILTROS E ESTRUTURA DE TÓPICOS",
+          heading: "7.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Você vai transformar uma lista solta de lançamentos em um painel que responde perguntas — o salto de "anotei tudo" para "entendi para onde o meu dinheiro vai". Vai montar a planilha base com 11 campos, derivar dia/mês/ano com fórmulas, padronizar a digitação com Validação de Dados e fechar tudo com uma Tabela Dinâmica que resume receitas e despesas por ano, grupo, conta e mês.
+
+COMO VAMOS FAZER (os 9 passos):
+1. Preparação da planilha de lançamentos
+2. Funções de data na base (DIA, MÊS, ANO)
+3. Validação de dados (lista)
+4. Renomear a aba Análise e criar a Tabela Dinâmica
+5. Selecionar o intervalo (Tabela/Intervalo)
+6. Configuração dos campos da Tabela Dinâmica
+7. Ordenar os dados em ordem decrescente
+8. Visualização, filtros e estrutura de tópicos
+9. Exercício: contas pessoais com Tabela Dinâmica
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Renomeie a aba Plan1 para Lançamento.
+• Digite na linha 1 os 11 campos: Data | Ano | Tipo de Lançamento | Grupo | Conta | Valor | Forma de Pagamento | Descrição | Dia | Mês | Ano Lançamento.
+• Deixe o Excel visível ao lado desta janela: a Tabela Dinâmica se monta por cliques, não por fórmula.
+
+O QUE VOCÊ VAI CONSEGUIR NO FINAL:
+Um painel de contas pessoais que responde, com dois cliques, quanto você gastou em cada grupo, conta e mês — e mostra em qual grupo o dinheiro está sumindo.`,
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12px; color:#475569; margin:0 0 10px 0;">O objetivo desta aula é transformar uma lista solta de lançamentos em um painel que responde perguntas, com a planilha base de 11 campos, colunas de data por fórmula, Validação de Dados e Tabela Dinâmica.</p>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 9 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">1</strong> Preparação da planilha de lançamentos</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">2</strong> Funções de data na base (DIA, MÊS, ANO)</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">3</strong> Validação de dados (lista)</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">4</strong> Renomear a aba Análise e criar a Tabela Dinâmica</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">5</strong> Selecionar o intervalo (Tabela/Intervalo)</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">6</strong> Configuração dos campos da Tabela Dinâmica</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">7</strong> Ordenar em ordem decrescente</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">8</strong> Visualização, filtros e estrutura de tópicos</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">9</strong> Exercício: contas pessoais</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo tem um check no fim da fase onde ele é executado — o próximo só abre depois que o anterior for concluído.</p>
+  <div class="es-sheet-box" style="max-width:470px; background:#F7FEF9;">
+    <div class="es-sheet-titlebar">⚙️ FAIXA DE PREPARAÇÃO — antes do Tópico 1</div>
+    <ol style="font-size:11.5px; color:#374151; line-height:1.6; margin:0; padding-left:18px;">
+      <li>Renomeie a aba <strong>Plan1</strong> para <strong>Lançamento</strong>.</li>
+      <li>Digite os <strong>11 campos</strong> na linha 1.</li>
+      <li>Deixe o Excel visível ao lado desta janela.</li>
+    </ol>
+  </div>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin:16px 0 8px 0;">🏁 O QUE VOCÊ VAI CONSEGUIR NO FINAL</div>
+  <p style="font-size:12px; color:#475569; margin:0 0 8px 0;">Recetas e despesas resumidas por grupo, sem nenhuma soma digitada à mão:</p>
+  <div class="es-sheet-box" style="max-width:470px;">
+    <div class="es-sheet-titlebar">Tabela Dinâmica — aba Análise</div>
+    <table class="mini-sheet">
+      <tr><th>Grupo</th><th>RECEITA</th><th>DESPESA</th></tr>
+      <tr><td>Salário (Fixo)</td><td>3.500,00</td><td>—</td></tr>
+      <tr><td>Alimentação</td><td>—</td><td>450,00</td></tr>
+      <tr><td>Transporte</td><td>—</td><td>200,00</td></tr>
+      <tr><td>Moradia</td><td>—</td><td>1.200,00</td></tr>
+      <tr style="background:#FEF3C7; font-weight:700;"><td>Total Geral</td><td>3.500,00</td><td>1.850,00</td></tr>
+    </table>
+  </div>
+</div>`
+        },
+        {
+          lessonNum: 7,
           heading: "7.1 Preparação da Planilha de Lançamentos",
           content: `O primeiro passo para controlar as suas contas pessoais é criar uma planilha organizada com 11 campos que servirão de base para a Tabela Dinâmica.\n\nCAMPOS DA PLANILHA BASE:\nData | Ano | Tipo de Lançamento | Grupo | Conta | Valor | Forma de Pagamento | Descrição | Dia | Mês | Ano Lançamento\n\nPASSO A PASSO:\n1. Abra uma planilha nova no Excel.\n2. Na linha 1, digite os 11 títulos acima.\n3. Renomeie a aba Plan1 para Lançamento.\n4. Preencha com os seus lançamentos do mês (receitas e despesas).\n\nTABELA DE EXEMPLO (Aba: Lançamento):\n• A: Data | B: Ano | C: Tipo de Lançamento | D: Grupo | E: Conta | F: Valor | G: Forma de Pagamento | H: Descrição | I: Dia | J: Mês | K: Ano Lançamento\n• Linha 2 — 05/01/2025 | =ANO(A2) | RECEITA | Salário (Fixo) | Empresa | 3.500,00 | PIX | Salário do mês | =DIA(A2) | =MÊS(A2) | =ANO(A2)\n• Linha 3 — 08/01/2025 | =ANO(A3) | DESPESA | Alimentação | Mercado | 450,00 | DÉBITO | Compras do mês | =DIA(A3) | =MÊS(A3) | =ANO(A3)\n• Linha 4 — 10/01/2025 | =ANO(A4) | DESPESA | Transporte | Posto | 200,00 | BOLETO | Combustível | =DIA(A4) | =MÊS(A4) | =ANO(A4)\n• Linha 5 — 15/01/2025 | =ANO(A5) | DESPESA | Moradia | Aluguel | 1.200,00 | TRANSFERÊNCIA | Aluguel do apartamento | =DIA(A5) | =MÊS(A5) | =ANO(A5)`
         },
@@ -1242,8 +1785,25 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
         },
         {
           lessonNum: 7,
-          heading: "7.3 Validação de Dados (Lista) para o Tipo de Lançamento",
-          content: `Para evitar erros de digitação e padronizar os lançamentos, criamos uma lista suspensa (dropdown) com os tipos permitidos: BOLETO; DÉBITO; PIX; TRANSFERÊNCIA.\n\nCAMINHO DO MENU:\nDados → Validação de Dados → Permitir: Lista\n\nEm Fonte, digite: BOLETO;DÉBITO;PIX;TRANSFERÊNCIA\n\nPASSO A PASSO:\n1. Selecione as células do campo Tipo de Lançamento.\n2. Acesse Dados → Validação de Dados.\n3. Em Permitir, escolha Lista.\n4. Em Fonte, digite: BOLETO;DÉBITO;PIX;TRANSFERÊNCIA.\n5. Confirme. Agora aparece uma seta dropdown em cada célula, padronizando o cadastro.`
+          heading: "7.3 Validação de Dados — Tipo de Lançamento e Forma de Pagamento",
+          content: `Antes de criar qualquer lista, o ponto mais importante desta fase: a base tem DOIS campos diferentes, e eles NÃO podem ser misturados.
+
+• Tipo de Lançamento responde "o dinheiro entrou ou saiu?"
+• Forma de Pagamento responde "como o dinheiro foi pago?"
+
+Cada campo recebe a sua própria lista suspensa. O caminho do menu é o mesmo nas duas vezes: Dados → Validação de Dados → Permitir: Lista.
+
+⚠️ O ERRO MAIS COMUM
+BOLETO; DÉBITO; PIX; TRANSFERÊNCIA são formas de pagamento — NÃO tipos de lançamento. Se essa lista for colocada na coluna Tipo de Lançamento, a Tabela Dinâmica vai agrupar por "PIX" e por "BOLETO", e você perde justamente a informação que interessa no controle de contas: quanto entrou e quanto saiu.
+
+PASSO A PASSO:
+1. Selecione as células da coluna Tipo de Lançamento (coluna C).
+2. Acesse Dados → Validação de Dados.
+3. Em Permitir, escolha Lista.
+4. Em Fonte, digite: RECEITA;DESPESA e confirme.
+5. Repita o processo na coluna Forma de Pagamento (coluna G), agora com a Fonte BOLETO;DÉBITO;PIX;TRANSFERÊNCIA.
+6. Tente digitar qualquer coisa fora das listas: o Excel recusa nos dois campos.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Qual lista vai em qual campo</div><table class="mini-sheet"><tr><th>Campo da base</th><th>Pergunta que ele responde</th><th>Fonte da lista suspensa</th></tr><tr><td><strong>C — Tipo de Lançamento</strong></td><td>O dinheiro <strong>entrou</strong> ou <strong>saiu</strong>?</td><td><code>RECEITA;DESPESA</code></td></tr><tr><td><strong>G — Forma de Pagamento</strong></td><td>Como o dinheiro foi <strong>pago</strong>?</td><td><code>BOLETO;DÉBITO;PIX;TRANSFERÊNCIA</code></td></tr></table></div><div class="fun-highlight"><strong>⚠️ O erro mais comum nesta fase:</strong> <code>BOLETO; DÉBITO; PIX; TRANSFERÊNCIA</code> são <strong>formas de pagamento</strong>, não tipos de lançamento. Colocada no campo errado, a Tabela Dinâmica agrupa por "PIX"/"BOLETO" e você perde a informação que importa: <strong>quanto entrou e quanto saiu</strong>.</div>`
         },
         {
           lessonNum: 7,
@@ -1278,7 +1838,7 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
         {
           lessonNum: 7,
           heading: "7.9 Exercício Prático — Contas Pessoais com Tabela Dinâmica",
-          content: `Vamos montar passo a passo o seu controle de contas pessoais completo com a Tabela Dinâmica de análise.\n\nPASSO 1 — PLANILHA BASE:\nCrie a base de lançamentos com os 11 campos (Data | Ano | Tipo de Lançamento | Grupo | Conta | Valor | Forma de Pagamento | Descrição | Dia | Mês | Ano Lançamento) e renomeie Plan1 → Lançamento.\n\nPASSO 2 — FUNÇÕES DE DATA:\n• Ano (para filtro): =ANO(A2)\n• Dia: =DIA(A2)\n• Mês: =MÊS(A2)\n• Ano Lançamento: =ANO(A2)\n\nPASSO 3 — VALIDAÇÃO DE DADOS:\nAplique Dados → Validação de Dados → Lista com a fonte BOLETO;DÉBITO;PIX;TRANSFERÊNCIA no campo Tipo de Lançamento.\n\nPASSO 4 — CRIAR A TABELA DINÂMICA:\nRenomeie Plan2 → Análise, acesse Inserir → Tabela Dinâmica, selecione a tabela Lançamento e configure os campos: TIPO DE LANÇAMENTO, Grupo, Conta, Valor e Mês nas Linhas, Valor em Valores e Ano em Filtros.\n\nPASSO 5 — ORDENAR, OCULTAR E AGRUPAR:\n1. Ordene em ordem decrescente (Dados → Classificar).\n2. Na aba Exibir, desmarque Linhas e Grades.\n3. Filtre por ano usando o campo Ano na área de Filtros.\n4. Use a Estrutura de Tópicos (Dados → Estrutura de tópicos) com os botões + / − para ocultar os detalhes.\n\n✏️ EXERCÍCIOS PARA PRATICAR:\n1. Monte a planilha de Contas Pessoais com os seus próprios lançamentos do mês (preencha os 11 campos).\n2. Use as funções =DIA(), =MÊS() e =ANO() para preencher as colunas derivadas de data.\n3. Aplique Validação de Dados (Lista) nos tipos: BOLETO; DÉBITO; PIX; TRANSFERÊNCIA.\n4. Crie a Tabela Dinâmica na aba Análise, colocando TIPO DE LANÇAMENTO e depois Grupo, Conta, Valor e Mês em Linhas.\n5. Classifique em ordem decrescente, filtre por um ano e use os botões + / − da Estrutura de Tópicos para ocultar os detalhes.\n\n🔒 REGRA DE OURO:\nUma base bem organizada (com Validação de Dados e funções de data) é o segredo para uma Tabela Dinâmica confiável. Arraste os campos para Linhas para agrupar, para Filtros para recortar por ano e use a Estrutura de Tópicos para expandir ou ocultar os detalhes.`,
+          content: `Vamos montar passo a passo o seu controle de contas pessoais completo com a Tabela Dinâmica de análise.\n\nPASSO 1 — PLANILHA BASE:\nCrie a base de lançamentos com os 11 campos (Data | Ano | Tipo de Lançamento | Grupo | Conta | Valor | Forma de Pagamento | Descrição | Dia | Mês | Ano Lançamento) e renomeie Plan1 → Lançamento.\n\nPASSO 2 — FUNÇÕES DE DATA:\n• Ano (para filtro): =ANO(A2)\n• Dia: =DIA(A2)\n• Mês: =MÊS(A2)\n• Ano Lançamento: =ANO(A2)\n\nPASSO 3 — VALIDAÇÃO DE DADOS:\nAplique Dados → Validação de Dados → Lista DUAS VEZES: no campo Tipo de Lançamento com a fonte RECEITA;DESPESA e no campo Forma de Pagamento com a fonte BOLETO;DÉBITO;PIX;TRANSFERÊNCIA. Misturar os dois campos estraga o agrupamento da Tabela Dinâmica.\n\nPASSO 4 — CRIAR A TABELA DINÂMICA:\nRenomeie Plan2 → Análise, acesse Inserir → Tabela Dinâmica, selecione a tabela Lançamento e configure os campos: TIPO DE LANÇAMENTO, Grupo, Conta, Valor e Mês nas Linhas, Valor em Valores e Ano em Filtros.\n\nPASSO 5 — ORDENAR, OCULTAR E AGRUPAR:\n1. Ordene em ordem decrescente (Dados → Classificar).\n2. Na aba Exibir, desmarque Linhas e Grades.\n3. Filtre por ano usando o campo Ano na área de Filtros.\n4. Use a Estrutura de Tópicos (Dados → Estrutura de tópicos) com os botões + / − para ocultar os detalhes.\n\n✏️ EXERCÍCIOS PARA PRATICAR:\n1. Monte a planilha de Contas Pessoais com os seus próprios lançamentos do mês (preencha os 11 campos).\n2. Use as funções =DIA(), =MÊS() e =ANO() para preencher as colunas derivadas de data.\n3. Aplique Validação de Dados (Lista) nos Tipos de Lançamento (RECEITA; DESPESA) e nas Formas de Pagamento (BOLETO; DÉBITO; PIX; TRANSFERÊNCIA).\n4. Crie a Tabela Dinâmica na aba Análise, colocando TIPO DE LANÇAMENTO e depois Grupo, Conta, Valor e Mês em Linhas.\n5. Classifique em ordem decrescente, filtre por um ano e use os botões + / − da Estrutura de Tópicos para ocultar os detalhes.\n\n🔒 REGRA DE OURO:\nUma base bem organizada (com Validação de Dados e funções de data) é o segredo para uma Tabela Dinâmica confiável. Arraste os campos para Linhas para agrupar, para Filtros para recortar por ano e use a Estrutura de Tópicos para expandir ou ocultar os detalhes.`,
           images: ['../../assets/img/excel/a7/image10.png', '../../assets/img/excel/a7/image15.png', '../../assets/img/excel/a7/image14.png']
         },
       {
@@ -1543,7 +2103,12 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
             </table>
             <div style="padding:8px;font-size:0.85em;color:#555;">Após marcar, clique OK — a aba Desenvolvedor aparece na faixa de opções.</div>
           </div>`,
-          images: ['../../assets/img/excel/a9/image4.png', '../../assets/img/excel/a9/image1.png', '../../assets/img/excel/a9/image6.png', '../../assets/img/excel/a9/image7.png']
+          images: [
+            { src: '../../assets/img/excel/a9/image4.png', caption: 'Passo 1 — o menu Arquivo aberto, com a opção Opções logo abaixo de "Informações". É por aqui que se libera a aba Desenvolvedor.' },
+            { src: '../../assets/img/excel/a9/image1.png', caption: 'Passo 2 — dentro da janela Opções do Excel, a lista da esquerda com "Personalizar Faixa de Opções" selecionada.' },
+            { src: '../../assets/img/excel/a9/image6.png', caption: 'Passo 3 — a coluna da direita com a lista de abas. A caixa de Desenvolvedor vem desmarcada: é ela que você precisa marcar.' },
+            { src: '../../assets/img/excel/a9/image7.png', caption: 'Passo 4 — depois de clicar em OK, a aba Desenvolvedor passa a aparecer na faixa de opções, ao lado de Fórmulas e Dados.' }
+          ]
         },
         {
           lessonNum: 9,
@@ -1586,7 +2151,10 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
             <br>
             Execute com F5 ou botão ▶️ — aparece uma caixa de mensagem!
           </div>`,
-          images: ['../../assets/img/excel/a9/image3.png', '../../assets/img/excel/a9/image12.png']
+          images: [
+            { src: '../../assets/img/excel/a9/image3.png', caption: 'O Editor VBA (VBE) aberto com Alt+F11: à esquerda o Project Explorer, à direita a Janela de Código — a parte branca onde vamos digitar o programa.' },
+            { src: '../../assets/img/excel/a9/image12.png', caption: 'Criando o módulo: botão direito em VBAProject → Inserir → Módulo. O Module1 passa a aparecer na pasta Módulos e uma janela de código em branco se abre para receber as instruções.' }
+          ]
         },
         {
           lessonNum: 9,
@@ -1604,12 +2172,549 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
             <strong>💡 O que aconteceu?</strong><br>
             <code>Sub</code> e <code>End Sub</code> delimitam a <strong>sub-rotina</strong>. O <code>MsgBox</code> exibe a caixa de mensagem — F5 executa.
           </div>`,
-          images: ['../../assets/img/excel/a9/image14.png', '../../assets/img/excel/a9/image11.png', '../../assets/img/excel/a9/image8.png', '../../assets/img/excel/a9/image16.png', '../../assets/img/excel/a9/image5.png']
+          images: [
+            { src: '../../assets/img/excel/a9/image14.png', caption: 'Passo 1 — botão direito no nome do arquivo dentro do Project Explorer: é desse menu que sai o comando de inserção de módulo.' },
+            { src: '../../assets/img/excel/a9/image11.png', caption: 'Passo 2 — o menu com Inserir → Módulo. Depois de confirmar, o Module1 já aparece na pasta Módulos.' },
+            { src: '../../assets/img/excel/a9/image8.png', caption: 'Passo 3 — no painel Propriedades (embaixo à esquerda), o campo (Name) mostra Module1: troque por um nome mais claro, como ModHelloWorld.' },
+            { src: '../../assets/img/excel/a9/image16.png', caption: 'Passo 4 — o código digitado na Janela de Código, com Sub no começo e End Sub no fim delimitando a sub-rotina.' },
+            { src: '../../assets/img/excel/a9/image5.png', caption: 'Resultado — ao apertar F5, a sub-rotina roda e a caixa de mensagem (MsgBox) aparece com o texto do Capiberica. É a prova de que o programa funcionou.' }
+          ]
         },
         {
           lessonNum: 9,
           heading: "9.6 Resumo da Aula — Macros, VBA e a Sub-rotina do Capiberica",
           content: `PARA FIXAR O APRENDIZADO:\n• Macros são sequências de ações gravadas no Excel que o computador repete automaticamente (robô auxiliar).\n• VBA (Visual Basic for Applications) é a linguagem de programação do Excel — permite criar comandos além da gravação simples.\n• A aba Desenvolvedor (Arquivo → Opções → Personalizar Faixa de Opções → marcar Desenvolvedor) libera os botões de gravação e do Editor VBA.\n• Gravar Macro: Desenvolvedor → Gravar Macro → nome → OK → fazer ações → Parar Gravação → Macros → Executar.\n• Editor VBA (Alt+F11 ou Desenvolvedor → Visual Basic): painel Project Explorer (esquerda) + Janela de Código (direita) + Propriedades (abaixo) + Inserir → Módulo.\n• Sub-rotina: bloco de código com nome entre Sub e End Sub.\n• MsgBox: exibe uma caixa de mensagem — o "Hello World" do VBA, executado com F5.\n\n🔒 REGRA DE OURO:\nCom a aba Desenvolvedor, a gravação de macros e o Editor VBA (VBE), você montou a base da automação do Excel. Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços de repetição.`
+        },
+        {
+          lessonNum: 10,
+          chapter: "AULA 10: VBA AVANÇADO — OBJETOS, VARIÁVEIS, CONDICIONAIS, LOOPS E MINI-PROJETO",
+          heading: "10.0 FASE 0 — Antes de Começar: Revisão-relâmpago da Aula 09 e o plano dos 6 passos",
+          content: `Você chegou ao "nível profissional" do VBA! Na Aula 09, o Capiberica aprendeu a gravar Macros, conheceu o Editor VBA (VBE) e escreveu sua primeira sub-rotina que exibe a famosa caixa de mensagem "Hello World" com MsgBox — a porta de entrada para a programação de verdade.\n\nNesta Aula 10, o herói vai deixar de repetir passos e passar a PROGRAMAR de verdade: vai manipular as peças do Excel (objetos), guardar valores na memória (variáveis), tomar decisões (condicionais), repetir tarefas (loops) e fechar com um Mini-Projeto que junta tudo: o Controlador do Capiberica!\n\nA jornada tem 6 passos — e o primeiro deles você conclui ao revisar a Aula 09 aqui embaixo e marcar o check:\n1. Revisar a Aula 09 e planejar — relembrar a sub-rotina Hello World e entender o roteiro\n2. Objetos — conhecer Workbook, Worksheet e Range (planilhas, intervalos e cores)\n3. Variáveis — declarar e usar variáveis com Dim (etiquetas da memória)\n4. Condicionais — decisões com If...Then...Else (SE/ENTÃO/SENÃO)\n5. Loops — repetições automáticas com For...Next\n6. Mini-Projeto — o Controlador do Capiberica juntando tudo + MsgBox final\n\nCada degrau tem um check no fim da fase — marque como concluído só depois de terminar a leitura e os exercícios daquela fase.\nNa Aula 11, começamos o Projeto Vendas — a aplicação desses conhecimentos.`,
+          html: `<div style="margin:16px 0;">
+            <p style="text-align:center;font-weight:700;font-size:1.1em;">🗺️ O ROTEIRO DOS 6 PASSOS</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0;">
+              <span style="background:#E8F5E9;color:#1B5E20;padding:6px 12px;border-radius:16px;font-size:0.9em;">1. Revisar Aula 09</span>
+              <span style="background:#E3F2FD;color:#0D47A1;padding:6px 12px;border-radius:16px;font-size:0.9em;">2. Objetos</span>
+              <span style="background:#FFF3E0;color:#E65100;padding:6px 12px;border-radius:16px;font-size:0.9em;">3. Variáveis</span>
+              <span style="background:#F3E5F5;color:#4A148C;padding:6px 12px;border-radius:16px;font-size:0.9em;">4. Condicionais</span>
+              <span style="background:#E0F7FA;color:#006064;padding:6px 12px;border-radius:16px;font-size:0.9em;">5. Loops</span>
+              <span style="background:#FCE4EC;color:#880E4F;padding:6px 12px;border-radius:16px;font-size:0.9em;">6. Mini-Projeto</span>
+            </div>
+            <p style="text-align:center;margin-top:8px;font-size:0.9em;color:#555;">Cada degrau tem um check no fim da fase — o passo 1 (revisar) fica no rodapé desta FASE 0.</p>
+          </div>
+          <div class="fun-highlight">
+            <strong>🔄 Revisão-relâmpago — onde paramos na Aula 09:</strong><br>
+            • Comando <code>MsgBox</code> → exibe uma caixa de mensagem<br>
+            • Bloco <code>Sub ... End Sub</code> → delimitam uma sub-rotina<br>
+            • F5 → executa o código dentro do Editor VBA<br>
+            • Ideia: "Hello World" do Capiberica funcionando!
+          </div>`
+        },
+        {
+          lessonNum: 10,
+          heading: "10.1 Objetos — Planilhas, Intervalos e Cores",
+          content: `Antes de escrever uma linha de código, vamos acertar a linguagem. Você já usa estas três coisas todos os dias no Excel — só não sabia o nome técnico. Pense assim:\n\n• Workbook = o CADERNO. É o arquivo inteiro (.xlsx) que você abriu, com todas as abas dentro.\n• Worksheet = a PÁGINA do caderno. É a aba que você vê embaixo (Vendas, Dados, Análise...).\n• Range = o TRECHO da página. Pode ser uma célula só (B5) ou um bloco inteiro (F3:I3).\n\nO QUE CADA UM VIRA NO CÓDIGO:\n• ActiveWorkbook = o caderno que está aberto AGORA.\n• ActiveSheet = a aba que está selecionada AGORA.\n• Range("F3:I3") = o trecho de células de F3 até I3.\n\n⚠️ O ERRO MAIS COMUM DE INICIANTE: o código sempre age na planilha ativa (ActiveSheet). Se o resultado não apareceu onde você esperava, quase sempre a aba errada estava selecionada quando você apertou F5. É exatamente por isso que, nas Aulas 11 a 13, o projeto avisa qual aba está ativa antes de gravar.\n\nPASSO A PASSO — OBJETO WORKBOOK (adicionar planilha e salvar):\n1. No Editor VBA (Alt+F11), insira um Módulo novo (Inserir → Módulo).\n2. Escreva a sub-rotina abaixo.\n3. Execute com F5: uma nova planilha (Sheet2) é criada e o arquivo é salvo automaticamente.\n\nSub AddSheetAndSaveWorkbook()\n    ' Adiciona uma nova planilha à pasta de trabalho ativa\n    ActiveWorkbook.Sheets.Add\n    ' Salva a pasta de trabalho\n    ActiveWorkbook.Save\nEnd Sub\n\nComentários começam com ' (aspas simples) e não alteram o código — servem para documentar.\n\nOBJETO WORKSHEET (renomear a planilha ativa):\n1. Crie outra sub-rotina.\n2. Ao executar, o nome da aba muda para "Sales Report".\n\nSub RenameActiveSheet()\n    ' Renomeia a planilha ativa\n    ActiveSheet.Name = "Sales Report"\nEnd Sub\n\nOBJETO RANGE (colorir um intervalo):\n1. Agora vamos selecionar células e pintá-las.\n2. Ao executar, o grupo F3:I3 ganha fundo verde-claro.\n\nSub FormatRange()\n    ' Seleciona o intervalo de F3 até I3\n    Range("F3:I3").Select\n    ' Altera a cor de fundo do intervalo selecionado para verde\n    Selection.Interior.Color = RGB(101, 255, 143)\nEnd Sub\n\n🛠️ MÃOS À OBRA — UM FORMULÁRIO COM BOTÃO "SALVAR EDIÇÃO"\nAgora que você distingue a pasta, a aba e o trecho de células, vamos juntar tudo em uma coisa só: um formulário de cadastro com 3 campos e um botão.\n\nNa aba Cadastro, monte o formulário da tabela ao lado. Os três campos ficam em B3 (Cliente), B4 (Data) e B5 (Valor). O botão fica em B6 e é um Botão de Formulário (Desenvolvedor → Inserir → Botão).\n\nO QUE O VBA FAZ QUANDO VOCÊ CLICA NO BOTÃO:\n1. Validação 1 — o Cliente (B3) está preenchido? Se estiver vazio, avisa, seleciona a célula e PARA.\n2. Validação 2 — a Data (B4) é uma data de verdade? (IsDate) Se não for, avisa e PARA.\n3. Validação 3 — o Valor (B5) é um número? (IsNumeric) Se não for, avisa e PARA.\n4. Só depois dos três testes: grava a linha na tabela, limpa o formulário e salva a pasta.\n\nÉ o mesmo esquema das Aulas 11 a 13: validar, gravar, salvar. Você já está construindo o projeto final.\n\nASSIM SE FAZ:\n1. Abra o Editor VBA com Alt + F11 e vá em Inserir → Módulo.\n2. Cole a sub-rotina SalvarEdicao abaixo (ela valida, grava e salva).\n3. Volte ao Excel, clique com o botão direito no Botão "Salvar Edição" → Atribuir Macro → escolha SalvarEdicao.\n4. Teste: deixe o Cliente vazio e clique (o Excel avisa). Depois preencha tudo e clique (a linha é gravada e a pasta é salva).\n\nAs imagens abaixo mostram exatamente esses três passos acontecendo no Excel: adicionar e salvar planilha, renomear e pintar um intervalo.`,
+          html: `<div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Os 3 objetos principais do VBA</div>
+            <table class="mini-sheet">
+              <tr><th>Objeto</th><th>O que representa</th><th>Exemplo</th></tr>
+              <tr><td><strong>Workbook</strong></td><td>O arquivo inteiro do Excel</td><td>ActiveWorkbook.Sheets.Add</td></tr>
+              <tr><td><strong>Worksheet</strong></td><td>Uma aba da planilha</td><td>ActiveSheet.Name = "Vendas"</td></tr>
+              <tr><td><strong>Range</strong></td><td>Célula ou grupo de células</td><td>Range("F3:I3").Select</td></tr>
+            </table>
+          </div>
+          <div class="es-sheet-box" style="max-width:620px;">
+            <div class="es-sheet-titlebar">Aba "Cadastro" — o formulário (linhas 2 a 6)</div>
+            <table class="mini-sheet" style="font-size:12.5px;">
+              <tr><th></th><th>A</th><th>B</th></tr>
+              <tr><td>2</td><td><strong>CLIENTE</strong></td><td>(obrigatório)</td></tr>
+              <tr><td>3</td><td><strong>DATA</strong></td><td>(obrigatória)</td></tr>
+              <tr><td>4</td><td><strong>VALOR</strong></td><td>(obrigatório, R$)</td></tr>
+              <tr><td>5</td><td colspan="2" style="text-align:center; padding:10px;">
+                <span style="display:inline-block; background:#217346; color:#fff; font-weight:700; font-size:12.5px; padding:7px 18px; border-radius:6px;">💾 Salvar Edição</span>
+              </td></tr>
+            </table>
+            <div style="padding:8px 12px;font-size:12.5px;color:#555;line-height:1.6;">Os três campos ficam em <strong>B3</strong> (Cliente), <strong>B4</strong> (Data) e <strong>B5</strong> (Valor). O botão fica em <strong>B6</strong>.</div>
+          </div>
+          <div class="es-sheet-box" style="max-width:620px;">
+            <div class="es-sheet-titlebar">Código: SalvarEdicao — validar, gravar e salvar</div>
+            <div style="padding:12px 16px;font-family:'Courier New',monospace;font-size:12px;background:#F8FAFC;line-height:1.75;white-space:pre-wrap;word-break:break-word;">Sub SalvarEdicao()
+    <span style="color:#64748B;">' === A PASTA e A ABA (Workbook / Worksheet) ===</span>
+    Dim wb As Workbook
+    Dim ws As Worksheet
+    Dim celula As Range
+    Dim proximaLinha As Long
+    Set wb = ThisWorkbook
+    Set ws = wb.Worksheets("Cadastro")
+
+    <span style="color:#64748B;">' === VALIDAÇÃO 1: o Cliente é obrigatório? ===</span>
+    Set celula = ws.Range("B3")
+    If IsEmpty(celula.Value) Or Trim(celula.Value) = "" Then
+        MsgBox "Preencha o Cliente!", vbExclamation
+        celula.Select: Exit Sub
+    End If
+
+    <span style="color:#64748B;">' === VALIDAÇÃO 2: a Data é uma data de verdade? ===</span>
+    Set celula = ws.Range("B4")
+    If Not IsDate(celula.Value) Then
+        MsgBox "A Data precisa ser uma data valida!", vbExclamation
+        celula.Select: Exit Sub
+    End If
+
+    <span style="color:#64748B;">' === VALIDAÇÃO 3: o Valor é um número? ===</span>
+    Set celula = ws.Range("B5")
+    If Not IsNumeric(celula.Value) Then
+        MsgBox "O Valor precisa ser um numero!", vbExclamation
+        celula.Select: Exit Sub
+    End If
+
+    <span style="color:#64748B;">' === GRAVA a linha e SALVA a pasta ===</span>
+    proximaLinha = ws.Cells(ws.Rows.Count, 1).End(xlUp).Row + 1
+    ws.Cells(proximaLinha, 1).Value = proximaLinha - 2
+    ws.Cells(proximaLinha, 2).Value = ws.Range("B3").Value
+    ws.Cells(proximaLinha, 3).Value = ws.Range("B4").Value
+    ws.Cells(proximaLinha, 4).Value = ws.Range("B5").Value
+    ws.Range("B3:B5").ClearContents
+    wb.Save
+    MsgBox "Edicao salva!", vbInformation
+End Sub</div>
+          </div>
+          <div class="fun-highlight">
+            <strong>🔎 LEIA O CÓDIGO COMO UMA FRASE:</strong> "pegue a <em>pasta</em> (wb), pegue a <em>aba Cadastro</em> (ws), olhe a <em>célula B3</em> (celula)… se o Cliente estiver vazio, avise e pare. Se a Data não for data, avise e pare. Se o Valor não for número, avise e pare. Só passando pelos três testes, a linha é gravada, o formulário é limpo e a pasta é salva."
+          </div>
+          <div class="fun-highlight">
+            <strong>💡 DICA:</strong> todo comando que começa com ' (aspas simples) é só um <strong>comentário</strong> — não executa nada, serve para explicar o código para quem vai ler depois (inclusive você mesmo daqui a seis meses).
+          </div>`,
+          imagesWide: true,
+          images: [
+            { src: '../../assets/img/excel/a10/image9.png', caption: 'WORKBOOK (o arquivo inteiro) — a sub-rotina AddSheetAndSaveWorkbook executa ActiveWorkbook.Sheets.Add e a pasta de trabalho ganha uma aba nova, a Sheet2.' },
+            { src: '../../assets/img/excel/a10/image15.png', caption: 'WORKBOOK — ActiveWorkbook.Save grava o arquivo em seguida, sem você precisar passar por Arquivo → Salvar. Note que o botão Salvar da barra de título ficou com a marca de alteração aplicada.' },
+            { src: '../../assets/img/excel/a10/image13.png', caption: 'WORKBOOK (continuação) — o arquivo já atualizado no disco, com a nova aba pronta para receber os dados.' },
+            { src: '../../assets/img/excel/a10/image10.png', caption: 'WORKSHEET (uma aba) — ActiveSheet.Name = "Sales Report" troca o nome da aba ativa; o título da aba passa a ler Sales Report.' },
+            { src: '../../assets/img/excel/a10/image2.png', caption: 'RANGE (um grupo de células) — Range("F3:I3").Select escolhe o intervalo de F3 até I3 e Selection.Interior.Color pinta esse trecho de verde-claro.' }
+          ]
+        },
+        {
+          lessonNum: 10,
+          heading: "10.2 Variáveis — Etiquetas da Memória",
+          content: `Variáveis são "caixinhas" na memória do computador onde o programa guarda valores para usar depois. Em VBA, declaramos uma variável com a palavra-chave Dim (de "dimensão"), seguida do nome e do tipo de dado.\n\nSINTAXE:\nDim nomeDaVariavel As Tipo\n\nTIPOS MAIS COMUNS:\n• String → texto (ex: "Capiberica")\n• Integer / Long → números inteiros (ex: 10)\n• Double → números com casas decimais (ex: 15.75)\n• Boolean → Verdadeiro/Falso (True ou False)\n\nPASSO A PASSO:\n1. Em um Módulo novo, escreva esta sub-rotina:\n\nSub DeclaraVariaveis()\n    Dim nome As String\n    Dim estoque As Integer\n    Dim preco As Double\n    Dim temDesconto As Boolean\n\n    nome = "Capiberica"\n    estoque = 24\n    preco = 19.90\n    temDesconto = True\n\n    MsgBox nome & " tem " & estoque & " itens em estoque."\nEnd Sub\n\n2. Execute com F5 e veja a caixa de mensagem montada com os valores das variáveis.\n\nREGRAS PARA NOMEAR VARIÁVEIS:\n• O nome não pode ultrapassar 255 caracteres.\n• Não pode conter espaços.\n• Não pode começar com número.\n• Não use pontos finais dentro do nome.\n\nO operador & (e-comercial) "cola" textos e valores — é chamado de concatenação.`,
+          html: `<div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">Declarando variáveis com Dim</div>
+            <div style="padding:10px 14px;font-family:'Courier New',monospace;font-size:0.9em;background:#F8FAFC;line-height:1.7;">
+              <span style="color:#7C3AED;">Dim</span> nome <span style="color:#7C3AED;">As</span> <span style="color:#2563EB;">String</span><br>
+              <span style="color:#7C3AED;">Dim</span> estoque <span style="color:#7C3AED;">As</span> <span style="color:#2563EB;">Integer</span><br>
+              <span style="color:#7C3AED;">Dim</span> preco <span style="color:#7C3AED;">As</span> <span style="color:#2563EB;">Double</span><br>
+              <span style="color:#7C3AED;">Dim</span> temDesconto <span style="color:#7C3AED;">As</span> <span style="color:#2563EB;">Boolean</span>
+            </div>
+            <div style="padding:8px;font-size:0.85em;color:#555;">Variáveis guardam valores na memória para o programa usar depois.</div>
+          </div>
+          <div class="fun-highlight">
+            <strong>💡 Regras de nome (memorize):</strong><br>
+            • até 255 caracteres • sem espaços • não começa com número • sem pontos finais
+          </div>`
+        },
+        {
+          lessonNum: 10,
+          heading: "10.3 Condicionais — Decisões com If...Then...Else",
+          content: `Um programa não só executa comandos em sequência: ele também TOMA DECISÕES. No VBA, a estrutura If...Then...Else (SE...ENTÃO...SENÃO) decide qual bloco de código rodar conforme uma condição.\n\nSINTAXE:\nIf condicao Then\n    ' código se a condição for verdadeira\nElse\n    ' código se a condição for falsa\nEnd If\n\nOPERADORES DE COMPARAÇÃO:\n• > maior que • < menor que • = igual a\n• >= maior ou igual • <= menor ou igual\n• <> diferente de\n\nOPERADORES LÓGICOS:\n• And (E) → as duas condições precisam ser verdadeiras\n• Or (OU) → basta uma condição ser verdadeira\n• Not (NÃO) → inverte o resultado\n\nPASSO A PASSO:\n1. Escreva esta sub-rotina em um Módulo novo:\n\nSub AvaliaEstoque()\n    Dim produto As String\n    Dim quantidade As Integer\n\n    produto = "Teclado"\n    quantidade = 12\n\n    If quantidade <= 5 Then\n        MsgBox produto & ": estoque CRÍTICO. Repor agora!"\n    ElseIf quantidade <= 15 Then\n        MsgBox produto & ": estoque BAIXO. Considere repor."\n    Else\n        MsgBox produto & ": estoque OK."\n    End If\nEnd Sub\n\n2. Execute com F5 e veja a decisão sendo tomada conforme o valor da variável.\n\nCOMO LER O CÓDIGO (traduzindo cada linha):\n• If quantidade <= 5 Then — "SE a quantidade for menor ou igual a 5, ENTÃO..."\n• a linha MsgBox logo abaixo — é o que acontece quando a condição é verdadeira.\n• ElseIf quantidade <= 15 Then — "SENÃO SE a quantidade for menor ou igual a 15..."\n• Else — "SENÃO". Aparece quando nenhuma das condições acima foi verdadeira.\n• End If — "FIM DA DECISÃO". Obrigatório: sem ele o VBA nem compila o código.\n\nAtenção na ordem: o VBA testa de cima para baixo e PARA no primeiro teste verdadeiro. Por isso "quantidade <= 5" vem antes de "quantidade <= 15": se invertesse, tudo que fosse menor ou igual a 15 cairia no primeiro If e o segundo nunca chegaria a ser avaliado.\n\nEXEMPLO COM CÉLULAS REAIS (o mesmo raciocínio do Projeto Vendas):\nNo exemplo anterior o valor estava escrito dentro do código (quantidade = 12). Na prática o número vem de uma célula. Suponha esta mini-tabela na planilha:\n\nA2: Teclado   B2: 12\nA3: Mouse     B3: 4\nA4: Monitor   B4: 30\n\nSub AvaliarEstoqueReal()\n    Dim linha As Integer\n    Dim nome As String\n    Dim quantidade As Integer\n\n    For linha = 2 To 4\n        nome = Cells(linha, 1).Value          ' lê a coluna A (produto)\n        quantidade = Cells(linha, 2).Value   ' lê a coluna B (quantidade)\n\n        If quantidade <= 5 Then\n            Cells(linha, 3).Value = "CRÍTICO - repor agora"\n            Cells(linha, 3).Interior.Color = RGB(255, 120, 120)\n        ElseIf quantidade <= 15 Then\n            Cells(linha, 3).Value = "BAIXO - considere repor"\n            Cells(linha, 3).Interior.Color = RGB(255, 230, 100)\n        Else\n            Cells(linha, 3).Value = "OK"\n            Cells(linha, 3).Interior.Color = RGB(140, 255, 160)\n        End If\n    Next\nEnd Sub\n\nO que muda em relação ao exemplo com MsgBox: em vez de SÓ mostrar um aviso na tela, o programa ESCREVE o resultado de volta na planilha, na coluna C, e PINTA a célula de aviso com a cor correspondente. É exatamente esse padrão (decidir + escrever + avisar) que a Aula 11 usa para gravar a venda no formulário.\n\nVALIDAÇÃO DE ENTRADA:\nIf IsNumeric(Range("A1").Value) And Range("A1").Value > 0 Then\n    MsgBox "Valor válido na célula A1!"\nElse\n    MsgBox "Digite um número maior que zero em A1."\nEnd If\n\nIsNumeric verifica se o valor é um número — ótimo para validar o que o usuário digita.`,
+          html: `<div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">Estrutura If...Then...Else</div>
+            <div style="padding:10px 14px;font-family:'Courier New',monospace;font-size:0.9em;background:#F8FAFC;line-height:1.7;">
+              <span style="color:#7C3AED;">If</span> quantidade &lt;= 5 <span style="color:#7C3AED;">Then</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;MsgBox "Estoque CRÍTICO!"<br>
+              <span style="color:#7C3AED;">ElseIf</span> quantidade &lt;= 15 <span style="color:#7C3AED;">Then</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;MsgBox "Estoque BAIXO."<br>
+              <span style="color:#7C3AED;">Else</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;MsgBox "Estoque OK."<br>
+              <span style="color:#7C3AED;">End If</span>
+            </div>
+            <div style="padding:8px;font-size:0.85em;color:#555;">O programa escolhe um caminho conforme a condição.</div>
+          </div>
+          <div class="fun-highlight">
+            <strong>🧠 Condições compostas:</strong> use <code>And</code> (E), <code>Or</code> (OU) e <code>Not</code> (NÃO) para testar mais de uma coisa ao mesmo tempo.
+          </div>
+          <div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Exemplo com células reais — o que o VBA faz na planilha</div>
+            <table class="mini-sheet">
+              <tr><th>A</th><th>B</th><th>C</th></tr>
+              <tr><th>Produto</th><th>Quantidade</th><th>Decisão (escrita pelo código)</th></tr>
+              <tr><td>Teclado</td><td>12</td><td style="background:#FFE664;">BAIXO - considere repor</td></tr>
+              <tr><td>Mouse</td><td>4</td><td style="background:#FF7878;color:#fff;">CRÍTICO - repor agora</td></tr>
+              <tr><td>Monitor</td><td>30</td><td style="background:#8CFFA0;">OK</td></tr>
+            </table>
+            <div style="padding:8px;font-size:0.85em;color:#555;">A coluna C começa vazia. O VBA percorre as linhas 2 a 4, decide conforme o número da coluna B, escreve a decisão em C e pinta a célula com a cor do nível de estoque.</div>
+          </div>`
+        },
+        {
+          lessonNum: 10,
+          heading: "10.4 Loops — Repetições com For...Next",
+          content: `Repetir é a grande vantagem do computador: o VBA tem estruturas que executam o mesmo bloco de código várias vezes. A mais usada é o For...Next, que repete um número de vezes definido.\n\nSINTAXE:\nFor contador = inicio To fim\n    ' código que se repete\nNext\n\nPASSO A PASSO:\n1. Escreva esta sub-rotina:\n\nSub NumeraLinhas()\n    Dim linha As Integer\n\n    For linha = 1 To 10\n        Cells(linha, 1).Value = "Linha " & linha\n    Next\n\n    MsgBox "Numeração concluída até a linha 10!"\nEnd Sub\n\n2. Execute com F5: a coluna A das linhas 1 a 10 é preenchida automaticamente.\n\nO que aconteceu?\n• A variável linha começa em 1 e, a cada volta, Some 1 até chegar em 10.\n• Cells(linha, 1) representa a célula da linha atual na coluna 1 (A).\n• Ao final, um MsgBox confirma a conclusão.\n\nVARIANTE — Do While (repete enquanto a condição for verdadeira):\nDim i As Integer\n\ni = 1\nDo While i <= 5\n    Cells(i, 2).Value = i * 2\n    i = i + 1\nLoop\n\nAqui, a célula B1..B5 recebe o dobro de i. Cuidado para a condição virar falsa em algum momento — senão o loop roda para sempre (loop infinito)!`,
+          html: `<div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">For...Next — repetindo 10 vezes</div>
+            <div style="padding:10px 14px;font-family:'Courier New',monospace;font-size:0.9em;background:#F8FAFC;line-height:1.7;">
+              <span style="color:#7C3AED;">For</span> linha = 1 <span style="color:#7C3AED;">To</span> 10<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;Cells(linha, 1).Value = "Linha " &amp; linha<br>
+              <span style="color:#7C3AED;">Next</span>
+            </div>
+            <div style="padding:8px;font-size:0.85em;color:#555;">A variável "linha" avança de 1 até 10, preenchendo células.</div>
+          </div>
+          <table class="mini-sheet" style="max-width:260px;">
+            <tr><th>A</th></tr>
+            <tr><td>Linha 1</td></tr>
+            <tr><td>Linha 2</td></tr>
+            <tr><td style="color:#9CA3AF;">...</td></tr>
+            <tr><td>Linha 10</td></tr>
+          </table>`
+        },
+        {
+          lessonNum: 10,
+          heading: "10.5 Mini-Projeto — O Controlador do Capiberica",
+          content: `Chegou a hora de juntar TUDO: objetos (Range/Cells), variáveis (Dim), condicionais (If) e loops (For...Next). O Mini-Projeto abaixo lê uma lista de quantidades no intervalo A2:A6 e pinta cada linha conforme o nível de estoque, com uma mensagem final.\n\nPASSO A PASSO:\n1. No Editor VBA, insira um Módulo novo e digite o código abaixo.\n2. Antes de executar, digite em A2:A6 da planilha: 3, 10, 20, 6, 15.\n3. Execute com F5 e veja as cores + a caixa de mensagem final.\n\nSub ControladorCapiberica()\n    Dim linha As Integer\n    Dim quantidade As Integer\n\n    For linha = 2 To 6\n        quantidade = Cells(linha, 1).Value\n\n        If quantidade <= 5 Then\n            ' Crítico: fundo vermelho\n            Cells(linha, 1).Interior.Color = RGB(255, 120, 120)\n        ElseIf quantidade <= 10 Then\n            ' Baixo: fundo amarelo\n            Cells(linha, 1).Interior.Color = RGB(255, 230, 100)\n        Else\n            ' OK: fundo verde\n            Cells(linha, 1).Interior.Color = RGB(140, 255, 160)\n        End If\n    Next\n\n    MsgBox "Controle do Capiberica finalizado! Confira as cores.", vbInformation, "Mini-Projeto Aula 10"\nEnd Sub\n\nO QUE VOCÊ APRENDEU COM ISSO:\n• Range/Cells captura as células (objeto).\n• Dim guarda o valor lido (variável).\n• If pinta conforme a regra (condicional).\n• For...Next percorre todas as linhas (loop).\n• MsgBox encerra informando o resultado (comunicação).\n\nEste mini-projeto é um "pré-treino" para o Projeto Vendas das Aulas 11 a 13!`,
+          html: `<div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Controlador do Capiberica — resultado esperado</div>
+            <table class="mini-sheet">
+              <tr><th>A</th><th>Leitura da regra (coluna de apoio, não é célula do Excel)</th></tr>
+              <tr><th>Quantidade</th><th>Cor aplicada</th></tr>
+              <tr><td style="background:#FF7878;color:#fff;">3</td><td>≤ 5 → vermelho (crítico)</td></tr>
+              <tr><td style="background:#FFE664;">10</td><td>≤ 10 → amarelo (baixo)</td></tr>
+              <tr><td style="background:#8CFFA0;">20</td><td>&gt; 10 → verde (ok)</td></tr>
+              <tr><td style="background:#FFE664;">6</td><td>≤ 10 → amarelo (baixo)</td></tr>
+              <tr><td style="background:#8CFFA0;">15</td><td>&gt; 10 → verde (ok)</td></tr>
+            </table>
+          </div>
+          <div class="fun-highlight">
+            <strong>🏁 Pronto para o Projeto Vendas!</strong> Este mini-projeto combina objetos + variáveis + condicionais + loops. Nas Aulas 11–13 você aplica tudo num sistema profissional.
+          </div>`
+        },
+        {
+          lessonNum: 10,
+          heading: "10.6 Resumo da Aula — VBA Avançado",
+          content: `PARA FIXAR O APRENDIZADO:\n• Objetos: as peças que o VBA manipula — Workbook (arquivo), Worksheet (planilha) e Range (células). Ex.: ActiveWorkbook.Sheets.Add, ActiveSheet.Name = "Sales Report", Range("F3:I3") + Selection.Interior.Color = RGB(...).\n• Variáveis: guardam valores com Dim nome As Tipo (String, Integer/Long, Double, Boolean); nome sem espaços, sem pontos, sem começar com número, até 255 caracteres.\n• Condicionais: If...Then...ElseIf...Else...End If decidem caminhos; comparadores (<, >, =, <=, >=, <>); operadores lógicos And, Or, Not.\n• Loops: For contador = inicio To fim ... Next percorrem repetições; Cells(linha, coluna) acessa células dinamicamente; Do While...Loop repete enquanto a condição valer.\n• Mini-Projeto Controlador do Capiberica: combina Range/Cells (objeto) + Dim (variável) + If (condicional) + For...Next (loop) + MsgBox (saída).\n\n🔒 REGRA DE OURO:\nQuem domina objetos, variáveis, condicionais e loops DOMINA a programação em VBA. Você agora tem a base para automatizar planilhas de verdade — e o Projeto Vendas (Aulas 11–13) vai usar tudo isso!`
+        },
+        {
+          lessonNum: 11,
+          chapter: "AULA 11: PROJETO VENDAS — ESTRUTURAÇÃO (PARTE 1) — O SISTEMA DE CONTROLE DE VENDAS DA TECH SOLUTIONS",
+          heading: "11.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `Nesta aula você monta a estrutura do banco de dados do Sistema de Controle de Vendas da Tech Solutions: as 4 planilhas do arquivo, as listas de apoio e a base de vendas pronta para receber os lançamentos. Este é o início do Projeto Integrado — as Aulas 11, 12 e 13 constroem juntas um sistema completo.\n\nO caminho tem 7 passos — cada passo é uma fase da estruturação do projeto:\n1. Preparar o arquivo: renomear e criar as 4 planilhas (Dados_Vendas, Dashboard, Analise_Vendedor, Configuracoes)\n2. Montar as listas de apoio na planilha Configuracoes (vendedores, produtos e regiões)\n3. Criar os cabeçalhos e formatar a base de vendas (A1:H1)\n4. Aplicar Validação de Dados — listas suspensas automáticas\n5. Inserir fórmulas automáticas (N° da Venda com =LIN()-1 e Total com =F2*G2)\n6. Lançar os dados de exemplo da Tech Solutions\n7. Converter a base em Tabela do Excel (Ctrl+T) e nomear TabelaVendas\n\nCada degrau tem um check no fim da fase — marque como concluído só depois de terminar a leitura e os exercícios daquela fase. O próximo só é liberado depois que o anterior for finalizado.`,
+          html: `<div class="fun-highlight">
+            <strong>🎯 MISSÃO DA AULA 11:</strong> criar a fundação do Sistema de Controle de Vendas — planilhas organizadas, listas padronizadas e uma base de vendas estruturada com validação e fórmulas automáticas.
+          </div>
+          <div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">As 4 planilhas do Sistema (abas do arquivo)</div>
+            <table class="mini-sheet">
+              <tr><th>Planilha</th><th>Função no projeto</th></tr>
+              <tr><td><strong>Dados_Vendas</strong></td><td>Base de lançamento de todas as vendas</td></tr>
+              <tr><td><strong>Dashboard</strong></td><td>Painel com indicadores, resumo e gráfico</td></tr>
+              <tr><td><strong>Analise_Vendedor</strong></td><td>Relatório por vendedor (Tabela Dinâmica)</td></tr>
+              <tr><td><strong>Configuracoes</strong></td><td>Listas de apoio: vendedores, produtos, regiões</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 11,
+          heading: "11.1 Preparação Inicial — As 4 Planilhas do Sistema",
+          content: `Todo sistema começa pela organização do arquivo. Vamos criar uma Pasta de Trabalho nova e montar as 4 planilhas que vão compor o Sistema de Controle de Vendas.\n\nPASSO A PASSO:\n1. Abra o Excel e crie uma Pasta de Trabalho em branco.\n2. Na aba da planilha, clique com o botão direito sobre Planilha1 → Renomear e digite Dados_Vendas.\n3. Ainda com botão direito na aba → Mover ou Copiar (ou clique no + ao lado das abas) e crie as abas Configuracoes, Dashboard e Analise_Vendedor.\n4. Deixe a ordem das abas assim (da esquerda para a direita): Dados_Vendas · Dashboard · Analise_Vendedor · Configuracoes.\n5. Salve o arquivo como Controle_Vendas.xlsx (podemos salvar com macros no final do projeto, na Aula 13).\n\n✅ POR QUE ESSA ORGANIZAÇÃO?\n• A base de vendas fica separada do Dashboard (dado ≠ exibição).\n• As listas ficam numa aba de apoio, então as listas suspensas herdam os itens automaticamente.\n• A Analise_Vendedor será preenchida pela Tabela Dinâmica na Aula 12.`,
+          html: `<div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">Ordem das abas no arquivo</div>
+            <table class="mini-sheet">
+              <tr><th>#</th><th>Aba</th><th>Papel</th></tr>
+              <tr><td>1</td><td>Dados_Vendas</td><td>Base de vendas</td></tr>
+              <tr><td>2</td><td>Dashboard</td><td>Painel visual</td></tr>
+              <tr><td>3</td><td>Analise_Vendedor</td><td>Tabela Dinâmica</td></tr>
+              <tr><td>4</td><td>Configuracoes</td><td>Listas de apoio</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 11,
+          heading: "11.2 Planilha Configuracoes — As Listas de Apoio",
+          content: `As listas suspensas da base de vendas precisam de uma fonte de dados. Vamos montar na planilha Configuracoes três listas simples de apoio: Vendedores, Produtos e Regiões.\n\nPASSO A PASSO:\n1. Vá até a aba Configuracoes.\n2. Na coluna A (célula A1), digite o título VENDEDORES e abaixo os nomes: Ana Souza; Bruno Lima; Carla Mendes; Diego Ferraz; Elisa Rocha.\n3. Na coluna B (célula B1), digite PRODUTOS e abaixo: Notebook; Mouse Sem Fio; Teclado USB; Monitor LED; Impressora; Cadeira Gamer.\n4. Na coluna C (célula C1), digite REGIÕES e abaixo: Sudeste; Sul; Nordeste; Centro-Oeste; Norte.\n5. Selecione cada intervalo (cabeçalho + itens) e aplique Página Início → Formatar como Tabela, marcando "Minha tabela tem cabeçalhos".\n\n✅ DICA DE PROFISSIONAL:\nQuando as listas são Tabelas, os novos itens que você adicionar entram automaticamente nas listas suspensas da validação — sem retrabalho.`,
+          html: `<div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Planilha Configuracoes — tabelas de apoio</div>
+            <table class="mini-sheet">
+              <tr><th>A</th><th>B</th><th>C</th></tr>
+              <tr><th>VENDEDORES</th><th>PRODUTOS</th><th>REGIÕES</th></tr>
+              <tr><td>Ana Souza</td><td>Notebook</td><td>Sudeste</td></tr>
+              <tr><td>Bruno Lima</td><td>Mouse Sem Fio</td><td>Sul</td></tr>
+              <tr><td>Carla Mendes</td><td>Teclado USB</td><td>Nordeste</td></tr>
+              <tr><td>Diego Ferraz</td><td>Monitor LED</td><td>Centro-Oeste</td></tr>
+              <tr><td>Elisa Rocha</td><td>Impressora</td><td>Norte</td></tr>
+              <tr><td></td><td>Cadeira Gamer</td><td></td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 11,
+          heading: "11.3 Planilha Dados_Vendas — Cabeçalhos e Formatação",
+          content: `Agora vamos preparar a base de vendas. Na planilha Dados_Vendas, criamos a linha de cabeçalhos — a "espinha dorsal" de todo o sistema.\n\nPASSO A PASSO:\n1. Vá até a aba Dados_Vendas.\n2. Digite os cabeçalhos na linha 1, da célula A1 até H1.\n3. Selecione A1:H1 e aplique: texto em negrito, fundo verde Tech Solutions, fonte branca e centralizado.\n4. Ajuste a largura das colunas (clique duas vezes na borda entre as letras das colunas) para caber o conteúdo.\n\n💡 DICA:\nUse N° da Venda, Qtd e Total para as células de cálculo e Data com o formato data do Excel. A coluna Total será calculada por fórmula (Tópico 5) — não digite valores nela.`,
+          html: `<div class="es-sheet-box" style="max-width:640px;">
+            <div class="es-sheet-titlebar">Dados_Vendas — Linha de Cabeçalhos (A1:H1)</div>
+            <table class="mini-sheet">
+              <tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th></tr>
+              <tr><td>N° da Venda</td><td>Data</td><td>Vendedor</td><td>Produto</td><td>Região</td><td>Qtd</td><td>Preço Unit. (R$)</td><td>Total (R$)</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 11,
+          heading: "11.4 Validação de Dados — Listas Suspensas Automáticas",
+          content: `Para evitar erros de digitação (e garantir que o Dashboard e a Tabela Dinâmica funcionem), vamos criar listas suspensas para Vendedor, Produto e Região, alimentadas pelas listas da planilha Configuracoes.\n\nPASSO A PASSO:\n1. Selecione o intervalo C2:C100 (coluna Vendedor).\n2. Abra Dados → Validação de Dados.\n3. Em Permitir: escolha Lista.\n4. Em Fonte: clique e vá até a aba Configuracoes, selecionando os itens de Vendedores (ex.: Configuracoes!A2:A6).\n5. Repita o mesmo para a coluna D (Produtos → Configuracoes!B2:B7) e para a coluna E (Região → Configuracoes!C2:C6).\n6. Clique em OK. Agora clicar numa célula dessas colunas mostra uma seta de lista suspensa.\n\n⚙️ COMO FICA:\nem C2 você vê a seta e pode escolher Ana Souza, Bruno Lima... sem digitar. Em D2, os produtos; em E2, as regiões. Dados sempre padronizados!`,
+          html: `<div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Validação de Dados — resumo das listas</div>
+            <table class="mini-sheet">
+              <tr><th>Coluna</th><th>Campo</th><th>Fonte na Configuracoes</th></tr>
+              <tr><td>C</td><td>Vendedor</td><td>Configuracoes!A2:A6</td></tr>
+              <tr><td>D</td><td>Produto</td><td>Configuracoes!B2:B7</td></tr>
+              <tr><td>E</td><td>Região</td><td>Configuracoes!C2:C6</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 11,
+          heading: "11.5 Fórmulas Automáticas — N° da Venda e Total",
+          content: `O Excel vai numerar e calcular sozinho. Vamos usar duas fórmulas que se arrastam para toda a coluna (a alça de preenchimento faz o resto).\n\nPASSO A PASSO:\n1. Em A2, digite =LIN()-1 e pressione Enter → o Excel retorna 1 (a linha de A2 é 2, menos 1 = 1).\n2. Arraste a alça de preenchimento de A2 para baixo (até A11) → a numeração vira automática (1 a 10).\n3. Em H2, digite =F2*G2 (Quantidade × Preço Unitário) e pressione Enter → o Total da venda é calculado.\n4. Arraste a alça de H2 para baixo até H11.\n5. Formate as colunas G e H como moeda (R$).\n\n🧮 COMO FUNCIONA:\n• =LIN()-1 → a função LIN() devolve o número da linha; subtraindo 1, a numeração começa em 1. Automática e à prova de erro!\n• =F2*G2 → multiplica Quantidade (F) pelo Preço Unitário (G). Se mudar um número, o Total recalcula sozinho.`,
+          html: `<div class="es-sheet-box" style="max-width:760px;">
+            <div class="es-sheet-titlebar">Como fica na grade (colunas A a H completas)</div>
+            <table class="mini-sheet">
+              <tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th></tr>
+              <tr><td>N° da Venda</td><td>Data</td><td>Vendedor</td><td>Produto</td><td>Região</td><td>Qtd</td><td>Preço Unit. (R$)</td><td>Total (R$)</td></tr>
+              <tr><td>=LIN()-1</td><td>02/06/2026</td><td>Ana Souza</td><td>Notebook</td><td>Sudeste</td><td>1</td><td>3200,00</td><td>=F2*G2</td></tr>
+              <tr><td>1</td><td>02/06/2026</td><td>Ana Souza</td><td>Notebook</td><td>Sudeste</td><td>1</td><td>R$ 3.200,00</td><td>R$ 3.200,00</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 11,
+          heading: "11.6 Dados de Exemplo — Primeiras Vendas da Tech Solutions",
+          content: `Hora de popular a base. Lance as vendas abaixo usando as listas suspensas (Vendedor, Produto e Região) e as datas corretas. A coluna A e a coluna H já estão com fórmula — preencha as demais.\n\n🔎 CONFIRA:\nao preencher a última venda, a coluna A deve mostrar 10 e a coluna H deve ter somado Qtd × Preço em cada linha automaticamente.`,
+          html: `<div class="es-sheet-box" style="max-width:700px;">
+            <div class="es-sheet-titlebar">Dados de exemplo — 10 vendas da Tech Solutions</div>
+            <table class="mini-sheet">
+              <tr><th>Data</th><th>Vendedor</th><th>Produto</th><th>Região</th><th>Qtd</th><th>Preço Unit.</th></tr>
+              <tr><td>02/06/2026</td><td>Ana Souza</td><td>Notebook</td><td>Sudeste</td><td>1</td><td>R$ 3.200,00</td></tr>
+              <tr><td>02/06/2026</td><td>Bruno Lima</td><td>Mouse Sem Fio</td><td>Sul</td><td>5</td><td>R$ 89,90</td></tr>
+              <tr><td>03/06/2026</td><td>Carla Mendes</td><td>Teclado USB</td><td>Nordeste</td><td>3</td><td>R$ 149,90</td></tr>
+              <tr><td>03/06/2026</td><td>Diego Ferraz</td><td>Monitor LED</td><td>Sudeste</td><td>2</td><td>R$ 899,00</td></tr>
+              <tr><td>04/06/2026</td><td>Elisa Rocha</td><td>Impressora</td><td>Centro-Oeste</td><td>1</td><td>R$ 449,00</td></tr>
+              <tr><td>04/06/2026</td><td>Ana Souza</td><td>Cadeira Gamer</td><td>Sul</td><td>2</td><td>R$ 1.200,00</td></tr>
+              <tr><td>05/06/2026</td><td>Bruno Lima</td><td>Notebook</td><td>Sudeste</td><td>2</td><td>R$ 3.200,00</td></tr>
+              <tr><td>05/06/2026</td><td>Carla Mendes</td><td>Mouse Sem Fio</td><td>Nordeste</td><td>10</td><td>R$ 89,90</td></tr>
+              <tr><td>06/06/2026</td><td>Diego Ferraz</td><td>Teclado USB</td><td>Sul</td><td>4</td><td>R$ 149,90</td></tr>
+              <tr><td>06/06/2026</td><td>Elisa Rocha</td><td>Monitor LED</td><td>Norte</td><td>3</td><td>R$ 899,00</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 11,
+          heading: "11.7 Converter a Base em Tabela — A Fundação das Análises",
+          content: `O último passo da estruturação: transformar a base de vendas em uma Tabela do Excel. Isso dá nome ao intervalo (referências estruturadas), traz filtros nos cabeçalhos, estilo profissional e prepara tudo para o Dashboard e a Tabela Dinâmica da próxima aula.\n\nPASSO A PASSO:\n1. Clique em qualquer célula da base (ex.: A1).\n2. Pressione Ctrl+T (ou Inserir → Tabela).\n3. Marque "Minha tabela tem cabeçalhos" e confira que o intervalo cobre A1:H11.\n4. Clique em OK. Nas abas Design de Tabela, dê o nome TabelaVendas ao intervalo.\n\n✅ PRONTO!\nSua base agora é um banco de dados estruturado. Na Aula 12 vamos construir o Dashboard e a Tabela Dinâmica em cima dessa estrutura. 🚀`,
+          html: `<div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Base pronta para o Dashboard e a Tabela Dinâmica</div>
+            <table class="mini-sheet">
+              <tr><th>Nome</th><th>Intervalo</th><th>Recurso que ativa</th></tr>
+              <tr><td>Nome da Tabela</td><td>TabelaVendas</td><td>SOMASE, Tabela Dinâmica, filtros</td></tr>
+              <tr><td>Filtros</td><td>▼ em cada cabeçalho</td><td>Classificar e filtrar sem fórmulas</td></tr>
+              <tr><td>Estilo</td><td>Faixas alternadas</td><td>Leitura profissional</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 12,
+          chapter: "AULA 12: PROJETO VENDAS — AUTOMAÇÃO & REGRAS (PARTE 2) — DASHBOARD E TABELA DINÂMICA",
+          heading: "12.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `Com a base de vendas estruturada na Aula 11, agora o Excel trabalha sozinho! Você vai construir o Dashboard da Tech Solutions: cartões de indicadores, resumo por vendedor com SOMASE, gráfico de colunas e a Tabela Dinâmica de análise por vendedor. É aqui que os dados viram decisão! 📊\n\nO caminho tem 6 passos — cada passo é uma fase da automação:\n1. Criar o título do Dashboard\n2. Criar os cartões de indicadores (SOMA e MÉDIA)\n3. Montar o resumo por vendedor com SOMASE\n4. Criar o gráfico de colunas\n5. Ajustar a formatação e aparência\n6. Criar a Tabela Dinâmica (Analise_Vendedor)\n\nCada degrau tem um check no fim da fase — marque como concluído só depois de terminar a leitura e os exercícios daquela fase. O próximo só é liberado depois que o anterior for finalizado.`,
+          html: `<div class="fun-highlight">
+            <strong>🎯 MISSÃO DA AULA 12:</strong> dar vida aos dados — montar o Dashboard (indicadores, resumo, gráfico) e a Tabela Dinâmica Analise_Vendedor. Ao final, o sistema passa a se atualizar automaticamente quando novas vendas entram.
+          </div>
+          <div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">Dashboard + Analise_Vendedor</div>
+            <table class="mini-sheet">
+              <tr><td>📈 Indicadores</td><td>Total, Ticket médio, Quantidade</td></tr>
+              <tr><td>🧮 SOMASE</td><td>Resumo por vendedor</td></tr>
+              <tr><td>📊 Gráfico</td><td>Colunas por vendedor</td></tr>
+              <tr><td>🔀 Tabela Dinâmica</td><td>Vendedor × Região (Soma de Total)</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 12,
+          heading: "12.1 Dashboard — Título do Painel",
+          content: `O Dashboard é a "vitrine" do sistema: nele, os donos da Tech Solutions veem o resultado do negócio em um só olhar. Vamos começar dando um título profissional.\n\nPASSO A PASSO:\n1. Vá até a aba Dashboard.\n2. Selecione B2:E2 (ou A1:G1) e clique em Mesclar e Centralizar (Página Início → Mesclar e Centralizar).\n3. Digite SISTEMA DE CONTROLE DE VENDAS — TECH SOLUTIONS.\n4. Formate: fonte 20, negrito, cor verde escuro da marca.\n\n💡 DICA DE PROFISSIONAL:\nmesclar só o espaço necessário evita desalinhar o conteúdo ao imprimir. Veja o Live Preview do título conforme formata.`,
+          html: `<div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Dashboard — estrutura inicial</div>
+            <table class="mini-sheet">
+              <tr><th>Área</th><th>O que vai ficar</th></tr>
+              <tr><td>B2:E2 (mesclada)</td><td>Título: Sistema de Controle de Vendas — Tech Solutions</td></tr>
+              <tr><td>Próximas linhas</td><td>Cartões de indicadores (Tópico 2)</td></tr>
+              <tr><td>Área inferior</td><td>Resumo por vendedor + Gráfico (Tópicos 3 e 4)</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 12,
+          heading: "12.2 Cartões de Indicadores — SOMA, MÉDIA e CONT",
+          content: `Os indicadores (KPIs) são os números que todo dono olha primeiro. Vamos criar 3 cartões que se atualizam sozinhos conforme a base de vendas cresce, usando referências à planilha Dados_Vendas.\n\nPASSO A PASSO:\n1. Deixe uma linha após o título e monte os rótulos dos cartões: Total de Vendas, Ticket Médio e Itens Vendidos.\n2. Ao lado de "Total de Vendas", digite =SOMA(Dados_Vendas!H2:H100) e formate como moeda.\n3. Ao lado de "Ticket Médio", digite =MÉDIA(Dados_Vendas!H2:H100) e formate como moeda.\n4. Ao lado de "Itens Vendidos", digite =SOMA(Dados_Vendas!F2:F100) (soma das quantidades).\n5. Desenhe um contorno colorido em cada cartão (borda + fundo suave).\n\n🧮 REGRA:\nao referenciar a outra planilha usamos NomeDaPlanilha! antes do intervalo. Quando novas vendas entrarem na base, os cartões recalculam sozinhos.`,
+          html: `<div class="es-sheet-box" style="max-width:640px;">
+            <div class="es-sheet-titlebar">Cartões de indicadores (linhas 4–6)</div>
+            <table class="mini-sheet">
+              <tr><th>Rótulo</th><th>Fórmula</th><th>Resultado esperado (exemplo)</th></tr>
+              <tr><td>Total de Vendas</td><td>=SOMA(Dados_Vendas!H2:H100)</td><td>R$ 24.446,80</td></tr>
+              <tr><td>Ticket Médio</td><td>=MÉDIA(Dados_Vendas!H2:H100)</td><td>R$ 2.444,68</td></tr>
+              <tr><td>Itens Vendidos</td><td>=SOMA(Dados_Vendas!F2:F100)</td><td>33</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 12,
+          heading: "12.3 Resumo por Vendedor — a Função SOMASE",
+          content: `Agora o "segredo" do painel: uma pequena tabela que resume o total vendido por cada vendedor. Com =SOMASE e o nome do vendedor numa célula, a fórmula procura na coluna Vendedor da base e soma os totais correspondentes — sem escrever nada na mão.\n\nPASSO A PASSO:\n1. Num espaço livre do Dashboard (ex.: a partir da célula A8), digite o título RESUMO POR VENDEDOR.\n2. Na coluna abaixo, liste os vendedores (Ana Souza, Bruno Lima, Carla Mendes, Diego Ferraz, Elisa Rocha).\n3. Ao lado de cada vendedor (ex.: B10), digite: =SOMASE(Dados_Vendas!$C$2:$C$100; A10; Dados_Vendas!$H$2:$H$100)\n4. Arraste a fórmula até o último vendedor e formate a coluna como moeda.\n\n🧮 REGRA:\no 1º argumento é o intervalo onde procurar (Vendedor), o 2º é o critério (A10) e o 3º é o intervalo a somar (Total). Repare no $ (cifrão) travando as colunas ao arrastar.`,
+          html: `<div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Resumo por Vendedor (resultado esperado)</div>
+            <table class="mini-sheet">
+              <tr><th>Vendedor</th><th>Total (R$)</th></tr>
+              <tr><td>Ana Souza</td><td>R$ 5.600,00</td></tr>
+              <tr><td>Bruno Lima</td><td>R$ 6.689,50</td></tr>
+              <tr><td>Carla Mendes</td><td>R$ 1.348,70</td></tr>
+              <tr><td>Diego Ferraz</td><td>R$ 2.537,60</td></tr>
+              <tr><td>Elisa Rocha</td><td>R$ 8.270,00</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 12,
+          heading: "12.4 Gráfico de Colunas — Vendas por Vendedor",
+          content: `Números em tabela são bons; a imagem é melhor ainda. Vamos transformar o resumo em um gráfico de colunas que o gestor lê em 2 segundos.\n\nPASSO A PASSO:\n1. Selecione a tabela Resumo por Vendedor (Vendedor + Total).\n2. Vá em Inserir → Gráficos e escolha Colunas → Coluna Agrupada (ou 2D).\n3. Ajuste o título do gráfico para Vendas por Vendedor.\n4. Adicione os rótulos de dados (clique com o botão direito na série → Adicionar Rótulos de Dados).\n5. Posicione e redimensione o gráfico ao lado da tabela de resumo.\n\n💡 DICA:\nse você atualizar os dados, o gráfico atualiza na hora. Rótulos de dados facilitam a leitura do valor exato de cada vendedor.`,
+          html: `<div class="fun-highlight">
+            <strong>📊 VISUAL DO GRÁFICO:</strong> colunas proporcionais ao total de cada vendedor — Elisa Rocha (R$ 8.270,00) e Bruno Lima (R$ 6.689,50) lideram as barras mais altas, Carla Mendes tem a menor (R$ 1.348,70).
+          </div>`
+        },
+        {
+          lessonNum: 12,
+          heading: "12.5 Formatação e Aparência — Um Painel Profissional",
+          content: `Detalhes visuais fazem o Dashboard parecer feito por uma empresa. Vamos aplicar a "cara" da Tech Solutions: verde da marca, bordas, alinhamento e organização.\n\nPASSO A PASSO:\n1. Use a pincel de formatação (Página Início) para copiar o estilo do título para os cartões.\n2. Aplique preenchimento verde suave e bordas nos cartões e na tabela de resumo.\n3. Alinhe os valores em R$ à direita e os rótulos à esquerda.\n4. Ajuste o tamanho/posição do gráfico e do resumo para caberem juntos numa leitura sem scroll.\n5. Opcional: em Exibir, desmarque Linhas de Grade para um visual limpo.\n\n🎨 IDENTIDADE VISUAL:\nmantenha 1 cor de destaque (verde), 1 cor neutra de fundo (claro) e títulos em negrito. Painel corporativo usa simplicidade.`,
+          html: `<div class="fun-highlight">
+            <strong>🎨 PALETA DA TECH SOLUTIONS:</strong> verde da marca como cor de destaque, fundo claro neutro e títulos em negrito. Valores em R$ alinhados à direita, rótulos à esquerda.
+          </div>`
+        },
+        {
+          lessonNum: 12,
+          heading: "12.6 Tabela Dinâmica — Análise por Vendedor e Região",
+          content: `Última peça de automação: a Tabela Dinâmica. Com apenas arrastar e soltar, ela responde "quanto cada vendedor vendeu em cada região", sem escrever fórmula nenhuma.\n\nPASSO A PASSO:\n1. Clique dentro da base Dados_Vendas (ou selecione o intervalo da TabelaVendas).\n2. Vá em Inserir → Tabela Dinâmica.\n3. Escolha "Nova Planilha" e renomeie a nova aba para Analise_Vendedor.\n4. No painel Campos da Tabela Dinâmica:\n   • FILTROS: (deixe vazio por ora)\n   • LINHAS: Vendedor (e abaixo, opcional: Produto)\n   • COLUNAS: Região\n   • VALORES: Soma de Total (arraste o campo Total)\n5. Formate os valores como moeda (botão direito → Formatar Células).\n\n🔀 PODER DA DINÂMICA:\nbasta reorganizar os campos para responder outra pergunta (ex.: trocar Região por Produto nas Colunas) — zero fórmula. Na Aula 13 vamos automatizar a atualização dela com uma macro.`,
+          html: `<div class="es-sheet-box" style="max-width:640px;">
+            <div class="es-sheet-titlebar">Analise_Vendedor — estrutura da Tabela Dinâmica</div>
+            <table class="mini-sheet">
+              <tr><th>Área</th><th>Campo arrastado</th></tr>
+              <tr><td>LINHAS</td><td>Vendedor</td></tr>
+              <tr><td>COLUNAS</td><td>Região</td></tr>
+              <tr><td>VALORES</td><td>Soma de Total (R$)</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 13,
+          chapter: "AULA 13: PROJETO VENDAS — DASHBOARD & CONCLUSÃO (PARTE 3) — MACROS, BOTÕES E ENTREGA DO PROJETO",
+          heading: "13.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `Última etapa do Sistema de Controle de Vendas! 🏁 Você vai preparar a impressão, automatizar o painel com macros no VBA (atualizar e imprimir com um clique), adicionar botões ao Dashboard, salvar tudo como .xlsm e, ao final, fazer a entrega ao Professor Marcos Rangel — com direito à mensagem de parabéns pela conclusão do módulo! 🎓\n\nO caminho tem 6 passos — cada passo é uma fase da finalização:\n1. Configurar a impressão do Dashboard\n2. Criar a macro AtualizarDados para a Tabela Dinâmica\n3. Criar a macro VerImprimir no Editor VBA (código manual)\n4. Criar os botões no Dashboard\n5. Salvar o projeto como .xlsm\n6. ENTREGAR AO PROFESSOR + Parabéns pela jornada 🎉\n\nCada degrau tem um check no fim da fase — marque como concluído só depois de terminar a leitura e os exercícios daquela fase. O passo 6 é a entrega.`,
+          html: `<div class="fun-highlight">
+            <strong>🎯 MISSÃO DA AULA 13:</strong> finalizar o projeto — impressão configurada, macros VBA, botões no painel, arquivo .xlsm e entrega ao professor com a celebração da conclusão de todo o módulo Excel.
+          </div>
+          <div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">Sistema_Controle_Vendas.xlsm</div>
+            <table class="mini-sheet">
+              <tr><td>🖨️ Impressão</td><td>Configurada em 1 página</td></tr>
+              <tr><td>⚡ Macros</td><td>AtualizarDados + VerImprimir</td></tr>
+              <tr><td>🔘 Botões</td><td>Atualizar / Imprimir no Dashboard</td></tr>
+              <tr><td>✅ Entregável</td><td>.xlsm anexado ao professor</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 13,
+          heading: "13.1 Configuração de Impressão — Um Relatório em Uma Página",
+          content: `O entregável precisa imprimir bonito e compacto. Vamos ajustar o Dashboard para caber numa página, com orientação paisagem.\n\nPASSO A PASSO:\n1. Esteja na aba Dashboard.\n2. Pressione Ctrl+P para abrir a visualização de impressão.\n3. Defina Orientar página → Paisagem.\n4. Em Dimensionar → Ajustar a Planilha na Página (1 página de largura × 1 página de altura).\n5. Em Margens → Personalizar, marque Centralizar na página: horizontal e vertical.\n6. Observe o Visualizar impressão: painel completo com título, cartões, resumo e gráfico.\n\n🖨️ DICA:\no mesmo VerImprimir que vamos criar como macro no Tópico 3 usará justamente essa configuração. Imprimir = apresentar seu trabalho!`,
+          html: `<div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Configurações de impressão</div>
+            <table class="mini-sheet">
+              <tr><th>Opção</th><th>Valor</th></tr>
+              <tr><td>Orientar página</td><td>Paisagem</td></tr>
+              <tr><td>Dimensionar</td><td>Ajustar a planilha na página (1×1)</td></tr>
+              <tr><td>Margens</td><td>Centralizar horizontal + vertical</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 13,
+          heading: "13.2 Macro AtualizarDados — O Painel que Se Atualiza Sozinho",
+          content: `Tabelas Dinâmicas precisam ser atualizadas quando novos dados entram (elas não "veem" a mudança sozinhas). Vamos gravar uma macro que renova todos os dados com um clique. A aba Desenvolvedor foi ativada na Aula 09 — vamos usá-la agora!\n\nPASSO A PASSO:\n1. Vá à aba Desenvolvedor → Gravar Macro.\n2. Nomeie AtualizarDados (sem espaços).\n3. Clique em OK — a gravação começou.\n4. Clique dentro da Tabela Dinâmica (aba Analise_Vendedor) e, na aba Análise de Tabela Dinâmica, clique em Atualizar (ou pressione Alt+F5).\n5. Volte ao Dashboard e clique em Desenvolvedor → Parar Gravação.\n6. Teste: altere um dado na base, depois Desenvolvedor → Macros → AtualizarDados → Executar. Os indicadores e a Tabela Dinâmica recalculam.\n\n⚡ POR QUE ISSO IMPORTA?\nSem atualizar, a Tabela Dinâmica "congela" os números antigos. A macro AtualizarDados garante que o painel sempre reflita a última venda lançada.`,
+          html: `<div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">Gravação da macro</div>
+            <table class="mini-sheet">
+              <tr><td>Nome da Macro:</td><td>AtualizarDados</td></tr>
+              <tr><td>Ação gravada:</td><td>Atualizar Tabela Dinâmica (Alt+F5)</td></tr>
+              <tr><td>Onde fica:</td><td>Esta Pasta de Trabalho</td></tr>
+              <tr><td>Executar:</td><td>Desenvolvedor → Macros → Executar</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 13,
+          heading: "13.3 Macro VerImprimir — Código VBA na Prática",
+          content: `Agora vamos escrever VBA de verdade. A macro VerImprimir abre a visualização de impressão da planilha ativa — o passo final do nosso código-manual.\n\nPASSO A PASSO:\n1. Abra o Editor VBA: Alt+F11 (ou Desenvolvedor → Visual Basic).\n2. No painel esquerdo (Project Explorer), Inserir → Módulo.\n3. Digite o código (ou cole) no módulo:\n\nSub VerImprimir()\n    ActiveWindow.SelectedSheets.PrintPreview\nEnd Sub\n\n4. Posicione o cursor dentro do código e pressione F5 para testar (abre a pré-visualização de impressão).\n5. Pressione Esc para fechar a visualização e salve o módulo (Ctrl+S).\n\n🔬 O QUE O CÓDIGO FAZ?\n• Sub VerImprimir() → inicia a sub-rotina (nomeada como a macro).\n• ActiveWindow.SelectedSheets.PrintPreview → exibe a Visualização da Impressão da planilha selecionada.\n• End Sub → finaliza. Rodou com F5.`,
+          html: `<div class="es-sheet-box" style="max-width:560px;">
+            <div class="es-sheet-titlebar">Módulo 1 — Código VBA da macro VerImprimir</div>
+            <div style="padding:10px 14px;font-family:'Courier New',monospace;font-size:0.9em;background:#F8FAFC;line-height:1.7;">
+              Sub VerImprimir()<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;ActiveWindow.SelectedSheets.PrintPreview<br>
+              End Sub
+            </div>
+          </div>`
+        },
+        {
+          lessonNum: 13,
+          heading: "13.4 Botões de Ação no Dashboard",
+          content: `Ninguém quer abrir o menu de Macros toda vez. Vamos criar botões clicáveis no Dashboard ligados às macros — a interface final do sistema.\n\nPASSO A PASSO:\n1. No Dashboard, vá em Inserir → Formas e escolha um Retângulo arredondado (ou Botão de Ação: Inserir → Botão de Ação).\n2. Desenhe o botão abaixo do título.\n3. Botão direito sobre a forma → Atribuir Macro → escolha VerImprimir → OK.\n4. Digite o texto do botão: 🖨️ Imprimir Dashboard.\n5. Crie um 2º botão 📊 Atualizar Dados e atribua a macro AtualizarDados.\n6. Estilize ambos com a cor verde da marca e texto branco centralizado.\n\n🔘 DICA:\ndepois de atribuir a macro, clique fora da forma para sair do modo edição. Um clique simples passa a disparar a macro.`,
+          html: `<div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">Botões do Dashboard</div>
+            <table class="mini-sheet">
+              <tr><th>Botão</th><th>Macro atribuída</th><th>O que faz</th></tr>
+              <tr><td>🖨️ Imprimir Dashboard</td><td>VerImprimir</td><td>Abre a visualização impressão</td></tr>
+              <tr><td>📊 Atualizar Dados</td><td>AtualizarDados</td><td>Atualiza indicadores e a TD</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 13,
+          heading: "13.5 Salvando o Projeto como .xlsm",
+          content: `Macros exigem um formato especial de arquivo. Vamos salvar o sistema no formato certo para não perder a automação.\n\nPASSO A PASSO:\n1. Clique em Arquivo → Salvar Como.\n2. Escolha o local e, em Tipo, selecione Pasta de Trabalho Habilitada para Macros (*.xlsm).\n3. Nomeie o arquivo: Sistema_Controle_Vendas.xlsm.\n4. Clique em Salvar. Confirme que o arquivo tem o ícone e a extensão .xlsm.\n5. Feche e reabra o arquivo para garantir que as macros e os botões voltam a funcionar no abrir.\n\n⚠️ ATENÇÃO:\nse salvar como .xlsx, o Excel descarta as macros (elas só vivem em .xlsm). Este é o arquivo que você vai enviar ao professor!`,
+          html: `<div class="es-sheet-box" style="max-width:520px;">
+            <div class="es-sheet-titlebar">Salvar como...</div>
+            <table class="mini-sheet">
+              <tr><th>Campo</th><th>Valor</th></tr>
+              <tr><td>Nome do arquivo</td><td>Sistema_Controle_Vendas.xlsm</td></tr>
+              <tr><td>Tipo</td><td>Pasta de Trabalho Habilitada para Macros (*.xlsm)</td></tr>
+              <tr><td>Motivo</td><td>Preservar as macros VBA</td></tr>
+            </table>
+          </div>`
+        },
+        {
+          lessonNum: 13,
+          heading: "13.6 Entrega ao Professor & Parabéns pela Jornada 🎓",
+          content: `Seu Sistema de Controle de Vendas está pronto! Agora vem o passo mais importante: entregar o arquivo para o professor auditar e, depois, receber os parabéns pela conclusão do módulo.\n\nPASSO A PASSO:\n1. Confira as 4 planilhas: Dados_Vendas, Dashboard, Analise_Vendedor e Configuracoes.\n2. Rode o botão 📊 Atualizar Dados e depois 🖨️ Imprimir Dashboard para o ensaio final.\n3. Salve mais uma vez o arquivo Sistema_Controle_Vendas.xlsm.\n4. ANEXE o arquivo .xlsm na mensagem para o professor Marcos Rangel (WhatsApp (19) 99130-6907 ou e-mail), com um texto como o modelo abaixo.\n\n🔎 PARA O PROFESSOR AUDITAR:\no arquivo será verificado quanto a — 4 planilhas organizadas, validação de dados, fórmulas automáticas (LIN e F2*G2), SOMASE, gráfico, Tabela Dinâmica, macros AtualizarDados e VerImprimir e botões do Dashboard. Depois de enviar, marque o check!`,
+          html: `<div class="es-sheet-box" style="max-width:600px;">
+            <div class="es-sheet-titlebar">Modelo de mensagem para envio ao professor</div>
+            <div style="padding:10px 14px;font-family:'Inter',sans-serif;font-size:0.92em;background:#F8FAFC;line-height:1.7;">
+              Prof. Marcos Rangel, estou entregando o <strong>Projeto Final — Sistema de Controle de Vendas (Tech Solutions)</strong> em anexo (.xlsm).<br>
+              Concluí a estruturação, o Dashboard com indicadores e o gráfico, a Tabela Dinâmica, as macros e os botões. Aguardo sua auditoria. Obrigado! 🙌
+            </div>
+          </div>
+          <div class="fun-highlight">
+            <strong>🎉 ENTREGA CONCLUÍDA =</strong> mensagem de parabéns pela conclusão das 13 aulas do Módulo Excel da WR Capacitação Profissional — do primeiro clique no Excel ao sistema completo com macros!
+          </div>`
+        },
+        {
+          lessonNum: 13,
+          heading: "13.7 Resumo da Aula — O Fim da Jornada do Módulo Excel",
+          content: `PARA FIXAR O APRENDIZADO:\n• Impressão: orientação paisagem, Ajustar a Planilha na Página (1×1) e centralizar na página transformam o Dashboard num relatório profissional de uma página.\n• Gravar Macro (Aula 09 + 13): Desenvolvedor → Gravar Macro → nomear AtualizarDados → clicar em Atualizar (ou Alt+F5) na Tabela Dinâmica → Parar Gravação. Agora um clique atualiza o painel inteiro.\n• Código VBA manual: Alt+F11 → Inserir → Módulo → Sub VerImprimir() / ActiveWindow.SelectedSheets.PrintPreview / End Sub → testar com F5.\n• Atribuir Macro a uma forma: botão direito na forma → Atribuir Macro → escolher VerImprimir ou AtualizarDados → clicar fora para ativar.\n• Salvamento: .xlsx não guarda macros; é preciso Pasta de Trabalho Habilitada para Macros (*.xlsm).\n• Entrega: anexar Sistema_Controle_Vendas.xlsm em mensagem ao Prof. Marcos Rangel (WhatsApp (19) 99130-6907).\n\n🔒 REGRA DE OURO:\nO Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, validação de dados, fórmulas e funções, Tabelas Dinâmicas, gráficos e a automação com macros VBA. Você saiu do básico e chegou a um sistema funcional — essa é a jornada completa do Microsoft Excel! 🚀`
         }
       ]
     },
@@ -1671,7 +2776,7 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
     const moduleLessonTitles = {
       internet: lessonTitles,
       windows: {
-        1: "Aula 01: Conceito e Estrutura do Sistema Operacional (Windows)",
+        1: "Aula 01: A História e o Funcionamento dos Computadores",
         2: "Aula 02: Área de Trabalho e Barra de Tarefas",
         3: "Aula 03: Gerenciamento de Arquivos e Pastas",
         4: "Aula 04: Configurações de Sistema e Painel de Controle",
@@ -1691,7 +2796,11 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
         6: "Aula 06: Datas e Horas no Excel — HOJE, AGORA, DATA, DIA, MÊS, ANO, DIAS360, DIAS.ÚTEIS",
         7: "Aula 07: Contas Pessoais & Tabela Dinâmica — Planilha Base, Campos, Filtros e Estrutura de Tópicos",
         8: "Aula 08: Controle de Estoque com a Função SOMASE — Tabelas, Validação de Dados, Fórmulas, Totais e Tabela Dinâmica",
-        9: "Aula 09: Macros & Introdução ao VBA — Aventura Capiberica: Aprendendo Lógica de Programação no Excel"
+        9: "Aula 09: Macros & Introdução ao VBA — Aventura Capiberica: Aprendendo Lógica de Programação no Excel",
+         10: "Aula 10: VBA Avançado — Objetos, Variáveis, Condicionais, Loops e Mini-Projeto",
+         11: "Aula 11: Projeto Vendas — Estruturação (Parte 1) — O Sistema de Controle de Vendas da Tech Solutions",
+         12: "Aula 12: Projeto Vendas — Automação & Regras (Parte 2) — Dashboard e Tabela Dinâmica",
+         13: "Aula 13: Projeto Vendas — Dashboard & Conclusão (Parte 3) — Macros, Botões e Entrega do Projeto"
       }
     };
 
@@ -1710,6 +2819,21 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
       alert("Por favor, permita pop-ups no seu navegador para visualizar e baixar o PDF completo da aula.");
       return;
     }
+
+    // Figura com legenda. Aceita string (imagem sem legenda) ou { src, caption }.
+    // Toda imagem da apostila precisa de uma frase explicando o que o aluno deve olhar.
+    const figure = (item) => {
+      const src = typeof item === 'string' ? item : (item && item.src);
+      const caption = typeof item === 'string' ? '' : ((item && item.caption) || '');
+      if (!src) return '';
+      const captionBlock = caption
+        ? `<p class="pdf-img-caption">📷 <em>${caption}</em></p>`
+        : '';
+      return `<div class="pdf-img-container">
+          <img src="${resolveImagePath(src)}" alt="${caption || 'Ilustração Didática'}">
+          ${captionBlock}
+        </div>`;
+    };
 
     const htmlContent = `
       <!DOCTYPE html>
@@ -1876,6 +3000,13 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
             background: #FFFFFF;
             padding: 4px;
           }
+          .pdf-img-caption {
+            margin: 6px 0 0 0;
+            font-size: 11.5px;
+            color: #6B4E3D;
+            text-align: center;
+            font-style: italic;
+          }
           .pdf-img-grid {
             display: flex;
             justify-content: center;
@@ -1883,6 +3014,25 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
             flex-wrap: wrap;
             margin: 20px 0 14px 0;
             page-break-inside: avoid;
+          }
+          /* dentro do grid cada item ja e um .pdf-img-container, entao zera a margem externa */
+          .pdf-img-grid > .pdf-img-container {
+            margin: 0;
+            width: 48%;
+            min-width: 240px;
+          }
+          /*imagesWide: uma imagem por linha, para-printed quando a captura tem
+            texto pequeno (ex.: caixas de dialogo do Excel e do VBA). */
+          .pdf-img-grid-wide {
+            flex-direction: column;
+            align-items: center;
+          }
+          .pdf-img-grid-wide > .pdf-img-container {
+            width: 100%;
+          }
+          .pdf-img-grid-wide > .pdf-img-container img {
+            max-width: 100%;
+            max-height: 620px;
           }
           .pdf-img-grid img {
             max-width: 48%;
@@ -2053,9 +3203,9 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
                   <div class="step-item-block" style="margin-top:14px; margin-bottom:18px; padding-bottom:12px; border-bottom:1px dashed #E6D2C1; page-break-inside:avoid;">
                     <p style="font-size:13.5px; color:#20130B; margin-bottom:8px; line-height:1.6;">${st.text}</p>
                     ${st.image ? `
-                      <div class="pdf-img-container" style="text-align:center; margin:14px 0 10px 0;">
-                        <img src="${resolveImagePath(st.image)}" alt="${st.caption || 'Ilustração Didática'}" style="max-width:96%; max-height:480px; width:auto; height:auto; object-fit:contain; border-radius:10px; border:1.5px solid #E6D2C1; box-shadow:0 4px 12px rgba(0,0,0,0.1); background:#FFFFFF; padding:4px;">
-                        ${st.caption ? `<p style="margin-top:6px; font-size:11.5px; color:#6B4E3D; text-align:center; font-style:italic;">📷 <em>${st.caption}</em></p>` : ''}
+                      <div class="pdf-img-container">
+                        <img src="${resolveImagePath(st.image)}" alt="${st.caption || 'Ilustração Didática'}">
+                        ${st.caption ? `<p class="pdf-img-caption">📷 <em>${st.caption}</em></p>` : ''}
                       </div>
                     ` : ''}
                   </div>
@@ -2064,13 +3214,11 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
             ` : ''}
 
             ${sec.images && sec.images.length ? `
-              <div class="pdf-img-grid">
-                ${sec.images.map(img => `<img src="${resolveImagePath(img)}" alt="Ilustração Didática">`).join('')}
+              <div class="pdf-img-grid${sec.imagesWide ? ' pdf-img-grid-wide' : ''}">
+                ${sec.images.map(img => figure(img)).join('')}
               </div>
             ` : sec.image ? `
-              <div class="pdf-img-container">
-                <img src="${resolveImagePath(sec.image)}" alt="Ilustração Didática">
-              </div>
+              ${figure({ src: sec.image, caption: sec.imageCaption || sec.caption || '' })}
             ` : ''}
 
             ${sec.boxTitle ? `

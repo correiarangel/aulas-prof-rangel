@@ -25,6 +25,13 @@ Regras aplicáveis (persistentes — AGENTS.md, SPEC §6.1, SDD-AULA-08):
 
 **Tema: Capiberica** (continuação da aventura) + screenshots reais dos objetos + código VBA ilustrado em HTML (`mini-sheet`/`fun-highlight`).
 
+### 1.1 Decisão do Professor (24/09/2026) — este SDD é o plano oficial da Aula 10
+
+- Autorizado **seguir este SDD (VBA Avançado)** como definição da Aula 10. A antiga "Aula 10: Revisão Geral & Preparatório" (card do hub, senha `xj010`) será **substituída** por "VBA Avançado (continuação da Aula 09)". Isenção de novo SDD: não criar spec baseada na referência de revisão.
+- O material `AulaOrigem/excel/Aula-10-Excel2010_Revisao/` (incl. `images/image1..6.png`), fornecido pelo professor para estudo, foi **avaliado e fica arquivado como referência — NÃO será usado** no conteúdo da Aula 10 (a aula é continuação direta da Aula 09).
+- **Implementação agendada para a próxima sessão** — seguir §14 (Plano de Execução) e validar com §11 (Checklist).
+- Lembrar da **lição do IIFE de FASE 0 (24/09)**: todo IIFE de gating deve rodar em `DOMContentLoaded` (§8.5) — quando implementar, **não** reintroduzir o bug dos checks.
+
 ---
 
 ## 2. Problema Identificado (auditoria de 11/09/2026)
@@ -119,12 +126,19 @@ Paths relativos: `../../assets/img/excel/a10/imageN.png`.
 
 ### 8.2 `modules/excel/index.html`
 
+**Padrão a copiar:** a Aula 09 já implementada e validada — `screen-lesson-9` (linha ~6428), FASE 0 `l9-fase-0` (~6468) com `l9-checklist-status`/`l9-complete-hint`/`l9-start-btn`/`l9-start-hint`, abas `tab-l9-1..6` (6ª abre o quiz), fases `l9-phase-1..5`, checks `.l9-check` em `.phase-step-check` com `.l9-lock-hint`, gamificação `gamify-label-9`/`gamify-fill-9`/`gamify-badge-box-9`, `btn-read-l9-1..5` e quiz `openFixationPanel(9)`/`calcFixation(9)`. **Espelhar tudo com sufixo `10`.**
+
 | Alteração | Detalhe |
 |:--|:--|
-| Bloco novo da Aula 10 | Mensagem de bloqueio com senha `xj010` → conteúdo `l10-unlock`; fases `l10-phase-0..5`; checks `l10-check-1..6` |
-| Conteúdo | Migrar as antigas 9.5/9.6/9.7 (Variáveis/Condicionais/Loops) reescritas (§5) + nova fase 10.1 (objetos, imagens 12–16) + 10.5 (mini-projeto) |
-| FASE 0 | Revisão-relâmpago da 09 + roteiro dos 6 passos + contador "X / 6" + `l10-check-1` |
-| Navegação | Inserir a Aula 10 no seletor/menu do módulo (agora aulas 1–10) + senha `xj010` |
+| Card do hub (linha ~635) | Trocar `alertLockedLesson('Aula 10: Revisão Geral & Preparatório')` → `promptLessonPassword(10, 'VBA Avançado: …')`; `lesson-name` → "VBA Avançado (continuação da Aula 09)"; mantém "🔒 (Senha `xj010`)" |
+| Recap do módulo (linha ~8360) | Item "10" "Revisão Geral & Preparatório" → "VBA Avançado (continuação da Aula 09)" (ainda `✅` após destravar/ler) |
+| Nova `section#screen-lesson-10` | Inserir quando a Aula 09 terminar (após tela 9). Topo com Voltar/Imprimir/PDF (espelho da tela 9); barra de progresso gamificada; FASE 0 `l10-fase-0`: título/numbering "Módulo 3 • Aula 10 — VBA Avançado", objetivo Capiberica, revisão-relâmpago "Hello World" da 09, roteiro **6 passos**, contador `l10-checklist-status` "▢ 0 / 6 passos concluídos", `l10-complete-hint`, botão `l10-start-btn` → `scrollIntoView('#l10-phase-1')` |
+| Fases/abas | `l10-phase-1..5` (10.1 Objetos, 10.2 Variáveis, 10.3 Condicionais, 10.4 Loops, 10.5 Mini-projeto) + abas `tab-l10-1..6` (6ª = `onclick="openFixationPanel(10)"` "Exercício de 5 Perguntas 📝") |
+| Checks | `l10-check-1..6` em `.phase-step-check`: `l10-check-1` no **rodapé da FASE 0 (§8.4)** e `l10-check-2..6` ao fim de 10.1..10.5. Botões `btn-read-l10-1..5` (um por fase; FASE 0 sem botão de leitura, igual à 09) chamando `onclick="markTopicRead(10, N)"` |
+| Conteúdo | Migrar as antigas 9.5/9.6/9.7 (Variáveis/Condicionais/Loops) reescritas (§5) + nova fase 10.1 (objetos, imagens 12–16) + 10.5 (mini-projeto). Conferir idempotência dos checks ao reutilizar texto |
+| Gamificação | `gamify-label-10` "Progresso da Leitura" / `gamify-fill-10` / `gamify-badge-box-10`; registros JS: `readStatus[10] = [false×5]` (5 tópicos) + `QUESTOES_L10` (5 perguntas) + `QUIZ_CFG[10]` + `userAnswers[10]` + painel `l10-fixation` com `quiz-trail-10` e `calcFixation(10)` (mecânica = Aula 09) |
+| JS de apoio | `openFixationPanel` `lessonTitleMap` ganha `10: "Aula 10"`; `markTopicRead`/`updateGamification` já atendem 10 por padrão (só `lessonNum >= 11` desvia para projeto) |
+| Extras | `node --check` nos blocos inline (regra AGENTS.md); `readStatus` inicial e redirecionamento `screen-hub` intactos |
 
 ### 8.3 `assets/js/pdf-lessons.js`
 
@@ -142,10 +156,29 @@ Paths relativos: `../../assets/img/excel/a10/imageN.png`.
 
 - 🎯 Objetivo (história: agora o Capiberica vai automatizar de verdade).
 - 🔄 Revisão-relâmpago da Aula 09 (recap da sub-rotina Hello World).
-- 🗺️ Roteiro numerado dos **6 passos** (chips).
+- 🗺️ Roteiro numerado dos **6 passos** (chips: 1 Revisar Aula 09, 2 Objetos, 3 Variáveis, 4 Condicionais, 5 Loops, 6 Mini-projeto).
 - 🏁 Resultado final (mini-projeto com MsgBox).
-- ⚙️ Preparação: apenas `l10-check-1`.
-- ▶ Botão "Começar a Aula" rolando para `#l10-phase-1`.
+- ⚙️ **`l10-check-1` no rodapé da FASE 0** (antes do botão "Começar a Aula"), dentro de `.phase-step-check` com `.l10-lock-hint` — ele é o passo 1 da cadeia: marca quem revisou a Aula 09 e libera `l10-check-2`. Contador da FASE 0 conta **6** (`l10-checklist-status`).
+- ▶ Botão "Começar a Aula" (`l10-start-btn`) rolando para `#l10-phase-1` (sempre habilitado, igual à Aula 09).
+
+> ⚠️ **Atenção de UX:** a FASE 0 da Aula 09 **não** tem check (5 checks, um por fase). A Aula 10 é o único caso com `l10-check-1` no rodapé da FASE 0 (decisão §7). Ao implementar, conferir que o gating da cadeia trata os 6 checks e que o contador mostra "X / 6".
+
+### 8.5 ⚠️ Lição aprendida — IIFEs de gating DEVEM rodar em `DOMContentLoaded` (bug 24/09)
+
+Nas aulas 2, 3, 8, 9, 11, 12 e 13, os IIFEs de FASE 0/checks executavam **antes** do DOM estar pronto → os `.lN-check` não existiam no `querySelectorAll`, os `disabled`/`opacity` não eram aplicados e a cadeia não encadeava (checks 0–2 travados, status errado). **Não reintroduzir este bug na Aula 10.**
+
+- Envolver TODO o bloco `<script>` dos checks em:
+
+```html
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  ... querySelectorAll('.l10-check') ... refresh() ... addEventListener('change', refresh) ...
+});
+</script>
+```
+
+- Estrutura idêntica à da tela 9 (`#l10-fase-0` → `closest('article')`, `.l10-check`, `.phase-step-check`, `.l10-lock-hint`, `l10-checklist-status`, `l10-complete-hint`, `l10-start-hint`).
+- Após editar o HTML: `node --check` no(s) bloco(s) inline e teste visual (CDP) da cadeia completa da primeira à última fase.
 
 ---
 
@@ -164,9 +197,10 @@ Paths relativos: `../../assets/img/excel/a10/imageN.png`.
 
 ```
 node --check assets/js/pdf-lessons.js
-node /tmp/opencode/check-inline.js
-# CSS balanceado (cada abertura/ fechamento { })
-# Visual: abrir Aula 10 no navegador com senha xj010, percorrer as fases, baixar PDF 10 e conferir: 5 imagens na ordem §4 + html nas demais + nenhum trecho literal do tutorial
+node --check  # bloco(s) inline do HTML após qualquer edição
+# Visual (harness de Aula 09, disponível em /tmp/opencode/pdftest/): abrir Aula 10 com senha xj010,
+#   conferir FASE 0 (contador "0 / 6", check-1 no rodapé liberando check-2), percorrer fases até 100%,
+#   baixar PDF 10 e conferir: 5 imagens na ordem §4 + html nas demais + nenhum trecho literal do tutorial
 # Conferir que a Aula 09 (SDD-09) continua íntegra e sem os tópicos migrados
 ```
 
@@ -175,27 +209,47 @@ node /tmp/opencode/check-inline.js
 ## 11. Checklist de Validação (pós-implementação)
 
 - [ ] 5 imagens copiadas para `assets/img/excel/a10/` (configuração nova `a10`)
-- [ ] Bloco Aula 10 funcional no site (senha `xj010`, fases `l10-phase-0..5`)
+- [ ] Card do hub (linha ~635) com `promptLessonPassword(10, 'VBA Avançado: …')`, senha `xj010` e recap (~8360) renomeado
+- [ ] `screen-lesson-10` no ar, espelhando a tela 9 (topo, gamificação, FASE 0, abas, fases, checks, botões de leitura, quiz)
+- [ ] Bloco Aula 10 funcional no site (senha `xj010`, fases `l10-phase-1..5`, abas `tab-l10-1..6`)
 - [ ] Migradas e reescritas: Variáveis (10.2), Condicionais (10.3), Loops (10.4) + nova Objetos (10.1) + Mini-projeto (10.5)
-- [ ] FASE 0 com revisão-relâmpago da 09 + roteiro "6 passos" + contador "X / 6"
-- [ ] `l10-check-1..6` distribuídos, um por fase, gatinho sequencial
-- [ ] PDF Aula 10: 5 telas na ordem §4 + `html` nas fases sem screenshot; screenshots não repetidos
+- [ ] FASE 0 com revisão-relâmpago da 09 + roteiro "6 passos" + contador "X / 6" + `l10-check-1` no rodapé
+- [ ] `l10-check-1..6` distribuídos, um por passo, gating sequencial **em `DOMContentLoaded`** (§8.5)
+- [ ] Gamificação: `readStatus[10]` (5 tópicos), `btn-read-l10-1..5`, `gamify-label/fill/badge-10`
+- [ ] Quiz de fixação (5 perguntas): `QUESTOES_L10`, `QUIZ_CFG[10]`, `userAnswers[10]`, `l10-fixation`, `calcFixation(10)`, `lessonTitleMap` + 10
+- [ ] PDF Aula 10 (`pdf-lessons.js`, section `lessonNum: 10`): 5 telas na ordem §4 + `html` nas fases sem screenshot; screenshots não repetidos
 - [ ] Nenhum parágrafo ≥ 8 palavras idêntico ao HTML da AulaOrigem (paráfrase)
-- [ ] Quiz de fixação (5 perguntas) funciona
-- [ ] `node --check assets/js/pdf-lessons.js` → OK
+- [ ] `node --check assets/js/pdf-lessons.js` → OK; blocos inline OK
+- [ ] Suíte completa (report) sem regressão nas Aulas 09 e 11–13
 
 ---
 
 ## 12. Dependências & Integração
 
-- **Bloco por**: só implementar após a Aula 09 (SDD-09) estar no ar — a FASE 0 referencia a revisão dela.
+- **Bloco por**: REsolvido — a Aula 09 (SDD-09) está **implementada e validada** no site (tela 9 completa, com quiz e gamificação); a FASE 0 da Aula 10 referencia a revisão dela.
 - **Espec mestre**: atualizar `Docs/SPEC-EXCEL-MASTER.md` — Aula 10 deixa de ser "Revisão Geral & Preparatório" e vira **VBA Avançado (continuação da Aula 09)**; Aulas 11–13 seguem Projeto Vendas (SPC). Manter senha `xj010`.
 - **Continuidade**: registrar em `Docs/CONTINUACAO.md` e reforçar regra antiplágio em `AGENTS.md` ao implementar.
+- **Imagens**: pasta `assets/img/excel/a10/` a criar com as 5 PNGs (adicionar configuração `a10` em `pdf-lessons.js`).
 
 ---
 
 ## 13. Status
 
 **Criado em:** 11/09/2026.
-**Status:** SDD entregue para revisão — implementação pendente.
-**Próximo passo:** revisão do professor → implementar §8 rodando §10 → atualizar `SPEC-EXCEL-MASTER.md` → atualizar `Docs/CONTINUACAO.md` e `AGENTS.md`.
+**Aprovado em:** 24/09/2026 (professor) — substitui a "Aula 10: Revisão Geral & Preparatório".
+**Status:** SDD pronto para implementação — agendado para a **próxima sessão**.
+**Próximo passo:** implementar §8 rodando §10 → atualizar `SPEC-EXCEL-MASTER.md` → atualizar `Docs/CONTINUACAO.md`.
+
+---
+
+## 14. Plano de Execução — próxima sessão (ordem sugerida)
+
+1. **Imagens**: criar `assets/img/excel/a10/` e copiar `image2.png`, `image9.png`, `image10.png`, `image13.png`, `image15.png` de `AulaOrigem/VBA Excel_ Como começar e tornar seu trabalho mais fácil/images/`.
+2. **`pdf-lessons.js`**: adicionar no objeto `excel` a section `lessonNum: 10` (capítulo + sections 10.0–10.5 seguindo §8.3), configuração `a10`, e checar `moduleLessonTitles.excel` / navegação de capítulos. Rodar `node --check`.
+3. **`index.html`**:
+   a. Renomear card do hub (linha ~635) e item do recap (linha ~8360);
+   b. Adicionar `screen-lesson-10` espelhando a tela 9 (ids com sufixo `10`);
+   c. Adicionar registros JS: `readStatus[10]`, `QUESTOES_L10`, `QUIZ_CFG[10]`, `userAnswers[10]`, `lessonTitleMap` + 10;
+   d. IIFE dos checks da FASE 0 **dentro de `DOMContentLoaded`** (§8.5).
+4. **Validar**: `node --check` (pdf-lessons.js + blocos inline); teste visual CDP com senha `xj010` (FASE 0 "0 / 6" → cadeia 100% → quiz) e **PDF 10** (5 imagens na ordem §4, `html` nas demais, sem screenshots repetidos); conferir que Aula 09 e 11–13 seguem íntegras.
+5. **Registrar**: `SPEC-EXCEL-MASTER.md` (Aula 10 = VBA Avançado, 📝 Especificada → ⚙️ implementada após validar), `CONTINUACAO.md` (concluído + próximo), e reforçar regra antiplágio se necessário.

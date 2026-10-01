@@ -54,6 +54,8 @@ O **Portal Didático de Informática Básica** é uma solução educacional dese
 
 | Módulo / Aula | Conteúdo Temático | Senha Secreta | Exibição na Interface |
 | :--- | :--- | :--- | :--- |
+| **Módulo 1 / Aula 01** | A História e o Funcionamento dos Computadores (Windows) | `wr0126` | 🔒 Oculta (Acesso Restrito) |
+| **Módulo 1 / Aula 07** | Segurança e Antivírus (Windows) | `wr0726` | 🔒 Oculta (Acesso Restrito) |
 | **Módulo 1 / Aula 08** | Diagnóstico, Restauração e Mídia USB (Windows) | `wr0926` | 🔒 Oculta (Acesso Restrito) |
 | **Módulo 5 / Aula 01** | Introdução à Internet e Navegação Segura | `a001` | 🔒 Oculta (Acesso Restrito) |
 | **Módulo 5 / Aula 02** | Navegando na Internet & História do HTML | `b002` | 🔒 Oculta (Acesso Restrito) |

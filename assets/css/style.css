@@ -27,6 +27,21 @@
   --whatsapp-deep: #1DA851;
   --line-dark: #422A1A;
   --line-light: #E6D2C1;
+
+  /* --- TOKENS DE CONTRASTE PARA SUPERFÍCIE CLARA (obrigatório) ------
+     --ink-soft (#D9C3B0) e --ink-light (#F4E8DC) são claros: servem
+     para fundo ESCURO. Sobre papel (#FFF9F2) eles davam 1,1:1 a 1,7:1
+     (ilegíveis) — erro que se repetia em todo texto secundário.
+     Sobre superfície clara use SEMPRE estes:
+       --ink-muted   texto secundário/label   10,2:1 em --paper-beige
+       --amber-deep  título/destaque âmbar     5,6:1
+       --teal-deep   texto/realce terracota   8,0:1
+       --teal-btn    FUNDO com texto branco    5,2:1  (--teal puro dava 3,6:1)
+     Cores medidas por node/Python; ver /tmp/opencode/test-contraste.js. */
+  --ink-muted: #4E3A2A;
+  --amber-deep: #A8480A;
+  --teal-btn: #C2410C;
+  --ink-on-dark: #F4E8DC;  /* texto CLARO para fundo escuro (chips, terminais) */
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 10px;
@@ -149,7 +164,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--teal);
+  background: var(--teal-btn);
   color: #FFFFFF !important;
   border-radius: 99px;
   padding: 9px 18px;
@@ -353,6 +368,22 @@ a:hover {
   background: var(--teal-deep);
   color: #FFFFFF;
   border-color: var(--teal-deep);
+}
+
+/* Aba de um tópico já lido: ganha um contorno verde e o ✓ do próprio texto.
+   A classe é aplicada por paintReadButton() a partir do readStatus salvo.
+   O fallback cobre os outros módulos, que compartilham este style.css mas
+   não definem --excel-green-dark (só a página do Excel faz isso no :root). */
+.topic-tab-btn.topic-done {
+  border-color: var(--success);
+  color: var(--excel-green-dark, #15803D);
+  background: rgba(34, 197, 94, 0.10);
+}
+
+.topic-tab-btn.topic-done.active {
+  background: var(--excel-green-dark, #15803D);
+  color: #FFFFFF;
+  border-color: var(--excel-green-dark, #15803D);
 }
 
 /* Individual Topic Phase Section */
@@ -579,9 +610,11 @@ a:hover {
 }
 
 .btn-primary {
-  background: var(--teal);
+  /* --teal-btn (#C2410C): branco sobre --teal (#EA580C) dava 3,56:1
+     e reprovava WCAG AA. O terracota continua o mesmo, só mais fundo. */
+  background: var(--teal-btn);
   color: #FFFFFF !important;
-  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+  box-shadow: 0 8px 20px rgba(194, 65, 12, 0.3);
 }
 
 .btn-primary:hover {
@@ -1140,6 +1173,14 @@ a:hover {
   border-color: var(--success);
 }
 
+/* Botão de leitura bloqueado pelo gating sequencial (Aulas 11-13):
+   âmbar em vez do verde de "concluído", para não parecer clicável. */
+.read-check-btn.blocked {
+  background: #FEF3C7;
+  color: #92400E;
+  border-color: #F59E0B;
+}
+
 .phase-locked-msg {
   display: none;
   font-size: 14px;
@@ -1344,6 +1385,41 @@ a:hover {
 }
 
 /* =========================================================
+ * CONTEXTO DE SUPERFÍCIE CLARA — CONTRASTE OBRIGATÓRIO
+ * -------------------------------------------------------------
+ * Os containers de leitura (papel), os painéis de quiz/resultado,
+ * as caixas de e-mail e o cartão do painel Linux são CLAROS.
+ * Dentro deles, --ink-soft/--ink-light (claros, pensados para
+ * fundo escuro) ficavam ilegíveis: 1,62:1 no papel, 1,15:1 na
+ * caixa de fato, 1,21:1 nos parágrafos do painel Linux.
+ * Redefinir os dois tokens para valores ESCUROS dentro desses
+ * containers conserta de uma vez as dezenas de `color:var(--ink-soft)`
+ * inline espalhados pelas aulas dos 5 módulos, sem tocar nelas.
+ *
+ * NÃO aplicar em #linux-panel (o overlay em si é escuro): só no
+ * .linux-panel-card e filhos, que são brancos.
+ * Superfícies escuras (--card-brown, #2D251E) definem a cor do
+ * texto explicitamente e por isso não entram aqui.
+ * ========================================================= */
+.lesson-reading-card,
+.fixation-panel,
+.card-quiz,
+.question-card-item,
+.option-btn-card,
+.opt,
+.email-panel,
+.topic-tab-btn,
+.linux-panel-card,
+.linux-fact,
+.linux-card,
+.linux-tab-btn,
+.mini-sheet,
+.es-sheet-box {
+  --ink-soft: #4E3A2A;
+  --ink-light: #1E120A;
+}
+
+/* =========================================================
  * REGRAS MOBILE GLOBAIS — APROVEITAR 100% DA LARGURA
  * Norma obrigatória para TODAS as telas (aulas atuais e
  * futuras) em dispositivos ≤767px:
@@ -1395,27 +1471,33 @@ a:hover {
     padding: 14px 10px !important;
   }
 
-  /* Footers de quiz (Anterior / ✓ Salvo / Próxima) — 1 linha no mobile:
-     .nav-row é usado por TODOS os footers de quiz dos 5 módulos e não tem
-     regra CSS própria; sem flex os 3 itens caem em fluxo de bloco e
-     empilham em coluna no celular (bug reportado: "fica em coluna"). */
+  /* Footers de quiz (Anterior / ✓ Salvo / Próxima) — COLUNA no mobile.
+     Regra do professor: no celular os 3 itens do rodapé de quiz devem
+     empilhar verticalmente, um abaixo do outro, e NÃO em uma linha
+     espremida. Uma versão anterior desta regra fazia o contrário
+     (flex-wrap:nowrap), o que deixava "✓ Salvo automaticamente" e o
+     botão "↺ Recomeçar" ilegíveis no meio da linha.
+     .nav-row é usado por TODOS os footers de quiz dos 5 módulos. */
   .nav-row {
     display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 10px;
     flex-wrap: nowrap;
   }
   .nav-row .btn {
-    white-space: nowrap;
+    white-space: normal;
     flex: 0 0 auto;
+    width: 100%;
   }
   .nav-row > span {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
+    width: 100%;
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
     text-align: center;
   }
 
@@ -1425,6 +1507,58 @@ a:hover {
   .function-lab-container {
     padding: 12px 10px !important;
     border-radius: 10px;
+  }
+
+  /* Cabeçalho dos módulos (.nav-container) — sem transbordo horizontal.
+     Bug pré-existente em ≤400px: marca ("Prof. Marcos Rangel") + grupo
+     direito (badge do módulo + link "WR Capacitação") somavam ~33px a mais
+     que a viewport, gerando scroll horizontal de 34px que empurrava TODAS
+     as telas (hub, leitura, quiz). O grupo direito é um div inline sem
+     classe, por isso o alvo é .nav-container > div.
+
+     O padding lateral do CABEÇALHO (.header-nav, 24px herdado da regra de
+     desktop) é a segunda fonte de espaço perdido: o .nav-container fica
+     correto (4px) mas fica cercado por 24px do pai, tirando ~48px úteis da
+     largura no celular. Por isso o alvo também precisa ser o wrapper. */
+  .header-nav {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+  .nav-container {
+    max-width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    padding: 0 4px;
+  }
+  .nav-container > div {
+    max-width: 100% !important;
+    min-width: 0;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  .nav-container .nav-link-wr,
+  .nav-container .eyebrow-badge {
+    max-width: 100%;
+  }
+
+  /* Painel extra "Saiba mais: Linux" (Aula 1 do Windows) — overlay fixo.
+     Sem regra, o card centralizado mantém 28px de padding e o conjunto
+     (padding do overlay + padding do card) deixa sobras laterais no mobile. */
+  .linux-panel {
+    padding: 4px !important;
+  }
+  .linux-panel-card {
+    padding: 18px 8px !important;
+    border-radius: var(--radius-sm);
+  }
+  .linux-tab-bar {
+    gap: 4px !important;
+  }
+  .linux-tab-btn {
+    flex: 1 1 auto;
+    font-size: 12px !important;
+    padding: 8px 4px !important;
+    text-align: center;
   }
 }
 
