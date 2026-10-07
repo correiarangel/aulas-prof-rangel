@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Simulador Binário ↔ ASCII — Medidas de Armazenamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<style>
+:root{--bg:#F5F1EC;--card-brown:#FFF7EC;--amber:#EA580C;--amber-dark:#8E2C07;--teal:#0F766E;--teal-deep:#0A5A52;--ink:#20130B;--ink-soft:#A38470;--line:#F0D9B5;--line-dark:#D8C39A;--radius-sm:10px;--radius-md:14px;--radius-lg:18px;--shadow-sm:0 1px 0 rgba(32,19,11,.04),0 2px 10px rgba(32,19,11,.06);--shadow-md:0 10px 40px -20px rgba(234,88,12,.25)}
+body{background:var(--bg);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);margin:0;padding:0;line-height:1.6}
+.container{max-width:980px;margin:0 auto;padding:clamp(12px,2.5vw,24px)}
+.header{background:linear-gradient(135deg,#1E130B 0%,#321F12 100%);color:#fff;border-radius:var(--radius-lg);padding:clamp(16px,3vw,28px);box-shadow:var(--shadow-md);border-bottom:4px solid var(--amber);margin-bottom:clamp(16px,2.5vw,24px)}
+.header h1{font-family:Fraunces,serif;font-size:clamp(20px,4.5vw,36px);margin:0;line-height:1.15}
+.header p{margin:6px 0 0;color:#F2D7B3;font-size:clamp(13px,2.5vw,15px);opacity:.95}
+.card{background:var(--card-brown);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:clamp(16px,3vw,24px);margin-bottom:clamp(14px,2.5vw,20px)}
+.card h2{margin:0 0 clamp(10px,2vw,16px);font-size:clamp(16px,3vw,20px);color:var(--amber-dark)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:clamp(12px,2vw,18px);padding:6px;background:#FFF2DC;border:1px solid var(--line);border-radius:999px}
+.tab{flex:1 1 auto;min-width:140px;padding:clamp(8px,2vw,10px) clamp(10px,2vw,14px);border:none;border-radius:999px;background:transparent;color:var(--ink-soft);font-weight:600;font-size:clamp(13px,2.2vw,14px);cursor:pointer;transition:.15s ease;white-space:nowrap}
+.tab.active{background:#fff;color:var(--amber-dark);box-shadow:0 1px 0 rgba(32,19,11,.05),0 2px 8px rgba(32,19,11,.08);border:1px solid var(--line)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.grid{display:grid;gap:clamp(14px,2.5vw,20px);grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))}
+.field{margin-bottom:clamp(10px,2vw,14px)}
+label{display:block;font-weight:600;margin-bottom:6px;font-size:clamp(13px,2.2vw,14px)}
+input,textarea{width:100%;box-sizing:border-box;padding:clamp(9px,2vw,11px) clamp(10px,2vw,12px);border:1px solid var(--line-dark);border-radius:var(--radius-sm);background:#fff;font-size:clamp(14px,2.5vw,15px);font-family:Inter,sans-serif;outline:none;transition:border .15s ease,box-shadow .15s ease}
+input:focus,textarea:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(234,88,12,.12)}
+.mono{font-family:"JetBrains Mono",monospace}
+.result-box{background:#FFF9F2;border:1.5px dashed var(--amber);border-radius:var(--radius-md);padding:clamp(12px,2.5vw,16px);margin-top:clamp(10px,2vw,14px)}
+.result-value{font-size:clamp(18px,4vw,30px);font-weight:700;color:var(--amber-dark);word-break:break-word}
+.result-sub{margin-top:6px;color:var(--ink-soft);font-size:clamp(13px,2.2vw,14px)}
+.btn-group{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(10px,2vw,14px)}
+.btn{padding:clamp(8px,2vw,10px) clamp(12px,2.5vw,16px);border-radius:999px;border:1px solid var(--line-dark);background:#fff;font-weight:600;cursor:pointer;transition:.15s ease;font-size:clamp(13px,2.2vw,14px);white-space:nowrap}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+.btn-primary{background:var(--teal);color:#fff;border-color:var(--teal)}
+.btn-primary:hover{background:var(--teal-deep)}
+.btn-ghost{background:transparent}
+.examples{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{padding:4px 8px;border-radius:999px;background:#FFF2DC;border:1px solid var(--line);font-size:clamp(11px,2vw,12px);cursor:pointer}
+.steps{margin-top:clamp(10px,2vw,14px);background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:clamp(10px,2vw,14px)}
+.steps h3{margin:0 0 8px;font-size:clamp(14px,2.5vw,15px)}
+.step{padding:6px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.history{margin-top:clamp(10px,2vw,14px);font-size:clamp(13px,2.2vw,14px)}
+.history-item{padding:6px 8px;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.badge{padding:2px 6px;border-radius:999px;background:#EEF7FF;border:1px solid #C7DEFF;font-size:11px}
+small{color:var(--ink-soft)}
+.footer{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:clamp(10px,2vw,16px);padding-top:clamp(10px,2vw,14px);border-top:1px solid var(--line)}
+.link{color:var(--teal);text-decoration:none;font-weight:600}
+.link:hover{text-decoration:underline}
+@media(max-width:767px){.tabs{gap:4px}.tab{min-width:0;flex:1 1 calc(50%-4px)}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>Simulador Binário ↔ ASCII</h1>
+<p>Decimal ↔ Binário • Letra ↔ Binário/ASCII • Com passo-a-passo e decomposição por potências de 2/divisões por 2</p>
+</div>
+
+<div class="card">
+<div class="tabs" role="tablist">
+<button class="tab active" data-tab="decbin">Decimal ↔ Binário</button>
+<button class="tab" data-tab="charbin">Letra ↔ Binário/ASCII</button>
+</div>
+
+<!-- DECIMAL ↔ BINÁRIO -->
+<section class="tab-content active" id="tab-decbin">
+<div class="grid">
+<div class="card" style="margin:0">
+<h2>1. Decimal → Binário</h2>
+<div class="field">
+<label for="decInput">Número Decimal (inteiro)</label>
+<input id="decInput" type="number" inputmode="numeric" min="0" max="65535" placeholder="Ex.: 13, 5, 65, 82">
+</div>
+<div class="examples">
+<span class="chip" data-dec="5">5 → 101</span>
+<span class="chip" data-dec="13">13 → 1101</span>
+<span class="chip" data-dec="32">32 → 00100000</span>
+<span class="chip" data-dec="65">65 → 01000001</span>
+<span class="chip" data-dec="82">82 → 01010010</span>
+<span class="chip" data-dec="110">110 → 01101110</span>
+</div>
+<div class="btn-group">
+<button class="btn btn-primary" id="btnDecToBin">Converter Decimal → Binário</button>
+<button class="btn btn-ghost" id="btnDecClear">Limpar</button>
+</div>
+<div class="result-box" id="resDecBin" hidden>
+<div class="result-sub">Resultado</div>
+<div class="result-value mono" id="valDecBin"></div>
+<div class="result-sub" id="valDecBinInfo"></div>
+</div>
+<div class="steps" id="stepsDec" hidden>
+<h3>Passo-a-passo — Divisões sucessivas por 2 (lê-se restos de baixo para cima)</h3>
+<div id="stepsDecBody"></div>
+</div>
+</div>
+
+<div class="card" style="margin:0">
+<h2>2. Binário → Decimal</h2>
+<div class="field">
+<label for="binInput">Sequência Binária (0 e 1)</label>
+<input id="binInput" class="mono" type="text" spellcheck="false" inputmode="numeric" placeholder="Ex.: 1101, 01010010, 01000001">
+<small>Serão considerados apenas dígitos 0 e 1. Sugestão: exibir com 8 bits.</small>
+</div>
+<div class="examples">
+<span class="chip" data-bin="101">101 → 5</span>
+<span class="chip" data-bin="1101">1101 → 13</span>
+<span class="chip" data-bin="00100000">00100000 → 32</span>
+<span class="chip" data-bin="01000001">01000001 → 65</span>
+<span class="chip" data-bin="01010010">01010010 → 82</span>
+<span class="chip" data-bin="01101110">01101110 → 110</span>
+</div>
+<div class="btn-group">
+<button class="btn btn-primary" id="btnBinToDec">Converter Binário → Decimal</button>
+<button class="btn btn-ghost" id="btnBinPad8">Preencher com 0 à esquerda (8 bits)</button>
+<button class="btn btn-ghost" id="btnBinClear">Limpar</button>
+</div>
+<div class="result-box" id="resBinDec" hidden>
+<div class="result-sub">Resultado</div>
+<div class="result-value mono" id="valBinDec"></div>
+<div class="result-sub" id="valBinDecInfo"></div>
+</div>
+<div class="steps" id="stepsBin" hidden>
+<h3>Passo-a-passo — Decomposição por potências de 2 (2^n)</h3>
+<div id="stepsBinBody"></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- LETRA ↔ BINÁRIO/ASCII -->
+<section class="tab-content" id="tab-charbin">
+<div class="grid">
+<div class="card" style="margin:0">
+<h2>3. Letra → Binário/ASCII</h2>
+<div class="field">
+<label for="charInput">Caractere (1 caractere)</label>
+<input id="charInput" type="text" maxlength="1" placeholder="Ex.: R, a, n, g, e, l, espaço">
+</div>
+<div class="examples">
+<span class="chip" data-char="R">R</span>
+<span class="chip" data-char="a">a</span>
+<span class="chip" data-char="n">n</span>
+<span class="chip" data-char="g">g</span>
+<span class="chip" data-char="e">e</span>
+<span class="chip" data-char="l">l</span>
+<span class="chip" data-char=" ">Espaço</span>
+<span class="chip" data-char="A">A</span>
+</div>
+<div class="btn-group">
+<button class="btn btn-primary" id="btnCharToBin">Converter Letra → ASCII/Binário</button>
+<button class="btn btn-ghost" id="btnCharClear">Limpar</button>
+</div>
+<div class="result-box" id="resCharBin" hidden>
+<div class="result-sub">Resultado</div>
+<div class="result-value mono" id="valCharBin"></div>
+<div class="result-sub" id="valCharBinInfo"></div>
+</div>
+<div class="steps" id="stepsChar" hidden>
+<h3>Passo-a-passo — Caractere → Código ASCII → Binário</h3>
+<div id="stepsCharBody"></div>
+</div>
+</div>
+
+<div class="card" style="margin:0">
+<h2>4. Binário → Letra</h2>
+<div class="field">
+<label for="binCharInput">Sequência Binária (8 bits recomendado)</label>
+<input id="binCharInput" class="mono" type="text" spellcheck="false" inputmode="numeric" placeholder="Ex.: 01010010, 01100001, 01101110">
+<small>Converte binário→decimal (código ASCII)→caractere.</small>
+</div>
+<div class="examples">
+<span class="chip" data-binchar="01010010">01010010 → R</span>
+<span class="chip" data-binchar="01100001">01100001 → a</span>
+<span class="chip" data-binchar="01101110">01101110 → n</span>
+<span class="chip" data-binchar="01100111">01100111 → g</span>
+<span class="chip" data-binchar="01100101">01100101 → e</span>
+<span class="chip" data-binchar="01101100">01101100 → l</span>
+<span class="chip" data-binchar="00100000">00100000 → (espaço)</span>
+</div>
+<div class="btn-group">
+<button class="btn btn-primary" id="btnBinToChar">Converter Binário → Letra</button>
+<button class="btn btn-ghost" id="btnBinCharPad8">Preencher com 0 à esquerda (8 bits)</button>
+<button class="btn btn-ghost" id="btnBinCharClear">Limpar</button>
+</div>
+<div class="result-box" id="resBinChar" hidden>
+<div class="result-sub">Resultado</div>
+<div class="result-value mono" id="valBinChar"></div>
+<div class="result-sub" id="valBinCharInfo"></div>
+</div>
+<div class="steps" id="stepsBinChar" hidden>
+<h3>Passo-a-passo — Binário → ASCII (decimal) → Caractere</h3>
+<div id="stepsBinCharBody"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div class="card">
+<h2>Histórico de Conversões</h2>
+<div class="history" id="history">Nenhuma conversão ainda.</div>
+<div class="footer">
+<button class="btn btn-ghost" id="btnClearHistory">Limpar Histórico</button>
+<a class="link" href="./index.html#screen-lesson-3">← Voltar à Aula 3</a>
+</div>
+</div>
+</div>
+<script>
+const LS_KEY='wrWindowsBinConvState';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+function saveState(){
+  try{
+    const st={
+      activeTab:$('.tab.active')?.dataset.tab||'decbin',
+      dec:$('#decInput').value,
+      bin:$('#binInput').value,
+      char:$('#charInput').value,
+      binchar:$('#binCharInput').value,
+      hist:history.slice(0,5)
+    };
+    localStorage.setItem(LS_KEY,JSON.stringify(st));
+  }catch(e){}
+}
+function loadState(){
+  try{
+    const st=JSON.parse(localStorage.getItem(LS_KEY)||'{}');
+    if(st.activeTab){ switchTab(st.activeTab); }
+    if(st.dec!=null) $('#decInput').value=st.dec;
+    if(st.bin!=null) $('#binInput').value=st.bin;
+    if(st.char!=null) $('#charInput').value=st.char;
+    if(st.binchar!=null) $('#binCharInput').value=st.binchar;
+    if(Array.isArray(st.hist)){ history=st.hist; renderHistory(); }
+  }catch(e){}
+}
+let history=[];
+function addHistory(text){ history.unshift(text); if(history.length>5) history.pop(); renderHistory(); saveState(); }
+function renderHistory(){ const h=$('#history'); if(!history.length){ h.textContent='Nenhuma conversão ainda.'; return;} h.innerHTML=history.map(x=>`<div class="history-item"><div>${x}</div><span class="badge mono">recente</span></div>`).join(''); }
+function switchTab(id){ $$('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===id)); $$('.tab-content').forEach(s=>s.classList.toggle('active',s.id==='tab-'+id)); saveState(); }
+function decToBin(n){ if(n<0) n=0n; let v=BigInt(n); if(v==0n) return '0'; let out=[]; while(v>0n){ out.push(v%2n); v/=2n; } return out.reverse().join(''); }
+function binToDec(s){ let t=s.replace(/[^01]/g,''); if(!t) return NaN; let r=0n; for(let i=0;i<t.length;i++){ if(t[i]=='1') r += 1n<<BigInt(t.length-1-i);} return Number(r); }
+function pad8(s){ let t=s.replace(/[^01]/g,''); if(!t) return '00000000'; while(t.length<8) t='0'+t; if(t.length>16 && t.length%8!==0){ /* keep */ } return t; }
+function pad8Flexible(s){ let t=s.replace(/[^01]/g,''); if(!t) return '00000000'; while(t.length<8) t='0'+t; return t; }
+function stepsDecToBin(n){ const rows=[]; let v=n; let steps=[]; if(v==0){ steps.push({d:0,r:0}); } else { while(v>0){ const r=v%2; steps.push({d:v,r}); v=Math.floor(v/2);} } steps.reverse(); return steps; }
+function stepsBinToDec(s){ const t=s.replace(/[^01]/g,''); const bits=t.split(''); return bits.map((b,i)=>({bit:b, pow:t.length-1-i, val: b==='1'?(1<< (t.length-1-i)):0})); }
+$$('.tab').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+$$('.chip[data-dec]').forEach(c=>c.addEventListener('click',()=>{$('#decInput').value=c.dataset.dec; $('#btnDecToBin').click();}));
+$$('.chip[data-bin]').forEach(c=>c.addEventListener('click',()=>{$('#binInput').value=c.dataset.bin; $('#btnBinToDec').click();}));
+$$('.chip[data-char]').forEach(c=>c.addEventListener('click',()=>{$('#charInput').value=c.dataset.char===' '?' ':c.dataset.char; $('#btnCharToBin').click();}));
+$$('.chip[data-binchar]').forEach(c=>c.addEventListener('click',()=>{$('#binCharInput').value=c.dataset.binchar; $('#btnBinToChar').click();}));
+$('#btnDecToBin').addEventListener('click',()=>{ const v=parseInt($('#decInput').value); if(isNaN(v)||v<0){ alert('Informe um número decimal >= 0'); return;} const bin=decToBin(v); $('#resDecBin').hidden=false; $('#valDecBin').textContent=bin.padStart(Math.max(8,bin.length%8===0?bin.length:Math.ceil(bin.length/8)*8),'0'); const info=v===0?`Decimal 0 = Binário ${bin}`:`Decimal ${v} = Binário ${bin} (${bin.length} bit${bin.length===1?'':'s'})`; $('#valDecBinInfo').textContent=info; const st=stepsDecToBin(v); $('#stepsDec').hidden=false; $('#stepsDecBody').innerHTML=st.map(x=>`<div class="step mono">${x.d} ÷ 2 = ${Math.floor(x.d/2)} → resto <strong>${x.r}</strong></div>`).join(''); addHistory(`Decimal ${v} → Binário ${bin}`); saveState(); });
+$('#btnDecClear').addEventListener('click',()=>{$('#decInput').value=''; $('#resDecBin').hidden=true; $('#stepsDec').hidden=true; saveState();});
+$('#btnBinToDec').addEventListener('click',()=>{ const raw=$('#binInput').value; const t=raw.replace(/[^01]/g,''); if(!t){ alert('Informe uma sequência binária (apenas 0 e 1)'); return;} const d=binToDec(t); $('#resBinDec').hidden=false; $('#valBinDec').textContent=d.toLocaleString('pt-BR'); const padded=t.length<8?t.padStart(8,'0'):t; $('#valBinDecInfo').textContent=`Binário ${padded} = Decimal ${d}`; const sp=stepsBinToDec(t); let powSum=sp.filter(x=>x.bit==='1').map(x=>`2^${x.pow}`).join(' + '); const valSum=sp.filter(x=>x.bit==='1').map(x=>x.val).join(' + '); $('#stepsBin').hidden=false; $('#stepsBinBody').innerHTML=`<div class="step mono">${sp.map(x=>`${x.bit}×2^${x.pow}=${x.val}`).join(' + ')}</div>${sp.some(x=>x.bit==='1')?`<div class="step mono">${powSum} = ${valSum} = <strong>${d}</strong></div>`:''}`; addHistory(`Binário ${t} → Decimal ${d}`); saveState(); });
+$('#btnBinPad8').addEventListener('click',()=>{$('#binInput').value=pad8Flexible($('#binInput').value); saveState();});
+$('#btnBinClear').addEventListener('click',()=>{$('#binInput').value=''; $('#resBinDec').hidden=true; $('#stepsBin').hidden=true; saveState();});
+$('#btnCharToBin').addEventListener('click',()=>{ const c=$('#charInput').value; if(!c){ alert('Informe 1 caractere'); return;} const ch=c.charAt(0); const code=ch.charCodeAt(0); const bin=decToBin(code); const bin8=bin.padStart(8,'0'); $('#resCharBin').hidden=false; $('#valCharBin').textContent=`ASCII ${code} • Binário ${bin8}`; $('#valCharBinInfo').textContent=`Caractere "${ch}" → Código ASCII ${code} → Binário ${bin8} (${bin.length} bits + zeros)`; $('#stepsChar').hidden=false; $('#stepsCharBody').innerHTML=`<div class="step mono">Caractere: "<strong>${ch}</strong>"</div><div class="step mono">Código ASCII (decimal): <strong>${code}</strong></div><div class="step mono">${code} ÷ 2 → Binário: <strong>${bin8}</strong> (8 bits)</div>`; addHistory(`"${ch}" → ASCII ${code} → Binário ${bin8}`); saveState(); });
+$('#btnCharClear').addEventListener('click',()=>{$('#charInput').value=''; $('#resCharBin').hidden=true; $('#stepsChar').hidden=true; saveState();});
+$('#btnBinToChar').addEventListener('click',()=>{ const raw=$('#binCharInput').value; const t=raw.replace(/[^01]/g,''); if(!t){ alert('Informe sequência binária (0 e 1)'); return;} const d=binToDec(t); if(isNaN(d)||d<0||d>0x10FFFF){ alert('Valor fora do intervalo válido'); return;} const ch=String.fromCharCode(d); const t8=t.length<8?t.padStart(8,'0'):t; $('#resBinChar').hidden=false; $('#valBinChar').textContent=`"${ch}" • ASCII ${d}`; $('#valBinCharInfo').textContent=`Binário ${t8} → Decimal ${d} (ASCII) → Caractere "${ch}"`; $('#stepsBinChar').hidden=false; $('#stepsBinCharBody').innerHTML=`<div class="step mono">Binário: <strong>${t8}</strong></div><div class="step mono">Potências de 2 → Decimal: <strong>${d}</strong></div><div class="step mono">ASCII ${d} → Caractere: "<strong>${ch}</strong>"</div>`; addHistory(`Binário ${t8} → ASCII ${d} → "${ch}"`); saveState(); });
+$('#btnBinCharPad8').addEventListener('click',()=>{$('#binCharInput').value=pad8Flexible($('#binCharInput').value); saveState();});
+$('#btnBinCharClear').addEventListener('click',()=>{$('#binCharInput').value=''; $('#resBinChar').hidden=true; $('#stepsBinChar').hidden=true; saveState();});
+$('#btnClearHistory').addEventListener('click',()=>{ history=[]; renderHistory(); saveState(); });
+loadState();
+</script>
+</body>
+</html>

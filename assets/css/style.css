@@ -1030,10 +1030,10 @@ a:hover {
   transform: translateY(-1px);
 }
 
-/* Image Size Reduction: 30% reduction in display size (~70% max-width) */
+/* Tamanho das imagens: 92% do contêiner — legíveis sem rolagem horizontal (P-04) */
 .img-reduced,
 .lesson-reading-card img {
-  max-width: 70% !important;
+  max-width: 92% !important;
   height: auto !important;
   display: block;
   margin: 24px auto;
@@ -1463,12 +1463,61 @@ a:hover {
     padding: 20px 8px !important;
   }
 
+  /* O .fixation-panel (quiz das aulas) tem padding:32px em um <style> do
+     PRÓPRIO módulo, carregado DEPOIS deste arquivo — sem esta regra o card
+     do quiz perdia 64px e virava "efeito linguiça" no celular (285/375px).
+     A borda também sai, pelo mesmo motivo do des-nesting acima: quem dá o
+     contorno agora é o .lesson-reading-card que o envolve. Vale para todas
+     as aulas do módulo, não só para a Aula 2.
+     Orçamento lateral restante no quiz: 4px do .container + 6px do
+     .lesson-reading-card + 4px daqui = 14px por lado. */
+  .fixation-panel {
+    padding: 16px 4px !important;
+    margin-top: 16px !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
   .question-card-item {
     padding: 18px 8px !important;
   }
 
   .option-btn-card {
     padding: 14px 10px !important;
+  }
+
+  /* ---- DES-NESTING VISUAL (P-08) --------------------------------
+     A largura já está resolvida acima; o que sobrava no celular era a
+     *hierarquia visual*: o .lesson-reading-card já é uma caixa (borda +
+     fundo + sombra) e, dentro dele, .question-card-item, .option-btn-card,
+     .ex-card e .img-reduced desenhavam OUTRA caixa cada — "moldura dupla".
+
+     Regra: no mobile cada cartão interno perde borda e sombra, porque o
+     cartão externo já dá o contorno. O FUNDO é preservado em todos os
+     casos — é ele que garante contraste: .question-card-item fica branco
+     e .option-btn-card creme porque o texto usa --ink-soft/--ink-light
+     (escuros). Tirar o fundo quebraria a leitura (regra do Internet).
+
+     Não tocar em .es-sheet-box/.excel-sheet-preview/.mini-sheet: ali a
+     moldura é o próprio desenho da planilha, não decoração. */
+  .question-card-item,
+  .card-quiz {
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .option-btn-card {
+    border-width: 1px !important;
+    box-shadow: none !important;
+  }
+
+  .ex-card {
+    border: 0 !important;
+  }
+
+  .img-reduced {
+    border: 0 !important;
+    box-shadow: none !important;
   }
 
   /* Footers de quiz (Anterior / ✓ Salvo / Próxima) — COLUNA no mobile.
@@ -1572,8 +1621,8 @@ a:hover {
   .topic-phase-section { display: block !important; page-break-inside: avoid !important; break-inside: avoid !important; margin-bottom: 28px !important; border-bottom: 1px solid #E2E8F0 !important; padding-bottom: 20px !important; }
   .img-reduced, .lesson-reading-card img {
     display: block !important;
-    max-width: 82% !important;
-    max-height: 420px !important;
+    max-width: 92% !important;
+    max-height: 620px !important;
     margin: 18px auto !important;
     border: 1px solid #CBD5E1 !important;
     border-radius: 8px !important;

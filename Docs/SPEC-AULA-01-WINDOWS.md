@@ -1,6 +1,7 @@
 # SPEC-001 — Especificação Técnica e Pedagógica da Aula 1 (Windows)
 ### Módulo 1: Sistema Operacional Windows | Prof. Marcos Rangel — WR Capacitação Profissional
-### Status: 📝 ESPECIFICADA — aguardando aprovação do professor e implementação
+### Status: ✅ IMPLEMENTADA E VALIDADA (30/09/2026) — checklist §9 integralmente marcado; PDF conferido
+> Conferido em 04/10/2026: senha `wr0126`, 7 checks em 6 fases, termômetro interativo, quiz 5/5 com persistência real (regra 7) e "Recomeçar o exercício", **leitura persistente com "↺ Recomeçar a leitura" (L-01)**, guarda de apostila vazia (L-04), Windows 29/29 seções ilustradas e 70/70 imagens legendadas no PDF, painel "Saiba mais: o Linux" como filho direto de `<body>` (regra 10). Pendências residuais em `Docs/CONTINUACAO.md` (sessão de 04/10/2026).
 
 ---
 
@@ -246,6 +247,7 @@ cp "AulaOrigem/windows/Aula1_Historia_e_Funcionamento_dos_Computadores/images/im
 | JS (linhas ~2861) | `QUESTIONS_LESSON_1` + `QUIZ_CFG[1]` |
 | JS (linha ~2983) | `[1, 7, 71, 81].forEach(...)` nos eventos do quiz · `persistQuizGen` / `restoreQuizGen` / `restartQuizGen` (persistência em `localStorage`) |
 | Botão do quiz | `btn-restart-1` — "↺ Recomeçar o exercício" (zera memória + `localStorage`) |
+| **Persistência da leitura (L-01, 04/10/2026)** | `READ_STORAGE_KEY = "wrWindowsReadTopics"` · `loadReadTopics()` (valida a faixa 1..6 e descarta chave adulterada) · `saveReadTopics()` · `captureReadLabels()` guarda o rótulo original em `dataset.readLabel` · `paintReadLesson()` **fonte única** do estado (check, trava sequencial, %, barra, badge) · `restartReading()` + botão "↺ Recomeçar a leitura" nas 6 fases |
 | Bloco extra na `l1-phase-6` | Caixa "Curiosidade da aula: e o Linux, como é?" com o botão `btn-saiba-mais-linux` |
 | Overlay `#linux-panel` (filho de `<body>`, após `#password-modal`) | 4 subabas (`linux-tab-body-1..4` / `linux-tab-btn-1..4`), tabela comparativa, link da fonte e aviso sobre o `.flv`; marcado `no-print` |
 | CSS do painel (topo de `modules/windows/index.html`) | `.linux-panel`, `.linux-panel-card`, `.linux-tab-bar`, `.linux-tab-btn`, `.linux-tab-body`, `.linux-fact`, `.linux-card`, `.linux-term` |
@@ -297,11 +299,21 @@ Status em **30/09/2026** — todos os itens verificados por harness automatizado
 - [x] `#linux-panel` é filho direto de `<body>` — dentro do `.lesson-reading-card` o `position: fixed` era capturado pelo `transform` do ancestral e o overlay renderizava com **largura 0**.
 - [x] Fonte citada e link funcional no PDF; **nenhuma** das apostilas 7/8/71/81 recebe a caixa Linux.
 - [x] **Mobile do painel**: 375px sem overflow, card = 367px, 4 abas dentro das bordas e tabela da subaba 3 sem estourar (regra 6 do AGENTS.md, sem `@media` por aula).
+- [x] **Leitura persiste (L-01):** `wrWindowsReadTopics` grava `{1:[1..7],7:[],8:[],71:[],81:[]}`; após F5 os 7 checks voltam marcados, a barra fica em 100% e o badge mostra "🎉 Leitura Completa!".
+- [x] **"↺ Recomeçar a leitura"** presente nas 6 fases da Aula 1: zera só a fase escolhida, mantém as outras e **destrava** os checks (o check marcado é `disabled`, então sem o botão o estado gravado seria irreversível).
+- [x] **Rótulos preservados:** `captureReadLabels()` + `dataset.readLabel` — reiniciar a fase remove o `☑` e devolve o `markTopicRead` (bug corrigido em 04/10/2026: a 1ª versão do `paintReadLesson` só somava o `☑` e o gating ficava travado com a barra zerada).
+- [x] `paintReadLesson()` é a **fonte única** do estado: `markTopicRead` e a restauração usam o mesmo caminho, então check, trava, %, barra e badge não podem sair inconsistentes.
+- [x] Guarda de apostila vazia (L-04): `downloadLessonPDF('windows', 2..6)` recusa com `alert` informando as aulas existentes — antes gerava um PDF **sem uma única seção** com título de aula que não existe.
+- [x] Windows 29/29 seções ilustradas e 70/70 imagens legendadas no PDF.
+
+> ⚠️ **Os harnesses da coluna abaixo só sobrevivem em `/tmp` e são perdidos quando a máquina reinicia.** Os que continuam em uso na sessão de 04/10/2026: `recheck.js` (4 modos), `l04.js`, `l05.js`, `l06.js`, `l08.js`, `pdf-audit.js`, `caption-audit.js` e `check-inline.js`. Se um caminho desta tabela não existir, reescreva a checagem com `cdp2.js` (`open(url)` + `eval`) antes de confiar no item.
 
 ### 9.1 Harnesses usados
 
 | Script | Resultado |
 |:---|:---|
+| `/tmp/opencode/recheck.js windows-read` | **18/18** — persistência da leitura: grava, restaura após reload, recomeça, rótulos, gating, console limpo |
+| `/tmp/opencode/recheck.js windows` | **24/24** — hub, senha, 7 abas, FASE 0, checks, Termômetro, quiz |
 | `/tmp/opencode/test-aula1.js` | 27/27 (estrutura, senha, gating, abas, Termômetro, quiz, assinatura, console limpo) |
 | `/tmp/opencode/test-nota10.js` | 6/6 (5 acertos → 10,0 + assinatura persistida) |
 | `/tmp/opencode/test-persistencia.js` | 8/8 (grava, restaura após reload, recomeça limpo) |

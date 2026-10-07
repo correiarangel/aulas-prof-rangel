@@ -26,7 +26,7 @@ Antes de qualquer outra coisa, reiniciar o ambiente de teste exatamente assim (n
    curl -s http://127.0.0.1:9333/json/version | head -c 120; echo
    curl -s -o /dev/null -w "Aula Excel: HTTP %{http_code}\n" http://127.0.0.1:8077/modules/excel/index.html
    ```
-4. **Harness de teste** (pronto, em `/tmp/opencode/pdftest/`): `main.js` (gera `report.json` + PDFs das aulas via popup), `run.js`, `probe*.js`, `check*.js`. Após implementar a Aula 10, rodar `node /tmp/opencode/pdftest/main.js` e conferir senha `xj010`, FASE 0 "▢ 0 / 6", cadeia de checks até 100% e PDF 10 (5 imagens na ordem do SDD §4).
+4. **Harness de teste** (em `/tmp/opencode/pdftest/`): `cdp2.js` (conexão CDP — **tem auto-descarte de `alert()`**, sem ele o harness trava quando `calcFixation` roda com questões em branco) · `persist.js` · `partial.js` · `final.js` · `quiz6.js` · `proj2.js` · `pass.js` · `casc.js` · `main.js` (gera `report.json` + PDFs via popup). Bateria validada em 01/10/2026: **173 asserções, 0 falhas** — `for t in persist partial final quiz6 proj2 pass; do node /tmp/opencode/pdftest/$t.js; done`. A Aula 10 já está implementada, com senha `xj010`, FASE 0 "▢ 0 / 6", cadeia de checks até 100%, quiz 5/5 e PDF 10 com as 5 imagens na ordem do SDD §4.
 5. **Harness da Aula 01 do Windows** (usado em 30/09/2026, em `/tmp/opencode/`): servidor em `http://127.0.0.1:8123` e `cdp.js` + `test-aula1.js`, `test-nota10.js`, `test-persistencia.js`, `test-pdf-regressao.js`, `test-pdf.js`, `layout-audit.js`, `test-responsive2.js`, `test-linux.js`, `test-linux-mobile.js`, `check-pdf-linux.js`.
    - **Regra para overlay/fixed dentro de aula**: um `position: fixed` aninhado num ancestral com `transform` (ex.: `.lesson-reading-card`) renderiza com **largura 0** e continua com `display: block` — teste por `classList` dá falso verde. Sempre (a) deixar o overlay como filho direto de `<body>` e (b) medir `getBoundingClientRect().width`, não só a classe.
 
@@ -36,7 +36,321 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL — COMEÇAR AQUI (30/09/2026) — Excel: P-01 concluída, P-12 levantada
+## ✅ SESSÃO ATUAL — COMEÇAR AQUI (07/10/2026) — Aula 03 do Windows (medidas de armazenamento) + simulador binário integrados e validados
+
+A 3ª aula do módulo Windows foi **criada do zero** e validada de ponta a ponta: hub, senha, tela com checks distribuídos, quiz com persistência, PDF de 10 seções com as 7 imagens e o **simulador binário/ASCII** novo (arquivo `modules/windows/simulador-binario.html`). Spec em **`Docs/SPEC-AULA-03-WINDOWS.md`** (§12 lista as deviações).
+
+### 1. O que foi entregue
+
+| Peça | Onde |
+|:---|:---|
+| `screen-lesson-3` — FASE 0 + 9 fases, **10 checks** (`check-read-3-1..10`), 10 abas (`tab-btn-3-1..9` + `tab-btn-3-fix`), 7 imagens legendadas | `modules/windows/index.html` (seção iniciada na linha ~2494, antes da Aula 7) |
+| Card "Aula 03" no hub → `promptLessonPassword(3, 'Medidas de Armazenamento no Computador')` | idem |
+| `PASSWORD_A3 = "wr0326"` **⚠️ candidata, aguarda confirmação** (já somada ao gate único de senha) | idem |
+| `TOTAL_TOPICS[3]=10`, `SEQUENTIAL_LESSONS` += `3`, `OPEN_LESSONS=[1,2,3,7,8,71,81]`, rota `3:"screen-lesson-3"`, bindings `[1,2,3,7,71,81]` | idem |
+| `QUESTIONS_LESSON_3` (5 questões × **4 alternativas**) + `QUIZ_CFG[3]` (`moduleId:"windows-aula-3"`) | idem |
+| FASE 9 com botão que faz `window.open('simulador-binario.html','_blank','noopener,noreferrer')` | idem |
+| `moduleLessonTitles.windows[3] = "Aula 03: Medidas de Armazenamento no Computador — Do Bit ao Disco Rígido"` | `assets/js/pdf-lessons.js` (~linha 139) |
+| **10 seções `lessonNum: 3` (3.0→3.9)** com mini-sheets, `imagesWide` em 3.2 e 3.4, boxType tip/warning | `assets/js/pdf-lessons.js` (linhas ~720–1068) |
+| **`modules/windows/simulador-binario.html`** (268 linhas, standalone) — 4 conversores com passo-a-passo, histórico e `localStorage` | arquivo novo |
+| 7 PNG (140 KB) copiados da `AulaOrigem` | `assets/img/windows/Aula3/` |
+
+### 2. Decisões/desvios que FICARAM GRAVADOS na spec (§12)
+
+1. **`TOTAL_TOPICS[3] = 10`** — FASE 0 = check 1; fases 1–9 = checks 2–10 (a spec original dizia 8, depois 9). Progresso em passos de 10%.
+2. **PDF com 10 seções** (a §5 pedia 9; a §10.6 acrescentou a 3.9 do simulador — prevaleceu a mais recente).
+3. **4 alternativas por questão** (padrão do módulo Windows, não 5).
+4. **Questão 2 do quiz corrigida**: o enunciado da spec ("quantos bytes formam 1 MB → 1024") era falso (1 MB = 1.048.576 bytes). Virou "Quantos **Kilobytes (KB)** formam 1 **Megabyte (MB)**?" → 1024.
+5. Badge de leitura = `🎉 LEITURA COMPLETA!` (padrão do módulo).
+
+### 3. Fatos conferidos no conteúdo (Regra 12)
+
+1 Byte = 8 bits · KB/MB/GB/TB com fator 1024 · ASCII A=65=01000001, espaço=32 · "Rangel" = 6 bytes/48 bits · 13→1101 e 5→101 · **SSD não desfragmenta** (só "Otimizar") · Win+E → Este Computador → Disco (C:) · Win+R → `wordpad`. Nada de "1 MB = 1.024 bytes" em tela ou PDF (assert do harness).
+
+### 4. Validação (Chrome/CDP, `http://127.0.0.1:8077`)
+
+| Bateria | Resultado |
+|:---|:---|
+| **`/tmp/opencode/a3_harness.py`** (Python + `cdplib.py`) | **66/66** — relatório `/tmp/opencode/a3_report.json` |
+| — senha | modal abre, senha errada mantém, `wr0326` libera e vira badge 🟢; Aula 01 ainda abre com `wr0926`; aula fechada só alerta |
+| — estrutura | 10 checks (só o 1 libera), 10 abas, 9 fases, gating, barra/badge 100%, persistência da leitura após reload, 7 imagens carregando, **0 ids duplicados**, tags balanceadas |
+| — quiz | 5 questões × 4 alternativas → 5/5, nota **10,0**, assinatura SHA, breakdown, chave `windows-aula-3:aluno(a)` no `localStorage`, restaura na questão 5 após reload, "↺ Recomeçar" zera tudo |
+| — PDF | `downloadLessonPDF('windows',3)`: título correto, **10 seções 3.0–3.9**, 7 imagens de `Aula3/` + logo (9 `<img>`, todas carregando), 12 mini-sheets, 5 fun-highlights, **2 grids wide**, sem `JSTOR`, sem "🖼️ Referência de imagem", sem Conversion Bug |
+| — simulador | abre em nova aba, 4 conversores testados (13→1101 com passo-a-passo, 01010010→82, R→82→01010010, 01010010→R), histórico, `localStorage` `wrWindowsBinConvState` restaura, mobile 375 OK, console limpo |
+| — mobile | 375px: `scrollWidth == 375`, **zero** elementos estourando na tela da aula e no simulador |
+| — sintaxe | `node --check assets/js/pdf-lessons.js` OK · script inline do `index.html` OK |
+
+### 5. Ambiente de teste usado (já está rodando)
+
+```bash
+python3 -m http.server 8077 > /tmp/opencode/pdftest/server.log 2>&1 &
+/usr/bin/google-chrome --headless=new --remote-debugging-port=9333 \
+  --user-data-dir=/tmp/opencode/pdftest/chrome-profile \
+  --disable-popup-blocking --disable-gpu --no-sandbox --no-first-run --disable-extensions \
+  about:blank > /tmp/opencode/pdftest/chrome.log 2>&1 &
+python3 /tmp/opencode/a3_harness.py     # 66/66 em ~1 min
+```
+`cdplib.py` auto-dismissa `alert/confirm` (senão o harness trava no "aula em construção").
+
+### 6. Estado do working tree (nada commitado — P-10 segue aguardando o professor)
+
+```
+ M assets/js/pdf-lessons.js      (+1585/-… inclui Aula 2 e 3)
+ M modules/windows/index.html    (+1951/-… inclui Aulas 1, 2 e 3)
+ M Docs/CONTINUACAO.md · Docs/SPEC-AULA-01-WINDOWS.md · Docs/PENDENCIAS-EXCEL.md · assets/css/style.css · modules/excel/index.html · AGENTS.md
+ ?? Docs/SPEC-AULA-02-WINDOWS.md · Docs/SPEC-AULA-03-WINDOWS.md · modules/windows/simulador-binario.html
+ ?? assets/img/windows/Aula2/ (16 arquivos) · assets/img/windows/Aula3/ (7 arquivos, 140 KB)
+```
+
+### 7. Próximos passos
+
+1. **Confirmar a senha `wr0326`** com o professor (e a `wr0226` da Aula 2).
+2. **P-10** — commitar tudo (Aulas 1/2/3 do Windows + simulador + imagens).
+3. **L-07** — Word e PowerPoint com PDF 100% texto puro (maior pendência de conteúdo).
+4. **L-03** — escopo da FASE 0 nas Aulas 7, 8, 71 e 81 do Windows.
+5. Inspeção humana dos PDFs gerados (Aulas 2 e 3) — os harnesses checam estrutura, não o texto renderizado.
+
+---
+
+## ✅ SESSÃO ANTERIOR — 04/10/2026, 2ª rodada — Aula 02 do Windows integrada e validada
+
+A 1ª rodada do dia (Excel + L-01/L-02, seção anterior) continua válida. Esta rodada **criou do zero a Aula 02 do Windows** — tela, hub, senha, PDF, quiz, persistência e mobile — e fechou **L-04, L-05, L-06 e L-08** no caminho. Spec completa em **`Docs/SPEC-AULA-02-WINDOWS.md`**.
+
+### 1. O que foi entregue
+
+| Peça | Onde |
+|:---|:---|
+| `screen-lesson-2` — FASE 0 + 9 fases, 10 checks, 16 imagens, caixa "primeiro comando" | `modules/windows/index.html` (bloco de 811 linhas, inserido antes da Aula 7) |
+| Card "Aula 02" no hub → `promptLessonPassword(2, 'Introdução ao Windows')` | idem |
+| `PASSWORD_A2 = "wr0226"` ⚠️ **candidata, não confirmada** | idem |
+| `TOTAL_TOPICS[2]=10`, `SEQUENTIAL_LESSONS` += `2`, `OPEN_LESSONS=[1,2,7,8,71,81]`, rota `2:"screen-lesson-2"` | idem |
+| `QUESTIONS_LESSON_2` (5 questões) + `QUIZ_CFG[2]` (`moduleId:"windows-aula-2"`) | idem |
+| 10 seções `lessonNum: 2` (2.0→2.9) + título + 16 imagens legendadas | `assets/js/pdf-lessons.js` |
+| `.fixation-panel` sem borda/sombra e com 4px laterais no mobile | `assets/css/style.css` (bloco `REGRAS MOBILE GLOBAIS`) |
+| 16 PNG (~1,9 MB) | `assets/img/windows/Aula2/` |
+
+### 2. Lacunas que esta rodada fechou
+
+| # | Antes | Agora |
+|:---|:---|:---|
+| **L-04** | `moduleLessonTitles.windows[2]` era o título de uma Aula inexistente (PDF vazio) | A Aula 2 existe e o título é o dela; o guarda de apostila vazia segue protegendo 3–6 |
+| **L-05** | Seção "Leituras Recomendadas" sem `lessonNum` entrava em todas as apostilas do Internet | Marcada `lessonNum: null` + `moduleAppendix: true` com comentário explicito |
+| **L-06** | Internet: 19 imagens sem legenda | Internet **19/19** legendadas |
+| **L-08** | Windows: `7.3` e `7.5` em texto puro | Windows **39/39** seções ilustradas, **0** texto puro, **86/86** legendas |
+
+### 3. Três fatos corrigidos (achados na auditoria de conteúdo, não nos testes)
+
+1. **CMD case-sensitive (falso)** — o texto dizia que "o Windows diferencia maiúscula de minúscula nos nomes" e que `cd documentos` não funciona quando a pasta é `Documents`. **Não é verdade**: o NTFS é case-insensitive. Reescrito para o encaixe real, que é o **idioma** (em português a pasta é `Meus Documentos`). Tela **e** PDF.
+2. **Windows 10** — "com fim de suporte anunciado" → o evento já aconteceu (14/10/2025).
+3. **`JSTOR`** — artefato de geração em "agenda, e-mail e **JSTOR**, Zoom e Meet", na seção de data/hora do módulo **Internet**. Removido.
+
+> Nenhum harness detecta erro de conteúdo — eles checam estrutura. Estas três correções vieram de ler o texto, e é por isso que a §9 da spec lista "fatos conferidos" como item obrigatório.
+
+### 4. Validação (Chrome/CDP, `http://127.0.0.1:8077`)
+
+| Bateria | Resultado |
+|:---|:---|
+| `/tmp/opencode/a2-harness.js` | **49/49** — senha errada não navega, senha certa libera, badge 🟢, 10 fases, gating sequencial, barra 0→100%, persistência da leitura, reinício, quiz, nota 10,0, hash, 16 imagens, hub, console limpo |
+| `/tmp/opencode/a2-pdfgen.js` | **11/11** — apostila real via `downloadLessonPDF('windows',2)`: 43.720 caracteres, título, 10 numerações de seção, 18 imagens (16 de `Aula2/`), FASE 0, seção 2.9 presente, correções aplicadas, zero `JSTOR` |
+| `/tmp/opencode/a2-mobile.js` | **MOBILE OK** em 375 e 414 px — sem overflow; leitura 367/375 e 406/414; quiz 345/375 e 384/414 |
+| `recheck.js windows` | **24/0** |
+| `recheck.js windows-read` | **19/0** (era 18; a assertion foi atualizada de 5 para **6** botões de reinício e ficou data-driven) |
+| `recheck.js excel` · `excel-quiz` | **37/0** · **18/0** |
+| `pdf-audit.js` · `caption-audit.js` · `check-inline.js` | Windows 39/39 · 86/86 · `index.html` OK (1328 linhas) |
+
+### 5. Estado do working tree (nada commitado)
+
+```
+ Docs/CONTINUACAO.md           |  213 ++-
+ Docs/PENDENCIAS-EXCEL.md      |  446 ++++--
+ Docs/SPEC-AULA-01-WINDOWS.md  |   14 +-
+ Docs/SPEC-AULA-02-WINDOWS.md  |  213 +++++++++ (novo)
+ assets/css/style.css          |   57 +-
+ assets/js/pdf-lessons.js      | 1241 ++++++++++++++++++-----
+ assets/img/windows/Aula2/     |   16 arquivos novos, ~1,9 MB
+ modules/excel/index.html      |  305 +++++-
+ modules/windows/index.html    | 1023 ++++++++++++++++++++++++++++--
+ 7 arquivos versionados, 2971 insertions(+), 283 deletions(-)
+```
+
+**Continua pendente o commit (P-10), aguardando o professor.**
+
+### 6. Próximos passos
+
+1. **L-07** — a maior pendência de conteúdo do portal: Word e PowerPoint com PDF **100% texto puro** e todas as seções sem `lessonNum` (violam as regras 2 e 8). Decidir escopo e atacar.
+2. **L-03** — decisão de escopo a registrar: a Aula 2 já tem FASE 0; restam as Aulas 7, 8 e os complementos 71 e 81.
+3. **P-06** — inspeção humana do PDF do Excel (104 ilustrações, 46 legendas).
+4. **Revisão visual dos módulos afetados** pela regra global de `.fixation-panel` (Internet e Excel).
+5. **P-10** — commitar (7 arquivos + as imagens novas de `assets/img/windows/Aula2/`).
+6. **Confirmar a senha `wr0226`** com o professor.
+
+---
+
+## ✅ SESSÃO ANTERIOR — 1ª rodada de 04/10/2026 — Excel revalidado de forma independente + L-01 e L-02 corrigidas
+
+A sessão teve **duas fases**. Primeiro uma auditoria **sem alterar código** (os harnesses de `/tmp/opencode/pdftest/` e `/tmp/opencode/p14/` tinham sido apagados, então foram reconstruídos do zero em `/tmp/opencode/` para reexecutar as medições sem depender da palavra dos docs). Depois, já com o aval do professor, a **implementação das lacunas L-01 e L-02** que a auditoria havia encontrado (leitura do Windows e quiz do Excel agora persistem) — detalhada na §4.
+
+### 1. O que foi reconfirmado (verde, com medição própria)
+
+| Verificação | Resultado |
+|:---|:---|
+| `node --check` em `pdf-lessons.js`, `quiz-engine.js`, 14 blocos inline do Excel e 1 do Windows | OK |
+| Cobertura do PDF (`/tmp/opencode/pdf-audit.js`) | **Excel 104/104 (100%)** · Internet 15/15 · Windows 27/29 · Word 0/5 · PowerPoint 0/5 |
+| HTML/visual dentro do campo `content` (`/tmp/opencode/find-inline.js`) | **0** seções (era 13 + 2 caixas) |
+| Legendas das imagens (`/tmp/opencode/caption-audit.js`) | Excel **46/46** · Windows **70/70** · Internet **0/19** |
+| `style.css` balanceado | 202 `{` / 202 `}` (1621 linhas), bloco mobile global presente |
+| Bateria funcional do Excel (`/tmp/opencode/recheck.js excel`) | **PASSOU 37 · FALHOU 0** (era 35 antes do L-02) |
+| Bateria funcional do Windows (`/tmp/opencode/recheck.js windows`) | **PASSOU 24 · FALHOU 0** (era 22 antes do L-01) |
+| Baterias novas do L-01/L-02 (`excel-quiz` e `windows-read`) | **PASSOU 18 · FALHOU 0** e **PASSOU 16 · FALHOU 0** |
+
+O que a bateria do Excel prova, item a item (não é só "não quebrou"):
+
+- **P-13 confirmado no browser**: A2 abre em `▢ 0 / 8`; com `0/8` só o primeiro quadradinho de roteiro está liberado; marcando o roteiro vai a `▢ 2 / 8`, grava `{"2":[true,true]}` em `wrExcelPrepChecks`, libera o Tópico 1 e mantém o banner oculto; marcando o Tópico 1 fecha `▢ 3 / 8`; **após reload continua `3/8`**, com os 3 quadradinhos marcados, T2 liberado, T3 travado, `aria-pressed="true"` no botão e `readStatus[2] === [true,false,…]` (só tópicos, nunca o roteiro); a cascata fecha `✅ 8 / 8` e o banner aparece; storage limpo volta a `0/8`.
+- **A3 e A10**: `l3-check-1` e `l10-check-1` estão fora de `.topic-phase-section` (ou seja, são da FASE 0) e persistem em `wrExcelPrepChecks`.
+- **Quiz da A10**: com tópicos incompletos o painel **não** abre (gate de `readCount < totalTopics`); com `5/5` abre com largura > 0; `GABARITO_L10 = [2,1,2,1,0]` dá `score 10 / correct 5`, APROVADO(A) e assinatura SHA-256 no `#l10-result-box`.
+- **Estrutura**: FASE 0 nas 13 aulas; 91 checks com o padrão `lN-check-M` (`1:7 · 2:8 · 3:7 · 4:7 · 5:7 · 6:7 · 7:9 · 8:9 · 9:5 · 10:6 · 11:7 · 12:6 · 13:6`), mais 5 do Pivot Lab e 1 do projeto.
+- **Regra 3 (P-03)**: zero `<input disabled>` estático no HTML — os `disabled` do DOM são o gating de runtime.
+- **Regra 6**: sem overflow horizontal a 360px e `.container` com ~100% da largura.
+- **Console limpo**: zero exceções e zero `console.error` em todo o percurso.
+
+O que a bateria do Windows prova: **regra 7 cumprida na Aula 1** — `QuizEngine.saveState` grava a chave `windows-aula-1:aluno(a)` com `answers[0]=1`, o reload mantém a opção marcada, navegar grava e a trilha mostra os 5 nós, "↺ Recomeçar o exercício" volta para `QUESTÃO 1 / 5` sem seleção **e apaga a chave**; trava sequencial (7 checks, só o 1º liberado), gamificação 2/7 = `29%`, e **regra 10** — `#linux-panel` é filho direto de `<body>` e mede largura > 0 com `display:block`.
+
+### 2. Lacunas encontradas (novas, não são P-01…P-14)
+
+> **Estado em 04/10/2026, 2ª rodada:** L-01, L-02, **L-04, L-05, L-06 e L-08 foram corrigidas** (ver a seção da 2ª rodada, mais acima). **Só L-03 e L-07 continuam abertos.** A tabela abaixo preserva o achado original de cada uma.
+
+| # | Achado | Onde | Gravidade |
+|:--|:---|:---|:---|
+| ~~**L-01**~~ | ✅ **CORRIGIDO em 04/10/2026.** A leitura do Windows agora persiste em `wrWindowsReadTopics` (ver §4). Antes: `readTopics[lessonNum]` era só um `Set` em memória e recarregar a página voltava para `0%`. | `modules/windows/index.html` | — |
+| ~~**L-02**~~ | ✅ **CORRIGIDO em 04/10/2026** (= P-15 fechada). O quiz agora grava/restaura com `QuizEngine`, tem "↺ Recomeçar o exercício" e assinatura determinística entre reloads (ver §4). Antes: o módulo carregava `quiz-engine.js` mas nunca chamava `saveState`/`loadState`. | `modules/excel/index.html` | — |
+| **L-03** | **Só a Aula 1 do Windows tem FASE 0.** Aulas 7, 8 e complementos 71 e 81 não têm bloco de objetivo/roteiro. Se forem tratadas como aulas pela regra 1 do AGENTS.md, estão em falta. **↳ Atualizado:** a Aula 2 também tem FASE 0 (2ª rodada); o escopo restante são 7, 8, 71 e 81. | `modules/windows/index.html` | baixa — decisão de escopo a registrar |
+| ~~**L-04**~~ | ✅ **CORRIGIDO em 04/10/2026 (2ª rodada).** A Aula 2 passou a existir com título e seções próprias, então `downloadLessonPDF('windows', 2)` gera a apostila real; o guarda de apostila vazia ficou protegendo só os números que realmente não existem (3–6). | `assets/js/pdf-lessons.js` | — |
+| ~~**L-05**~~ | ✅ **CORRIGIDO em 04/10/2026.** A seção "Leituras Recomendadas" ficou `lessonNum: null` + `moduleAppendix: true`, com comentário dizendo que é apêndice genérico do módulo. | `assets/js/pdf-lessons.js` | — |
+| ~~**L-06**~~ | ✅ **CORRIGIDO em 04/10/2026.** Internet agora em **19/19** legendas, junto com Windows (86/86) e Excel (46/46). | `assets/js/pdf-lessons.js` | — |
+| **L-07** | **Word (0/5) e PowerPoint (0/5) continuam com PDF 100% texto puro** e todas as seções sem `lessonNum`. Violam a regra 2 e a regra 8, mas estão fora do escopo das sessões do Excel. | `assets/js/pdf-lessons.js` | alta — se a meta for "todos os módulos" |
+| ~~**L-08**~~ | ✅ **CORRIGIDO em 04/10/2026.** `7.3` e `7.5` ganharam ilustração; Windows está em **39/39** seções ilustradas, **0** texto puro. | `assets/js/pdf-lessons.js` | — |
+
+### 3. Estado do working tree (nada commitado)
+
+```
+ Docs/CONTINUACAO.md      |  38 +-
+ Docs/PENDENCIAS-EXCEL.md | 407 ++++++++++++++++++----
+ assets/css/style.css     |  42 ++-
+ assets/js/pdf-lessons.js | 877 ++++++++++++++++++++++++++++++++++++++++++-----
+ modules/excel/index.html | 206 +++++++----
+ 5 files changed, 1346 insertions(+), 224 deletions(-)
+```
+
+É o diff das sessões de **01/10 e 02/10** (P-03, P-04, P-05, P-07, P-08, P-13, P-14). Nesta sessão só foram acrescentados os textos de `Docs/CONTINUACAO.md` e `Docs/SPEC-AULA-01-WINDOWS.md`. **Continua pendente o commit (P-10), aguardando o professor.**
+
+### 4. Como reexecutar
+
+```bash
+cd /home/rangel/git-dev/aulas
+python3 -m http.server 8077 > /tmp/opencode/server.log 2>&1 &
+/usr/bin/google-chrome --headless=new --remote-debugging-port=9333 \
+  --user-data-dir=/tmp/opencode/chrome-profile --disable-popup-blocking --disable-gpu \
+  --no-sandbox --no-first-run --disable-extensions about:blank > /tmp/opencode/chrome.log 2>&1 &
+node /tmp/opencode/recheck.js excel     # -> PASSOU 35 · FALHOU 0
+node /tmp/opencode/recheck.js windows   # -> PASSOU 22 · FALHOU 0
+node /tmp/opencode/pdf-audit.js         # -> cobertura por módulo
+node /tmp/opencode/caption-audit.js     # -> legendas por módulo
+node /tmp/opencode/find-inline.js       # -> HTML dentro de content
+
+# as 4 baterias funcionais (todas verdes em 04/10/2026)
+node /tmp/opencode/recheck.js excel         # 37/37
+node /tmp/opencode/recheck.js excel-quiz    # 18/18  (L-02)
+node /tmp/opencode/recheck.js windows       # 24/24
+node /tmp/opencode/recheck.js windows-read  # 18/18  (L-01)
+```
+
+> ⚠️ `cdp2.js` usa `Runtime.evaluate` com **dois modos**: expressão pura (empacotada em `return (…)`) ou corpo de função (prefixo `\x01`, que permite `return` e `await`). **Não escreva `return` numa expressão pura** — o `\r`/`\d` de regex dentro do template literal também é engolido, então extraia o parse para o Node. Foi o que gerou os falsos vermelhos da primeira rodada.
+
+
+### 4. L-01 e L-02 implementadas (04/10/2026, depois da auditoria)
+
+O passo 1 da §5 foi executado no mesmo dia. As duas lacunas eram o mesmo defeito em espelho: um estado que vive só em memória.
+
+**L-01 — leitura do Windows** (`modules/windows/index.html`)
+
+| Peça | Onde | O que faz |
+|:--|:--|:--|
+| `READ_STORAGE_KEY = "wrWindowsReadTopics"` | bloco de leitura | uma chave só para as 5 aulas, no formato `{"1":[1,2,…],"7":[],"8":[],"71":[],"81":[]}` |
+| `loadReadTopics()` / `saveReadTopics()` | idem | leem com guarda de faixa (`1 ≤ i ≤ TOTAL_TOPICS[aula]`), então uma chave adulterada no navegador não quebra a trava sequencial |
+| `paintReadLesson(aula)` | idem | **fonte única** do estado: botão `.checked`, trava sequencial, `%`, barra e badge — o `markTopicRead` e a restauração usam o mesmo caminho |
+| `restartReading(aula)` + botão **"↺ Recomeçar a leitura"** | `initReading` injeta 1 botão por barra | sem isto o estado gravado era **irreversível**, porque o check marcado fica `disabled` e nunca mais voltava a "◯" |
+
+**L-02 — quiz de fixação do Excel** (`modules/excel/index.html`) — fechou a P-15
+
+| Peça | Onde | O que faz |
+|:--|:--|:--|
+| `persistFixQuiz(aula)` | `selectFixOption` + `calcFixation` | `saveState('excel-aula-N', {name, lessonNum, answers, current, signature})` → chave `excel-aula-N:aluno(a)` |
+| `restoreFixQuiz(aula)` | `openFixationPanel`, depois do gate de leitura | valida `lessonNum` e `answers.length`, repinta o `.selected` de todas as questões |
+| `restartFixQuiz(aula)` | botão "↺ Recomeçar o exercício" | apaga a chave, zera `userAnswers`, limpa o `#lN-result-box`, apaga `window.lNReportData` e devolve a gamificação ao valor da leitura |
+| `initFixFooters()` | 1 vez | injeta o rodapé nos **10** painéis em vez de repetir marcação em cada aula |
+| assinatura determinística | `calcFixation` | reusa o `timestamp` salvo: refazer o mesmo gabarito depois de um F5 **render o mesmo código** WR-XXXX-… (antes cada clique gerava um hash novo, o que permitia "trocar" o código à vontade) |
+| `syncFixSavedHint(aula)` | `selectFixOption` + `paintFixOptions` | "✓ Salvo automaticamente" só aparece **depois da 1ª resposta** — nunca decorativo (regra 7) |
+
+O Excel não tem navegação entre questões (as 5 ficam na mesma tela), então "gravar ao navegar" colapsa em "gravar ao responder".
+
+**Validação** — 2 modos novos no harness, `node /tmp/opencode/recheck.js {excel-quiz|windows-read}`:
+
+| Bateria | Resultado | Cobre |
+|:--|:--|:--|
+| `excel-quiz` | **18/18** | 10 rodapés; rótulo oculto→visível; grava ao responder; restaura 2 marcações após reload; A2 `[1,2,1,1,1]` = 10,0 com **mesmo `authCode` antes/depois**; recomeçar apaga chave, seleção, resultado e o "🏆" |
+| `windows-read` | **18/18** | 5 botões de recomeçar; 7/7 = 100% + badge; recarrega os 7 checks travados; trava sequencial coerente com leitura parcial (71: 1,2 → 3 liberado, 4 travado); aula 8 não-sequencial intacta; recomeçar zera só a aula 1, rearma a trava e **devolve o rótulo original** de cada botão (a primeira versão da implementação deixava o `☑` preso no botão — o teste acusou, ver nota abaixo) |
+| `excel` (regressão) | **37/37** | era 35/35 — a asserção "quiz **não** é persistido" virou "grava `excel-aula-10:aluno(a)` com as 5 respostas + assinatura" |
+| `windows` (regressão) | **24/24** | era 22/22 — a asserção "leitura **não** persiste" virou "sobrevive ao reload, com barra e trava preservadas" |
+
+`node --check` nos dois scripts inline: OK (14 blocos no Excel, 1 no Windows). Zero exceções e zero `console.error` nas quatro baterias.
+
+> ⚠️ **O teste do L-01 quase deixou passar um bug**: a primeira implementação de `paintReadLesson` só *somava* o `☑` e nunca desfazia, então "↺ Recomeçar a leitura" zerava a barra mas deixava os 7 botões marcados e travados. A asserção original (`checked === 0`) passou por acidente, porque o teste sobrescrevia a chave inteira com `{"71":[1,2]}` e a Aula 1 já vinha zerada do reload. Corrigido dos dois lados: o código guarda `dataset.readLabel` com o rótulo original de cada botão e o teste agora **mescla** a 71 na chave (mantendo os 7/7 da Aula 1) e exige `☑` = 0 + rótulo original de volta. Revertendo o código, o teste acusa `FAIL … {"checked":7,"marcado":7}`.
+
+### 5. Próximos passos sugeridos
+
+1. **L-04**: remover Aulas 2–6 de `moduleLessonTitles.windows` ou criar os stubs com erro claro.
+2. **L-07**: decidir se Word e PowerPoint entram nesta trilha (regras 2 e 8 estão violadas há mais de uma sessão).
+3. **L-05 / L-06**: Internet — dar `lessonNum` à seção "Leituras Recomendadas" e legenda às 19 imagens.
+4. **P-06**: única pendência de código do Excel que depende de olho humano — abrir o PDF do popup e conferir as 46 legendas e as 104 ilustrações.
+5. **P-10**: commitar (agora com 7 arquivos, incluindo `modules/windows/index.html` por causa do L-01).
+
+---
+
+## ✅ SESSÃO ANTERIOR (01/10/2026) — Excel: quiz da A10 e persistência da FASE 0 corrigidos
+
+**Escopo concluído nesta sessão (Excel):**
+
+1. **Quiz da Aula 10 quebrado — corrigido.** `openFixationPanel(10)` lançava `Cannot set properties of undefined` e `calcFixation(10)` lançava `Cannot read properties of undefined`: faltavam a chave `10` em `userAnswers`, o `GABARITO_L10`, as `QUESTOES_L10` e a entrada `lessonData[10]` em `window.calcFixation`. Adicionados também `lessonTitleMap[10]`, `reportKey: "l10ReportData"` e `moduleId: "excel-aula-10"`. Gabarito: `[2, 1, 2, 1, 0]`.
+2. **Persistência da FASE 0 (P-13) — corrigida.** Duas causas: (a) os quadradinhos de roteiro de A2/A3/A10 (`l2-check-1`/`l2-check-2`, `l3-check-1`, `l10-check-1`) são contados no "X / Y passos" mas não vivem no `readStatus`, então sumiam no reload; (b) `stepCheckbox()` resolvia o check pelo **número do tópico**, e como a FASE 0 desloca a numeração, o Tópico 1 da A2 (que mora em `l2-check-3`) era confundido com o check do roteiro — o contador travava em 6/8 e os dois últimos passos nunca eram alcançados.
+   - `stepCheckbox()` agora resolve **pela fase** (`#lN-phase-M` → `input.lN-check`), ID só como fallback.
+   - Nova chave `PREP_STORAGE_KEY = "wrExcelPrepChecks"` com `prepCheckboxes()` / `loadPrepChecks()` / `savePrepChecks()`; o `change` handler grava o roteiro sem tocar no `readStatus`.
+   - `loadPrepChecks()` roda **síncrono** logo após a definição (o script principal já vem depois de `</main>`), **não** no `load`: o `refresh()` de cada aula dispara no `DOMContentLoaded` e desabilita o Tópico 1 ainda não marcado — restaurando no `load` o contador nasceria errado e o Tópico 1 ficaria travado para sempre.
+3. **P-12 — falso alarme, arquivado.** A medição mostra `l8-check-1` em `l8-phase-1` e `l8-check-2` em `l8-phase-2`: o mapeamento 1 check ↔ 1 fase da Aula 8 sempre esteve correto. O sintoma "6/9" era na verdade o defeito nº 2 acima. **Não reabrir sem rodar o comando do P-12 no `PENDENCIAS-EXCEL.md`.**
+4. **P-02 — resolvido.** `Docs/SPEC-EXCEL-MASTER.md` já marca a Aula 10 como ✅ Implementada.
+5. **P-09 — resolvido.** Toda a fila de QA manual do Excel foi executada (quizzes, navegação de fases, passe das 13 aulas, reload no meio da leitura) + senha das 13 aulas.
+
+**Validações desta sessão (Excel) — 173 asserções, 0 falhas:**
+
+| Teste | Resultado |
+|:---|:---|
+| `node --check assets/js/pdf-lessons.js` · `quiz-engine.js` · 14 blocos inline | OK |
+| `/tmp/opencode/pdftest/persist.js` | **PASSOU 59 · FALHOU 0** — 91 checks das 13 aulas, contadores, banners e reload |
+| `/tmp/opencode/pdftest/partial.js` | **PASSOU 11 · FALHOU 0** — roteiro sozinho (2/8, T1 habilitado, banner oculto) → +3 tópicos (5/8, `xxxxx___`) → tudo (8/8, banner + quiz aprovado) |
+| `/tmp/opencode/pdftest/final.js` | **PASSOU 59 · FALHOU 0** — gating 0/N→N/N, reload, API do quiz (regra 7), mobile 360px (regra 6), console limpo |
+| `/tmp/opencode/pdftest/quiz6.js` | **PASSOU 13 · FALHOU 0** — 10 gabaritos + A1–A10 nota 10/aprovado/hash 64 hex + TXT (A11–13 são projetos, sem quiz) |
+| `/tmp/opencode/pdftest/proj2.js` | **PASSOU 13 · FALHOU 0** — A11/A12 assinadas com relatório; A13 concluída **sem** comprovante (por design) |
+| `/tmp/opencode/pdftest/pass.js` | **PASSOU 18 · FALHOU 0** — senha das 13 aulas, mestre `wr2026`, Enter no campo, senha errada bloqueada |
+
+**Working tree:** três arquivos modificados, nada commitado — `modules/excel/index.html` (+105/−11, o código), `Docs/PENDENCIAS-EXCEL.md` (+238) e este `Docs/CONTINUACAO.md` (+38). Aguardando o professor pedir o commit.
+
+**Pendências que continuam abertas** (detalhes em `Docs/PENDENCIAS-EXCEL.md`):
+`P-03` 13 quadradinhos `disabled` em A2/A3 · `P-04` tamanho das imagens · `P-05` 23 das 46 imagens sem legenda · `P-06` conferência visual do PDF · `P-07` 5 PNGs órfãs em `assets/img/excel/a8/` · `P-08` des-nesting visual no mobile · `P-10` commitar o diff · **`P-14` 35 das 104 seções do PDF são texto puro (66% de cobertura)** (regra 2 do AGENTS.md — maior item aberto, ~3–4h).
+
+**Localizadores e como reexecutar:** ambiente e bateria completa na seção "✅ Como revalidar o módulo depois de mexer nele" de `Docs/PENDENCIAS-EXCEL.md`. Auxiliares úteis em `/tmp/opencode/pdftest/`: `cdp2.js` (CDP + auto-descarte de `alert()` — **sem ele o harness trava** quando `calcFixation` é chamado com questões em branco), `casc.js` (dump da cascata de uma aula), `main.js` (PDFs via popup).
+
+---
+
+## ✅ SESSÃO ANTERIOR (30/09/2026) — Excel: P-01 concluída, P-12 levantada
 
 **Escopo concluído nesta sessão (Excel):**
 
@@ -49,7 +363,7 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 **Pendente levantado (não corrigido ainda):**
 
-- **P-12** — `l8-check-1` e `l8-check-2` estão aninhados em `l7-phase-9` (herança pré-existente no HTML). O bug de gating da Aula 8 é mitigado pelo fix por ID (não marca mais o checkbox intruso), mas o estado/contagem da Aula 8 fica inconsistente (6/9 no reload). **Não foi corrigido nesta sessão** para preservar ao máximo o diff não relacionado.
+- **P-12** — ~~`l8-check-1` e `l8-check-2` estão aninhados em `l7-phase-9`~~ **⚠️ FALSO ALARME, confirmado e arquivado em 01/10/2026.** A medição mostrou `l8-check-1` → `l8-phase-1` e `l8-check-2` → `l8-phase-2`: o mapeamento da Aula 8 sempre esteve correto, e o reload fecha em 9/9. O sintoma "6/9" aqui citado era, na verdade, o **deslocamento da FASE 0** (o `stepCheckbox` procurava o check pelo número do tópico e caía no quadradinho do roteiro), hoje corrigido como **P-13**. Ver a sessão de 01/10/2026 no topo deste arquivo.
 
 **Validações desta sessão (Excel):**
 

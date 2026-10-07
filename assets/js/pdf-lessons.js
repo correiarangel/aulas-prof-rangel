@@ -18,7 +18,7 @@ window.PDFLessons = (function() {
           chapter: "AULA 01: INTRODUÇÃO À INTERNET E NAVEGAÇÃO SEGURA",
           heading: "1.1 O que é a Internet & Origem Histórica",
           content: `A Internet é uma rede mundial de computadores interconectada globalmente, permitindo a troca instantânea de dados, comunicação interpessoal, acesso a serviços bancários e compartilhamento de conteúdo.\n\n• Origem: A Internet nasceu na década de 1960 como o projeto militar norte-americano ARPANET.\n• A Grande Revolução (1989/1991): O cientista Tim Berners-Lee, no laboratório CERN na Suíça, criou a World Wide Web (WWW) e a linguagem HTML, permitindo navegar entre documentos através de links clicáveis (hiperlinks).`,
-          images: ["../../assets/img/internet/globo-conectado.jpeg", "../../assets/img/internet/cabo-marinho-robo-inspecionando.jpeg"],
+          images: [{ src: "../../assets/img/internet/globo-conectado.jpeg", caption: "A Internet é um único 'tecido' que liga computadores de todos os continentes: é por essa rede global que uma mensagem enviada de um país chega a outro em segundos." }, { src: "../../assets/img/internet/cabo-marinho-robo-inspecionando.jpeg", caption: "Por baixo da internet 'sem fio' existe o cabo: navios e robôs submarinos lançam e consertam os cabos submarinos que carregam os dados entre os continentes." }],
           boxType: "tip",
           boxTitle: "💡 O que é a WWW?",
           boxText: "A World Wide Web (WWW) é a teia de páginas que navegamos na Internet usando um navegador web."
@@ -27,19 +27,22 @@ window.PDFLessons = (function() {
           lessonNum: 1,
           heading: "1.2 Classificação das Redes de Computadores",
           content: `As redes de computadores são classificadas conforme a extensão geográfica que cobrem:\n\n• LAN (Local Area Network - Rede Local): Abrange residências, escritórios ou salas de aula (ex: o Wi-Fi da sua casa).\n• MAN (Metropolitan Area Network - Rede Metropolitana): Conecta bairros ou instituições em uma mesma cidade.\n• WAN (Wide Area Network - Rede de Longa Distância): Conecta cidades, estados, países ou continentes (ex: agências bancárias nacionais).\n• Internet: A maior rede de todas, unindo bilhões de dispositivos no planeta inteiro.`,
-          image: "../../assets/img/network-types.png"
+          image: "../../assets/img/network-types.png",
+          imageCaption: "Compare as três extensões: a LAN fica dentro de um prédio (o Wi-Fi da sua casa), a MAN cobre uma cidade e a WAN interliga o mundo — é a rede da Internet."
         },
         {
           lessonNum: 1,
           heading: "1.3 Principais Navegadores de Internet (Browsers)",
           content: `Os navegadores são programas que interpretam o código HTML e exibem os sites na tela:\n\n1. Google Chrome: O mais utilizado no mundo, rápido e integrado à Conta Google.\n2. Mozilla Firefox: Focado em privacidade, código aberto e altamente personalizável.\n3. Microsoft Edge: Padrão do Windows, baseado no Chromium, otimizado para o sistema.\n4. Apple Safari: Padrão em dispositivos Apple (Mac, iPhone, iPad).\n5. Opera: Inclui recursos nativos como VPN gratuita integrada e bloqueador de anúncios.\n6. Brave: Focado em privacidade rigorosa, bloqueando rastreadores automaticamente.`,
-          image: "../../assets/img/internet/navegadores.png"
+          image: "../../assets/img/internet/navegadores.png",
+          imageCaption: "Chrome, Firefox, Edge, Opera e Safari lado a lado: todos abrem os mesmos sites, mas diferem em velocidade, privacidade e recursos. O Chrome é o mais usado no mundo."
         },
         {
           lessonNum: 1,
           heading: "1.4 Golpes Virtuais Comuns & Como se Proteger",
           content: `• Phishing (Pescaria de Dados): Mensagens ou e-mails falsos se passando por bancos/lojas para roubar senhas.\n• Boleto Falso: Boletos alterados por criminosos. Solução: Confira sempre o nome e o CNPJ do beneficiário no banco antes de pagar.\n• Loja Online Falsa: Sites com preços absurdamente baixos. Solução: Pesquise no 'Reclame Aqui' e verifique se o endereço tem HTTPS.\n• Engenharia Social & Golpe do PIX: Manipulação por mensagens urgentes de supostos parentes no WhatsApp. Solução: Ligue de viva-voz antes de transferir qualquer valor.\n• Falso Suporte Técnico: Pop-ups alarmantes dizendo que o PC tem vírus. Lembre-se: A Microsoft NUNCA liga para você pedindo acesso remoto.`,
           image: "../../assets/img/internet/site-falso1.png",
+          imageCaption: "Site falso que imita um banco: note o cadeado e o endereço verdadeiro. Golpe de phishing usa exatamente essa cópia para roubar senha — confira o domínio antes de digitar dados.",
           boxType: "warning",
           boxTitle: "⚠️ Regra de Ouro da Segurança",
           boxText: "Bancos e órgãos oficiais NUNCA pedem senhas completas ou códigos por e-mail, telefone ou WhatsApp!"
@@ -48,32 +51,37 @@ window.PDFLessons = (function() {
           lessonNum: 1,
           heading: "1.5 Guia Prático de Navegação Segura",
           content: `1. Mantenha Navegador, Antivírus e Sistema Operacional sempre atualizados.\n2. Verifique o Cadeado 🔒 e o prefixo 'https://' antes de digitar senhas ou dados bancários.\n3. Use Senhas Fortes e Únicas: Combine maiúsculas, minúsculas, números e símbolos (@#$%). Use gerenciadores de senha (Bitwarden, 1Password).\n4. Ative a Autenticação em Duas Etapas (2FA) em todas as suas contas digitais.\n5. Evite compras e acesso a bancos em redes Wi-Fi públicas sem VPN.`,
-          image: "../../assets/img/internet-security.png"
+          image: "../../assets/img/internet-security.png",
+          imageCaption: "Os três escudos do navegador: cadeado (site seguro), https:// na barra de endereço e gerenciador de senha. Exatamente esses três itens aparecem na tela."
         },
         {
           lessonNum: 2,
           chapter: "AULA 02: NAVEGAÇÃO PRÁTICA, SEGURANÇA E HTML",
           heading: "2.1 O Navegador como Janela para a Web & Código-Fonte",
           content: `O navegador é a sua janela de acesso às páginas da Web. Toda página é construída em código HTML.\n\nComo visualizar o código de qualquer site:\n1. Clique com o botão direito do mouse em qualquer área neutra da página.\n2. Escolha a opção 'Exibir código-fonte da página' (ou 'Ver código-fonte').\n3. Uma nova aba abrirá exibindo o código HTML estrutural.`,
-          image: "../../assets/img/html-history.png"
+          image: "../../assets/img/html-history.png",
+          imageCaption: "Linha do tempo do HTML: o navegador traduz cada comando (tag) em tela. É por isso que 'Exibir código-fonte' mostra a receita de qualquer página."
         },
         {
           lessonNum: 2,
           heading: "2.2 Tour pelas Ferramentas do Navegador",
           content: `• Barra de Endereços (URL): Onde você digita o site desejado (ex: www.google.com).\n• Botões de Controle: Seta para esquerda (←) volta; Seta para direita (→) avança; Círculo (↻) atualiza a página.\n• Atalhos de Abas: Ctrl + T abre nova aba; Ctrl + W fecha a aba atual.\n• Ajuste de Zoom: Pressione Ctrl e + para aumentar o texto; Ctrl e - para diminuir; Ctrl + 0 restaura o padrão 100%.`,
-          image: "../../assets/img/internet/barra-url.png"
+          image: "../../assets/img/internet/barra-url.png",
+          imageCaption: "Barra de Endereços (URL): é o único lugar onde você digita o site.Ao lado, a seta ← volta, a seta → avança e o círculo ↻ atualiza a página."
         },
         {
           lessonNum: 2,
           heading: "2.3 Histórico de Navegação e Privacidade",
           content: `O navegador registra a lista de todos os sites visitados por data.\n\n• Consultar Histórico: Pressione o atalho Ctrl + H no teclado.\n• Limpar Dados de Navegação: No menu do histórico, escolha 'Limpar dados', marque Histórico, Cookies e Cache, e confirme a exclusão.`,
-          image: "../../assets/img/internet/historico-chrome.png"
+          image: "../../assets/img/internet/historico-chrome.png",
+          imageCaption: "Histórico do Chrome: cada site visitado fica registrado com data e hora — é o caminho para abrir o Ctrl + H, revisar o que você acessou e limpar os dados de navegação."
         },
         {
           lessonNum: 2,
           heading: "2.4 Atividades Práticas — Gerador de Home Page Pessoal & Inteligência Artificial (IA)",
           content: `Passo a Passo Guiado de Criação de Páginas Web:\n\n• Atividade 6.1 — Gerador Interativo de Código HTML:\n1. Preencha seus dados de identificação (Nome Completo, Profissão/Ocupação, Escolaridade, Hobbies, Cidade e 3 Sites Favoritos).\n2. Clique no botão '⚡ Gerar Meu Código HTML Personalizado' para visualizar a estrutura construída em tempo real.\n3. Utilize os botões '📋 Copiar Código' ou '💾 Baixar HTML (minha-pagina.html)' para salvar o arquivo no seu computador.\n4. Dê duplo clique no arquivo salvo para abri-lo no seu navegador de internet!\n\n• Atividade 6.2 — Criando com Inteligência Artificial (IA & Prompts):\n1. Entenda o conceito: Inteligência Artificial é um assistente virtual que entende linguagem natural. Um 'Prompt' é a instrução ou comando que você envia para a IA.\n2. Copie o prompt pré-formatado da lição contendo suas preferências visuais e de cores.\n3. Cole em qualquer chat de IA (Google Gemini, ChatGPT, Copilot) e veja a IA criar uma Home Page ainda mais fluida e elegante para você!`,
           image: "../../assets/img/internet/gerenciador-senha-chrome.png",
+          imageCaption: "Gerenciador de senhas do Chrome: guarda login e senha de cada site e preenche sozinh — use senhas longas e diferentes para o e-mail e para o banco.",
           boxType: "code",
           boxTitle: "💻 Atividade Prática Concluída",
           boxText: "Parabéns! Você aprendeu a gerar código HTML personalizado e a interagir com Inteligência Artificial usando Prompts!"
@@ -83,34 +91,40 @@ window.PDFLessons = (function() {
           chapter: "AULA 03: DOMINANDO O GOOGLE E PRODUTIVIDADE NA NUVEM",
           heading: "3.1 O Ecossistema Google & A Conta Gmail",
           content: `A Conta Google (Gmail) funciona como o seu passaporte digital único. Com um único e-mail e senha, você acessa e-mails, documentos, arquivos, vídeos e mapas de qualquer lugar do mundo.\n\n⚠️ Cuide bem da sua senha de e-mail e anote em um caderno seguro.`,
-          images: ["../../assets/img/internet/a3/gmail-imagem-foto-user-menu-google-fechado.png", "../../assets/img/internet/a3/botao-escreve-email-gmail.png"]
+          images: [{ src: "../../assets/img/internet/a3/gmail-imagem-foto-user-menu-google-fechado.png", caption: "Cantos do Gmail: a foto do canto superior direito é o menu da Conta Google, e o botão 'Escrever' abre um rascunho novo na tela." }, { src: "../../assets/img/internet/a3/botao-escreve-email-gmail.png", caption: "Botão 'Escrever' do Gmail: clique nele para abrir uma folha em branco e digitar destinatário, assunto e corpo da mensagem." }]
         },
         {
           lessonNum: 3,
           heading: "3.2 O Menu Mágico dos 9 Pontinhos (Waffle)",
           content: `Ao entrar na sua Conta Google, no canto superior direito há um ícone com 9 pontinhos (Waffle). Ele dá acesso gratuito aos principais aplicativos:\n\n• 📄 Google Docs (Documentos): Editor de texto profissional (equivalente ao Word).\n• 📊 Google Sheets (Planilhas): Tabelas e cálculos automáticos (equivalente ao Excel).\n• 🖼️ Google Slides (Apresentações): Criação de slides visuais (equivalente ao PowerPoint).\n• 📁 Google Drive: Seu armário de arquivos na nuvem com 15 GB gratuitos.`,
-          images: ["../../assets/img/internet/a3/grade-menu-apps--google.png", "../../assets/img/internet/a3/dual-linha-grade-menu-apps--google.png"]
+          images: [{ src: "../../assets/img/internet/a3/grade-menu-apps--google.png", caption: "Os 9 pontinhos do Google: um único botão abre os aplicativos (Docs, Planilhas, Drive, Maps) sem precisar sair da sua conta." }, { src: "../../assets/img/internet/a3/dual-linha-grade-menu-apps--google.png", caption: "O mesmo menu de 9 pontinhos em duas linhas: é o painel de aplicativos do Google, de onde saem Docs, Sheets, Drive e Maps de graça." }]
         },
         {
           lessonNum: 3,
           heading: "3.3 Recursos do Google Docs e Planilhas",
           content: `• Salvamento Automático Contínuo: No Google Docs e Planilhas não existe o botão 'Salvar'. Cada letra ou número digitado é salvo na nuvem instantaneamente.\n• Google Planilhas: As células são identificadas por Colunas (A, B, C) e Linhas (1, 2, 3). Para somar valores, selecione as células e veja o resultado automático no canto inferior direito.`,
-          images: ["../../assets/img/internet/a3/barra-ferramentas-google-docs.png", "../../assets/img/internet/a3/barra-ferramentas-planilha.png"]
+          images: [{ src: "../../assets/img/internet/a3/barra-ferramentas-google-docs.png", caption: "Barra do Google Docs: observe que não existe botão 'Salvar' — cada letra digitada já é gravada na nuvem automaticamente." }, { src: "../../assets/img/internet/a3/barra-ferramentas-planilha.png", caption: "Barra do Google Planilhas: células com COLUNAS (A, B, C) e LINHAS (1, 2, 3); selecione o intervalo e o total aparece na barra de status." }]
         },
         {
           lessonNum: 3,
           heading: "3.4 O Poder do Compartilhamento & Google Drive",
           content: `Em vez de anexar arquivos pesados por e-mail, clique no botão azul 'Compartilhar':\n\n• Leitor: A pessoa pode apenas visualizar e ler o documento.\n• Editor: A pessoa pode alterar, escrever e trabalhar junto com você em tempo real.\n\n📁 Passo a Passo Guiado no Google Drive (drive.google.com):\n1. Criar Pastas e Docs: Clique no botão '+ Novo' -> Selecione 'Nova pasta' (para organizar) ou 'Documentos Google' / 'Planilhas Google' (para criar um arquivo novo).\n2. Subir (Upload) Arquivos e Pastas do PC:\n   • Método 1 (+ Novo): Clique em '+ Novo' -> Escolha 'Fazer upload de arquivo' (para 1 arquivo) ou 'Fazer upload de pasta' (para uma pasta inteira) e selecione no computador.\n   • Método 2 (Arrastar e Soltar): Abra a pasta do seu PC, clique no arquivo, segure e arraste diretamente para a tela do navegador no Google Drive!`,
-          images: ["../../assets/img/internet/a3/botao-compartilhar-docs-google.png", "../../assets/img/internet/a3/configuracao-compartilhamento-documento.png"]
+          images: [{ src: "../../assets/img/internet/a3/botao-compartilhar-docs-google.png", caption: "Botão azul 'Compartilhar' do Google Drive: é ele que dispensa anexar arquivo pesado no e-mail e dá permissão de leitura ou de edição a quem você escolher." }, { src: "../../assets/img/internet/a3/configuracao-compartilhamento-documento.png", caption: "Janela de compartilhamento: em 'Pessoas com acesso' troque de Leitor para Editor — quem é editor alterou o documento enquanto você acompanha, em tempo real." }]
         },
         {
           lessonNum: 3,
           heading: "3.5 Operadores Avançados de Busca no Google",
           content: `Torne suas pesquisas no Google infinitamente mais precisas usando os operadores:\n\n• Busca Exata: Use aspas duplas -> "informática para terceira idade"\n• Pesquisar em Site Específico: site:g1.globo.com tecnologia\n• Buscar Arquivos em PDF: filetype:pdf apostila redes\n• Excluir Palavras: manga -fruta (busca a história em quadrinhos descartando frutas)\n• Buscar no Título: intitle:segurança digital`,
-          image: "../../assets/img/google-search.png"
+          image: "../../assets/img/google-search.png",
+          imageCaption: "Na caixa de busca do Google, os operadores funcionam: aspas para busca exata, site: para um único site e filetype:pdf para achar apostilas em PDF."
         },
         {
+          // Apêndice do módulo, não conteúdo de uma aula: bibliografia acadêmica vale
+          // para as 3 apostilas de Internet. Por isso lessonNum fica nulo DE PROPÓSITO
+          // (regra 8) e o marcador moduleAppendix declara a intenção, para que a
+          // auditoria não confunda apêndice genérico com conteúdo que "vazou" de uma aula.
           lessonNum: null,
+          moduleAppendix: true,
           chapter: "REFERÊNCIAS BIBLIOGRÁFICAS E ACADÊMICAS",
           heading: "Leituras Recomendadas & Valor Acadêmico Reconhecido",
           content: `1. Berners-Lee, T., Cailliau, R., Groff, J. F., & Pollermann, B. (1992). World-Wide Web: The Information Universe. Electronic Networking: Research, Applications and Policy, 2(1), 52-58.\n2. Brin, S., & Page, L. (1998). The Anatomy of a Large-Scale Hypertextual Web Search Engine. Computer Networks and ISDN Systems, 30(1-7), 107-117.\n3. Tanenbaum, A. S., & Wetherall, D. J. (2011). Computer Networks (5th ed.). Prentice Hall.\n4. Stallings, W. (2018). Data and Computer Communications (10th ed.). Pearson Education.\n5. W3C (World Wide Web Consortium). Web Content Accessibility Guidelines (WCAG) 2.2. W3C Recommendation.`,
@@ -402,6 +416,647 @@ window.PDFLessons = (function() {
           boxText: "Sem sistema operacional o computador seria apenas uma tela preta: é ele que gerencia o hardware e transforma a máquina em algo que você consegue usar."
         },
         {
+          lessonNum: 2,
+          chapter: "AULA 02: INTRODUÇÃO AO WINDOWS",
+          heading: "2.0 FASE 0 — Antes de Começar",
+          content: "Objetivo desta aula: entender o que é o Windows e para que serve, dominar a tela principal (Área de Trabalho e Barra de Tarefas), organizar arquivos e pastas, usar os atalhos de teclado que economizam tempo, personalizar o ambiente (papel de parede, data e hora) e dar os primeiros passos no Prompt de Comando.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">ROTEIRO DA AULA (9 PASSOS)</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>#</th><th>Passo a Passo</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>O que é o Windows: o sistema operacional que organiza tudo.</td></tr>
+                  <tr><td>2</td><td>A Área de Trabalho: a "casa" do seu computador.</td></tr>
+                  <tr><td>3</td><td>Configurar os ícones da Área de Trabalho.</td></tr>
+                  <tr><td>4</td><td>A Barra de Tarefas e o Menu Iniciar.</td></tr>
+                  <tr><td>5</td><td>Ícones comuns e ícones de atalho: a diferença que importa.</td></tr>
+                  <tr><td>6</td><td>Arquivos, pastas e a hierarquia do disco C:.</td></tr>
+                  <tr><td>7</td><td>Criar uma pasta e os atalhos de teclado que economizam tempo.</td></tr>
+                  <tr><td>8</td><td>Personalizar o ambiente: papel de parede, data e hora e Configurações.</td></tr>
+                  <tr><td>9</td><td>Primeiros passos no Prompt de Comando.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>🏁 Resultado esperado ao final da aula</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Organizar o seu computador sem medo: criar pastas, localizar arquivos, trocar o papel de parede, acertar o relógio e abrir um programa pelo <strong>atalho de teclado</strong> em vez de procurar com o mouse.</p>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "⚙️ Preparação",
+          boxText: "Nenhum programa é necessário — é só leitura. Se tiver o seu computador do lado, pode ir testando cada passo no seu próprio Windows (7, 10 ou 11): as telas mudam um pouco, mas as funções são as mesmas."
+        },
+        {
+          lessonNum: 2,
+          heading: "2.1 O que é o Windows?",
+          content: "O Windows é um SISTEMA OPERACIONAL: o programa que fica entre você e as peças físicas do computador. Sem ele, a máquina seria apenas uma tela preta — é o Windows que acende o monitor, distribui a memória, mostra o mouse e abre os seus programas.\n\nEle foi criado pela Microsoft e funciona com licença: para usar você precisa de uma chave (o produto ativado, seja comprado, seja de fábrica).\n\nQuando o Windows está ligado, ele cuida de quatro coisas ao mesmo tempo:\n\n• A EXIBIÇÃO — desenha na tela as janelas, os ícones e as letras.\n• O ARMAZENAMENTO — coloca cada arquivo na pasta certa e lembra onde ele está.\n• O EQUIPAMENTO — conversa com a impressora, o teclado, o mouse e a internet.\n• A SEGURANÇA — pede a sua senha antes de deixar alguém mexer no computador.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">AS TRÊS VERSÕES QUE VOCÊ VAI ENCONTRAR</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Versão</th><th>Situação hoje</th><th>Como identificar</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Windows 7</strong></td><td>Sem suporte oficial desde 2020 — evite usar a internet sem proteção</td><td>Barra de tarefas larga, com botão Iniciar redondo à esquerda</td></tr>
+                  <tr><td><strong>Windows 10</strong></td><td>Ainda é comum em máquinas de trabalho, mas o suporte oficial terminou em 14/10/2025</td><td>Menu Iniciar com lista de aplicativos</td></tr>
+                  <tr><td><strong>Windows 11</strong></td><td>Versão atual, mais leve e com visual arredondado</td><td>Botão Iniciar centralizado, cantos arredondados</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>💡 Por que isso importa para você</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Saber a versão do seu Windows é o primeiro passo de quase qualquer atendimento: é o que define onde ficam os botões, o nome do menu e o caminho das configurações. Nesta aula, todos os caminhos aparecem nas três versões.</p>
+            </div>
+          `,
+          boxType: "warning",
+          boxTitle: "⚠️ Atenção: versão antiga é risco antigo",
+          boxText: "Um Windows 7 ou 8 sem atualização não recebe correções de segurança há anos. Se o seu computador é assim, o antivírus e a atualização do sistema não são opcionais."
+        },
+        {
+          lessonNum: 2,
+          heading: "2.2 A Área de Trabalho (Desktop)",
+          content: "A Área de Trabalho é a tela que aparece assim que o Windows termina de carregar. Pense nela como a parede da sua sala de trabalho: é o lugar de onde você enxerga e acessa tudo.\n\nO que você encontra aqui:\n\n• ÍCONES — pequenos desenhos que representam programas, pastas e arquivos.\n• A LIXEIRA — o lugar para onde vai o que você apaga (e de onde ainda dá para recuperar).\n• O ATALHO DO NAVEGADOR — um atalho para a internet.\n• ESTE COMPUTADOR — o acesso aos discos e unidades do computador.\n\nUm detalhe importante: se você encostar a tela de um monitor novo e não aparecer nada, provavelmente não há ícone nenhum na Área de Trabalho. Isso é normal e se resolve no tópico a seguir.",
+          images: [
+            {
+              src: "../../assets/img/windows/Aula2/image10.png",
+              caption: "A Área de Trabalho do Windows: a tela que aparece depois que o sistema termina de carregar."
+            }
+          ],
+          imagesWide: true,
+          boxType: "tip",
+          boxTitle: "🖱️ Duplo clique",
+          boxText: "Um clique apenas seleciona o ícone; são DOIS cliques rápidos que abrem o programa, a pasta ou o arquivo. É o gesto mais usado do Windows inteiro."
+        },
+        {
+          lessonNum: 2,
+          heading: "2.3 Configurar os Ícones da Área de Trabalho",
+          content: "Nada impede você de deixar a Área de Trabalho do seu jeito. Clique com o botão DIREITO do mouse em um espaço vazio da tela e escolha Exibir: ali estão as opções que organizam tudo.\n\nAs seis configurações mais úteis:\n\n1. MOSTRAR/OCULTAR ÍCONES — marque ou desmarque Computador, Lixeira, Rede, Reciclagem e a pasta do seu usuário.\n2. TAMANHO DOS ÍCONES — Grandes, Médios ou Clássicos (Win 7); Grandes, Médios ou Pequenos (Win 10/11). Atalho universal: segure Ctrl e gire a rodinha do mouse.\n3. ORGANIZAR ÍCONES — Classificar por (Win 7/10) ou Organizar por (Win 11): Nome, Tamanho, Tipo ou Data. O mesmo menu tem Alinhar à grade e Organizar automaticamente.\n4. ÍCONES DO SISTEMA — em Win 10/11: Personalizar → Temas → Configurações de ícones da área de trabalho. Em Win 7: Personalizar → Alterar ícones da área de trabalho.\n5. CRIAR ATALHO — botão direito → Novo → Atalho → indique o caminho → Avançar → dê um nome → Concluir. Funciona igual nas três versões.\n6. RENOMEAR E EXCLUIR — renomeie com o botão direito → Renomear (ou a tecla F2) e apague com o botão direito → Excluir (ou a tecla Delete).",
+          images: [
+            {
+              src: "../../assets/img/windows/Aula2/image1.png",
+              caption: "O menu de atalho do botão direito na Área de Trabalho: a porta de entrada para Exibir, Organizar, Novo e Personalizar."
+            },
+            {
+              src: "../../assets/img/windows/Aula2/image3.png",
+              caption: "Configurações de ícones da área de trabalho no Windows: escolha quais ícones do sistema aparecem na tela."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "⌨️ Atalho que serve em qualquer lugar",
+          boxText: "Segure Ctrl e gire a rodinha do mouse sobre a Área de Trabalho para aumentar ou diminuir o tamanho dos ícones, sem abrir nenhum menu."
+        },
+        {
+          lessonNum: 2,
+          heading: "2.4 A Barra de Tarefas e o Menu Iniciar",
+          content: "A Barra de Tarefas é a faixa que fica na parte inferior da tela (no Windows 11 ela pode ir para cima ou para a lateral). Ela mostra, de uma vez, tudo o que você precisa o tempo todo:\n\n• O BOTÃO INICIAR — o acesso a todos os programas.\n• OS PROGRAMAS ABERTOS — um botão para cada janela em uso; é só clicar para trocar entre elas.\n• O RELÓGIO E A DATA.\n• OS ÍCONES DE SOM, INTERNET E BATERIA.\n\nO MENU INICIAR é a porta de entrada para tudo. Para abrir: clique no botão Iniciar (canto inferior esquerdo) ou pressione a tecla Windows do teclado. Com ele você abre qualquer programa instalado, acessa as Configurações e desliga ou reinicia o computador.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">A BARRA DE TAREFAS NAS TRÊS VERSÕES</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Parte</th><th>Windows 7</th><th>Windows 10</th><th>Windows 11</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Botão Iniciar</strong></td><td>Bolinha redonda à esquerda</td><td>Ícone do Windows à esquerda</td><td>Ícone centralizado</td></tr>
+                  <tr><td><strong>Programas abertos</strong></td><td>Botões largos com o nome</td><td>Ícones com barra de destaque</td><td>Ícones + barra inferior colorida</td></tr>
+                  <tr><td><strong>Menu Iniciar</strong></td><td>Lista de programas à esquerda</td><td>Lista de aplicativos e "tile"s</td><td>Apps fixados + "Todos os aplicativos"</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula2/image16.png",
+              caption: "A Barra de Tarefas: botão Iniciar, programas abertos, relógio e os ícones de som, internet e bateria."
+            },
+            {
+              src: "../../assets/img/windows/Aula2/image13.png",
+              caption: "Barra de Tarefas no Windows 7: botão Iniciar à esquerda e programas abertos com o nome."
+            },
+            {
+              src: "../../assets/img/windows/Aula2/image4.png",
+              caption: "Barra de Tarefas no Windows 10: ícones com barra de destaque na parte inferior."
+            },
+            {
+              src: "../../assets/img/windows/Aula2/image15.png",
+              caption: "Barra de Tarefas no Windows 11: botão Iniciar centralizado e ícones alinhados."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "✂️ Truque para ganhar espaço",
+          boxText: "Quando um programa aberto ocupa a tela inteira, barra e botões somem sozinhos. Passe o mouse no alto da tela (ou na borda, se a barra estiver na lateral) que tudo reaparece."
+        },
+        {
+          lessonNum: 2,
+          heading: "2.5 Ícones Comuns e Ícones de Atalho",
+          content: "Ícones são as pequenas imagens que representam programas, pastas ou arquivos na tela. Você vai clicar neles o tempo todo — por isso vale saber qual é qual.\n\nÍCONE COMUM: abre diretamente o programa ou o arquivo ao ser clicado duas vezes. Exemplo: o ícone do navegador Chrome.\n\nÍCONE DE ATALHO: tem uma setinha no canto (↗️). Ele aponta para algo que está em outro lugar do computador. Apagar um atalho NÃO apaga o programa — apaga só o caminho.\n\nA setinha é a pista: se tiver setinha, é atalho e pode ser apagado à vontade se você souber onde o original está.",
+          images: [
+            {
+              src: "../../assets/img/windows/Aula2/image12.png",
+              caption: "Ícone comum: abre diretamente o programa ou o arquivo ao clique duplo."
+            },
+            {
+              src: "../../assets/img/windows/Aula2/image2.png",
+              caption: "Ícone de atalho: a setinha no canto indica que ele aponta para um arquivo localizado em outro lugar."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "📌 Regra de bolso",
+          boxText: "Sumiu um programa da Área de Trabalho? Não surtou: quase sempre foi só o atalho. Abra o Menu Iniciar, procure o programa, clique com o botão direito e escolha Enviar para → Area de Trabalho (criar atalho)."
+        },
+        {
+          lessonNum: 2,
+          heading: "2.6 Arquivos, Pastas e a Hierarquia do Disco C:",
+          content: "O computador organiza todas as suas informações usando PASTAS e ARQUIVOS — igualzinho a um armário ou gaveta do mundo real.\n\nPASTA: serve para organizar e guardar arquivos. É como uma caixa ou gaveta. Você pode criar quantas quiser e colocar pastas dentro de pastas.\n\nARQUIVO: é um documento criado no computador — texto, foto, música, planilha. Todo arquivo tem um nome e uma EXTENSÃO que identifica o seu tipo (a parte depois do ponto).\n\nTodos os arquivos ficam organizados em uma hierarquia, como uma árvore com galhos e folhas. O tronco é o disco C:.\n\nC:\\  (o disco principal do computador)\n├── Windows\\  → arquivos do sistema (não mexer!)\n├── Program Files\\  → programas instalados\n└── Users\\  → seus documentos e configurações\n     └── Joao\\Documents\\Trabalho.docx\n\nPara ler um caminho, siga da esquerda para a direita:\nC: → o disco · Users → pasta de todos os usuários · Joao → o nome do seu usuário · Documents → sua pasta de documentos · Trabalho.docx → o arquivo em si.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">TIPOS DE ARQUIVO MAIS COMUNS</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Tipo de arquivo</th><th>Extensão</th><th>Exemplo</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Documento de texto</td><td><strong>.txt</strong></td><td>lista.txt</td></tr>
+                  <tr><td>Documento Word</td><td><strong>.docx</strong></td><td>redacao.docx</td></tr>
+                  <tr><td>Planilha Excel</td><td><strong>.xlsx</strong></td><td>gastos.xlsx</td></tr>
+                  <tr><td>Imagem / Foto</td><td><strong>.jpg</strong> · <strong>.png</strong></td><td>foto.jpg</td></tr>
+                  <tr><td>Música</td><td><strong>.mp3</strong></td><td>musica.mp3</td></tr>
+                  <tr><td>Vídeo</td><td><strong>.mp4</strong></td><td>video.mp4</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>🌳 Por que isso importa</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">A extensão é a única coisa que diz ao Windows <strong>qual programa abre o arquivo</strong>. Trocar o nome de <em>foto.jpg</em> para <em>foto.exe</em> não transforma nada — só faz o Windows tentar executar um arquivo que não é programa.</p>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula2/image6.png",
+              caption: "Ícone de pasta: a caixa que organiza e guarda os seus arquivos — e pode conter outras pastas."
+            },
+            {
+              src: "../../assets/img/windows/Aula2/image8.png",
+              caption: "Ícone de arquivo: todo documento criado no computador tem nome e extensão que identifica o seu tipo."
+            }
+          ],
+          boxType: "warning",
+          boxTitle: "⚠️ Não mexe na pasta Windows",
+          boxText: "As pastas Windows e Program Files guardam o funcionamento do sistema e dos programas. Alterar ou apagar arquivos delas pode fazer o Windows parar de funcionar."
+        },
+        {
+          lessonNum: 2,
+          heading: "2.7 Criando uma Pasta e os Atalhos de Teclado",
+          content: "Criar pastas é uma das tarefas mais importantes para manter os seus arquivos organizados. Existem duas formas de fazer isso.\n\nCOM O MOUSE:\n1. Abra o Explorador de Arquivos.\n2. Navegue até onde você quer criar a pasta.\n3. Clique com o botão direito do mouse.\n4. Escolha Novo > Pasta.\n5. Digite o nome e pressione Enter.\n\nPELO TECLADO (mais rápido!):\n1. Abra uma janela de pasta.\n2. Pressione Ctrl + Shift + N.\n3. Digite o nome da pasta.\n4. Pressione Enter.\n\nATALHOS DE TECLADO — combinações de teclas que executam ações rapidamente. Aprender os principais poupa muito tempo no dia a dia:\n\n• Win → Abre o Menu Iniciar\n• Win + E → Abre o Explorador de Arquivos\n• Win + I → Abre as Configurações\n• Ctrl + C → Copiar\n• Ctrl + V → Colar\n• Ctrl + X → Recortar (mover)\n• Ctrl + Z → Desfazer a última ação\n• Ctrl + Shift + N → Criar nova pasta\n• Alt + Tab → Trocar entre programas abertos\n\nO Ctrl + Z é o seu seguro: quase todo erro de exclusão ou renomeação pode ser desfeito com ele.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">OS ATALHOS QUE VALEM DECORAR</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Atalho</th><th>O que faz</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Win</strong></td><td>Abre o Menu Iniciar</td></tr>
+                  <tr><td><strong>Win + E</strong></td><td>Abre o Explorador de Arquivos</td></tr>
+                  <tr><td><strong>Win + I</strong></td><td>Abre as Configurações</td></tr>
+                  <tr><td><strong>Ctrl + C</strong></td><td>Copiar</td></tr>
+                  <tr><td><strong>Ctrl + V</strong></td><td>Colar</td></tr>
+                  <tr><td><strong>Ctrl + X</strong></td><td>Recortar (mover)</td></tr>
+                  <tr><td><strong>Ctrl + Z</strong></td><td>Desfazer a última ação</td></tr>
+                  <tr><td><strong>Ctrl + Shift + N</strong></td><td>Criar nova pasta</td></tr>
+                  <tr><td><strong>Alt + Tab</strong></td><td>Trocar entre programas abertos</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula2/image5.png",
+              caption: "Pasta recém-criada no Explorador de Arquivos: com o teclado o processo leva segundos."
+            }
+          ],
+          imagesWide: true,
+          boxType: "tip",
+          boxTitle: "⚡ pratique hoje",
+          boxText: "Abra o Explorador de Arquivos com Win + E e crie uma pasta com Ctrl + Shift + N. Em menos de cinco segundos você criou e nomeou uma pasta sem tocar no mouse."
+        },
+        {
+          lessonNum: 2,
+          heading: "2.8 Personalizar o Ambiente: Papel de Parede, Data e Hora e Configurações",
+          content: "O PAPEL DE PAREDE é a imagem de fundo da sua Área de Trabalho. Você pode colocar a foto que quiser, em qualquer versão do Windows.\n\n1. Clique com o botão direito na Área de Trabalho (em espaço vazio) ou, no Windows 10/11, use Menu → Iniciar → Configurações → Personalizar.\n2. Clique em Personalizar.\n3. Selecione Plano de Fundo.\n4. Escolha uma das imagens sugeridas ou clique em Procurar para usar uma foto sua.\n5. A mudança acontece na hora.\n\nA DATA E A HORA: se o relógio do computador estiver errado, alguns programas dão problema. Para ajustar:\n\n1. Clique com o botão direito no relógio (canto inferior direito da tela).\n2. Clique em Ajustar data e hora.\n3. Ative a opção de ajuste automático (recomendado) — o Windows se sincroniza com a internet.\n4. Se necessário, ajuste manualmente a data ou o fuso horário.\n\nAS CONFIGURAÇÕES DO COMPUTADOR: é o painel de controle do Windows — é lá que você ajusta tudo. Para abrir, use o atalho Win + I. Nelas você pode:\n\n• Conectar a uma rede Wi-Fi\n• Instalar uma impressora\n• Gerenciar contas de usuário\n• Alterar idioma e região\n• Ver informações do seu computador\n• Ajustar acessibilidade (tamanho da fonte, contraste...)",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">OS ATALHOS DE AJUSTE RÁPIDO</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>O que ajustar</th><th>Windows 7</th><th>Windows 10 / 11</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Papel de parede</strong></td><td>Botão direito na área de trabalho → Personalizar área de trabalho</td><td>Configurações → Personalização → Plano de fundo</td></tr>
+                  <tr><td><strong>Data e hora</strong></td><td>Botão direito no relógio → Ajustar data e hora</td><td>Idem, ou Configurações → Hora e Idioma</td></tr>
+                  <tr><td><strong>Configurações</strong></td><td>Clique no ícone do painel de controle</td><td><strong>Win + I</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>🕐 Fuso horário errado faz o Windows errar a hora sozinho</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Ativar o ajuste automático não serve só para corrigir o relógio: agenda, e-mail, Zoom e Meet passam a marcar os horários corretamente — inclusive no horário de verão.</p>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula2/image14.png",
+              caption: "Ajuste do papel de parede no Windows 7, a partir do botão direito na Área de Trabalho."
+            },
+            {
+              src: "../../assets/img/windows/Aula2/image7.png",
+              caption: "No Windows 10/11 o papel de parede fica em Configurações → Personalização → Plano de fundo."
+            },
+            {
+              src: "../../assets/img/windows/Aula2/image9.png",
+              caption: "Ajuste de data e hora no Windows 7: botão direito no relógio → Ajustar data e hora."
+            },
+            {
+              src: "../../assets/img/windows/Aula2/image11.png",
+              caption: "Ajuste de data e hora no Windows 10/11, com a opção de sincronização automática ativada."
+            }
+          ]
+        },
+        {
+          lessonNum: 2,
+          heading: "2.9 Primeiros Passos no Prompt de Comando",
+          content: "O PROMPT DE COMANDO (ou CMD) é uma janela de texto onde você conversa com o Windows digitando comandos em vez de clicar com o mouse. Ele existe desde as primeiras versões do Windows e continua sendo a ferramenta preferida de quem administra computadores.\n\nPara abrir: pressione Windows + R, digite cmd e pressione Enter. A janela preta abre com o caminho da pasta em que você está, terminado com o símbolo >.\n\nOs cinco comandos para começar:\n\n• ver → mostra a versão do Windows instalado.\n• dir → lista os arquivos e as pastas do local atual.\n• cd + nome da pasta → entra em uma pasta. Exemplo: cd Documentos.\n• cd.. → volta um nível (sobe para a pasta anterior).\n• mkdir + nome → cria uma pasta nova. Exemplo: mkdir Trabalhos.\n\n• cls → limpa a tela, útil quando a lista fica longa.\n\nUm detalhe que confunde muita gente: no Windows a letra maiúscula e a minúscula NÃO dão problema — digitar cd documentos funciona mesmo que a pasta se chame Documents. O que realmente atrapalha é o idioma: em português o Windows cria a pasta Meus Documentos, e não Documents.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">SEU PRIMEIRO COMANDO, PASSO A PASSO</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Janela do Prompt de Comando</th><th>O que está acontecendo</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>C:\\Users\\Joao&gt; <strong>ver</strong></td><td>O Windows responde a versão instalada</td></tr>
+                  <tr><td>C:\\Users\\Joao&gt; <strong>dir</strong></td><td>Lista as pastas e arquivos do local</td></tr>
+                  <tr><td>C:\\Users\\Joao&gt; <strong>cd Documentos</strong></td><td>Entra na pasta Documentos</td></tr>
+                  <tr><td>C:\\Users\\Joao\\Documentos&gt; <strong>mkdir Trabalhos</strong></td><td>Cria a pasta Trabalhos</td></tr>
+                  <tr><td>C:\\Users\\Joao\\Documentos&gt; <strong>cd..</strong></td><td>Volta para C:\\Users\\Joao</td></tr>
+                  <tr><td>C:\\Users\\Joao&gt; <strong>cls</strong></td><td>Limpa a tela do prompt</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>⚠️ Cuidado com o comando de apagar</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">No Prompt, <strong>rd pasta</strong> apaga uma pasta sem pedir confirmação e sem mandar para a Lixeira. Confira sempre o caminho que aparece antes do símbolo &gt; antes de apagar qualquer coisa.</p>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "🖥️ Por que isso vale a pena",
+          boxText: "Saber digitar dir e cd resolve em segundos o problema clássico do aluno que \"não acha o arquivo\" — o caminho que o Prompt mostra é exatamente o caminho que você pode colar na barra de endereço do Explorador de Arquivos."
+        },
+        {
+          lessonNum: 3,
+          chapter: "AULA 03: MEDIDAS DE ARMAZENAMENTO NO COMPUTADOR",
+          heading: "3.0 FASE 0 — Antes de Começar",
+          content: "Objetivo desta aula: entender como o computador representa informação em 0s e 1s, conhecer as unidades de medida de armazenamento (Byte até Terabyte), usar a Tabela ASCII para converter letras em binário, localizar o Disco Local (C:) no Explorador de Arquivos, saber verificar e otimizar o disco (distinguindo HDD de SSD), ajustar data e hora no Windows e fazer o exercício prático no WordPad.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">ROTEIRO DA AULA (9 PASSOS)</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>#</th><th>Passo a Passo</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>O sistema binário: por que o computador só entende 0 e 1.</td></tr>
+                  <tr><td>2</td><td>Medidas de armazenamento: Byte, KB, MB, GB e TB (o fator 1024).</td></tr>
+                  <tr><td>3</td><td>A Tabela ASCII: cada letra tem um número.</td></tr>
+                  <tr><td>4</td><td>Exemplo prático: o nome "Rangel" escrito em binário.</td></tr>
+                  <tr><td>5</td><td>Como acessar o Disco Local (C:) no Explorador de Arquivos.</td></tr>
+                  <tr><td>6</td><td>Ferramentas do disco: verificar erros e otimizar (HDD × SSD).</td></tr>
+                  <tr><td>7</td><td>Data e hora do Windows: ajuste automático e manual.</td></tr>
+                  <tr><td>8</td><td>Exercício prático: resumo da aula no WordPad (Resumo_Aula3.rtf).</td></tr>
+                  <tr><td>9</td><td>Prática interativa: conversor binário ↔ ASCII (simulador da Fase 9).</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>🏁 Resultado esperado ao final da aula</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Explicar o que é um byte, converter 13 em 1101, escrever o seu nome em binário, encontrar o Disco (C:), otimizar o disco sem desgastar o SSD e acertar o relógio do Windows.</p>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "⚙️ Preparação",
+          boxText: "A leitura funciona em qualquer computador. Para acompanhar os passos do disco e da data/hora, use um Windows 7, 10 ou 11: os nomes mudam um pouco, mas os procedimentos são os mesmos. O exercício final precisa do WordPad, que já vem instalado no Windows."
+        },
+        {
+          lessonNum: 3,
+          heading: "3.1 O que é o Sistema Binário?",
+          content: "O computador trabalha com a BASE BINÁRIA, feita apenas dos números 0 e 1. Cada letra, foto ou música que você vê na tela está guardada internamente como uma sequência de BITS (a menor unidade de informação: um 0 ou um 1).\n\nJuntando bits viram BYTES: 8 BITS FORMAM 1 BYTE, que é exatamente o espaço de um caractere — uma letra, um número ou um espaço.\n\nPara converter um número decimal para binário, use o método das divisões por 2: divida sucessivamente por 2 e anote os restos; depois leia os restos de baixo para cima. O número 13, por exemplo, vira 1101.\n\nComo conferir conversões rápidas: use um site como RapidTables (rapidtables.com). O importante é dominar o método, não decorar a tabela.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">Exemplo de conversão: 5 → 101</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Potência de 2</th><th>Valor</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1 × 2²</td><td>4</td></tr>
+                  <tr><td>0 × 2¹</td><td>0</td></tr>
+                  <tr><td>1 × 2⁰</td><td>1</td></tr>
+                  <tr><td colspan="2"><strong>4 + 0 + 1 = 5</strong> → 101</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">13 ÷ 2 → 1101, passo a passo</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Divisão</th><th>Resultado</th><th>Resto</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>13 ÷ 2</td><td>6</td><td><strong>1</strong></td></tr>
+                  <tr><td>6 ÷ 2</td><td>3</td><td><strong>0</strong></td></tr>
+                  <tr><td>3 ÷ 2</td><td>1</td><td><strong>1</strong></td></tr>
+                  <tr><td>1 ÷ 2</td><td>0</td><td><strong>1</strong></td></tr>
+                  <tr><td colspan="3">Lendo de baixo para cima: <strong>1101</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula3/image3.png",
+              caption: "Representação binária: o computador entende apenas 0 e 1."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Dica do professor",
+          boxText: "Não é preciso decorar as conversões: siga o método (divisões sucessivas por 2 e restos lidos de baixo para cima) e confira no simulador da Fase 9 da aula."
+        },
+        {
+          lessonNum: 3,
+          heading: "3.2 Medidas de Armazenamento",
+          content: "O espaço de armazenamento é medido em BYTES, e cada unidade representa uma quantidade maior de dados. Em informática, a relação entre uma unidade e a seguinte é sempre de 1024 VEZES (porque 2¹⁰ = 1024).\n\n• 1 BYTE (B) = 8 BITS → um caractere (uma letra).\n• 1 KILOBYTE (KB) = 1024 BYTES → um pequeno texto.\n• 1 MEGABYTE (MB) = 1024 KB → cerca de 1 minuto de música em MP3.\n• 1 GIGABYTE (GB) = 1024 MB → cerca de 1 filme em qualidade SD.\n• 1 TERABYTE (TB) = 1024 GB → milhares de músicas ou filmes.\n\nExemplos práticos: um documento de texto com 1000 palavras pode ter cerca de 30 KB, enquanto um jogo moderno pode ocupar 50 GB ou mais.\n\nNão confunda: fabricantes de discos anunciam 1 GB = 1000 MB (padrão decimal), mas o Windows mostra 1 GB = 1024 MB. Por isso o disco de 500 GB aparece com um pouco menos de 500 \"GB\" no Explorador.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">A escala de medidas (fator 1024)</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Unidade</th><th>Quanto vale</th><th>Exemplo prático</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>1 Byte (B)</strong></td><td>8 bits</td><td>Um caractere (uma letra)</td></tr>
+                  <tr><td><strong>1 Kilobyte (KB)</strong></td><td>1024 bytes</td><td>Um pequeno texto</td></tr>
+                  <tr><td><strong>1 Megabyte (MB)</strong></td><td>1024 KB</td><td>Cerca de 1 minuto de música em MP3</td></tr>
+                  <tr><td><strong>1 Gigabyte (GB)</strong></td><td>1024 MB</td><td>Cerca de 1 filme em qualidade SD</td></tr>
+                  <tr><td><strong>1 Terabyte (TB)</strong></td><td>1024 GB</td><td>Milhares de músicas ou filmes</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula3/image5.png",
+              caption: "Escala de medidas de armazenamento: cada unidade equivale a 1024 vezes a anterior."
+            }
+          ],
+          imagesWide: true,
+          boxType: "warning",
+          boxTitle: "⚠️ 1000 ou 1024?",
+          boxText: "O fabricante usa a base decimal (1 GB = 1000 MB) para simplificar a embalagem; o Windows usa a base binária (1 GB = 1024 MB). As duas contas estão certas — só muda a régua usada."
+        },
+        {
+          lessonNum: 3,
+          heading: "3.3 O que é a Tabela ASCII?",
+          content: "A TABELA ASCII (American Standard Code for Information Interchange) é um padrão que atribui um ÚNICO NÚMERO a cada caractere. Assim o computador consegue representar letras, números e símbolos: primeiro viram um número decimal e depois esse número vira binário.\n\nAlguns exemplos: A = 65 (01000001), B = 66 (01000010) e Espaço = 32 (00100000).\n\nComo converter uma letra em binário, em 3 passos:\n1. Veja a letra na tabela ASCII → 2. Pegue o código decimal → 3. Converta o decimal em binário (dividindo por 2).\n\nExemplo: A = 65 → 01000001, porque 64 + 1 = 65.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">Exemplo de alguns caracteres ASCII</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Caractere</th><th>Código Decimal</th><th>Código Binário (8 bits)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>A</td><td>65</td><td><code>01000001</code></td></tr>
+                  <tr><td>B</td><td>66</td><td><code>01000010</code></td></tr>
+                  <tr><td>Espaço</td><td>32</td><td><code>00100000</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>🔢 De letra para binário, em 3 passos</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Veja a letra na tabela ASCII → pegue o código decimal → converta o decimal em binário dividindo por 2.</p>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula3/image4.png",
+              caption: "Tabela ASCII: cada caractere é convertido em código numérico e depois em binário."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "🧠 Por que 8 bits?",
+          boxText: "A tabela ASCII clássica vai de 0 a 127, ou seja, cabe em 7 bits — e como os bytes têm 8 bits, sobra um bit que versões estendidas usam para acentos e símbolos extras. Por isso falamos sempre em \"8 bits por caractere\"."
+        },
+        {
+          lessonNum: 3,
+          heading: "3.4 Exemplo Prático: \"Rangel\" em Binário",
+          content: "Agora é só juntar o que você viu: cada letra do nome \"Rangel\" vira um código ASCII e esse código vira binário de 8 bits.\n\n• R = 82 → 01010010\n• a = 97 → 01100001\n• n = 110 → 01101110\n• g = 103 → 01100111\n• e = 101 → 01100101\n• l = 108 → 01101100\n\nSequência completa: 01010010 01100001 01101110 01100111 01100101 01101100\n\nResultado: ao armazenar esse nome no computador, ele ocupa 6 BYTES (48 BITS) — 6 letras × 8 bits.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">Letra → ASCII → Binário</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Letra</th><th>Código ASCII</th><th>Binário (8 bits)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>R</td><td>82</td><td><code>01010010</code></td></tr>
+                  <tr><td>a</td><td>97</td><td><code>01100001</code></td></tr>
+                  <tr><td>n</td><td>110</td><td><code>01101110</code></td></tr>
+                  <tr><td>g</td><td>103</td><td><code>01100111</code></td></tr>
+                  <tr><td>e</td><td>101</td><td><code>01100101</code></td></tr>
+                  <tr><td>l</td><td>108</td><td><code>01101100</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>📦 Resultado: 6 bytes (48 bits)</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Cada letra ocupa 1 byte (8 bits), então o nome inteiro tem 6 × 8 = 48 bits.</p>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula3/image7.png",
+              caption: "Representação binária do nome 'Rangel': cada caractere ocupa 1 byte (8 bits), totalizando 6 bytes."
+            }
+          ],
+          imagesWide: true,
+          boxType: "tip",
+          boxTitle: "🎯 Desafio",
+          boxText: "No simulador da Fase 9, converta o seu próprio nome letra a letra e confira quantos bytes ele ocupa. Depois faça o inverso: digite 8 bits e veja qual caractere aparece."
+        },
+        {
+          lessonNum: 3,
+          heading: "3.5 Como Acessar o Disco C: no Explorador de Arquivos",
+          content: "O DISCO LOCAL (C:) é a unidade principal do computador: é nele que ficam o Windows, os programas e os seus arquivos. Para ver o espaço usado e o espaço livre, siga estes passos:\n\n1. Pressione Windows + E (ou clique no ícone da pasta na barra de tarefas) para abrir o Explorador de Arquivos.\n2. Na lateral esquerda, clique em Este Computador.\n3. Clique em Disco Local (C:) para acessar os arquivos e pastas do sistema.\n4. O painel de status mostra o espaço usado e o espaço livre da unidade.\n\nPor que isso importa: todo \"meu computador está cheio\" começa aqui. Ao abrir o Explorador você vê quanto existe de livre em cada unidade (C:, D:...) antes de instalar algo.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">Caminho até o Disco Local (C:)</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Passo</th><th>Botão / Item</th><th>Resultado</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td><kbd>Win</kbd> + <kbd>E</kbd></td><td>Abre o Explorador de Arquivos</td></tr>
+                  <tr><td>2</td><td>Este Computador (lateral esquerda)</td><td>Lista as unidades do PC</td></tr>
+                  <tr><td>3</td><td>Disco Local (C:)</td><td>Abre a unidade do sistema</td></tr>
+                  <tr><td>4</td><td>Painel de status</td><td>Mostra espaço usado e livre</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula3/image6.png",
+              caption: "Acesso ao Disco Local (C:) pelo Explorador de Arquivos (Este Computador)."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Atalho universal",
+          boxText: "O Windows + E funciona em todas as versões do Windows, do 7 ao 11 — é o atalho mais rápido para chegar às unidades e arquivos."
+        },
+        {
+          lessonNum: 3,
+          heading: "3.6 Como Acessar as Ferramentas do HD/SSD",
+          content: "O Windows traz duas ferramentas embutidas para cuidar do disco. Ambas ficam em Propriedades → aba Ferramentas do Disco Local (C:).\n\nVERIFICAR O ESTADO DO DISCO:\n1. Clique com o botão direito no Disco Local (C:).\n2. Escolha Propriedades.\n3. Vá até a aba Ferramentas.\n4. Em Verificação de erros, clique em Verificar para analisar o disco.\n\nOTIMIZAR E DESFRAGMENTAR O DISCO:\n1. Ainda na aba Ferramentas, clique em Otimizar.\n2. Se o disco for HDD (disco mecânico): escolha Desfragmentar no Windows 7 ou Otimizar no Windows 10/11 — o Windows junta os pedaços dos arquivos em blocos vizinhos e o disco lê mais rápido.\n3. Se o disco for SSD (estado sólido): use apenas Otimizar. O SSD NÃO PRECISA DE DESFRAGMENTAÇÃO — ele não tem peças móveis, e a desfragmentação geraria escritas inúteis.\n\nComputadores e notebooks recentes usam SSD. Se o seu for novo, deixe a otimização no modo automático e pronto.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">Verificar o estado do disco — passo a passo</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Passo</th><th>Ação</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Clique com o botão direito no <strong>Disco Local (C:)</strong></td></tr>
+                  <tr><td>2</td><td>Escolha <strong>Propriedades</strong></td></tr>
+                  <tr><td>3</td><td>Vá até a aba <strong>Ferramentas</strong></td></tr>
+                  <tr><td>4</td><td>Em <strong>Verificação de erros</strong>, clique em <strong>Verificar</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">⚠️ HDD × SSD: a diferença que não pode errar</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Disco</th><th>O que fazer</th><th>Por quê</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>HDD</strong> (mecânico)</td><td>Verificar erros + Desfragmentar/Otimizar</td><td>Tem pratos e cabeçotes: ler arquivos espalhados demora.</td></tr>
+                  <tr><td><strong>SSD</strong> (estado sólido)</td><td>Verificar erros + apenas Otimizar (sem desfragmentar)</td><td>Não tem partes móveis; a desfragmentação só gera escritas desnecessárias.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula3/image2.png",
+              caption: "Guia de Ferramentas do disco: Verificar erros e Otimizar (diferenciando HDD e SSD)."
+            }
+          ],
+          boxType: "warning",
+          boxTitle: "⚠️ Nunca desfragmente um SSD",
+          boxText: "Desfragmentar um SSD não melhora o desempenho e apenas gera escritas desnecessárias na memória flash. Deixe a otimização automática ativa: o Windows reconhece o tipo de disco e aplica o procedimento correto."
+        },
+        {
+          lessonNum: 3,
+          heading: "3.7 Como Acessar e Corrigir Data e Hora do Windows",
+          content: "Relógio errado atrapalha de tudo: senhas que expiram, e-mails com data errada e certificados que dão problema. Veja como acertar:\n\n1. Clique com o botão direito no relógio da barra de tarefas.\n2. Selecione Ajustar data e hora.\n3. Ative a opção Definir horário automaticamente (recomendado: o Windows se sincroniza com servidores de internet).\n4. Caso precise ajustar manualmente: desative \"Definir horário automaticamente\", clique em Alterar, corrija data e hora e confirme.\n5. Confirme e feche a janela.\n\nDica: se a data voltar para 2020 depois que o computador desliga, a bateria da placa-mãe (CMOS) pode estar fraca. Ajuste resolve hoje, mas o defeito volta — avise o professor.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">Data e hora — os 5 passos</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Passo</th><th>O que fazer</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Clique com o botão direito no <strong>relógio</strong> da barra de tarefas</td></tr>
+                  <tr><td>2</td><td>Selecione <strong>Ajustar data e hora</strong></td></tr>
+                  <tr><td>3</td><td>Ative <strong>Definir horário automaticamente</strong> (recomendado)</td></tr>
+                  <tr><td>4</td><td>Se precisar, desative e clique em <strong>Alterar</strong> para ajustar na mão</td></tr>
+                  <tr><td>5</td><td>Confirme e feche a janela</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula3/image1.png",
+              caption: "Ajuste de data e hora no Windows: ativar a sincronização automática é o recomendado."
+            }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Data volta sempre para 2020?",
+          boxText: "Sinal de bateria CMOS fraca na placa-mãe. Ajuste a data pela tela de configurações, mas avise o professor: a correção definitiva é trocar a bateria (CR2032)."
+        },
+        {
+          lessonNum: 3,
+          heading: "3.8 Exercício Prático — WordPad (Resumo da Aula 3)",
+          content: "Hora de praticar: você vai escrever um resumo da aula no WordPad e salvar no formato .rtf. O WordPad já vem instalado no Windows — não precisa baixar nada.\n\nEXERCÍCIO — Criar um resumo no WordPad:\n1. Abra o WordPad: pressione Windows + R, digite wordpad e pressione Enter.\n2. Escreva um resumo da aula abordando os 8 itens:\n   • Sistema binário.\n   • Medidas de armazenamento.\n   • ASCII e representação binária.\n   • Como acessar o disco C:.\n   • Como verificar e otimizar o HD/SSD.\n   • Como corrigir a data e hora.\n   • Qual a capacidade de armazenamento do PC.\n   • Quanto espaço livre ele possui.\n3. Formate o texto:\n   • Título em negrito, tamanho 16, fonte Arial.\n   • Palavras-chave (títulos e subtítulos) em itálico negrito.\n   • Corpo do texto em tamanho 12, fonte Times New Roman.\n4. Salve o arquivo como Resumo_Aula3.rtf.\n\nAtalho que você vai usar: Windows + R abre a caixa \"Executar\". Lá você pode digitar wordpad, notepad ou cmd para abrir o programa pela digitação.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">EXERCÍCIO — Criar um resumo no WordPad</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>#</th><th>Passo</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td><strong>Abra o WordPad:</strong> <kbd>Win</kbd> + <kbd>R</kbd> → digite <code>wordpad</code> → Enter</td></tr>
+                  <tr><td>2</td><td>Escreva um resumo com os <strong>8 itens</strong> indicados no enunciado</td></tr>
+                  <tr><td>3</td><td>Formate: título Arial 16 negrito; palavras-chave itálico negrito; corpo Times New Roman 12</td></tr>
+                  <tr><td>4</td><td>Salve como <strong>Resumo_Aula3.rtf</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>✅ Entrega</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Salve o arquivo <strong>Resumo_Aula3.rtf</strong> e envie para o professor conforme combinado em aula.</p>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "🧩 Antes de entregar",
+          boxText: "Confira a formatação: título em Arial 16 negrito, palavras-chave em itálico negrito e corpo em Times New Roman 12. O arquivo precisa ter a extensão .rtf (formato Rich Text, que guarda a formatação)."
+        },
+        {
+          lessonNum: 3,
+          heading: "3.9 Praticando: Conversor Binário ↔ ASCII",
+          content: "Fixar conteúdo de conversão só com leitura não basta: a aprendizagem ativa acontece quando você pratica, erra, confere o passo-a-passo e tenta de novo. Para isso, a aula conta com um simulador interativo com 4 conversores que mostram cada etapa do cálculo:\n\n1. Decimal → Binário: divisões sucessivas por 2 (restos lidos de baixo para cima).\n2. Binário → Decimal: decomposição por potências de 2.\n3. Letra → Binário/ASCII: caractere → código ASCII → binário de 8 bits.\n4. Binário → Letra: binário → código ASCII → caractere.\n\nAcesse o simulador em: Módulo Windows → Aula 03 → Fase 9 (botão \"Abrir Simulador Binário ↔ Letra/ASCII\"). Ele abre em uma nova aba, guarda seu histórico de conversões no navegador e mostra o passo-a-passo de cada operação.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">Simulador Binário ↔ ASCII — os 4 conversores</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>#</th><th>Conversor</th><th>Método exibido</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Decimal → Binário</td><td>Divisões sucessivas por 2 (restos de baixo para cima)</td></tr>
+                  <tr><td>2</td><td>Binário → Decimal</td><td>Decomposição por potências de 2 (2<sup>n</sup>)</td></tr>
+                  <tr><td>3</td><td>Letra → Binário/ASCII</td><td>Caractere → código ASCII → binário de 8 bits</td></tr>
+                  <tr><td>4</td><td>Binário → Letra</td><td>Binário → código ASCII → caractere</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>🗺️ Como chegar lá</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Módulo Windows → Aula 03 → <strong>Fase 9</strong> → botão <strong>"Abrir Simulador Binário ↔ Letra/ASCII"</strong> (abre em nova aba).</p>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Pratique para fixar",
+          boxText: "Use o simulador para testar o exemplo 'Rangel' (letra→binário) e refazer a conversão 13→1101 (decimal→binário) até dominar o método das divisões por 2."
+        },
+        {
           lessonNum: 8,
           chapter: "AULA 08: DIAGNÓSTICO DE MEMÓRIA, RESTAURAÇÃO DO SISTEMA E MÍDIA DE INSTALAÇÃO",
           heading: "8.1 Diagnóstico de Memória RAM do Windows (Teste de Memória)",
@@ -641,7 +1296,7 @@ window.PDFLessons = (function() {
           lessonNum: 7,
           heading: "7.3 Atualizações de Segurança (Windows Update)",
           content: "As atualizações do Windows corrigem falhas descobertas no sistema, fechando as 'portas de entrada' usadas por vírus e hackers. Manter o Windows Update ativo é um dos passos mais importantes da segurança.",
-          sec: `
+          html: `
             <div class="fun-highlight">
               <h4>🛡️ Por que atualizar é tão importante?</h4>
               <ul>
@@ -683,7 +1338,7 @@ window.PDFLessons = (function() {
           lessonNum: 7,
           heading: "7.5 Ferramenta de Backup do Windows",
           content: "O Backup cria cópias de segurança dos seus arquivos para recuperá-los caso o computador seja perdido, roubado, infectado ou apresente falha no disco. No Windows 7 a ferramenta nativa é o 'Backup e Restauração'; no Windows 10/11 o recurso é o 'Histórico de Arquivos'.",
-          sec: `
+          html: `
             <div class="mini-sheet">
               <div class="es-sheet-titlebar">🖥️ FERRAMENTAS DE BACKUP NATIVAS</div>
               <div class="es-sheet-box">
@@ -724,7 +1379,7 @@ window.PDFLessons = (function() {
           lessonNum: 7,
           heading: "7.7 Os Riscos da Pirataria",
           content: "Usar Windows pirata (crackeado) é extremamente perigoso: além de ser ilegal, o 'crack' pode conter vírus escondidos, e o sistema pirata geralmente desativa as atualizações de segurança — deixando o computador totalmente vulnerável.",
-          sec: `
+          html: `
             <div class="mini-sheet">
               <div class="es-sheet-titlebar">⚠️ OS PERIGOS DO WINDOWS PIRATA</div>
               <div class="es-sheet-box">
@@ -1136,7 +1791,9 @@ Uma pasta salva em .xlsx com a planilha de compras montada: total de cada item c
         {
           lessonNum: 2,
           heading: "2.1 Os Quatro Operadores Matemáticos Básicos",
-          content: "Toda fórmula do Excel começa com o sinal de igual (=).\n\n• Adição (+): =A1+B1 → soma dois valores.\n• Subtração (-): =A1-B1 → subtrai um valor do outro.\n• Multiplicação (*): =A1*B1 → usa o ASTERISCO, não o 'x' da calculadora.\n• Divisão (/): =A1/B1 → usa a BARRA, não o símbolo ÷.\n\nExemplo com A1=10 e B1=5: soma=15, subtração=5, multiplicação=50, divisão=2.\n\nEXERCÍCIO: Em uma planilha em branco, digite 10 em A1, 5 em B1 e a fórmula =A1+B1 em C1. O resultado 15 aparecerá automaticamente."
+          content: "Toda fórmula do Excel começa com o sinal de igual (=).\n\n• Adição (+): =A1+B1 → soma dois valores.\n• Subtração (-): =A1-B1 → subtrai um valor do outro.\n• Multiplicação (*): =A1*B1 → usa o ASTERISCO, não o 'x' da calculadora.\n• Divisão (/): =A1/B1 → usa a BARRA, não o símbolo ÷.\n\nExemplo com A1=10 e B1=5: soma=15, subtração=5, multiplicação=50, divisão=2.\n\nEXERCÍCIO: Em uma planilha em branco, digite 10 em A1, 5 em B1 e a fórmula =A1+B1 em C1. O resultado 15 aparecerá automaticamente.",
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Os quatro operadores com A1=10 e B1=5</div><table class="mini-sheet"><tr><th>Operação</th><th>Símbolo</th><th>Fórmula</th><th>Resultado</th></tr><tr><td>Adição</td><td><code>+</code></td><td><code>=A1+B1</code></td><td>15</td></tr><tr><td>Subtração</td><td><code>-</code></td><td><code>=A1-B1</code></td><td>5</td></tr><tr><td>Multiplicação</td><td><code>*</code></td><td><code>=A1*B1</code></td><td>50</td></tr><tr><td>Divisão</td><td><code>/</code></td><td><code>=A1/B1</code></td><td>2</td></tr></table></div><div class="fun-highlight"><strong>⚠️ Os dois erros mais comuns:</strong> multiplicar com o <strong>"x"</strong> da calculadora e dividir com o <strong>÷</strong>. No Excel só existem o <strong>asterisco (*)</strong> e a <strong>barra (/)</strong>. E toda fórmula obrigatoriamente começa com o sinal de <strong>igual (=)</strong>.</div>`
+
         },
         {
           lessonNum: 2,
@@ -1148,30 +1805,36 @@ Uma pasta salva em .xlsx com a planilha de compras montada: total de cada item c
         {
           lessonNum: 2,
           heading: "2.3 Referência Relativa e Absoluta ($A$1 e Tecla F4)",
-          content: "Ao criar uma fórmula, o Excel guarda a POSIÇÃO da célula (referência).\n\n• Referência RELATIVA (A1): ao copiar a fórmula, a referência muda automaticamente (B2 vira B3, B4...).\n• Referência ABSOLUTA ($A$1): com o cifrão ($) antes da letra e do número, a referência permanece fixa ao copiar.\n\nTecla F4: posicione o cursor sobre a referência na fórmula e pressione F4 para alternar: A1 → $A$1 → A$1 → $A1 → A1.\n\nEXEMPLO — Desconto fixo de 10%: fórmula =B2*(1-$C$2) replicada nas linhas 3 e 4 mantém o desconto fixo (referência absoluta) enquanto o preço de cada produto muda (referência relativa)."
+          content: "Ao criar uma fórmula, o Excel guarda a POSIÇÃO da célula (referência).\n\n• Referência RELATIVA (A1): ao copiar a fórmula, a referência muda automaticamente (B2 vira B3, B4...).\n• Referência ABSOLUTA (\$A\$1): com o cifrão (\$) antes da letra e do número, a referência permanece fixa ao copiar.\n\nTecla F4: posicione o cursor sobre a referência na fórmula e pressione F4 para alternar: A1 → \$A\$1 → A\$1 → \$A1 → A1.\n\nEXEMPLO — Desconto fixo de 10%: fórmula =B2*(1-\$C\$2) replicada nas linhas 3 e 4 mantém o desconto fixo (referência absoluta) enquanto o preço de cada produto muda (referência relativa).",
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Ciclo da tecla F4 sobre a referência B2</div><table class="mini-sheet"><tr><th>Toque em F4</th><th>1º toque</th><th>2º toque</th><th>3º toque</th><th>4º toque</th></tr><tr><td>Referência</td><td><code>B2</code> relativa</td><td><code>\$B\$2</code> absoluta</td><td><code>B\$2</code> mista</td><td><code>\$B2</code> mista</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">Desconto fixo de 10% — =B2*(1-\$C\$2) copiado para baixo</div><table class="mini-sheet"><tr><th>Produto</th><th>Preço</th><th>Desconto</th><th>Preço final</th></tr><tr><td>Camiseta</td><td>50,00</td><td><code>\$C\$2 = 10%</code></td><td><code>=B2*(1-\$C\$2)</code> → 45,00</td></tr><tr><td>Calça</td><td>120,00</td><td><code>\$C\$2 = 10%</code></td><td><code>=B3*(1-\$C\$2)</code> → 108,00</td></tr><tr><td>Tênis</td><td>200,00</td><td><code>\$C\$2 = 10%</code></td><td><code>=B4*(1-\$C\$2)</code> → 180,00</td></tr></table></div><div class="fun-highlight"><strong>Por que o cifrão importa:</strong> <code>B2</code> é <strong>relativa</strong> — muda sozinha a cada linha copiada, e é o preço de cada produto. <code>\$C\$2</code> é <strong>absoluta</strong> — fica presa em C2, e é por isso que o desconto continua 10% em todas as linhas.</div>`
+
         },
         {
           lessonNum: 2,
           heading: "2.4 Alça de Preenchimento Automático",
-          content: "A Alça de Preenchimento é o pequeno quadradinho no canto inferior direito da célula selecionada. Quando o cursor vira uma CRUZ PRETA (+), arraste para preencher automaticamente.\n\n• Números: digite 1 e 2, selecione, arraste → completa 3, 4, 5...\n• Datas: digite 01/01/2026 e arraste → completa os dias seguintes.\n• Dias da semana: digite 'Segunda' e arraste → completa Terça, Quarta...\n• Fórmulas: arraste a alça de uma fórmula para copiá-la ajustando as referências."
+          content: "A Alça de Preenchimento é o pequeno quadradinho no canto inferior direito da célula selecionada. Quando o cursor vira uma CRUZ PRETA (+), arraste para preencher automaticamente.\n\n• Números: digite 1 e 2, selecione, arraste → completa 3, 4, 5...\n• Datas: digite 01/01/2026 e arraste → completa os dias seguintes.\n• Dias da semana: digite 'Segunda' e arraste → completa Terça, Quarta...\n• Fórmulas: arraste a alça de uma fórmula para copiá-la ajustando as referências.",
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">A alça de preenchimento completa séries sozinha</div><table class="mini-sheet"><tr><th>Você digita</th><th>Arrasta a alça</th><th>O Excel completa</th></tr><tr><td><code>1</code> e <code>2</code></td><td>2 números</td><td>3, 4, 5, 6...</td></tr><tr><td><code>01/01/2026</code></td><td>1 data</td><td>02/01/2026, 03/01/2026...</td></tr><tr><td><code>Segunda</code></td><td>1 texto</td><td>Terça, Quarta, Quinta...</td></tr><tr><td><code>=B2*C2</code></td><td>1 fórmula</td><td><code>=B3*C3</code>, <code>=B4*C4</code>...</td></tr></table></div><div class="fun-highlight"><strong>Como reconhecer a alça:</strong> ela é o quadradinho no canto inferior direito da célula selecionada. Só arraste quando o cursor virar a <strong>cruz preta (+)</strong> — se aparecer uma seta fina, você está pegando a borda e vai mover a célula inteira em vez de preenchê-la.</div>`
+
         },
         {
           lessonNum: 2,
           heading: "2.5 Copiando Fórmulas Entre Células",
-          content: "Copie uma fórmula para várias células sem redigitar, e as referências relativas se ajustam automaticamente.\n\nEXEMPLO — Tabela de Vendas: digite =B2*C2 apenas na célula D2 (subtotal de Preço × Qtd). Depois arraste a alça de preenchimento (ou use Ctrl+C e Ctrl+V) para baixo — o Excel transforma sozinho em =B3*C3, =B4*C4...\n\nMétodos:\n• Ctrl+C / Ctrl+V: selecione a célula, copie e cole em várias de destino.\n• Alça de Preenchimento: clique na célula da fórmula e arraste a cruz preta sobre as células de baixo."
+          content: "Copie uma fórmula para várias células sem redigitar, e as referências relativas se ajustam automaticamente.\n\nEXEMPLO — Tabela de Vendas: digite =B2*C2 apenas na célula D2 (subtotal de Preço × Qtd). Depois arraste a alça de preenchimento (ou use Ctrl+C e Ctrl+V) para baixo — o Excel transforma sozinho em =B3*C3, =B4*C4...\n\nMétodos:\n• Ctrl+C / Ctrl+V: selecione a célula, copie e cole em várias de destino.\n• Alça de Preenchimento: clique na célula da fórmula e arraste a cruz preta sobre as células de baixo.",
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Uma única fórmula digitada em D2 e replicada pela alça</div><table class="mini-sheet"><tr><th></th><th>A — Produto</th><th>B — Preço</th><th>C — Qtd</th><th>D — Subtotal</th></tr><tr><td><strong>2</strong></td><td>Camiseta</td><td>50,00</td><td>3</td><td><code>=B2*C2</code> → 150,00</td></tr><tr><td><strong>3</strong></td><td>Calça</td><td>120,00</td><td>2</td><td><code>=B3*C3</code> → 240,00</td></tr><tr><td><strong>4</strong></td><td>Tênis</td><td>200,00</td><td>1</td><td><code>=B4*C4</code> → 200,00</td></tr></table></div><div class="fun-highlight"><strong>Digite uma vez, o Excel replica:</strong> você escreve <code>=B2*C2</code> só na primeira linha e arrasta a alça (ou usa <code>Ctrl+C</code> / <code>Ctrl+V</code>). As referências <strong>relativas</strong> se ajustam sozinhas, linha por linha — sem redigitar nada.</div>`
+
         },
         {
           lessonNum: 2,
           heading: "2.6 Exercícios Práticos com Fórmulas (7 Guiados)",
           content: "Cada exercício abaixo apresenta a PLANILHA DE EXEMPLO já preenchida com 5 linhas, para você reproduzir no Excel real e conferir o resultado.\n\n1) Loja de Roupas: subtotal =B2*C2 e total =SOMA(D2:D6). Preços em B, quantidades em C, totais em D.\n2) Folha de Pagamento: desconto INSS =B2*8% e salário líquido =B2-C2. Funcionários em A, salários em B.\n3) Combustível: gasto total =B2*C2 (litros × preço) e consumo =E2/B2 (km ÷ litros).\n4) Impostos: ICMS =B2*18%, IPI =B2*5%, total impostos =C2+D2.\n5) Comissões: fixe o percentual em C1 e use =B2*$C$1 (referência absoluta).\n6) Estoque com Alerta: restante =B2-C2 e status =SE(D2<10;\"Repor\";\"OK\").\n7) Parcelas: entrada =B1*30%, financiado =B1-B2, parcela =(B3/B4)*(1+B5).\n\nReproduza cada planilha com 5 linhas de exemplo como nas imagens e pratique no Excel real.",
           images: [
-            "../../assets/img/excel/a2/aula2_ex1_loja_roupas.png",
-            "../../assets/img/excel/a2/aula2_ex2_folha_pagamento.png",
-            "../../assets/img/excel/a2/aula2_ex3_combustivel.png",
-            "../../assets/img/excel/a2/aula2_ex4_impostos.png",
-            "../../assets/img/excel/a2/aula2_ex5_comissoes.png",
-            "../../assets/img/excel/a2/aula2_ex6_estoque.png",
-            "../../assets/img/excel/a2/aula2_ex7_parcelas.png"
+            { src: "../../assets/img/excel/a2/aula2_ex1_loja_roupas.png", caption: "Exercício 1 — Loja de Roupas: subtotal =B2*C2 e total =SOMA(D2:D6)" },
+            { src: "../../assets/img/excel/a2/aula2_ex2_folha_pagamento.png", caption: "Exercício 2 — Folha de Pagamento: desconto INSS =B2*8% e salário líquido =B2-C2" },
+            { src: "../../assets/img/excel/a2/aula2_ex3_combustivel.png", caption: "Exercício 3 — Combustível: gasto total =B2*C2 (litros × preço) e consumo =E2/B2 (km ÷ litros)" },
+            { src: "../../assets/img/excel/a2/aula2_ex4_impostos.png", caption: "Exercício 4 — Impostos: ICMS =B2*18%, IPI =B2*5% e total de impostos =C2+D2" },
+            { src: "../../assets/img/excel/a2/aula2_ex5_comissoes.png", caption: "Exercício 5 — Comissões: percentual fixado em C1 e fórmula =B2*$C$1 (referência absoluta)" },
+            { src: "../../assets/img/excel/a2/aula2_ex6_estoque.png", caption: "Exercício 6 — Estoque com Alerta: restante =B2-C2 e status =SE(D2<10;\"Repor\";\"OK\")" },
+            { src: "../../assets/img/excel/a2/aula2_ex7_parcelas.png", caption: "Exercício 7 — Parcelas: entrada =B1*30%, financiado =B1-B2 e parcela =(B3/B4)*(1+B5)" }
           ]
         },
         {
@@ -1206,12 +1869,10 @@ Uma pasta salva em .xlsx com a planilha de compras montada: total de cada item c
         {
           lessonNum: 3,
           heading: "3.1 A Função SOMA() — Some Intervalos em Segundos",
-          content: `A função SOMA() é a mais usada do Excel. Ela soma todos os valores dentro de um intervalo de células.\n\n• Sintaxe: =SOMA(intervalo)\n• Em vez de digitar =B2+B3+B4+B5+B6, escreva =SOMA(B2:B6).\n• O intervalo é a sequência de células separadas por dois-pontos (:). Ex.: B2:B7 = 'da célula B2 até a B7'.\n• Você pode somar um retângulo inteiro de uma vez com =SOMA(B2:D7).\n\nEXEMPLO — Gastos com Aluguel (3 meses): aluguel de R$ 2.500,00 nas células B2, C2 e D2. Digite =SOMA(B2:D2) → R$ 7.500,00.\n\nATIVIDADE PRÁTICA: Em B2, B3 e B4 digite 100, 200 e 300. Clique em B5 e digite =SOMA(B2:B4) e pressione Enter → 600. Mude B2 para 150 e o total vira 650 automaticamente!
-
-EXEMPLO DE PLANILHA — Controle de Custos Mensais (Função SOMA):
-<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">
-  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Sheet1 — Controle de Custos Mensais (Função SOMA)</div>
-  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+          content: `A função SOMA() é a mais usada do Excel. Ela soma todos os valores dentro de um intervalo de células.\n\n• Sintaxe: =SOMA(intervalo)\n• Em vez de digitar =B2+B3+B4+B5+B6, escreva =SOMA(B2:B6).\n• O intervalo é a sequência de células separadas por dois-pontos (:). Ex.: B2:B7 = 'da célula B2 até a B7'.\n• Você pode somar um retângulo inteiro de uma vez com =SOMA(B2:D7).\n\nEXEMPLO — Gastos com Aluguel (3 meses): aluguel de R$ 2.500,00 nas células B2, C2 e D2. Digite =SOMA(B2:D2) → R$ 7.500,00.\n\nATIVIDADE PRÁTICA: Em B2, B3 e B4 digite 100, 200 e 300. Clique em B5 e digite =SOMA(B2:B4) e pressione Enter → 600. Mude B2 para 150 e o total vira 650 automaticamente!`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Sheet1 — Controle de Custos Mensais (Função SOMA)</div>
+  <table class="mini-sheet">
     <tr>
       <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>
       <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>
@@ -1240,11 +1901,17 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (Função SOMA):
         {
           lessonNum: 3,
           heading: "3.2 A Função MÉDIA() — Calcule Médias Automaticamente",
-          content: `A função MÉDIA() calcula a média aritmética dos valores de um intervalo de células.\n\n• Sintaxe: =MÉDIA(intervalo)\n• Exemplo: conta de Energia de R$ 380 (Jan), R$ 410 (Fev) e R$ 395 (Mar) → a média mensal =MÉDIA(380;410;395) = 395. No Excel, use as células: =MÉDIA(B3:D3).\n• Média de uma coluna inteira de vendas: =MÉDIA(D2:D6).\n\n⚠️ A MÉDIA() ignora células vazias e células com texto — você não precisa 'limpar' a planilha antes de calcular.
-EXEMPLO DE PLANILHA — Conta de Energia Elétrica (Função MÉDIA):
-<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">
-  <div style="background:#C2410C; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Sheet1 — Conta de Energia Elétrica (Função MÉDIA)</div>
-  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+          content: `A função MÉDIA() calcula a média aritmética dos valores de um intervalo de células.
+
+• Sintaxe: =MÉDIA(intervalo)
+• Exemplo: conta de Energia de R\$ 380 (Jan), R\$ 410 (Fev) e R\$ 395 (Mar) → a média mensal =MÉDIA(380;410;395) = 395. No Excel, use as células: =MÉDIA(B3:D3).
+• Média de uma coluna inteira de vendas: =MÉDIA(D2:D6).
+
+⚠️ A MÉDIA() ignora células vazias e células com texto — você não precisa 'limpar' a planilha antes de calcular.
+EXEMPLO DE PLANILHA — Conta de Energia Elétrica (Função MÉDIA):`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Sheet1 — Conta de Energia Elétrica (Função MÉDIA)</div>
+  <table class="mini-sheet">
     <tr>
       <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>
       <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>
@@ -1266,15 +1933,23 @@ EXEMPLO DE PLANILHA — Conta de Energia Elétrica (Função MÉDIA):
     <tr><td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; font-weight:bold;">5</td><td colspan="4" style="background:#FEF3C7; border:1px solid #CBD5E1; padding:6px; font-weight:bold; border-top:2px solid #C2410C;">MÉDIA da Energia (Função MÉDIA na coluna)</td><td style="background:#FEF3C7; border:1px solid #CBD5E1; padding:6px; font-weight:bold; font-family:monospace; border-top:2px solid #C2410C;">=MÉDIA(B2:B4) → 395,00</td></tr>
   </table>
 </div>`
+
         },
         {
           lessonNum: 3,
           heading: "3.3 MÁXIMO() e MÍNIMO() — Encontre o Maior e o Menor Valor",
-          content: `As funções MÁXIMO() e MÍNIMO() varrem um intervalo e retornam o maior e o menor valor presente nele.\n\n• Sintaxe: =MÁXIMO(intervalo)  e  =MÍNIMO(intervalo)\n• Exemplo no controle de custos: =MÁXIMO(B2:D7) encontra o maior gasto de qualquer mês (no nosso caso R$ 8.500,00 do Salário de Março) e =MÍNIMO(B2:D7) encontra o menor (R$ 110,00 da Água).\n\n💡 Use MÁXIMO e MÍNIMO no intervalo completo (como B2:D7) para varrer todos os meses de uma vez. Se os valores mudarem, o Excel recalcula sozinho.
+          content: `As funções MÁXIMO() e MÍNIMO() varrem um intervalo e retornam o maior e o menor valor presente nele.
+
+• Sintaxe: =MÁXIMO(intervalo)  e  =MÍNIMO(intervalo)
+• Exemplo no controle de custos: =MÁXIMO(B2:D7) encontra o maior gasto de qualquer mês (no nosso caso R\$ 8.500,00 do Salário de Março) e =MÍNIMO(B2:D7) encontra o menor (R\$ 110,00 da Água).
+
+💡 Use MÁXIMO e MÍNIMO no intervalo completo (como B2:D7) para varrer todos os meses de uma vez. Se os valores mudarem, o Excel recalcula sozinho.
 EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
-<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">
-  <div style="background:#166534; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Sheet1 — Controle de Custos Mensais (Funções MÁXIMO e MÍNIMO)</div>
-  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+
+📌 OBSERVAÇÃO: Em versões antigas do Excel, a função MÍNIMO() pode não estar disponível. Nesse caso, use =MINIMOA(intervalo). O resultado é o mesmo — encontra o menor valor do intervalo.`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Sheet1 — Controle de Custos Mensais (Funções MÁXIMO e MÍNIMO)</div>
+  <table class="mini-sheet">
     <tr>
       <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>
       <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>
@@ -1298,27 +1973,44 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
     <tr><td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; font-weight:bold;">7</td><td colspan="4" style="background:#F0FDF4; border:1px solid #CBD5E1; padding:6px; font-weight:bold; border-top:2px solid #166534;">MAIOR gasto (Função MÁXIMO)</td><td style="background:#F0FDF4; border:1px solid #CBD5E1; padding:6px; font-weight:bold; font-family:monospace; border-top:2px solid #166534;">=MÁXIMO(B2:D6) → 8.500,00</td></tr>
     <tr><td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; font-weight:bold;">8</td><td colspan="4" style="background:#FFF7ED; border:1px solid #CBD5E1; padding:6px; font-weight:bold;">MENOR gasto (Função MÍNIMO)</td><td style="background:#FFF7ED; border:1px solid #CBD5E1; padding:6px; font-weight:bold; font-family:monospace;">=MÍNIMO(B2:D6) → 110,00</td></tr>
   </table>
-</div>
+</div>`
 
-📌 OBSERVAÇÃO: Em versões antigas do Excel, a função MÍNIMO() pode não estar disponível. Nesse caso, use =MINIMOA(intervalo). O resultado é o mesmo — encontra o menor valor do intervalo.`
         },
         {
           lessonNum: 3,
           heading: "3.4 CONT.VALORES() e CONT.NÚM() — Contando Células",
-          content: "Duas funções parecidas, mas com objetivos diferentes:\n\n• CONT.VALORES(intervalo): Conta TODAS as células com algum valor (texto, número ou data). Ex.: =CONT.VALORES(A2:A8) conta quantos funcionários têm nome preenchido (7).\n• CONT.NÚM(intervalo): Conta APENAS células com valores numéricos. Ex.: =CONT.NÚM(B2:B8) conta quantos funcionários têm código numérico preenchido (6).\n\nEXEMPLO — Equipe de Vendas (7 funcionários, coluna A nomes, coluna B códigos):\n• Códigos cadastrados: =CONT.NÚM(B2:B8) → 6 (Eliane está vazio; só números contam).\n• Quantos atingiram a meta: =CONT.VALORES(C2:C8) → 6 (células preenchidas com 'Sim'/'Não').\n• Pessoas na lista: =CONT.VALORES(A2:A8) → 7 (todos os nomes, texto conta!)\n\n🧠 Reflexão: por que CONT.VALORES(A2:A8)=7, mas CONT.NÚM(A2:A8)=0? Porque a coluna A contém texto e não números!"
+          content: "Duas funções parecidas, mas com objetivos diferentes:\n\n• CONT.VALORES(intervalo): Conta TODAS as células com algum valor (texto, número ou data). Ex.: =CONT.VALORES(A2:A8) conta quantos funcionários têm nome preenchido (7).\n• CONT.NÚM(intervalo): Conta APENAS células com valores numéricos. Ex.: =CONT.NÚM(B2:B8) conta quantos funcionários têm código numérico preenchido (6).\n\nEXEMPLO — Equipe de Vendas (7 funcionários, coluna A nomes, coluna B códigos):\n• Códigos cadastrados: =CONT.NÚM(B2:B8) → 6 (Eliane está vazio; só números contam).\n• Quantos atingiram a meta: =CONT.VALORES(C2:C8) → 6 (células preenchidas com 'Sim'/'Não').\n• Pessoas na lista: =CONT.VALORES(A2:A8) → 7 (todos os nomes, texto conta!)\n\n🧠 Reflexão: por que CONT.VALORES(A2:A8)=7, mas CONT.NÚM(A2:A8)=0? Porque a coluna A contém texto e não números!",
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Equipe de Vendas — 7 funcionários</div><table class="mini-sheet"><tr><th></th><th>A — Nome</th><th>B — Código</th><th>C — Meta</th></tr><tr><td>2</td><td>Bruno</td><td>101</td><td>Sim</td></tr><tr><td>3</td><td>Carla</td><td>102</td><td>Sim</td></tr><tr><td>4</td><td>Daniel</td><td>103</td><td>Não</td></tr><tr><td>5</td><td>Eliane</td><td><em>(vazio)</em></td><td>Sim</td></tr><tr><td>6</td><td>Felipe</td><td>104</td><td>Sim</td></tr><tr><td>7</td><td>Gabriana</td><td>105</td><td>Sim</td></tr><tr><td>8</td><td>Henrique</td><td>106</td><td><em>(vazio)</em></td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">As quatro contagens da planilha</div><table class="mini-sheet"><tr><th>Fórmula</th><th>Resultado</th><th>Por quê</th></tr><tr><td><code>=CONT.VALORES(A2:A8)</code></td><td><strong>7</strong></td><td>Conta texto, número ou data — os 7 nomes</td></tr><tr><td><code>=CONT.NÚM(B2:B8)</code></td><td><strong>6</strong></td><td>Só números — o código da Eliane está vazio</td></tr><tr><td><code>=CONT.VALORES(C2:C8)</code></td><td><strong>6</strong></td><td>Conta Sim/Não — a meta do Henrique está vazia</td></tr><tr><td><code>=CONT.NÚM(A2:A8)</code></td><td><strong>0</strong></td><td>A coluna A é texto: não há valor numérico</td></tr></table></div><div class="fun-highlight"><strong>🧠 Reflexão:</strong> por que <code>CONT.VALORES(A2:A8)</code> dá 7 mas <code>CONT.NÚM(A2:A8)</code> dá 0? Porque CONT.VALORES aceita <strong>qualquer</strong> conteúdo preenchido, enquanto CONT.NÚM só enxerga <strong>números</strong>.</div>`
+
         },
         {
           lessonNum: 3,
           heading: "3.5 Lab de Funções — Simulador Interativo",
-          content: "Na tela da aula, você encontra o Lab de Funções: uma planilha de custos interativa que recalcula em tempo real ao editar qualquer valor, exatamente como o Excel real.\n\n• Edite os valores das células (Jan/Fev/Mar) e veja =SOMA, =MÉDIA, =MÁXIMO e =MÍNIMO atualizarem na hora.\n• Modo Contadoras: compare =CONT.NÚM(B2:B8) (só números → 6) com =CONT.VALORES(A2:A8) (qualquer valor → 7).\n\nExperimente mudar os números e observe os resultados se recalculando sozinho!"
+          content: "Na tela da aula, você encontra o Lab de Funções: uma planilha de custos interativa que recalcula em tempo real ao editar qualquer valor, exatamente como o Excel real.\n\n• Edite os valores das células (Jan/Fev/Mar) e veja =SOMA, =MÉDIA, =MÁXIMO e =MÍNIMO atualizarem na hora.\n• Modo Contadoras: compare =CONT.NÚM(B2:B8) (só números → 6) com =CONT.VALORES(A2:A8) (qualquer valor → 7).\n\nExperimente mudar os números e observe os resultados se recalculando sozinho!",
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Lab de Funções — a planilha que recalcula sozinha</div><table class="mini-sheet"><tr><th>Despesa</th><th>Jan</th><th>Fev</th><th>Mar</th><th>Total</th></tr><tr><td>Aluguel</td><td>2.500,00</td><td>2.500,00</td><td>2.500,00</td><td><code>=SOMA(B2:D2)</code></td></tr><tr><td>Energia</td><td>380,00</td><td>410,00</td><td>395,00</td><td><code>=SOMA(B3:D3)</code></td></tr><tr><td>Água</td><td>120,00</td><td>135,00</td><td>110,00</td><td><code>=SOMA(B4:D4)</code></td></tr></table></div><div class="fun-highlight"><strong>Experimente no simulador:</strong> troque 380 por 1.200 em Energia e veja <code>=SOMA</code>, <code>=MÉDIA</code>, <code>=MÁXIMO</code> e <code>=MÍNIMO</code> mudarem juntos, em tempo real. No <strong>Modo Contadoras</strong>, compare <code>=CONT.NÚM(B2:B8)</code> (6, só números) com <code>=CONT.VALORES(A2:A8)</code> (7, qualquer valor) — exatamente como no Excel real.</div>`
+
         },
         {
           lessonNum: 3,
           heading: "3.6 Exercícios Guiados — 4 Planilhas para Reproduzir no Excel Real",
           content: `🏢 EXERCÍCIO 1 — Planilha de Custos (empresa ABC): a empresa controla seus custos fixos e variáveis no primeiro trimestre. Use SOMA(), MÉDIA(), MÁXIMO() e MÍNIMO().
-<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">
-  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Exercício 1 — Planilha de Custos da Empresa ABC</div>
-  <table style="width:100%; border-collapse:collapse; font-size:12px;">
+
+1) Em cada linha use =SOMA(B2:D2) ... =SOMA(B7:D7) para o TOTAL do item. 2) Na linha TOTAL MENSAL, use SOMA() para cada coluna: =SOMA(B2:B7), =SOMA(C2:C7), =SOMA(D2:D7). 3) Análise: Maior custo =MÁXIMO(B2:D7) (→ 8500); Menor custo =MÍNIMO(B2:D7) (→ 110). 4) Média de Energia =MÉDIA(B3:D3) (→ 395).
+
+📦 EXERCÍCIO 2 — Controle de Estoque (papelaria): o estoque final é calculado por Estoque Inicial + Entradas − Saídas.
+
+1) Em E2 digite =B2+C2-D2 (inicial + entradas − saídas) e arraste pela alça até E7. 2) Total de saídas: =SOMA(D2:D7). 3) Maior estoque final: =MÁXIMO(E2:E7); menor: =MÍNIMO(E2:E7). 4) Itens cadastrados: =CONT.VALORES(A2:A7) (→ 6 produtos).
+
+📈 EXERCÍCIO 3 — Relatório de Vendas (TechShop, 6 meses): a equipe de vendas precisa de um relatório semestral com TOTAIS, MÉDIAS, maior e menor venda.
+
+1) Crie as fórmulas na primeira coluna e arraste horizontalmente até a coluna G. 2) Total Geral: =SOMA(B2:G6). 3) Maior Venda: =MÁXIMO(B2:G6); Menor Venda: =MÍNIMO(B2:G6).
+
+🔢 EXERCÍCIO 4 — CONT.VALORES() e CONT.NÚM() na equipe de vendas: entenda a diferença entre as duas funções aplicando-as à lista de funcionários.
+
+ 1) Valores numéricos da coluna Código (B): =CONT.NÚM(B2:B8) → 6 (conta somente as células com valor numérico, ignorando a vazia/texto). 2) Atingiram a meta: =CONT.VALORES(C2:C8) → 6 (células com "Sim"/"Não"). 3) Pessoas na lista: =CONT.VALORES(A2:A8) → 7 (texto conta). 4) Reflexão: por que CONT.VALORES(A2:A8)=7, mas CONT.NÚM(A2:A8)=0? Porque a coluna A tem texto, não números!`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Exercício 1 — Planilha de Custos da Empresa ABC</div>
+  <table class="mini-sheet">
     <tr>
       <td style="background:#E2E8F0; border:1px solid #CBD5E1; padding:6px; font-weight:bold;">Categoria</td>
       <td style="background:#E2E8F0; border:1px solid #CBD5E1; padding:6px; font-weight:bold; text-align:center;">Jan</td>
@@ -1339,12 +2031,9 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
       <td style="background:#F0FDF4; border:1px solid #CBD5E1; padding:6px; font-family:monospace; text-align:center; font-weight:bold;">=SOMA(E2:E7)</td></tr>
   </table>
 </div>
-1) Em cada linha use =SOMA(B2:D2) ... =SOMA(B7:D7) para o TOTAL do item. 2) Na linha TOTAL MENSAL, use SOMA() para cada coluna: =SOMA(B2:B7), =SOMA(C2:C7), =SOMA(D2:D7). 3) Análise: Maior custo =MÁXIMO(B2:D7) (→ 8500); Menor custo =MÍNIMO(B2:D7) (→ 110). 4) Média de Energia =MÉDIA(B3:D3) (→ 395).
-
-📦 EXERCÍCIO 2 — Controle de Estoque (papelaria): o estoque final é calculado por Estoque Inicial + Entradas − Saídas.
-<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">
-  <div style="background:#166534; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Exercício 2 — Controle de Estoque da Papelaria</div>
-  <table style="width:100%; border-collapse:collapse; font-size:12px;">
+<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Exercício 2 — Controle de Estoque da Papelaria</div>
+  <table class="mini-sheet">
     <tr>
       <td style="background:#E2E8F0; border:1px solid #CBD5E1; padding:5px; font-weight:bold;">Produto</td>
       <td style="background:#E2E8F0; border:1px solid #CBD5E1; padding:5px; font-weight:bold; text-align:center;">Est. Inicial</td>
@@ -1367,12 +2056,9 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
       <td style="background:#F0FDF4; border:1px solid #CBD5E1; padding:5px; text-align:center;">—</td></tr>
   </table>
 </div>
-1) Em E2 digite =B2+C2-D2 (inicial + entradas − saídas) e arraste pela alça até E7. 2) Total de saídas: =SOMA(D2:D7). 3) Maior estoque final: =MÁXIMO(E2:E7); menor: =MÍNIMO(E2:E7). 4) Itens cadastrados: =CONT.VALORES(A2:A7) (→ 6 produtos).
-
-📈 EXERCÍCIO 3 — Relatório de Vendas (TechShop, 6 meses): a equipe de vendas precisa de um relatório semestral com TOTAIS, MÉDIAS, maior e menor venda.
-<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">
-  <div style="background:#C2410C; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Exercício 3 — Relatório de Vendas da TechShop</div>
-  <table style="width:100%; border-collapse:collapse; font-size:11.5px;">
+<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Exercício 3 — Relatório de Vendas da TechShop</div>
+  <table class="mini-sheet">
     <tr>
       <td style="background:#E2E8F0; border:1px solid #CBD5E1; padding:5px; font-weight:bold;">Vendedor</td>
       <td style="background:#E2E8F0; border:1px solid #CBD5E1; padding:5px; font-weight:bold; text-align:center;">Jan</td>
@@ -1403,12 +2089,9 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
       <td style="background:#FFF7ED; border:1px solid #CBD5E1; padding:5px; font-family:monospace; text-align:center; font-weight:bold;">=MÉDIA(G2:G6)</td></tr>
   </table>
 </div>
-1) Crie as fórmulas na primeira coluna e arraste horizontalmente até a coluna G. 2) Total Geral: =SOMA(B2:G6). 3) Maior Venda: =MÁXIMO(B2:G6); Menor Venda: =MÍNIMO(B2:G6).
-
-🔢 EXERCÍCIO 4 — CONT.VALORES() e CONT.NÚM() na equipe de vendas: entenda a diferença entre as duas funções aplicando-as à lista de funcionários.
-<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">
-  <div style="background:#7A1F12; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Exercício 4 — Contagem da Equipe de Vendas</div>
-  <table style="width:100%; border-collapse:collapse; font-size:12px;">
+<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Exercício 4 — Contagem da Equipe de Vendas</div>
+  <table class="mini-sheet">
     <tr>
       <td style="background:#E2E8F0; border:1px solid #CBD5E1; padding:5px; font-weight:bold;">A</td>
       <td style="background:#E2E8F0; border:1px solid #CBD5E1; padding:5px; font-weight:bold;">B</td>
@@ -1427,8 +2110,8 @@ EXEMPLO DE PLANILHA — Controle de Custos Mensais (MÁXIMO e MÍNIMO):
     <tr><td style="border:1px solid #E2E8F0; padding:5px;">Fábio Ramos</td><td style="border:1px solid #E2E8F0; padding:5px; text-align:center;">1006</td><td style="border:1px solid #E2E8F0; padding:5px; text-align:center;">Sim</td></tr>
     <tr><td style="border:1px solid #E2E8F0; padding:5px;">Gisele Torres</td><td style="border:1px solid #E2E8F0; padding:5px; text-align:center;">1007</td><td style="border:1px solid #E2E8F0; padding:5px; text-align:center;">Sim</td></tr>
   </table>
-</div>
- 1) Valores numéricos da coluna Código (B): =CONT.NÚM(B2:B8) → 6 (conta somente as células com valor numérico, ignorando a vazia/texto). 2) Atingiram a meta: =CONT.VALORES(C2:C8) → 6 (células com "Sim"/"Não"). 3) Pessoas na lista: =CONT.VALORES(A2:A8) → 7 (texto conta). 4) Reflexão: por que CONT.VALORES(A2:A8)=7, mas CONT.NÚM(A2:A8)=0? Porque a coluna A tem texto, não números!`
+</div>`
+
         },
         {
           lessonNum: 4,
@@ -1491,7 +2174,8 @@ Uma planilha que classifica sozinha: notas viram Excelente/Bom/Regular/Reprovado
         {
           lessonNum: 4,
           heading: "4.1 Revisão Rápida da Função SE()",
-          content: `A função SE() é a base de tudo nesta aula. Ela faz uma pergunta ao Excel e devolve um resultado dependendo da resposta: VERDADEIRO ou FALSO.\n\nPense assim: é como perguntar ao Excel — Se isso for verdade, faça X; caso contrário, faça Y.\n\nSINTAXE: =SE( teste_lógico ; valor_se_verdadeiro ; valor_se_falso ) — 3 partes separadas por ponto e vírgula.\n\nEXEMPLO — Aluno aprovado ou reprovado: =SE(B2>=7; "Aprovado"; "Reprovado"). Se a nota em B2 for >= 7, escreve "Aprovado". Senão, "Reprovado".\n\nPLANILHA — Aprovação de Alunos (Função SE):\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Aprovação de Alunos (Função SE)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Resultado</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">8,5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Aprovado</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carlos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Reprovado</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Maria</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">7,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Aprovado</td></tr>\n  </table>\n</div>`,
+          content: `A função SE() é a base de tudo nesta aula. Ela faz uma pergunta ao Excel e devolve um resultado dependendo da resposta: VERDADEIRO ou FALSO.\n\nPense assim: é como perguntar ao Excel — Se isso for verdade, faça X; caso contrário, faça Y.\n\nSINTAXE: =SE( teste_lógico ; valor_se_verdadeiro ; valor_se_falso ) — 3 partes separadas por ponto e vírgula.\n\nEXEMPLO — Aluno aprovado ou reprovado: =SE(B2>=7; "Aprovado"; "Reprovado"). Se a nota em B2 for >= 7, escreve "Aprovado". Senão, "Reprovado".\n\nPLANILHA — Aprovação de Alunos (Função SE):\n`,
+          html: `<div class="es-sheet-box">\n  <div class="es-sheet-titlebar">Planilha — Aprovação de Alunos (Função SE)</div>\n  <table class="mini-sheet">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Resultado</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">8,5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Aprovado</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carlos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Reprovado</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Maria</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">7,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Aprovado</td></tr>\n  </table>\n</div>`,
           boxType: "tip",
           boxTitle: "💡 O SE faz uma pergunta",
           boxText: "O Excel testa a condição e escolhe entre dois caminhos: o valor se for verdadeiro ou o valor se for falso. É a base de todas as análises lógicas."
@@ -1557,67 +2241,489 @@ Um buscador de produtos que responde em segundos o que antes exigia procura manu
         {
           lessonNum: 5,
           heading: "5.1 PROCV — Busca Vertical (A Estrela do Excel)",
-          content: `A função PROCV é a ferramenta mais usada para buscar dados no Excel. Ela procura um valor na PRIMEIRA COLUNA de uma tabela e retorna um valor de OUTRA coluna na mesma linha.\n\nPense nela como um índice de um livro: você procura a palavra na coluna (a primeira) e ela aponta o conteúdo que está do lado, na mesma linha.\n\nSINTAXE: =PROCV( valor_procurado ; matriz_tabela ; núm_coluna ; [procurar_intervalo] )\n\nARGUMENTOS:\n• valor_procurado: o que você quer encontrar (ex: 102 — código do produto).\n• matriz_tabela: a tabela onde procurar (ex: A2:C5).\n• núm_coluna: qual coluna retornar, 1, 2, 3... (ex: 2 = retorna a 2ª coluna).\n• procurar_intervalo: FALSO = exato | VERDADEIRO = aproximado. Use SEMPRE FALSO para dados.\n\nPROCURANDO UM CÓDIGO EM E2 PARA OBTER O NOME DO PRODUTO AUTOMATICAMENTE:\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Tabela de Produtos (A1:C5)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>\n    </tr>\n    <tr>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Código</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Produto</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Preço</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">101</td><td style="border:1px solid #E2E8F0; padding:6px;">Caneta</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 2,50</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">102</td><td style="border:1px solid #E2E8F0; padding:6px;">Caderno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 15,00</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">4</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">103</td><td style="border:1px solid #E2E8F0; padding:6px;">Borracha</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 1,50</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">104</td><td style="border:1px solid #E2E8F0; padding:6px;">Lápis</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 1,00</td></tr>\n  </table>\n</div>\n\nFÓRMULA: =PROCV(E2; A2:C5; 2; FALSO)\n\nPASSO A PASSO:\n1) E2 = você digita 102.\n2) A2:C5 = Excel procura na primeira coluna (coluna A).\n3) Encontra o 102 na linha 3.\n4) 2 = retorna a 2ª coluna (coluna B) da mesma linha.\n5) RESULTADO: Caderno.\n\n⚠️ DICA DE OURO: Use SEMPRE FALSO (0) para dados corretos. VERDADEIRO (1) é apenas para tabelas ordenadas e buscas aproximadas (raro).`
+          content: `A função PROCV é a ferramenta mais usada para buscar dados no Excel. Ela procura um valor na PRIMEIRA COLUNA de uma tabela e retorna um valor de OUTRA coluna na mesma linha.
+
+Pense nela como um índice de um livro: você procura a palavra na coluna (a primeira) e ela aponta o conteúdo que está do lado, na mesma linha.
+
+SINTAXE: =PROCV( valor_procurado ; matriz_tabela ; núm_coluna ; [procurar_intervalo] )
+
+ARGUMENTOS:
+• valor_procurado: o que você quer encontrar (ex: 102 — código do produto).
+• matriz_tabela: a tabela onde procurar (ex: A2:C5).
+• núm_coluna: qual coluna retornar, 1, 2, 3... (ex: 2 = retorna a 2ª coluna).
+• procurar_intervalo: FALSO = exato | VERDADEIRO = aproximado. Use SEMPRE FALSO para dados.
+
+PROCURANDO UM CÓDIGO EM E2 PARA OBTER O NOME DO PRODUTO AUTOMATICAMENTE:
+
+FÓRMULA: =PROCV(E2; A2:C5; 2; FALSO)
+
+PASSO A PASSO:
+1) E2 = você digita 102.
+2) A2:C5 = Excel procura na primeira coluna (coluna A).
+3) Encontra o 102 na linha 3.
+4) 2 = retorna a 2ª coluna (coluna B) da mesma linha.
+5) RESULTADO: Caderno.
+
+⚠️ DICA DE OURO: Use SEMPRE FALSO (0) para dados corretos. VERDADEIRO (1) é apenas para tabelas ordenadas e buscas aproximadas (raro).`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Planilha — Tabela de Produtos (A1:C5)</div>
+  <table class="mini-sheet">
+    <tr>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>
+    </tr>
+    <tr>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Código</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Produto</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Preço</td>
+    </tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">101</td><td style="border:1px solid #E2E8F0; padding:6px;">Caneta</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 2,50</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">102</td><td style="border:1px solid #E2E8F0; padding:6px;">Caderno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 15,00</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">4</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">103</td><td style="border:1px solid #E2E8F0; padding:6px;">Borracha</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 1,50</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">104</td><td style="border:1px solid #E2E8F0; padding:6px;">Lápis</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 1,00</td></tr>
+  </table>
+</div>`
+
         },
         {
           lessonNum: 5,
           heading: "5.2 PROCH — Busca Horizontal",
-          content: `A função PROCH é como o PROCV, mas procura na PRIMEIRA LINHA e retorna valores das LINHAS de baixo. Use quando seus dados estão organizados em linhas (horizontalmente). Enquanto o PROCV "desce" pela coluna, o PROCH "atravessa" a linha. A letra H lembra Horizontal; a letra V de PROCV lembra Vertical.\n\nSINTAXE: =PROCH( valor_procurado ; matriz_tabela ; núm_linha ; [procurar_intervalo] )\n\nOs argumentos são os mesmos do PROCV, mas o 3º argumento agora é o número da LINHA que deve ser retornada (não da coluna).\n\nTABELA DE METAS MENSAIS — QUESTÃO: QUAL É A META DE MARÇO?\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Metas Mensais (A1:D2)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">D</td>\n    </tr>\n    <tr>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Janeiro</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Fevereiro</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Março</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Abril</td>\n    </tr>\n    <tr>\n      <td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td>\n      <td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 5.000</td>\n      <td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 6.000</td>\n      <td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 7.000</td>\n      <td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 8.000</td>\n    </tr>\n  </table>\n</div>\n\nFÓRMULA: =PROCH("Mar"; A1:D2; 2; FALSO)\n\nO Excel procura "Mar" na primeira linha (encontra na coluna C), vai para a linha 2 e retorna o valor: R$ 7.000.`
+          content: `A função PROCH é como o PROCV, mas procura na PRIMEIRA LINHA e retorna valores das LINHAS de baixo. Use quando seus dados estão organizados em linhas (horizontalmente). Enquanto o PROCV "desce" pela coluna, o PROCH "atravessa" a linha. A letra H lembra Horizontal; a letra V de PROCV lembra Vertical.
+
+SINTAXE: =PROCH( valor_procurado ; matriz_tabela ; núm_linha ; [procurar_intervalo] )
+
+Os argumentos são os mesmos do PROCV, mas o 3º argumento agora é o número da LINHA que deve ser retornada (não da coluna).
+
+TABELA DE METAS MENSAIS — QUESTÃO: QUAL É A META DE MARÇO?
+
+FÓRMULA: =PROCH("Mar"; A1:D2; 2; FALSO)
+
+O Excel procura "Mar" na primeira linha (encontra na coluna C), vai para a linha 2 e retorna o valor: R\$ 7.000.`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Planilha — Metas Mensais (A1:D2)</div>
+  <table class="mini-sheet">
+    <tr>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">D</td>
+    </tr>
+    <tr>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Janeiro</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Fevereiro</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Março</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Abril</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td>
+      <td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 5.000</td>
+      <td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 6.000</td>
+      <td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 7.000</td>
+      <td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 8.000</td>
+    </tr>
+  </table>
+</div>`
+
         },
         {
           lessonNum: 5,
           heading: "5.3 ÍNDICE — Retorna Valor por Coordenadas",
-          content: `A função ÍNDICE retorna um valor específico baseado na LINHA e COLUNA onde ele está — como as coordenadas de um mapa (ex: "linha 3, coluna 3").\n\nSINTAXE: =ÍNDICE( matriz ; núm_linha ; núm_coluna )\n\nVOCÊ INFORMA A MATRIZ (A REGIÃO DA TABELA) E DEPOIS AS COORDENADAS DA CÉLULA QUE QUER PEGAR.\n\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Frutas (A1:C3)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>\n    </tr>\n    <tr>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Fruta</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Preço</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Estoque</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td><td style="border:1px solid #E2E8F0; padding:6px;">Maçã</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 3,00</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">50</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3</td><td style="border:1px solid #E2E8F0; padding:6px;">Banana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 2,00</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">80</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">4</td><td style="border:1px solid #E2E8F0; padding:6px;">Uva</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 5,00</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">30</td></tr>\n  </table>\n</div>\n\nFÓRMULA: =ÍNDICE(A1:C3; 3; 3)\n\nLinha 3, coluna 3 → é a quantidade no estoque da Banana: 80.\n\n🧠 QUANDO USAR: use quando você JÁ SABE a linha e a coluna exatas do dado que deseja. Para encontrar a posição automaticamente, combine com a função CORRESP (tópico 5).`
+          content: `A função ÍNDICE retorna um valor específico baseado na LINHA e COLUNA onde ele está — como as coordenadas de um mapa (ex: "linha 3, coluna 3").
+
+SINTAXE: =ÍNDICE( matriz ; núm_linha ; núm_coluna )
+
+VOCÊ INFORMA A MATRIZ (A REGIÃO DA TABELA) E DEPOIS AS COORDENADAS DA CÉLULA QUE QUER PEGAR.
+
+FÓRMULA: =ÍNDICE(A1:C3; 3; 3)
+
+Linha 3, coluna 3 → é a quantidade no estoque da Banana: 80.
+
+🧠 QUANDO USAR: use quando você JÁ SABE a linha e a coluna exatas do dado que deseja. Para encontrar a posição automaticamente, combine com a função CORRESP (tópico 5).`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Planilha — Frutas (A1:C3)</div>
+  <table class="mini-sheet">
+    <tr>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>
+    </tr>
+    <tr>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Fruta</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Preço</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Estoque</td>
+    </tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td><td style="border:1px solid #E2E8F0; padding:6px;">Maçã</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 3,00</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">50</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3</td><td style="border:1px solid #E2E8F0; padding:6px;">Banana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 2,00</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">80</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">4</td><td style="border:1px solid #E2E8F0; padding:6px;">Uva</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 5,00</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">30</td></tr>
+  </table>
+</div>`
+
         },
         {
           lessonNum: 5,
           heading: "5.4 CORRESP — Encontra a Posição",
-          content: `A função CORRESP retorna a POSIÇÃO (o número) de um valor em uma lista — NÃO o valor em si. É como perguntar: "em qual posição da fila está o Carlos?"\n\nSINTAXE: =CORRESP( valor_procurado ; matriz_procurada ; [tipo_correspondência] )\n\nO 3º argumento 0 = busca exata (o tipo que devemos usar com textos e códigos).\n\nLISTA DE NOMES (A1:A4): Ana, Bruno, Carlos, Diana.\n\nFÓRMULA: =CORRESP("Carlos"; A1:A4; 0)\n\nO CORRESP percorre a lista, encontra "Carlos" e devolve a posição: 3 (Carlos está na 3ª posição).\n\n🧠 POR QUE A POSIÇÃO É ÚTIL? Sozinho parece simples, mas a posição é o "número da linha" que o ÍNDICE precisa. Juntos, eles formam a dupla de busca mais flexível do Excel.`
+          content: `A função CORRESP retorna a POSIÇÃO (o número) de um valor em uma lista — NÃO o valor em si. É como perguntar: "em qual posição da fila está o Carlos?"
+
+SINTAXE: =CORRESP( valor_procurado ; matriz_procurada ; [tipo_correspondência] )
+
+O 3º argumento 0 = busca exata (o tipo que devemos usar com textos e códigos).
+
+LISTA DE NOMES (A1:A4): Ana, Bruno, Carlos, Diana.
+
+FÓRMULA: =CORRESP("Carlos"; A1:A4; 0)
+
+O CORRESP percorre a lista, encontra "Carlos" e devolve a posição: 3 (Carlos está na 3ª posição).
+
+🧠 POR QUE A POSIÇÃO É ÚTIL? Sozinho parece simples, mas a posição é o "número da linha" que o ÍNDICE precisa. Juntos, eles formam a dupla de busca mais flexível do Excel.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">=CORRESP("Carlos"; A1:A4; 0) — devolve a POSIÇÃO, não o valor</div><table class="mini-sheet"><tr><th>Posição</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Célula</td><td>A1</td><td>A2</td><td>A3</td><td>A4</td></tr><tr><td>Nome</td><td>Ana</td><td>Bruno</td><td><strong>Carlos</strong></td><td>Diana</td></tr><tr><td>Resposta</td><td colspan="3"><code>=CORRESP("Carlos";A1:A4;0)</code></td><td><strong>3</strong></td></tr></table></div><div class="fun-highlight"><strong>A pergunta que o CORRESP responde:</strong> "em qual posição da lista está o Carlos?" → resposta <strong>3</strong>. Sozinho parece inútil, mas essa posição é exatamente o <strong>número da linha que o ÍNDICE precisa</strong> — por isso a dupla <code>ÍNDICE + CORRESP</code> é a busca mais flexível do Excel.</div>`
+
         },
         {
           lessonNum: 5,
           heading: "5.5 ÍNDICE + CORRESP — A Combinação Poderosa",
-          content: `O PROCV só busca da ESQUERDA para a DIREITA. Já a dupla ÍNDICE + CORRESP busca em QUALQUER DIREÇÃO — muito mais flexível para tabelas complexas.\n\nFÓRMULA COMBINADA: =ÍNDICE( coluna_para_retornar ; CORRESP( valor_procurado ; coluna_para_procurar ; 0 ) )\n\nO CORRESP encontra a LINHA, e o ÍNDICE pega o valor DESSA LINHA na coluna que você escolher — à direita OU à esquerda.\n\nTABELA DE FUNCIONÁRIOS (A1:C4):\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Funcionários (A1:C4)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>\n    </tr>\n    <tr>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Nome</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Setor</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Salário</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Vendas</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 3.000</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3</td><td style="border:1px solid #E2E8F0; padding:6px;">Bruno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">TI</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 4.500</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">4</td><td style="border:1px solid #E2E8F0; padding:6px;">Carlos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">RH</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 3.200</td></tr>\n  </table>\n</div>\n\nQUESTÃO: QUERO O SALÁRIO DO BRUNO.\nFÓRMULA: =ÍNDICE(C2:C4; CORRESP("Bruno"; A2:A4; 0))\n\nPASSO A PASSO:\n1) CORRESP procura "Bruno" em A2:A4 e encontra na posição 2.\n2) ÍNDICE pega o 2º valor de C2:C4.\n3) RESULTADO: R$ 4.500.\n\n⚠️ POR QUE É MAIS PODEROSO? Com ÍNDICE+CORRESP você pode buscar uma coluna que está À ESQUERDA da coluna que contém o valor procurado. O PROCV jamais consegue fazer isso — ele só enxerga da esquerda para a direita.`
+          content: `O PROCV só busca da ESQUERDA para a DIREITA. Já a dupla ÍNDICE + CORRESP busca em QUALQUER DIREÇÃO — muito mais flexível para tabelas complexas.
+
+FÓRMULA COMBINADA: =ÍNDICE( coluna_para_retornar ; CORRESP( valor_procurado ; coluna_para_procurar ; 0 ) )
+
+O CORRESP encontra a LINHA, e o ÍNDICE pega o valor DESSA LINHA na coluna que você escolher — à direita OU à esquerda.
+
+TABELA DE FUNCIONÁRIOS (A1:C4):
+
+QUESTÃO: QUERO O SALÁRIO DO BRUNO.
+FÓRMULA: =ÍNDICE(C2:C4; CORRESP("Bruno"; A2:A4; 0))
+
+PASSO A PASSO:
+1) CORRESP procura "Bruno" em A2:A4 e encontra na posição 2.
+2) ÍNDICE pega o 2º valor de C2:C4.
+3) RESULTADO: R\$ 4.500.
+
+⚠️ POR QUE É MAIS PODEROSO? Com ÍNDICE+CORRESP você pode buscar uma coluna que está À ESQUERDA da coluna que contém o valor procurado. O PROCV jamais consegue fazer isso — ele só enxerga da esquerda para a direita.`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Planilha — Funcionários (A1:C4)</div>
+  <table class="mini-sheet">
+    <tr>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>
+    </tr>
+    <tr>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Nome</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Setor</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Salário</td>
+    </tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Vendas</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 3.000</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3</td><td style="border:1px solid #E2E8F0; padding:6px;">Bruno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">TI</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 4.500</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">4</td><td style="border:1px solid #E2E8F0; padding:6px;">Carlos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">RH</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 3.200</td></tr>
+  </table>
+</div>`
+
         },
         {
           lessonNum: 5,
           heading: "5.6 Lookup Lab — Simulador de Busca",
-          content: "Na tela da aula, você encontra o Lookup Lab: uma tabela de produtos (código, produto e preço) que permite digitar um código e ver o Excel \"procurar\" e retornar nome e preço, exatamente como o PROCV faria.\n\n• Edite os valores das colunas Código, Produto e Preço.\n• Em Buscar Código, digite um dos códigos (ex: 102) e clique em Procurar.\n• O simulador procura o código na primeira coluna e devolve o produto e o preço da mesma linha.\n\nExperimente mudar os valores e veja a fórmula =PROCV(...) recalculando na hora!"
+          content: "Na tela da aula, você encontra o Lookup Lab: uma tabela de produtos (código, produto e preço) que permite digitar um código e ver o Excel \"procurar\" e retornar nome e preço, exatamente como o PROCV faria.\n\n• Edite os valores das colunas Código, Produto e Preço.\n• Em Buscar Código, digite um dos códigos (ex: 102) e clique em Procurar.\n• O simulador procura o código na primeira coluna e devolve o produto e o preço da mesma linha.\n\nExperimente mudar os valores e veja a fórmula =PROCV(...) recalculando na hora!",
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Lookup Lab — o PROCV em modo simulador</div><table class="mini-sheet"><tr><th></th><th>A — Código</th><th>B — Produto</th><th>C — Preço</th></tr><tr><td>2</td><td>101</td><td>Mouse</td><td>89,90</td></tr><tr><td>3</td><td><strong>102</strong></td><td>Teclado</td><td>149,00</td></tr><tr><td>4</td><td>103</td><td>Monitor</td><td>899,00</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">Buscar Código: 102 → Procurar</div><table class="mini-sheet"><tr><th>Produto</th><th>Preço</th></tr><tr><td><strong>Teclado</strong></td><td><strong>149,00</strong></td></tr><tr><td colspan="2">Devolvido da <strong>mesma linha</strong> do código digitado</td></tr></table></div><div class="fun-highlight"><strong>O truque do PROCV:</strong> ele procura na <strong>primeira coluna</strong> (o código) e devolve o valor da coluna que você indicar na fórmula. Por isso a coluna de busca <strong>sempre</strong> precisa ser a primeira.</div>`
+
         },
         {
           lessonNum: 5,
           heading: "5.7 Exercício Prático — Loja de Produtos Eletrônicos",
-          content: `CENÁRIO: Você trabalha no controle de estoque de uma loja online de eletrônicos e precisa criar um sistema de busca rápida das informações dos produtos.\n\nPASSO 1 — MONTE A TABELA (começando em A1):\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Tabela — Loja de Produtos Eletrônicos (A1:E6)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">D</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">E</td>\n    </tr>\n    <tr>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">ID</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Produto</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Categoria</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Preço</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Estoque</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">E001</td><td style="border:1px solid #E2E8F0; padding:6px;">Mouse Gamer</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Periféricos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 89,90</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">45</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">E002</td><td style="border:1px solid #E2E8F0; padding:6px;">Teclado Mecânico</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Periféricos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 349,90</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">23</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">4</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">E003</td><td style="border:1px solid #E2E8F0; padding:6px;">Monitor 24"</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Monitores</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 899,90</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">12</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">E004</td><td style="border:1px solid #E2E8F0; padding:6px;">Webcam HD</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Periféricos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 129,90</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">67</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">6</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">E005</td><td style="border:1px solid #E2E8F0; padding:6px;">Mousepad Grande</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Acessórios</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R$ 49,90</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">120</td></tr>\n  </table>\n</div>\n\nPASSO 2 — Em G2, escreva E002 (o ID a ser buscado).\n\nAS 5 TAREFAS:\n• Tarefa 1 — PROCV Básico: em H2, crie uma fórmula que busque o NOME DO PRODUTO usando o ID em G2. Dica: use PROCV para buscar na coluna B.\n• Tarefa 2 — Buscar em colunas diferentes: em H3 busque o PREÇO; em H4 busque o ESTOQUE. Altere apenas o número da coluna (4 para preço, 5 para estoque).\n• Tarefa 3 — VERDADEIRO/FALSO: o que muda se você usar VERDADEIRO em vez de FALSO? Teste e veja.\n• Tarefa 4 — ÍNDICE + CORRESP Avançado: em G7 escreva o nome de um produto (ex: "Teclado Mecânico"). Em H7, crie uma fórmula ÍNDICE+CORRESP que retorne o PREÇO. Bônus: ÍNDICE+CORRESP consegue buscar a coluna Nome mesmo estando antes do preço.\n• Tarefa 5 — Reflexão: por que o PROCV NÃO pode buscar a coluna Categoria se ela está antes de Estoque?\n\n✅ GABARITO DAS TAREFAS:\n• Tarefa 1: =PROCV(G2; A:B; 2; FALSO)\n• Tarefa 2: =PROCV(G2; A:E; 4; FALSO) | =PROCV(G2; A:E; 5; FALSO)\n• Tarefa 3: Com VERDADEIRO, o Excel busca o valor aproximado (não funciona bem com texto). Use sempre FALSO para correspondência exata.\n• Tarefa 4: =ÍNDICE(D:D; CORRESP(G7; B:B; 0))\n• Tarefa 5: o PROCV sempre busca à DIREITA. A categoria está à esquerda de Estoque, então ele não consegue alcançá-la. O ÍNDICE+CORRESP não tem essa limitação!\n\n📚 RESUMO DAS FUNÇÕES:\n• PROCV: busca vertical (mais comum). Limitação: só busca da esquerda para a direita.\n• PROCH: busca horizontal. Para dados organizados em linhas.\n• ÍNDICE: retorna valor por posição. Precisa saber a linha e coluna exatas.\n• CORRESP: encontra a posição de um valor. Retorna apenas a posição, não o valor.\n• ÍNDICE+CORRESP: busca flexível em qualquer direção. Um pouco mais complexa, mas muito poderosa.\n\n🎯 QUANDO USAR CADA UMA:\n• Dados organizados em COLUNAS? Use PROCV.\n• Dados organizados em LINHAS? Use PROCH.\n• Precisa buscar em QUALQUER DIREÇÃO? Use ÍNDICE+CORRESP.\n• Só quer saber a POSIÇÃO? Use CORRESP.`
+          content: `CENÁRIO: Você trabalha no controle de estoque de uma loja online de eletrônicos e precisa criar um sistema de busca rápida das informações dos produtos.
+
+PASSO 1 — MONTE A TABELA (começando em A1):
+
+PASSO 2 — Em G2, escreva E002 (o ID a ser buscado).
+
+AS 5 TAREFAS:
+• Tarefa 1 — PROCV Básico: em H2, crie uma fórmula que busque o NOME DO PRODUTO usando o ID em G2. Dica: use PROCV para buscar na coluna B.
+• Tarefa 2 — Buscar em colunas diferentes: em H3 busque o PREÇO; em H4 busque o ESTOQUE. Altere apenas o número da coluna (4 para preço, 5 para estoque).
+• Tarefa 3 — VERDADEIRO/FALSO: o que muda se você usar VERDADEIRO em vez de FALSO? Teste e veja.
+• Tarefa 4 — ÍNDICE + CORRESP Avançado: em G7 escreva o nome de um produto (ex: "Teclado Mecânico"). Em H7, crie uma fórmula ÍNDICE+CORRESP que retorne o PREÇO. Bônus: ÍNDICE+CORRESP consegue buscar a coluna Nome mesmo estando antes do preço.
+• Tarefa 5 — Reflexão: por que o PROCV NÃO pode buscar a coluna Categoria se ela está antes de Estoque?
+
+✅ GABARITO DAS TAREFAS:
+• Tarefa 1: =PROCV(G2; A:B; 2; FALSO)
+• Tarefa 2: =PROCV(G2; A:E; 4; FALSO) | =PROCV(G2; A:E; 5; FALSO)
+• Tarefa 3: Com VERDADEIRO, o Excel busca o valor aproximado (não funciona bem com texto). Use sempre FALSO para correspondência exata.
+• Tarefa 4: =ÍNDICE(D:D; CORRESP(G7; B:B; 0))
+• Tarefa 5: o PROCV sempre busca à DIREITA. A categoria está à esquerda de Estoque, então ele não consegue alcançá-la. O ÍNDICE+CORRESP não tem essa limitação!
+
+📚 RESUMO DAS FUNÇÕES:
+• PROCV: busca vertical (mais comum). Limitação: só busca da esquerda para a direita.
+• PROCH: busca horizontal. Para dados organizados em linhas.
+• ÍNDICE: retorna valor por posição. Precisa saber a linha e coluna exatas.
+• CORRESP: encontra a posição de um valor. Retorna apenas a posição, não o valor.
+• ÍNDICE+CORRESP: busca flexível em qualquer direção. Um pouco mais complexa, mas muito poderosa.
+
+🎯 QUANDO USAR CADA UMA:
+• Dados organizados em COLUNAS? Use PROCV.
+• Dados organizados em LINHAS? Use PROCH.
+• Precisa buscar em QUALQUER DIREÇÃO? Use ÍNDICE+CORRESP.
+• Só quer saber a POSIÇÃO? Use CORRESP.`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Tabela — Loja de Produtos Eletrônicos (A1:E6)</div>
+  <table class="mini-sheet">
+    <tr>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;"></td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">D</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">E</td>
+    </tr>
+    <tr>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">1</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">ID</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Produto</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Categoria</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Preço</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Estoque</td>
+    </tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">2</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">E001</td><td style="border:1px solid #E2E8F0; padding:6px;">Mouse Gamer</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Periféricos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 89,90</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">45</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">E002</td><td style="border:1px solid #E2E8F0; padding:6px;">Teclado Mecânico</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Periféricos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 349,90</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">23</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">4</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">E003</td><td style="border:1px solid #E2E8F0; padding:6px;">Monitor 24"</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Monitores</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 899,90</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">12</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">E004</td><td style="border:1px solid #E2E8F0; padding:6px;">Webcam HD</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Periféricos</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 129,90</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">67</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">6</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">E005</td><td style="border:1px solid #E2E8F0; padding:6px;">Mousepad Grande</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Acessórios</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">R\$ 49,90</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">120</td></tr>
+  </table>
+</div>`
+
         },
         {
           lessonNum: 4,
           heading: "4.2 SE + E — Todas as Condições Precisam Ser Verdadeiras",
-          content: `A função E() verifica se TODAS as condições que você listar são verdadeiras ao mesmo tempo. Se até uma delas for falsa, o resultado é FALSO.\n\nImagine que a escola exige duas coisas para aprovar: nota boa E frequência suficiente. Se faltar qualquer uma, não passa.\n\nREGRA DE OURO DO E: TODAS as condições precisam ser VERDADEIRAS. Uma só falsa → resultado é FALSO.\n\nSINTAXE: =E( condição1 ; condição2 ; condição3 ... )\n\nEXEMPLO — Aprovação com nota E frequência: =SE(E(B2>=7; C2>=75); "Aprovado"; "Reprovado") — B2 = nota | C2 = frequência (%).\n\nPLANILHA — Aprovação com Nota e Frequência (SE + E):\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Aprovação com Nota e Frequência</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Frequência</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Resultado</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">8,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">80%</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Aprovado</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Bruno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">7,5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">60%</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Reprovado (freq. baixa)</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carla</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">90%</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Reprovado (nota baixa)</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Diego</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">9,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">95%</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Aprovado</td></tr>\n  </table>\n</div>\n\n💡 DICA: Você pode adicionar quantas condições quiser dentro do E. Ex.: =SE(E(B2>=7; C2>=75; D2="Entregou TCC"); "Formado"; "Pendente")`
+          content: `A função E() verifica se TODAS as condições que você listar são verdadeiras ao mesmo tempo. Se até uma delas for falsa, o resultado é FALSO.
+
+Imagine que a escola exige duas coisas para aprovar: nota boa E frequência suficiente. Se faltar qualquer uma, não passa.
+
+REGRA DE OURO DO E: TODAS as condições precisam ser VERDADEIRAS. Uma só falsa → resultado é FALSO.
+
+SINTAXE: =E( condição1 ; condição2 ; condição3 ... )
+
+EXEMPLO — Aprovação com nota E frequência: =SE(E(B2>=7; C2>=75); "Aprovado"; "Reprovado") — B2 = nota | C2 = frequência (%).
+
+PLANILHA — Aprovação com Nota e Frequência (SE + E):
+
+💡 DICA: Você pode adicionar quantas condições quiser dentro do E. Ex.: =SE(E(B2>=7; C2>=75; D2="Entregou TCC"); "Formado"; "Pendente")`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Planilha — Aprovação com Nota e Frequência</div>
+  <table class="mini-sheet">
+    <tr>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Frequência</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Resultado</td>
+    </tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">8,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">80%</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Aprovado</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Bruno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">7,5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">60%</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Reprovado (freq. baixa)</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carla</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">90%</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Reprovado (nota baixa)</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Diego</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">9,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">95%</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Aprovado</td></tr>
+  </table>
+</div>`
+
         },
         {
           lessonNum: 4,
           heading: "4.3 SE + OU — Pelo Menos Uma Condição Precisa Ser Verdadeira",
-          content: `A função OU() verifica se PELO MENOS UMA das condições é verdadeira. Basta uma ser verdadeira e o resultado é VERDADEIRO.\n\nImagine: o aluno ganha bônus se tirar nota 9 OU tiver participação extra. Basta uma das duas!\n\nREGRA DE OURO DO OU: basta UMA condição ser VERDADEIRA. Só é FALSO quando todas são falsas.\n\nSINTAXE: =OU( condição1 ; condição2 ; condição3 ... )\n\nEXEMPLO — Bônus por nota alta OU participação: =SE(OU(B2>=9; C2="Sim"); "Tem bônus"; "Sem bônus") — B2 = nota | C2 = Participação Extra (Sim/Não).\n\nCOMPARANDO E x OU — PENSE ASSIM:\nO E() é como uma porta trancada com 2 fechaduras — precisa de AMBAS as chaves para abrir. O OU() é como uma porta com 2 fechaduras alternativas — basta UMA chave para abrir.\n\nAplicando a mesma regra de bônus nos mesmos 4 alunos:\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#0F766E; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Comparativo E x OU — Bônus dos Alunos</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota ≥ 9?</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Participação?</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Com E</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Com OU</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sem bônus</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Tem bônus</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Bruno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sem bônus</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Tem bônus</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carla</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Tem bônus</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Tem bônus</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Diego</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sem bônus</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sem bônus</td></tr>\n  </table>\n</div>\n\nCOMO FUNCIONA CADA LINHA:\n\n🔹 Ana: Nota ≥ 9? Sim ✅ Participação? Não ❌\n• E: Faltou participação → Sem bônus (precisa das DUAS)\n• OU: Nota alta já basta → Tem bônus (basta UMA)\n\n🔹 Bruno: Nota ≥ 9? Não ❌ Participação? Sim ✅\n• E: Faltou nota → Sem bônus (precisa das DUAS)\n• OU: Participação já basta → Tem bônus (basta UMA)\n\n🔹 Carla: Nota ≥ 9? Sim ✅ Participação? Sim ✅\n• E: Tem as duas → Tem bônus (última a ganhar com E)\n• OU: Tem as duas → Tem bônus (ganha com qualquer um dos dois)\n\n🔹 Diego: Nota ≥ 9? Não ❌ Participação? Não ❌\n• E: Não tem nenhuma → Sem bônus\n• OU: Não tem nenhuma → Sem bônus (único que perde nos DOIS)\n\n📌 REGRA FÁCIL DE GUARDAR:\n• E() = mais exigente — só passa quem tem TUDO ✅✅\n• OU() = mais generoso — passa quem tem PELO MENOS UMA ✅\n• No exemplo: só Carla ganhou com E (tinha as duas). Com OU, Ana e Bruno também ganharam. Diego não ganhou em nenhum dos dois (não tinha nada).`
+          content: `A função OU() verifica se PELO MENOS UMA das condições é verdadeira. Basta uma ser verdadeira e o resultado é VERDADEIRO.
+
+Imagine: o aluno ganha bônus se tirar nota 9 OU tiver participação extra. Basta uma das duas!
+
+REGRA DE OURO DO OU: basta UMA condição ser VERDADEIRA. Só é FALSO quando todas são falsas.
+
+SINTAXE: =OU( condição1 ; condição2 ; condição3 ... )
+
+EXEMPLO — Bônus por nota alta OU participação: =SE(OU(B2>=9; C2="Sim"); "Tem bônus"; "Sem bônus") — B2 = nota | C2 = Participação Extra (Sim/Não).
+
+COMPARANDO E x OU — PENSE ASSIM:
+O E() é como uma porta trancada com 2 fechaduras — precisa de AMBAS as chaves para abrir. O OU() é como uma porta com 2 fechaduras alternativas — basta UMA chave para abrir.
+
+Aplicando a mesma regra de bônus nos mesmos 4 alunos:
+
+COMO FUNCIONA CADA LINHA:
+
+🔹 Ana: Nota ≥ 9? Sim ✅ Participação? Não ❌
+• E: Faltou participação → Sem bônus (precisa das DUAS)
+• OU: Nota alta já basta → Tem bônus (basta UMA)
+
+🔹 Bruno: Nota ≥ 9? Não ❌ Participação? Sim ✅
+• E: Faltou nota → Sem bônus (precisa das DUAS)
+• OU: Participação já basta → Tem bônus (basta UMA)
+
+🔹 Carla: Nota ≥ 9? Sim ✅ Participação? Sim ✅
+• E: Tem as duas → Tem bônus (última a ganhar com E)
+• OU: Tem as duas → Tem bônus (ganha com qualquer um dos dois)
+
+🔹 Diego: Nota ≥ 9? Não ❌ Participação? Não ❌
+• E: Não tem nenhuma → Sem bônus
+• OU: Não tem nenhuma → Sem bônus (único que perde nos DOIS)
+
+📌 REGRA FÁCIL DE GUARDAR:
+• E() = mais exigente — só passa quem tem TUDO ✅✅
+• OU() = mais generoso — passa quem tem PELO MENOS UMA ✅
+• No exemplo: só Carla ganhou com E (tinha as duas). Com OU, Ana e Bruno também ganharam. Diego não ganhou em nenhum dos dois (não tinha nada).`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Comparativo E x OU — Bônus dos Alunos</div>
+  <table class="mini-sheet">
+    <tr>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota ≥ 9?</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Participação?</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Com E</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Com OU</td>
+    </tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sem bônus</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Tem bônus</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Bruno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sem bônus</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Tem bônus</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carla</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Tem bônus</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Tem bônus</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Diego</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sem bônus</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sem bônus</td></tr>
+  </table>
+</div>`
+
         },
         {
           lessonNum: 4,
           heading: "4.4 SE Aninhado — Múltiplos Resultados Possíveis",
-          content: `O SE aninhado é quando você coloca um SE dentro de outro SE. Isso permite ter MAIS DE DOIS resultados possíveis.\n\nA lógica é como um funil: o Excel testa a primeira condição; se for falsa, cai no segundo SE; se também for falsa, cai no terceiro... e assim por diante.\n\nQUANDO USAR? Quando você precisa de mais de 2 resultados — como classificar notas em Excelente, Bom, Regular ou Reprovado.\n\nEXEMPLO — Classificação de notas em 4 níveis:\n=SE(B2>=9; "Excelente"; SE(B2>=7; "Bom"; SE(B2>=5; "Regular"; "Reprovado")))\n\nCOMO O EXCEL LÊ, PASSO A PASSO:\n1º teste: Nota >= 9? Sim → "Excelente" e para.\n2º teste: Nota >= 7? Sim → "Bom" e para.\n3º teste: Nota >= 5? Sim → "Regular" e para.\nSe chegou aqui: nenhuma condição verdadeira → "Reprovado".\n\nPLANILHA — Classificação de Notas:\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#166534; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Classificação de Notas (SE Aninhado)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Classificação</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">9,5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Excelente</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Bruno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">7,8</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Bom</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carla</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5,2</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Regular</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Diego</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Reprovado</td></tr>\n  </table>\n</div>\n\n💡 DICA: Evite aninhar mais de 3 SEs. Para muitos casos, considere PROCV ou ESCOLHER (CHOOSE).`
+          content: `O SE aninhado é quando você coloca um SE dentro de outro SE. Isso permite ter MAIS DE DOIS resultados possíveis.
+
+A lógica é como um funil: o Excel testa a primeira condição; se for falsa, cai no segundo SE; se também for falsa, cai no terceiro... e assim por diante.
+
+QUANDO USAR? Quando você precisa de mais de 2 resultados — como classificar notas em Excelente, Bom, Regular ou Reprovado.
+
+EXEMPLO — Classificação de notas em 4 níveis:
+=SE(B2>=9; "Excelente"; SE(B2>=7; "Bom"; SE(B2>=5; "Regular"; "Reprovado")))
+
+COMO O EXCEL LÊ, PASSO A PASSO:
+1º teste: Nota >= 9? Sim → "Excelente" e para.
+2º teste: Nota >= 7? Sim → "Bom" e para.
+3º teste: Nota >= 5? Sim → "Regular" e para.
+Se chegou aqui: nenhuma condição verdadeira → "Reprovado".
+
+PLANILHA — Classificação de Notas:
+
+💡 DICA: Evite aninhar mais de 3 SEs. Para muitos casos, considere PROCV ou ESCOLHER (CHOOSE).`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Planilha — Classificação de Notas (SE Aninhado)</div>
+  <table class="mini-sheet">
+    <tr>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Classificação</td>
+    </tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">9,5</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Excelente</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Bruno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">7,8</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Bom</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carla</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">5,2</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Regular</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Diego</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">3,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Reprovado</td></tr>
+  </table>
+</div>`
+
         },
         {
           lessonNum: 4,
           heading: "4.5 Função NÃO() — Inverte Uma Condição",
-          content: `A função NÃO() é bem simples: ela INVERTE o resultado lógico. O que é VERDADEIRO vira FALSO, e o que é FALSO vira VERDADEIRO.\n\nÉ como dizer 'exceto'. Em vez de 'quero notas >= 7', você diz 'não quero notas < 7'.\n\nSINTAXE: =NÃO( teste_lógico )\n\nEXEMPLO — Identificar alunos que precisam de reforço:\n=SE(NÃO(B2>=7); "Precisa de reforço"; "OK") — NÃO(B2>=7) é o mesmo que B2<7.\n\nEQUIVALÊNCIAS ÚTEIS:\n• NÃO(A>=7) é o mesmo que A<7\n• NÃO(C="Sim") é o mesmo que C<>"Sim" (diferente de Sim)\n• NÃO(E(...)) inverte o resultado de um E — muito usado em Formatação Condicional.\n\nPLANILHA — Reforço Escolar (Função NÃO):\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#0F766E; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Reforço Escolar (Função NÃO)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Situação</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">8,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">OK</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Bruno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">6,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Precisa de reforço</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carla</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">9,2</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">OK</td></tr>\n  </table>\n</div>`
+          content: `A função NÃO() é bem simples: ela INVERTE o resultado lógico. O que é VERDADEIRO vira FALSO, e o que é FALSO vira VERDADEIRO.
+
+É como dizer 'exceto'. Em vez de 'quero notas >= 7', você diz 'não quero notas < 7'.
+
+SINTAXE: =NÃO( teste_lógico )
+
+EXEMPLO — Identificar alunos que precisam de reforço:
+=SE(NÃO(B2>=7); "Precisa de reforço"; "OK") — NÃO(B2>=7) é o mesmo que B2<7.
+
+EQUIVALÊNCIAS ÚTEIS:
+• NÃO(A>=7) é o mesmo que A<7
+• NÃO(C="Sim") é o mesmo que C<>"Sim" (diferente de Sim)
+• NÃO(E(...)) inverte o resultado de um E — muito usado em Formatação Condicional.
+
+PLANILHA — Reforço Escolar (Função NÃO):`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Planilha — Reforço Escolar (Função NÃO)</div>
+  <table class="mini-sheet">
+    <tr>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Aluno</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Nota</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">Situação</td>
+    </tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Ana</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">8,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">OK</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Bruno</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">6,0</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Precisa de reforço</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Carla</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">9,2</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">OK</td></tr>
+  </table>
+</div>`
+
         },
         {
           lessonNum: 4,
           heading: "4.6 Logic Lab — Simulador Interativo",
-          content: "Na tela da aula, você encontra o Logic Lab: uma planilha de alunos (nota e frequência) que recalcula em tempo real ao editar qualquer valor, exatamente como o Excel real.\n\n• Edite a nota e a frequência e veja =SE (aprovado), =SE+E, =SE+OU e =SE aninhado atualizarem na hora.\n• Modo NÃO: compare como a inversão lógica altera todos os resultados (Verdadeiro ↔ Falso).\n• Mini-demo de Formatação Condicional: as células da coluna Situação mudam de cor (verde/vermelho) automaticamente conforme a nota.\n\nExperimente mudar os valores e observe os resultados lógicos se recalculando sozinho!"
+          content: "Na tela da aula, você encontra o Logic Lab: uma planilha de alunos (nota e frequência) que recalcula em tempo real ao editar qualquer valor, exatamente como o Excel real.\n\n• Edite a nota e a frequência e veja =SE (aprovado), =SE+E, =SE+OU e =SE aninhado atualizarem na hora.\n• Modo NÃO: compare como a inversão lógica altera todos os resultados (Verdadeiro ↔ Falso).\n• Mini-demo de Formatação Condicional: as células da coluna Situação mudam de cor (verde/vermelho) automaticamente conforme a nota.\n\nExperimente mudar os valores e observe os resultados lógicos se recalculando sozinho!",
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Logic Lab — uma nota muda quatro respostas lógicas</div><table class="mini-sheet"><tr><th>Aluno</th><th>Nota</th><th>Freq.</th><th>=SE</th><th>=SE+E</th><th>=SE+OU</th></tr><tr><td>Ana</td><td>9,5</td><td>95%</td><td>Aprovado</td><td>Com bônus</td><td>Com bônus</td></tr><tr><td>Bruno</td><td>6,0</td><td>80%</td><td>Aprovado</td><td>Sem bônus</td><td>Sem bônus</td></tr><tr><td>Carla</td><td>4,0</td><td>90%</td><td>Reprovado</td><td>Reprovado</td><td>Com bônus</td></tr></table></div><div class="fun-highlight"><strong>Três lições do simulador:</strong> (1) edite qualquer valor e todas as fórmulas recalculam na hora; (2) no <strong>Modo NÃO</strong>, cada Verdadeiro vira Falso e vice-versa; (3) a coluna Situação muda de <strong>verde</strong>/<strong>vermelho</strong> sozinha — é a <strong>Formatação Condicional</strong> em ação.</div>`
+
         },
         {
           lessonNum: 4,
           heading: "4.7 Exercício Prático — Classificação de Clientes (Situação do Mundo Real)",
-          content: `CENÁRIO: Você trabalha no setor financeiro de uma empresa e precisa classificar clientes automaticamente com base nos pagamentos. A planilha tem: nome do cliente, valor pago, status do pagamento e a data. Sua missão: criar a coluna SITUAÇÃO que classifica cada cliente automaticamente.\n\nESTRUTURA DA PLANILHA — Classificação de Clientes:\n<div style="margin:10px 0; border:1px solid #CBD5E1; border-radius:8px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif;">\n  <div style="background:#217346; color:#FFFFFF; font-weight:bold; padding:8px 14px;">Planilha — Classificação de Clientes (Exercício 7)</div>\n  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">\n    <tr>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">D</td>\n      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">E</td>\n    </tr>\n    <tr>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Cliente</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Valor (R$)</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Pago?</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Data Pgto.</td>\n      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Situação</td>\n    </tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Empresa ABC</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">1.200</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">10/03/2025</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Loja XYZ</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">350</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">15/03/2025</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Mercado Sol</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">800</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">—</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>\n    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Padaria Luz</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">200</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">—</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>\n  </table>\n</div>\n\nREGRAS DE CLASSIFICAÇÃO:\n• Pagou e valor >= R$ 500 → "Cliente Premium"\n• Pagou e valor < R$ 500 → "Cliente Regular"\n• Não pagou → "Em aberto"\n\nCONSTRUINDO A FÓRMULA PASSO A PASSO:\nPasso 1 — Verificar o pagamento com SE simples: =SE(C2="Sim"; "Pagou"; "Não pagou")\nPasso 2 — Dentro do "Pagou", usar SE aninhado para o valor — fórmula completa na célula E2:\n=SE(C2="Sim"; SE(B2>=500; "Cliente Premium"; "Cliente Regular"); "Em aberto")\n\nLENDO A FÓRMULA EM VOZ ALTA:\n• SE C2 for "Sim" (pagou) → entra no segundo SE: SE B2 >= 500 → "Cliente Premium", senão "Cliente Regular"\n• SE C2 não for "Sim" → "Em aberto"\n\nRESULTADO ESPERADO:\n• Empresa ABC (1.200, Sim) → Cliente Premium\n• Loja XYZ (350, Sim) → Cliente Regular\n• Mercado Sol (800, Não) → Em aberto\n• Padaria Luz (200, Não) → Em aberto\n\nFORMATAÇÃO CONDICIONAL PARA O EXERCÍCIO — colorir a coluna Situação (E2:E20) com 3 cores:\n• Regra 1: =$E2="Cliente Premium" → Verde escuro (pagou e é grande cliente)\n• Regra 2: =$E2="Cliente Regular" → Azul claro (pagou e é cliente normal)\n• Regra 3: =$E2="Em aberto" → Vermelho (pagamento pendente)\n\nCOMO CRIAR AS 3 REGRAS: Selecione E2:E20 (coluna Situação) → Página Inicial → Formatação Condicional → Nova Regra... → Escolha "Usar uma fórmula..." e insira a fórmula da Regra 1 → Clique em Formatar... → Preenchimento → escolha Verde escuro → OK. Repita para a Regra 2 (azul) e Regra 3 (vermelho). Verifique em Gerenciar Regras se todas as 3 aparecem.\n\nTESTANDO: mude C2 de "Sim" para "Não" e veja a cor mudar para vermelho automaticamente. Mude B2 de 1200 para 200 e veja "Cliente Premium" virar "Cliente Regular". A cor muda sozinha conforme os dados mudam — isso é a magia da Formatação Condicional!`
+          content: `CENÁRIO: Você trabalha no setor financeiro de uma empresa e precisa classificar clientes automaticamente com base nos pagamentos. A planilha tem: nome do cliente, valor pago, status do pagamento e a data. Sua missão: criar a coluna SITUAÇÃO que classifica cada cliente automaticamente.
+
+ESTRUTURA DA PLANILHA — Classificação de Clientes:
+
+REGRAS DE CLASSIFICAÇÃO:
+• Pagou e valor >= R\$ 500 → "Cliente Premium"
+• Pagou e valor < R\$ 500 → "Cliente Regular"
+• Não pagou → "Em aberto"
+
+CONSTRUINDO A FÓRMULA PASSO A PASSO:
+Passo 1 — Verificar o pagamento com SE simples: =SE(C2="Sim"; "Pagou"; "Não pagou")
+Passo 2 — Dentro do "Pagou", usar SE aninhado para o valor — fórmula completa na célula E2:
+=SE(C2="Sim"; SE(B2>=500; "Cliente Premium"; "Cliente Regular"); "Em aberto")
+
+LENDO A FÓRMULA EM VOZ ALTA:
+• SE C2 for "Sim" (pagou) → entra no segundo SE: SE B2 >= 500 → "Cliente Premium", senão "Cliente Regular"
+• SE C2 não for "Sim" → "Em aberto"
+
+RESULTADO ESPERADO:
+• Empresa ABC (1.200, Sim) → Cliente Premium
+• Loja XYZ (350, Sim) → Cliente Regular
+• Mercado Sol (800, Não) → Em aberto
+• Padaria Luz (200, Não) → Em aberto
+
+FORMATAÇÃO CONDICIONAL PARA O EXERCÍCIO — colorir a coluna Situação (E2:E20) com 3 cores:
+• Regra 1: =\$E2="Cliente Premium" → Verde escuro (pagou e é grande cliente)
+• Regra 2: =\$E2="Cliente Regular" → Azul claro (pagou e é cliente normal)
+• Regra 3: =\$E2="Em aberto" → Vermelho (pagamento pendente)
+
+COMO CRIAR AS 3 REGRAS: Selecione E2:E20 (coluna Situação) → Página Inicial → Formatação Condicional → Nova Regra... → Escolha "Usar uma fórmula..." e insira a fórmula da Regra 1 → Clique em Formatar... → Preenchimento → escolha Verde escuro → OK. Repita para a Regra 2 (azul) e Regra 3 (vermelho). Verifique em Gerenciar Regras se todas as 3 aparecem.
+
+TESTANDO: mude C2 de "Sim" para "Não" e veja a cor mudar para vermelho automaticamente. Mude B2 de 1200 para 200 e veja "Cliente Premium" virar "Cliente Regular". A cor muda sozinha conforme os dados mudam — isso é a magia da Formatação Condicional!`,
+          html: `<div class="es-sheet-box">
+  <div class="es-sheet-titlebar">Planilha — Classificação de Clientes (Exercício 7)</div>
+  <table class="mini-sheet">
+    <tr>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">A</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">B</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">C</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">D</td>
+      <td style="background:#D9EAF7; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#475569;">E</td>
+    </tr>
+    <tr>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Cliente</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Valor (R\$)</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Pago?</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Data Pgto.</td>
+      <td style="background:#E2E8F0; text-align:center; border:1px solid #CBD5E1; padding:6px; color:#334155; font-weight:600;">Situação</td>
+    </tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Empresa ABC</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">1.200</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">10/03/2025</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Loja XYZ</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">350</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Sim</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">15/03/2025</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Mercado Sol</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">800</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">—</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>
+    <tr><td style="border:1px solid #E2E8F0; padding:6px;">Padaria Luz</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">200</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">Não</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">—</td><td style="border:1px solid #E2E8F0; padding:6px; text-align:center;">?</td></tr>
+  </table>
+</div>`
+
         },
         {
           lessonNum: 6,
@@ -1678,37 +2784,167 @@ Uma Agenda de Contatos que se atualiza sozinha: a idade avança todo ano e a col
         {
           lessonNum: 6,
           heading: "6.1 Função HOJE() — A Data de Hoje",
-          content: `A função HOJE() mostra a data de hoje. Todos os dias, quando você abrir a planilha, essa data se atualiza sozinha — você não precisa digitar nada.\n\nSINTAXE: =HOJE()\n\nNão recebe nenhum argumento (parênteses vazios). Exemplo: digite =HOJE() na célula A1 e o resultado será a data de hoje (ex.: 24/10/2025).\n\nAPLICAÇÕES PRÁTICAS:\n• Saber se um documento ainda está dentro do prazo de validade.\n• Calcular a idade de uma pessoa.\n• Verificar quantos dias faltam para um prazo terminar.\n\nPASSO A PASSO:\n1. Clique em uma célula vazia (ex.: A1).\n2. Digite exatamente: =HOJE().\n3. Pressione Enter.\n4. A célula vai mostrar a data de hoje.`
+          content: `A função HOJE() mostra a data de hoje. Todos os dias, quando você abrir a planilha, essa data se atualiza sozinha — você não precisa digitar nada.
+
+SINTAXE: =HOJE()
+
+Não recebe nenhum argumento (parênteses vazios). Exemplo: digite =HOJE() na célula A1 e o resultado será a data de hoje (ex.: 24/10/2025).
+
+APLICAÇÕES PRÁTICAS:
+• Saber se um documento ainda está dentro do prazo de validade.
+• Calcular a idade de uma pessoa.
+• Verificar quantos dias faltam para um prazo terminar.
+
+PASSO A PASSO:
+1. Clique em uma célula vazia (ex.: A1).
+2. Digite exatamente: =HOJE().
+3. Pressione Enter.
+4. A célula vai mostrar a data de hoje.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">=HOJE() — a data se atualiza sozinha</div><table class="mini-sheet"><tr><th>Passo</th><th>O que fazer</th><th>Resultado</th></tr><tr><td>1</td><td>Clique numa célula vazia (ex.: A1)</td><td>—</td></tr><tr><td>2</td><td>Digite <code>=HOJE()</code></td><td>—</td></tr><tr><td>3</td><td>Pressione Enter</td><td><strong>24/10/2025</strong></td></tr></table></div><div class="fun-highlight"><strong>Repare nos parênteses vazios:</strong> <code>=HOJE()</code> não recebe nenhum argumento. Amanhã, ao abrir a planilha, a célula exibirá outra data — é por isso que você <strong>nunca deve digitar a data à mão</strong> quando ela entra em cálculo. Usos típicos: validade de documentos, idade de uma pessoa e dias restantes para um prazo.</div>`
+
         },
         {
           lessonNum: 6,
           heading: "6.2 Função AGORA() — Data e Hora",
-          content: `A função AGORA() mostra a data e também a hora exata em que você abriu ou atualizou a planilha.\n\nSINTAXE: =AGORA()\n\nExemplo: digite =AGORA() em uma célula e o resultado será algo como 24/10/2025 14:30.\n\nTABELA COMPARATIVA HOJE × AGORA:\n• =HOJE() — Somente a data (dia/mês/ano).\n• =AGORA() — A data e também a hora.`
+          content: `A função AGORA() mostra a data e também a hora exata em que você abriu ou atualizou a planilha.
+
+SINTAXE: =AGORA()
+
+Exemplo: digite =AGORA() em uma célula e o resultado será algo como 24/10/2025 14:30.
+
+TABELA COMPARATIVA HOJE × AGORA:
+• =HOJE() — Somente a data (dia/mês/ano).
+• =AGORA() — A data e também a hora.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">HOJE × AGORA — a diferença está no que cada uma devolve</div><table class="mini-sheet"><tr><th>Fórmula</th><th>O que devolve</th><th>Exemplo</th></tr><tr><td><code>=HOJE()</code></td><td>Somente a <strong>data</strong> (dia/mês/ano)</td><td>24/10/2025</td></tr><tr><td><code>=AGORA()</code></td><td>A <strong>data e a hora</strong> exatas</td><td>24/10/2025 14:30</td></tr></table></div><div class="fun-highlight"><strong>Regra de bolso:</strong> se você precisa só do dia, use <code>=HOJE()</code>. Se a <strong>hora importa</strong> — bater ponto, controlar prazo em horas, carimbo de entrada — use <code>=AGORA()</code>. As duas se recalculam sozinhas ao abrir a planilha.</div>`
+
         },
         {
           lessonNum: 6,
           heading: "6.3 Função DATA() — Montar uma Data Customizada",
-          content: `A função DATA() monta uma data escolhida por você, informando o ano, o mês e o dia.\n\nSINTAXE: =DATA( ano ; mês ; dia )\n\nA ordem dos argumentos é ANO, MÊS, DIA — não confunda com o formato brasileiro (dia/mês/ano).\n\nEXEMPLO — NATAL:\n=DATA(2025;12;25) → 25/12/2025 (Natal).\n\nPASSO A PASSO:\n1. Em uma célula, digite: =DATA(2025;12;25).\n2. Pressione Enter.\n3. O Excel vai montar a data 25/12/2025 automaticamente.\n\nDICA: você também pode usar números de outras células. Se A1 tem o ano, B1 o mês e C1 o dia, a fórmula fica =DATA(A1;B1;C1).`
+          content: `A função DATA() monta uma data escolhida por você, informando o ano, o mês e o dia.
+
+SINTAXE: =DATA( ano ; mês ; dia )
+
+A ordem dos argumentos é ANO, MÊS, DIA — não confunda com o formato brasileiro (dia/mês/ano).
+
+EXEMPLO — NATAL:
+=DATA(2025;12;25) → 25/12/2025 (Natal).
+
+PASSO A PASSO:
+1. Em uma célula, digite: =DATA(2025;12;25).
+2. Pressione Enter.
+3. O Excel vai montar a data 25/12/2025 automaticamente.
+
+DICA: você também pode usar números de outras células. Se A1 tem o ano, B1 o mês e C1 o dia, a fórmula fica =DATA(A1;B1;C1).`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">=DATA() — a ordem dos argumentos é ANO; MÊS; DIA</div><table class="mini-sheet"><tr><th>Fórmula</th><th>1º arg.</th><th>2º arg.</th><th>3º arg.</th><th>Data montada</th></tr><tr><td><code>=DATA(2025;12;25)</code></td><td>2025 (ano)</td><td>12 (mês)</td><td>25 (dia)</td><td><strong>25/12/2025</strong> — Natal</td></tr><tr><td><code>=DATA(A1;B1;C1)</code></td><td>A1</td><td>B1</td><td>C1</td><td>Usa o conteúdo das células</td></tr></table></div><div class="fun-highlight"><strong>⚠️ Não confunda com o formato brasileiro:</strong> ao <strong>ver</strong> a data na tela ela aparece como dia/mês/ano, mas a função <strong>DATA</strong> pede <strong>ano; mês; dia</strong>. Inverter a ordem devolve outra data — ou um erro.</div>`
+
         },
         {
           lessonNum: 6,
           heading: "6.4 Funções DIA(), MÊS() e ANO() — Extrair Partes da Data",
-          content: `Essas funções pegam uma data que já existe e retiram dela só o dia, só o mês ou só o ano.\n\nTABELA DE SINTAXE:\n• =DIA(data) — O número do dia.\n• =MÊS(data) — O número do mês.\n• =ANO(data) — O número do ano.\n\nEXEMPLO — Se A1 tem 15/06/2025:\n• =DIA(A1) → 15\n• =MÊS(A1) → 6\n• =ANO(A1) → 2025\n\nAPLICAÇÃO PRÁTICA — ANIVERSARIANTE DO MÊS:\n=SE( MÊS(A1) = MÊS(HOJE()) ; "Aniversariante do mês" ; "" )\n\nCompara o mês da data de nascimento (A1) com o mês de hoje. Se forem iguais, escreve o aviso; senão, deixa em branco.`
+          content: `Essas funções pegam uma data que já existe e retiram dela só o dia, só o mês ou só o ano.
+
+TABELA DE SINTAXE:
+• =DIA(data) — O número do dia.
+• =MÊS(data) — O número do mês.
+• =ANO(data) — O número do ano.
+
+EXEMPLO — Se A1 tem 15/06/2025:
+• =DIA(A1) → 15
+• =MÊS(A1) → 6
+• =ANO(A1) → 2025
+
+APLICAÇÃO PRÁTICA — ANIVERSARIANTE DO MÊS:
+=SE( MÊS(A1) = MÊS(HOJE()) ; "Aniversariante do mês" ; "" )
+
+Compara o mês da data de nascimento (A1) com o mês de hoje. Se forem iguais, escreve o aviso; senão, deixa em branco.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">A1 = 15/06/2025 — extraindo as partes da data</div><table class="mini-sheet"><tr><th>Função</th><th>Fórmula</th><th>Resultado</th></tr><tr><td>Dia</td><td><code>=DIA(A1)</code></td><td><strong>15</strong></td></tr><tr><td>Mês</td><td><code>=MÊS(A1)</code></td><td><strong>6</strong></td></tr><tr><td>Ano</td><td><code>=ANO(A1)</code></td><td><strong>2025</strong></td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">Aplicação real — avisar o aniversário do mês</div><table class="mini-sheet"><tr><th>Fórmula</th><th>Quando dispara</th></tr><tr><td><code>=SE(MÊS(A1)=MÊS(HOJE());"Aniversariante do mês";"")</code></td><td>O mês da data em A1 é igual ao mês de hoje</td></tr></table></div><div class="fun-highlight"><strong>O truque:</strong> essas funções <strong>desmontam</strong> uma data que já existe. Se A1 estiver vazio ou for texto, elas devolvem erro — por isso o <code>SE</code> com teste antes do <code>MÊS()</code> é mais seguro.</div>`
+
         },
         {
           lessonNum: 6,
           heading: "6.5 Função DIAS360() — Dias no Calendário Comercial",
-          content: `A função DIAS360() calcula quantos dias existem entre duas datas usando um calendário comercial (todo mês tem 30 dias, ano = 360 dias). Muito usada em cálculos financeiros e contratos.\n\nSINTAXE: =DIAS360( data_inicial ; data_final ; método )\n\nO 3º argumento (método) é opcional:\n• FALSO ou vazio → método americano (o mais comum).\n• VERDADEIRO → método europeu.\n\nEXEMPLO — A1 = 01/01/2025, B1 = 31/12/2025:\n• =DIAS360(A1;B1) → 360 dias (método americano).\n• =DIAS360(A1;B1;VERDADEIRO) → 359 dias (método europeu).\n• =B1-A1 → 364 dias (contagem real do calendário).\n\nDICA: use =B1-A1 quando quiser a diferença real de dias no calendário normal. Use =DIAS360() apenas quando o cálculo exigir o padrão comercial de 30 dias por mês.`
+          content: `A função DIAS360() calcula quantos dias existem entre duas datas usando um calendário comercial (todo mês tem 30 dias, ano = 360 dias). Muito usada em cálculos financeiros e contratos.
+
+SINTAXE: =DIAS360( data_inicial ; data_final ; método )
+
+O 3º argumento (método) é opcional:
+• FALSO ou vazio → método americano (o mais comum).
+• VERDADEIRO → método europeu.
+
+EXEMPLO — A1 = 01/01/2025, B1 = 31/12/2025:
+• =DIAS360(A1;B1) → 360 dias (método americano).
+• =DIAS360(A1;B1;VERDADEIRO) → 359 dias (método europeu).
+• =B1-A1 → 364 dias (contagem real do calendário).
+
+DICA: use =B1-A1 quando quiser a diferença real de dias no calendário normal. Use =DIAS360() apenas quando o cálculo exigir o padrão comercial de 30 dias por mês.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">A1 = 01/01/2025 e B1 = 31/12/2025 — três respostas para o mesmo intervalo</div><table class="mini-sheet"><tr><th>Fórmula</th><th>Critério de contagem</th><th>Dias</th></tr><tr><td><code>=DIAS360(A1;B1)</code></td><td>Método americano (o mais comum)</td><td><strong>360</strong></td></tr><tr><td><code>=DIAS360(A1;B1;VERDADEIRO)</code></td><td>Método europeu</td><td><strong>359</strong></td></tr><tr><td><code>=B1-A1</code></td><td>Calendário real</td><td><strong>364</strong></td></tr></table></div><div class="fun-highlight"><strong>Use =B1-A1 no dia a dia.</strong> O <code>DIAS360()</code> só entra quando o cálculo exige o padrão <strong>comercial de 30 dias por mês</strong> (contratos, financiamentos, juros), em que todo mês vale 30 e o ano vale 360.</div>`
+
         },
         {
           lessonNum: 6,
           heading: "6.6 Função DIAS.ÚTEIS() — Dias Úteis para Prazos",
-          content: `A função DIAS.ÚTEIS() conta apenas os dias de segunda a sexta-feira entre duas datas — ideal para prazos de trabalho.\n\nSINTAXE: =DIAS.ÚTEIS( data_inicial ; data_final )\n\nEXEMPLO — PRAZO DE PROJETO: Início = 01/11/2025, Fim = 30/11/2025:\n• Total de dias: =B12-B11 → 29 dias.\n• Dias úteis: =DIAS.ÚTEIS(B11;B12) → 20 dias.\n• Dias comerciais (30 dias/mês): =DIAS360(B11;B12) → 29 dias.\n\nDICA: a função =DIAS.ÚTEIS() funciona normalmente no Excel 2010 e versões posteriores.`
+          content: `A função DIAS.ÚTEIS() conta apenas os dias de segunda a sexta-feira entre duas datas — ideal para prazos de trabalho.
+
+SINTAXE: =DIAS.ÚTEIS( data_inicial ; data_final )
+
+EXEMPLO — PRAZO DE PROJETO: Início = 01/11/2025, Fim = 30/11/2025:
+• Total de dias: =B12-B11 → 29 dias.
+• Dias úteis: =DIAS.ÚTEIS(B11;B12) → 20 dias.
+• Dias comerciais (30 dias/mês): =DIAS360(B11;B12) → 29 dias.
+
+DICA: a função =DIAS.ÚTEIS() funciona normalmente no Excel 2010 e versões posteriores.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Prazo de projeto — B11 = 01/11/2025 e B12 = 30/11/2025</div><table class="mini-sheet"><tr><th>Fórmula</th><th>O que conta</th><th>Dias</th></tr><tr><td><code>=B12-B11</code></td><td>Todos os dias do calendário</td><td>29</td></tr><tr><td><code>=DIAS.ÚTEIS(B11;B12)</code></td><td><strong>Somente segunda a sexta</strong> — fins de semana fora</td><td><strong>20</strong></td></tr><tr><td><code>=DIAS360(B11;B12)</code></td><td>Padrão comercial de 30 dias/mês</td><td>29</td></tr></table></div><div class="fun-highlight"><strong>Onde isso importa:</strong> em prazos de trabalho os <strong>9 dias de fim de semana não contam</strong> — por isso a diferença entre 29 e 20 dias. Disponível no Excel 2010 e versões posteriores.</div>`
+
         },
         {
           lessonNum: 6,
           heading: "6.7 Exercício Prático — Agenda de Contatos e Alertas",
-          content: `CENÁRIO: montar uma planilha simples que guarda o nome, telefone e data de nascimento de algumas pessoas, calculando automaticamente a idade e há quantos dias você não fala com elas.\n\nESTRUTURA DA PLANILHA — AGENDA DE CONTATOS (A1:I3):\n• A: ID | B: Nome | C: Telefone | D: Data Nasc. | E: Idade | F: Última Ligação | G: Dias sem Contato\n• Linha 2 — 1 | João Silva | (11) 98765-4321 | 15/03/1985 | =ANO(HOJE())-ANO(D2) | 10/10/2025 | =HOJE()-F2\n• Linha 3 — 2 | Maria Santos | (11) 97654-3210 | 22/07/1990 | =ANO(HOJE())-ANO(D3) | 20/10/2025 | =HOJE()-F3\n\nFÓRMULAS EXPLICADAS:\n• Coluna Idade (ex.: E2): =ANO(HOJE())-ANO(D2) → pega o ano de hoje e subtrai o ano de nascimento.\n• Coluna Dias sem Contato (ex.: G2): =HOJE()-F2 → calcula quantos dias se passaram desde a última ligação.\n\nDICA: a fórmula de idade é simplificada e pode errar por até 1 ano em alguns casos (quando o aniversário da pessoa ainda não chegou no ano atual). Para uma turma iniciante isso é suficiente; a correção pode ser vista em uma aula futura.\n\n🔔 ALERTAS AUTOMÁTICOS:\n• Aniversário do mês (coluna H): =SE(MÊS(D2)=MÊS(HOJE()); "Aniversariante!"; "")\n• Contato urgente (coluna I, >15 dias): =SE(G2>15; "Ligar urgente!"; "")\n\n📊 PAINEL DE ESTATÍSTICAS:\n• Data de hoje: =HOJE()\n• Total de contatos: =CONT.NÚM(A2:A6)\n• Idade média: =MÉDIA(E2:E6)\n• Idade mais alta: =MÁXIMO(E2:E6)\n• Idade mais baixa: =MÍNIMO(E2:E6)\n• Média de dias sem contato: =MÉDIA(G2:G6)\n\nO QUE CADA FUNÇÃO FAZ:\n• CONT.NÚM — conta quantas células têm números preenchidos.\n• MÉDIA — calcula a média dos valores.\n• MÁXIMO e MÍNIMO — encontram o maior e o menor valor da lista.\n\n📅 CÁLCULO DE PRAZO DE PROJETO:\n• Início do Projeto: 01/11/2025 (digite direto na célula).\n• Fim do Projeto: 30/11/2025 (digite direto na célula).\n• Total de dias: =B12-B11.\n• Dias úteis: =DIAS.ÚTEIS(B11;B12).\n• Dias comerciais (30 dias/mês): =DIAS360(B11;B12).\n\n✏️ EXERCÍCIOS PARA PRATICAR:\n1. Crie uma planilha com a sua data de nascimento e calcule quantos dias você já viveu (use =HOJE()-sua_data).\n2. Liste 5 amigos com as datas de nascimento deles e descubra quem faz aniversário este mês.\n3. Calcule quantos dias úteis ainda faltam até o final deste ano.\n4. Crie um alerta para contatos que você não liga há mais de 30 dias.\n5. Monte um contador de dias para uma data importante para você (casamento, formatura, viagem, etc.).`
+          content: `CENÁRIO: montar uma planilha simples que guarda o nome, telefone e data de nascimento de algumas pessoas, calculando automaticamente a idade e há quantos dias você não fala com elas.
+
+ESTRUTURA DA PLANILHA — AGENDA DE CONTATOS (A1:I3):
+• A: ID | B: Nome | C: Telefone | D: Data Nasc. | E: Idade | F: Última Ligação | G: Dias sem Contato
+• Linha 2 — 1 | João Silva | (11) 98765-4321 | 15/03/1985 | =ANO(HOJE())-ANO(D2) | 10/10/2025 | =HOJE()-F2
+• Linha 3 — 2 | Maria Santos | (11) 97654-3210 | 22/07/1990 | =ANO(HOJE())-ANO(D3) | 20/10/2025 | =HOJE()-F3
+
+FÓRMULAS EXPLICADAS:
+• Coluna Idade (ex.: E2): =ANO(HOJE())-ANO(D2) → pega o ano de hoje e subtrai o ano de nascimento.
+• Coluna Dias sem Contato (ex.: G2): =HOJE()-F2 → calcula quantos dias se passaram desde a última ligação.
+
+DICA: a fórmula de idade é simplificada e pode errar por até 1 ano em alguns casos (quando o aniversário da pessoa ainda não chegou no ano atual). Para uma turma iniciante isso é suficiente; a correção pode ser vista em uma aula futura.
+
+🔔 ALERTAS AUTOMÁTICOS:
+• Aniversário do mês (coluna H): =SE(MÊS(D2)=MÊS(HOJE()); "Aniversariante!"; "")
+• Contato urgente (coluna I, >15 dias): =SE(G2>15; "Ligar urgente!"; "")
+
+📊 PAINEL DE ESTATÍSTICAS:
+• Data de hoje: =HOJE()
+• Total de contatos: =CONT.NÚM(A2:A6)
+• Idade média: =MÉDIA(E2:E6)
+• Idade mais alta: =MÁXIMO(E2:E6)
+• Idade mais baixa: =MÍNIMO(E2:E6)
+• Média de dias sem contato: =MÉDIA(G2:G6)
+
+O QUE CADA FUNÇÃO FAZ:
+• CONT.NÚM — conta quantas células têm números preenchidos.
+• MÉDIA — calcula a média dos valores.
+• MÁXIMO e MÍNIMO — encontram o maior e o menor valor da lista.
+
+📅 CÁLCULO DE PRAZO DE PROJETO:
+• Início do Projeto: 01/11/2025 (digite direto na célula).
+• Fim do Projeto: 30/11/2025 (digite direto na célula).
+• Total de dias: =B12-B11.
+• Dias úteis: =DIAS.ÚTEIS(B11;B12).
+• Dias comerciais (30 dias/mês): =DIAS360(B11;B12).
+
+✏️ EXERCÍCIOS PARA PRATICAR:
+1. Crie uma planilha com a sua data de nascimento e calcule quantos dias você já viveu (use =HOJE()-sua_data).
+2. Liste 5 amigos com as datas de nascimento deles e descubra quem faz aniversário este mês.
+3. Calcule quantos dias úteis ainda faltam até o final deste ano.
+4. Crie um alerta para contatos que você não liga há mais de 30 dias.
+5. Monte um contador de dias para uma data importante para você (casamento, formatura, viagem, etc.).`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Agenda de Contatos — estrutura da planilha</div><table class="mini-sheet"><tr><th>ID</th><th>Nome</th><th>Data Nasc.</th><th>Idade</th><th>Última Ligação</th><th>Dias s/ Contato</th></tr><tr><td>1</td><td>João Silva</td><td>15/03/1985</td><td><code>=ANO(HOJE())-ANO(D2)</code></td><td>10/10/2025</td><td><code>=HOJE()-F2</code></td></tr><tr><td>2</td><td>Maria Santos</td><td>22/07/1990</td><td><code>=ANO(HOJE())-ANO(D3)</code></td><td>20/10/2025</td><td><code>=HOJE()-F3</code></td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">Alertas automáticos</div><table class="mini-sheet"><tr><th>Coluna</th><th>Fórmula</th><th>Dispara quando</th></tr><tr><td>H</td><td><code>=SE(MÊS(D2)=MÊS(HOJE());"Aniversariante!";"")</code></td><td>O mês coincide com o de hoje</td></tr><tr><td>I</td><td><code>=SE(G2&gt;15;"Ligar urgente!";"")</code></td><td>Mais de 15 dias sem contato</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">Painel de estatísticas</div><table class="mini-sheet"><tr><th>Indicador</th><th>Fórmula</th></tr><tr><td>Data de hoje</td><td><code>=HOJE()</code></td></tr><tr><td>Total de contatos</td><td><code>=CONT.NÚM(A2:A6)</code></td></tr><tr><td>Idade média</td><td><code>=MÉDIA(E2:E6)</code></td></tr><tr><td>Idade mais alta / mais baixa</td><td><code>=MÁXIMO(E2:E6)</code> e <code>=MÍNIMO(E2:E6)</code></td></tr><tr><td>Média de dias sem contato</td><td><code>=MÉDIA(G2:G6)</code></td></tr></table></div><div class="fun-highlight"><strong>Atenção ao cálculo da idade:</strong> <code>=ANO(HOJE())-ANO(D2)</code> é a forma simplificada e pode errar em até 1 ano quando o aniversário da pessoa ainda não chegou no ano atual — aceitável no nível iniciante, com a correção em aula posterior.</div>`
+
         },
         {
           lessonNum: 7,
@@ -1776,12 +3012,45 @@ Um painel de contas pessoais que responde, com dois cliques, quanto você gastou
         {
           lessonNum: 7,
           heading: "7.1 Preparação da Planilha de Lançamentos",
-          content: `O primeiro passo para controlar as suas contas pessoais é criar uma planilha organizada com 11 campos que servirão de base para a Tabela Dinâmica.\n\nCAMPOS DA PLANILHA BASE:\nData | Ano | Tipo de Lançamento | Grupo | Conta | Valor | Forma de Pagamento | Descrição | Dia | Mês | Ano Lançamento\n\nPASSO A PASSO:\n1. Abra uma planilha nova no Excel.\n2. Na linha 1, digite os 11 títulos acima.\n3. Renomeie a aba Plan1 para Lançamento.\n4. Preencha com os seus lançamentos do mês (receitas e despesas).\n\nTABELA DE EXEMPLO (Aba: Lançamento):\n• A: Data | B: Ano | C: Tipo de Lançamento | D: Grupo | E: Conta | F: Valor | G: Forma de Pagamento | H: Descrição | I: Dia | J: Mês | K: Ano Lançamento\n• Linha 2 — 05/01/2025 | =ANO(A2) | RECEITA | Salário (Fixo) | Empresa | 3.500,00 | PIX | Salário do mês | =DIA(A2) | =MÊS(A2) | =ANO(A2)\n• Linha 3 — 08/01/2025 | =ANO(A3) | DESPESA | Alimentação | Mercado | 450,00 | DÉBITO | Compras do mês | =DIA(A3) | =MÊS(A3) | =ANO(A3)\n• Linha 4 — 10/01/2025 | =ANO(A4) | DESPESA | Transporte | Posto | 200,00 | BOLETO | Combustível | =DIA(A4) | =MÊS(A4) | =ANO(A4)\n• Linha 5 — 15/01/2025 | =ANO(A5) | DESPESA | Moradia | Aluguel | 1.200,00 | TRANSFERÊNCIA | Aluguel do apartamento | =DIA(A5) | =MÊS(A5) | =ANO(A5)`
+          content: `O primeiro passo para controlar as suas contas pessoais é criar uma planilha organizada com 11 campos que servirão de base para a Tabela Dinâmica.
+
+CAMPOS DA PLANILHA BASE:
+Data | Ano | Tipo de Lançamento | Grupo | Conta | Valor | Forma de Pagamento | Descrição | Dia | Mês | Ano Lançamento
+
+PASSO A PASSO:
+1. Abra uma planilha nova no Excel.
+2. Na linha 1, digite os 11 títulos acima.
+3. Renomeie a aba Plan1 para Lançamento.
+4. Preencha com os seus lançamentos do mês (receitas e despesas).
+
+TABELA DE EXEMPLO (Aba: Lançamento):
+• A: Data | B: Ano | C: Tipo de Lançamento | D: Grupo | E: Conta | F: Valor | G: Forma de Pagamento | H: Descrição | I: Dia | J: Mês | K: Ano Lançamento
+• Linha 2 — 05/01/2025 | =ANO(A2) | RECEITA | Salário (Fixo) | Empresa | 3.500,00 | PIX | Salário do mês | =DIA(A2) | =MÊS(A2) | =ANO(A2)
+• Linha 3 — 08/01/2025 | =ANO(A3) | DESPESA | Alimentação | Mercado | 450,00 | DÉBITO | Compras do mês | =DIA(A3) | =MÊS(A3) | =ANO(A3)
+• Linha 4 — 10/01/2025 | =ANO(A4) | DESPESA | Transporte | Posto | 200,00 | BOLETO | Combustível | =DIA(A4) | =MÊS(A4) | =ANO(A4)
+• Linha 5 — 15/01/2025 | =ANO(A5) | DESPESA | Moradia | Aluguel | 1.200,00 | TRANSFERÊNCIA | Aluguel do apartamento | =DIA(A5) | =MÊS(A5) | =ANO(A5)`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Aba "Lançamento" — os 11 campos da base</div><table class="mini-sheet"><tr><th>A — Data</th><th>B — Ano</th><th>C — Tipo</th><th>D — Grupo</th><th>E — Conta</th><th>F — Valor</th></tr><tr><td>05/01/2025</td><td><code>=ANO(A2)</code></td><td>RECEITA</td><td>Salário (Fixo)</td><td>Empresa</td><td>3.500,00</td></tr><tr><td>08/01/2025</td><td><code>=ANO(A3)</code></td><td>DESPESA</td><td>Alimentação</td><td>Mercado</td><td>450,00</td></tr><tr><td>10/01/2025</td><td><code>=ANO(A4)</code></td><td>DESPESA</td><td>Transporte</td><td>Posto</td><td>200,00</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">Continuação — colunas G a K</div><table class="mini-sheet"><tr><th>G — Pagamento</th><th>H — Descrição</th><th>I — Dia</th><th>J — Mês</th><th>K — Ano Lanç.</th></tr><tr><td>PIX</td><td>Salário do mês</td><td><code>=DIA(A2)</code></td><td><code>=MÊS(A2)</code></td><td><code>=ANO(A2)</code></td></tr><tr><td>DÉBITO</td><td>Compras do mês</td><td><code>=DIA(A3)</code></td><td><code>=MÊS(A3)</code></td><td><code>=ANO(A3)</code></td></tr><tr><td>BOLETO</td><td>Combustível</td><td><code>=DIA(A4)</code></td><td><code>=MÊS(A4)</code></td><td><code>=ANO(A4)</code></td></tr></table></div><div class="fun-highlight"><strong>Passo 1 da aula:</strong> abra uma planilha nova, digite os 11 títulos na linha 1, <strong>renomeie a aba Plan1 para "Lançamento"</strong> e preencha com seus lançamentos do mês (receitas e despesas). Os campos Dia, Mês e Ano já nascem como fórmula — nada de digitar à mão.</div>`
+
         },
         {
           lessonNum: 7,
           heading: "7.2 Funções de Data na Base — DIA(), MÊS() e ANO()",
-          content: `Em vez de digitar dia, mês e ano separadamente, usamos funções de data para extrair as informações automaticamente do campo Data.\n\nFUNÇÕES USADAS NA BASE:\n• Coluna Dia (I): =DIA(A2) → O dia da data do lançamento.\n• Coluna Mês (J): =MÊS(A2) → O número do mês (1 a 12).\n• Coluna Ano Lançamento (K): =ANO(A2) → O ano do lançamento.\n• Coluna Ano (B): =ANO(A2) → O ano, usado depois como Filtro na pivô.\n\nEXEMPLO — Data 15/06/2025 na célula A2:\n• =DIA(A2) → 15\n• =MÊS(A2) → 6\n• =ANO(A2) → 2025\n\nDICA: você também pode usar =HOJE() no cabeçalho da planilha para mostrar sempre a data de hoje.`
+          content: `Em vez de digitar dia, mês e ano separadamente, usamos funções de data para extrair as informações automaticamente do campo Data.
+
+FUNÇÕES USADAS NA BASE:
+• Coluna Dia (I): =DIA(A2) → O dia da data do lançamento.
+• Coluna Mês (J): =MÊS(A2) → O número do mês (1 a 12).
+• Coluna Ano Lançamento (K): =ANO(A2) → O ano do lançamento.
+• Coluna Ano (B): =ANO(A2) → O ano, usado depois como Filtro na pivô.
+
+EXEMPLO — Data 15/06/2025 na célula A2:
+• =DIA(A2) → 15
+• =MÊS(A2) → 6
+• =ANO(A2) → 2025
+
+DICA: você também pode usar =HOJE() no cabeçalho da planilha para mostrar sempre a data de hoje.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">A2 = 15/06/2025 — as colunas de data se preenchem sozinhas</div><table class="mini-sheet"><tr><th>Coluna</th><th>Campo</th><th>Fórmula</th><th>Resultado</th></tr><tr><td>B</td><td>Ano</td><td><code>=ANO(A2)</code></td><td><strong>2025</strong></td></tr><tr><td>I</td><td>Dia</td><td><code>=DIA(A2)</code></td><td><strong>15</strong></td></tr><tr><td>J</td><td>Mês</td><td><code>=MÊS(A2)</code></td><td><strong>6</strong></td></tr><tr><td>K</td><td>Ano Lançamento</td><td><code>=ANO(A2)</code></td><td><strong>2025</strong></td></tr></table></div><div class="fun-highlight"><strong>Por que preencher Dia, Mês e Ano?</strong> A Tabela Dinâmica agrupa e filtra por esses campos — é o que permite filtrar por mês e agrupar por ano. O ano da coluna <strong>B</strong> será o <strong>Filtro</strong> da Tabela, e você pode colocar <code>=HOJE()</code> no cabeçalho para a data de hoje ficar sempre visível.</div>`
+
         },
         {
           lessonNum: 7,
@@ -1809,37 +3078,57 @@ PASSO A PASSO:
           lessonNum: 7,
           heading: "7.4 Renomear a Aba de Análise e Criar a Tabela Dinâmica",
           content: `Agora que a base de lançamentos está pronta, vamos criar uma segunda aba chamada Análise para receber a Tabela Dinâmica.\n\nCAMINHO DO MENU:\nPlan2 → renomear para Análise, depois Inserir → Tabela Dinâmica\n\nPASSO A PASSO:\n1. Clique na aba Plan2 e renomeie para Análise.\n2. Estando na aba Análise, acesse o menu Inserir → Tabela Dinâmica.\n3. O Excel vai abrir a janela de criação da Tabela Dinâmica.`,
-          image: '../../assets/img/excel/a7/image1.png'
+          image: '../../assets/img/excel/a7/image1.png',
+          caption: 'Aba Análise criada e o caminho Inserir → Tabela Dinâmica'
         },
         {
           lessonNum: 7,
           heading: "7.5 Selecionar o Intervalo (Tabela/Intervalo)",
           content: `Na janela Criar Tabela Dinâmica, precisamos indicar qual intervalo de dados deve ser usado, apontando para a tabela Lançamento.\n\nO QUE PREENCHER:\n• Tabela/Intervalo: selecione a tabela Lançamento (ex.: Lançamento!$A$1:$K$5).\n• Onde colocar: escolha Nova Planilha ou a aba Análise.\n• Clique em OK para criar a tabela dinâmica vazia.\n\nPASSO A PASSO:\n1. Na janela Criar Tabela Dinâmica, coloque o cursor no campo Tabela/Intervalo.\n2. Selecione na planilha a aba Lançamento para apontar o intervalo completo.\n3. Confirme clicando em OK.`,
-          image: '../../assets/img/excel/a7/image3.png'
+          image: '../../assets/img/excel/a7/image3.png',
+          caption: 'Janela Criar Tabela Dinâmica com o campo Tabela/Intervalo apontando para a base Lançamento'
         },
         {
           lessonNum: 7,
           heading: "7.6 Configuração dos Campos da Tabela Dinâmica",
           content: `Com a Tabela Dinâmica criada, usamos o painel Lista de Campos para arrastar cada campo para a área certa. Colocamos TIPO DE LANÇAMENTO em Linhas, para as receitas e despesas virarem os grupos das linhas.\n\nCONFIGURAÇÃO DOS CAMPOS:\n• FILTROS: Ano.\n• LINHAS: TIPO DE LANÇAMENTO → Grupo → Conta → Valor → Mês.\n• VALORES: Valor (Soma).\n\nPASSO A PASSO:\n1. Insira TIPO DE LANÇAMENTO na área Linhas.\n2. Com Tipo selecionado, selecione também os demais campos: Grupo, Conta, Valor e Mês (conforme a imagem de referência).\n3. Arraste Valor para Valores (Soma).\n4. Arraste Ano para Filtros (veremos mais adiante).`,
-          images: ['../../assets/img/excel/a7/image12.png', '../../assets/img/excel/a7/image9.png', '../../assets/img/excel/a7/image4.png', '../../assets/img/excel/a7/image6.png', '../../assets/img/excel/a7/image11.png']
+          images: [
+            { src: '../../assets/img/excel/a7/image12.png', caption: 'Painel Lista de Campos com o parâmetro Tipo de Lançamento marcado' },
+            { src: '../../assets/img/excel/a7/image9.png', caption: 'TIPO DE LANÇAMENTO arrastado para a área Linhas' },
+            { src: '../../assets/img/excel/a7/image4.png', caption: 'Campos da Tabela Dinâmica disponíveis na Lista de Campos' },
+            { src: '../../assets/img/excel/a7/image6.png', caption: 'Arrastar o campo de uma área para outra da Tabela Dinâmica' },
+            { src: '../../assets/img/excel/a7/image11.png', caption: 'Resultado da Tabela Dinâmica já com os campos configurados' }
+          ]
         },
         {
           lessonNum: 7,
           heading: "7.7 Ordenação dos Dados (Decrescente)",
           content: `Para facilitar a leitura, vamos ordenar a Tabela Dinâmica em ordem decrescente: a maior categoria vem primeiro.\n\nPASSOS DA ORDENAÇÃO:\n1. Selecione a linha Receitas como indicado na imagem.\n2. Acesse Dados → Classificar.\n3. Escolha Ordem decrescente (do maior para o menor).`,
-          images: ['../../assets/img/excel/a7/image2.png', '../../assets/img/excel/a7/image16.png', '../../assets/img/excel/a7/image7.png']
+          images: [
+            { src: '../../assets/img/excel/a7/image2.png', caption: 'Linha “Receita” selecionada na Tabela Dinâmica' },
+            { src: '../../assets/img/excel/a7/image16.png', caption: 'Células Receita e Despesa selecionadas antes de classificar' },
+            { src: '../../assets/img/excel/a7/image7.png', caption: 'Menu Dados → Classificar com a opção ordem decrescente' }
+          ]
         },
         {
           lessonNum: 7,
           heading: "7.8 Visualização, Filtros e Estrutura de Tópicos",
           content: `Vamos deixar a tabela mais limpa: ocultamos as linhas de grade e os cabeçalhos na aba Exibir. Também vemos como filtrar por ano arrastando o campo Ano para Filtros e como usar a Estrutura de Tópicos para expandir/recolher com os botões + / −.\n\nOCULTAR LINHAS E GRADES:\n• Na aba Exibir, desmarque Linhas e Grades para ocultar os cabeçalhos de linha/coluna e as linhas de grade.\n• Se a lista de campos sumir: clique em uma célula da tabela com o botão direito e escolha a última opção → Mostrar Lista de Campos.\n• Arraste a coluna Ano para a área FILTROS → agora dá para filtrar por ano (ex.: 2025, 2026).\n\nESTRUTURA DE TÓPICOS (AGRUPAMENTO):\n• Selecione a linha Receita.\n• Acesse Dados → Estrutura de tópicos.\n• Aparecem os botões + e − para expandir ou ocultar as linhas de detalhe.\n• Clique em − para ocultar os detalhes e + para expandir novamente.`,
-          images: ['../../assets/img/excel/a7/image8.png', '../../assets/img/excel/a7/image5.png', '../../assets/img/excel/a7/image13.png']
+          images: [
+            { src: '../../assets/img/excel/a7/image8.png', caption: 'Menu de contexto da Tabela Dinâmica → Mostrar Lista de Campos' },
+            { src: '../../assets/img/excel/a7/image5.png', caption: 'Campo Ano arrastado para a área FILTROS' },
+            { src: '../../assets/img/excel/a7/image13.png', caption: 'Filtro por Ano habilitado no topo da Tabela Dinâmica' }
+          ]
         },
         {
           lessonNum: 7,
           heading: "7.9 Exercício Prático — Contas Pessoais com Tabela Dinâmica",
           content: `Vamos montar passo a passo o seu controle de contas pessoais completo com a Tabela Dinâmica de análise.\n\nPASSO 1 — PLANILHA BASE:\nCrie a base de lançamentos com os 11 campos (Data | Ano | Tipo de Lançamento | Grupo | Conta | Valor | Forma de Pagamento | Descrição | Dia | Mês | Ano Lançamento) e renomeie Plan1 → Lançamento.\n\nPASSO 2 — FUNÇÕES DE DATA:\n• Ano (para filtro): =ANO(A2)\n• Dia: =DIA(A2)\n• Mês: =MÊS(A2)\n• Ano Lançamento: =ANO(A2)\n\nPASSO 3 — VALIDAÇÃO DE DADOS:\nAplique Dados → Validação de Dados → Lista DUAS VEZES: no campo Tipo de Lançamento com a fonte RECEITA;DESPESA e no campo Forma de Pagamento com a fonte BOLETO;DÉBITO;PIX;TRANSFERÊNCIA. Misturar os dois campos estraga o agrupamento da Tabela Dinâmica.\n\nPASSO 4 — CRIAR A TABELA DINÂMICA:\nRenomeie Plan2 → Análise, acesse Inserir → Tabela Dinâmica, selecione a tabela Lançamento e configure os campos: TIPO DE LANÇAMENTO, Grupo, Conta, Valor e Mês nas Linhas, Valor em Valores e Ano em Filtros.\n\nPASSO 5 — ORDENAR, OCULTAR E AGRUPAR:\n1. Ordene em ordem decrescente (Dados → Classificar).\n2. Na aba Exibir, desmarque Linhas e Grades.\n3. Filtre por ano usando o campo Ano na área de Filtros.\n4. Use a Estrutura de Tópicos (Dados → Estrutura de tópicos) com os botões + / − para ocultar os detalhes.\n\n✏️ EXERCÍCIOS PARA PRATICAR:\n1. Monte a planilha de Contas Pessoais com os seus próprios lançamentos do mês (preencha os 11 campos).\n2. Use as funções =DIA(), =MÊS() e =ANO() para preencher as colunas derivadas de data.\n3. Aplique Validação de Dados (Lista) nos Tipos de Lançamento (RECEITA; DESPESA) e nas Formas de Pagamento (BOLETO; DÉBITO; PIX; TRANSFERÊNCIA).\n4. Crie a Tabela Dinâmica na aba Análise, colocando TIPO DE LANÇAMENTO e depois Grupo, Conta, Valor e Mês em Linhas.\n5. Classifique em ordem decrescente, filtre por um ano e use os botões + / − da Estrutura de Tópicos para ocultar os detalhes.\n\n🔒 REGRA DE OURO:\nUma base bem organizada (com Validação de Dados e funções de data) é o segredo para uma Tabela Dinâmica confiável. Arraste os campos para Linhas para agrupar, para Filtros para recortar por ano e use a Estrutura de Tópicos para expandir ou ocultar os detalhes.`,
-          images: ['../../assets/img/excel/a7/image10.png', '../../assets/img/excel/a7/image15.png', '../../assets/img/excel/a7/image14.png']
+          images: [
+            { src: '../../assets/img/excel/a7/image10.png', caption: 'Rótulos de linha da Tabela Dinâmica com a linha Receita destacada' },
+            { src: '../../assets/img/excel/a7/image15.png', caption: 'Estrutura de Tópicos com os botões + e − para expandir/recolher' },
+            { src: '../../assets/img/excel/a7/image14.png', caption: 'Tabela Dinâmica final já ordenada, filtrada e agrupada' }
+          ]
         },
       {
           lessonNum: 8,
@@ -2035,7 +3324,20 @@ PASSO A PASSO:
         {
           lessonNum: 8,
           heading: "8.10 Resumo da Aula — Controle de Estoque com SOMASE",
-          content: `PARA FIXAR O APRENDIZADO:\n• Tabelas de apoio (Produtos e Fornecedores) alimentam as listas suspensas da Tabela de Estoque via Validação de Dados — itens novos aparecem automaticamente.\n• Validação de Dados (Dados → Validação de Dados → Permitir: Lista): a Fonte pode ser uma coluna de apoio (Fornecedor/Produto) ou valores fixos separados por ponto e vírgula (Categoria: Informática;Móveis).\n• Converter dados em Tabela (Inserir → Tabela ou Ctrl+T, marcando Minha tabela tem cabeçalhos, sobre o intervalo A1:F9) habilita referências estruturadas como TabelaEstoque[Valor em Estoque].\n• Fórmulas estruturadas: Estoque Atual =[@Entradas]-[@Saídas], Valor em Estoque =[@[Estoque Atual]]*[@[Preço Unit. (R$)]] e Status =SE([@[Estoque Atual]]<=5;"Baixo";SE([@[Estoque Atual]]<=15;"Médio";"Alto")).\n• SOMASE: =SOMASE(TabelaEstoque[Fornecedor];B2;TabelaEstoque[Valor em Estoque]) permite consultar o valor em estoque de um fornecedor referenciando a célula do nome, sem alterar a fórmula.\n• Classificação e filtros: classificar Valor em Estoque do maior para o menor, classificação personalizada e filtros por categoria e por valor (Valor em Estoque > 5000).\n• Linha de Totais (Design de Tabela): Soma para Entradas, Saídas e Valor em Estoque; Contagem para Fornecedor.\n• Tabela Dinâmica (Inserir → Tabela Dinâmica): Estoque por Fornecedor (LINHAS: Fornecedor; VALORES: Soma de Valor em Estoque) e Estoque por Categoria e Produto (LINHAS: Categoria e Produto; COLUNAS: Fornecedor), formatadas como moeda e com Segmentação de Dados.\n\n🔒 REGRA DE OURO:\nUma base bem organizada — com tabelas de apoio, Validação de Dados e referências estruturadas — torna as consultas (SOMASE), os filtros e as Tabelas Dinâmicas confiáveis e automáticos.`
+          content: `PARA FIXAR O APRENDIZADO:
+• Tabelas de apoio (Produtos e Fornecedores) alimentam as listas suspensas da Tabela de Estoque via Validação de Dados — itens novos aparecem automaticamente.
+• Validação de Dados (Dados → Validação de Dados → Permitir: Lista): a Fonte pode ser uma coluna de apoio (Fornecedor/Produto) ou valores fixos separados por ponto e vírgula (Categoria: Informática;Móveis).
+• Converter dados em Tabela (Inserir → Tabela ou Ctrl+T, marcando Minha tabela tem cabeçalhos, sobre o intervalo A1:F9) habilita referências estruturadas como TabelaEstoque[Valor em Estoque].
+• Fórmulas estruturadas: Estoque Atual =[@Entradas]-[@Saídas], Valor em Estoque =[@[Estoque Atual]]*[@[Preço Unit. (R\$)]] e Status =SE([@[Estoque Atual]]<=5;"Baixo";SE([@[Estoque Atual]]<=15;"Médio";"Alto")).
+• SOMASE: =SOMASE(TabelaEstoque[Fornecedor];B2;TabelaEstoque[Valor em Estoque]) permite consultar o valor em estoque de um fornecedor referenciando a célula do nome, sem alterar a fórmula.
+• Classificação e filtros: classificar Valor em Estoque do maior para o menor, classificação personalizada e filtros por categoria e por valor (Valor em Estoque > 5000).
+• Linha de Totais (Design de Tabela): Soma para Entradas, Saídas e Valor em Estoque; Contagem para Fornecedor.
+• Tabela Dinâmica (Inserir → Tabela Dinâmica): Estoque por Fornecedor (LINHAS: Fornecedor; VALORES: Soma de Valor em Estoque) e Estoque por Categoria e Produto (LINHAS: Categoria e Produto; COLUNAS: Fornecedor), formatadas como moeda e com Segmentação de Dados.
+
+🔒 REGRA DE OURO:
+Uma base bem organizada — com tabelas de apoio, Validação de Dados e referências estruturadas — torna as consultas (SOMASE), os filtros e as Tabelas Dinâmicas confiáveis e automáticos.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">TabelaEstoque — consultas com SOMASE</div><table class="mini-sheet"><tr><th>Produto</th><th>Fornecedor</th><th>Entradas</th><th>Saídas</th><th>Estoque Atual</th><th>Valor em Estoque</th></tr><tr><td>Teclado</td><td>TechParts</td><td>40</td><td>12</td><td>28</td><td>4.172,00</td></tr><tr><td>Monitor</td><td>TechParts</td><td>25</td><td>20</td><td>5</td><td>2.249,00</td></tr><tr><td>Cadeira</td><td>MóveisBR</td><td>15</td><td>3</td><td>12</td><td>2.398,80</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">Valor em estoque por fornecedor</div><table class="mini-sheet"><tr><th>Célula</th><th>Fornecedor</th><th>Total</th></tr><tr><td>B2</td><td>TechParts</td><td><strong>6.421,00</strong></td></tr><tr><td>B3</td><td>MóveisBR</td><td><strong>2.398,80</strong></td></tr><tr><td colspan="3"><code>=SOMASE(TabelaEstoque[Fornecedor];B2;TabelaEstoque[Valor em Estoque])</code></td></tr></table></div><div class="fun-highlight"><strong>Regra de ouro da Aula 8:</strong> tabelas de apoio + Validação de Dados + <strong>referências estruturadas</strong> (<code>TabelaEstoque[...]</code>) tornam consultas, filtros e Tabelas Dinâmicas <strong>confiáveis e automáticos</strong> — basta digitar o nome do fornecedor em B2 e a fórmula responde sozinha. Note que o Status de 5 unidades já cai em "Baixo" (<code>&lt;=5</code>).</div>`
+
         },
         {
           lessonNum: 9,
@@ -2183,7 +3485,19 @@ Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços.`,
         {
           lessonNum: 9,
           heading: "9.6 Resumo da Aula — Macros, VBA e a Sub-rotina do Capiberica",
-          content: `PARA FIXAR O APRENDIZADO:\n• Macros são sequências de ações gravadas no Excel que o computador repete automaticamente (robô auxiliar).\n• VBA (Visual Basic for Applications) é a linguagem de programação do Excel — permite criar comandos além da gravação simples.\n• A aba Desenvolvedor (Arquivo → Opções → Personalizar Faixa de Opções → marcar Desenvolvedor) libera os botões de gravação e do Editor VBA.\n• Gravar Macro: Desenvolvedor → Gravar Macro → nome → OK → fazer ações → Parar Gravação → Macros → Executar.\n• Editor VBA (Alt+F11 ou Desenvolvedor → Visual Basic): painel Project Explorer (esquerda) + Janela de Código (direita) + Propriedades (abaixo) + Inserir → Módulo.\n• Sub-rotina: bloco de código com nome entre Sub e End Sub.\n• MsgBox: exibe uma caixa de mensagem — o "Hello World" do VBA, executado com F5.\n\n🔒 REGRA DE OURO:\nCom a aba Desenvolvedor, a gravação de macros e o Editor VBA (VBE), você montou a base da automação do Excel. Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços de repetição.`
+          content: `PARA FIXAR O APRENDIZADO:
+• Macros são sequências de ações gravadas no Excel que o computador repete automaticamente (robô auxiliar).
+• VBA (Visual Basic for Applications) é a linguagem de programação do Excel — permite criar comandos além da gravação simples.
+• A aba Desenvolvedor (Arquivo → Opções → Personalizar Faixa de Opções → marcar Desenvolvedor) libera os botões de gravação e do Editor VBA.
+• Gravar Macro: Desenvolvedor → Gravar Macro → nome → OK → fazer ações → Parar Gravação → Macros → Executar.
+• Editor VBA (Alt+F11 ou Desenvolvedor → Visual Basic): painel Project Explorer (esquerda) + Janela de Código (direita) + Propriedades (abaixo) + Inserir → Módulo.
+• Sub-rotina: bloco de código com nome entre Sub e End Sub.
+• MsgBox: exibe uma caixa de mensagem — o "Hello World" do VBA, executado com F5.
+
+🔒 REGRA DE OURO:
+Com a aba Desenvolvedor, a gravação de macros e o Editor VBA (VBE), você montou a base da automação do Excel. Na Aula 10, vamos avançar para objetos, variáveis, condicionais e laços de repetição.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">A sub-rotina do Capiberica — o "Hello World" do VBA</div><table class="mini-sheet"><tr><th>Linha</th><th>Código</th></tr><tr><td>1</td><td><code>Sub MensagemCapiberica()</code></td></tr><tr><td>2</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox "Olá, mundo! Este é o Capiberica."</code></td></tr><tr><td>3</td><td><code>End Sub</code></td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">Do gravador ao Editor VBA</div><table class="mini-sheet"><tr><th>Passo</th><th>Ação</th></tr><tr><td>1</td><td><strong>Aba Desenvolvedor</strong> → Gravar Macro → nome → OK</td></tr><tr><td>2</td><td>Execute as ações — o Excel registra tudo</td></tr><tr><td>3</td><td>Parar Gravação → Macros → Executar</td></tr><tr><td>4</td><td><strong>Alt+F11</strong> abre o VBE → Inserir → Módulo</td></tr><tr><td>5</td><td>Digite o código e teste com <strong>F5</strong></td></tr></table></div><div class="fun-highlight"><strong>Regra de ouro da Aula 9:</strong> Macros são o <strong>gravador</strong> (o robô auxiliar) e o VBA é a <strong>linguagem</strong>. Com a aba Desenvolvedor, a gravação de macros e o Editor VBA você monta a base da automação do Excel — na Aula 10 vêm objetos, variáveis, condicionais e laços de repetição.</div>`
+
         },
         {
           lessonNum: 10,
@@ -2389,7 +3703,17 @@ End Sub</div>
         {
           lessonNum: 10,
           heading: "10.6 Resumo da Aula — VBA Avançado",
-          content: `PARA FIXAR O APRENDIZADO:\n• Objetos: as peças que o VBA manipula — Workbook (arquivo), Worksheet (planilha) e Range (células). Ex.: ActiveWorkbook.Sheets.Add, ActiveSheet.Name = "Sales Report", Range("F3:I3") + Selection.Interior.Color = RGB(...).\n• Variáveis: guardam valores com Dim nome As Tipo (String, Integer/Long, Double, Boolean); nome sem espaços, sem pontos, sem começar com número, até 255 caracteres.\n• Condicionais: If...Then...ElseIf...Else...End If decidem caminhos; comparadores (<, >, =, <=, >=, <>); operadores lógicos And, Or, Not.\n• Loops: For contador = inicio To fim ... Next percorrem repetições; Cells(linha, coluna) acessa células dinamicamente; Do While...Loop repete enquanto a condição valer.\n• Mini-Projeto Controlador do Capiberica: combina Range/Cells (objeto) + Dim (variável) + If (condicional) + For...Next (loop) + MsgBox (saída).\n\n🔒 REGRA DE OURO:\nQuem domina objetos, variáveis, condicionais e loops DOMINA a programação em VBA. Você agora tem a base para automatizar planilhas de verdade — e o Projeto Vendas (Aulas 11–13) vai usar tudo isso!`
+          content: `PARA FIXAR O APRENDIZADO:
+• Objetos: as peças que o VBA manipula — Workbook (arquivo), Worksheet (planilha) e Range (células). Ex.: ActiveWorkbook.Sheets.Add, ActiveSheet.Name = "Sales Report", Range("F3:I3") + Selection.Interior.Color = RGB(...).
+• Variáveis: guardam valores com Dim nome As Tipo (String, Integer/Long, Double, Boolean); nome sem espaços, sem pontos, sem começar com número, até 255 caracteres.
+• Condicionais: If...Then...ElseIf...Else...End If decidem caminhos; comparadores (<, >, =, <=, >=, <>); operadores lógicos And, Or, Not.
+• Loops: For contador = inicio To fim ... Next percorrem repetições; Cells(linha, coluna) acessa células dinamicamente; Do While...Loop repete enquanto a condição valer.
+• Mini-Projeto Controlador do Capiberica: combina Range/Cells (objeto) + Dim (variável) + If (condicional) + For...Next (loop) + MsgBox (saída).
+
+🔒 REGRA DE OURO:
+Quem domina objetos, variáveis, condicionais e loops DOMINA a programação em VBA. Você agora tem a base para automatizar planilhas de verdade — e o Projeto Vendas (Aulas 11–13) vai usar tudo isso!`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">Os quatro pilares do VBA avançado</div><table class="mini-sheet"><tr><th>Pilar</th><th>Comando</th><th>Exemplo</th></tr><tr><td><strong>Objetos</strong></td><td>Workbook / Worksheet / Range</td><td><code>ActiveSheet.Name = "Vendas"</code></td></tr><tr><td><strong>Variáveis</strong></td><td>Dim nome As Tipo</td><td><code>Dim total As Double</code></td></tr><tr><td><strong>Condicionais</strong></td><td>If...Then...ElseIf...Else...End If</td><td><code>If x &gt; 0 Then</code></td></tr><tr><td><strong>Laços</strong></td><td>For...Next / Do While...Loop</td><td><code>For i = 1 To 10</code></td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">Mini-Projeto Controlador do Capiberica</div><table class="mini-sheet"><tr><th>Linha</th><th>Código</th><th>Pilar</th></tr><tr><td>1</td><td><code>Sub Controlador()</code></td><td>—</td></tr><tr><td>2</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;Dim i As Integer</code></td><td>Variável</td></tr><tr><td>3</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;For i = 1 To 3</code></td><td>Laço</td></tr><tr><td>4</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cells(i, 1).Value = Cells(i, 1).Value * 1.1</code></td><td>Objeto</td></tr><tr><td>5</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;Next i</code></td><td>—</td></tr><tr><td>6</td><td><code>End Sub</code></td><td>—</td></tr></table></div><div class="fun-highlight"><strong>Regra de ouro da Aula 10:</strong> quem domina <strong>objetos, variáveis, condicionais e laços</strong> domina a programação em VBA — essa é a base para automatizar planilhas de verdade, e o Projeto Vendas (Aulas 11 a 13) usa tudo isso junto.</div>`
+
         },
         {
           lessonNum: 11,
@@ -2714,7 +4038,18 @@ End Sub</div>
         {
           lessonNum: 13,
           heading: "13.7 Resumo da Aula — O Fim da Jornada do Módulo Excel",
-          content: `PARA FIXAR O APRENDIZADO:\n• Impressão: orientação paisagem, Ajustar a Planilha na Página (1×1) e centralizar na página transformam o Dashboard num relatório profissional de uma página.\n• Gravar Macro (Aula 09 + 13): Desenvolvedor → Gravar Macro → nomear AtualizarDados → clicar em Atualizar (ou Alt+F5) na Tabela Dinâmica → Parar Gravação. Agora um clique atualiza o painel inteiro.\n• Código VBA manual: Alt+F11 → Inserir → Módulo → Sub VerImprimir() / ActiveWindow.SelectedSheets.PrintPreview / End Sub → testar com F5.\n• Atribuir Macro a uma forma: botão direito na forma → Atribuir Macro → escolher VerImprimir ou AtualizarDados → clicar fora para ativar.\n• Salvamento: .xlsx não guarda macros; é preciso Pasta de Trabalho Habilitada para Macros (*.xlsm).\n• Entrega: anexar Sistema_Controle_Vendas.xlsm em mensagem ao Prof. Marcos Rangel (WhatsApp (19) 99130-6907).\n\n🔒 REGRA DE OURO:\nO Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, validação de dados, fórmulas e funções, Tabelas Dinâmicas, gráficos e a automação com macros VBA. Você saiu do básico e chegou a um sistema funcional — essa é a jornada completa do Microsoft Excel! 🚀`
+          content: `PARA FIXAR O APRENDIZADO:
+• Impressão: orientação paisagem, Ajustar a Planilha na Página (1×1) e centralizar na página transformam o Dashboard num relatório profissional de uma página.
+• Gravar Macro (Aula 09 + 13): Desenvolvedor → Gravar Macro → nomear AtualizarDados → clicar em Atualizar (ou Alt+F5) na Tabela Dinâmica → Parar Gravação. Agora um clique atualiza o painel inteiro.
+• Código VBA manual: Alt+F11 → Inserir → Módulo → Sub VerImprimir() / ActiveWindow.SelectedSheets.PrintPreview / End Sub → testar com F5.
+• Atribuir Macro a uma forma: botão direito na forma → Atribuir Macro → escolher VerImprimir ou AtualizarDados → clicar fora para ativar.
+• Salvamento: .xlsx não guarda macros; é preciso Pasta de Trabalho Habilitada para Macros (*.xlsm).
+• Entrega: anexar Sistema_Controle_Vendas.xlsm em mensagem ao Prof. Marcos Rangel (WhatsApp (19) 99130-6907).
+
+🔒 REGRA DE OURO:
+O Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, validação de dados, fórmulas e funções, Tabelas Dinâmicas, gráficos e a automação com macros VBA. Você saiu do básico e chegou a um sistema funcional — essa é a jornada completa do Microsoft Excel! 🚀`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">O Projeto Vendas da Tech Solutions em uma página</div><table class="mini-sheet"><tr><th>Etapa</th><th>O que foi entregue</th><th>Ferramenta</th></tr><tr><td>1</td><td>Planilhas organizadas</td><td>Formatação e tabelas de apoio</td></tr><tr><td>2</td><td>Listas suspensas</td><td>Validação de Dados</td></tr><tr><td>3</td><td>Cálculos automáticos</td><td>SE, PROCV, SOMASE, funções de data</td></tr><tr><td>4</td><td>Painéis de análise</td><td>Tabelas Dinâmicas</td></tr><tr><td>5</td><td>Relatório de 1 página</td><td>Gráficos e Dashboard</td></tr><tr><td>6</td><td>Um clique atualiza tudo</td><td>Macros e VBA</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">Entrega final</div><table class="mini-sheet"><tr><th>Item</th><th>Detalhe</th></tr><tr><td>Arquivo</td><td><strong>Sistema_Controle_Vendas.xlsm</strong> — .xlsx não guarda macros</td></tr><tr><td>Impressão</td><td>Paisagem + Ajustar 1×1 na Página + centralizar</td></tr><tr><td>Macros</td><td>AtualizarDados e VerImprimir (Atribuir Macro a uma forma)</td></tr><tr><td>Envio</td><td>Anexar ao Prof. Marcos Rangel — (19) 99130-6907</td></tr></table></div><div class="fun-highlight"><strong>Você saiu do básico e chegou a um sistema funcional!</strong> As 13 aulas cobriram planilhas organizadas, validação de dados, fórmulas e funções, Tabelas Dinâmicas, gráficos e a automação com macros VBA — a jornada completa do Microsoft Excel.</div>`
+
         }
       ]
     },
@@ -2777,11 +4112,8 @@ End Sub</div>
       internet: lessonTitles,
       windows: {
         1: "Aula 01: A História e o Funcionamento dos Computadores",
-        2: "Aula 02: Área de Trabalho e Barra de Tarefas",
-        3: "Aula 03: Gerenciamento de Arquivos e Pastas",
-        4: "Aula 04: Configurações de Sistema e Painel de Controle",
-        5: "Aula 05: Acessórios Nativos do Windows",
-        6: "Aula 06: Personalização e Acessibilidade",
+        2: "Aula 02: Introdução ao Windows — Seu Primeiro Passo no Mundo do Computador",
+        3: "Aula 03: Medidas de Armazenamento no Computador — Do Bit ao Disco Rígido",
         7: "Aula 07: Segurança e Antivírus no Windows",
         71: "Complemento 7A — Backup Automático com Arquivo .BAT",
         81: "Complemento 8A — Tutorial: Como Criar Pendrive/DVD de Instalação do Windows",
@@ -2805,6 +4137,20 @@ End Sub</div>
     };
 
     if (lessonNum) {
+      // Guarda de apostila vazia (L-04): as Aulas 2 a 6 do Windows nunca foram
+      // escritas, mas pedi-las gerava um PDF sem uma única seção — com um título
+      // que parecia existir. Agora o erro é explícito e diz o que existe.
+      const secoesDaAula = data.sections.filter(sec => sec.lessonNum === lessonNum);
+      if (!secoesDaAula.length) {
+        const disponiveis = [...new Set(data.sections
+          .map(sec => sec.lessonNum)
+          .filter(n => n !== null && n !== undefined))]
+          .sort((a, b) => a - b);
+        alert(disponiveis.length
+          ? `A apostila da Aula ${lessonNum} ainda não foi produzida para ${data.moduleName}.\n\nAulas disponíveis: ${disponiveis.join(' · ')}.`
+          : `${data.moduleName} ainda não tem apostilas por aula publicadas.`);
+        return;
+      }
       targetSections = data.sections.filter(sec => sec.lessonNum === null || sec.lessonNum === undefined || sec.lessonNum === lessonNum);
       const titlesForModule = moduleLessonTitles[moduleId] || {};
       const resolvedTitle = titlesForModule[lessonNum];
@@ -2990,7 +4336,7 @@ End Sub</div>
           }
           .pdf-img-container img {
             max-width: 96%;
-            max-height: 480px;
+            max-height: 680px;
             width: auto;
             height: auto;
             object-fit: contain;
@@ -3032,11 +4378,14 @@ End Sub</div>
           }
           .pdf-img-grid-wide > .pdf-img-container img {
             max-width: 100%;
-            max-height: 620px;
+            max-height: 900px;
           }
           .pdf-img-grid img {
-            max-width: 48%;
-            max-height: 380px;
+            /* o container ja e 48% da linha (regra .pdf-img-grid > .pdf-img-container);
+               usar 48% aqui de novo dava 0,48 x 0,48 = 23% da pagina e deixava a
+               captura com texto pequeno ilegivel no A4 impresso */
+            max-width: 100%;
+            max-height: 560px;
             width: auto;
             height: auto;
             object-fit: contain;
@@ -3127,12 +4476,26 @@ End Sub</div>
             margin: 16px 0;
             page-break-inside: avoid;
           }
+          /* tabelas fora do .mini-sheet (inline, nas caixas "primeira fórmula"/"minhas funções") */
+          table:not(.mini-sheet) {
+            break-inside: avoid;
+            page-break-inside: avoid;
+          }
           .mini-sheet {
             width: 100%;
             border-collapse: collapse;
             font-family: 'JetBrains Mono', 'Courier New', monospace;
             font-size: 12px;
             background: #FFFFFF;
+            /* mini-tabela partida entre duas paginas fica ilegivel: cabecalho
+               na pagina anterior e dados na seguinte */
+            break-inside: avoid;
+            page-break-inside: avoid;
+          }
+          .mini-sheet tr {
+            /* nunca quebrar uma linha no meio, mesmo se a tabela for maior que a pagina */
+            break-inside: avoid;
+            page-break-inside: avoid;
           }
           .mini-sheet th {
             background: #E2E8F0;
