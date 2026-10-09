@@ -86,6 +86,12 @@ window.QuizEngine = (function() {
       `Situação: ${statusLabel}`
     ];
 
+    // Notas complementares opcionais (ex.: atividades práticas de uma prova com
+    // questões + práticas). Só é emitido quando quem chama envia `extraNotes`.
+    if (Array.isArray(data.extraNotes)) {
+      data.extraNotes.filter(Boolean).forEach(note => lines.push(note));
+    }
+
     if (isDelivery) {
       lines.push(`Arquivo entregue: ${data.fileName}`);
       lines.push(`Tamanho do arquivo: ${data.fileSize || "—"}`);
@@ -152,7 +158,10 @@ window.QuizEngine = (function() {
   function buildWhatsAppUrl(data) {
     const { studentName, moduleTitle, correct, total, score, passed, signature } = data;
     const fmtScore = score.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-    
+    const extraLines = (Array.isArray(data.extraNotes) && data.extraNotes.length)
+      ? data.extraNotes.filter(Boolean).map(n => `\n${n}`).join("")
+      : "";
+
     const msg = 
 `🎓 *COMPROVANTE DE AVALIAÇÃO — WR CAPACITAÇÃO*
 *Prof. Marcos Rangel*
@@ -160,7 +169,7 @@ window.QuizEngine = (function() {
 👤 *Aluno(a):* ${studentName}
 📚 *Módulo:* ${moduleTitle}
 📊 *Acertos:* ${correct}/${total} (Nota: ${fmtScore}/10,0)
-${passed ? "✅ *Situação:* APROVADO(A)" : "📘 *Situação:* REFAZER (Nota mínima: 7,0)"}
+${extraLines ? extraLines + "\n" : ""}${passed ? "✅ *Situação:* APROVADO(A)" : "📘 *Situação:* REFAZER (Nota mínima: 7,0)"}
 
 🔒 *Assinatura Digital Anti-Fraude:*
 \`${signature ? signature.authCode : "N/A"}\`
@@ -176,6 +185,9 @@ ${passed ? "✅ *Situação:* APROVADO(A)" : "📘 *Situação:* REFAZER (Nota m
   function openGmailComposer(data) {
     const { studentName, moduleTitle, correct, total, score, passed, signature } = data;
     const fmtScore = score.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    const emailExtras = (Array.isArray(data.extraNotes) && data.extraNotes.length)
+      ? data.extraNotes.filter(Boolean).map(n => n.replace(/\*/g, "")).join("\n") + "\n"
+      : "";
 
     const subject = `[COMPROVANTE AVALIAÇÃO] ${moduleTitle} - Aluno: ${studentName}`;
     const body = 
@@ -187,7 +199,7 @@ Aluno(a): ${studentName}
 Módulo: ${moduleTitle}
 Acertos: ${correct}/${total}
 Nota Final: ${fmtScore} / 10,0
-Situação: ${passed ? "APROVADO(A)" : "REPROVADO(A)"}
+${emailExtras}Situação: ${passed ? "APROVADO(A)" : "REPROVADO(A)"}
 
 ----------------------------------------------------
 ASSINATURA DIGITAL ANTI-FRAUDE (SHA-256):

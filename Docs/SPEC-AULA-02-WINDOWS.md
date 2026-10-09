@@ -1,5 +1,5 @@
 ### Módulo 1: Sistema Operacional Windows | Prof. Marcos Rangel — WR Capacitação Profissional
-### Status: ✅ IMPLEMENTADA E VALIDADA (04/10/2026) — 49/49 no harness próprio, 98/98 na regressão, PDF conferido; falta só a conferência visual humana
+### Status: ✅ IMPLEMENTADA E VALIDADA (04/10/2026) — 49/49 no harness próprio, 98/98 na regressão, PDF conferido; **aprovação visual humana PENDENTE** (ver `Docs/CONTINUACAO.md` §7)
 
 ---
 

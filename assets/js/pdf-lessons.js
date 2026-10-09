@@ -720,7 +720,7 @@ window.PDFLessons = (function() {
           lessonNum: 3,
           chapter: "AULA 03: MEDIDAS DE ARMAZENAMENTO NO COMPUTADOR",
           heading: "3.0 FASE 0 — Antes de Começar",
-          content: "Objetivo desta aula: entender como o computador representa informação em 0s e 1s, conhecer as unidades de medida de armazenamento (Byte até Terabyte), usar a Tabela ASCII para converter letras em binário, localizar o Disco Local (C:) no Explorador de Arquivos, saber verificar e otimizar o disco (distinguindo HDD de SSD), ajustar data e hora no Windows e fazer o exercício prático no WordPad.",
+          content: "Objetivo desta aula: entender como o computador representa informação em 0s e 1s, usar a Tabela ASCII para converter letras em binário (exemplo: o nome \"Rangel\"), conhecer as unidades de medida de armazenamento (Byte até Terabyte), localizar o Disco Local (C:) no Explorador de Arquivos, saber verificar e otimizar o disco (distinguindo HDD de SSD), ajustar data e hora no Windows e fazer o exercício prático no WordPad.",
           html: `
             <div class="es-sheet-box">
               <div class="es-sheet-titlebar">ROTEIRO DA AULA (9 PASSOS)</div>
@@ -730,9 +730,9 @@ window.PDFLessons = (function() {
                 </thead>
                 <tbody>
                   <tr><td>1</td><td>O sistema binário: por que o computador só entende 0 e 1.</td></tr>
-                  <tr><td>2</td><td>Medidas de armazenamento: Byte, KB, MB, GB e TB (o fator 1024).</td></tr>
-                  <tr><td>3</td><td>A Tabela ASCII: cada letra tem um número.</td></tr>
-                  <tr><td>4</td><td>Exemplo prático: o nome "Rangel" escrito em binário.</td></tr>
+                  <tr><td>2</td><td>A Tabela ASCII: cada letra tem um número.</td></tr>
+                  <tr><td>3</td><td>Exemplo prático: o nome "Rangel" escrito em binário.</td></tr>
+                  <tr><td>4</td><td>Medidas de armazenamento: Byte, KB, MB, GB e TB (o fator 1024).</td></tr>
                   <tr><td>5</td><td>Como acessar o Disco Local (C:) no Explorador de Arquivos.</td></tr>
                   <tr><td>6</td><td>Ferramentas do disco: verificar erros e otimizar (HDD × SSD).</td></tr>
                   <tr><td>7</td><td>Data e hora do Windows: ajuste automático e manual.</td></tr>
@@ -753,19 +753,20 @@ window.PDFLessons = (function() {
         {
           lessonNum: 3,
           heading: "3.1 O que é o Sistema Binário?",
-          content: "O computador trabalha com a BASE BINÁRIA, feita apenas dos números 0 e 1. Cada letra, foto ou música que você vê na tela está guardada internamente como uma sequência de BITS (a menor unidade de informação: um 0 ou um 1).\n\nJuntando bits viram BYTES: 8 BITS FORMAM 1 BYTE, que é exatamente o espaço de um caractere — uma letra, um número ou um espaço.\n\nPara converter um número decimal para binário, use o método das divisões por 2: divida sucessivamente por 2 e anote os restos; depois leia os restos de baixo para cima. O número 13, por exemplo, vira 1101.\n\nComo conferir conversões rápidas: use um site como RapidTables (rapidtables.com). O importante é dominar o método, não decorar a tabela.",
+          content: "O computador trabalha com a BASE BINÁRIA, feita apenas dos números 0 e 1. Cada letra, foto ou música que você vê na tela está guardada internamente como uma sequência de BITS (a menor unidade de informação: um 0 ou um 1).\n\nJuntando bits viram BYTES: 8 BITS FORMAM 1 BYTE, que é exatamente o espaço de um caractere — uma letra, um número ou um espaço.\n\nPara converter um número decimal para binário, use o método das divisões por 2: divida sucessivamente por 2 e anote os restos; depois leia os restos de baixo para cima. O número 13, por exemplo, vira 1101.\n\nPara LER um binário de volta para decimal, multiplique cada dígito pelo valor da sua posição — 2 elevado à posição, contando da direita para a esquerda a partir de 0 — e some os resultados. Exemplo: 101 = 1×4 + 0×2 + 1×1 = 5. É esse mesmo ponto de vista que usamos na Tabela ASCII (cada letra é um código que vira binário) e no exemplo do nome \"Rangel\".\n\nComo conferir conversões rápidas: use um site como RapidTables (rapidtables.com). O importante é dominar o método, não decorar a tabela.",
           html: `
             <div class="es-sheet-box">
-              <div class="es-sheet-titlebar">Exemplo de conversão: 5 → 101</div>
+              <div class="es-sheet-titlebar" style="font-size:13.5px;">Como ler um binário: 101 = 5</div>
+              <p style="margin:8px 0 4px; font-size:11.5px; color:#20130B;">Cada dígito ocupa uma posição e vale 2 elevado à posição (contando da direita para a esquerda, a partir de 0).</p>
               <table class="mini-sheet">
                 <thead>
-                  <tr><th>Potência de 2</th><th>Valor</th></tr>
+                  <tr><th>Posição (da direita)</th><th>2</th><th>1</th><th>0</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>1 × 2²</td><td>4</td></tr>
-                  <tr><td>0 × 2¹</td><td>0</td></tr>
-                  <tr><td>1 × 2⁰</td><td>1</td></tr>
-                  <tr><td colspan="2"><strong>4 + 0 + 1 = 5</strong> → 101</td></tr>
+                  <tr><td>Valor da posição</td><td>2² = 4</td><td>2¹ = 2</td><td>2⁰ = 1</td></tr>
+                  <tr><td>Dígitos de 101</td><td>1</td><td>0</td><td>1</td></tr>
+                  <tr><td>Multiplicando</td><td>1 × 4 = 4</td><td>0 × 2 = 0</td><td>1 × 1 = 1</td></tr>
+                  <tr><td colspan="4"><strong>4 + 0 + 1 = 5</strong> → 101 vale o decimal 5</td></tr>
                 </tbody>
               </table>
             </div>
@@ -797,39 +798,7 @@ window.PDFLessons = (function() {
         },
         {
           lessonNum: 3,
-          heading: "3.2 Medidas de Armazenamento",
-          content: "O espaço de armazenamento é medido em BYTES, e cada unidade representa uma quantidade maior de dados. Em informática, a relação entre uma unidade e a seguinte é sempre de 1024 VEZES (porque 2¹⁰ = 1024).\n\n• 1 BYTE (B) = 8 BITS → um caractere (uma letra).\n• 1 KILOBYTE (KB) = 1024 BYTES → um pequeno texto.\n• 1 MEGABYTE (MB) = 1024 KB → cerca de 1 minuto de música em MP3.\n• 1 GIGABYTE (GB) = 1024 MB → cerca de 1 filme em qualidade SD.\n• 1 TERABYTE (TB) = 1024 GB → milhares de músicas ou filmes.\n\nExemplos práticos: um documento de texto com 1000 palavras pode ter cerca de 30 KB, enquanto um jogo moderno pode ocupar 50 GB ou mais.\n\nNão confunda: fabricantes de discos anunciam 1 GB = 1000 MB (padrão decimal), mas o Windows mostra 1 GB = 1024 MB. Por isso o disco de 500 GB aparece com um pouco menos de 500 \"GB\" no Explorador.",
-          html: `
-            <div class="es-sheet-box">
-              <div class="es-sheet-titlebar">A escala de medidas (fator 1024)</div>
-              <table class="mini-sheet">
-                <thead>
-                  <tr><th>Unidade</th><th>Quanto vale</th><th>Exemplo prático</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td><strong>1 Byte (B)</strong></td><td>8 bits</td><td>Um caractere (uma letra)</td></tr>
-                  <tr><td><strong>1 Kilobyte (KB)</strong></td><td>1024 bytes</td><td>Um pequeno texto</td></tr>
-                  <tr><td><strong>1 Megabyte (MB)</strong></td><td>1024 KB</td><td>Cerca de 1 minuto de música em MP3</td></tr>
-                  <tr><td><strong>1 Gigabyte (GB)</strong></td><td>1024 MB</td><td>Cerca de 1 filme em qualidade SD</td></tr>
-                  <tr><td><strong>1 Terabyte (TB)</strong></td><td>1024 GB</td><td>Milhares de músicas ou filmes</td></tr>
-                </tbody>
-              </table>
-            </div>
-          `,
-          images: [
-            {
-              src: "../../assets/img/windows/Aula3/image5.png",
-              caption: "Escala de medidas de armazenamento: cada unidade equivale a 1024 vezes a anterior."
-            }
-          ],
-          imagesWide: true,
-          boxType: "warning",
-          boxTitle: "⚠️ 1000 ou 1024?",
-          boxText: "O fabricante usa a base decimal (1 GB = 1000 MB) para simplificar a embalagem; o Windows usa a base binária (1 GB = 1024 MB). As duas contas estão certas — só muda a régua usada."
-        },
-        {
-          lessonNum: 3,
-          heading: "3.3 O que é a Tabela ASCII?",
+          heading: "3.2 O que é a Tabela ASCII?",
           content: "A TABELA ASCII (American Standard Code for Information Interchange) é um padrão que atribui um ÚNICO NÚMERO a cada caractere. Assim o computador consegue representar letras, números e símbolos: primeiro viram um número decimal e depois esse número vira binário.\n\nAlguns exemplos: A = 65 (01000001), B = 66 (01000010) e Espaço = 32 (00100000).\n\nComo converter uma letra em binário, em 3 passos:\n1. Veja a letra na tabela ASCII → 2. Pegue o código decimal → 3. Converta o decimal em binário (dividindo por 2).\n\nExemplo: A = 65 → 01000001, porque 64 + 1 = 65.",
           html: `
             <div class="es-sheet-box">
@@ -862,7 +831,7 @@ window.PDFLessons = (function() {
         },
         {
           lessonNum: 3,
-          heading: "3.4 Exemplo Prático: \"Rangel\" em Binário",
+          heading: "3.3 Exemplo Prático: \"Rangel\" em Binário",
           content: "Agora é só juntar o que você viu: cada letra do nome \"Rangel\" vira um código ASCII e esse código vira binário de 8 bits.\n\n• R = 82 → 01010010\n• a = 97 → 01100001\n• n = 110 → 01101110\n• g = 103 → 01100111\n• e = 101 → 01100101\n• l = 108 → 01101100\n\nSequência completa: 01010010 01100001 01101110 01100111 01100101 01101100\n\nResultado: ao armazenar esse nome no computador, ele ocupa 6 BYTES (48 BITS) — 6 letras × 8 bits.",
           html: `
             <div class="es-sheet-box">
@@ -896,6 +865,38 @@ window.PDFLessons = (function() {
           boxType: "tip",
           boxTitle: "🎯 Desafio",
           boxText: "No simulador da Fase 9, converta o seu próprio nome letra a letra e confira quantos bytes ele ocupa. Depois faça o inverso: digite 8 bits e veja qual caractere aparece."
+        },
+        {
+          lessonNum: 3,
+          heading: "3.4 Medidas de Armazenamento",
+          content: "O espaço de armazenamento é medido em BYTES, e cada unidade representa uma quantidade maior de dados. Em informática, a relação entre uma unidade e a seguinte é sempre de 1024 VEZES (porque 2¹⁰ = 1024).\n\n• 1 BYTE (B) = 8 BITS → um caractere (uma letra).\n• 1 KILOBYTE (KB) = 1024 BYTES → um pequeno texto.\n• 1 MEGABYTE (MB) = 1024 KB → cerca de 1 minuto de música em MP3.\n• 1 GIGABYTE (GB) = 1024 MB → cerca de 1 filme em qualidade SD.\n• 1 TERABYTE (TB) = 1024 GB → milhares de músicas ou filmes.\n\nExemplos práticos: um documento de texto com 1000 palavras pode ter cerca de 30 KB, enquanto um jogo moderno pode ocupar 50 GB ou mais.\n\nNão confunda: fabricantes de discos anunciam 1 GB = 1000 MB (padrão decimal), mas o Windows mostra 1 GB = 1024 MB. Por isso o disco de 500 GB aparece com um pouco menos de 500 \"GB\" no Explorador.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">A escala de medidas (fator 1024)</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Unidade</th><th>Quanto vale</th><th>Exemplo prático</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>1 Byte (B)</strong></td><td>8 bits</td><td>Um caractere (uma letra)</td></tr>
+                  <tr><td><strong>1 Kilobyte (KB)</strong></td><td>1024 bytes</td><td>Um pequeno texto</td></tr>
+                  <tr><td><strong>1 Megabyte (MB)</strong></td><td>1024 KB</td><td>Cerca de 1 minuto de música em MP3</td></tr>
+                  <tr><td><strong>1 Gigabyte (GB)</strong></td><td>1024 MB</td><td>Cerca de 1 filme em qualidade SD</td></tr>
+                  <tr><td><strong>1 Terabyte (TB)</strong></td><td>1024 GB</td><td>Milhares de músicas ou filmes</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula3/image5.png",
+              caption: "Escala de medidas de armazenamento: cada unidade equivale a 1024 vezes a anterior."
+            }
+          ],
+          imagesWide: true,
+          boxType: "warning",
+          boxTitle: "⚠️ 1000 ou 1024?",
+          boxText: "O fabricante usa a base decimal (1 GB = 1000 MB) para simplificar a embalagem; o Windows usa a base binária (1 GB = 1024 MB). As duas contas estão certas — só muda a régua usada."
         },
         {
           lessonNum: 3,
@@ -1003,7 +1004,7 @@ window.PDFLessons = (function() {
         {
           lessonNum: 3,
           heading: "3.8 Exercício Prático — WordPad (Resumo da Aula 3)",
-          content: "Hora de praticar: você vai escrever um resumo da aula no WordPad e salvar no formato .rtf. O WordPad já vem instalado no Windows — não precisa baixar nada.\n\nEXERCÍCIO — Criar um resumo no WordPad:\n1. Abra o WordPad: pressione Windows + R, digite wordpad e pressione Enter.\n2. Escreva um resumo da aula abordando os 8 itens:\n   • Sistema binário.\n   • Medidas de armazenamento.\n   • ASCII e representação binária.\n   • Como acessar o disco C:.\n   • Como verificar e otimizar o HD/SSD.\n   • Como corrigir a data e hora.\n   • Qual a capacidade de armazenamento do PC.\n   • Quanto espaço livre ele possui.\n3. Formate o texto:\n   • Título em negrito, tamanho 16, fonte Arial.\n   • Palavras-chave (títulos e subtítulos) em itálico negrito.\n   • Corpo do texto em tamanho 12, fonte Times New Roman.\n4. Salve o arquivo como Resumo_Aula3.rtf.\n\nAtalho que você vai usar: Windows + R abre a caixa \"Executar\". Lá você pode digitar wordpad, notepad ou cmd para abrir o programa pela digitação.",
+          content: "Hora de praticar: você vai escrever um resumo da aula no WordPad e salvar no formato .rtf. O WordPad já vem instalado no Windows — não precisa baixar nada.\n\nEXERCÍCIO — Criar um resumo no WordPad:\n1. Abra o WordPad: pressione Windows + R, digite wordpad e pressione Enter.\n2. Escreva um resumo da aula abordando os 8 itens:\n   • Sistema binário.\n   • ASCII e representação binária.\n   • Medidas de armazenamento.\n   • Como acessar o disco C:.\n   • Como verificar e otimizar o HD/SSD.\n   • Como corrigir a data e hora.\n   • Qual a capacidade de armazenamento do PC.\n   • Quanto espaço livre ele possui.\n3. Formate o texto:\n   • Título em negrito, tamanho 16, fonte Arial.\n   • Palavras-chave (títulos e subtítulos) em itálico negrito.\n   • Corpo do texto em tamanho 12, fonte Times New Roman.\n4. Salve o arquivo como Resumo_Aula3.rtf.\n\nAtalho que você vai usar: Windows + R abre a caixa \"Executar\". Lá você pode digitar wordpad, notepad ou cmd para abrir o programa pela digitação.",
           html: `
             <div class="es-sheet-box">
               <div class="es-sheet-titlebar">EXERCÍCIO — Criar um resumo no WordPad</div>

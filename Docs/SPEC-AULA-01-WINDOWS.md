@@ -1,6 +1,7 @@
 # SPEC-001 — Especificação Técnica e Pedagógica da Aula 1 (Windows)
 ### Módulo 1: Sistema Operacional Windows | Prof. Marcos Rangel — WR Capacitação Profissional
 ### Status: ✅ IMPLEMENTADA E VALIDADA (30/09/2026) — checklist §9 integralmente marcado; PDF conferido
+### ⚠️ Aprovação visual manual humana: **PENDENTE** — ver `Docs/CONTINUACAO.md` §7
 > Conferido em 04/10/2026: senha `wr0126`, 7 checks em 6 fases, termômetro interativo, quiz 5/5 com persistência real (regra 7) e "Recomeçar o exercício", **leitura persistente com "↺ Recomeçar a leitura" (L-01)**, guarda de apostila vazia (L-04), Windows 29/29 seções ilustradas e 70/70 imagens legendadas no PDF, painel "Saiba mais: o Linux" como filho direto de `<body>` (regra 10). Pendências residuais em `Docs/CONTINUACAO.md` (sessão de 04/10/2026).
 
 ---

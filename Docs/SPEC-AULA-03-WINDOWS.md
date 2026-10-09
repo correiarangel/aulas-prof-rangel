@@ -1,6 +1,7 @@
 ### Módulo 1: Sistema Operacional Windows | Prof. Marcos Rangel — WR Capacitação Profissional
 ### Status: ✅ IMPLEMENTADA E VALIDADA (07/10/2026) — Aula 03: Medidas de Armazenamento no Computador
 ### Harness: `/tmp/opencode/a3_harness.py` (Python/CDP) — **66/66 checks OK** (tela, gating, quiz, persistência, PDF 3.0–3.9 e simulador)
+### ⚠️ Aprovação visual manual humana: **PENDENTE** — ver `Docs/CONTINUACAO.md` §7 (o harness valida estrutura; o render ainda não foi conferido por humano)
 
 ---
 
@@ -36,10 +37,10 @@ Ao final desta aula, o aluno será capaz de:
 | Fase | ID | Título | Objetivo do passo (check) |
 |---|---|---|---|
 | **FASE 0** | `l3-fase-0` | Introdução e Roteiro da Aula 3 | Apresenta objetivo + roteiro numerado (passo a passo). **Check 0/8** ao marcar leitura/conclusão da introdução. |
-| **FASE 1** | `l3-phase-1` | 3.1 O que é o Sistema Binário? | Compreende bits/bytes, base binária, exemplo 5=101 e conversão decimal→binário (13→1101). **Check 1/8**. |
-| **FASE 2** | `l3-phase-2` | 3.2 Medidas de Armazenamento | Conhece Byte, KB, MB, GB, TB (fator 1024) e exemplos práticos. **Check 2/8**. |
-| **FASE 3** | `l3-phase-3` | 3.3 O que é a Tabela ASCII? | Entende ASCII, código decimal/binário de caracteres (A, espaço). **Check 3/8**. |
-| **FASE 4** | `l3-phase-4` | 3.4 Exemplo Prático: "Rangel" em Binário | Visualiza a conversão letra→ASCII→binário (6 bytes = 48 bits). **Check 4/8**. |
+| **FASE 1** | `l3-phase-1` | 3.1 O que é o Sistema Binário? | Compreende bits/bytes, base binária, leitura de binário pela tabela de posições (101=5) e conversão decimal→binário (13→1101). **Check 1/9**. |
+| **FASE 2** | `l3-phase-2` | 3.2 O que é a Tabela ASCII? | Entende ASCII, código decimal/binário de caracteres (A, espaço). **Check 2/9**. |
+| **FASE 3** | `l3-phase-3` | 3.3 Exemplo Prático: "Rangel" em Binário | Visualiza a conversão letra→ASCII→binário (6 bytes = 48 bits). **Check 3/9**. |
+| **FASE 4** | `l3-phase-4` | 3.4 Medidas de Armazenamento | Conhece Byte, KB, MB, GB, TB (fator 1024) e exemplos práticos. **Check 4/9**. |
 | **FASE 5** | `l3-phase-5` | 3.5 Como Acessar o Disco C: no Explorador | Sabe abrir Explorador (Win+E), ir em Este Computador → Disco Local (C:). **Check 5/8**. |
 | **FASE 6** | `l3-phase-6` | 3.6 Como Acessar as Ferramentas do HD/SSD | Conhece Propriedades → Ferramentas: Verificar erros, Otimizar/Desfragmentar. **Distingue HDD vs SSD** (crucial). **Check 6/8**. |
 | **FASE 7** | `l3-phase-7` | 3.7 Data e Hora do Windows | Sabe ajustar data/hora (automático recomendado) e ajuste manual. **Check 7/8**. |
@@ -68,10 +69,10 @@ Criar 9 seções (3.0 → 3.8). Usar imagens com legendas corretas. Para `image5
 | Seção | heading | Conteúdo resumido | Imagens (src `../../assets/img/windows/Aula3/...`) + captions |
 |---|---|---|---|
 | **3.0** | `3.0 Introdução à Aula 3 — Medidas de Armazenamento` | Expõe objetivo, importância de entender bits/bytes, unidades e como o PC armazena dados. FASE 0. | _(nenhuma)_ |
-| **3.1** | `3.1 O que é o Sistema Binário?` | Bits/bytes, base 2, 0/1. Exemplos: 5=101, método divisões por 2 (13→1101). Dica RapidTables. | `image3.png` — "Representação binária: o computador entende apenas 0 e 1." |
-| **3.2** | `3.2 Medidas de Armazenamento` | Byte, KB (1024), MB (1024 KB), GB (1024 MB), TB (1024 GB). Exemplos práticos. | `image5.png` (imagesWide: true) — "Escala de medidas de armazenamento: cada unidade equivale a 1024 vezes a anterior." |
-| **3.3** | `3.3 O que é a Tabela ASCII?` | Definição, função (caracteres→códigos). Exemplos A=65 (01000001), espaço 32 (00100000). | `image4.png` — "Tabela ASCII: cada caractere é convertido em código numérico e depois em binário." |
-| **3.4** | `3.4 Exemplo Prático: "Rangel" em Binário` | Conversão letra a letra (R, a, n, g, e, l) → ASCII → binário. Total 6 bytes (48 bits). Resultado apresentado. | `image7.png` (imagesWide: true) — "Representação binária do nome 'Rangel': cada caractere ocupa 1 byte (8 bits), totalizando 6 bytes." |
+| **3.1** | `3.1 O que é o Sistema Binário?` | Bits/bytes, base 2, 0/1. **Como ler um binário** (tabela de posições: 101 = 4+0+1 = 5), método divisões por 2 (13→1101). Dica RapidTables. | `image3.png` — "Representação binária: o computador entende apenas 0 e 1." |
+| **3.2** | `3.2 O que é a Tabela ASCII?` | Definição, função (caracteres→códigos). Exemplos A=65 (01000001), espaço 32 (00100000). | `image4.png` — "Tabela ASCII: cada caractere é convertido em código numérico e depois em binário." |
+| **3.3** | `3.3 Exemplo Prático: "Rangel" em Binário` | Conversão letra a letra (R, a, n, g, e, l) → ASCII → binário. Total 6 bytes (48 bits). Resultado apresentado. | `image7.png` (imagesWide: true) — "Representação binária do nome 'Rangel': cada caractere ocupa 1 byte (8 bits), totalizando 6 bytes." |
+| **3.4** | `3.4 Medidas de Armazenamento` | Byte, KB (1024), MB (1024 KB), GB (1024 MB), TB (1024 GB). Exemplos práticos. | `image5.png` (imagesWide: true) — "Escala de medidas de armazenamento: cada unidade equivale a 1024 vezes a anterior." |
 | **3.5** | `3.5 Como Acessar o Disco C: no Explorador de Arquivos` | Passos: Win+E (ou pasta), Este Computador → Disco Local (C:). | `image6.png` — "Acesso ao Disco Local (C:) pelo Explorador de Arquivos (Este Computador)." |
 | **3.6** | `3.6 Como Acessar as Ferramentas do HD/SSD` | Propriedades → Ferramentas: Verificação de erros (Verificar). Otimizar/Desfragmentar: HDD → Desfragmentar/Otimizar; **SSD → apenas Otimizar (não desfragmentar)**. Nota: notebooks/PCs recentes usam SSD. | `image2.png` — "Guia de Ferramentas do disco: Verificar erros e Otimizar (diferenciando HDD e SSD)." |
 | **3.7** | `3.7 Como Acessar e Corrigir Data e Hora do Windows` | Clique direito no relógio → Ajustar data e hora. Ativar "Definir horário automaticamente" (recomendado). Ajuste manual se necessário. | `image1.png` — "Ajuste de data e hora no Windows: ativar a sincronização automática é o recomendado." |
@@ -130,6 +131,8 @@ Criar 9 seções (3.0 → 3.8). Usar imagens com legendas corretas. Para `image5
 5. **Badge de leitura** = `🎉 LEITURA COMPLETA!` (padrão do módulo Windows), não "Leitura Concluída – Aula 03".
 6. **Senha** `wr0326` segue como candidata — aguarda confirmação do professor (assim como `wr0226` da Aula 2).
 7. **Harness** virou Python (`/tmp/opencode/a3_harness.py`) em vez do sugerido `.js`: reusa o cliente CDP `/tmp/opencode/cdplib.py` (auto-dismiss de dialogs). **66/66 checks**; relatório em `/tmp/opencode/a3_report.json`.
+8. **Reordenação dos tópicos 2–4 (correção pedagógica, 07/10/2026)** — pedido do professor: "Medidas de Armazenamento" (era tópico 2) passou para depois de "Rangel em Binário". Nova ordem: 1. Sistema Binário → 2. Tabela ASCII → 3. "Rangel" em Binário → 4. Medidas de Armazenamento → 5–9 inalterados. Check ids posicionais foram renumerados em tela (fases 2–4) e PDF (3.2–3.4, headings e `imagesWide` preservado por conteúdo: Rangel = wide na 3.3, Medidas = wide na 3.4). FASE 0 (roteiro + objetivo), tabs, botões "Ir para", lista do exercício (3.8) e o Desafio da fase 9 (agora "Tópico 3") acompanharam a mudança. Anexo `12` do `CONTINUACAO.md` documenta o mesmo.
+9. **Explicação do binário reescrita (07/10/2026)** — a caixa "Exemplo de conversão: 5 → 101" (só `1×2² + 0×2¹ + 1×2⁰ = 4 + 0 + 1 = 5`) estava confusa: misturava o cálculo sem explicar de onde saíam 2²/2¹/2⁰. Substituída, em tela e no PDF 3.1, por uma **tabela de posições** (posição 2/1/0 → valor 2²=4/2¹=2/2⁰=1 → dígitos 101 → multiplicações → soma = 5) + frase em prosa explicando "ler de volta para decimal: dígito × 2^posição, da direita para a esquerda a partir de 0". Sem mudança de conteúdo factual.
 
 ---
 

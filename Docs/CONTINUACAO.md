@@ -36,7 +36,54 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL — COMEÇAR AQUI (07/10/2026) — Aula 03 do Windows (medidas de armazenamento) + simulador binário integrados e validados
+## ✅ SESSÃO ATUAL — COMEÇAR AQUI (08/10/2026) — Aula 12: Prova Final do módulo Windows + correção do hub
+
+Criada a **Prova Final do módulo Windows** (`modules/windows/prova-windows.html`) no padrão da prova do módulo Internet, e corrigido o hub `modules/windows/index.html` (card AULA 02 duplicado + rótulos desalinhados + link da Aula 12).
+
+> 🔄 **REVISÃO DA MESMA SESSÃO (08/10/2026, pedido do professor) — FORMATO FINAL:** a prova **não tem mais atividades práticas**. Foram removidos a tela `screen-practical`, o checklist `pr-*`, `POINTS_PER_PRACTICAL`, `TOTAL_PRACTICALS`, `practicalChecks` e todo o fluxo/listeners de prática. As questões **8, 10, 11 e 14 foram substituídas por versões mais fáceis** (Q8 = atalho Windows + E; Q10 = Delete → Lixeira; Q11 = para que serve uma pasta; Q14 = antivírus que já vem no Windows) — **sem `.bat`/xcopy, sem Media Creation Tool, sem a prática da Aula 9 e sem conta Administrador × Padrão**. Pontuação final: **15 questões × (10/15) ≈ 0,67 ponto cada = 10,0**; `PASS_SCORE=7.0` → aprovação com **11 acertos (7,33)**. Gabarito novo: `[1,2,3,0,3,2,1,2,2,2,1,1,1,3,0]`. **As descrições abaixo que citam práticas / 0,5 ponto / 2,5 pontos estão SUPERADAS.**
+
+### 1. O que foi entregue
+
+| Peça | Onde |
+|:---|:---|
+| `modules/windows/prova-windows.html` (novo, ~960 linhas) — telas `screen-lock` → `screen-start` → `screen-exam` → `screen-result` (formato final, sem prática) | arquivo novo |
+| 15 questões de múltipla escolha (4 alternativas), **1 por tela**, baseadas no conteúdo real das aulas | `QUESTIONS` |
+| Pontuação final: **15 × (10/15) ≈ 0,67 = 10,0**; aprovação **7,0** | `POINTS_PER_Q = EXAM_MAX/TOTAL`, `PASS_SCORE=7.0` |
+| Gate de leitura: botão "Iniciar Prova" só libera com **nome + checkbox do PDF** | `checkStartUnlock()` (L822) |
+| Persistência real (Regra 7): `QuizEngine.saveState/loadState` em responder, navegar, marcar prática e assinar; caixa **"Continuar de onde parei"** e **"↺ Recomeçar do zero"** que apaga a chave | `STORAGE_KEY="prova-windows-prof-rangel"` (chave final `${STORAGE_KEY}:${nome}`) |
+| Certificado A4 landscape (nome, nota, carga "11 Aulas + 2 Complementos"), assinatura SHA `WR-XXXX-…`, botões TXT / PDF (print) / WhatsApp / E-mail | `screen-result` |
+| Hub: **removido o card AULA 02 duplicado** ("Área de Trabalho e Atalhos") | `modules/windows/index.html` (~L324) |
+| Hub: rótulos das Aulas **05/06/09/10/11** alinhados aos títulos-fonte (`Área de Trabalho, Pastas e Arquivos` · `WordPad — Editor de Texto do Windows` · `Prática: Organização e Configuração do Windows` · `Ferramentas Básicas do Windows (7, 10 e 11)` · `Revisão Geral do Windows`) | idem |
+| Hub: card **AULA 12** agora é `onclick="window.location.href='./prova-windows.html'"` com badge 📝 (antes 🚧/Em Construção) | idem |
+| `assets/js/quiz-engine.js`: suporte **aditivo/backward-compatible** a `extraNotes: string[]` no TXT, no WhatsApp e no e-mail (nenhum outro módulo passa `extraNotes`) | L86, L158, L185 |
+
+### 2. Decisões gravadas
+
+1. **Senha da prova**: `PROVA_PASS = "wr0926"` + aliases `["wr1226", "wr2026"]`; desbloqueio persistido em `sessionStorage["prova_unlocked_m12"]`.
+2. **Card 12 do hub usa `location.href`** (não `promptLessonPassword`) — abre a prova em página própria. A rota órfã `12: "screen-quiz"` (L5112) ficou intacta e é inofensiva.
+3. ~~**Questão 11 (Aula 9)**~~ — **REVISTA**: a questão sobre a prática da Aula 9 foi removida (Q11 agora pergunta "para que serve uma pasta"). Complementos 7A/8A não são mais cobrados diretamente na prova.
+4. Sem carga horária inventada no certificado: "📚 CONTEÚDO CONCLUÍDO: 11 Aulas + 2 Complementos".
+
+### 3. Validações executadas (08/10/2026)
+
+```bash
+node --check assets/js/quiz-engine.js   # OK
+node --check assets/js/pdf-lessons.js   # OK
+# scripts inline extraídos por python e checados: index.html e prova-windows.html → node --check OK
+node /tmp/opencode/provatest/prova.js   # PASSOU 30 · FALHOU 0  (CDP/Chrome headless)
+node /tmp/opencode/provatest/hub.js     # PASSOU 11 · FALHOU 0  (CDP/Chrome headless)
+```
+
+Cobertos automaticamente: senha errada/certa, gate PDF+nome, 15 questões → resultado, nota 10,0/10,0 + "Parabéns", certificado/SHA, persistência (15 respostas + assinatura, **sem** práticas), WhatsApp com 15/15, retomar no reload (questão 15 preservada), "Recomeçar do zero" apaga o `localStorage`, e o hub (AULA 02 única, 5 rótulos, clicar no card 12 abre a prova).
+
+### 4. Pendente
+
+1. **Aprovação visual humana** da prova renderizada e do PDF da apostila do módulo (o harness prova estrutura/comportamento, não o texto renderizado — Regra 12).
+2. **P-10** — commit (aguardando o professor).
+
+---
+
+## ✅ SESSÃO ANTERIOR (07/10/2026) — Aula 03 do Windows (medidas de armazenamento) + simulador binário integrados e validados
 
 A 3ª aula do módulo Windows foi **criada do zero** e validada de ponta a ponta: hub, senha, tela com checks distribuídos, quiz com persistência, PDF de 10 seções com as 7 imagens e o **simulador binário/ASCII** novo (arquivo `modules/windows/simulador-binario.html`). Spec em **`Docs/SPEC-AULA-03-WINDOWS.md`** (§12 lista as deviações).
 
@@ -51,7 +98,7 @@ A 3ª aula do módulo Windows foi **criada do zero** e validada de ponta a ponta
 | `QUESTIONS_LESSON_3` (5 questões × **4 alternativas**) + `QUIZ_CFG[3]` (`moduleId:"windows-aula-3"`) | idem |
 | FASE 9 com botão que faz `window.open('simulador-binario.html','_blank','noopener,noreferrer')` | idem |
 | `moduleLessonTitles.windows[3] = "Aula 03: Medidas de Armazenamento no Computador — Do Bit ao Disco Rígido"` | `assets/js/pdf-lessons.js` (~linha 139) |
-| **10 seções `lessonNum: 3` (3.0→3.9)** com mini-sheets, `imagesWide` em 3.2 e 3.4, boxType tip/warning | `assets/js/pdf-lessons.js` (linhas ~720–1068) |
+| **10 seções `lessonNum: 3` (3.0→3.9)** com mini-sheets, `imagesWide` em 3.3 (Rangel) e 3.4 (Medidas), boxType tip/warning | `assets/js/pdf-lessons.js` (linhas ~720–1068) |
 | **`modules/windows/simulador-binario.html`** (268 linhas, standalone) — 4 conversores com passo-a-passo, histórico e `localStorage` | arquivo novo |
 | 7 PNG (140 KB) copiados da `AulaOrigem` | `assets/img/windows/Aula3/` |
 
@@ -62,6 +109,8 @@ A 3ª aula do módulo Windows foi **criada do zero** e validada de ponta a ponta
 3. **4 alternativas por questão** (padrão do módulo Windows, não 5).
 4. **Questão 2 do quiz corrigida**: o enunciado da spec ("quantos bytes formam 1 MB → 1024") era falso (1 MB = 1.048.576 bytes). Virou "Quantos **Kilobytes (KB)** formam 1 **Megabyte (MB)**?" → 1024.
 5. Badge de leitura = `🎉 LEITURA COMPLETA!` (padrão do módulo).
+6. **Reordenação dos tópicos 2–4** (pedido do professor, mesmo dia): "Medidas de Armazenamento" saiu de 2 → 4. Nova ordem **binário → Tabela ASCII → "Rangel" em Binário → Medidas → 5–9**. Check ids posicionais renumerados em tela e PDF; `imagesWide` preservado por conteúdo. Detalhes no **Anexo 12**.
+7. **Explicação do binário reescrita** (mesmo dia): a caixa `1×2² + 0×2¹ + 1×2⁰ = 4 + 0 + 1 = 5` foi substituída (tela e PDF 3.1) por uma **tabela de posições** + frase em prosa ("dígito × 2^posição, da direita para a esquerda a partir de 0") — sem mudança factual.
 
 ### 3. Fatos conferidos no conteúdo (Regra 12)
 
@@ -102,13 +151,60 @@ python3 /tmp/opencode/a3_harness.py     # 66/66 em ~1 min
  ?? assets/img/windows/Aula2/ (16 arquivos) · assets/img/windows/Aula3/ (7 arquivos, 140 KB)
 ```
 
-### 7. Próximos passos
+### 7. Aprovação manual humana — 🔴 PENDENTE (bloqueia a publicação)
 
-1. **Confirmar a senha `wr0326`** com o professor (e a `wr0226` da Aula 2).
-2. **P-10** — commitar tudo (Aulas 1/2/3 do Windows + simulador + imagens).
-3. **L-07** — Word e PowerPoint com PDF 100% texto puro (maior pendência de conteúdo).
-4. **L-03** — escopo da FASE 0 nas Aulas 7, 8, 71 e 81 do Windows.
-5. Inspeção humana dos PDFs gerados (Aulas 2 e 3) — os harnesses checam estrutura, não o texto renderizado.
+Os harnesses validam **estrutura e comportamento**; **ninguém com visão ainda conferiu o resultado renderizado**. Até esta lista ser concluída pelo professor, as Aulas 01, 02 e 03 (e o simulador) ficam **"validadas tecnicamente, aguardando aprovação visual"**:
+
+| # | O que falta conferir (tela e/ou PDF) | Status |
+|:--|:---|:---|
+| 1 | Leitura da Aula 01 renderizada (layout, termômetro, painel "Saiba mais", mobile) | 🔴 pendente |
+| 2 | Leitura da Aula 02 renderizada (layout, 16 imagens, roteiro, mobile) | 🔴 pendente |
+| 3 | Leitura da Aula 03 renderizada (layout, 7 imagens, passo a passo, mobile) | 🔴 pendente |
+| 4 | PDF das Aulas 01, 02 e 03 gerados — legibilidade, legendas, quebras de página, título | 🔴 pendente |
+| 5 | Simulador binário/ASCII — visual, passo-a-passo e histórico | 🔴 pendente |
+| 6 | Regressão visual dos demais módulos após as mudanças globais de CSS (Regra 6, `.fixation-panel`) | 🔴 pendente |
+| 7 | Senhas candidatas confirmadas: `wr0126`, `wr0226`, `wr0326` (e `wr0426` quando a Aula 04 existir) | 🔴 pendente |
+| 8 | Inspeção do PDF do Excel (P-06) | 🔴 pendente |
+| 9 | **Aula 04** (SDD em `Docs/SPEC-AULA-04-WINDOWS.md`) — só após implementada: tela + PDF | 🔴 pendente |
+
+> Este bloco é **obrigatório a cada sessão**: enquanto houver 🔴 aqui, o trabalho **não** pode ser dado como aprovado — o item deve ser conferido visualmente por humano e virar 🟢 nesta mesma tabela.
+
+### 8. Próximos passos
+
+1. **Aprovação manual humana (§7 acima)** — conferência visual das telas/PDFs das Aulas 2 e 3 e do simulador.
+2. **Confirmar as senhas candidatas** (`wr0126`, `wr0226`, `wr0326` — e a `wr0426` da Aula 4 quando existir).
+3. **P-10** — commitar tudo (Aulas 1/2/3 do Windows + simulador + imagens).
+4. **Aula 04** — SDD em `Docs/SPEC-AULA-04-WINDOWS.md`, prompt em `/tmp/opencode/prompt_aula04.txt`.
+5. **L-07** — Word e PowerPoint com PDF 100% texto puro (maior pendência de conteúdo).
+6. **L-03** — escopo da FASE 0 nas Aulas 7, 8, 71 e 81 do Windows.
+
+---
+
+## 📎 ANEXO 12 — Reordenação dos tópicos 2–4 e explicação do binário (07/10/2026, rodada 2)
+
+Pedido do professor na 2ª rodada do dia: (1) a explicação `1×2² + 0×2¹ + 1×2⁰ = 4 + 0 + 1 = 5` estava confusa e deveria ser **melhorada ou removida**; (2) **"Medidas de Armazenamento"** (era o tópico 2) deveria vir **depois do "Rangel em Binário"**.
+
+### Nova ordem dos tópicos (tela e PDF idênticas)
+
+1. Sistema Binário → 2. **Tabela ASCII** → 3. **"Rangel" em Binário** → 4. **Medidas de Armazenamento** → 5. Disco C: → 6. HD/SSD → 7. Data/Hora → 8. WordPad → 9. Simulador.
+
+### O que foi alterado
+
+**`modules/windows/index.html`**
+- Blocos físicos trocados: ASCII (`l3-phase-2`), Rangel (`l3-phase-3`), Medidas (`l3-phase-4`).
+- Check ids posicionais renumerados: `check-read-3-3` (ASCII), `3-4` (Rangel), `3-5` (Medidas) — FASE 0 = `3-1`, fases = `3-(N+1)`.
+- Navegação: Voltar/Ir para de todas as fases 2–5 renumeradas e relabeladas (ex.: fase 1 → "Ir para 2. Tabela ASCII →"; fase 4 → "Ir para 5. Disco C: →"); tabs `tab-btn-3-2..4` relabeladas; h2 renumerados; captions "Imagem 02/07" (ASCII), "03/07" (Rangel), "04/07" (Medidas).
+- FASE 0: objetivo e roteiro reordenados (ASCII antes de Medidas). Lista do exercício da fase 8 reordenada idem. Desafio da fase 9 agora cita "Tópico 3" (não mais "Fase 4").
+- Caixa "Exemplo de conversão: 5 → 101" substituída por **tabela de posições "Como ler um binário: 101 = 5"** (posição 2/1/0 → 2²=4/2¹=2/2⁰=1 → dígitos 101 → multiplicações 4,0,1 → soma). 
+
+**`assets/js/pdf-lessons.js`**
+- Seções reordenadas: **3.2 O que é a Tabela ASCII?**, **3.3 Exemplo Prático: "Rangel" em Binário**, **3.4 Medidas de Armazenamento**. `imagesWide: true` viaja com o conteúdo (Rangel 3.3, Medidas 3.4 — continua 2 grids wide).
+- 3.0: tabela ROTEIRO e conteúdo do objetivo reordenados. 3.1: explicação de "ler de volta para decimal (dígito × 2^posição)" + tabela de posições no lugar do box antigo. 3.8: lista do resumo reordenada.
+
+### Validação
+
+- `node --check assets/js/pdf-lessons.js` OK · script inline do `index.html` OK.
+- `/tmp/opencode/a3_harness.py` reexecutado → **66/66 OK**. PDF renderizado confere a nova ordem (heads `3.2 Tabela ASCII → 3.3 Rangel → 3.4 Medidas`) e **2 grids wide** intactos.
 
 ---
 

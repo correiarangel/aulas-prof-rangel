@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 12: Prova Final de Avaliação — Módulo Windows | Prof. Marcos Rangel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/pdf-lessons.js"></script>
+  <script src="../../assets/js/quiz-engine.js"></script>
+  <style>
+    .quiz-container { max-width: 860px; margin: 30px auto; padding: 0 16px; }
+    .screen-quiz { display: none; }
+    .screen-quiz.active { display: block; animation: fadeIn 0.3s ease; }
+    .result-badge-box { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 20px; }
+    .result-badge-box.pass { background: var(--success-bg); }
+    .result-badge-box.fail { background: var(--warn-bg); }
+
+    /* ESCALA DE PONTUAÇÃO (tela inicial) */
+    .score-scale {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 16px 0 22px 0;
+    }
+    .score-scale div {
+      background: var(--paper-beige);
+      border: 1.5px solid var(--line-light);
+      border-radius: 12px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .score-scale span {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #8A5A17;
+      letter-spacing: 0.5px;
+    }
+    .score-scale strong { font-size: 17px; color: var(--ink-dark); }
+
+    /* DETALHAMENTO DA NOTA (tela de resultado) */
+    .score-breakdown {
+      background: var(--bg-brown);
+      border: 1px solid var(--line-dark);
+      border-radius: 16px;
+      padding: 14px 16px;
+      text-align: center;
+      margin-bottom: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14.5px;
+      color: var(--ink-light);
+      line-height: 1.7;
+    }
+
+    /* ESTILOS DO CERTIFICADO HORIZONTAL (A4 LANDSCAPE) */
+    .certificate-landscape {
+      background: #FFFDF7;
+      border: 6px double #D4AF37;
+      outline: 2px solid #8E2C07;
+      outline-offset: -10px;
+      border-radius: 12px;
+      padding: 28px 36px;
+      margin: 24px 0;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.2);
+      font-family: 'Inter', sans-serif;
+    }
+    .certificate-seal-badge {
+      background: linear-gradient(135deg, #120B06, #2A1B10);
+      color: #FB923C;
+      border: 2px solid #D4AF37;
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      display: inline-block;
+    }
+
+    /* ===== BARRA DE NAVEGAÇÃO ENTRE QUESTÕES (Voltar / Progresso Salvo / Próxima) ===== */
+    .exam-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .exam-nav-row .exam-autosave {
+      font-size: 13px;
+      color: var(--ink-soft);
+      font-family: 'JetBrains Mono', monospace;
+      white-space: nowrap;
+    }
+    .resume-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; }
+
+    /* ===== MOBILE: miniatura do certificado + redução de cards encadeados ===== */
+    .cert-thumb-wrap { position: relative; width: 100%; }
+    .btn-cert-toggle { display: none; align-items: center; gap: 6px; }
+
+    @media (max-width: 767px) {
+      .cert-thumb-wrap {
+        margin: 0;
+        max-height: 340px;
+        overflow: hidden;
+        border-radius: 14px;
+        box-shadow: var(--shadow-sm);
+      }
+      .cert-thumb-wrap.expanded {
+        max-height: none;
+        overflow: visible;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .cert-thumb-wrap:not(.expanded)::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        height: 76px;
+        background: linear-gradient(to top, rgba(255, 253, 247, 0.96), transparent);
+        pointer-events: none;
+      }
+      .btn-cert-toggle { display: inline-flex; }
+
+      /* Ocupa 100% da largura no mobile (~4px de margem por lado, sem "efeito linguiça") */
+      .quiz-container {
+        max-width: 100%;
+        margin: 12px 4px;
+        padding: 0;
+      }
+      .menu-hub-card { padding: 16px 4px; }
+      .menu-hub-card .question-card-item {
+        background: var(--paper-beige) !important;
+        border: 1.5px solid var(--line-light) !important;
+        box-shadow: none !important;
+        padding: 16px 12px !important;
+        margin-bottom: 16px !important;
+      }
+      .option-btn-card { font-size: 16px; padding: 14px 10px; }
+      .pdf-lesson-box { padding: 14px; }
+      .score-scale { grid-template-columns: 1fr; }
+      .resume-actions { flex-direction: column; }
+      .resume-actions .btn { width: 100%; text-align: center; }
+    }
+
+    @media (max-width: 640px) {
+      .exam-nav-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .exam-nav-row .btn {
+        width: 100%;
+        text-align: center;
+      }
+      .exam-nav-row .exam-autosave {
+        text-align: center;
+        padding: 4px 0;
+        white-space: normal;
+        order: 2;
+      }
+      .exam-nav-row .btn-primary { order: 0; }
+      .exam-nav-row .btn-ghost { order: 1; }
+      .certificate-landscape { padding: 18px 14px !important; }
+      .certificate-landscape h2 { font-size: 17px !important; letter-spacing: 0.5px !important; margin: 10px 0 4px 0 !important; }
+      .certificate-landscape h3 { font-size: 20px !important; }
+      .certificate-landscape p { font-size: 13px !important; line-height: 1.5 !important; }
+      .certificate-landscape div[style*="grid-template-columns:repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+    }
+
+    /* ===== MOBILE: certificado em modo escuro (texto claro sobre fundo escuro) ===== */
+    @media screen and (max-width: 767px) {
+      .certificate-landscape {
+        background: var(--bg-brown) !important;
+        outline-color: #4A3528 !important;
+      }
+      .certificate-landscape,
+      .certificate-landscape div,
+      .certificate-landscape span,
+      .certificate-landscape p,
+      .certificate-landscape strong {
+        color: var(--ink-light) !important;
+      }
+      .certificate-landscape h2,
+      .certificate-landscape h3 {
+        color: #FFFDF7 !important;
+      }
+      .certificate-landscape h3 { border-bottom-color: var(--amber) !important; }
+      .certificate-landscape a,
+      .certificate-landscape code {
+        color: var(--amber) !important;
+      }
+      .certificate-landscape span[style*="color:#8A5A17"] {
+        color: var(--amber) !important;
+      }
+      .certificate-landscape strong[style*="color:#EA580C"],
+      .certificate-landscape span[style*="color:#EA580C"] {
+        color: var(--amber) !important;
+      }
+      .certificate-landscape div[style*="background:#FFFFFF"] {
+        background: var(--card-brown) !important;
+        border-color: #5A4232 !important;
+      }
+      .certificate-landscape div[style*="border-top:1.5px solid #4A3528"] {
+        border-top-color: #D4AF37 !important;
+      }
+      .certificate-landscape div[style*="border-top:1px solid #E6D2C1"] {
+        border-top-color: #5A4232 !important;
+      }
+      .cert-thumb-wrap:not(.expanded)::after {
+        background: linear-gradient(to top, rgba(30, 19, 11, 0.96), transparent);
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      .cert-thumb-wrap {
+        max-height: none !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: auto !important;
+        margin: 0 !important;
+      }
+      .cert-thumb-wrap::after { display: none !important; }
+      html, body {
+        background: #FFFFFF !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 297mm;
+        height: 210mm;
+      }
+      .header-nav, .no-print, .quiz-container > section:not(#screen-result),
+      #res-badge, #res-title, #res-subtitle, #res-score, #signature-box,
+      .btn, footer, .pdf-lesson-box {
+        display: none !important;
+      }
+      .quiz-container, #screen-result, .menu-hub-card {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      #wr-certificate-card {
+        display: block !important;
+        width: 285mm !important;
+        height: 198mm !important;
+        margin: 6mm auto !important;
+        box-shadow: none !important;
+        box-sizing: border-box;
+        padding: 18px 28px !important;
+        border: 5px double #D4AF37 !important;
+        background: #FFFDF7 !important;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="./index.html" class="brand-logo">
+        <img src="../../assets/img/professor-rangel.png" alt="Prof. Marcos Rangel" class="brand-avatar-mini">
+        <div class="brand-text">
+          <span class="brand-title">Prof. Marcos Rangel</span>
+          <span class="brand-subtitle">← Voltar ao Módulo Windows</span>
+        </div>
+      </a>
+      <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Aula 12: Prova Final</span>
+    </div>
+  </header>
+
+  <main class="quiz-container">
+
+    <!-- MODAL DE SENHA DA PROVA (AULA 12) -->
+    <section id="screen-lock" class="screen-quiz active">
+      <div class="menu-hub-card" style="text-align:center;">
+        <span class="eyebrow-badge"><span class="dot"></span> Avaliação Bloqueada por Senha</span>
+        <h1 style="font-size:30px; color:var(--amber); margin:14px 0 8px 0;">🔒 Aula 12: Prova Final do Módulo Windows</h1>
+        <p style="font-size:17px; color:var(--ink-light); margin-bottom:24px;">
+          Informe a senha de acesso fornecida pelo Professor Marcos Rangel nas aulas presenciais da WR Capacitação para liberar a prova.
+        </p>
+
+        <div style="max-width:360px; margin:0 auto 20px auto;">
+          <input type="password" id="input-exam-pass" placeholder="Digite a senha de acesso..." style="width:100%; padding:16px; border-radius:12px; border:2px solid var(--line-dark); background:var(--bg-brown); color:var(--ink-light); font-size:20px; text-align:center;">
+        </div>
+
+        <div style="display:flex; gap:12px; max-width:360px; margin:0 auto;">
+          <button type="button" class="btn btn-primary" id="btn-unlock-exam" style="flex:1;">Desbloquear Prova →</button>
+          <a href="./index.html" class="btn btn-ghost">Voltar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 1 — IDENTIFICAÇÃO DO ALUNO -->
+    <section id="screen-start" class="screen-quiz">
+      <div class="menu-hub-card">
+        <span class="eyebrow-badge"><span class="dot"></span> Avaliação Didática Oficial</span>
+        <h1 style="font-size:32px; color:var(--amber); margin:12px 0;">Módulo 1 — Prova Final: Sistema Operacional Windows</h1>
+        <p style="font-size:18px; color:var(--ink-light); margin-bottom:6px;">
+          Esta prova contém <strong>15 questões de múltipla escolha</strong> sobre as aulas 1 a 11. Cada questão vale <strong>aproximadamente 0,67 ponto</strong>, totalizando <strong>10,0 pontos</strong>. Nota mínima para aprovação: <strong>7,0</strong>.
+        </p>
+
+        <!-- ESCALA DE PONTUAÇÃO -->
+        <div class="score-scale">
+          <div>
+            <span>QUESTÕES</span>
+            <strong>15 × 0,67</strong>
+          </div>
+          <div>
+            <span>NOTA MÁXIMA</span>
+            <strong>10,0 pontos</strong>
+          </div>
+          <div>
+            <span>APROVAÇÃO</span>
+            <strong>mín. 7,0</strong>
+          </div>
+        </div>
+
+        <!-- PDF Lesson Download & Checkbox Requirement -->
+        <div class="pdf-lesson-box" style="background:var(--paper-beige); border-color:var(--amber);">
+          <div class="pdf-lesson-header">
+            <span class="pdf-lesson-title" style="color:var(--teal-deep);">📄 Material Didático do Módulo</span>
+            <button class="btn-pdf-download" type="button" id="btn-download-pdf-lesson">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Baixar Aulas em PDF
+            </button>
+          </div>
+          <p style="font-size:13.5px; color:var(--ink-dark); margin:0;">
+            Baixe e revise as aulas em PDF do Módulo 1 (Windows) elaboradas pelo <strong>Prof. Marcos Rangel</strong> antes de iniciar a prova.
+          </p>
+          <label class="pdf-unlock-check" for="check-read-pdf">
+            <input type="checkbox" id="check-read-pdf">
+            <span style="color:var(--ink-dark);"><strong>☑ Confirmo que baixei e li o material didático em PDF deste módulo.</strong></span>
+          </label>
+          <div class="pdf-lock-warning" id="pdf-lock-warning">
+            ⚠️ Marque o checkbox acima para desbloquear o botão de iniciar a prova.
+          </div>
+        </div>
+
+        <div style="margin-bottom:24px;">
+          <label for="input-name" style="display:block; font-weight:700; font-size:17px; margin-bottom:8px; color:var(--amber);">Nome Completo do Aluno(a):</label>
+          <input type="text" id="input-name" placeholder="Digite seu nome completo..." style="width:100%; padding:16px; border-radius:12px; border:2px solid var(--line-dark); background:var(--bg-brown); color:var(--ink-light); font-size:18px;">
+        </div>
+
+        <div id="resume-box" style="display:none; margin-bottom:18px; padding:14px; background:var(--amber-soft); border-radius:12px; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+          <span style="font-size:14px; color:#7A4E12;">Existe uma prova em andamento para este nome. ✓ Salvo automaticamente.</span>
+          <div class="resume-actions">
+            <button class="btn btn-amber" id="btn-resume" type="button">Continuar de onde parei</button>
+            <button class="btn btn-ghost" id="btn-restart" type="button" style="background:var(--card-brown); color:var(--amber) !important;">↺ Recomeçar do zero</button>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="btn-start-exam" style="width:100%; font-size:18px; padding:16px;" disabled>Iniciar Prova do Módulo 1 →</button>
+      </div>
+    </section>
+
+    <!-- TELA 2 — 15 QUESTÕES (1 POR TELA) -->
+    <section id="screen-exam" class="screen-quiz">
+      <div class="menu-hub-card" style="padding:28px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; font-family:'JetBrains Mono'; font-size:14px; color:var(--amber);">
+          <span id="q-counter">QUESTÃO 1 DE 15</span>
+          <span>VALOR: 0,67 PONTO</span>
+        </div>
+
+        <div class="question-card-item" style="margin-bottom:20px; background:var(--paper-beige); border-color:var(--line-light);">
+          <div class="q-title" id="q-question-text" style="color:var(--ink-dark); font-size:22px;"></div>
+          <div class="options-stack" id="q-options-container"></div>
+        </div>
+
+        <div class="exam-nav-row">
+          <button type="button" class="btn btn-ghost" id="btn-prev-q" style="background:#FFF9F2;">← Voltar / Anterior</button>
+          <span class="exam-autosave" id="autosave-label">✓ Salvo automaticamente</span>
+          <button type="button" class="btn btn-primary" id="btn-next-q" disabled>Próxima Questão →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 3 — RESULTADO E CERTIFICADO DE CONCLUSÃO WR -->
+    <section id="screen-result" class="screen-quiz">
+      <div class="menu-hub-card">
+        <div class="result-badge-box" id="res-badge"></div>
+        <h1 id="res-title" style="font-size:32px; color:var(--amber);"></h1>
+        <p id="res-subtitle" style="font-size:18px; color:var(--ink-light); margin-bottom:20px;"></p>
+
+        <!-- DETALHAMENTO DA NOTA -->
+        <div class="score-breakdown" id="res-breakdown"></div>
+
+        <!-- CERTIFICADO OFICIAL WR CAPACITAÇÃO (A4 LANDSCAPE / HORIZONTAL) -->
+        <div class="cert-thumb-wrap" id="cert-thumb-wrap">
+        <div id="wr-certificate-card" class="certificate-landscape" style="display:none;">
+          <!-- Cabeçalho Institucional -->
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #D4AF37; padding-bottom:14px; margin-bottom:18px; flex-wrap:wrap; gap:12px;">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <img src="../../assets/img/professor-rangel.png" alt="Prof. Marcos Rangel" style="width:54px; height:54px; border-radius:50%; border:2px solid #EA580C; object-fit:cover;">
+              <div style="text-align:left;">
+                <span style="font-weight:700; font-size:16px; color:#8E2C07; letter-spacing:0.5px; display:block;">WR CAPACITAÇÃO PROFISSIONAL</span>
+                <span style="font-size:12px; color:#5A4232; font-weight:600;">Instituição de Ensino & Capacitação Técnica</span><br>
+                <a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" style="font-size:12px; color:#EA580C; text-decoration:none; font-weight:700;">www.wrcapacitacaoprofissional.net</a>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <span class="certificate-seal-badge">🎓 CERTIFICADO DE CONCLUSÃO</span><br>
+              <span style="font-size:11px; color:#7A5E4D; margin-top:4px; display:block;">Portaria de Emissão Didática Presencial</span>
+            </div>
+          </div>
+
+          <!-- Título Solene -->
+          <h2 style="font-family:'Fraunces', serif; font-size:28px; color:#8E2C07; margin:14px 0 6px 0; text-transform:uppercase; letter-spacing:1.5px;">CERTIFICADO DE CONCLUSÃO DE MÓDULO</h2>
+          <p style="font-size:16px; color:#4A3528; margin:0 0 10px 0;">Certificamos para os devidos fins que o(a) aluno(a):</p>
+
+          <!-- Nome do Aluno -->
+          <div style="margin:12px 0 16px 0;">
+            <h3 id="cert-student-name" style="font-family:'Fraunces', serif; font-size:32px; color:#20130B; border-bottom:2px solid #EA580C; display:inline-block; padding:0 32px 4px 32px; margin:0; text-transform:uppercase;"></h3>
+          </div>
+
+          <!-- Texto de Conclusão -->
+          <p style="font-size:16px; color:#20130B; line-height:1.6; max-width:760px; margin:0 auto 20px auto;">
+            concluiu com pleno êxito e excelente aproveitamento todas as 11 Aulas e 2 Complementos componentes do <strong>Módulo 1: Sistema Operacional Windows</strong> no Portal Didático de Informática Básica emitido pela <strong>WR Capacitação Profissional</strong>.
+          </p>
+
+          <!-- Especificações Técnicas -->
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin:0 auto 24px auto; max-width:760px;">
+            <div style="background:#FFFFFF; border:1.5px solid #E6D2C1; border-radius:10px; padding:10px 14px;">
+              <span style="font-size:11.5px; color:#8A5A17; font-weight:700; display:block;">📚 CONTEÚDO CONCLUÍDO</span>
+              <strong style="font-size:16px; color:#20130B;">11 Aulas + 2 Complementos</strong>
+            </div>
+            <div style="background:#FFFFFF; border:1.5px solid #E6D2C1; border-radius:10px; padding:10px 14px;">
+              <span style="font-size:11.5px; color:#8A5A17; font-weight:700; display:block;">🏆 APROVEITAMENTO FINAL</span>
+              <strong id="cert-score-display" style="font-size:16px; color:#EA580C;">10,0 / 10,0</strong>
+            </div>
+            <div style="background:#FFFFFF; border:1.5px solid #E6D2C1; border-radius:10px; padding:10px 14px;">
+              <span style="font-size:11.5px; color:#8A5A17; font-weight:700; display:block;">🌐 ESCOLA EMISSORA</span>
+              <strong style="font-size:12px; color:#20130B;">wrcapacitacaoprofissional.net</strong>
+            </div>
+          </div>
+
+          <!-- Assinaturas Duplas Alinhadas Horizontalmente -->
+          <div style="display:flex; justify-content:space-around; align-items:flex-end; margin-top:28px; padding-top:16px; border-top:1px dashed #D4AF37;">
+            <div style="text-align:center; width:40%;">
+              <div style="border-top:1.5px solid #4A3528; padding-top:6px;">
+                <strong style="font-size:14px; color:#20130B; display:block;">Prof. Marcos Rangel</strong>
+                <span style="font-size:12px; color:#6B4E3D;">Desenvolvedor & Instrutor de Informática</span>
+              </div>
+            </div>
+            <div style="text-align:center; width:40%;">
+              <div style="border-top:1.5px solid #4A3528; padding-top:6px;">
+                <strong style="font-size:14px; color:#20130B; display:block;">WR Capacitação Profissional</strong>
+                <span style="font-size:12px; color:#6B4E3D;">Direção & Coordenação de Ensino</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rodapé de Autenticidade -->
+          <div style="margin-top:20px; font-size:11px; color:#7A5E4D; display:flex; justify-content:space-between; align-items:center; border-top:1px solid #E6D2C1; padding-top:10px;">
+            <span>🔒 Código de Autenticidade (SHA-256): <code id="cert-sha-code" style="color:#EA580C; font-weight:700;">WR-AUTH-OK</code></span>
+            <span>Verificação de Emissão: <a href="https://www.wrcapacitacaoprofissional.net/" target="_blank" style="color:#8E2C07; text-decoration:none; font-weight:700;">wrcapacitacaoprofissional.net</a></span>
+          </div>
+        </div>
+        </div>
+
+        <div style="background:var(--bg-brown); border:1px solid var(--line-dark); border-radius:16px; padding:18px; text-align:center; margin-bottom:20px;">
+          <span style="font-size:15px; color:var(--ink-soft);">Nota Final na Prova:</span><br>
+          <strong id="res-score" style="font-size:32px; color:var(--amber); font-family:'JetBrains Mono';">0,0 / 10,0</strong>
+        </div>
+
+        <div class="signature-badge-box" id="signature-box" style="background:var(--bg-brown); border-color:var(--amber); margin-bottom:24px;">
+          <div class="signature-badge-header">
+            <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+          </div>
+          <div class="signature-code-display" id="signature-code" style="color:var(--amber);">WR-AUTH-CALCULATING...</div>
+          <div class="signature-badge-desc" style="color:var(--ink-soft);">
+            Código de autenticidade criptográfico (SHA-256) gerado automaticamente. Evita adulterações no comprovante ou nota do aluno.
+          </div>
+        </div>
+
+        <!-- BARRA DE BOTÕES OFICIAIS -->
+        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+          <button type="button" class="btn btn-cert-toggle no-print" id="btn-cert-toggle">🔍 Ampliar Certificado</button>
+          <button type="button" class="btn btn-primary" id="btn-download-cert">📄 Baixar Comprovante TXT</button>
+          <button type="button" class="btn" style="background:var(--amber); color:#120B06; font-weight:700;" id="btn-download-pdf-cert">📑 Baixar Certificado PDF</button>
+          <button type="button" class="btn" style="background:var(--whatsapp); color:#fff;" id="btn-wa-res">📱 Enviar WhatsApp</button>
+          <button type="button" class="btn btn-ghost" style="background:var(--card-brown); color:var(--amber) !important;" id="btn-email-res">✉️ Enviar E-mail ao Professor</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+  (function(){
+    "use strict";
+
+    // Senhas aceitas: senha do módulo (wr0926), senha da Aula 12 (wr1226) e a senha universal de testes (wr2026).
+    const PROVA_PASS = "wr0926";
+    const PROVA_PASS_ALIASES = ["wr1226", "wr2026"];
+    const MODULE_ID = "windows";
+    const MODULE_TITLE = "Módulo 1: Sistema Operacional Windows";
+    const STORAGE_KEY = "prova-windows-prof-rangel";
+    const PASS_SCORE = 7.0;
+    const EXAM_MAX = 10.0;
+
+    const QUESTIONS = [
+      {
+        q: "1. Segundo a linha do tempo da aula, em que ano Bill Gates fundou a Microsoft e em que ano foi lançado o Windows 1.0?",
+        options: [
+          "1965 e 1995",
+          "1975 e 1985",
+          "1981 e 1991",
+          "1990 e 2000"
+        ],
+        correct: 1
+      },
+      {
+        q: "2. Ao ler o caminho de um arquivo C:\\Users\\Joao\\Documents\\Trabalho.docx, o que representa a pasta Documents?",
+        options: [
+          "O disco rígido onde o arquivo está salvo.",
+          "O programa usado para abrir o arquivo.",
+          "A pasta de documentos do usuário Joao.",
+          "A extensão que identifica o tipo do arquivo."
+        ],
+        correct: 2
+      },
+      {
+        q: "3. Quantos bits formam 1 Byte?",
+        options: [
+          "4 bits",
+          "16 bits",
+          "1.024 bits",
+          "8 bits"
+        ],
+        correct: 3
+      },
+      {
+        q: "4. No Windows 10, como abrir o Painel de Controle pela caixa Executar?",
+        options: [
+          "Win + R e digite control",
+          "Win + E e digite paint",
+          "Ctrl + Shift + N",
+          "Win + I e digite cmd"
+        ],
+        correct: 0
+      },
+      {
+        q: "5. Em qual versão do Windows o \"Windows Explorer\" passou a se chamar \"Explorador de Arquivos\"?",
+        options: [
+          "Windows XP apenas",
+          "Windows 95 e 98",
+          "O nome nunca mudou",
+          "Windows 8, 10 e 11"
+        ],
+        correct: 3
+      },
+      {
+        q: "6. Qual a diferença entre \"Salvar\" (Ctrl + S) e \"Salvar Como\" (F12) no WordPad?",
+        options: [
+          "Salvar abre a janela para escolher um novo nome; Salvar Como sobrescreve o arquivo aberto.",
+          "Salvar Como só funciona com arquivos no formato .pdf.",
+          "Salvar sobrescreve o arquivo mantendo nome e local; Salvar Como abre a janela para escolher nome, local e formato, mantendo o arquivo original.",
+          "Os dois comandos fazem exatamente a mesma coisa."
+        ],
+        correct: 2
+      },
+      {
+        q: "7. Qual antivírus é usado no Windows 7 e o que é necessário para utilizá-lo?",
+        options: [
+          "Windows Defender, que já vem ativado no sistema.",
+          "Microsoft Security Essentials, que precisa ser baixado e instalado manualmente.",
+          "McAfee, que acompanha a licença comprada do Windows.",
+          "Nenhum, pois o Windows 7 não permite instalar antivírus."
+        ],
+        correct: 1
+      },
+      {
+        q: "8. Qual atalho de teclado abre o Explorador de Arquivos no Windows?",
+        options: [
+          "Ctrl + P",
+          "Alt + F4",
+          "Windows + E",
+          "Windows + R"
+        ],
+        correct: 2
+      },
+      {
+        q: "9. Para restaurar o Windows 11 pela interface gráfica, qual é o caminho correto?",
+        options: [
+          "Painel de Controle > Hardware > Impressoras",
+          "Explorador de Arquivos > Disco C: > Windows",
+          "Configurações > Sistema > Recuperação > Restaurar o computador",
+          "Bloco de Notas > Arquivo > Restaurar"
+        ],
+        correct: 2
+      },
+      {
+        q: "10. No Windows, o que acontece quando você seleciona um arquivo e aperta a tecla Delete?",
+        options: [
+          "O arquivo é renomeado automaticamente.",
+          "O arquivo é enviado por e-mail.",
+          "O arquivo vai para a Lixeira e pode ser recuperado.",
+          "O arquivo é apagado para sempre, sem chance de recuperar."
+        ],
+        correct: 2
+      },
+      {
+        q: "11. No Windows, para que serve uma pasta?",
+        options: [
+          "Para deixar o computador mais lento.",
+          "Para organizar e guardar arquivos, como uma gaveta.",
+          "Para instalar o sistema operacional.",
+          "Para conectar o computador à internet."
+        ],
+        correct: 1
+      },
+      {
+        q: "12. Qual é o atalho da Ferramenta de Captura (recorte de tela) no Windows 10?",
+        options: [
+          "Ctrl + P",
+          "Windows + Shift + S",
+          "Alt + F4",
+          "Windows + E"
+        ],
+        correct: 1
+      },
+      {
+        q: "13. Qual a diferença entre os endereços IP e MAC de um computador?",
+        options: [
+          "IP é fixo de fábrica; MAC muda a cada reinício do computador.",
+          "IP é endereço lógico, atribuído pela rede e que pode mudar; MAC é endereço físico, gravado de fábrica na placa de rede, que não muda.",
+          "Os dois são o mesmo endereço, apenas com nomes diferentes.",
+          "IP serve apenas para jogos; MAC serve apenas para e-mail."
+        ],
+        correct: 1
+      },
+      {
+        q: "14. Qual antivírus já vem instalado no Windows 10 e 11?",
+        options: [
+          "Microsoft Office",
+          "Google Chrome",
+          "WordPad",
+          "Windows Defender (Segurança do Windows)"
+        ],
+        correct: 3
+      },
+      {
+        q: "15. No Windows 10 e 11, qual atalho do teclado abre a Lupa (Ampliador de tela)?",
+        options: [
+          "Windows + \"+\" (mais)",
+          "Ctrl + L",
+          "Windows + M",
+          "Alt + Shift + S"
+        ],
+        correct: 0
+      }
+    ];
+
+    const TOTAL = QUESTIONS.length;
+    const POINTS_PER_Q = EXAM_MAX / TOTAL;
+
+    function freshState(){
+      return {
+        name: "",
+        pdfRead: false,
+        current: 0,
+        answers: new Array(TOTAL).fill(null),
+        signature: null
+      };
+    }
+
+    function normalizeState(raw){
+      const s = Object.assign(freshState(), raw || {});
+      if(!Array.isArray(s.answers) || s.answers.length !== TOTAL){
+        s.answers = freshState().answers;
+      }
+      if(typeof s.current !== "number" || s.current < 0 || s.current >= TOTAL) s.current = 0;
+      return s;
+    }
+
+    let state = freshState();
+
+    /* ============ FORMATADORES DE NOTA ============ */
+    function fmtScore(n){
+      const r = Math.round(n * 100) / 100;
+      let out;
+      if(Number.isInteger(r)) out = r.toFixed(1);
+      else if((r * 100) % 10 === 0) out = r.toFixed(1);
+      else out = r.toFixed(2);
+      return out.replace(".", ",");
+    }
+
+    /* ============ CÁLCULO (somente questões) ============ */
+    function computeScore(){
+      let correct = 0;
+      QUESTIONS.forEach(function(q, i){ if(state.answers[i] === q.correct) correct++; });
+      return {
+        correct: correct,
+        score: correct * POINTS_PER_Q
+      };
+    }
+
+    /* ============ NAVEGAÇÃO DE TELAS ============ */
+    function showQuizScreen(id){
+      document.querySelectorAll(".screen-quiz").forEach(function(s){ s.classList.remove("active"); });
+      const sec = document.getElementById(id);
+      if(sec) sec.classList.add("active");
+    }
+
+    function checkStartUnlock(){
+      const name = document.getElementById("input-name").value.trim();
+      const readCheck = document.getElementById("check-read-pdf").checked;
+      const startBtn = document.getElementById("btn-start-exam");
+      const warning = document.getElementById("pdf-lock-warning");
+
+      state.pdfRead = readCheck;
+
+      if(readCheck && name.length > 0){
+        startBtn.disabled = false;
+        warning.style.display = "none";
+      } else {
+        startBtn.disabled = true;
+        warning.style.display = "block";
+      }
+    }
+
+    function checkResume(name){
+      checkStartUnlock();
+      const box = document.getElementById("resume-box");
+      if(!name.trim()){ box.style.display = "none"; return; }
+      const loaded = window.QuizEngine.loadState(STORAGE_KEY, name);
+      box.style.display = loaded ? "flex" : "none";
+    }
+
+    if(sessionStorage.getItem("prova_unlocked_m12") === "true"){
+      showQuizScreen("screen-start");
+    }
+
+    document.getElementById("btn-unlock-exam").onclick = function(){
+      const val = document.getElementById("input-exam-pass").value.trim().toLowerCase();
+      if(val === PROVA_PASS || PROVA_PASS_ALIASES.indexOf(val) !== -1){
+        sessionStorage.setItem("prova_unlocked_m12", "true");
+        showQuizScreen("screen-start");
+      } else {
+        alert("❌ Senha incorreta. Por favor, solicite a senha da prova ao professor.");
+      }
+    };
+
+    /* ============ TELA DAS QUESTÕES ============ */
+    function renderQuestionCard(){
+      const q = QUESTIONS[state.current];
+      document.getElementById("q-counter").textContent = "QUESTÃO " + (state.current + 1) + " DE " + TOTAL;
+      document.getElementById("q-question-text").textContent = q.q;
+
+      const optsContainer = document.getElementById("q-options-container");
+      optsContainer.innerHTML = "";
+
+      q.options.forEach(function(optText, idx){
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option-btn-card" + (state.answers[state.current] === idx ? " selected" : "");
+        btn.innerHTML = '<span class="letter-badge">' + String.fromCharCode(65 + idx) + '</span><span>' + optText + '</span>';
+        btn.onclick = function(){
+          state.answers[state.current] = idx;
+          renderQuestionCard();
+          window.QuizEngine.saveState(STORAGE_KEY, state);
+        };
+        optsContainer.appendChild(btn);
+      });
+
+      document.getElementById("btn-prev-q").style.visibility = state.current === 0 ? "hidden" : "visible";
+      document.getElementById("btn-next-q").disabled = state.answers[state.current] === null;
+      document.getElementById("btn-next-q").textContent = state.current === TOTAL - 1 ? "Ver Resultado ✓" : "Próxima Questão →";
+    }
+
+    /* ============ RESULTADO, CERTIFICADO E COMPROVANTES ============ */
+    async function renderResult(){
+      const { correct, score } = computeScore();
+      const passed = score >= PASS_SCORE;
+
+      const timestamp = state.signature ? state.signature.timestamp : Date.now();
+      state.signature = await window.QuizEngine.generateDigitalSignature(state.name, MODULE_TITLE, score, TOTAL, timestamp);
+      window.QuizEngine.saveState(STORAGE_KEY, state);
+
+      document.getElementById("res-score").textContent = fmtScore(score) + " / 10,0";
+      document.getElementById("signature-code").textContent = state.signature.authCode;
+
+      document.getElementById("res-breakdown").innerHTML =
+        "Questões corretas: <strong>" + correct + " de " + TOTAL + "</strong>" +
+        "<br>Nota final: <strong>" + fmtScore(score) + " de 10,0 pontos</strong>";
+
+      const badge = document.getElementById("res-badge");
+      const title = document.getElementById("res-title");
+      const sub = document.getElementById("res-subtitle");
+      const certCard = document.getElementById("wr-certificate-card");
+
+      if(passed){
+        badge.className = "result-badge-box pass"; badge.textContent = "🎉";
+        title.textContent = "Parabéns, " + state.name.split(" ")[0] + "!";
+        sub.textContent = "Você foi APROVADO(A) na Prova Final do Módulo Windows com nota " + fmtScore(score) +
+          " (questões " + correct + "/" + TOTAL + ")! Seu Certificado de Conclusão da WR Capacitação Profissional está disponível abaixo.";
+
+        if(certCard){
+          certCard.style.display = "block";
+          document.getElementById("cert-student-name").textContent = state.name;
+          document.getElementById("cert-score-display").textContent = fmtScore(score) + " / 10,0";
+          const shaEl = document.getElementById("cert-sha-code");
+          if(shaEl) shaEl.textContent = state.signature.authCode;
+        }
+      } else {
+        badge.className = "result-badge-box fail"; badge.textContent = "📘";
+        title.textContent = "Atenção, " + state.name.split(" ")[0] + ".";
+        sub.textContent = "Você obteve nota " + fmtScore(score) + " (questões " + correct + "/" + TOTAL +
+          "). A nota mínima para aprovação é 7,0. " +
+          "Revise as aulas do Módulo 1 em PDF com o Prof. Marcos Rangel e tente novamente!";
+        if(certCard) certCard.style.display = "none";
+      }
+
+      showQuizScreen("screen-result");
+    }
+
+    function getReportData(){
+      const { correct, score } = computeScore();
+      return {
+        studentName: state.name,
+        moduleId: MODULE_ID,
+        moduleTitle: MODULE_TITLE,
+        correct: correct,
+        total: TOTAL,
+        score: score,
+        passed: score >= PASS_SCORE,
+        signature: state.signature,
+        answers: state.answers,
+        questions: QUESTIONS,
+        extraNotes: [
+          "Fórmula da nota: " + correct + "/" + TOTAL + " questões (aproximadamente 0,67 ponto cada)"
+        ]
+      };
+    }
+
+    /* ============ EVENT LISTENERS ============ */
+    document.getElementById("btn-download-pdf-lesson").onclick = function(){
+      window.PDFLessons.downloadLessonPDF(MODULE_ID);
+    };
+
+    document.getElementById("check-read-pdf").onchange = checkStartUnlock;
+    const nameInput = document.getElementById("input-name");
+    nameInput.addEventListener("input", function(){ checkResume(nameInput.value); });
+
+    document.getElementById("btn-start-exam").onclick = function(){
+      const name = nameInput.value.trim();
+      if(!name){ alert("Por favor, digite seu nome completo."); return; }
+      if(!document.getElementById("check-read-pdf").checked){
+        alert("Por favor, confirme que baixou e leu o material didático em PDF."); return;
+      }
+      state = freshState();
+      state.name = name;
+      state.pdfRead = true;
+      showQuizScreen("screen-exam");
+      renderQuestionCard();
+      window.QuizEngine.saveState(STORAGE_KEY, state);
+    };
+
+    document.getElementById("btn-resume").onclick = function(){
+      const name = nameInput.value.trim();
+      const loaded = window.QuizEngine.loadState(STORAGE_KEY, name);
+      if(loaded){
+        state = normalizeState(loaded);
+        document.getElementById("check-read-pdf").checked = state.pdfRead || false;
+        checkStartUnlock();
+        showQuizScreen("screen-exam");
+        renderQuestionCard();
+      }
+    };
+
+    // "Recomeçar do zero": apaga a chave no localStorage e zera o estado em memória.
+    document.getElementById("btn-restart").onclick = function(){
+      const name = nameInput.value.trim();
+      if(!name) return;
+      if(!window.confirm("Apagar o progresso salvo desta prova e recomeçar do zero?")) return;
+      localStorage.removeItem(STORAGE_KEY + ":" + name.toLowerCase().trim());
+      state = freshState();
+      document.getElementById("check-read-pdf").checked = false;
+      document.getElementById("resume-box").style.display = "none";
+      checkStartUnlock();
+    };
+
+    document.getElementById("btn-prev-q").onclick = function(){
+      if(state.current > 0){ state.current--; renderQuestionCard(); window.QuizEngine.saveState(STORAGE_KEY, state); }
+    };
+
+    document.getElementById("btn-next-q").onclick = function(){
+      if(state.current < TOTAL - 1){
+        state.current++;
+        renderQuestionCard();
+        window.QuizEngine.saveState(STORAGE_KEY, state);
+      } else {
+        renderResult();
+      }
+    };
+
+    document.getElementById("btn-download-cert").onclick = function(){
+      window.QuizEngine.downloadTxtReport(getReportData());
+    };
+
+    document.getElementById("btn-download-pdf-cert").onclick = function(){
+      window.print();
+    };
+
+    const certToggleBtn = document.getElementById("btn-cert-toggle");
+    if(certToggleBtn){
+      certToggleBtn.onclick = function(){
+        const wrap = document.getElementById("cert-thumb-wrap");
+        const isExpanded = wrap.classList.toggle("expanded");
+        certToggleBtn.innerHTML = isExpanded ? "− Recolher Miniatura" : "🔍 Ampliar Certificado";
+      };
+    }
+
+    document.getElementById("btn-wa-res").onclick = function(){
+      const url = window.QuizEngine.buildWhatsAppUrl(getReportData());
+      window.open(url, "_blank");
+    };
+
+    document.getElementById("btn-email-res").onclick = function(){
+      window.QuizEngine.openGmailComposer(getReportData());
+    };
+
+  })();
+  </script>
+</body>
+</html>
