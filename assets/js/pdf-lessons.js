@@ -1058,6 +1058,268 @@ window.PDFLessons = (function() {
           boxText: "Use o simulador para testar o exemplo 'Rangel' (letra→binário) e refazer a conversão 13→1101 (decimal→binário) até dominar o método das divisões por 2."
         },
         {
+          lessonNum: 4,
+          chapter: "AULA 04: PAINEL DE CONTROLE E CONFIGURAÇÕES NO WINDOWS",
+          heading: "4.0 FASE 0 — Antes de Começar",
+          content: "Objetivo desta aula: aprender a ajustar o computador por dentro — abrir o Painel de Controle e o app Configurações, entender a diferença entre os dois e usá-los para mexer em data/hora, idioma, rede, aplicativos instalados e contas de usuário, no Windows 7, 10 e 11.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">ROTEIRO DA AULA (8 PASSOS)</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>#</th><th>Passo a Passo</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>O que é o Painel de Controle e como abri-lo (Win 7, 10 e 11).</td></tr>
+                  <tr><td>2</td><td>Configurações × Painel de Controle: qual usar em cada versão.</td></tr>
+                  <tr><td>3</td><td>Ajustar data, hora, fuso horário e idioma.</td></tr>
+                  <tr><td>4</td><td>Ver e configurar as conexões de rede.</td></tr>
+                  <tr><td>5</td><td>Desinstalar aplicativos e remover recursos do Windows.</td></tr>
+                  <tr><td>6</td><td>Criar e gerenciar contas de usuário.</td></tr>
+                  <tr><td>7</td><td>Como o Painel de Controle evoluiu no Windows 10 e 11.</td></tr>
+                  <tr><td>8</td><td>Prática guiada usando os dois caminhos no seu computador.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>🏁 Resultado esperado ao final da aula</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Chegar sozinho às configurações do Windows pelo atalho <strong>Win + I</strong> (Configurações) ou por <strong>Win + R</strong> → <strong>control</strong> (Painel de Controle).</p>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula4/image15.png",
+              caption: "Ícone do Painel de Controle, o centro tradicional de ajustes do Windows."
+            }
+          ]
+        },
+        {
+          lessonNum: 4,
+          heading: "4.1 O que é o Painel de Controle e como acessá-lo",
+          content: "O Painel de Controle (Control Panel) é o centro tradicional de ajustes do Windows. É por ele que se configuram data e hora, idioma, redes, instalação e remoção de programas e contas de usuário. No Windows 10 e 11 o app Configurações ganhou espaço, mas o Painel de Controle ainda existe e continua sendo necessário para várias tarefas.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">COMO ABRIR O PAINEL DE CONTROLE</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Versão</th><th>Caminho</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Windows 7</strong></td><td>Menu Iniciar → Painel de Controle.</td></tr>
+                  <tr><td><strong>Windows 10</strong></td><td><kbd>Win + R</kbd> → digite <code>control</code> → Enter (ou pesquise "Painel de Controle").</td></tr>
+                  <tr><td><strong>Windows 11</strong></td><td>Menu Iniciar → digite "Painel de Controle"; ou <kbd>Win + R</kbd> → <code>control</code>.</td></tr>
+                  <tr><td><strong>Configurações</strong></td><td>Atalho <kbd>Win + I</kbd> (app moderno do Win 10/11).</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula4/image15.png",
+              caption: "Ícone do Painel de Controle no menu Iniciar do Windows."
+            }
+          ]
+        },
+        {
+          lessonNum: 4,
+          heading: "4.2 Configurações × Painel de Controle",
+          content: "No Windows 10 e 11 o app Configurações é uma repaginação do Painel de Controle, com visual mais atual e minimalista, organizado por categorias. Mesmo assim, o Painel de Controle clássico continua presente nessas versões — várias páginas antigas apenas redirecionam para o Configurações.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">DICA PRÁTICA DE NAVEGAÇÃO</div>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">Use <kbd>Win + I</kbd> para o <strong>Configurações</strong> (moderno) e <kbd>Win + R</kbd> → <code>control</code> para o <strong>Painel de Controle</strong> (clássico). Se não achar uma opção em um, procure no outro.</p>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula4/image17.png",
+              caption: "Ícone do app Configurações do Windows."
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image1.png",
+              caption: "Tela inicial do app Configurações no Windows 11."
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image8.png",
+              caption: "Painel de Controle clássico, ainda presente no Windows 7, 10 e 11."
+            }
+          ]
+        },
+        {
+          lessonNum: 4,
+          heading: "4.3 Ajustar Data, Hora e Idioma",
+          content: "No Windows 7, use o Painel de Controle em Relógio, Idioma e Região (Data e Hora para data/hora e fuso horário; Região e Idioma para o idioma do sistema). No Windows 10 e 11, abra Configurações (Win + I) e clique em Hora e Idioma para ajustar fuso, sincronização automática e idioma.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">DATA, HORA E IDIOMA — CAMINHOS</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Versão</th><th>Onde ajustar</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Windows 7</strong></td><td>Painel de Controle → Relógio, Idioma e Região → Data e Hora / Região e Idioma.</td></tr>
+                  <tr><td><strong>Windows 10/11</strong></td><td>Configurações (<kbd>Win + I</kbd>) → Hora e Idioma.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula4/image2.png",
+              caption: "Janela de Data e Hora no Painel de Controle (Windows 7)."
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image13.png",
+              caption: "Hora e Idioma no app Configurações (Windows 10/11)."
+            }
+          ]
+        },
+        {
+          lessonNum: 4,
+          heading: "4.4 Configurações de Rede",
+          content: "No Painel de Controle, acesse Rede e Internet → Central de Redes e Compartilhamento para configurar conexões Wi-Fi e Ethernet, gerenciar adaptadores de rede e alterar as opções de compartilhamento de arquivos e impressoras. No Windows 10 e 11, o Configurações → Rede e Internet reúne essas opções com visual moderno.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">O QUE DÁ PARA FAZER NA REDE</div>
+              <ul style="margin:8px 0 0 20px; line-height:1.7; font-size:12.5px; color:#20130B;">
+                <li>Configurar conexões <strong>Wi-Fi</strong> e <strong>Ethernet</strong>.</li>
+                <li>Gerenciar os <strong>adaptadores de rede</strong>.</li>
+                <li>Alterar o <strong>compartilhamento</strong> de arquivos e impressoras.</li>
+              </ul>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula4/image10.png",
+              caption: "Central de Redes e Compartilhamento no Windows."
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image5.png",
+              caption: "Propriedades de uma conexão de rede."
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image16.png",
+              caption: "Rede e Internet no app Configurações.",
+              wide: true
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image4.png",
+              caption: "Adaptadores de rede no Windows.",
+              wide: true
+            }
+          ]
+        },
+        {
+          lessonNum: 4,
+          heading: "4.5 Remover Aplicativos e Recursos do Windows",
+          content: "No Windows 7, use o Painel de Controle em Programas e Recursos: selecione o programa e clique em Desinstalar. No Windows 10 e 11, abra Configurações (Win + I) → Aplicativos: no Windows 10 é Aplicativos e recursos; no Windows 11 é Aplicativos instalados. Escolha o aplicativo e clique em Desinstalar.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">DESINSTALAR PROGRAMAS — CAMINHOS</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Versão</th><th>Onde desinstalar</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Windows 7</strong></td><td>Painel de Controle → Programas e Recursos → Desinstalar.</td></tr>
+                  <tr><td><strong>Windows 10</strong></td><td>Configurações → Aplicativos → Aplicativos e recursos.</td></tr>
+                  <tr><td><strong>Windows 11</strong></td><td>Configurações → Aplicativos → Aplicativos instalados.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula4/image11.png",
+              caption: "Programas e Recursos no Painel de Controle (Windows 7).",
+              wide: true
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image3.png",
+              caption: "Lista de aplicativos instalados no Windows."
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image12.png",
+              caption: "Tela de desinstalação de um aplicativo no Windows."
+            }
+          ]
+        },
+        {
+          lessonNum: 4,
+          heading: "4.6 Criar e Gerenciar Contas de Usuário",
+          content: "No Windows 7, use o Painel de Controle em Contas de Usuário: Gerenciar outra conta → Criar nova conta; digite o nome e escolha Padrão ou Administrador. No Windows 10 e 11, abra Configurações (Win + I) → Contas → Família e outros usuários → Adicionar outra pessoa a este PC. Para criar um usuário local sem e-mail Microsoft, escolha 'Não tenho as informações de login desta pessoa'.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">CONTAS DE USUÁRIO — CAMINHOS</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Versão</th><th>Onde criar/gerenciar</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Windows 7</strong></td><td>Painel de Controle → Contas de Usuário → Gerenciar outra conta → Criar nova conta.</td></tr>
+                  <tr><td><strong>Windows 10/11</strong></td><td>Configurações → Contas → Família e outros usuários → Adicionar outra pessoa a este PC.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight">
+              <h4>🔐 Conta local sem e-mail</h4>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">No Windows 10/11, ao adicionar um usuário, escolha <strong>"Não tenho as informações de login desta pessoa"</strong> para criar uma conta local em vez de uma conta Microsoft.</p>
+            </div>
+          `,
+          images: [
+            {
+              src: "../../assets/img/windows/Aula4/image9.png",
+              caption: "Criação de conta de usuário no Windows 7."
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image14.png",
+              caption: "Alterar a senha da conta de usuário."
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image7.png",
+              caption: "Contas no app Configurações (Windows 10/11)."
+            },
+            {
+              src: "../../assets/img/windows/Aula4/image6.png",
+              caption: "Adicionar um usuário no Windows 10/11.",
+              wide: true
+            }
+          ]
+        },
+        {
+          lessonNum: 4,
+          heading: "4.7 Evolução do Painel de Controle no Windows 10 e 11",
+          content: "O Windows 10 e o Windows 11 introduziram o app Configurações, que substitui parcialmente o Painel de Controle. Muitas configurações migraram para essa interface mais moderna e intuitiva. No Windows 10, o Painel de Controle ainda é acessível, mas muitas funções foram movidas para Configurações; no Windows 11, a Microsoft reforçou a transição e o Configurações passou a ser a porta de entrada principal.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">RESUMO DO TÓPICO 7</div>
+              <p style="margin:0; font-size:12.5px; color:#20130B;">O Painel de Controle <strong>não foi removido</strong> — ele convive com o app Configurações. Saber usar os dois garante que você encontre qualquer ajuste, independente da versão do Windows.</p>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Dica",
+          boxText: "Se uma opção não aparece no Configurações, procure no Painel de Controle — e vice-versa. Muitos ajustes avançados ainda só existem na interface clássica."
+        },
+        {
+          lessonNum: 4,
+          heading: "4.8 Exercício Prático de Campo",
+          content: "Fixar essa aula só com leitura não basta. Pratique os dois caminhos no seu próprio computador: pressione Win + I e explore as categorias do Configurações; pressione Win + R, digite control e abra o Painel de Controle; encontre Data/Hora, Rede e Compartilhamento e Contas de Usuário nas duas interfaces; e anote as diferenças de nomes e de disposição.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">PASSO A PASSO DA PRÁTICA</div>
+              <ol style="margin:8px 0 0 20px; line-height:1.8; font-size:12.5px; color:#20130B;">
+                <li>Pressione <kbd>Win + I</kbd> e explore as categorias do <strong>Configurações</strong>.</li>
+                <li>Pressione <kbd>Win + R</kbd>, digite <code>control</code> e abra o <strong>Painel de Controle</strong>.</li>
+                <li>Em cada janela, encontre: <strong>Data/Hora</strong>, <strong>Rede e Compartilhamento</strong> e <strong>Contas de Usuário</strong>.</li>
+                <li>Anote as diferenças de nomes e de disposição entre as duas interfaces.</li>
+              </ol>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Pratique para fixar",
+          boxText: "Fazer a mesma tarefa (por exemplo, ver o fuso horário) nos dois caminhos ajuda a memorizar por onde começar quando precisar."
+        },
+        {
           lessonNum: 8,
           chapter: "AULA 08: DIAGNÓSTICO DE MEMÓRIA, RESTAURAÇÃO DO SISTEMA E MÍDIA DE INSTALAÇÃO",
           heading: "8.1 Diagnóstico de Memória RAM do Windows (Teste de Memória)",
@@ -4118,7 +4380,8 @@ O Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, va
         7: "Aula 07: Segurança e Antivírus no Windows",
         71: "Complemento 7A — Backup Automático com Arquivo .BAT",
         81: "Complemento 8A — Tutorial: Como Criar Pendrive/DVD de Instalação do Windows",
-        8: "Aula 08: Diagnóstico de Memória, Restauração do Sistema e Mídia de Instalação"
+        8: "Aula 08: Diagnóstico de Memória, Restauração do Sistema e Mídia de Instalação",
+        4: "Aula 04: Painel de Controle e Configurações no Windows — Ajustes do Sistema"
       },
       excel: {
         1: "Aula 01: Introdução ao Excel, Interface, Tipos de Dados e Navegação",
@@ -4172,11 +4435,12 @@ O Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, va
     const figure = (item) => {
       const src = typeof item === 'string' ? item : (item && item.src);
       const caption = typeof item === 'string' ? '' : ((item && item.caption) || '');
+      const wide = typeof item === 'object' && item && item.wide;
       if (!src) return '';
       const captionBlock = caption
         ? `<p class="pdf-img-caption">📷 <em>${caption}</em></p>`
         : '';
-      return `<div class="pdf-img-container">
+      return `<div class="pdf-img-container${wide ? ' pdf-img-wide' : ''}">
           <img src="${resolveImagePath(src)}" alt="${caption || 'Ilustração Didática'}">
           ${captionBlock}
         </div>`;
@@ -4378,6 +4642,16 @@ O Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, va
             width: 100%;
           }
           .pdf-img-grid-wide > .pdf-img-container img {
+            max-width: 100%;
+            max-height: 900px;
+          }
+          /* wide por imagem: dentro de um grid normal (2 por linha), esta
+            imagem ocupa a linha inteira. Usado quando SO algumas capturas
+            da secao precisam ficar grandes (as demais seguem em 2 colunas). */
+          .pdf-img-grid > .pdf-img-container.pdf-img-wide {
+            width: 100%;
+          }
+          .pdf-img-grid > .pdf-img-container.pdf-img-wide img {
             max-width: 100%;
             max-height: 900px;
           }

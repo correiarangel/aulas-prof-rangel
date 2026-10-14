@@ -1,6 +1,7 @@
 ### Módulo 1: Sistema Operacional Windows | Prof. Marcos Rangel — WR Capacitação Profissional
-### Status: 🟡 **SDD PRONTO — AGUARDANDO IMPLEMENTAÇÃO** (07/10/2026) — Aula 04: Painel de Controle e Configurações no Windows
+### Status: 🟡 **SDD REVISADO CONTRA A ORIGEM — AGUARDANDO IMPLEMENTAÇÃO** (escrito 07/10/2026 · revisado 12/10/2026) — Aula 04: Painel de Controle e Configurações no Windows
 ### ⚠️ Aprovação visual manual humana (telas + PDF): **PENDENTE** para toda a série — ver `Docs/CONTINUACAO.md` §7
+### ✅ Revisão 12/10/2026: inventário de imagens, estrutura-fonte e localizadores de código **reconferidos** contra `AulaOrigem/windows/Aula 4 - Windows-Painel de Controle/` — ver **§12 Avaliação**.
 
 ---
 
@@ -21,13 +22,15 @@ A aula de origem ensina **o que é o Painel de Controle, como abri-lo em cada ve
 - **Entrada do hub:** `Painel de Controle e Configurações` (o `promptLessonPassword` recebe exatamente essa string)
 - **Título do PDF:** `Aula 04: Painel de Controle e Configurações no Windows — Ajustes do Sistema` (`moduleLessonTitles.windows[4]`)
 
-### 1.3 Estrutura do conteúdo de origem (8 blocos + abertura)
+### 1.3 Estrutura do conteúdo de origem (7 blocos de conteúdo + FASE 0 e Exercício criados pela spec)
 
-`4.0` FASE 0 · `4.1` O que é o Painel de Controle e como acessá-lo (Win 7 / 10 / 11) · `4.2` Configurações × Painel de Controle · `4.3` Data, Hora e Idioma · `4.4` Configurações de Rede (Central de Redes e Compartilhamento) · `4.5` Remover Aplicativos e Recursos · `4.6` Criar e gerenciar Usuários · `4.7` Evolução do Painel de Controle no Windows 10 e 11 · `4.8` Exercício Prático de Campo (criado por esta spec — a origem não traz exercício).
+A origem tem 7 blocos de conteúdo: `4.1` O que é o Painel de Controle e como acessá-lo (Win 7 / 10 / 11) · `4.2` Configurações × Painel de Controle · `4.3` Data, Hora e Idioma · `4.4` Configurações de Rede (Central de Redes e Compartilhamento) · `4.5` Remover Aplicativos e Recursos · `4.6` Criar e gerenciar Usuários · `4.7` Evolução do Painel de Controle no Windows 10 e 11. A spec acrescenta `4.0` FASE 0 e `4.8` Exercício Prático de Campo (a origem **não** traz exercício) → **9 seções** no portal e no PDF.
+
+> **Conferência 12/10/2026**: os 7 blocos correspondem, na ordem, às seções `<h*>` da apostila-fonte (Introdução · Como Acessar · Configurações vs Painel · Principais Funcionalidades 1–4 · Evolução). Fonte lida integralmente (`Aula4WindowsPaineldeControle.html`, 38 KB, 17 `<img>`).
 
 ### 1.4 Inventário das 17 imagens e o que elas mostram
 
-> **Legenda:** a numeração "Imagem 01…18" da origem é **inconsistente** (17 arquivos, começa em 01 e pula o 09). As legendas do portal serão **descritivas em português**, sem repetir o número quebrado da origem. Os textos abaixo derivam do contexto em que a imagem aparece na apostila (o agente não tem visão — **conferência visual humana pendente**, `CONTINUACAO.md` §7).
+> **Legenda:** a numeração "Imagem 01…18" da origem é **inconsistente** (17 arquivos, começa em 01 e **pula o 09**). As legendas do portal serão **descritivas em português**, sem repetir a numeração quebrada. O mapeamento acima bate exatamente com a ordem dos `<img src="images/imageN.png">` na apostila-fonte. **Conferência visual humana pendente** (`CONTINUACAO.md` §7), mas os arquivos batem 1:1.
 
 | Arquivo | Dimensão | Onde entra (fase) | Sentido da legenda |
 |:---|:---|:---|:---|
@@ -37,23 +40,27 @@ A aula de origem ensina **o que é o Painel de Controle, como abri-lo em cada ve
 | `image8.png` | 423×270 | 4.2 | **Painel de Controle** clássico (Windows 7/10/11) |
 | `image2.png` | 327×251 | 4.3 | Painel de Controle (Win 7): Relógio, Idioma e Região → Data e Hora |
 | `image13.png` | 608×380 | 4.3 | Configurações (Win 10/11) → **Hora e Idioma** |
-| `image10.png` | 311×371 | 4.4 | Central de Redes e Compartilhamento — visão geral da conexão |
-| `image5.png` | 552×237 | 4.4 | Compartilhamento de rede / configurações da conexão |
-| `image16.png` | 637×367 | 4.4 | Adaptadores de rede (Wi-Fi / Ethernet) |
-| `image4.png` | 412×260 | 4.4 | Estado/configurações das conexões de rede |
-| `image11.png` | 267×119 | 4.5 | Programas e Recursos (Win 7) — desinstalar programa |
-| `image3.png` | 477×370 | 4.5 | Configurações → Aplicativos (Win 10/11) |
-| `image12.png` | 607×483 | 4.5 | Lista de aplicativos instalados com botão **Desinstalar** |
-| `image9.png` | 800×414 | 4.6 | Contas de Usuário (Win 7) — criar nova conta |
-| `image14.png` | 681×366 | 4.6 | Contas de Usuário — **alterar senha** |
-| `image7.png` | 500×321 | 4.6 | Configurações → Contas → Família e outros usuários |
-| `image6.png` | 308×194 | 4.6 | Adicionar outra pessoa a este PC (Win 10/11) |
+| `image10.png` | 311×371 | 4.4 | **Central de Redes e Compartilhamento** — visão geral da conexão |
+| `image5.png` | 552×237 | 4.4 | Central de Redes e Compartilhamento — configurações/compartilhamento |
+| `image16.png` | 637×367 | 4.4 | **Rede no app Configurações** (Rede e Internet) |
+| `image4.png` | 412×260 | 4.4 | **Adaptadores de rede** (Wi-Fi / Ethernet) |
+| `image11.png` | 267×119 | 4.5 | **Programas e Recursos** (Windows 7) — desinstalar programas |
+| `image3.png` | 477×370 | 4.5 | Configurações → **Aplicativos** (Windows 10/11) |
+| `image12.png` | 607×483 | 4.5 | Configurações → **Aplicativos instalados** (Windows 10/11), com opção **Desinstalar** |
+| `image9.png` | 800×414 | 4.6 | **Contas de Usuário** (Windows 7) — Gerenciar outra conta / Criar nova conta |
+| `image14.png` | 681×366 | 4.6 | Contas de Usuário — tela para **alterar senha** |
+| `image7.png` | 500×321 | 4.6 | Configurações → **Contas → Família e outros usuários** (Windows 10/11) |
+| `image6.png` | 308×194 | 4.6 | **Adicionar outra pessoa a este PC** (Windows 10/11) |
 
 Copiados para `assets/img/windows/Aula4/` (17 PNG, ~1,7 MB) — mesmo nome (`image1.png`…`image17.png`) para manter o padrão das Aulas 1–3.
 
+> **Tamanho das imagens (decisão 13/10/2026)**: a regra global `.lesson-reading-card img { max-width:92% !important }` governa o tamanho na tela; os `style="max-width:…"` inline são inertes. **Apenas 4 imagens** devem ficar em largura total (~929px em desktop 1280): `image16`, `image4` (4.4), `image11` (4.5) e `image6` (4.6) — via `style="width:100%;"`. As outras 13 voltam ao layout de 2 colunas / tamanho natural. No PDF o equivalente é `wide: true` **por imagem** (classe `.pdf-img-wide`); **não** usar `imagesWide` de seção na Aula 4 (isso vale para as Aulas 1–3).
+
 ### 1.5 Diagnóstico: o que já existe no portal
 
-A Aula 4 **já tem card no hub, mas está inativo**: `modules/windows/index.html:345` tem `promptLessonPassword(4, 'Configurações de Sistema e Painel de Controle')` **sem** a classe `active-lesson`, com rótulo "🔒 Em Construção" e `lesson-name` "Configurações & Dispositivos" (fora do título real da origem). **Não existe** `screen-lesson-4`, `QUESTIONS_LESSON_4`, `QUIZ_CFG[4]`, `PASSWORD_A4`, seções no PDF nem `moduleLessonTitles.windows[4]` — hoje, pedir `downloadLessonPDF('windows', 4)` cai na guarda L-04 e avisa "A apostila da Aula 4 ainda não foi produzida". Tudo nesta aula é **novo**; as estruturas compartilhadas de leitura/quiz serão mexidas apenas de forma **aditiva**.
+A Aula 4 **já tem card no hub, mas está inativo** (reconferido em 12/10/2026): `modules/windows/index.html:335` tem `promptLessonPassword(4, 'Configurações de Sistema e Painel de Controle')` **sem** a classe `active-lesson`, com `lesson-name` "Configurações & Dispositivos" e rótulo "🔒 Em Construção" (span final `🚧`) — ambíguos e fora do título real da origem. **Não existe** `screen-lesson-4`, `QUESTIONS_LESSON_4`, `QUIZ_CFG[4]`, `PASSWORD_A4`, seções no PDF nem `moduleLessonTitles.windows[4]` — hoje, pedir `downloadLessonPDF('windows', 4)` cai na guarda L-04 e avisa "A apostila da Aula 4 ainda não foi produzida". Tudo nesta aula é **novo**; as estruturas compartilhadas de leitura/quiz serão mexidas apenas de forma **aditiva**.
+
+> **Localizadores atuais (12/10/2026, pós-commit `4386bed`)** — os números “~” que aparecem nas §7 abaixo são desta conferência: hub L335 · senhas L4814–4819 · gate L5102 · `OPEN_LESSONS` L5078 · rotas L5106–5109 · `TOTAL_TOPICS`/`SEQUENTIAL_LESSONS` L5149–5150 · fixação L5265 · `QUESTIONS_LESSON_3` L4697 · `QUIZ_CFG` L5579 · eventos L5745 · `moduleLessonTitles.windows` L4114. A seção nova `screen-lesson-4` entra **antes de** `screen-lesson-7` (L3121), depois de `screen-lesson-3` (L2484).
 
 ---
 
@@ -158,7 +165,7 @@ const PASSWORD_A1 = "wr0126"; … const PASSWORD_A4 = "wr0426"; …
 | 2 | Para abrir o **Painel de Controle** clássico por teclado, o que se digita na caixa do Executar (`Win + R`)? | `cmd` · `msconfig` · **`control` (2)** · `config` | `control` é o nome do programa do Painel de Controle desde o Windows 95. |
 | 3 | Sobre o Painel de Controle no **Windows 11**, qual alternativa está correta? | Foi totalmente removido em 2021 · **Continua existindo, mas o Configurações é a interface principal e várias páginas do Painel só redirecionam para o Configurações (1)** · É ainda a interface principal · Só existe no Windows 7 | O Painel de Controle não sumiu: a Microsoft é que mudou o protagonismo para o Configurações. |
 | 4 | Na **Central de Redes e Compartilhamento** (Painel de Controle → Rede e Internet) o aluno pode: | Instalar aplicativos da Loja · **Configurar Wi-Fi/Ethernet, gerenciar adaptadores e o compartilhamento de arquivos (1)** · Criar contas de usuário · Desfragmentar o disco | É ali que ficam as conexões e o compartilhamento de rede. |
-| 5 | Para criar um usuário **LOCAL** no Windows 10/11 (Configurações → Contas → Família e outros usuários → Adicionar outra pessoa a este PC), o caminho é: | Digitar um e-mail Microsoft e concluir · **Clicar em "Não tenho as informações de login desta pessoa" e depois em "Adicionar um usuário sem conta Microsoft" (1)** · O Windows cria sozinho · Só dá pelo Prompt de Comando | Sem esse caminho o Windows insiste em pedir uma conta Microsoft. |
+| 5 | Para criar um usuário **local** no Windows 10/11 (Configurações → Contas → Família e outros usuários → Adicionar outra pessoa a este PC), o caminho é: | Digitar um e-mail Microsoft e concluir · **Clicar em "Não tenho as informações de login desta pessoa" e depois em "Adicionar um usuário sem conta Microsoft" (1)** · O Windows cria sozinho · Só dá pelo Prompt de Comando | Sem esse caminho o Windows insiste em pedir uma conta Microsoft. |
 
 `QUIZ_CFG[4]`:
 
@@ -205,23 +212,23 @@ Imagens em `sec.images` com `caption`; ilustração HTML em `sec.html`; zero pla
 
 ### 7.1 `modules/windows/index.html`
 
-| Local | O que fazer |
+| Local (linha real 12/10/2026) | O que fazer |
 |:---|:---|
-| Hub (linha ~345) | Adicionar `active-lesson`; `lesson-name` → `Painel de Controle e Configurações`; span "🔒 Em Construção" → `🔓 Aula Liberada (Senha em Aula)` (12px, `var(--teal)`); span final → `<span style="font-size:24px;" id="badge-lesson-4">🔒</span>`; `onclick="promptLessonPassword(4, 'Painel de Controle e Configurações')"` |
-| Nova seção | `section#screen-lesson-4` **antes de** `screen-lesson-7` (linha ~3119), clonando a estrutura da Aula 3: botões Imprimir/Baixar PDF (`downloadLessonPDF('windows', 4)`), `gamify-bar-4`/`gamify-percent-4`/`gamify-badge-box-4`, `lesson-reading-card`, `l4-fase-0`, `l4-phase-1..8`, `check-read-4-1..9`, `tab-btn-4-1..8` + `tab-btn-4-fix`, `fixation-panel-4` e `result-panel-4` |
-| Senhas (~4812) | `const PASSWORD_A4 = "wr0426";` e incluir `typed === PASSWORD_A4` no gate (~5100) |
-| Rota (~5105) | `4: "screen-lesson-4"` |
-| `OPEN_LESSONS` (~5076) | `[1, 2, 3, 4, 7, 8, 71, 81]` + atualizar o comentário (~5075) e o texto do alerta (~5078) |
-| Gamificação (~5147) | `TOTAL_TOPICS = { 1: 7, 2: 10, 3: 10, 4: 9, 7: 7, 8: 5, 71: 4, 81: 6 }` e `SEQUENTIAL_LESSONS = { …, 4: true }` + comentário (~5146) |
-| Fixação (~5263) | comentário `ABRIR EXERCÍCIO DE FIXAÇÃO (AULAS 1, 2, 3, 4, 7, 8 E COMPLEMENTOS 71 e 81)` |
-| Questões (~4695+) | `const QUESTIONS_LESSON_4 = [ … ]` com as 5 questões da §5 |
-| `QUIZ_CFG` (~5577) | entrada `4:` conforme §5 |
-| Eventos do quiz (~5744) | `[1, 2, 3, 4, 7, 71, 81].forEach(...)` + comentário (~5743) |
+| Hub **L335** | Adicionar `active-lesson`; `lesson-name` "Configurações & Dispositivos" → `Painel de Controle e Configurações`; span "🔒 Em Construção" → `🔓 Aula Liberada (Senha em Aula)` (12px, `var(--teal)`, como nas Aulas 1–3 L309/319/329); span final `🚧` → `<span style="font-size:24px;" id="badge-lesson-4">🔒</span>` (igual às Aulas 1–3); `onclick="promptLessonPassword(4, 'Painel de Controle e Configurações')"` |
+| Nova seção | `section#screen-lesson-4` **antes de** `screen-lesson-7` (**L3121**), depois de `screen-lesson-3` (L2484), clonando a estrutura da Aula 3: botões Imprimir/Baixar PDF (`downloadLessonPDF('windows', 4)`), `gamify-bar-4`/`gamify-percent-4`/`gamify-badge-box-4`, `lesson-reading-card`, `l4-fase-0`, `l4-phase-1..8`, `check-read-4-1..9`, `tab-btn-4-1..8` + `tab-btn-4-fix`, `fixation-panel-4` e `result-panel-4` |
+| Senhas **L4814–4819** | `const PASSWORD_A4 = "wr0426";` logo após `PASSWORD_A3` (L4816) e incluir `typed === PASSWORD_A4` no gate (**L5102**) |
+| Rota **L5106–5109** | `4: "screen-lesson-4"` no mapa de rotas |
+| `OPEN_LESSONS` **L5078** | `[1, 2, 3, 4, 7, 8, 71, 81]` + atualizar o comentário (L5077) e o texto do alerta (L5080) |
+| Gamificação **L5149–5150** | `TOTAL_TOPICS = { 1: 7, 2: 10, 3: 10, 4: 9, 7: 7, 8: 5, 71: 4, 81: 6 }` e `SEQUENTIAL_LESSONS = { …, 4: true }` + comentário (L5148) |
+| Fixação **L5265** | comentário `ABRIR EXERCÍCIO DE FIXAÇÃO (AULAS 1, 2, 3, 4, 7, 8 E COMPLEMENTOS 71 e 81)` |
+| Questões **L4697+** | `const QUESTIONS_LESSON_4 = [ … ]` após `QUESTIONS_LESSON_3`, com as 5 questões da §5 |
+| `QUIZ_CFG` **L5579** | entrada `4:` conforme §5 (após a chave `3`, L5582) |
+| Eventos do quiz **L5745** | `[1, 2, 3, 4, 7, 71, 81].forEach(...)` + comentário (L5744) |
 
 ### 7.2 `assets/js/pdf-lessons.js`
 
-- `moduleLessonTitles.windows[4]` (logo após a chave `3`, linha ~4116).
-- 9 seções da Aula 4 (`lessonNum: 4`) conforme §6.1, após as seções da Aula 3 (~linha 1068).
+- `moduleLessonTitles.windows[4]` logo após a chave `3` (**L4117**; bloco `moduleLessonTitles.windows` em L4114).
+- 9 seções da Aula 4 (`lessonNum: 4`) conforme §6.1, **após a 10ª seção da Aula 3** (última em L1033, bloco termina antes de L1061) e **antes do bloco da Aula 8** (começa em L1061). Total conferido: Windows tem hoje 10 seções `lessonNum: 3` (L720–1033).
 
 ### 7.3 `assets/img/windows/Aula4/`
 
@@ -257,6 +264,7 @@ cp "AulaOrigem/windows/Aula 4 - Windows-Painel de Controle/images/"*.png assets/
 - [ ] `node --check assets/js/pdf-lessons.js` OK; script inline do `index.html` OK; **sem ids duplicados**; tags balanceadas.
 - [ ] Regressão: Aulas 1, 2, 3, 7, 8, 71, 81 continuam passando (senha, leitura, quiz, PDF).
 - [ ] **Fatos conferidos** (§9) — ler o texto renderizado da tela **e** do PDF (Regra 12).
+- [ ] Copiar `assets/img/windows/Aula4/` com os **17 PNG** (image1..image8, image9..image17 — sem image9 duplicado com numeração quebrada) — conferidos com origem.
 - [ ] 🔴 **Aprovação visual humana** registrada em `Docs/CONTINUACAO.md` §7.
 
 ### 8.1 Harness sugerido
@@ -306,3 +314,18 @@ Ambiente (ver `CONTINUACAO.md` topo): servidor `python3 -m http.server 8077` + C
 - **Próxima sessão**: implementar (prompt pronto em `/tmp/opencode/prompt_aula04.txt`).
 - **Pendências humanas (globais, ver `Docs/CONTINUACAO.md` §7)**: aprovação visual das telas/PDF das Aulas 2 e 3, confirmação das senhas candidatas, regressão visual dos demais módulos.
 - **Pendências de repositório**: commit do working tree (P-10) aguardando o professor.
+
+---
+
+## 12. Avaliação da Revisão (12/10/2026) — SDD vs Material de Origem
+
+| Critério | Status | Evidência |
+|:---|:---|:---|
+| Arquivos de origem existentes | ✅ OK | `AulaOrigem/windows/Aula 4 - Windows-Painel de Controle/Aula4WindowsPaineldeControle.html` (38 KB), `images/` (17 PNG, ~1,7 MB) |
+| Imagens na origem vs SDD | ✅ OK | 17 `<img src="images/imageN.png">` na origem → ordem mapeada exatamente na tabela §1.4 (sem image09). Dimensões conferidas. |
+| Estrutura de blocos | ✅ OK | 7 blocos de conteúdo + FASE 0 + Exercício (9 seções). Blocos originais batem com ordem da apostila (§1.3). |
+| Fatos-chave | ✅ OK | `Win + R`, `control`, `Win + I`, Central de Redes e Compartilhamento, Programas/Aplicativos e Recursos, contas local/Microsoft — todos presentes. Datas de suporte já escritas com critério de "fato já ocorrido" (§9). |
+| Localizadores de código | ✅ OK | Reconferidos contra o estado atual pós-commit `4386bed`: hub L335, senhas L4814–4819, gate L5102, `OPEN_LESSONS` L5078, rotas L5108–5109, `TOTAL_TOPICS`/`SEQUENTIAL_LESSONS` L5149–5150, `moduleLessonTitles.windows` L4114, inserção da seção antes de `screen-lesson-7` (L3121). |
+| PDF `lessonNum: 4` | ✅ OK | Deve ser inserido após a última seção `lessonNum: 3` (L1033) e antes de `lessonNum: 8` (L1061). |
+| Senha candidata | 🟡 Pendente confirmação | `wr0426` conforme decisão §4 — depende do professor (lista em CONTINUACAO.md §7). |
+| Imagens no repo | 🟡 Criar na implementação | `assets/img/windows/Aula4/` ainda **não existe**; §7.3 indica copiá-las da origem. |

@@ -332,13 +332,13 @@
           </div>
 
           <!-- AULA 4 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(4, 'Configurações de Sistema e Painel de Controle')">
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(4, 'Painel de Controle e Configurações')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num">AULA 04</span>
-              <span class="lesson-name">Configurações & Dispositivos</span>
-              <span style="font-size:13px; color:#F4E8DC; font-weight:600; margin-top:4px; opacity:0.95;">🔒 Em Construção</span>
+              <span class="lesson-name">Painel de Controle e Configurações</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha em Aula)</span>
             </div>
-            <span style="font-size:20px;">🚧</span>
+            <span style="font-size:24px;" id="badge-lesson-4">🔒</span>
           </div>
 
           <!-- AULA 5 -->
@@ -3118,6 +3118,439 @@
     <!-- ===================================================================
          TELA 4: AULA 7 — SEGURANÇA E ANTIVÍRUS NO WINDOWS (LIBERADA)
          =================================================================== -->
+        <!-- ===================================================================
+         TELA 4: AULA 4 — PAINEL DE CONTROLE E CONFIGURAÇÕES NO WINDOWS (LIBERADA)
+         =================================================================== -->
+    <section id="screen-lesson-4" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">← Voltar ao Menu do Módulo</button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">🖨️ Imprimir Aula Completa (HTML Origem)</button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 4)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">📑 Baixar Apostila PDF</button>
+        </div>
+      </div>
+      <article class="lesson-reading-card">
+        <header style="margin-bottom:20px;">
+          <h1 style="color:var(--teal-deep); font-size:32px; margin:0; line-height:1.3;">Aula 04: Painel de Controle e Configurações no Windows</h1>
+          <p style="color:var(--ink-soft); margin:8px 0 0; font-size:16px;">Painel de Controle, Configurações, Data/Hora, Rede, Aplicativos e Contas — Windows 7 / 10 / 11</p>
+        </header>
+        <div class="gamify-bar" id="gamify-bar-4">
+          <div class="gamify-fill" id="gamify-fill-4" style="width:0%;"></div>
+          <span class="gamify-percent" id="gamify-percent-4">0%</span>
+          <span class="gamify-badge-box" id="gamify-badge-box-4"></span>
+        </div>
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l4-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Aprender a <strong>ajustar o computador por dentro</strong>: abrir o <strong>Painel de Controle</strong> e o app <strong>Configurações</strong>, entender a diferença entre os dois e usar esses caminhos para mexer em <strong>data/hora, idioma, rede, aplicativos instalados e contas de usuário</strong> — no Windows 7, 10 e 11.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li>O que é o Painel de Controle e como abri-lo (Win 7, 10 e 11).</li>
+            <li>Configurações &times; Painel de Controle: qual usar em cada versão.</li>
+            <li>Ajustar data, hora, fuso horário e idioma.</li>
+            <li>Ver e configurar as conexões de rede.</li>
+            <li>Desinstalar aplicativos e remover recursos do Windows.</li>
+            <li>Criar e gerenciar contas de usuário.</li>
+            <li>Como o Painel de Controle evoluiu no Windows 10 e 11.</li>
+            <li>Prática guiada usando os dois caminhos no seu computador.</li>
+          </ol>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
+            🏁 Resultado esperado: ao final, você saberá <strong>chegar sozinho</strong> às configurações do Windows — pelo atalho <kbd>Win + I</kbd> (Configurações) ou por <kbd>Win + R</kbd> → <code>control</code> (Painel de Controle).
+          </p>
+          <p style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px; margin-top:10px; font-size:14.5px; color:var(--teal-deep);">
+            ⚙️ <strong>Preparação:</strong> se puder, faça os passos junto com o seu próprio computador. Nada aqui altera arquivos pessoais — são apenas telas de configuração.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro desta aula e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-1" onclick="markTopicRead(4, 1)">
+              <span>☐ Entendi o roteiro — começar a aula!</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 1)">Ir para 1. O que é e como acessar →</button>
+          </div>
+        </div>
+
+        <!-- ÍNDICE DE TÓPICOS DA AULA 4 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-4-1" onclick="switchTopicPhase(4, 1)">1. O que é e como acessar</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-2" onclick="switchTopicPhase(4, 2)">2. Configurações × Painel</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-3" onclick="switchTopicPhase(4, 3)">3. Data, Hora e Idioma</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-4" onclick="switchTopicPhase(4, 4)">4. Rede</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-5" onclick="switchTopicPhase(4, 5)">5. Remover Aplicativos</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-6" onclick="switchTopicPhase(4, 6)">6. Contas de Usuário</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-7" onclick="switchTopicPhase(4, 7)">7. Evolução Win 10/11</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-8" onclick="switchTopicPhase(4, 8)">8. Exercício Prático</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-fix" onclick="openFixationPanel(4)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- TÓPICO 1 DA AULA 4: O QUE É O PAINEL DE CONTROLE E COMO ACESSAR -->
+        <section id="l4-phase-1" class="topic-phase-section active">
+          <h2>1. O que é o Painel de Controle e como acessá-lo</h2>
+          <p>
+            O <strong>Painel de Controle</strong> (<em>Control Panel</em>) é o centro tradicional de ajustes do Windows. É por ele que se configuram <strong>data e hora, idioma, redes, instalação e remoção de programas e contas de usuário</strong>. No Windows 10 e 11 o app <strong>Configurações</strong> ganhou espaço, mas o Painel de Controle <strong>ainda existe</strong> e continua sendo necessário para várias tarefas.
+          </p>
+
+          <img src="../../assets/img/windows/Aula4/image15.png" alt="Ícone do Painel de Controle no Windows" class="img-showcase" style="max-width:360px;">
+          <p class="img-caption">Imagem 01/18 — Ícone do Painel de Controle no menu Iniciar.</p>
+
+          <div class="es-sheet-box" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">🔑 Como abrir o Painel de Controle</div>
+            <ul style="margin:8px 0 0 20px; line-height:1.8; font-size:14.5px; color:var(--ink);">
+              <li><strong>Windows 7:</strong> clique no <strong>menu Iniciar</strong> e selecione <strong>Painel de Controle</strong>.</li>
+              <li><strong>Windows 10:</strong> pressione <kbd>Win + R</kbd>, digite <code>control</code> e tecle <strong>Enter</strong> — ou pesquise "Painel de Controle" no menu Iniciar.</li>
+              <li><strong>Windows 11:</strong> abra o <strong>menu Iniciar</strong> e digite "Painel de Controle"; ou use <kbd>Win + R</kbd> → <code>control</code> → Enter.</li>
+              <li><strong>App Configurações</strong> (Win 10/11): atalho <kbd>Win + I</kbd>.</li>
+            </ul>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi o que é o Painel de Controle e sei abri-lo nos três Windows.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-2" onclick="markTopicRead(4, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="document.getElementById('l4-fase-0').scrollIntoView({behavior:'smooth', block:'start'})">← Voltar ao Início da Aula</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 2)">Ir para 2. Configurações × Painel →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 2 DA AULA 4: CONFIGURAÇÕES × PAINEL DE CONTROLE -->
+        <section id="l4-phase-2" class="topic-phase-section">
+          <h2>2. Configurações &times; Painel de Controle</h2>
+          <p>
+            No <strong>Windows 10 e 11</strong>, o app <strong>Configurações</strong> é uma repaginação do Painel de Controle, com visual mais atual e minimalista, organizado por categorias. Mesmo assim, o <strong>Painel de Controle clássico</strong> continua presente nessas versões — várias páginas antigas apenas <strong>redirecionam</strong> para o Configurações.
+          </p>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; margin:16px 0;">
+            <div style="flex:1; min-width:220px;">
+              <img src="../../assets/img/windows/Aula4/image17.png" alt="Ícone do app Configurações do Windows" class="img-showcase" style="max-width:180px;">
+              <p class="img-caption" style="text-align:left;">Imagem 02/18 — Ícone de Configurações.</p>
+            </div>
+            <div style="flex:1; min-width:220px;">
+              <img src="../../assets/img/windows/Aula4/image8.png" alt="Painel de Controle clássico no Windows 7, 10 e 11" class="img-showcase" style="max-width:340px;">
+              <p class="img-caption" style="text-align:left;">Imagem 04/18 — Painel de Controle clássico (Win 7/10/11).</p>
+            </div>
+          </div>
+
+          <img src="../../assets/img/windows/Aula4/image1.png" alt="Tela do app Configurações no Windows 11" class="img-showcase" style="max-width:560px;">
+          <p class="img-caption">Imagem 03/18 — Tela inicial do app Configurações no Windows 11.</p>
+
+          <div class="mini-sheet" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">💡 Dica prática</div>
+            <p style="margin:0;">Use <kbd>Win + I</kbd> para o <strong>Configurações</strong> (moderno) e <kbd>Win + R</kbd> → <code>control</code> para o <strong>Painel de Controle</strong> (clássico). Se não achar uma opção em um, procure no outro.</p>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei diferenciar o app Configurações do Painel de Controle.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-3" onclick="markTopicRead(4, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 3)">Ir para 3. Data, Hora e Idioma →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 3 DA AULA 4: DATA, HORA E IDIOMA -->
+        <section id="l4-phase-3" class="topic-phase-section">
+          <h2>3. Ajustar Data, Hora e Idioma</h2>
+          <p><strong>Windows 7</strong> — no Painel de Controle, selecione <strong>Relógio, Idioma e Região</strong>:</p>
+          <ol style="margin-left:22px; line-height:1.8; font-size:15px; color:var(--ink);">
+            <li>Clique em <strong>Data e Hora</strong> para acertar a data/hora e o <strong>fuso horário</strong>.</li>
+            <li>Em <strong>Região e Idioma</strong>, altere o idioma do sistema.</li>
+          </ol>
+
+          <img src="../../assets/img/windows/Aula4/image2.png" alt="Janela de Data e Hora no Windows 7" class="img-showcase" style="max-width:420px;">
+          <p class="img-caption">Imagem 05/18 — Data e Hora no Painel de Controle (Windows 7).</p>
+
+          <p><strong>Windows 10 e 11</strong> — abra <strong>Configurações</strong> (<kbd>Win + I</kbd>) e clique em <strong>Hora e Idioma</strong> para ajustar fuso, sincronização automática e idioma:</p>
+
+          <img src="../../assets/img/windows/Aula4/image13.png" alt="Hora e Idioma no app Configurações do Windows 10/11" class="img-showcase" style="max-width:520px;">
+          <p class="img-caption">Imagem 06/18 — Hora e Idioma no app Configurações (Windows 10/11).</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei ajustar data, hora, fuso horário e idioma.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-4" onclick="markTopicRead(4, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 4)">Ir para 4. Rede →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 4 DA AULA 4: CONFIGURAÇÕES DE REDE -->
+        <section id="l4-phase-4" class="topic-phase-section">
+          <h2>4. Configurações de Rede</h2>
+          <p>
+            No <strong>Painel de Controle</strong>, acesse <strong>Rede e Internet</strong> → <strong>Central de Redes e Compartilhamento</strong>. Ali você:
+          </p>
+          <ul style="margin-left:22px; line-height:1.8; font-size:15px; color:var(--ink);">
+            <li>Configura conexões <strong>Wi-Fi</strong> e <strong>Ethernet</strong>.</li>
+            <li>Gerencia os <strong>adaptadores de rede</strong>.</li>
+            <li>Altera as opções de <strong>compartilhamento</strong> de arquivos e impressoras.</li>
+          </ul>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; margin:16px 0;">
+            <div style="flex:1; min-width:200px;">
+              <img src="../../assets/img/windows/Aula4/image10.png" alt="Central de Redes e Compartilhamento no Windows" class="img-showcase" style="max-width:280px;">
+              <p class="img-caption" style="text-align:left;">Imagem 07/18 — Central de Redes.</p>
+            </div>
+            <div style="flex:1; min-width:240px;">
+              <img src="../../assets/img/windows/Aula4/image5.png" alt="Propriedades de conexão de rede" class="img-showcase" style="max-width:340px;">
+              <p class="img-caption" style="text-align:left;">Imagem 08/18 — Propriedades da conexão.</p>
+            </div>
+          </div>
+
+          <img src="../../assets/img/windows/Aula4/image16.png" alt="Rede e Internet no app Configurações" class="img-showcase" style="width:100%;">
+          <p class="img-caption">Imagem 10/18 — Rede no Configurações.</p>
+
+          <img src="../../assets/img/windows/Aula4/image4.png" alt="Adaptadores de rede no Windows" class="img-showcase" style="width:100%;">
+          <p class="img-caption">Imagem 11/18 — Adaptadores de rede.</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi onde ver e configurar as conexões de rede.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-5" onclick="markTopicRead(4, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 5)">Ir para 5. Remover Aplicativos →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 5 DA AULA 4: REMOVER APLICATIVOS E RECURSOS -->
+        <section id="l4-phase-5" class="topic-phase-section">
+          <h2>5. Remover Aplicativos e Recursos do Windows</h2>
+          <p><strong>Windows 7</strong> — no Painel de Controle, acesse <strong>Programas e Recursos</strong>:</p>
+          <ol style="margin-left:22px; line-height:1.8; font-size:15px; color:var(--ink);">
+            <li>Selecione o programa que deseja remover.</li>
+            <li>Clique em <strong>Desinstalar</strong> (ou "Desinstalar/Alterar").</li>
+          </ol>
+
+          <img src="../../assets/img/windows/Aula4/image11.png" alt="Programas e Recursos no Painel de Controle do Windows 7" class="img-showcase" style="width:100%;">
+          <p class="img-caption">Imagem 12/18 — Programas e Recursos (Windows 7).</p>
+
+          <p><strong>Windows 10 e 11</strong> — abra <strong>Configurações</strong> (<kbd>Win + I</kbd>) → <strong>Aplicativos</strong>:</p>
+          <ol style="margin-left:22px; line-height:1.8; font-size:15px; color:var(--ink);">
+            <li>Windows 10: <strong>Aplicativos e recursos</strong>. No Windows 11: <strong>Aplicativos instalados</strong>.</li>
+            <li>Escolha o aplicativo e clique em <strong>Desinstalar</strong>.</li>
+          </ol>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; margin:16px 0;">
+            <div style="flex:1; min-width:240px;">
+              <img src="../../assets/img/windows/Aula4/image3.png" alt="Lista de aplicativos instalados no Windows" class="img-showcase" style="max-width:420px;">
+              <p class="img-caption" style="text-align:left;">Imagem 13/18 — Aplicativos instalados.</p>
+            </div>
+            <div style="flex:1; min-width:240px;">
+              <img src="../../assets/img/windows/Aula4/image12.png" alt="Tela de desinstalação de aplicativo no Windows" class="img-showcase" style="max-width:420px;">
+              <p class="img-caption" style="text-align:left;">Imagem 14/18 — Desinstalar um aplicativo.</p>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei desinstalar programas no Windows 7, 10 e 11.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-6" onclick="markTopicRead(4, 6)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 6)">Ir para 6. Contas de Usuário →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 6 DA AULA 4: CONTAS DE USUÁRIO -->
+        <section id="l4-phase-6" class="topic-phase-section">
+          <h2>6. Criar e Gerenciar Contas de Usuário</h2>
+          <p><strong>Windows 7</strong> — no Painel de Controle, acesse <strong>Contas de Usuário</strong>:</p>
+          <ol style="margin-left:22px; line-height:1.8; font-size:15px; color:var(--ink);">
+            <li>Clique em <strong>Gerenciar outra conta</strong> → <strong>Criar nova conta</strong>.</li>
+            <li>Digite o nome e defina se é <strong>Padrão</strong> ou <strong>Administrador</strong>.</li>
+            <li>Clique em <strong>Criar Conta</strong>.</li>
+          </ol>
+
+          <img src="../../assets/img/windows/Aula4/image9.png" alt="Criação de conta de usuário no Windows 7" class="img-showcase" style="max-width:600px;">
+          <p class="img-caption">Imagem 15/18 — Criar conta de usuário (Windows 7).</p>
+
+          <img src="../../assets/img/windows/Aula4/image14.png" alt="Alterar senha da conta de usuário" class="img-showcase" style="max-width:460px;">
+          <p class="img-caption">Imagem 16/18 — Alterar senha da conta.</p>
+
+          <p><strong>Windows 10 e 11</strong> — abra <strong>Configurações</strong> (<kbd>Win + I</kbd>) → <strong>Contas</strong> → <strong>Família e outros usuários</strong>:</p>
+          <ol style="margin-left:22px; line-height:1.8; font-size:15px; color:var(--ink);">
+            <li>Clique em <strong>Adicionar outra pessoa a este PC</strong>.</li>
+            <li>Informe um e-mail — ou escolha <strong>"Não tenho as informações de login desta pessoa"</strong> para criar um <strong>usuário local</strong>.</li>
+            <li>Defina nome e senha do novo usuário.</li>
+          </ol>
+
+          <img src="../../assets/img/windows/Aula4/image7.png" alt="Contas em Configurações no Windows 10/11" class="img-showcase" style="max-width:420px;">
+          <p class="img-caption">Imagem 17/18 — Contas no Configurações.</p>
+
+          <img src="../../assets/img/windows/Aula4/image6.png" alt="Adicionar usuário no Windows 10/11" class="img-showcase" style="width:100%;">
+          <p class="img-caption">Imagem 18/18 — Adicionar usuário.</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei criar e gerenciar contas de usuário.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-7" onclick="markTopicRead(4, 7)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 7)">Ir para 7. Evolução Win 10/11 →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 7 DA AULA 4: EVOLUÇÃO DO PAINEL DE CONTROLE -->
+        <section id="l4-phase-7" class="topic-phase-section">
+          <h2>7. Evolução do Painel de Controle no Windows 10 e 11</h2>
+          <p>
+            O Windows 10 e o Windows 11 introduziram o app <strong>Configurações</strong>, que <strong>substitui parcialmente</strong> o Painel de Controle. Muitas configurações migraram para essa interface mais moderna e intuitiva.
+          </p>
+          <ul style="margin-left:22px; line-height:1.8; font-size:15px; color:var(--ink);">
+            <li>No <strong>Windows 10</strong>, o Painel de Controle ainda é acessível, mas várias funções foram movidas para <strong>Configurações</strong>.</li>
+            <li>No <strong>Windows 11</strong>, a Microsoft reforçou a transição: o <strong>Configurações</strong> é a porta de entrada principal, e o Painel de Controle ficou para os ajustes ainda não migrados.</li>
+          </ul>
+
+          <div class="es-sheet-box" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">📋 Resumo do Tópico 7</div>
+            <p style="margin:0; font-size:14.5px; color:var(--ink);">
+              O Painel de Controle <strong>não foi removido</strong> — ele convive com o app Configurações. Saber usar os dois garante que você encontre qualquer ajuste, independente da versão do Windows.
+            </p>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi como o Painel de Controle evoluiu no Windows 10 e 11.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-8" onclick="markTopicRead(4, 8)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 6)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 8)">Ir para 8. Exercício Prático →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 8 DA AULA 4: EXERCÍCIO PRÁTICO DE CAMPO -->
+        <section id="l4-phase-8" class="topic-phase-section">
+          <h2>8. Exercício Prático de Campo</h2>
+          <p><strong>Objetivo:</strong> praticar os dois caminhos aprendidos no seu próprio computador.</p>
+
+          <div class="mini-sheet" style="margin:16px 0;">
+            <div class="es-sheet-titlebar">🧭 Passo a passo da prática</div>
+            <ol style="margin-left:20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Pressione <kbd>Win + I</kbd> e explore as categorias do <strong>Configurações</strong>.</li>
+              <li>Pressione <kbd>Win + R</kbd>, digite <code>control</code> e abra o <strong>Painel de Controle</strong>.</li>
+              <li>Em cada janela, encontre: <strong>Data/Hora</strong>, <strong>Rede e Compartilhamento</strong> e <strong>Contas de Usuário</strong>.</li>
+              <li>Anote as diferenças de nomes e de disposição entre <strong>Configurações</strong> e <strong>Painel de Controle</strong>.</li>
+            </ol>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que pratiquei os dois caminhos no meu computador.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-9" onclick="markTopicRead(4, 9)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 7)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(4)">Fazer o Exercício de 5 Perguntas 📝</button>
+          </div>
+        </section>
+        <div id="fixation-panel-4" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--amber-deep); margin-top:4px; font-size:24px;">Exercício de Fixação — Aula 4</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-4" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-4">QUESTÃO 1 / 5</span>
+                <span id="q-points-4">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-4"></div>
+
+              <button class="hint-toggle" id="btn-hint-4" type="button">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-4"></div>
+
+              <div class="options" id="options-4"></div>
+
+              <div class="nav-row">
+                <button class="btn btn-ghost" id="btn-prev-4" type="button">← Anterior</button>
+                <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';">✓ Salvo automaticamente</span>
+                <button class="btn btn-primary" id="btn-next-4" type="button" disabled>Próxima →</button>
+              </div>
+              <div style="display:flex; justify-content:flex-end; margin-top:12px;">
+                <button class="btn btn-ghost" id="btn-restart-4" type="button" style="font-size:11px; padding:5px 10px;">↺ Recomeçar o exercício</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL DE RESULTADO E ASSINATURA SHA-256 DA AULA 4 -->
+        <div id="result-panel-4" class="fixation-panel">
+          <div class="card-quiz">
+            <div class="result-badge" id="result-badge-4"></div>
+            <h1 id="result-title-4"></h1>
+            <p style="color:var(--ink-soft);" id="result-sub-4"></p>
+            <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">
+              Nota Final: <b id="result-score-4" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0
+            </div>
+
+            <div class="signature-badge-box" id="signature-box-4">
+              <div class="signature-badge-header">
+                <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+              </div>
+              <div class="signature-code-display" id="signature-code-4">WR-AUTH-CALCULATING...</div>
+              <div class="signature-badge-desc">
+                Código de autenticidade criptográfico (SHA-256) gerado automaticamente para o aluno. Evita adulterações no comprovante ou na nota.
+              </div>
+            </div>
+
+            <div class="breakdown" id="breakdown-4"></div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary" id="btn-download-txt-4" type="button">Baixar Comprovante (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-4" type="button" style="background:var(--amber);">📑 Baixar Apostila PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-4" type="button">Enviar WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-email-4" type="button">Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-4">
+              <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
+              <input type="email" id="input-email-4" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
+              <button class="btn btn-amber" id="btn-open-gmail-4" type="button">Baixar e Abrir E-mail →</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
     <section id="screen-lesson-7" class="screen-view">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
         <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
@@ -4572,6 +5005,12 @@
     "use strict";
 
     const PASSWORD_WR = "wr0926";
+    const PASSWORD_A1 = "wr0126";
+    const PASSWORD_A2 = "wr0226";
+    const PASSWORD_A3 = "wr0326";
+    const PASSWORD_A4 = "wr0426";
+    const PASSWORD_A7 = "wr0726";
+    const PASSWORD_A8 = "wr0826";
     const MODULE_ID = "windows";
     const MODULE_TITLE = "Módulo 1: Sistema Operacional Windows";
     const PASS_SCORE = 7.0;
@@ -4810,15 +5249,63 @@
       }
     ];
 
-    // SENHA DA AULA 1 (HISTÓRIA E FUNCIONAMENTO DOS COMPUTADORES)
-    const PASSWORD_A1 = "wr0126";
-    const PASSWORD_A2 = "wr0226";
-    const PASSWORD_A3 = "wr0326";
-
-    // SENHA DA AULA 7 E COMPLEMENTOS (7A/7B)
-    const PASSWORD_A7 = "wr0726";
-
-    // QUESTÕES DO QUIZ DE FIXAÇÃO DA AULA 7 (5 QUESTÕES)
+    const QUESTIONS_LESSON_4 = [
+      {
+        q: "No Windows 10/11, qual atalho de teclado abre o aplicativo Configurações?",
+        options: [
+          "Win + R",
+          "Win + I",
+          "Win + E",
+          "Ctrl + Shift + Esc"
+        ],
+        correct: 1,
+        hint: "Win + R abre o Executar e Win + E o Explorador de Arquivos."
+      },
+      {
+        q: "Para abrir o Painel de Controle clássico por teclado, o que se digita na caixa do Executar (Win + R)?",
+        options: [
+          "cmd",
+          "msconfig",
+          "control",
+          "config"
+        ],
+        correct: 2,
+        hint: "control é o nome do programa do Painel de Controle."
+      },
+      {
+        q: "Sobre o Painel de Controle no Windows 11, qual alternativa está correta?",
+        options: [
+          "Foi totalmente removido em 2021",
+          "Continua existindo, mas o Configurações é a interface principal e várias páginas só redirecionam para o Configurações",
+          "É ainda a interface principal",
+          "Só existe no Windows 7"
+        ],
+        correct: 1,
+        hint: "O Painel de Controle ainda existe, mas perdeu protagonismo para o Configurações."
+      },
+      {
+        q: "Na Central de Redes e Compartilhamento (Painel de Controle → Rede e Internet) o aluno pode:",
+        options: [
+          "Instalar aplicativos da Loja",
+          "Configurar Wi-Fi/Ethernet, gerenciar adaptadores e o compartilhamento de arquivos",
+          "Criar contas de usuário",
+          "Desfragmentar o disco"
+        ],
+        correct: 1,
+        hint: "É ali que ficam as conexões e o compartilhamento de rede."
+      },
+      {
+        q: "Para criar um usuário local no Windows 10/11, qual caminho é correto?",
+        options: [
+          "Digitar um e-mail Microsoft e concluir",
+          'Clicar em "Não tenho as informações de login desta pessoa" e depois em "Adicionar um usuário sem conta Microsoft"',
+          "O Windows cria sozinho",
+          "Só dá pelo Prompt de Comando"
+        ],
+        correct: 1,
+        hint: "Sem esse caminho o Windows insiste em pedir uma conta Microsoft."
+      }
+    ];
     const QUESTIONS_LESSON_7 = [
       {
         q: "Qual é a função da Central de Segurança do Windows (Windows 7)?",
@@ -5074,10 +5561,10 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      // Aulas liberadas: 1, 2, 3, 7 (com complemento 71) e 8 (com complemento 81). Demais estão em construção!
-      const OPEN_LESSONS = [1, 2, 3, 7, 8, 71, 81];
+      // Aulas liberadas: 1, 2, 3, 4, 7 (com complemento 71) e 8 (com complemento 81). Demais estão em construção!
+      const OPEN_LESSONS = [1, 2, 3, 4, 7, 8, 71, 81];
       if(!OPEN_LESSONS.includes(lessonNum)){
-        alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, as Aulas 01, 02, 03, 07 e 08 estão disponíveis no portal.`);
+        alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, as Aulas 01, 02, 03, 04, 07 e 08 estão disponíveis no portal.`);
         return;
       }
 
@@ -5098,13 +5585,14 @@
     document.getElementById("btn-confirm-unlock").onclick = function(){
       const typed = document.getElementById("modal-pass-field").value.trim().toLowerCase();
 
-      // Aceita wr0126 (Aula 1) / wr0226 (Aula 2) / wr0326 (Aula 3) / wr0726 (Aula 7 e Complemento 7A) / wr0926 (Aula 8 e Complemento 8A) ou senhas de teste a001/b002/c003/d004/h008/wr2026
-      if(typed === PASSWORD_WR || typed === PASSWORD_A7 || typed === PASSWORD_A1 || typed === PASSWORD_A2 || typed === PASSWORD_A3 || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "h008" || typed === "wr2026"){
+      // Aceita wr0126 (Aula 1) / wr0226 (Aula 2) / wr0326 (Aula 3) / wr0426 (Aula 4) / wr0726 (Aula 7 e Complemento 7A) / wr0826 (Aula 8 e Complemento 8A) ou senhas de teste a001/b002/c003/d004/h008/wr0926
+      if(typed === PASSWORD_WR || typed === PASSWORD_A7 || typed === PASSWORD_A1 || typed === PASSWORD_A2 || typed === PASSWORD_A3 || typed === PASSWORD_A4 || typed === PASSWORD_A8 || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "h008"){
         closePasswordModal();
         const routes = {
           1:  "screen-lesson-1",
           2:  "screen-lesson-2",
           3:  "screen-lesson-3",
+          4:  "screen-lesson-4",
           7:  "screen-lesson-7",
           71: "screen-lesson-71",
           81: "screen-lesson-81",
@@ -5145,9 +5633,9 @@
       if(activePhase) activePhase.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    // MARCAR LEITURA / GAMIFICAÇÃO (AULAS 1, 2, 3, 7, 8 E COMPLEMENTOS 71 e 81)
-    const TOTAL_TOPICS = { 1: 7, 2: 10, 3: 10, 7: 7, 8: 5, 71: 4, 81: 6 };
-    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 7: true, 71: true, 81: true };
+    // MARCAR LEITURA / GAMIFICAÇÃO (AULAS 1, 2, 3, 4, 7, 8 E COMPLEMENTOS 71 e 81)
+    const TOTAL_TOPICS = { 1: 7, 2: 10, 3: 10, 4: 9, 7: 7, 8: 5, 71: 4, 81: 6 };
+    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 7: true, 71: true, 81: true };
     // A leitura concluída é estado do aluno: precisa sobreviver ao F5. Sem isto o
     // progresso vivia num Set em memória e a barra voltava para 0% ao recarregar.
     const READ_STORAGE_KEY = "wrWindowsReadTopics";
@@ -5262,7 +5750,7 @@
       });
     })();
 
-    // ABRIR EXERCÍCIO DE FIXAÇÃO (AULAS 1, 2, 3, 7, 8 E COMPLEMENTOS 71 e 81)
+    // ABRIR EXERCÍCIO DE FIXAÇÃO (AULAS 1, 2, 3, 4, 7, 8 E COMPLEMENTOS 71 e 81)
     window.openFixationPanel = function(lessonNum) {
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-phase-section`).forEach(s => s.classList.remove("active"));
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
@@ -5580,7 +6068,8 @@
       1:  { questions: QUESTIONS_LESSON_1,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-1",  title: "Módulo 1 — Aula 1: A História e o Funcionamento dos Computadores",             sig: "Módulo 1 - Aula 1 (Windows)" },
       2:  { questions: QUESTIONS_LESSON_2,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-2",  title: "Módulo 1 — Aula 2: Introdução ao Windows",                                      sig: "Módulo 1 - Aula 2 (Windows)" },
       3:  { questions: QUESTIONS_LESSON_3,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-3",  title: "Módulo 1 — Aula 3: Medidas de Armazenamento no Computador",                     sig: "Módulo 1 - Aula 3 (Windows)" },
-      7:  { questions: QUESTIONS_LESSON_7,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-7",  title: "Módulo 1 — Aula 7: Segurança e Antivírus no Windows",                          sig: "Módulo 1 - Aula 7 (Windows)" },
+
+      4:  { questions: QUESTIONS_LESSON_4,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-4",  title: "Módulo 1 — Aula 4: Painel de Controle e Configurações",                     sig: "Módulo 1 - Aula 4 (Windows)" },      7:  { questions: QUESTIONS_LESSON_7,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-7",  title: "Módulo 1 — Aula 7: Segurança e Antivírus no Windows",                          sig: "Módulo 1 - Aula 7 (Windows)" },
       71: { questions: QUESTIONS_LESSON_71, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-71", title: "Módulo 1 — Complemento 7A: Backup Automático com Arquivo .BAT",                  sig: "Módulo 1 - Complemento 7A (Windows)" },
       81: { questions: QUESTIONS_LESSON_81, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-81", title: "Módulo 1 — Complemento 8A: Tutorial de Criação de Mídia de Instalação",        sig: "Módulo 1 - Complemento 8A (Windows)" }
     };
@@ -5742,8 +6231,8 @@
       };
     }
 
-    // EVENTOS DOS QUIZZES DAS AULAS 1, 2, 3, 7 E COMPLEMENTOS (1, 2, 3, 7, 71, 81)
-    [1, 2, 3, 7, 71, 81].forEach(function(lessonNum){
+    // EVENTOS DOS QUIZZES DAS AULAS 1, 2, 3, 4, 7 E COMPLEMENTOS (1, 2, 3, 4, 7, 71, 81)
+    [1, 2, 3, 4, 7, 71, 81].forEach(function(lessonNum){
       document.getElementById(`btn-hint-${lessonNum}`).onclick = () => {
         document.getElementById(`hint-box-${lessonNum}`).classList.toggle("show");
       };

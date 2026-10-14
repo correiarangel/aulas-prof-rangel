@@ -36,9 +36,57 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL — COMEÇAR AQUI (08/10/2026) — Aula 12: Prova Final do módulo Windows + correção do hub
+## ✅ SESSÃO ATUAL — COMEÇAR AQUI (13/10/2026) — Aula 04 do Windows: imagens reais, botões de fase e apostila PDF
 
-Criada a **Prova Final do módulo Windows** (`modules/windows/prova-windows.html`) no padrão da prova do módulo Internet, e corrigido o hub `modules/windows/index.html` (card AULA 02 duplicado + rótulos desalinhados + link da Aula 12).
+Corrigida a Aula 04 (`modules/windows/index.html`) após relato do professor de que **as imagens da origem não apareciam** e de que **os botões "Marcar fase/tópico como lido" não funcionavam**.
+
+### 1. Causas raiz encontradas
+- A tela usava `class="tab-panel"`, mas `switchTopicPhase` só alterna `.topic-phase-section` (+ `.topic-tab-btn`) → ao clicar numa fase **nada acontecia**.
+- Os checks eram `check-read-4-2..-9` (faltava o `-1`). Com `SEQUENTIAL_LESSONS[4]=true`, `paintReadLesson` itera `i=1..TOTAL_TOPICS` e o tópico 2 fica travado para sempre (ninguém marca o tópico 1) → **todos os botões pareciam mortos**.
+- Faltava a **FASE 0** (regra 1 do AGENTS.md).
+
+### 2. O que foi entregue
+- Reescritas as fases da Aula 4 (linhas ~3142–3160 substituídas por bloco novo): **FASE 0** (`#l4-fase-0`, `check-read-4-1`, roteiro de 8 passos) + **8 seções** `#l4-phase-1..8` com `class="topic-phase-section"` + `<nav class="topic-tabs-bar">` (`tab-btn-4-1..4-8` + `tab-btn-4-fix` → `openFixationPanel(4)`) + checks `check-read-4-1..9` (9 tópicos = `TOTAL_TOPICS[4]`).
+- **17 imagens reais** de `assets/img/windows/Aula4/image1..17.png` na tela, com legendas (paths `../../assets/img/windows/Aula4/...`).
+- `assets/js/pdf-lessons.js`: adicionadas **9 seções `lessonNum: 4`** no módulo `windows` (inseridas antes da 1ª seção da Aula 8, ~linha 1061) com conteúdo + as **17 imagens** e o título "AULA 04: PAINEL DE CONTROLE E CONFIGURAÇÕES NO WINDOWS". Antes não havia nenhuma seção `lessonNum: 4` → a apostila saía vazia.
+- **Imagens maiores e organizadas (2º pedido) — ⚠️ REVERTIDO em 13/10/2026 (ver §2b)**: descoberto que o tamanho é ditado pela regra global `assets/css/style.css` (`~1054`) `.lesson-reading-card img { max-width: 92% !important }` — por isso os `style="max-width:..."` inline nunca valiam e as imagens em linhas de 2 colunas ficavam com **metade** da largura. Ação original (hoje revertida): transformadas as **5 linhas flex de 2 colunas** da Aula 4 em imagens empilhadas de largura total (**todas** as 15 prints a **929px** em desktop 1280) + classe `.img-showcase` (com `.img-icon` a **220px !important**).
+
+### 2b. Correção do 2º pedido (13/10/2026) — só 4 imagens ficam grandes
+O professor esclareceu que o 2º pedido era **aumentar apenas 4 imagens específicas**, e não todas as 17. A versão acima (todas a 929px) foi **revertida**.
+
+- **As 4 imagens que permanecem grandes** (`style="width:100%;"` → ~929px): `image16.png` (Imagem 10/18 — Rede no Configurações, §4.4), `image4.png` (Imagem 11/18 — Adaptadores de rede, §4.4), `image11.png` (Imagem 12/18 — Programas e Recursos, §4.5), `image6.png` (Imagem 18/18 — Adicionar outra pessoa a este PC, §4.6).
+- **As outras 13 voltaram ao layout exato de antes**: as 5 linhas flex de 2 colunas foram **restauradas** (Fases 2, 4, 5, 6) e as avulsas retomaram seus `style="max-width:..."` inline (que continuam inertes → renderizam no tamanho natural, nunca acima dele).
+- `assets/css/style.css`: **removido** o bloco global `.img-showcase`/`.img-icon` que eu havia introduzido (era a causa de *todas* as imagens esticarem).
+- `assets/js/pdf-lessons.js`: removido `imagesWide: true` das 7 seções da Aula 4 e adicionado suporte **por imagem** (`wide: true` → classe `.pdf-img-wide`, largura 100%) em `image16`, `image4`, `image11`, `image6`. As Aulas 1–3 mantêm `imagesWide` de seção (não tocadas).
+
+**Validações da correção (13/10/2026):**
+```bash
+node --check assets/js/pdf-lessons.js                       # SYNTAX OK
+DEBUG_PORT=9223 node /tmp/opencode/measure-a4b.js <url>     # 17/17: 4 alvos ampliados (929px) + 13 ≤ natural
+node /tmp/opencode/pdf-check.js                             # PDF Aula4 OK: 9 seções, 17 imagens
+# via vm/pdf-lessons.js: Aula4 → 4 pdf-img-wide + 14 plain, 0 grid-wide; Aulas 1–3 intactas (6/2/2 grid-wide)
+```
+
+### 3. Validações executadas (13/10/2026)
+```bash
+node --check assets/js/pdf-lessons.js            # OK
+# script inline do index.html extraído → node --check OK
+DEBUG_PORT=9223 node /tmp/opencode/cdp-test-a4.js  # 25/25 ok
+node /tmp/opencode/pdf-check.js                    # PDF Aula4 OK: 9 seções, 17 imagens (todas existem)
+DEBUG_PORT=9223 node /tmp/opencode/measure-a4.js   # 17/17 imagens: 15 prints em 929px + 2 ícones em 220px, todas carregadas
+```
+- E2E (Chrome headless/CDP, servidor `:8139`, debug `:9223`): 8 fases `topic-phase-section`; `switchTopicPhase(4,3)` mostra só a fase 3; gating sequencial (`check-read-4-1` liberado, `-2` travado; marcar o 1 libera o 2); **17/17 imagens com `naturalWidth>0`**; quiz da Aula 4 (render, localStorage, "Recomeçar"); cards 1/2/3/4/7/8/71/81 abrem modal e liberam a tela.
+- Balanceamento de tags do `index.html` conferido (section 64/64, div 608/608, etc.).
+
+### 4. Pendente
+1. **Aprovação visual humana** (tela + PDF) — o harness prova estrutura/comportamento, não o texto (regra 12).
+2. **Commit** (aguardando o professor; `assets/img/windows/Aula4/` ainda untracked).
+
+---
+
+## ✅ SESSÃO ANTERIOR (12/10/2026) — Revisão SDD Aula 04 (Painel de Controle e Configurações) + reconciliação com material de origem
+
+Revisado o **SDD da Aula 04** (`Docs/SPEC-AULA-04-WINDOWS.md`) contra `AulaOrigem/windows/Aula 4 - Windows-Painel de Controle/` — 17 PNG batem 1:1 com a origem, estrutura-fonte conferida, localizadores de código pós-`4386bed` atualizados e adicionado §12 (Avaliação). Nenhuma alteração de código ainda (preparação para implementação). Prova Final do Windows (Aula 12) já existente, validada em 08/10/2026.
 
 > 🔄 **REVISÃO DA MESMA SESSÃO (08/10/2026, pedido do professor) — FORMATO FINAL:** a prova **não tem mais atividades práticas**. Foram removidos a tela `screen-practical`, o checklist `pr-*`, `POINTS_PER_PRACTICAL`, `TOTAL_PRACTICALS`, `practicalChecks` e todo o fluxo/listeners de prática. As questões **8, 10, 11 e 14 foram substituídas por versões mais fáceis** (Q8 = atalho Windows + E; Q10 = Delete → Lixeira; Q11 = para que serve uma pasta; Q14 = antivírus que já vem no Windows) — **sem `.bat`/xcopy, sem Media Creation Tool, sem a prática da Aula 9 e sem conta Administrador × Padrão**. Pontuação final: **15 questões × (10/15) ≈ 0,67 ponto cada = 10,0**; `PASS_SCORE=7.0` → aprovação com **11 acertos (7,33)**. Gabarito novo: `[1,2,3,0,3,2,1,2,2,2,1,1,1,3,0]`. **As descrições abaixo que citam práticas / 0,5 ponto / 2,5 pontos estão SUPERADAS.**
 
@@ -165,7 +213,7 @@ Os harnesses validam **estrutura e comportamento**; **ninguém com visão ainda 
 | 6 | Regressão visual dos demais módulos após as mudanças globais de CSS (Regra 6, `.fixation-panel`) | 🔴 pendente |
 | 7 | Senhas candidatas confirmadas: `wr0126`, `wr0226`, `wr0326` (e `wr0426` quando a Aula 04 existir) | 🔴 pendente |
 | 8 | Inspeção do PDF do Excel (P-06) | 🔴 pendente |
-| 9 | **Aula 04** (SDD em `Docs/SPEC-AULA-04-WINDOWS.md`) — só após implementada: tela + PDF | 🔴 pendente |
+| 9 | **Aula 04** (SDD em `Docs/SPEC-AULA-04-WINDOWS.md` — revisado 12/10/2026 contra origem) — só após implementada: tela + PDF | 🔴 pendente |
 
 > Este bloco é **obrigatório a cada sessão**: enquanto houver 🔴 aqui, o trabalho **não** pode ser dado como aprovado — o item deve ser conferido visualmente por humano e virar 🟢 nesta mesma tabela.
 
