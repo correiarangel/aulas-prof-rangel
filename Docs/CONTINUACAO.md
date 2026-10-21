@@ -36,7 +36,57 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL — COMEÇAR AQUI (13/10/2026) — Aula 04 do Windows: imagens reais, botões de fase e apostila PDF
+## ✅ SESSÃO ATUAL — COMEÇAR AQUI (15/10/2026) — Aula 05 do Windows: Área de Trabalho, Pastas e Arquivos (implementada do zero)
+
+Implementada a **Aula 05 do Windows** a partir do SDD `Docs/SPEC-AULA-05-WINDOWS.md` (escrito na mesma data e agora marcado 🟢 IMPLEMENTADA). Tela, hub, senha, quiz com persistência, leitura persistente, PDF com 9 seções e as 14 imagens reais, mobile.
+
+### 1. O que foi entregue
+
+| Peça | Onde |
+|:---|:---|
+| 14 PNG copiados da origem (image1..image14, ~984 KB) | `assets/img/windows/Aula5/` (novo) |
+| `screen-lesson-5` — **FASE 0** (`l5-fase-0`, objetivo + roteiro de 8 passos + `check-read-5-1`) + **8 fases** (`l5-phase-1..8`), **9 checks** (`check-read-5-1..9`), 8 abas (`tab-btn-5-1..8` + `tab-btn-5-fix`), `fixation-panel-5`, `result-panel-5` | `modules/windows/index.html` (inserida antes de `screen-lesson-7`, espelhando a Aula 4) |
+| Card "Aula 05" no hub → `active-lesson` com `badge-lesson-5` "🟢 Disponível" 📂 (L344) | idem |
+| `PASSWORD_A5="wr0526"` ⚠️ **candidata** + gate (`e005` para teste) + rota `5:"screen-lesson-5"` + `OPEN_LESSONS` (=`[1,2,3,4,5,7,8,71,81]`) | idem |
+| `TOTAL_TOPICS[5]=9`, `SEQUENTIAL_LESSONS[5]=true`; loop de eventos += `5` | idem |
+| `QUESTIONS_LESSON_5` (5 questões × 4 alternativas) + `QUIZ_CFG[5]` (`moduleId:"windows-aula-5"`, sig "Módulo 1 - Aula 5 (Windows)") | idem |
+| `moduleLessonTitles.windows[5] = "Aula 05: Área de Trabalho, Pastas e Arquivos — Do Ícone ao Explorador"` | `assets/js/pdf-lessons.js` |
+| **9 seções `lessonNum: 5` (5.0–5.8)** com mini-sheets/`es-sheet-box`, `imagesWide` em 5.3/5.4/5.5/5.6/5.8 e as 14 imagens | `assets/js/pdf-lessons.js` (L1323–1523, entre a última `lessonNum: 4` e a `lessonNum: 8`; Windows 58→67 seções) |
+
+### 2. Mapa imagem → seção (tela e PDF idênticos)
+
+- 5.1 image13, image5, image10 · 5.2 image11, image7 · 5.3 image2, image12, image8 (wide) · 5.4 image6 (wide) · 5.5 image9, image4 (wide) · 5.6 image14 (wide) · 5.7 SVG/HTML only · 5.8 image1, image3 (wide) = **14 imagens**.
+
+### 3. Validações executadas (15/10/2026)
+
+```bash
+node --check assets/js/pdf-lessons.js        # OK
+# script inline do index.html extraído (IIFE L5483–6985) → node --check OK
+# harness CDP/Chrome headless (servidor :8077, debug :9333):
+#   /tmp/opencode/pdftest/aula5.js     → 0 erros de console; 8 fases; 9 checks; fixation panel; hub/rota OK
+#   /tmp/opencode/pdftest/quiz5.js     → painel abre, 5×4, resultado, assinatura WR-22A1-768C-FFCD-92, persistência (windows-aula-5:aluno(a))
+#   /tmp/opencode/pdftest/read5.js     → gating sequencial; barra 11%→100%; wrWindowsReadTopics {"5":[1..9]}
+#   /tmp/opencode/pdftest/pdfdump.js   → 9 headings 5.0–5.8, 14 <img> Aula5/ (HTTP 200), 0 placeholder
+#   /tmp/opencode/pdftest/mobile5.js   → 375px sem overflow (card 367px)
+```
+
+- **0 ids duplicados**, tags balanceadas, console limpo, tetomas de senha das outras aulas intactos.
+- Leitura persistida (`wrWindowsReadTopics`) e quiz persistido (`windows-aula-5:aluno(a)`) sobrevivem ao reload; "↺ Recomeçar" limpa.
+
+### 4. Pendente
+
+1. **Aprovação visual humana** (tela + PDF) — o harness prova estrutura/comportamento, **não** o texto (Regra 12). Ver §7 (Aula 5 adicionada).
+2. **Confirmar a senha `wr0526`** com o professor.
+3. **Commit (P-10)** — aguardando o professor; `assets/img/windows/Aula5/` ainda **untracked**.
+
+### 5. Lacunas ainda abertas (não tocadas nesta sessão)
+
+- **L-03** — FASE 0 ausente nas Aulas 7, 8 e complementos 71 e 81.
+- **L-07** — Word e PowerPoint com PDF 100% texto puro (regras 2 e 8).
+
+---
+
+## ✅ SESSÃO ANTERIOR (13/10/2026) — Aula 04 do Windows: imagens reais, botões de fase e apostila PDF
 
 Corrigida a Aula 04 (`modules/windows/index.html`) após relato do professor de que **as imagens da origem não apareciam** e de que **os botões "Marcar fase/tópico como lido" não funcionavam**.
 
@@ -201,7 +251,7 @@ python3 /tmp/opencode/a3_harness.py     # 66/66 em ~1 min
 
 ### 7. Aprovação manual humana — 🔴 PENDENTE (bloqueia a publicação)
 
-Os harnesses validam **estrutura e comportamento**; **ninguém com visão ainda conferiu o resultado renderizado**. Até esta lista ser concluída pelo professor, as Aulas 01, 02 e 03 (e o simulador) ficam **"validadas tecnicamente, aguardando aprovação visual"**:
+Os harnesses validam **estrutura e comportamento**; **ninguém com visão ainda conferiu o resultado renderizado**. Até esta lista ser concluída pelo professor, as Aulas 01–05 (e o simulador) ficam **"validadas tecnicamente, aguardando aprovação visual"**:
 
 | # | O que falta conferir (tela e/ou PDF) | Status |
 |:--|:---|:---|
@@ -211,9 +261,10 @@ Os harnesses validam **estrutura e comportamento**; **ninguém com visão ainda 
 | 4 | PDF das Aulas 01, 02 e 03 gerados — legibilidade, legendas, quebras de página, título | 🔴 pendente |
 | 5 | Simulador binário/ASCII — visual, passo-a-passo e histórico | 🔴 pendente |
 | 6 | Regressão visual dos demais módulos após as mudanças globais de CSS (Regra 6, `.fixation-panel`) | 🔴 pendente |
-| 7 | Senhas candidatas confirmadas: `wr0126`, `wr0226`, `wr0326` (e `wr0426` quando a Aula 04 existir) | 🔴 pendente |
+| 7 | Senhas candidatas confirmadas: `wr0126`, `wr0226`, `wr0326`, `wr0426` e `wr0526` | 🔴 pendente |
 | 8 | Inspeção do PDF do Excel (P-06) | 🔴 pendente |
-| 9 | **Aula 04** (SDD em `Docs/SPEC-AULA-04-WINDOWS.md` — revisado 12/10/2026 contra origem) — só após implementada: tela + PDF | 🔴 pendente |
+| 9 | **Aula 04** (`Docs/SPEC-AULA-04-WINDOWS.md`) — tela + PDF | 🔴 pendente |
+| 10 | **Aula 05** (`Docs/SPEC-AULA-05-WINDOWS.md`, implementada 15/10/2026) — tela (14 imagens, 9 fases, quiz) + PDF 9 seções | 🔴 pendente |
 
 > Este bloco é **obrigatório a cada sessão**: enquanto houver 🔴 aqui, o trabalho **não** pode ser dado como aprovado — o item deve ser conferido visualmente por humano e virar 🟢 nesta mesma tabela.
 
