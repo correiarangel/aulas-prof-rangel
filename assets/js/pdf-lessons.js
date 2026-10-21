@@ -1320,6 +1320,208 @@ window.PDFLessons = (function() {
           boxText: "Fazer a mesma tarefa (por exemplo, ver o fuso horário) nos dois caminhos ajuda a memorizar por onde começar quando precisar."
         },
         {
+          lessonNum: 5,
+          chapter: "AULA 05: ÁREA DE TRABALHO, PASTAS E ARQUIVOS",
+          heading: "5.0 Objetivo e Roteiro da Aula (Antes de Começar)",
+          content: "Esta aula ensina a organizar o que está guardado no computador: o que são pastas, arquivos e bibliotecas, o que é o Explorador de Arquivos (o antigo Windows Explorer), quais são os seus painéis e as operações do dia a dia — criar, renomear, excluir, copiar e mover.",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">ROTEIRO NUMERADO (PASSO A PASSO)</div>
+              <ol style="margin:8px 0 0 20px; line-height:1.8; font-size:12.5px; color:#20130B;">
+                <li>O que são pastas, arquivos e bibliotecas (a analogia da gaveta e da roupa).</li>
+                <li>Extensões e como se formam os nomes de arquivo.</li>
+                <li>O Explorador de Arquivos (antigo Windows Explorer) e como abri-lo.</li>
+                <li>Os 8 painéis da janela do Explorador.</li>
+                <li>Como <strong>criar</strong> pastas e arquivos.</li>
+                <li>Como <strong>renomear</strong> pastas e arquivos.</li>
+                <li>Como <strong>excluir, copiar e mover</strong> arquivos e pastas.</li>
+                <li>Os <strong>exercícios práticos</strong> (Exercício 2 e Exercício 3).</li>
+              </ol>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "🏁 Resultado esperado",
+          boxText: "Ao final você conseguirá guardar e encontrar seus documentos num lugar certo, criando pastas com nome e localização que façam sentido para você."
+        },
+        {
+          lessonNum: 5,
+          heading: "5.1 Pastas, Arquivos e Bibliotecas",
+          content: "Guardar tudo solto na área de trabalho é como jogar todas as roupas no chão do quarto: nada se acha. No Windows a organização usa uma ideia simples: as pastas são como gavetas e os arquivos são como as roupas guardadas dentro delas.",
+          images: [
+            { src: "../../assets/img/windows/Aula5/image13.png", caption: "Pasta é como a gaveta; arquivo é como a roupa guardada dentro dela." },
+            { src: "../../assets/img/windows/Aula5/image5.png", caption: "O que é uma pasta." },
+            { src: "../../assets/img/windows/Aula5/image10.png", caption: "O que é um arquivo (exemplos de ícones)." }
+          ],
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">AS TRÊS IDEIAS PRINCIPAIS</div>
+              <ul style="margin:8px 0 0 20px; line-height:1.8; font-size:12.5px; color:#20130B;">
+                <li><strong>Pasta</strong> (ou diretório): o guarda-volumes que agrupa arquivos e outras pastas; ajuda a separar assuntos (Fotos, Documentos, Trabalho).</li>
+                <li><strong>Arquivo</strong>: o conteúdo em si — texto, foto, música, vídeo ou programa.</li>
+                <li><strong>Biblioteca</strong>: um atalho que reúne, num só lugar, arquivos que estão em pastas diferentes (ex.: a Biblioteca Imagens mostra as fotos de várias pastas).</li>
+              </ul>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Para lembrar",
+          boxText: "Pasta organiza; arquivo é o que está guardado; biblioteca é uma vista que junta itens de pastas diferentes sem movê-los."
+        },
+        {
+          lessonNum: 5,
+          heading: "5.2 Extensões e Nomes de Arquivo",
+          content: "Todo arquivo tem um nome e, quase sempre, uma extensão: a parte que vem depois do último ponto e diz de que tipo o arquivo é (e com qual programa ele abre).",
+          images: [
+            { src: "../../assets/img/windows/Aula5/image11.png", caption: "Extensões indicam o tipo do arquivo." },
+            { src: "../../assets/img/windows/Aula5/image7.png", caption: "Nomenclatura: nome + extensão (ex.: relatorio.docx)." }
+          ],
+          html: `
+            <div class="mini-sheet">
+              <div class="es-sheet-titlebar">EXTENSÕES COMUNS</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Extensão</th><th>Tipo de arquivo</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>.txt</td><td>Texto simples (abre no Bloco de Notas)</td></tr>
+                  <tr><td>.docx</td><td>Documento do Word</td></tr>
+                  <tr><td>.xlsx</td><td>Planilha do Excel</td></tr>
+                  <tr><td>.jpg / .png</td><td>Imagem / foto</td></tr>
+                  <tr><td>.mp3</td><td>Áudio (música)</td></tr>
+                  <tr><td>.mp4</td><td>Vídeo</td></tr>
+                  <tr><td>.exe</td><td>Programa executável</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          boxType: "warning",
+          boxTitle: "💡 Atenção",
+          boxText: "A extensão não é decoração: trocá-la errado pode fazer o arquivo não abrir. Para renomear, mude só a parte antes do ponto."
+        },
+        {
+          lessonNum: 5,
+          heading: "5.3 O Explorador de Arquivos (Windows Explorer)",
+          content: "O Explorador de Arquivos é o programa do Windows que mostra as pastas e os arquivos do computador. É por ele que você passeia entre as gavetas. No Windows 7 ele se chamava Windows Explorer; a partir do Windows 8, 10 e 11 mudou só o nome: virou Explorador de Arquivos.",
+          images: [
+            { src: "../../assets/img/windows/Aula5/image2.png", caption: "Janela do Windows Explorer." },
+            { src: "../../assets/img/windows/Aula5/image12.png", caption: "Ícone do Windows Explorer na barra de tarefas." },
+            { src: "../../assets/img/windows/Aula5/image8.png", caption: "Explorador aberto em Este Computador." }
+          ],
+          imagesWide: true,
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">COMO ABRIR O EXPLORADOR DE ARQUIVOS</div>
+              <ul style="margin:8px 0 0 20px; line-height:1.8; font-size:12.5px; color:#20130B;">
+                <li>Clique no <strong>ícone da pastinha</strong> fixado na barra de tarefas.</li>
+                <li>Ou use o atalho <kbd>Win + E</kbd>.</li>
+                <li>Ou clique duas vezes em <strong>Este Computador</strong> / <strong>Meu Computador</strong> na área de trabalho.</li>
+              </ul>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Para lembrar",
+          boxText: "Win + E abre o Explorador; Win + I abre Configurações; Win + R abre o Executar."
+        },
+        {
+          lessonNum: 5,
+          heading: "5.4 Os 8 Painéis do Explorador",
+          content: "A janela do Explorador é dividida em áreas. Conhecer cada uma delas é o que faz você navegar sem se perder.",
+          images: [
+            { src: "../../assets/img/windows/Aula5/image6.png", caption: "Explorador em Documentos, com os painéis visíveis." }
+          ],
+          imagesWide: true,
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">OS 8 PAINÉIS</div>
+              <ol style="margin:8px 0 0 20px; line-height:1.8; font-size:12.5px; color:#20130B;">
+                <li><strong>Painel de Navegação</strong>: acessa as bibliotecas e pastas salvas; também traz o ícone Computador (disco local e discos removíveis).</li>
+                <li><strong>Botão Voltar/Avançar</strong>: volta ao local anterior ou avança para o próximo.</li>
+                <li><strong>Barra de Ferramentas</strong>: tarefas comuns, como criar uma nova pasta e gravar no disco.</li>
+                <li><strong>Barra de Endereço</strong>: mostra e permite navegar entre pastas e bibliotecas.</li>
+                <li><strong>Painel de Biblioteca</strong>: aparece só quando você está numa biblioteca; serve para personalizá-la.</li>
+                <li><strong>Lista de Arquivos e Pastas</strong>: onde os arquivos e pastas são apresentados.</li>
+                <li><strong>Caixa de Pesquisa</strong>: procura arquivos e pastas pelo nome.</li>
+                <li><strong>Painel de Detalhes</strong>: mostra uma prévia/informações do arquivo sem precisar abri-lo.</li>
+              </ol>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Dica",
+          boxText: "O Painel de Detalhes evita abrir o arquivo só para ver o que é — ótimo para conferir fotos e documentos rapidamente."
+        },
+        {
+          lessonNum: 5,
+          heading: "5.5 Como Criar Pastas e Arquivos",
+          content: "Criar uma pasta: dentro do Explorador, no local desejado, clique com o botão direito numa área vazia, escolha Novo → Pasta, digite o nome e tecle Enter. Criar um arquivo: o caminho mais simples é salvar por dentro de um programa (Bloco de Notas, Word, Excel): escreva o conteúdo, clique em Arquivo → Salvar (ou Ctrl + S), dê um nome, escolha a pasta e clique em Salvar.",
+          images: [
+            { src: "../../assets/img/windows/Aula5/image9.png", caption: "Como criar uma pasta (botão direito → Novo → Pasta)." },
+            { src: "../../assets/img/windows/Aula5/image4.png", caption: "Salvar um arquivo: nome → pasta → Salvar." }
+          ],
+          imagesWide: true,
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">PASSO A PASSO — CRIAR</div>
+              <ol style="margin:8px 0 0 20px; line-height:1.8; font-size:12.5px; color:#20130B;">
+                <li><strong>Pasta:</strong> botão direito em área vazia → <em>Novo</em> → <em>Pasta</em> → digite o nome → Enter.</li>
+                <li><strong>Arquivo:</strong> abra o programa, escreva o conteúdo, <em>Arquivo</em> → <em>Salvar</em> (Ctrl + S), dê o nome, escolha a pasta → <em>Salvar</em>.</li>
+              </ol>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Dica",
+          boxText: "Dê nomes claros desde o começo (ex.: Trabalho, Fotos 2026). Renomear depois é fácil, mas nomear bem evita retrabalho."
+        },
+        {
+          lessonNum: 5,
+          heading: "5.6 Como Renomear Pastas e Arquivos",
+          content: "Renomear é dar um nome melhor ao que já existe — sem precisar apagar e criar de novo. Selecione a pasta ou o arquivo, clique com o botão direito e escolha Renomear (ou pressione F2), digite o novo nome e tecle Enter.",
+          images: [
+            { src: "../../assets/img/windows/Aula5/image14.png", caption: "Renomear pelo menu do botão direito (ou tecla F2)." }
+          ],
+          imagesWide: true,
+          boxType: "warning",
+          boxTitle: "💡 Atenção",
+          boxText: "Ao renomear um arquivo, não apague a extensão (.docx, .jpg…). Mude só a parte antes do ponto."
+        },
+        {
+          lessonNum: 5,
+          heading: "5.7 Como Excluir, Copiar e Mover Arquivos e Pastas",
+          content: "Estas são as três operações que você mais vai usar no dia a dia. Todas começam com o botão direito sobre o item (ou com atalhos de teclado).",
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">AS TRÊS OPERAÇÕES</div>
+              <ul style="margin:8px 0 0 20px; line-height:1.8; font-size:12.5px; color:#20130B;">
+                <li><strong>Excluir</strong>: botão direito → Excluir (ou tecla Delete). O item vai para a Lixeira e pode ser recuperado; para apagar de vez, esvazie a Lixeira.</li>
+                <li><strong>Copiar</strong>: botão direito → Copiar (Ctrl + C). O original fica onde estava e é criada uma cópia no destino (Ctrl + V).</li>
+                <li><strong>Mover</strong>: botão direito → Recortar (Ctrl + X) e Colar (Ctrl + V) no destino — ou arrastar o item para outra pasta com o mouse. O item sai do lugar original.</li>
+              </ul>
+            </div>
+            <div style="margin-top:14px; padding:12px; border:2px solid #E6D2C1; border-radius:12px; background:#FFF9F2;">
+              <p style="margin:0 0 8px; font-size:12.5px; font-weight:700; color:#8A5A17;">Copiar × Mover × Excluir</p>
+              <p style="margin:0; font-size:12.5px; color:#20130B; line-height:1.7;">
+                <strong>Copiar</strong> (Ctrl+C → Ctrl+V): o original FICA e surge uma cópia nova.<br>
+                <strong>Mover</strong> (Ctrl+X → Ctrl+V ou arrastar): o item SAI do lugar e vai para o destino.<br>
+                <strong>Excluir</strong> (Delete): vai para a Lixeira e dá para recuperar.
+              </p>
+            </div>
+          `,
+          boxType: "warning",
+          boxTitle: "⚠️ Atenção",
+          boxText: "Ao mover um arquivo, ele deixa de existir na pasta antiga. Se quiser manter o original, use Copiar, não Recortar."
+        },
+        {
+          lessonNum: 5,
+          heading: "5.8 Exercícios Práticos (Exercício 2 e Exercício 3)",
+          content: "Exercício 2 — crie uma estrutura de pastas para as disciplinas do seu curso. Crie uma pasta principal (ex.: Curso) e, dentro dela, uma pasta para cada disciplina. Abra a pasta de uma disciplina, clique com o botão direito → Novo → Documento de Texto e dê o nome Notas. Exercício 3 — abra o arquivo Notas e registre o IP do seu PC e a capacidade total de armazenamento (HD / SSD / NVMe). O IP aparece no Painel de Controle → Rede (ou no Prompt de Comando com ipconfig); a capacidade aparece em Este Computador, nas propriedades do disco.",
+          images: [
+            { src: "../../assets/img/windows/Aula5/image1.png", caption: "Modelo de estrutura de pastas do curso." },
+            { src: "../../assets/img/windows/Aula5/image3.png", caption: "Trabalho do Exercício 3." }
+          ],
+          imagesWide: true,
+          boxType: "tip",
+          boxTitle: "⚙️ Importante",
+          boxText: "Crie tudo dentro de uma pasta nova de teste. Nenhum arquivo pessoal precisa ser apagado — este exercício é de observação e organização."
+        },
+        {
           lessonNum: 8,
           chapter: "AULA 08: DIAGNÓSTICO DE MEMÓRIA, RESTAURAÇÃO DO SISTEMA E MÍDIA DE INSTALAÇÃO",
           heading: "8.1 Diagnóstico de Memória RAM do Windows (Teste de Memória)",
@@ -4381,7 +4583,8 @@ O Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, va
         71: "Complemento 7A — Backup Automático com Arquivo .BAT",
         81: "Complemento 8A — Tutorial: Como Criar Pendrive/DVD de Instalação do Windows",
         8: "Aula 08: Diagnóstico de Memória, Restauração do Sistema e Mídia de Instalação",
-        4: "Aula 04: Painel de Controle e Configurações no Windows — Ajustes do Sistema"
+        4: "Aula 04: Painel de Controle e Configurações no Windows — Ajustes do Sistema",
+        5: "Aula 05: Área de Trabalho, Pastas e Arquivos — Do Ícone ao Explorador"
       },
       excel: {
         1: "Aula 01: Introdução ao Excel, Interface, Tipos de Dados e Navegação",
