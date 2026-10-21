@@ -341,14 +341,14 @@
             <span style="font-size:24px;" id="badge-lesson-4">🔒</span>
           </div>
 
-          <!-- AULA 5 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(5, 'Área de Trabalho, Pastas e Arquivos')">
+          <!-- AULA 5 — LIBERADA E COMPLETA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(5, 'Área de Trabalho, Pastas e Arquivos')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num">AULA 05</span>
               <span class="lesson-name">Área de Trabalho, Pastas e Arquivos</span>
-              <span style="font-size:13px; color:#F4E8DC; font-weight:600; margin-top:4px; opacity:0.95;">🔒 Em Construção</span>
+              <span style="font-size:13px; color:#F4E8DC; font-weight:600; margin-top:4px; opacity:0.95;" id="badge-lesson-5">🟢 Disponível</span>
             </div>
-            <span style="font-size:20px;">🚧</span>
+            <span style="font-size:20px;">📂</span>
           </div>
 
           <!-- AULA 6 -->
@@ -3551,6 +3551,485 @@
         </div>
       </article>
     </section>
+    <section id="screen-lesson-5" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">← Voltar ao Menu do Módulo</button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">🖨️ Imprimir Aula Completa (HTML Origem)</button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 5)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">📑 Baixar Apostila PDF</button>
+        </div>
+      </div>
+      <article class="lesson-reading-card">
+        <header style="margin-bottom:20px;">
+          <h1 style="color:var(--teal-deep); font-size:32px; margin:0; line-height:1.3;">Aula 05: Área de Trabalho, Pastas e Arquivos</h1>
+          <p style="color:var(--ink-soft); margin:8px 0 0; font-size:16px;">Pastas, arquivos e bibliotecas, o Explorador de Arquivos e as operações de criar, renomear, excluir, copiar e mover</p>
+        </header>
+        <div class="gamify-bar" id="gamify-bar-5">
+          <div class="gamify-fill" id="gamify-fill-5" style="width:0%;"></div>
+          <span class="gamify-percent" id="gamify-percent-5">0%</span>
+          <span class="gamify-badge-box" id="gamify-badge-box-5"></span>
+        </div>
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l5-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Entender como o Windows <strong>organiza o que está guardado no computador</strong>: o que são <strong>pastas, arquivos e bibliotecas</strong>, o que é o <strong>Explorador de Arquivos</strong> (o antigo Windows Explorer), seus <strong>painéis</strong> e as operações do dia a dia — <strong>criar, renomear, excluir, copiar e mover</strong>.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li>O que são pastas, arquivos e bibliotecas (a analogia da gaveta e da roupa).</li>
+            <li>Extensões e como se formam os nomes de arquivo.</li>
+            <li>O Explorador de Arquivos (antigo Windows Explorer) e como abri-lo.</li>
+            <li>Os 8 painéis da janela do Explorador.</li>
+            <li>Como <strong>criar</strong> pastas e arquivos.</li>
+            <li>Como <strong>renomear</strong> pastas e arquivos.</li>
+            <li>Como <strong>excluir, copiar e mover</strong> arquivos e pastas.</li>
+            <li>Os <strong>exercícios práticos</strong> (Exercício 2 e Exercício 3).</li>
+          </ol>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
+            🏁 Resultado esperado: ao final, você conseguirá <strong>guardar e encontrar seus documentos</strong> num lugar certo — criando pastas com nome e localização que façam sentido para você.
+          </p>
+          <p style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px; margin-top:10px; font-size:14.5px; color:var(--teal-deep);">
+            ⚙️ <strong>Preparação:</strong> faça os exercícios dentro de uma <strong>pasta nova de teste</strong>. Nada precisa ser apagado da máquina — você só vai criar e organizar arquivos seus.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro desta aula e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-1" onclick="markTopicRead(5, 1)">
+              <span>☐ Entendi o roteiro — começar a aula!</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 1)">Ir para 1. Pastas, Arquivos e Bibliotecas →</button>
+          </div>
+        </div>
+
+        <!-- ÍNDICE DE TÓPICOS DA AULA 5 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-5-1" onclick="switchTopicPhase(5, 1)">1. Pastas, Arquivos e Bibliotecas</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-2" onclick="switchTopicPhase(5, 2)">2. Extensões e Nomes</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-3" onclick="switchTopicPhase(5, 3)">3. Explorador de Arquivos</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-4" onclick="switchTopicPhase(5, 4)">4. Os 8 Painéis</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-5" onclick="switchTopicPhase(5, 5)">5. Criar</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-6" onclick="switchTopicPhase(5, 6)">6. Renomear</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-7" onclick="switchTopicPhase(5, 7)">7. Excluir, Copiar e Mover</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-8" onclick="switchTopicPhase(5, 8)">8. Exercícios</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-fix" onclick="openFixationPanel(5)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- TÓPICO 1 DA AULA 5: PASTAS, ARQUIVOS E BIBLIOTECAS -->
+        <section id="l5-phase-1" class="topic-phase-section active">
+          <h2>1. O que são Pastas, Arquivos e Bibliotecas</h2>
+          <p>
+            Guardar tudo "solto" na área de trabalho é como jogar todas as roupas no chão do quarto: nada se acha. No Windows, a organização é feita com uma ideia simples: <strong>as pastas são como gavetas</strong> e <strong>os arquivos são como as roupas</strong> guardadas dentro delas.
+          </p>
+
+          <img src="../../assets/img/windows/Aula5/image13.png" alt="Analogia da gaveta com roupas para explicar pasta e arquivo" class="img-showcase" style="max-width:520px;">
+          <p class="img-caption">Imagem 01/14 — Pasta é como a gaveta; arquivo é como a roupa guardada dentro.</p>
+
+          <div class="es-sheet-box" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">📁 As três ideias principais</div>
+            <ul style="margin:8px 0 0 20px; line-height:1.8; font-size:14.5px; color:var(--ink);">
+              <li><strong>Pasta</strong> (ou diretório): é o "guarda-volumes" que agrupa arquivos e outras pastas. Ajuda a separar assuntos (Fotos, Documentos, Trabalho).</li>
+              <li><strong>Arquivo</strong>: é o conteúdo em si — um texto, uma foto, uma música, um vídeo ou um programa.</li>
+              <li><strong>Biblioteca</strong>: um atalho que reúne, num só lugar, arquivos que estão em pastas diferentes (por exemplo, a Biblioteca "Imagens" mostra as fotos das suas pastas de imagens).</li>
+            </ul>
+          </div>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; margin:16px 0;">
+            <div style="flex:1; min-width:240px;">
+              <img src="../../assets/img/windows/Aula5/image5.png" alt="Definição do que é uma pasta" class="img-showcase" style="max-width:420px;">
+              <p class="img-caption" style="text-align:left;">Imagem 02/14 — O que é uma pasta.</p>
+            </div>
+            <div style="flex:1; min-width:240px;">
+              <img src="../../assets/img/windows/Aula5/image10.png" alt="Definição do que é um arquivo, com exemplos de ícones" class="img-showcase" style="max-width:420px;">
+              <p class="img-caption" style="text-align:left;">Imagem 03/14 — O que é um arquivo (exemplos).</p>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi o que são pastas, arquivos e bibliotecas.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-2" onclick="markTopicRead(5, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="document.getElementById('l5-fase-0').scrollIntoView({behavior:'smooth', block:'start'})">← Voltar ao Início da Aula</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 2)">Ir para 2. Extensões e Nomes →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 2 DA AULA 5: EXTENSÕES E NOMES -->
+        <section id="l5-phase-2" class="topic-phase-section">
+          <h2>2. Extensões e Nomes de Arquivo</h2>
+          <p>
+            Todo arquivo tem um <strong>nome</strong> e, quase sempre, uma <strong>extensão</strong>: a parte que vem depois do último ponto e diz <strong>de que tipo</strong> o arquivo é (e com qual programa ele abre).
+          </p>
+
+          <img src="../../assets/img/windows/Aula5/image11.png" alt="Exemplos de extensões de arquivo: txt, docx, jpg, mp3" class="img-showcase" style="max-width:520px;">
+          <p class="img-caption">Imagem 04/14 — Extensões indicam o tipo do arquivo.</p>
+
+          <div class="mini-sheet" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">🧩 Extensões comuns</div>
+            <table class="mini-sheet">
+              <thead>
+                <tr><th>Extensão</th><th>Tipo de arquivo</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>.txt</code></td><td>Texto simples (abre no Bloco de Notas)</td></tr>
+                <tr><td><code>.docx</code></td><td>Documento do Word</td></tr>
+                <tr><td><code>.xlsx</code></td><td>Planilha do Excel</td></tr>
+                <tr><td><code>.jpg</code> / <code>.png</code></td><td>Imagem / foto</td></tr>
+                <tr><td><code>.mp3</code></td><td>Áudio (música)</td></tr>
+                <tr><td><code>.mp4</code></td><td>Vídeo</td></tr>
+                <tr><td><code>.exe</code></td><td>Programa executável</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <img src="../../assets/img/windows/Aula5/image7.png" alt="Nomenclatura de arquivos e pastas: nome mais extensão" class="img-showcase" style="max-width:540px;">
+          <p class="img-caption">Imagem 05/14 — Nomenclatura: nome + extensão (ex.: <code>relatorio.docx</code>).</p>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; font-size:14.5px; color:var(--amber-dark);">
+            💡 <strong>Atenção:</strong> a extensão <strong>não</strong> é "decoração" — trocá-la errado pode fazer o arquivo não abrir. Para renomear, mude só a parte antes do ponto.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei reconhecer uma extensão e montar o nome de um arquivo.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-3" onclick="markTopicRead(5, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 3)">Ir para 3. Explorador de Arquivos →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 3 DA AULA 5: EXPLORADOR DE ARQUIVOS -->
+        <section id="l5-phase-3" class="topic-phase-section">
+          <h2>3. O Explorador de Arquivos (Windows Explorer)</h2>
+          <p>
+            O <strong>Explorador de Arquivos</strong> é o programa do Windows que mostra as pastas e os arquivos do computador. É por ele que você "passeia" entre as gavetas. No <strong>Windows 7</strong> ele se chamava <strong>Windows Explorer</strong>; a partir do <strong>Windows 8, 10 e 11</strong> mudou só o nome: virou <strong>Explorador de Arquivos</strong>.
+          </p>
+
+          <img src="../../assets/img/windows/Aula5/image2.png" alt="Janela do Windows Explorer mostrando pastas e arquivos" class="img-showcase" style="max-width:540px;">
+          <p class="img-caption">Imagem 06/14 — Janela do Windows Explorer.</p>
+
+          <div class="es-sheet-box" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">🔑 Como abrir o Explorador de Arquivos</div>
+            <ul style="margin:8px 0 0 20px; line-height:1.8; font-size:14.5px; color:var(--ink);">
+              <li>Clique no <strong>ícone da pastinha</strong> fixado na <strong>barra de tarefas</strong>.</li>
+              <li>Ou use o atalho <kbd>Win + E</kbd>.</li>
+              <li>Ou clique duas vezes em <strong>Este Computador</strong> / <strong>Meu Computador</strong> na área de trabalho.</li>
+            </ul>
+          </div>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; margin:16px 0;">
+            <div style="flex:0 0 auto;">
+              <img src="../../assets/img/windows/Aula5/image12.png" alt="Ícone do Windows Explorer na barra de tarefas" class="img-showcase" style="max-width:160px;">
+              <p class="img-caption" style="text-align:left;">Imagem 07/14 — Ícone na barra de tarefas.</p>
+            </div>
+            <div style="flex:1; min-width:260px;">
+              <p style="margin-top:0;">Ao abrir, a janela mostra a <strong>Biblioteca</strong> ou o nó <strong>Este Computador</strong>, de onde se chega ao <strong>disco local (C:)</strong> e aos <strong>discos removíveis</strong> (pen drive, HD externo).</p>
+            </div>
+          </div>
+
+          <img src="../../assets/img/windows/Aula5/image8.png" alt="Windows Explorer aberto em Este Computador, mostrando o disco local" class="img-showcase" style="width:100%;">
+          <p class="img-caption">Imagem 08/14 — Explorador aberto em "Este Computador".</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei o que é o Explorador de Arquivos e como abri-lo.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-4" onclick="markTopicRead(5, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 4)">Ir para 4. Os 8 Painéis →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 4 DA AULA 5: OS 8 PAINÉIS -->
+        <section id="l5-phase-4" class="topic-phase-section">
+          <h2>4. Os 8 Painéis do Explorador</h2>
+          <p>A janela do Explorador é dividida em áreas. Conhecer cada uma delas é o que faz você navegar sem se perder:</p>
+
+          <img src="../../assets/img/windows/Aula5/image6.png" alt="Explorador de Arquivos em Documentos, com os painéis visíveis" class="img-showcase" style="width:100%;">
+          <p class="img-caption">Imagem 09/14 — Explorador em "Documentos".</p>
+
+          <div class="es-sheet-box" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">🗂️ Os 8 painéis</div>
+            <ol style="margin:8px 0 0 20px; line-height:1.8; font-size:14.5px; color:var(--ink);">
+              <li><strong>Painel de Navegação</strong>: acessa as bibliotecas e pastas salvas. Também traz o ícone <strong>Computador</strong>, para o disco local e os discos removíveis.</li>
+              <li><strong>Botão Voltar/Avançar</strong>: volta ao local anterior ou avança para o próximo.</li>
+              <li><strong>Barra de Ferramentas</strong>: tarefas comuns, como criar uma nova pasta e gravar no disco.</li>
+              <li><strong>Barra de Endereço</strong>: mostra e permite navegar entre pastas e bibliotecas.</li>
+              <li><strong>Painel de Biblioteca</strong>: aparece só quando você está numa biblioteca; serve para personalizá-la.</li>
+              <li><strong>Lista de Arquivos e Pastas</strong>: onde os arquivos e pastas são apresentados.</li>
+              <li><strong>Caixa de Pesquisa</strong>: procura arquivos e pastas pelo nome.</li>
+              <li><strong>Painel de Detalhes</strong>: mostra uma prévia/informações do arquivo <strong>sem precisar abri-lo</strong>.</li>
+            </ol>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que identifiquei os 8 painéis do Explorador.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-5" onclick="markTopicRead(5, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 5)">Ir para 5. Criar →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 5 DA AULA 5: CRIAR PASTAS E ARQUIVOS -->
+        <section id="l5-phase-5" class="topic-phase-section">
+          <h2>5. Como Criar Pastas e Arquivos</h2>
+          <p><strong>Criar uma pasta</strong> — dentro do Explorador, no local desejado:</p>
+          <ol style="margin-left:22px; line-height:1.8; font-size:15px; color:var(--ink);">
+            <li>Clique com o <strong>botão direito</strong> numa área vazia.</li>
+            <li>Escolha <strong>Novo → Pasta</strong>.</li>
+            <li>Digite o nome e tecle <strong>Enter</strong>.</li>
+          </ol>
+
+          <img src="../../assets/img/windows/Aula5/image9.png" alt="Menu do botão direito com a opção Novo e Pasta" class="img-showcase" style="width:100%;">
+          <p class="img-caption">Imagem 10/14 — Como criar uma pasta (botão direito → Novo → Pasta).</p>
+
+          <p><strong>Criar um arquivo</strong> — o caminho mais simples é salvar por dentro de um programa (Bloco de Notas, Word, Excel…):</p>
+          <ol style="margin-left:22px; line-height:1.8; font-size:15px; color:var(--ink);">
+            <li>Abra o programa (ex.: Bloco de Notas) e escreva o conteúdo.</li>
+            <li>Clique em <strong>Arquivo → Salvar</strong> (ou <kbd>Ctrl + S</kbd>).</li>
+            <li>Dê um <strong>nome</strong>, escolha a <strong>pasta</strong> e clique em <strong>Salvar</strong>.</li>
+          </ol>
+
+          <img src="../../assets/img/windows/Aula5/image4.png" alt="Tela de salvar arquivo, com campo de nome e botão Salvar" class="img-showcase" style="width:100%;">
+          <p class="img-caption">Imagem 11/14 — Salvar um arquivo: nome → pasta → Salvar.</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei criar uma pasta e salvar um arquivo.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-6" onclick="markTopicRead(5, 6)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 6)">Ir para 6. Renomear →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 6 DA AULA 5: RENOMEAR -->
+        <section id="l5-phase-6" class="topic-phase-section">
+          <h2>6. Como Renomear Pastas e Arquivos</h2>
+          <p>Renomear é dar um nome melhor ao que já existe — sem precisar apagar e criar de novo.</p>
+          <ol style="margin-left:22px; line-height:1.8; font-size:15px; color:var(--ink);">
+            <li>Selecione a pasta ou o arquivo.</li>
+            <li>Clique com o <strong>botão direito</strong> e escolha <strong>Renomear</strong> (ou pressione <kbd>F2</kbd>).</li>
+            <li>Digite o novo nome e tecle <strong>Enter</strong>.</li>
+          </ol>
+
+          <img src="../../assets/img/windows/Aula5/image14.png" alt="Menu do botão direito com a opção Renomear destacada" class="img-showcase" style="width:100%;">
+          <p class="img-caption">Imagem 12/14 — Renomear pelo menu do botão direito (ou tecla F2).</p>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; font-size:14.5px; color:var(--amber-dark);">
+            💡 Ao renomear um arquivo, <strong>não apague a extensão</strong> (o <code>.docx</code>, <code>.jpg</code>…). Mude só a parte antes do ponto.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei renomear pastas e arquivos.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-7" onclick="markTopicRead(5, 7)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 7)">Ir para 7. Excluir, Copiar e Mover →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 7 DA AULA 5: EXCLUIR, COPIAR E MOVER -->
+        <section id="l5-phase-7" class="topic-phase-section">
+          <h2>7. Como Excluir, Copiar e Mover Arquivos e Pastas</h2>
+          <p>Estas são as três operações que você mais vai usar no dia a dia. Todas começam com o <strong>botão direito</strong> sobre o item (ou com atalhos de teclado).</p>
+
+          <div class="es-sheet-box" style="margin:18px 0;">
+            <div class="es-sheet-titlebar">✂️ As três operações</div>
+            <ul style="margin:8px 0 0 20px; line-height:1.8; font-size:14.5px; color:var(--ink);">
+              <li><strong>Excluir</strong>: botão direito → <strong>Excluir</strong> (ou tecla <kbd>Delete</kbd>). O item vai para a <strong>Lixeira</strong> e pode ser recuperado. Para apagar de vez, esvazie a Lixeira.</li>
+              <li><strong>Copiar</strong>: botão direito → <strong>Copiar</strong> (<kbd>Ctrl + C</kbd>). O original <strong>fica</strong> onde estava e é criada uma cópia no destino (<kbd>Ctrl + V</kbd>).</li>
+              <li><strong>Mover</strong>: botão direito → <strong>Recortar</strong> (<kbd>Ctrl + X</kbd>) e <strong>Colar</strong> (<kbd>Ctrl + V</kbd>) no destino — ou <strong>arrastar</strong> o item para outra pasta com o mouse. O item <strong>sai</strong> do lugar original.</li>
+            </ul>
+          </div>
+
+          <div class="pdf-html-illustration" style="margin:18px 0;">
+            <svg viewBox="0 0 640 180" style="width:100%; height:auto; background:#FFF9F2; border:2px solid var(--line-light); border-radius:14px;" role="img" aria-label="Ilustração: copiar mantém o original e cria uma cópia; mover transfere o item de lugar; excluir manda para a lixeira.">
+              <text x="20" y="30" font-family="Arial" font-size="16" font-weight="bold" fill="#8A5A17">Copiar × Mover × Excluir</text>
+              <g font-family="Arial" font-size="13" fill="#20130B">
+                <rect x="30" y="55" width="150" height="90" rx="10" fill="#EAF4EC" stroke="#3C8C54"/>
+                <text x="45" y="82" font-weight="bold" fill="#1F6B3B">COPIAR</text>
+                <text x="45" y="104">Ctrl + C  →  Ctrl + V</text>
+                <text x="45" y="126">Original FICA</text>
+                <text x="45" y="142">+1 cópia nova</text>
+
+                <rect x="245" y="55" width="150" height="90" rx="10" fill="#E7F0F5" stroke="#1B6A8A"/>
+                <text x="260" y="82" font-weight="bold" fill="#0D5A78">MOVER</text>
+                <text x="260" y="104">Ctrl + X  →  Ctrl + V</text>
+                <text x="260" y="126">ou arrastar</text>
+                <text x="260" y="142">Item SAI do lugar</text>
+
+                <rect x="460" y="55" width="150" height="90" rx="10" fill="#FDE9E7" stroke="#B23B2E"/>
+                <text x="475" y="82" font-weight="bold" fill="#9C2E22">EXCLUIR</text>
+                <text x="475" y="104">Delete</text>
+                <text x="475" y="126">Vai para a Lixeira</text>
+                <text x="475" y="142">Dá para recuperar</text>
+              </g>
+            </svg>
+          </div>
+
+          <p style="background:#FDE9E7; border-left:4px solid #B23B2E; border-radius:10px; padding:12px 14px; font-size:14.5px; color:#9C2E22;">
+            ⚠️ Ao <strong>mover</strong> um arquivo, ele deixa de existir na pasta antiga. Se quiser manter o original, use <strong>Copiar</strong>, não <strong>Recortar</strong>.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei excluir, copiar e mover arquivos e pastas.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-8" onclick="markTopicRead(5, 8)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 6)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 8)">Ir para 8. Exercícios →</button>
+          </div>
+        </section>
+
+        <!-- TÓPICO 8 DA AULA 5: EXERCÍCIOS PRÁTICOS -->
+        <section id="l5-phase-8" class="topic-phase-section">
+          <h2>8. Exercícios Práticos</h2>
+          <p><strong>Exercício 2</strong> — crie uma estrutura de pastas para as disciplinas do seu curso. Veja o modelo e faça a sua:</p>
+
+          <img src="../../assets/img/windows/Aula5/image1.png" alt="Modelo de estrutura de pastas por disciplinas do curso" class="img-showcase" style="width:100%;">
+          <p class="img-caption">Imagem 13/14 — Modelo de estrutura de pastas do curso.</p>
+
+          <div class="mini-sheet" style="margin:16px 0;">
+            <div class="es-sheet-titlebar">🧭 Passo a passo da prática</div>
+            <ol style="margin-left:20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Crie uma pasta principal (ex.: <strong>Curso</strong>) e, dentro dela, uma pasta para cada <strong>disciplina</strong>.</li>
+              <li>Abra a pasta de uma disciplina, clique com o <strong>botão direito → Novo → Documento de Texto</strong> e dê o nome <strong>"Notas"</strong>.</li>
+              <li><strong>Exercício 3</strong> — abra o arquivo <strong>"Notas"</strong> e registre: o <strong>IP do seu PC</strong> e a <strong>capacidade total de armazenamento</strong> (HD / SSD / NVMe).</li>
+              <li>Onde achar: IP em <strong>Painel de Controle → Rede</strong> (ou no <code>Prompt de Comando</code> com <code>ipconfig</code>); capacidade em <strong>Este Computador</strong> (propriedades do disco).</li>
+            </ol>
+          </div>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; margin:16px 0;">
+            <div style="flex:1; min-width:200px;">
+              <img src="../../assets/img/windows/Aula5/image3.png" alt="Pasta/ícone usado no Exercício 3" class="img-showcase" style="max-width:200px;">
+              <p class="img-caption" style="text-align:left;">Imagem 14/14 — Trabalho do Exercício 3.</p>
+            </div>
+            <div style="flex:2; min-width:260px;">
+              <p style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px; font-size:14.5px; color:var(--teal-deep);">
+                ⚙️ <strong>Importante:</strong> crie tudo dentro de uma pasta nova de teste. Nenhum arquivo pessoal precisa ser apagado — este exercício é de <strong>observação e organização</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que fiz os Exercícios 2 e 3 no meu computador.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-9" onclick="markTopicRead(5, 9)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 7)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(5)">Fazer o Exercício de 5 Perguntas 📝</button>
+          </div>
+        </section>
+        <div id="fixation-panel-5" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--amber-deep); margin-top:4px; font-size:24px;">Exercício de Fixação — Aula 5</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-5" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-5">QUESTÃO 1 / 5</span>
+                <span id="q-points-5">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-5"></div>
+
+              <button class="hint-toggle" id="btn-hint-5" type="button">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-5"></div>
+
+              <div class="options" id="options-5"></div>
+
+              <div class="nav-row">
+                <button class="btn btn-ghost" id="btn-prev-5" type="button">← Anterior</button>
+                <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';">✓ Salvo automaticamente</span>
+                <button class="btn btn-primary" id="btn-next-5" type="button" disabled>Próxima →</button>
+              </div>
+              <div style="display:flex; justify-content:flex-end; margin-top:12px;">
+                <button class="btn btn-ghost" id="btn-restart-5" type="button" style="font-size:11px; padding:5px 10px;">↺ Recomeçar o exercício</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL DE RESULTADO E ASSINATURA SHA-256 DA AULA 5 -->
+        <div id="result-panel-5" class="fixation-panel">
+          <div class="card-quiz">
+            <div class="result-badge" id="result-badge-5"></div>
+            <h1 id="result-title-5"></h1>
+            <p style="color:var(--ink-soft);" id="result-sub-5"></p>
+            <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">
+              Nota Final: <b id="result-score-5" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0
+            </div>
+
+            <div class="signature-badge-box" id="signature-box-5">
+              <div class="signature-badge-header">
+                <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+              </div>
+              <div class="signature-code-display" id="signature-code-5">WR-AUTH-CALCULATING...</div>
+              <div class="signature-badge-desc">
+                Código de autenticidade criptográfico (SHA-256) gerado automaticamente para o aluno. Evita adulterações no comprovante ou na nota.
+              </div>
+            </div>
+
+            <div class="breakdown" id="breakdown-5"></div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary" id="btn-download-txt-5" type="button">Baixar Comprovante (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-5" type="button" style="background:var(--amber);">📑 Baixar Apostila PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-5" type="button">Enviar WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-email-5" type="button">Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-5">
+              <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
+              <input type="email" id="input-email-5" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
+              <button class="btn btn-amber" id="btn-open-gmail-5" type="button">Baixar e Abrir E-mail →</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
     <section id="screen-lesson-7" class="screen-view">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
         <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
@@ -5009,6 +5488,7 @@
     const PASSWORD_A2 = "wr0226";
     const PASSWORD_A3 = "wr0326";
     const PASSWORD_A4 = "wr0426";
+    const PASSWORD_A5 = "wr0526";
     const PASSWORD_A7 = "wr0726";
     const PASSWORD_A8 = "wr0826";
     const MODULE_ID = "windows";
@@ -5306,6 +5786,63 @@
         hint: "Sem esse caminho o Windows insiste em pedir uma conta Microsoft."
       }
     ];
+    const QUESTIONS_LESSON_5 = [
+      {
+        q: "No Windows, qual afirmativa descreve melhor pasta, arquivo e biblioteca?",
+        options: [
+          "Pasta e arquivo são a mesma coisa; biblioteca é um programa",
+          "Pasta é o local que agrupa arquivos (e outras pastas); arquivo é o conteúdo em si (texto, foto, música); biblioteca é um atalho que reúne itens de pastas diferentes",
+          "Arquivo é a gaveta e pasta é a roupa guardada dentro dela",
+          "Biblioteca é onde só ficam instalados os programas"
+        ],
+        correct: 1,
+        hint: "A analogia é: pasta = gaveta; arquivo = roupa guardada dentro."
+      },
+      {
+        q: "No nome de arquivo relatorio.docx, o que é a parte .docx?",
+        options: [
+          "O autor do arquivo",
+          "A data de criação",
+          "A extensão, que indica o tipo de arquivo e com qual programa ele abre",
+          "O tamanho do arquivo em MB"
+        ],
+        correct: 2,
+        hint: "A extensão vem depois do último ponto e diz o tipo do arquivo."
+      },
+      {
+        q: "Qual atalho de teclado abre o Explorador de Arquivos?",
+        options: [
+          "Win + I",
+          "Win + E",
+          "Win + R",
+          "Ctrl + P"
+        ],
+        correct: 1,
+        hint: "Win + I abre Configurações e Win + R o Executar."
+      },
+      {
+        q: "Qual painel do Explorador de Arquivos mostra uma prévia/informações do arquivo sem precisar abri-lo?",
+        options: [
+          "Barra de Endereço",
+          "Caixa de Pesquisa",
+          "Painel de Detalhes",
+          "Botão Voltar/Avançar"
+        ],
+        correct: 2,
+        hint: "É o painel que exibe detalhes e prévia do item selecionado."
+      },
+      {
+        q: "Sobre copiar e mover um arquivo no Explorador, qual alternativa está correta?",
+        options: [
+          "Copiar (Ctrl+C) mantém o original e cria uma cópia; mover (Ctrl+X) tira o item do lugar de origem",
+          "Copiar e mover fazem exatamente a mesma coisa",
+          "Mover mantém o original no lugar e cria uma cópia",
+          "Excluir um arquivo (Delete) apaga definitivamente, sem passar pela Lixeira"
+        ],
+        correct: 0,
+        hint: "Copiar mantém o original; recortar (mover) transporta o item para o destino."
+      }
+    ];
     const QUESTIONS_LESSON_7 = [
       {
         q: "Qual é a função da Central de Segurança do Windows (Windows 7)?",
@@ -5561,10 +6098,10 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      // Aulas liberadas: 1, 2, 3, 4, 7 (com complemento 71) e 8 (com complemento 81). Demais estão em construção!
-      const OPEN_LESSONS = [1, 2, 3, 4, 7, 8, 71, 81];
+      // Aulas liberadas: 1, 2, 3, 4, 5, 7 (com complemento 71) e 8 (com complemento 81). Demais estão em construção!
+      const OPEN_LESSONS = [1, 2, 3, 4, 5, 7, 8, 71, 81];
       if(!OPEN_LESSONS.includes(lessonNum)){
-        alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, as Aulas 01, 02, 03, 04, 07 e 08 estão disponíveis no portal.`);
+        alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 07 e 08 estão disponíveis no portal.`);
         return;
       }
 
@@ -5585,14 +6122,15 @@
     document.getElementById("btn-confirm-unlock").onclick = function(){
       const typed = document.getElementById("modal-pass-field").value.trim().toLowerCase();
 
-      // Aceita wr0126 (Aula 1) / wr0226 (Aula 2) / wr0326 (Aula 3) / wr0426 (Aula 4) / wr0726 (Aula 7 e Complemento 7A) / wr0826 (Aula 8 e Complemento 8A) ou senhas de teste a001/b002/c003/d004/h008/wr0926
-      if(typed === PASSWORD_WR || typed === PASSWORD_A7 || typed === PASSWORD_A1 || typed === PASSWORD_A2 || typed === PASSWORD_A3 || typed === PASSWORD_A4 || typed === PASSWORD_A8 || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "h008"){
+      // Aceita wr0126 (Aula 1) / wr0226 (Aula 2) / wr0326 (Aula 3) / wr0426 (Aula 4) / wr0526 (Aula 5) / wr0726 (Aula 7 e Complemento 7A) / wr0826 (Aula 8 e Complemento 8A) ou senhas de teste a001/b002/c003/d004/e005/h008/wr0926
+      if(typed === PASSWORD_WR || typed === PASSWORD_A7 || typed === PASSWORD_A1 || typed === PASSWORD_A2 || typed === PASSWORD_A3 || typed === PASSWORD_A4 || typed === PASSWORD_A5 || typed === PASSWORD_A8 || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "e005" || typed === "h008"){
         closePasswordModal();
         const routes = {
           1:  "screen-lesson-1",
           2:  "screen-lesson-2",
           3:  "screen-lesson-3",
           4:  "screen-lesson-4",
+          5:  "screen-lesson-5",
           7:  "screen-lesson-7",
           71: "screen-lesson-71",
           81: "screen-lesson-81",
@@ -5633,9 +6171,9 @@
       if(activePhase) activePhase.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    // MARCAR LEITURA / GAMIFICAÇÃO (AULAS 1, 2, 3, 4, 7, 8 E COMPLEMENTOS 71 e 81)
-    const TOTAL_TOPICS = { 1: 7, 2: 10, 3: 10, 4: 9, 7: 7, 8: 5, 71: 4, 81: 6 };
-    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 7: true, 71: true, 81: true };
+    // MARCAR LEITURA / GAMIFICAÇÃO (AULAS 1, 2, 3, 4, 5, 7, 8 E COMPLEMENTOS 71 e 81)
+    const TOTAL_TOPICS = { 1: 7, 2: 10, 3: 10, 4: 9, 5: 9, 7: 7, 8: 5, 71: 4, 81: 6 };
+    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 7: true, 71: true, 81: true };
     // A leitura concluída é estado do aluno: precisa sobreviver ao F5. Sem isto o
     // progresso vivia num Set em memória e a barra voltava para 0% ao recarregar.
     const READ_STORAGE_KEY = "wrWindowsReadTopics";
@@ -6069,7 +6607,8 @@
       2:  { questions: QUESTIONS_LESSON_2,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-2",  title: "Módulo 1 — Aula 2: Introdução ao Windows",                                      sig: "Módulo 1 - Aula 2 (Windows)" },
       3:  { questions: QUESTIONS_LESSON_3,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-3",  title: "Módulo 1 — Aula 3: Medidas de Armazenamento no Computador",                     sig: "Módulo 1 - Aula 3 (Windows)" },
 
-      4:  { questions: QUESTIONS_LESSON_4,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-4",  title: "Módulo 1 — Aula 4: Painel de Controle e Configurações",                     sig: "Módulo 1 - Aula 4 (Windows)" },      7:  { questions: QUESTIONS_LESSON_7,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-7",  title: "Módulo 1 — Aula 7: Segurança e Antivírus no Windows",                          sig: "Módulo 1 - Aula 7 (Windows)" },
+      4:  { questions: QUESTIONS_LESSON_4,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-4",  title: "Módulo 1 — Aula 4: Painel de Controle e Configurações",                     sig: "Módulo 1 - Aula 4 (Windows)" },
+      5:  { questions: QUESTIONS_LESSON_5,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-5",  title: "Módulo 1 — Aula 5: Área de Trabalho, Pastas e Arquivos",                    sig: "Módulo 1 - Aula 5 (Windows)" },      7:  { questions: QUESTIONS_LESSON_7,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-7",  title: "Módulo 1 — Aula 7: Segurança e Antivírus no Windows",                          sig: "Módulo 1 - Aula 7 (Windows)" },
       71: { questions: QUESTIONS_LESSON_71, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-71", title: "Módulo 1 — Complemento 7A: Backup Automático com Arquivo .BAT",                  sig: "Módulo 1 - Complemento 7A (Windows)" },
       81: { questions: QUESTIONS_LESSON_81, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-81", title: "Módulo 1 — Complemento 8A: Tutorial de Criação de Mídia de Instalação",        sig: "Módulo 1 - Complemento 8A (Windows)" }
     };
@@ -6232,7 +6771,7 @@
     }
 
     // EVENTOS DOS QUIZZES DAS AULAS 1, 2, 3, 4, 7 E COMPLEMENTOS (1, 2, 3, 4, 7, 71, 81)
-    [1, 2, 3, 4, 7, 71, 81].forEach(function(lessonNum){
+    [1, 2, 3, 4, 5, 7, 71, 81].forEach(function(lessonNum){
       document.getElementById(`btn-hint-${lessonNum}`).onclick = () => {
         document.getElementById(`hint-box-${lessonNum}`).classList.toggle("show");
       };
