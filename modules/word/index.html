@@ -630,6 +630,252 @@
       .l3-watermark-text { font-size: 22px; }
       .l3-watermark-page { min-height: 150px; }
     }
+
+    /* ============================================================
+       AULA 04 — ORIENTAÇÃO, BORDAS DE PÁGINA, FORMAS E CAMADAS
+       ============================================================ */
+    .l4-demo-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--line-light);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 20px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .l4-demo-head {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--word-blue-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .l4-demo-hint {
+      font-size: 12px;
+      font-weight: 600;
+      color: #64748B;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .l4-btn-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .l4-sim-btn {
+      border: 1.5px solid var(--word-blue-border);
+      background: var(--word-blue-light);
+      color: var(--word-blue-dark);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .l4-sim-btn:hover { border-color: var(--word-blue); }
+    .l4-sim-btn.active {
+      background: var(--word-blue);
+      border-color: var(--word-blue);
+      color: #FFFFFF;
+    }
+    .l4-stage {
+      background: #F8FAFC;
+      border: 1.5px dashed #93C5FD;
+      border-radius: 8px;
+      padding: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 230px;
+      overflow: hidden;
+    }
+    .l4-page {
+      position: relative;
+      width: 250px;
+      height: 168px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+      display: flex;
+      flex-direction: column;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+    .l4-page.portrait { width: 168px; height: 250px; }
+    .l4-page-tag {
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-align: center;
+      color: var(--word-blue-dark);
+      background: #EFF6FF;
+      border-bottom: 1px solid #BFDBFE;
+      padding: 5px 6px;
+      text-transform: uppercase;
+    }
+    .l4-page-body {
+      flex: 1;
+      padding: 9px 11px;
+      font-size: 9px;
+      color: #64748B;
+      line-height: 1.55;
+    }
+    .l4-page-body strong {
+      display: block;
+      font-size: 10px;
+      color: #1E3A8A;
+      margin-bottom: 3px;
+    }
+    .l4-border-box {
+      background: #FFFFFF;
+      border: 3px solid #2563EB;
+      padding: 22px 18px;
+      max-width: 430px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 1.7;
+      transition: border 0.2s ease, outline 0.2s ease, background 0.2s ease;
+    }
+    .l4-border-box.none { border-style: none; }
+    .l4-border-box.double { border: 6px double #1D4ED8; padding: 20px 16px; }
+    .l4-border-box.art {
+      border: 4px dashed #B45309;
+      outline: 2px solid #F59E0B;
+      outline-offset: 5px;
+      background: #FFFBEB;
+      color: #78350F;
+    }
+    .l4-shape-stage {
+      background: #F8FAFC;
+      border: 1.5px dashed #93C5FD;
+      border-radius: 8px;
+      padding: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 190px;
+      overflow: hidden;
+    }
+    .l4-shape {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #FFFFFF;
+      background: #2563EB;
+      border: 2px solid #1E40AF;
+      transition: background 0.2s ease, box-shadow 0.2s ease, border-width 0.2s ease;
+    }
+    .l4-shape.roundRect { width: 190px; height: 92px; border-radius: 26px; }
+    .l4-shape.ellipse { width: 178px; height: 112px; border-radius: 50%; }
+    .l4-shape.arrow {
+      width: 210px;
+      height: 84px;
+      border: none;
+      clip-path: polygon(0 30%, 60% 30%, 60% 0, 100% 50%, 60% 100%, 60% 70%, 0 70%);
+    }
+    .l4-shape.star {
+      width: 150px;
+      height: 150px;
+      border: none;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+    .l4-shape.banner {
+      width: 210px;
+      height: 90px;
+      border: none;
+      clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%, 8% 50%);
+    }
+    .l4-shape.shadow { box-shadow: 9px 9px 0 rgba(37, 99, 235, 0.22), 9px 9px 20px rgba(15, 23, 42, 0.24); }
+    .l4-shape.no-fill { background: transparent !important; color: #1E3A8A; }
+    .l4-layer-stage {
+      position: relative;
+      height: 220px;
+      background: #F8FAFC;
+      border: 1.5px dashed #93C5FD;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .l4-layer-shape {
+      position: absolute;
+      width: 132px;
+      height: 92px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #FFFFFF;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.20);
+      transition: z-index 0.15s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .l4-layer-shape.blue { left: 16%; top: 42px; background: #2563EB; z-index: 1; }
+    .l4-layer-shape.amber { left: 44%; top: 86px; background: #D97706; z-index: 2; }
+    .l4-layer-stage.blue-top .blue { z-index: 3; transform: translate(12px, -8px); }
+    .l4-layer-stage.blue-top .amber { transform: translate(-6px, 6px); }
+    .l4-layer-stage.grouped .blue,
+    .l4-layer-stage.grouped .amber { box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.55), 0 6px 14px rgba(15, 23, 42, 0.20); }
+    .l4-group-frame {
+      position: absolute;
+      left: 11%;
+      top: 26px;
+      width: 62%;
+      height: 158px;
+      border: 2px dashed #16A34A;
+      border-radius: 12px;
+      display: none;
+      pointer-events: none;
+      z-index: 4;
+    }
+    .l4-group-frame span {
+      position: absolute;
+      top: -11px;
+      left: 10px;
+      background: #16A34A;
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 8px;
+      border-radius: 99px;
+    }
+    .l4-layer-stage.grouped .l4-group-frame { display: block; }
+    .l4-swatch-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .l4-swatch {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 0 0 1.5px #CBD5E1;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .l4-swatch:hover { transform: scale(1.08); }
+    .l4-swatch.active { box-shadow: 0 0 0 3px var(--word-blue); transform: scale(1.08); }
+    @media (max-width: 640px) {
+      .l4-stage { min-height: 200px; padding: 12px; }
+      .l4-border-box { padding: 16px 12px; font-size: 11.5px; }
+      .l4-border-box.art { outline-offset: 3px; }
+      .l4-layer-shape { width: 108px; height: 76px; font-size: 11px; }
+      .l4-layer-shape.blue { left: 6%; }
+      .l4-layer-shape.amber { left: 40%; }
+      .l4-group-frame { left: 2%; width: 78%; }
+      .l4-shape.roundRect, .l4-shape.arrow, .l4-shape.banner { width: 180px; }
+      .l4-shape.star { width: 128px; height: 128px; }
+    }
   </style>
 </head>
 <body>
@@ -712,71 +958,71 @@
           </div>
 
           <!-- AULA 05 -->
-          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(5, 'Estilos Rápidos & Pincel de Formatação')">
+          <div class="lesson-card-item" onclick="promptLessonPassword(5, 'Estilos Rápidos & Pincel de Formatação')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 05</span>
               <span class="lesson-name">Estilos Rápidos & Pincel de Formatação</span>
-              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `we005`)</span>
+              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-5">🔒</span>
           </div>
 
           <!-- AULA 06 -->
-          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(6, 'Layout de Página, Quebras de Seção & Cabeçalhos')">
+          <div class="lesson-card-item" onclick="promptLessonPassword(6, 'Layout de Página, Quebras de Seção & Cabeçalhos')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 06</span>
               <span class="lesson-name">Layout de Página & Quebras de Seção</span>
-              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wf006`)</span>
+              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-6">🔒</span>
           </div>
 
           <!-- AULA 07 -->
-          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(7, 'Revisão de Texto, Comentários & Colaboração')">
+          <div class="lesson-card-item" onclick="promptLessonPassword(7, 'Revisão de Texto, Comentários & Colaboração')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 07</span>
               <span class="lesson-name">Revisão de Texto & Comentários</span>
-              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wg007`)</span>
+              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-7">🔒</span>
           </div>
 
           <!-- AULA 08 -->
-          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(8, 'Sumário Automático & Índices de Ilustrações')">
+          <div class="lesson-card-item" onclick="promptLessonPassword(8, 'Sumário Automático & Índices de Ilustrações')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 08</span>
               <span class="lesson-name">Sumário Automático & Índices</span>
-              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wh008`)</span>
+              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-8">🔒</span>
           </div>
 
           <!-- AULA 09 -->
-          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(9, 'Oficina de Listas Multinível, Tabulação & Certificados')">
+          <div class="lesson-card-item" onclick="promptLessonPassword(9, 'Oficina de Listas Multinível, Tabulação & Certificados')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 09</span>
               <span class="lesson-name">Listas Multinível, Tabulação & Certificados</span>
-              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wi009`)</span>
+              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-9">🔒</span>
           </div>
 
           <!-- AULA 10 -->
-          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(10, 'Pesquisa Acadêmica, Estrutura ABNT & Citações')">
+          <div class="lesson-card-item" onclick="promptLessonPassword(10, 'Pesquisa Acadêmica, Estrutura ABNT & Citações')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 10</span>
               <span class="lesson-name">Pesquisa Acadêmica & Citações ABNT</span>
-              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wj010`)</span>
+              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-10">🔒</span>
           </div>
 
           <!-- AULA 11 -->
-          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(11, 'Revisão Geral Integrada & Tabelas Profissionais')">
+          <div class="lesson-card-item" onclick="promptLessonPassword(11, 'Revisão Geral Integrada & Tabelas Profissionais')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 11</span>
               <span class="lesson-name">Revisão Geral & Tabelas Profissionais</span>
-              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wk011`)</span>
+              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-11">🔒</span>
           </div>
@@ -3074,6 +3320,738 @@
     </section>
 
     <!-- ===================================================================
+         AULA 04 — BORDAS DECORATIVAS, FORMAS & QUEBRA DE TEXTO
+         =================================================================== -->
+    <section id="screen-lesson-4" class="screen-view">
+
+      <!-- Topo da Aula com Botões de Ação -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('word', 4)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra Gamificada de Progresso da Aula 4 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura & Prática (Aula 4)</span>
+            <span id="gamify-percent-4">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-4" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-4">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <!-- Cartão Principal de Leitura -->
+      <article class="lesson-reading-card">
+        <span class="badge-word-blue">Módulo 2 • Aula 04</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 04: Bordas Decorativas, Formas & Quebra de Texto</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <em>Orientação paisagem, molduras de página, formas geométricas, efeitos visuais e cartazes.</em> Leia cada etapa com atenção e aplique os comandos diretamente no seu Word!
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l4-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--word-blue); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:var(--word-blue-light); color:var(--word-blue-dark); border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar: O que vamos fazer e como</span>
+
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:14px 0 8px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Aprender a construir peças gráficas, certificados e comunicados visuais elegantes dentro do Word. Você vai dominar a <strong>orientação paisagem</strong>, as <strong>bordas artísticas de página</strong>, a inserção de <strong>formas geométricas vetoriais</strong> com texto interno e a organização dos desenhos em <strong>camadas e grupos</strong>.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo em 5 Fases)</h3>
+          <p style="margin:0 0 12px 0; font-size:13.5px; color:#475569; line-height:1.7;">
+            Os checks ficam distribuídos — posicionados no fim de cada fase, exatamente onde está a instrução prática. Cada passo é um check e só libera o próximo!
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px;" aria-label="Roteiro dos 5 passos">
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">1</strong>
+              <span>Alterar a Orientação da página para Paisagem (horizontal).</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">2</strong>
+              <span>Aplicar Bordas de Página (linhas duplas e bordas de arte).</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">3</strong>
+              <span>Inserir Formas Geométricas e digitar texto interno.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">4</strong>
+              <span>Personalizar Preenchimento, Contorno e Efeitos visuais.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">5</strong>
+              <span>Dominar a ordem das camadas (Trazer para a Frente / Enviar para Trás) e Agrupar.</span>
+            </div>
+          </div>
+
+          <div style="margin-top:18px; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-radius:10px; padding:14px 16px;">
+            <div style="font-weight:800; color:var(--word-blue-dark); font-size:14px; margin-bottom:4px;">⚙️ FAIXA DE PREPARAÇÃO — antes da Fase 1</div>
+            <ol style="font-size:13.5px; color:#374151; line-height:1.7; margin:0; padding-left:20px;">
+              <li>Abra o <strong>Microsoft Word</strong> em um documento em branco e salve como <code>Cartaz_Aula04.docx</code>.</li>
+              <li>Confira se a guia <strong>Layout da Página</strong> (ou <strong>Layout</strong>) está visível na faixa de opções.</li>
+              <li>Se possível, imprima uma página de teste em modo econômico para conferir as bordas.</li>
+            </ol>
+          </div>
+
+          <div id="l4-checklist-status" style="margin-top:14px; font-size:14px; font-weight:700; color:var(--word-blue-dark);">▢ 0 / 5 Passos Concluídos</div>
+          <div id="l4-complete-hint" style="display:none; margin-top:8px; font-size:13.5px; font-weight:700; color:#15803D; background:#DCFCE7; border:1.5px solid #86EFAC; border-radius:8px; padding:10px 12px;">🎉 Todos os 5 passos concluídos — você concluiu a leitura e liberou o Exercício de Fixação!</div>
+
+          <div style="margin-top:20px; text-align:center;">
+            <button type="button" id="btn-start-l4" class="btn btn-primary" style="font-size:15px; padding:12px 28px;" onclick="switchTopicPhase(4, 1)">
+              ▶ ENTENDI! QUERO COMEÇAR A AULA ↓
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Abas de Tópicos da Aula 4 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-4-1" onclick="switchTopicPhase(4, 1)">1. Retrato × Paisagem</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-2" onclick="switchTopicPhase(4, 2)">2. Bordas de Página</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-3" onclick="switchTopicPhase(4, 3)">3. Formas &amp; Texto</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-4" onclick="switchTopicPhase(4, 4)">4. Cores &amp; Efeitos</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-5" onclick="switchTopicPhase(4, 5)">5. Camadas &amp; Agrupar</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-4-fix" onclick="openFixationPanel(4)" style="background:var(--amber-soft); color:var(--teal-deep); font-weight:700;">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             FASE 1: ORIENTAÇÃO DA PÁGINA (RETRATO × PAISAGEM)
+             =============================================================== -->
+        <section id="l4-phase-1" class="topic-phase-section active">
+          <h2>1. Orientação da Página: Retrato × Paisagem</h2>
+          <p>
+            Antes de desenhar qualquer coisa, é preciso escolher o formato da folha. O Word trabalha com duas orientações: <strong>Retrato</strong> (folha em pé) e <strong>Paisagem</strong> (folha deitada). A escolha certa evita que o cartaz fique espremido ou que a tabela larga seja cortada na impressão.
+          </p>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Comparação entre orientação retrato e paisagem">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">FORMATO DA FOLHA</span>
+                <h3>📐 Retrato × Paisagem: quando usar cada um</h3>
+              </div>
+              <span class="word-table-hint">Layout da Página &gt; Orientação</span>
+            </div>
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead>
+                  <tr>
+                    <th>Orientação</th>
+                    <th>A4 (medida)</th>
+                    <th>Uso ideal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Retrato</strong> (folha em pé)</td>
+                    <td>21 × 29,7 cm</td>
+                    <td>Cartas, relatórios, trabalhos ABNT, livros e ofícios</td>
+                  </tr>
+                  <tr class="highlight-blue">
+                    <td><strong>Paisagem</strong> (folha deitada)</td>
+                    <td>29,7 × 21 cm</td>
+                    <td>Certificados, diplomas, cartazes, fluxogramas e tabelas largas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="l4-demo-card">
+            <div class="l4-demo-head">🧪 Simulador: troque a orientação e veja a folha girar <span class="l4-demo-hint">#l4-page-demo</span></div>
+            <div class="l4-btn-row" role="group" aria-label="Botões de orientação da página">
+              <button type="button" class="l4-sim-btn" onclick="l4SetOrientation('portrait', this)">📄 Retrato</button>
+              <button type="button" class="l4-sim-btn active" onclick="l4SetOrientation('landscape', this)">🖼️ Paisagem</button>
+            </div>
+            <div class="l4-stage">
+              <div class="l4-page" id="l4-page-demo">
+                <div class="l4-page-tag" id="l4-page-tag">PAISAGEM • 29,7 × 21 CM</div>
+                <div class="l4-page-body">
+                  <strong>CARTAZ DE AVISO</strong>
+                  A folha deitada aproveita a largura para títulos grandes, formas e setas.
+                </div>
+              </div>
+            </div>
+            <div id="l4-orientation-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Orientação atual: Paisagem (folha deitada, 29,7 × 21 cm).</div>
+          </div>
+
+          <div style="background:#F0F9FF; border:1.5px solid #BAE6FD; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#0C4A6E; margin:0 0 8px; font-size:16px;">💼 Exemplo prático: o mesmo aviso em duas orientações</h3>
+            <p style="margin:0; font-size:14px; color:#0C4A6E; line-height:1.7;">
+              Um comunicado interno curto fica perfeito em <strong>Retrato</strong>. Já um cartaz de “Festa Junina” com título grande, três fotos e setas de localização pede <strong>Paisagem</strong>: a largura extra mantém tudo visível de longe, sem texto apertado.
+            </p>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Como mudar a orientação no Word</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Abra a guia <strong>Layout da Página</strong> (Word 2010/2013) ou <strong>Layout</strong> (versões recentes).</li>
+              <li>No grupo <strong>Configurar Página</strong>, clique em <strong>Orientação</strong>.</li>
+              <li>Escolha <strong>Paisagem</strong> e confira a pré-visualização.</li>
+              <li>Se o documento tiver várias páginas, utilize <strong>Configurar Página &gt; Aplicar a: Todo o documento</strong> para não deixar páginas misturadas.</li>
+            </ol>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 1 -->
+          <div class="phase-step-check" data-step="1" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l4-check-1" class="l4-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 1">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 1: ORIENTAÇÃO DA PÁGINA</strong><br>
+              Configurei a orientação da página para <strong>modo Paisagem (horizontal)</strong> e conferi o formato A4 deitado (29,7 × 21 cm).
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 2 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que alterei a orientação da página para Paisagem.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-1" onclick="markTopicRead(4, 1)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 1)">← Voltar à Fase 0</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 2)">Ir para 2. Bordas de Página →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 2: MOLDURAS E BORDAS DE PÁGINA
+             =============================================================== -->
+        <section id="l4-phase-2" class="topic-phase-section">
+          <h2>2. Molduras e Bordas de Página: Linhas e Arte</h2>
+          <p>
+            A borda de página é uma moldura aplicada ao redor de <strong>toda a folha</strong> — diferente da borda de parágrafo, que envolve apenas um bloco de texto. Ela dá acabamento a certificados, convites, capas e comunicados.
+          </p>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Tipos de borda de página">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">ESTILOS DE BORDA</span>
+                <h3>🖼️ Linhas técnicas × Bordas de Arte</h3>
+              </div>
+              <span class="word-table-hint">Design &gt; Bordas da Página</span>
+            </div>
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead>
+                  <tr>
+                    <th>Estilo</th>
+                    <th>Como aparece</th>
+                    <th>Quando usar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Linha simples</strong></td>
+                    <td>Traço único de 0,5 pt a 3 pt</td>
+                    <td>Documentos internos e relatórios discretos</td>
+                  </tr>
+                  <tr class="highlight-blue">
+                    <td><strong>Linha dupla ou tripla</strong></td>
+                    <td>Duas ou três linhas paralelas</td>
+                    <td>Certificados, diplomas e capas formais</td>
+                  </tr>
+                  <tr class="highlight-amber">
+                    <td><strong>Borda de Arte</strong></td>
+                    <td>Molduras gráficas prontas (estrelas, laços, cantoneiras)</td>
+                    <td>Convites, cartazes infantis e peças comemorativas</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sem borda</strong></td>
+                    <td>Remove a moldura da página</td>
+                    <td>Quando o documento precisa ficar limpo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="l4-demo-card">
+            <div class="l4-demo-head">🧪 Simulador: clique no estilo e veja a moldura da página <span class="l4-demo-hint">#l4-border-demo</span></div>
+            <div class="l4-btn-row" role="group" aria-label="Botões de estilo de borda">
+              <button type="button" class="l4-sim-btn" onclick="l4SetBorder('none', this)">Sem borda</button>
+              <button type="button" class="l4-sim-btn active" onclick="l4SetBorder('simple', this)">Linha simples</button>
+              <button type="button" class="l4-sim-btn" onclick="l4SetBorder('double', this)">Linha dupla</button>
+              <button type="button" class="l4-sim-btn" onclick="l4SetBorder('art', this)">Borda de Arte ✦</button>
+            </div>
+            <div class="l4-stage" style="min-height:210px;">
+              <div class="l4-border-box" id="l4-border-demo">
+                <strong style="display:block; font-size:14px; color:#1E3A8A; margin-bottom:4px;">🎓 CERTIFICADO DE CONCLUSÃO</strong>
+                Certificamos que o aluno concluiu o curso de Microsoft Word — Módulo 2.
+              </div>
+            </div>
+            <div id="l4-border-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Borda atual: Linha simples (3 pt).</div>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">⚠️ Ajuste que evita corte na impressora: “Medir a partir de”</h3>
+            <p style="margin:0; font-size:14px; color:#78350F; line-height:1.7;">
+              Na janela <strong>Bordas e Sombreamento &gt; Bordas da Página</strong>, clique em <strong>Opções...</strong> e mude <strong>Medir a partir de</strong> para <strong>Texto</strong>. Assim a moldura acompanha a área útil da página e não fica escondida na margem física da impressora. Se ficar em “Borda da Página”, o traço pode sair cortado.
+            </p>
+          </div>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Onde encontrar bordas de página por versão">
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead>
+                  <tr>
+                    <th>Versão do Word</th>
+                    <th>Caminho completo</th>
+                    <th>Escopo de aplicação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Word 2010 / 2013</strong></td>
+                    <td><span class="pill-guide purple">📐 Layout da Página</span> &gt; grupo <em>Plano de Fundo da Página</em> &gt; <strong>Bordas da Página</strong></td>
+                    <td>Documento inteiro, primeira página ou todas exceto a primeira</td>
+                  </tr>
+                  <tr class="highlight-blue">
+                    <td><strong>Versões recentes</strong></td>
+                    <td><span class="pill-guide purple">🎨 Design</span> &gt; <strong>Bordas da Página</strong></td>
+                    <td>Mesmas opções, com pré-visualização imediata</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 2 -->
+          <div class="phase-step-check" data-step="2" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l4-check-2" class="l4-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 2">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 2: BORDAS DE PÁGINA</strong><br>
+              Apliquei uma <strong>borda decorativa na página</strong> (linha dupla ou arte) e ajustei a opção <strong>“Medir a partir de: Texto”</strong> para não cortar na impressão.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 3 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que apliquei uma borda de página e ajustei a margem de impressão.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-2" onclick="markTopicRead(4, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 1)">← Voltar ao Tópico 1</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 3)">Ir para 3. Formas &amp; Texto →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 3: FORMAS GEOMÉTRICAS E TEXTO INTERNO
+             =============================================================== -->
+        <section id="l4-phase-3" class="topic-phase-section">
+          <h2>3. Formas Geométricas e Texto Dentro Delas</h2>
+          <p>
+            As formas são <strong>desenhos vetoriais</strong>: continuam nítidos em qualquer zoom ou impressão, ao contrário de uma foto. Elas servem para destacar etapas, criar setas de fluxo, montar caixas de diálogo e organizar cartazes.
+          </p>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Catálogo de formas mais usadas">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">CATÁLOGO DE FORMAS</span>
+                <h3>🔷 As formas mais usadas em documentos profissionais</h3>
+              </div>
+              <span class="word-table-hint">Inserir &gt; Ilustrações &gt; Formas</span>
+            </div>
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead>
+                  <tr>
+                    <th>Forma</th>
+                    <th>Aparência</th>
+                    <th>Uso típico</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="highlight-blue">
+                    <td><strong>Retângulo arredondado</strong></td>
+                    <td>Cantos suaves</td>
+                    <td>Botões, caixas de aviso e etapas de processo</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Elipse / Círculo</strong></td>
+                    <td>Redonda</td>
+                    <td>Números de etapa, selos e destaque de datas</td>
+                  </tr>
+                  <tr class="highlight-amber">
+                    <td><strong>Seta de bloco</strong></td>
+                    <td>Ponta larga</td>
+                    <td>Fluxogramas, sequências e direcionamento</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Estrela</strong></td>
+                    <td>Pontas</td>
+                    <td>Destaques de promoção, qualidade e conquistas</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Faixa</strong></td>
+                    <td>Fita com recortes</td>
+                    <td>Títulos de cartaz e etiquetas</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Balão / Chamada</strong></td>
+                    <td>Caixa com ponta</td>
+                    <td>Diálogos, instruções e observações</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="l4-demo-card">
+            <div class="l4-demo-head">🧪 Simulador: escolha a forma e veja o texto interno <span class="l4-demo-hint">#l4-shape-demo</span></div>
+            <div class="l4-btn-row" role="group" aria-label="Botões de formas geométricas">
+              <button type="button" class="l4-sim-btn active" onclick="l4SetShape('roundRect', this)">▢ Retângulo</button>
+              <button type="button" class="l4-sim-btn" onclick="l4SetShape('ellipse', this)">◯ Elipse</button>
+              <button type="button" class="l4-sim-btn" onclick="l4SetShape('arrow', this)">➜ Seta</button>
+              <button type="button" class="l4-sim-btn" onclick="l4SetShape('star', this)">★ Estrela</button>
+              <button type="button" class="l4-sim-btn" onclick="l4SetShape('banner', this)">🏷️ Faixa</button>
+            </div>
+            <div class="l4-shape-stage">
+              <div class="l4-shape roundRect" id="l4-shape-demo">Adicionar Texto</div>
+            </div>
+            <div id="l4-shape-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Forma atual: Retângulo arredondado — o texto fica vinculado à forma.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Como inserir a forma e escrever dentro dela</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Acesse <strong>Inserir &gt; Ilustrações &gt; Formas</strong>.</li>
+              <li>Clique na forma desejada e <strong>arraste</strong> com o botão esquerdo pressionado para desenhá-la no tamanho aproximado.</li>
+              <li>Com a forma selecionada, clique com o <strong>botão direito</strong> e escolha <strong>Adicionar Texto</strong> — ou simplesmente comece a digitar.</li>
+              <li>O texto fica <strong>automaticamente vinculado</strong> à forma: se você mover o desenho, a frase vai junto.</li>
+            </ol>
+            <p style="margin:10px 0 0; font-size:12.5px; color:#64748B;">Dica: para ajustar o tamanho com precisão, segure <kbd>Shift</kbd> ao arrastar os cantos e mantenha as proporções.</p>
+          </div>
+
+          <div style="background:#F0F9FF; border:1.5px solid #BAE6FD; border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:#0C4A6E; margin:0 0 10px; font-size:17px;">↩️ Quebra de Texto: como o texto contorna a forma</h3>
+            <p style="margin:0 0 10px; font-size:14px; color:#0C4A6E; line-height:1.7;">
+              Ao selecionar a forma, aparece o botão <strong>Opções de Layout</strong> (ícone ao lado da forma) ou, na guia contextual, <strong>Quebra Automática de Texto</strong>. É ele que define se o texto do documento fica ao redor, por cima ou por baixo do desenho.
+            </p>
+            <ul style="margin:0; padding-left:22px; font-size:13.5px; color:#0C4A6E; line-height:1.75;">
+              <li><strong>Em Linha com o Texto</strong> — a forma se comporta como uma letra gigante; o texto não a contorna.</li>
+              <li><strong>Quadrado</strong> e <strong>Justo</strong> — o texto abraça a moldura da forma (o mais usado em cartazes).</li>
+              <li><strong>Acima e Abaixo</strong> — o texto para antes da forma e continua depois dela.</li>
+              <li><strong>Na Frente do Texto</strong> e <strong>Atrás do Texto</strong> — a forma se sobrepõe ao texto (útil para marcas d'água e faixas).</li>
+            </ul>
+            <p style="margin:10px 0 0; font-size:12.5px; color:#155E75;">Se a forma “não deixa” o texto passar dos lados, provavelmente está em <strong>Em Linha com o Texto</strong>: mude para <strong>Quadrado</strong> e arraste-a para a posição desejada.</p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 3 -->
+          <div class="phase-step-check" data-step="3" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l4-check-3" class="l4-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 3">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 3: FORMAS E TEXTO INTERNO</strong><br>
+              Inseri uma <strong>forma geométrica</strong> no documento e digitei <strong>texto diretamente no interior dela</strong> usando “Adicionar Texto”.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 4 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que inseri uma forma e escrevi texto dentro dela.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-3" onclick="markTopicRead(4, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 2)">← Voltar ao Tópico 2</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 4)">Ir para 4. Cores &amp; Efeitos →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 4: PREENCHIMENTO, CONTORNO E EFEITOS
+             =============================================================== -->
+        <section id="l4-phase-4" class="topic-phase-section">
+          <h2>4. Preenchimento, Contorno e Efeitos de Forma</h2>
+          <p>
+            Com a forma selecionada, o Word exibe a guia contextual <strong>Ferramentas de Desenho &gt; Formatar</strong>. É nela que você controla as três camadas visuais de qualquer desenho: o <strong>preenchimento</strong> (o miolo), o <strong>contorno</strong> (a linha externa) e os <strong>efeitos</strong> (sombra, brilho e bisel).
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:18px 0;">
+            <div style="background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:12px; padding:16px 18px;">
+              <div style="font-weight:800; color:#1E40AF; font-size:15px; margin-bottom:6px;">🎨 Preenchimento da Forma</div>
+              <p style="margin:0; font-size:13.5px; color:#1E3A8A; line-height:1.7;">Cor sólida, gradiente suave, textura ou <strong>sem preenchimento</strong> (deixa o fundo aparecer).</p>
+            </div>
+            <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px;">
+              <div style="font-weight:800; color:#166534; font-size:15px; margin-bottom:6px;">🖊️ Contorno da Forma</div>
+              <p style="margin:0; font-size:13.5px; color:#166534; line-height:1.7;">Cor e espessura da linha externa, medida em <strong>pontos (pt)</strong>: 0,75 pt, 1,5 pt, 3 pt...</p>
+            </div>
+            <div style="background:#FFF7ED; border:1.5px solid #FDBA74; border-radius:12px; padding:16px 18px;">
+              <div style="font-weight:800; color:#9A3412; font-size:15px; margin-bottom:6px;">✨ Efeitos de Forma</div>
+              <p style="margin:0; font-size:13.5px; color:#9A3412; line-height:1.7;"><strong>Sombra</strong> suave, brilho, reflexo e <strong>bisel</strong> (relevo tridimensional). Use com moderação.</p>
+            </div>
+          </div>
+
+          <div class="l4-demo-card">
+            <div class="l4-demo-head">🧪 Simulador: mude cor, contorno e sombra da forma <span class="l4-demo-hint">#l4-effect-demo</span></div>
+            <div class="l4-btn-row" role="group" aria-label="Cores de preenchimento">
+              <button type="button" class="l4-swatch active" style="background:#2563EB;" onclick="l4SetFill('#2563EB', this)" aria-label="Azul"></button>
+              <button type="button" class="l4-swatch" style="background:#0F766E;" onclick="l4SetFill('#0F766E', this)" aria-label="Verde-petróleo"></button>
+              <button type="button" class="l4-swatch" style="background:#B45309;" onclick="l4SetFill('#B45309', this)" aria-label="Âmbar"></button>
+              <button type="button" class="l4-swatch" style="background:#7C3AED;" onclick="l4SetFill('#7C3AED', this)" aria-label="Violeta"></button>
+              <button type="button" class="l4-swatch" style="background:#FFFFFF; box-shadow:0 0 0 1.5px #CBD5E1 inset;" onclick="l4SetFill('transparent', this)" aria-label="Sem preenchimento"></button>
+            </div>
+            <div class="l4-btn-row" role="group" aria-label="Espessura do contorno">
+              <button type="button" class="l4-sim-btn" onclick="l4SetOutline(1, this)">Contorno 1 pt</button>
+              <button type="button" class="l4-sim-btn active" onclick="l4SetOutline(3, this)">Contorno 3 pt</button>
+              <button type="button" class="l4-sim-btn" onclick="l4SetOutline(6, this)">Contorno 6 pt</button>
+            </div>
+            <div class="l4-btn-row" role="group" aria-label="Efeitos da forma">
+              <button type="button" class="l4-sim-btn" onclick="l4ToggleShadow(this)">✨ Sombra</button>
+            </div>
+            <div class="l4-shape-stage">
+              <div class="l4-shape roundRect" id="l4-effect-demo" style="background:#2563EB; border-color:#1E40AF;">Texto da forma</div>
+            </div>
+            <div id="l4-effect-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Preenchimento azul • Contorno 3 pt • Sem sombra.</div>
+          </div>
+
+          <div style="background:#FEF2F2; border:1.5px solid #FCA5A5; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#991B1B; margin:0 0 8px; font-size:16px;">🚫 Erro comum: exagerar nos efeitos</h3>
+            <p style="margin:0; font-size:14px; color:#7F1D1D; line-height:1.7;">
+              Sombra + brilho + bisel + gradiente na mesma forma deixam o documento com aparência amadora. Em peças profissionais, escolha <strong>um</strong> efeito principal e mantenha o restante discreto. Contraste e legibilidade valem mais do que enfeite.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 4 -->
+          <div class="phase-step-check" data-step="4" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l4-check-4" class="l4-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 4">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 4: CORES, CONTORNO E EFEITOS</strong><br>
+              Personalizei o <strong>preenchimento</strong>, a <strong>cor e espessura do contorno</strong> e adicionei um <strong>efeito de sombra</strong> na forma.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 5 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que personalizei preenchimento, contorno e sombra da forma.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-4" onclick="markTopicRead(4, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 3)">← Voltar ao Tópico 3</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(4, 5)">Ir para 5. Camadas &amp; Agrupar →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 5: CAMADAS DE OBJETOS E AGRUPAMENTO
+             =============================================================== -->
+        <section id="l4-phase-5" class="topic-phase-section">
+          <h2>5. Camadas de Objetos e Agrupamento</h2>
+          <p>
+            Quando duas formas se sobrepõem, quem aparece por cima é definido pela <strong>ordem das camadas</strong>. E quando várias formas compõem um mesmo desenho, o <strong>agrupamento</strong> evita que elas se desmontem ao mover o conjunto.
+          </p>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Ordem das camadas e agrupamento">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">ORGANIZAÇÃO</span>
+                <h3>🧩 Camadas × Agrupamento</h3>
+              </div>
+              <span class="word-table-hint">Botão direito sobre a forma</span>
+            </div>
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead>
+                  <tr>
+                    <th>Recurso</th>
+                    <th>O que faz</th>
+                    <th>Como acionar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="highlight-blue">
+                    <td><strong>Trazer para a Frente</strong></td>
+                    <td>Coloca a forma selecionada acima das outras</td>
+                    <td>Botão direito &gt; Trazer para a Frente</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Enviar para Trás</strong></td>
+                    <td>Coloca a forma selecionada atrás das outras</td>
+                    <td>Botão direito &gt; Enviar para Trás</td>
+                  </tr>
+                  <tr class="highlight-amber">
+                    <td><strong>Agrupar</strong></td>
+                    <td>Une as formas para mover e redimensionar juntas</td>
+                    <td><kbd>Ctrl</kbd> + clique em cada forma &gt; botão direito &gt; Agrupar</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Desagrupar</strong></td>
+                    <td>Devolve a independência a cada forma</td>
+                    <td>Botão direito &gt; Agrupar &gt; Desagrupar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="l4-demo-card">
+            <div class="l4-demo-head">🧪 Simulador: teste a ordem das camadas e o grupo <span class="l4-demo-hint">#l4-layer-stage</span></div>
+            <div class="l4-btn-row" role="group" aria-label="Botões de camadas e agrupamento">
+              <button type="button" class="l4-sim-btn" onclick="l4SetLayer('front', this)">⬆ Trazer azul para a frente</button>
+              <button type="button" class="l4-sim-btn active" onclick="l4SetLayer('back', this)">⬇ Enviar azul para trás</button>
+              <button type="button" class="l4-sim-btn" onclick="l4ToggleGroup(this)">🔗 Agrupar / Desagrupar</button>
+            </div>
+            <div class="l4-layer-stage" id="l4-layer-stage">
+              <div class="l4-layer-shape blue">Forma A</div>
+              <div class="l4-layer-shape amber">Forma B</div>
+              <div class="l4-group-frame"><span>🔗 Grupo</span></div>
+            </div>
+            <div id="l4-layer-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Forma B está na frente da Forma A. Nenhum grupo formado.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Passo a passo do agrupamento</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Segure a tecla <kbd>Ctrl</kbd> e clique em <strong>cada forma</strong> que compõe o cartaz (ou arraste uma seleção ao redor de todas).</li>
+              <li>Solte o <kbd>Ctrl</kbd> e clique com o <strong>botão direito</strong> sobre o conjunto selecionado.</li>
+              <li>Escolha <strong>Agrupar &gt; Agrupar</strong>. As alças de seleção passam a envolver o bloco inteiro.</li>
+              <li>Para separar novamente, repita o caminho e escolha <strong>Desagrupar</strong>.</li>
+            </ol>
+            <p style="margin:10px 0 0; font-size:12.5px; color:#64748B;">Atenção: no Word, <kbd>Ctrl</kbd> + <kbd>G</kbd> abre “Ir Para”. O atalho de agrupar é do PowerPoint, não do Word.</p>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:18px 20px; margin:20px 0;">
+            <div style="font-weight:700; color:#15803D; font-size:16px; margin-bottom:8px;">✅ Checklist de Auditoria da Aula 04 — antes de enviar o cartaz</div>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#166534; line-height:1.7;">
+              <li><strong>Orientação:</strong> a página está em Paisagem e o conteúdo cabe na área útil.</li>
+              <li><strong>Borda:</strong> a moldura está visível e ajustada em “Medir a partir de: Texto”.</li>
+              <li><strong>Formas:</strong> todas têm texto legível e contraste suficiente com o fundo.</li>
+              <li><strong>Efeitos:</strong> preenchimento, contorno e sombra coerentes, sem excesso.</li>
+              <li><strong>Camadas:</strong> nada importante ficou escondido atrás de outra forma.</li>
+              <li><strong>Agrupamento:</strong> os elementos do cartaz se movem juntos.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 5 -->
+          <div class="phase-step-check" data-step="5" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l4-check-5" class="l4-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 5">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 5: CAMADAS E AGRUPAMENTO</strong><br>
+              Ordenei as formas em <strong>camadas</strong> (Trazer para a Frente / Enviar para Trás) e pratiquei o <strong>Agrupar</strong> com <kbd>Ctrl</kbd> + clique para mover o conjunto.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Exercício de Fixação →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que ordenei camadas e pratiquei o agrupamento de formas.</span>
+            <button type="button" class="read-check-btn" id="check-read-4-5" onclick="markTopicRead(4, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(4, 4)">← Voltar ao Tópico 4</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(4)">Iniciar Exercício de Fixação (5 Perguntas) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 4 (5 QUESTÕES)
+             =============================================================== -->
+        <div id="fixation-panel-4" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="badge-word-blue" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--teal-deep); margin-top:6px; font-size:24px;">Exercício de Fixação — Aula 04 (Bordas &amp; Formas)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft); font-weight:700;">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-4" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-4">QUESTÃO 1 / 5</span>
+                <span id="q-points-4">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-4"></div>
+
+              <button class="hint-toggle" id="btn-hint-4" type="button" onclick="toggleHint(4)">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-4"></div>
+
+              <div class="options" id="options-4"></div>
+
+              <div class="nav-row">
+                <button type="button" class="btn btn-ghost" id="btn-prev-4" onclick="prevQuestionGen(4)">← Anterior</button>
+                <div style="font-size:12px; color:var(--ink-soft); font-weight:600;">✓ Salvo automaticamente</div>
+                <button type="button" class="btn btn-primary" id="btn-next-4" onclick="nextQuestionGen(4)">Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             PAINEL DE RESULTADO DO EXERCÍCIO DE FIXAÇÃO DA AULA 4
+             =============================================================== -->
+        <div id="result-panel-4" class="fixation-panel">
+          <div class="card-quiz" style="text-align:center;">
+            <div class="result-badge" id="result-badge-4" style="margin:0 auto 16px;"></div>
+            <h2 id="result-title-4" style="color:var(--teal-deep); margin-bottom:8px; font-size:28px;"></h2>
+            <p id="result-sub-4" style="color:var(--ink-soft); margin-bottom:20px; font-size:16px;"></p>
+
+            <div style="font-size:42px; font-weight:800; color:var(--teal); font-family:'Fraunces', serif; margin-bottom:12px;">
+              <span id="result-score-4">0,0</span> <span style="font-size:20px; color:var(--ink-soft); font-family:'Inter';">/ 10,0</span>
+            </div>
+
+            <div class="signature-badge-box">
+              <div style="font-weight:700; color:#F8FAFC; margin-bottom:4px;">🔐 Comprovante Digital de Conclusão da Aula 04</div>
+              <div style="font-size:11.5px; color:#94A3B8;">Código de Autenticidade (SHA-256):</div>
+              <div class="signature-code-display" id="signature-code-4">GERANDO ASSINATURA...</div>
+              <div style="font-size:11px; color:#94A3B8; margin-top:4px;">WR Capacitação Profissional • Instrutor Marcos Rangel</div>
+            </div>
+
+            <h3 style="text-align:left; font-size:18px; color:var(--teal-deep); margin-top:24px;">Gabarito Comentado</h3>
+            <div class="breakdown" id="breakdown-4"></div>
+
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+              <button class="btn btn-primary" id="btn-download-txt-4" type="button">📄 Baixar Comprovante Oficial (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-4" type="button" style="background:var(--amber);">📑 Baixar Apostila em PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-4" type="button" style="justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+                Enviar Resultado por WhatsApp
+              </button>
+              <button class="btn btn-ghost" id="btn-email-4" type="button">📧 Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-4">
+              <p style="font-size:14px; margin-bottom:12px; color:var(--ink-soft);">Clique abaixo para abrir seu aplicativo de e-mail com o comprovante pronto:</p>
+              <button class="btn btn-primary" id="btn-open-gmail-4" type="button" style="width:100%;">Abrir no Gmail</button>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:20px;">
+              <button type="button" class="btn btn-ghost" onclick="restartQuizGen(4)">↺ Recomeçar o exercício</button>
+              <button type="button" class="btn btn-primary" onclick="showScreen('screen-hub')">Voltar ao Menu de Aulas →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- ===================================================================
          TELAS DA AVALIAÇÃO FINAL DO MÓDULO (PRESERVADAS)
          =================================================================== -->
     <div class="quiz-app" id="screen-start-app" style="padding:0;">
@@ -3403,6 +4381,65 @@
       }
     ];
 
+    // QUESTÕES DO EXERCÍCIO DE FIXAÇÃO DA AULA 04 (SPEC-AULA-04-WORD §4)
+    const QUESTIONS_LESSON_4 = [
+      {
+        q: "Em qual guia do Microsoft Word fica localizada a ferramenta de inserção de FORMAS geométricas (retângulos, círculos, setas)?",
+        options: [
+          "Guia Revisão.",
+          "Guia Exibição.",
+          "Guia Inserir.",
+          "Guia Referências."
+        ],
+        correct: 2,
+        hint: "Formas e imagens são 'inseridas' na página — a guia responsável por adicionar elementos é a Inserir."
+      },
+      {
+        q: "Como se deve proceder para escrever um texto diretamente no interior de uma forma geométrica inserida no Word?",
+        options: [
+          "Não é possível escrever dentro de formas.",
+          "Clicar com o botão direito na forma e escolher 'Adicionar Texto' (ou simplesmente começar a digitar).",
+          "Colar uma imagem por cima da forma.",
+          "Apagar a forma e digitar normalmente."
+        ],
+        correct: 1,
+        hint: "O Word aceita digitação direta no interior de qualquer forma geométrica."
+      },
+      {
+        q: "Qual orientação de página deixa a folha 'deitada' (horizontal), ideal para certificados e cartazes?",
+        options: [
+          "Orientação Retrato.",
+          "Orientação Panorâmica.",
+          "Orientação Diagonal.",
+          "Orientação Paisagem."
+        ],
+        correct: 3,
+        hint: "Paisagem remete à vista horizontal do horizonte."
+      },
+      {
+        q: "Para que serve o recurso 'Agrupar' quando selecionamos duas ou mais formas geométricas no documento?",
+        options: [
+          "Unir as formas para que se movam e sejam redimensionadas juntas como um único bloco.",
+          "Excluir todas as formas de uma só vez.",
+          "Mudar a cor de todas para preto e branco.",
+          "Imprimir apenas as formas selecionadas."
+        ],
+        correct: 0,
+        hint: "Agrupar cria um bloco único, impedindo que os elementos se desalinhem."
+      },
+      {
+        q: "Na caixa de diálogo de Bordas da Página, onde é possível escolher molduras decorativas prontas como estrelas, cantoneiras e artes?",
+        options: [
+          "No campo 'Cor da Linha'.",
+          "Na régua superior.",
+          "No menu suspenso 'Arte'.",
+          "No botão de Zoom."
+        ],
+        correct: 2,
+        hint: "Fica na base da janela com a legenda 'Arte'."
+      }
+    ];
+
     // QUESTÕES DA PROVA FINAL DO MÓDULO (10 QUESTÕES)
     const QUESTIONS_FINAL = [
       {
@@ -3534,8 +4571,8 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3){
-        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03 e a Prova Final estão liberadas no portal.`);
+      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4){
+        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04 e a Prova Final estão liberadas no portal.`);
         return;
       }
 
@@ -3561,7 +4598,8 @@
         const routes = {
           1: "screen-lesson-1",
           2: "screen-lesson-2",
-          3: "screen-lesson-3"
+          3: "screen-lesson-3",
+          4: "screen-lesson-4"
         };
         if(routes[targetLessonNum]){
           const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
@@ -3580,7 +4618,7 @@
     });
 
     // ===================================================================
-    // NAVEGAÇÃO DE TÓPICOS DAS AULAS (AULA 1 E AULA 2)
+    // NAVEGAÇÃO DE TÓPICOS DAS AULAS (AULAS 01 A 04)
     // ===================================================================
     window.switchTopicPhase = function(lessonNum, phaseNum) {
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
@@ -3646,10 +4684,174 @@
     };
 
     // ===================================================================
+    // SIMULADORES DA AULA 04 (ORIENTAÇÃO, BORDAS, FORMAS E CAMADAS)
+    // ===================================================================
+    function ativarL4(btn){
+      if(!btn || !btn.parentElement) return;
+      btn.parentElement.querySelectorAll(".l4-sim-btn, .l4-swatch").forEach(function(b){
+        const ativo = (b === btn);
+        b.classList.toggle("active", ativo);
+        if(b.classList.contains("l4-sim-btn")) b.setAttribute("aria-pressed", ativo ? "true" : "false");
+      });
+    }
+
+    window.l4SetOrientation = function(mode, btn){
+      const page = document.getElementById("l4-page-demo");
+      const tag = document.getElementById("l4-page-tag");
+      const status = document.getElementById("l4-orientation-status");
+      if(!page) return;
+
+      const portrait = mode === "portrait";
+      page.classList.toggle("portrait", portrait);
+      if(tag) tag.textContent = portrait ? "RETRATO • 21 × 29,7 CM" : "PAISAGEM • 29,7 × 21 CM";
+      if(status) status.textContent = portrait
+        ? "▸ Orientação atual: Retrato (folha em pé, 21 × 29,7 cm)."
+        : "▸ Orientação atual: Paisagem (folha deitada, 29,7 × 21 cm).";
+
+      ativarL4(btn);
+    };
+
+    const L4_BORDER_NOMES = {
+      none: "Sem borda",
+      simple: "Linha simples (3 pt)",
+      double: "Linha dupla (6 pt)",
+      art: "Borda de Arte (moldura decorativa)"
+    };
+
+    window.l4SetBorder = function(kind, btn){
+      const box = document.getElementById("l4-border-demo");
+      const status = document.getElementById("l4-border-status");
+      if(!box) return;
+
+      box.classList.remove("none", "double", "art");
+      if(kind !== "simple") box.classList.add(kind);
+      if(status) status.textContent = "▸ Borda atual: " + (L4_BORDER_NOMES[kind] || kind) + ".";
+
+      ativarL4(btn);
+    };
+
+    const L4_SHAPE_NOMES = {
+      roundRect: "Retângulo arredondado",
+      ellipse: "Elipse",
+      arrow: "Seta de bloco",
+      star: "Estrela",
+      banner: "Faixa"
+    };
+
+    window.l4SetShape = function(kind, btn){
+      const shape = document.getElementById("l4-shape-demo");
+      const status = document.getElementById("l4-shape-status");
+      if(!shape) return;
+
+      shape.className = "l4-shape " + kind;
+      shape.textContent = "Adicionar Texto";
+      if(status) status.textContent = "▸ Forma atual: " + (L4_SHAPE_NOMES[kind] || kind) + " — o texto fica vinculado à forma.";
+
+      ativarL4(btn);
+    };
+
+    let l4Fill = "#2563EB";
+    let l4Outline = 3;
+    let l4Shadow = false;
+
+    const L4_FILL_NOMES = {
+      "#2563EB": "azul",
+      "#0F766E": "verde-petróleo",
+      "#B45309": "âmbar",
+      "#7C3AED": "violeta",
+      "transparent": "sem preenchimento"
+    };
+
+    function l4PaintEffect(){
+      const shape = document.getElementById("l4-effect-demo");
+      const status = document.getElementById("l4-effect-status");
+      if(!shape) return;
+
+      const semFundo = l4Fill === "transparent";
+      shape.style.background = semFundo ? "transparent" : l4Fill;
+      shape.style.borderWidth = l4Outline + "px";
+      shape.style.borderColor = "#1E40AF";
+      shape.classList.toggle("no-fill", semFundo);
+      shape.classList.toggle("shadow", l4Shadow);
+
+      if(status){
+        status.textContent = "▸ Preenchimento " + (L4_FILL_NOMES[l4Fill] || l4Fill)
+          + " • Contorno " + l4Outline + " pt"
+          + (l4Shadow ? " • Com sombra." : " • Sem sombra.");
+      }
+    }
+
+    window.l4SetFill = function(color, btn){
+      l4Fill = color;
+      l4PaintEffect();
+      ativarL4(btn);
+    };
+
+    window.l4SetOutline = function(pt, btn){
+      l4Outline = pt;
+      l4PaintEffect();
+      ativarL4(btn);
+    };
+
+    window.l4ToggleShadow = function(btn){
+      l4Shadow = !l4Shadow;
+      if(btn){
+        btn.classList.toggle("active", l4Shadow);
+        btn.setAttribute("aria-pressed", l4Shadow ? "true" : "false");
+      }
+      l4PaintEffect();
+    };
+
+    let l4BlueTop = false;
+    let l4Grouped = false;
+
+    function l4PaintLayers(){
+      const stage = document.getElementById("l4-layer-stage");
+      const status = document.getElementById("l4-layer-status");
+      if(!stage) return;
+
+      stage.classList.toggle("blue-top", l4BlueTop);
+      stage.classList.toggle("grouped", l4Grouped);
+
+      const ordem = l4BlueTop
+        ? "Forma A está na frente da Forma B."
+        : "Forma B está na frente da Forma A.";
+      const grupo = l4Grouped
+        ? "As formas estão agrupadas: movem-se juntas."
+        : "Nenhum grupo formado.";
+      if(status) status.textContent = "▸ " + ordem + " " + grupo;
+    }
+
+    window.l4SetLayer = function(ordem, btn){
+      l4BlueTop = ordem === "front";
+      l4PaintLayers();
+
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l4-sim-btn").forEach(function(b){
+          const handler = b.getAttribute("onclick") || "";
+          if(handler.indexOf("l4SetLayer") !== -1){
+            const ativo = (b === btn);
+            b.classList.toggle("active", ativo);
+            b.setAttribute("aria-pressed", ativo ? "true" : "false");
+          }
+        });
+      }
+    };
+
+    window.l4ToggleGroup = function(btn){
+      l4Grouped = !l4Grouped;
+      if(btn){
+        btn.classList.toggle("active", l4Grouped);
+        btn.setAttribute("aria-pressed", l4Grouped ? "true" : "false");
+      }
+      l4PaintLayers();
+    };
+
+    // ===================================================================
     // MARCAR LEITURA & GAMIFICAÇÃO COM PERSISTÊNCIA (LOCALSTORAGE)
     // ===================================================================
-    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5 };
-    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true };
+    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5 };
+    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true };
     const READ_STORAGE_KEY = "word_lessons_reading_progress";
 
     let readTopics = {};
@@ -3764,9 +4966,9 @@
       }
     }
 
-    // Inicialização da Leitura (Aulas 1, 2 e 3)
+    // Inicialização da Leitura (Aulas 1, 2, 3 e 4)
     loadReadTopics();
-    [1, 2, 3].forEach(function(num){
+    [1, 2, 3, 4].forEach(function(num){
       captureReadLabels(num);
       bindCheckboxes(num);
       paintReadLesson(num);
@@ -3791,7 +4993,7 @@
     });
 
     // ===================================================================
-    // MOTOR DE EXERCÍCIOS DE FIXAÇÃO (AULAS 01 E 02)
+    // MOTOR DE EXERCÍCIOS DE FIXAÇÃO (AULAS 01 A 04)
     // ===================================================================
     const QUIZ_CFG = {
       1: {
@@ -3823,6 +5025,16 @@
         moduleId: "word_lesson_3_quiz",
         title: "Módulo 2 — Aula 03: Formatação Avançada de Parágrafos & Elementos Visuais",
         sig: "Módulo 2 - Aula 3 (Word)"
+      },
+      4: {
+        questions: QUESTIONS_LESSON_4,
+        name: "Aluno(a)",
+        answers: new Array(5).fill(null),
+        current: 0,
+        signature: null,
+        moduleId: "word_lesson_4_quiz",
+        title: "Módulo 2 — Aula 04: Bordas Decorativas, Formas & Quebra de Texto",
+        sig: "Módulo 2 - Aula 4 (Word)"
       }
     };
 
@@ -4025,7 +5237,7 @@
     window.getReportDataGen = getReportDataGen;
 
     // Vincular botões de Comprovante (.txt), PDF, WhatsApp e E-mail dos Exercícios de Fixação
-    ;[1, 2, 3].forEach(function(lessonNum){
+    ;[1, 2, 3, 4].forEach(function(lessonNum){
       const btnTxt = document.getElementById(`btn-download-txt-${lessonNum}`);
       if(btnTxt){
         btnTxt.onclick = () => window.QuizEngine.downloadTxtReport(getReportDataGen(lessonNum));

@@ -3336,6 +3336,248 @@ Antes de considerar o trabalho finalizado, confira os 6 itens obrigatórios:
   </table>
   <p style="margin:8px 0 0; font-size:11.5px; color:#475569;">A marca d'água pertence ao cabeçalho do documento: por isso se repete em todas as páginas e não é selecionada com um clique comum no corpo do texto. Para removê-la, use <strong>Remover Marca d'Água</strong> no mesmo menu.</p>
 </div>`
+        },
+        {
+          lessonNum: 4,
+          chapter: "AULA 04: BORDAS DECORATIVAS, FORMAS & QUEBRA DE TEXTO",
+          heading: "4.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo): aprender a construir peças gráficas, certificados e comunicados visuais elegantes dentro do Word, dominando a orientação paisagem, as bordas artísticas de página, a inserção de formas geométricas vetoriais com texto interno e a organização dos desenhos em camadas e grupos.
+
+COMO VAMOS FAZER (os 5 passos):
+1. Alterar a Orientação da página para Paisagem (horizontal).
+2. Aplicar Bordas de Página (linhas duplas e bordas de arte).
+3. Inserir Formas Geométricas e digitar texto interno.
+4. Personalizar Preenchimento, Contorno e Efeitos visuais.
+5. Dominar a ordem das camadas (Trazer para a Frente / Enviar para Trás) e Agrupar.
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Abra o Microsoft Word em um documento em branco e salve como Cartaz_Aula04.docx.
+• Confira se a guia Layout da Página (ou Layout) está visível na faixa de opções.
+• Se possível, imprima uma página de teste em modo econômico para conferir as bordas.`,
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12.5px; color:#475569; margin:0 0 10px 0;">Cada passo possui um check prático distribuído no portal, posicionado ao final da fase correspondente — o próximo só libera depois que o anterior for concluído.</p>
+  <div style="font-weight:800; color:#1E40AF; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 5 PASSOS DA AULA 04</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#1D4ED8;">1</strong> Orientação Paisagem</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#1D4ED8;">2</strong> Bordas de Página</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#1D4ED8;">3</strong> Formas &amp; Texto</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#1D4ED8;">4</strong> Cores &amp; Efeitos</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#1D4ED8;">5</strong> Camadas &amp; Agrupar</span>
+  </div>
+  <div class="es-sheet-box" style="max-width:470px; background:#F8FAFC; margin-top:14px;">
+    <div class="es-sheet-titlebar" style="background:#1D4ED8; color:#fff;">⚙️ FAIXA DE PREPARAÇÃO — antes da Fase 1</div>
+    <ol style="font-size:11.5px; color:#374151; line-height:1.6; margin:0; padding-left:18px;">
+      <li>Abra o Word em um <strong>documento em branco</strong> e salve como <strong>Cartaz_Aula04.docx</strong>.</li>
+      <li>Confira se a guia <strong>Layout da Página</strong> (ou <strong>Layout</strong>) está visível.</li>
+      <li>Imprima uma página de teste em modo econômico para conferir as bordas.</li>
+    </ol>
+  </div>
+  <div class="fun-highlight" style="margin-top:12px;">
+    <strong>🏁 O QUE VOCÊ VAI CONSEGUIR NO FINAL:</strong> um cartaz em paisagem com moldura decorativa, formas vetoriais com texto interno, efeitos equilibrados e todos os elementos agrupados para se moverem juntos.
+  </div>
+</div>`
+        },
+        {
+          lessonNum: 4,
+          heading: "4.1 Orientação de Página e Planejamento Visual de Cartazes",
+          content: `Antes de desenhar qualquer coisa, é preciso escolher o formato da folha. O Word trabalha com Retrato (folha em pé, 21 × 29,7 cm) e Paisagem (folha deitada, 29,7 × 21 cm).
+
+Retrato é a escolha para cartas, relatórios, trabalhos ABNT e ofícios. Paisagem é a escolha para certificados, diplomas, cartazes, fluxogramas e tabelas largas.
+
+Caminho: Layout da Página (ou Layout) > Configurar Página > Orientação > Paisagem. Em documentos com várias páginas, use "Aplicar a: Todo o documento" para não misturar orientações.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#1D4ED8; color:#fff;">📐 Comparação Visual: Retrato × Paisagem</div>
+  <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end; justify-content:center; padding:8px 0;">
+    <div style="text-align:center;">
+      <div style="width:104px; height:148px; background:#FFFFFF; border:2px solid #2563EB; border-radius:6px; box-shadow:0 4px 10px rgba(15,23,42,0.12); margin:0 auto; padding:8px 7px; font-size:8px; color:#64748B; line-height:1.5; text-align:left;">
+        <strong style="display:block; color:#1E3A8A; font-size:9px;">RELATÓRIO</strong>
+        Texto corrido em coluna única, margens ABNT de 3 cm.
+      </div>
+      <div style="font-size:10.5px; font-weight:800; color:#1E3A8A; margin-top:6px;">RETRATO • 21 × 29,7 cm</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:168px; height:118px; background:#FFFFFF; border:3px double #B45309; border-radius:6px; box-shadow:0 4px 10px rgba(15,23,42,0.12); margin:0 auto; padding:8px 10px; font-size:8px; color:#78350F; line-height:1.5; text-align:center;">
+        <strong style="display:block; color:#92400E; font-size:11px;">★ FESTA JUNINA ★</strong>
+        Título grande, três fotos e setas de localização aproveitando a largura.
+      </div>
+      <div style="font-size:10.5px; font-weight:800; color:#92400E; margin-top:6px;">PAISAGEM • 29,7 × 21 cm</div>
+    </div>
+  </div>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#0F766E; color:#fff;">⚙️ Onde Alterar a Orientação</div>
+  <table class="mini-sheet">
+    <tr><th>Versão do Word</th><th>Caminho</th><th>Aplicação</th></tr>
+    <tr><td><strong>Word 2010 / 2013</strong></td><td>Layout da Página &gt; Configurar Página &gt; Orientação</td><td>Paisagem</td></tr>
+    <tr style="background:#ECFDF5;"><td><strong>Versões recentes</strong></td><td>Layout &gt; Configurar Página &gt; Orientação</td><td>Paisagem + "Aplicar a: Todo o documento"</td></tr>
+  </table>
+</div>`
+        },
+        {
+          lessonNum: 4,
+          heading: "4.2 Bordas de Página: Linhas Técnicas e Molduras de Arte",
+          content: `A borda de página é uma moldura aplicada ao redor de toda a folha — diferente da borda de parágrafo, que envolve apenas um bloco de texto. Ela dá acabamento a certificados, convites, capas e comunicados.
+
+No Word 2010/2013: Layout da Página > Plano de Fundo da Página > Bordas da Página. Em versões recentes: Design > Bordas da Página.
+
+Estilos disponíveis: linha simples (0,5 pt a 3 pt), linha dupla ou tripla (certificados e capas formais) e Borda de Arte (molduras gráficas prontas: estrelas, laços e cantoneiras).
+
+Ajuste essencial: em Opções..., mude "Medir a partir de" para Texto. Se ficar em "Borda da Página", o traço pode sair cortado pela margem física da impressora.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#B45309; color:#fff;">🎓 Moldura de Arte Aplicada a um Certificado</div>
+  <div style="background:#FFFBEB; border:4px dashed #B45309; outline:2px solid #F59E0B; outline-offset:5px; border-radius:4px; padding:22px 18px; text-align:center;">
+    <div style="font-family:'Fraunces', serif; font-size:19px; font-weight:800; color:#92400E; letter-spacing:1px;">CERTIFICADO DE CONCLUSÃO</div>
+    <div style="font-size:11.5px; color:#78350F; line-height:1.7; margin-top:8px;">Certificamos que o aluno concluiu o curso de Microsoft Word — Módulo 2.<br>Moldura de arte + linha dupla interna.</div>
+    <div style="margin-top:12px; font-size:10px; color:#B45309; letter-spacing:2px;">WR CAPACITAÇÃO PROFISSIONAL</div>
+  </div>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#1D4ED8; color:#fff;">🖼️ Estilos de Borda e Quando Usar</div>
+  <table class="mini-sheet">
+    <tr><th>Estilo</th><th>Como aparece</th><th>Quando usar</th></tr>
+    <tr><td><strong>Linha simples</strong></td><td>Traço de 0,5 pt a 3 pt</td><td>Relatórios discretos</td></tr>
+    <tr style="background:#EFF6FF;"><td><strong>Linha dupla/tripla</strong></td><td>Linhas paralelas</td><td>Certificados e capas formais</td></tr>
+    <tr style="background:#FEF3C7;"><td><strong>Borda de Arte</strong></td><td>Molduras gráficas prontas</td><td>Convites, cartazes e datas comemorativas</td></tr>
+    <tr><td><strong>Sem borda</strong></td><td>Remove a moldura</td><td>Documentos que precisam ficar limpos</td></tr>
+  </table>
+</div>
+<div class="fun-highlight">
+  <strong>⚠️ Ajuste que evita corte na impressora:</strong> em <strong>Bordas e Sombreamento &gt; Bordas da Página &gt; Opções...</strong>, mude <strong>"Medir a partir de"</strong> para <strong>Texto</strong>.
+</div>`
+        },
+        {
+          lessonNum: 4,
+          heading: "4.3 Desenho Vetorial com Formas Geométricas e Formatação",
+          content: `As formas são desenhos vetoriais: continuam nítidas em qualquer zoom ou impressão, ao contrário de uma foto. Servem para destacar etapas, criar setas de fluxo, montar caixas de diálogo e organizar cartazes.
+
+Onde encontrar: Inserir > Ilustrações > Formas.
+
+Formas mais usadas: retângulo arredondado (botões e caixas de aviso), elipse (números de etapa e selos), seta de bloco (fluxogramas), estrela (destaques), faixa (títulos de cartaz) e balão (diálogos e observações).
+
+Para escrever dentro: clique com o botão direito na forma e escolha Adicionar Texto — ou simplesmente comece a digitar com ela selecionada. O texto fica automaticamente vinculado à forma: ao mover o desenho, a frase vai junto.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#1D4ED8; color:#fff;">🔷 Catálogo Visual das Formas</div>
+  <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; padding:12px 0;">
+    <div style="width:118px; height:62px; background:#2563EB; border:2px solid #1E40AF; border-radius:18px; color:#fff; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 6px;">Retângulo arredondado</div>
+    <div style="width:96px; height:62px; background:#0F766E; border:2px solid #115E59; border-radius:50%; color:#fff; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center;">Elipse</div>
+    <div style="width:118px; height:52px; background:#B45309; clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%); color:#fff; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center;">Seta</div>
+    <div style="width:82px; height:82px; background:#7C3AED; clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); color:#fff; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center;">Estrela</div>
+  </div>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#0F766E; color:#fff;">⚙️ Como Inserir e Escrever Dentro da Forma</div>
+  <table class="mini-sheet">
+    <tr><th>Etapa</th><th>Onde clicar</th><th>O que acontece</th></tr>
+    <tr><td><strong>1</strong></td><td>Inserir &gt; Ilustrações &gt; Formas</td><td>Abre o catálogo de desenhos vetoriais</td></tr>
+    <tr style="background:#EFF6FF;"><td><strong>2</strong></td><td>Escolha a forma e arraste</td><td>O desenho nasce no tamanho aproximado</td></tr>
+    <tr style="background:#FEF3C7;"><td><strong>3</strong></td><td>Botão direito &gt; Adicionar Texto</td><td>O cursor entra dentro da forma</td></tr>
+    <tr><td><strong>4</strong></td><td>Digite a frase</td><td>O texto fica vinculado e acompanha a forma</td></tr>
+  </table>
+</div>
+<div class="fun-highlight">
+  <strong>💡 Dica de precisão:</strong> segure <strong>Shift</strong> ao arrastar os cantos da forma para manter as proporções.
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#0C4A6E; color:#fff;">↩️ Quebra de Texto: o Texto Contornando a Forma</div>
+  <table class="mini-sheet">
+    <tr><th>Opção</th><th>Comportamento</th><th>Uso típico</th></tr>
+    <tr><td><strong>Em Linha com o Texto</strong></td><td>A forma age como uma letra gigante; o texto não a contorna</td><td>Ícones e pequenos selos no meio do parágrafo</td></tr>
+    <tr style="background:#EFF6FF;"><td><strong>Quadrado / Justo</strong></td><td>O texto abraça a moldura da forma</td><td>Cartazes e caixas de destaque</td></tr>
+    <tr><td><strong>Acima e Abaixo</strong></td><td>O texto para antes da forma e continua depois</td><td>Faixas e títulos centralizados</td></tr>
+    <tr style="background:#FEF3C7;"><td><strong>Na Frente / Atrás do Texto</strong></td><td>A forma se sobrepõe ao texto</td><td>Marcas d'água e faixas de fundo</td></tr>
+  </table>
+  <p style="margin:8px 0 0; font-size:11.5px; color:#475569;">Se o texto não passa dos lados da forma, ela está em <strong>Em Linha com o Texto</strong>: mude para <strong>Quadrado</strong> e arraste-a para a posição desejada.</p>
+</div>`
+        },
+        {
+          lessonNum: 4,
+          heading: "4.4 Preenchimento, Contorno e Efeitos de Forma",
+          content: `Com a forma selecionada, o Word exibe a guia contextual Ferramentas de Desenho > Formatar. É nela que você controla as três camadas visuais de qualquer desenho.
+
+Preenchimento da Forma: cor sólida, gradiente suave, textura ou sem preenchimento (deixa o fundo aparecer).
+Contorno da Forma: cor e espessura da linha externa, medida em pontos (pt) — 0,75 pt, 1,5 pt, 3 pt.
+Efeitos de Forma: sombra suave, brilho, reflexo e bisel (relevo tridimensional).
+
+Erro comum: sombra + brilho + bisel + gradiente na mesma forma deixam o documento com aparência amadora. Escolha um efeito principal e mantenha o restante discreto.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#7C3AED; color:#fff;">🎨 As Três Camadas Visuais da Forma</div>
+  <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; padding:10px 0;">
+    <div style="flex:1; min-width:130px; background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:8px; padding:10px 12px;">
+      <div style="font-weight:800; color:#1E40AF; font-size:12px;">🎨 Preenchimento</div>
+      <div style="font-size:11px; color:#1E3A8A; margin-top:4px;">O miolo: cor sólida, gradiente ou transparente.</div>
+    </div>
+    <div style="flex:1; min-width:130px; background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:8px; padding:10px 12px;">
+      <div style="font-weight:800; color:#166534; font-size:12px;">🖊️ Contorno</div>
+      <div style="font-size:11px; color:#166534; margin-top:4px;">A linha externa: cor e espessura em pontos.</div>
+    </div>
+    <div style="flex:1; min-width:130px; background:#FFF7ED; border:1.5px solid #FDBA74; border-radius:8px; padding:10px 12px;">
+      <div style="font-weight:800; color:#9A3412; font-size:12px;">✨ Efeitos</div>
+      <div style="font-size:11px; color:#9A3412; margin-top:4px;">Sombra, brilho, reflexo e bisel.</div>
+    </div>
+  </div>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#1D4ED8; color:#fff;">🧪 Comparação: Contorno Fino × Contorno Grosso × Sombra</div>
+  <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; align-items:center; padding:14px 0;">
+    <div style="text-align:center;">
+      <div style="width:112px; height:58px; background:#2563EB; border:1px solid #1E40AF; border-radius:12px; color:#fff; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center;">1 pt</div>
+      <div style="font-size:10px; color:#475569; margin-top:4px;">Discreto</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:112px; height:58px; background:#2563EB; border:4px solid #1E40AF; border-radius:12px; color:#fff; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center;">3 pt</div>
+      <div style="font-size:10px; color:#475569; margin-top:4px;">Equilibrado</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:112px; height:58px; background:#2563EB; border:6px solid #1E40AF; border-radius:12px; color:#fff; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center;">6 pt</div>
+      <div style="font-size:10px; color:#475569; margin-top:4px;">Pesado</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:112px; height:58px; background:#2563EB; border:2px solid #1E40AF; border-radius:12px; color:#fff; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center; box-shadow:8px 8px 0 rgba(37,99,235,0.22), 8px 8px 16px rgba(15,23,42,0.24);">Sombra</div>
+      <div style="font-size:10px; color:#475569; margin-top:4px;">Com relevo</div>
+    </div>
+  </div>
+</div>
+<div class="fun-highlight">
+  <strong>🚫 Erro comum:</strong> exagerar nos efeitos. Em peças profissionais, escolha <strong>um</strong> efeito principal e mantenha o restante discreto — contraste e legibilidade valem mais que enfeite.
+</div>`
+        },
+        {
+          lessonNum: 4,
+          heading: "4.5 Camadas, Sobreposição e o Poder do Agrupamento",
+          content: `Quando duas formas se sobrepõem, quem aparece por cima é definido pela ordem das camadas. E quando várias formas compõem o mesmo desenho, o agrupamento evita que elas se desmontem ao mover o conjunto.
+
+Trazer para a Frente: coloca a forma selecionada acima das outras.
+Enviar para Trás: coloca a forma selecionada atrás das outras.
+Agrupar: une as formas para mover e redimensionar juntas (Ctrl + clique em cada forma > botão direito > Agrupar).
+Desagrupar: devolve a independência a cada forma.
+
+Passo a passo: segure Ctrl e clique em cada forma (ou arraste uma seleção ao redor de todas); solte o Ctrl e clique com o botão direito sobre o conjunto; escolha Agrupar > Agrupar. As alças de seleção passam a envolver o bloco inteiro.
+
+Atenção: no Word, Ctrl + G abre "Ir Para". O atalho de agrupar é do PowerPoint, não do Word.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#16A34A; color:#fff;">🧩 Simulação: Ordem das Camadas e Grupo Selecionado</div>
+  <div style="position:relative; height:150px; background:#F8FAFC; border:1.5px dashed #93C5FD; border-radius:8px; overflow:hidden;">
+    <div style="position:absolute; left:16%; top:34px; width:118px; height:76px; background:#2563EB; border-radius:10px; color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 14px rgba(15,23,42,0.20); z-index:1;">Forma A</div>
+    <div style="position:absolute; left:42%; top:62px; width:118px; height:76px; background:#D97706; border-radius:10px; color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 14px rgba(15,23,42,0.20); z-index:2;">Forma B</div>
+    <div style="position:absolute; left:11%; top:22px; width:62%; height:130px; border:2px dashed #16A34A; border-radius:12px; z-index:3;">
+      <span style="position:absolute; top:-11px; left:10px; background:#16A34A; color:#fff; font-size:9.5px; font-weight:700; padding:1px 8px; border-radius:99px;">🔗 Grupo</span>
+    </div>
+  </div>
+  <p style="margin:8px 0 0; font-size:11.5px; color:#475569;">A Forma B está na frente. O quadro verde tracejado representa o grupo: ao mover, as duas formas vão juntas.</p>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#1D4ED8; color:#fff;">⚙️ Camadas × Agrupamento</div>
+  <table class="mini-sheet">
+    <tr><th>Recurso</th><th>O que faz</th><th>Como acionar</th></tr>
+    <tr style="background:#EFF6FF;"><td><strong>Trazer para a Frente</strong></td><td>Coloca a forma acima das outras</td><td>Botão direito &gt; Trazer para a Frente</td></tr>
+    <tr><td><strong>Enviar para Trás</strong></td><td>Coloca a forma atrás das outras</td><td>Botão direito &gt; Enviar para Trás</td></tr>
+    <tr style="background:#FEF3C7;"><td><strong>Agrupar</strong></td><td>Une as formas para mover e redimensionar juntas</td><td>Ctrl + clique &gt; botão direito &gt; Agrupar</td></tr>
+    <tr><td><strong>Desagrupar</strong></td><td>Devolve a independência a cada forma</td><td>Botão direito &gt; Agrupar &gt; Desagrupar</td></tr>
+  </table>
+</div>
+<div class="fun-highlight">
+  <strong>✅ Checklist final do cartaz:</strong> orientação em paisagem • borda visível e medida a partir do texto • formas com texto legível • efeitos sem excesso • nada escondido atrás de outra forma • elementos agrupados.
+</div>`
         }
       ]
     },
