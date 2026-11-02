@@ -36,7 +36,39 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL (02/11/2026) — Módulo 2: Microsoft Word — Aula 03 (Formatação Avançada de Parágrafos & Elementos Visuais)
+## ✅ SESSÃO ATUAL (02/11/2026) — Módulo 2: Microsoft Word — Aula 04 (Bordas Decorativas, Formas & Quebra de Texto)
+
+Implementação completa da **Aula 04 do Módulo 2: Microsoft Word**, desbloqueio no Hub com senha `wd004`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l4-check-1..5`), oito simuladores ao vivo, exercício de fixação com 5 questões e apostila PDF com seções 4.0–4.5 e ilustrações HTML reais.
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Desbloqueio no Hub** | `modules/word/index.html` | Card da Aula 04 com badge `🔓 Aula Liberada (Senha wd004)`; `promptLessonPassword` libera a aula 4. Os cards 05–11 foram corrigidos para `🔒 Em preparação` (antes anunciavam senha de aulas ainda inexistentes). |
+| **Tela da Aula 04** | `modules/word/index.html` → `#screen-lesson-4` | Botões de topo (voltar, imprimir, baixar PDF) e barra gamificada (`gamify-percent-4`, `gamify-bar-4`, `gamify-badge-box-4`). |
+| **FASE 0 Tutorial** | `#l4-fase-0` | Objetivo, roteiro numerado em 5 chips, contador `#l4-checklist-status` e botão `#btn-start-l4`. |
+| **Fases 1–5** | `#tab-btn-4-1..5` | 1. Orientação Retrato × Paisagem; 2. Bordas de Página (linha dupla/arte + "Medir a partir de: Texto"); 3. Formas & Texto (Adicionar Texto) + Quebra de Texto; 4. Preenchimento/Contorno/Efeitos; 5. Camadas e Agrupamento. Cada fase termina com `#l4-check-N` + `#check-read-4-N`. |
+| **Simuladores** | `window.l4SetOrientation`, `l4SetBorder`, `l4SetShape`, `l4SetFill`, `l4SetOutline`, `l4ToggleShadow`, `l4SetLayer`, `l4ToggleGroup` | Folha girando, estilos de moldura, catálogo de formas, cores/contorno/sombra e ordem de camadas/grupo. |
+| **Exercício de Fixação** | `QUESTIONS_LESSON_4` + `QUIZ_CFG[4]` | 5 questões; `moduleId: "word_lesson_4_quiz"`; gabarito `[2, 1, 3, 0, 2]`; persistência real e botão "↺ Recomeçar o exercício". |
+| **Roteamento e progresso** | `modules/word/index.html` | Aula 4 em `TOTAL_TOPICS`, `SEQUENTIAL_LESSONS`, loops de inicialização/resultado (`[1,2,3,4]`) e `routes` (`4: "screen-lesson-4"`). |
+| **Apostila PDF** | `assets/js/pdf-lessons.js` → `LESSONS.word.sections` | Seções **4.0 a 4.5** com `lessonNum: 4` e `html` ilustrado (`.mini-sheet`, `.es-sheet-box`, `.fun-highlight`). |
+
+### 2. Validações Executadas (02/11/2026)
+
+- `node --check assets/js/pdf-lessons.js`: **OK**.
+- Script inline de `modules/word/index.html` validado com `new Function`: **OK**.
+- Conferência estrutural: **5 fases**, **5 checks**, **5 botões de leitura**, **6 abas**, **6 seções PDF** com `lessonNum: 4`, **zero** placeholders "🖼️ Referência de imagem", tags `<section>/<article>/<div>/<nav>/<table>` balanceadas.
+- **Pendente:** bateria CDP em navegador (modal `wd004`, checks 0→100%, simuladores, quiz 10,0 + SHA-256, PDF 4, mobile 375/390 px). Sem Playwright/Puppeteer na sessão.
+
+### 3. Pendências Registradas
+
+- Aulas 05 a 11 do Word e Prova Final (spec ainda prevê 15 questões; `QUESTIONS_FINAL` segue com 10).
+- Cards 09–12 do módulo Excel ainda anunciam `🔓 Aula Liberada (Senha ...)` embora `promptLessonPassword` recuse: mesma inconsistência corrigida no Word, fora do escopo da Aula 04.
+- Worktree contém alterações não commitadas de Windows e specs futuras.
+
+---
+
+## 📅 SESSÃO ANTERIOR (02/11/2026) — Módulo 2: Microsoft Word — Aula 03 (Formatação Avançada de Parágrafos & Elementos Visuais)
 
 Implementação completa da **Aula 03 do Módulo 2: Microsoft Word** ("Formatação Avançada de Parágrafos & Elementos Visuais"), desbloqueio no Hub com senha `wc003`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l3-check-1..5`), dois simuladores ao vivo, exercício de fixação com 5 questões e apostila PDF com seções 3.0–3.5 e ilustrações HTML reais.
 

@@ -33,8 +33,9 @@
   - [x] Aula 01: Introdução ao Word & Digitação Eficiente (Hub, FASE 0, 5 fases, simulador régua, atalhos PT-BR, quiz 5/5 e PDF com imagens reais)
   - [x] Aula 02: Normas ABNT & Formatação Básica de Trabalhos (FASE 0, margens 3-3-2-2 com simulador, Arial/Times 12 e títulos 14, parágrafos 1,5 com 1,25 cm, quebra quadrado, 2 colunas e capitular, quiz 5/5 SHA-256 e PDF com seções dedicadas)
   - [x] Aula 03: Formatação Avançada de Parágrafos & Elementos Visuais (FASE 0 com 5 chips, 4 alinhamentos com simulador ao vivo, espaçamento em pt 0/6/12/18, recuos primeira linha/deslocado/citação 4 cm, bordas e sombreamento, marca d'água, quiz 5/5 com persistência `word_lesson_3_quiz` e PDF com seções 3.0–3.5 ilustradas)
-  - [ ] Aulas 04 a 11 e Prova Final
-- [ ] **Apostila PDF do Módulo Word**: Portar seções para `assets/js/pdf-lessons.js` (Aulas 01, 02 e 03 já integradas com `lessonNum: 1, 2 e 3` e ilustrações HTML reais)
+  - [x] Aula 04: Bordas Decorativas, Formas & Quebra de Texto (FASE 0 com 5 chips, orientação Paisagem com simulador, bordas de página com linha dupla/arte e ajuste "Medir a partir de: Texto", catálogo de formas com texto interno e Quebra de Texto, preenchimento/contorno/sombra com simulador, camadas e agrupamento, quiz 5/5 com persistência `word_lesson_4_quiz` e PDF com seções 4.0–4.5 ilustradas)
+  - [ ] Aulas 05 a 11 e Prova Final
+- [ ] **Apostila PDF do Módulo Word**: Portar seções para `assets/js/pdf-lessons.js` (Aulas 01, 02, 03 e 04 já integradas com `lessonNum: 1, 2, 3 e 4` e ilustrações HTML reais)
 
 ### 📝 Módulo 3: Microsoft Excel
 - [x] **Especificação SDD Mestre**: Arquitetura do Módulo Excel em 13 Aulas, Design Tokens Verde Excel, Matriz de Senhas (`xa001`-`xm013`) e Simulador Interativo (`Docs/SPEC-EXCEL-MASTER.md`)
