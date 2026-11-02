@@ -572,6 +572,63 @@ a:hover {
   color: var(--ink-dark);
 }
 
+/* Universal Data Sheet & Mini Table Fallback */
+.es-sheet-box {
+  background: var(--paper-white);
+  border: 1.5px solid var(--line-light);
+  border-radius: var(--radius-md);
+  margin: 22px 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.es-sheet-titlebar {
+  background: #F1F5F9;
+  color: #1E293B;
+  font-weight: 700;
+  font-size: 13.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 11px 16px;
+  border-bottom: 1.5px solid var(--line-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mini-sheet {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.mini-sheet th {
+  background: #F8FAFC;
+  color: #475569;
+  font-weight: 700;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1.5px solid var(--line-light);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.mini-sheet td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #EDF2F7;
+  color: var(--ink-dark);
+}
+
+.mini-sheet tr:last-child td {
+  border-bottom: none;
+}
+
+.mini-sheet tr:hover td {
+  background-color: #F8FAFC;
+}
+
 /* Digital Signature Badge */
 .signature-badge {
   background: #F4EBE2;

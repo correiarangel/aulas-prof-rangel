@@ -1522,6 +1522,395 @@ window.PDFLessons = (function() {
           boxText: "Crie tudo dentro de uma pasta nova de teste. Nenhum arquivo pessoal precisa ser apagado — este exercício é de observação e organização."
         },
         {
+          lessonNum: 6,
+          heading: "6.0 FASE 0 — Apresentação da Aula 06: WordPad — Editor de Texto do Windows",
+          content: `O QUE VAMOS FAZER (objetivo):
+Você vai conhecer o WordPad, o editor de texto que já vem instalado no Windows de graça. Vai aprender a abri-lo, a usar os comandos da Faixa de Opções para formatar um texto (negrito, itálico, alinhamento, marcadores), a diferenciar "Salvar" de "Salvar como", e vai montar um relatório com as informações do seu próprio computador, salvando tudo dentro de uma pasta organizada.
+
+COMO VAMOS FAZER (os 9 passos):
+1. Entender o que é o WordPad e para que ele serve.
+2. Abrir o WordPad no Windows 7, no Windows 10 e no Windows 11.
+3. Conhecer a guia "Página Inicial" (Área de Transferência, Fonte e Parágrafo).
+4. Usar as guias "Inserir" e "Exibir" e o Menu Arquivo.
+5. Diferenciar "Salvar" de "Salvar como".
+6. Coletar as informações do computador (Propriedades + ipconfig).
+7. Escrever e formatar o Relatório do PC.
+8. Criar a estrutura de pastas em Documentos e salvar o relatório.
+9. Revisar tudo e fazer o Exercício de Fixação.
+
+O QUE VOCÊ VAI CONSEGUIR NO FINAL:
+Um relatório do seu computador digitado, formatado e salvo na pasta certa — e a autonomia para usar qualquer editor de texto do Windows.`,
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12px; color:#475569; margin:0 0 10px 0;">O objetivo desta aula é conhecer o WordPad, formatar um texto com a Faixa de Opções e montar um Relatório do PC salvo na pasta correta.</p>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 9 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">1</strong> O que é o WordPad</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">2</strong> Como abrir (Win 7/10/11)</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">3</strong> Guia Página Inicial</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">4</strong> Inserir, Exibir e Menu Arquivo</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">5</strong> Salvar × Salvar como</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">6</strong> Coletar dados do PC</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">7</strong> Escrever o Relatório do PC</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">8</strong> Estrutura de pastas e salvamento</span>
+    <span style="background:#F7FEF9; border:1px solid #D1FAE5; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#374151;"><strong style="color:#15803D;">9</strong> Revisão e fixação</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo tem um check no fim da fase onde ele é executado — o próximo só abre depois que o anterior for concluído.</p>
+  <div class="es-sheet-box" style="max-width:470px; background:#F7FEF9;">
+    <div class="es-sheet-titlebar">⚙️ PREPARAÇÃO — antes do Tópico 1</div>
+    <ol style="font-size:11.5px; color:#374151; line-height:1.6; margin:0; padding-left:18px;">
+      <li>Ligue o computador e entre na sua conta do Windows.</li>
+      <li>Tenha em mãos um caderno ou bloco de notas para anotar os dados do seu PC.</li>
+      <li>Nada precisa ser instalado: o WordPad já vem no Windows.</li>
+    </ol>
+  </div>
+  <div style="font-weight:800; color:#166534; font-size:14px; margin:16px 0 8px 0;">🏁 O QUE VOCÊ VAI CONSEGUIR NO FINAL</div>
+  <p style="font-size:12px; color:#475569; margin:0 0 8px 0;">Um relatório do seu computador digitado, formatado e salvo na pasta certa:</p>
+  <div class="es-sheet-box" style="max-width:470px;">
+    <div class="es-sheet-titlebar">Relatório do PC — exemplo pronto</div>
+    <table class="mini-sheet">
+      <tr><th>Item</th><th>Informação do seu PC</th></tr>
+      <tr><td>Processador</td><td>Ex.: Intel Core i5</td></tr>
+      <tr><td>Memória RAM</td><td>Ex.: 8 GB</td></tr>
+      <tr><td>Tipo de sistema</td><td>Ex.: 64 bits</td></tr>
+      <tr><td>Endereço IPv4</td><td>Ex.: 192.168.0.10</td></tr>
+    </table>
+  </div>
+</div>`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.1 O que é o WordPad?",
+          content: `O WordPad é um editor de texto que já vem instalado no Windows, de graça. Ele fica no meio do caminho entre o Bloco de Notas e o Microsoft Word: tem mais recursos que o Bloco de Notas (que só escreve texto simples), mas é mais leve e simples que o Word.
+
+CARACTERÍSTICAS PRINCIPAIS:
+• Escreve e formata texto: negrito, itálico, sublinhado, cor, tamanho de letra e alinhamento.
+• Faz listas com marcadores e numeração.
+• Insere imagens e objetos dentro do documento.
+• Salva em vários formatos: .rtf (padrão), .docx (Word), .odt (LibreOffice) e .txt (texto puro).
+• Já vem com o Windows — não precisa comprar nem instalar nada.
+
+QUANDO USAR:
+• Para bilhetes, cartas, anotações e relatórios simples.
+• Quando o computador não tem o Microsoft Word instalado.
+• Quando você quer formatar um texto básico sem abrir um programa pesado.`,
+          images: [
+            { src: "../../assets/img/windows/Aula6/image5.png", caption: "WordPad aberto com a Faixa de Opções visível." },
+            { src: "../../assets/img/windows/Aula6/image3.png", caption: "Ícone do programa WordPad." }
+          ],
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">WORD PAD × BLOCO DE NOTAS × WORD</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Programa</th><th>O que faz</th><th>Para quem</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Bloco de Notas</strong></td><td>Só texto simples, sem formatação</td><td>Anotações rápidas</td></tr>
+                  <tr><td><strong>WordPad</strong></td><td>Texto com formatação básica e imagens</td><td>Uso intermediário</td></tr>
+                  <tr><td><strong>Microsoft Word</strong></td><td>Formatação completa, revisão, tabelas</td><td>Trabalhos profissionais</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Para lembrar",
+          boxText: "O WordPad é o editor intermediário: mais que o Bloco de Notas, menos que o Word — e já vem instalado no Windows, sem custo."
+        },
+        {
+          lessonNum: 6,
+          heading: "6.2 Como abrir o WordPad (Windows 7, 10 e 11)",
+          content: `O caminho para abrir o WordPad mudou um pouco entre as versões do Windows. Confira o seu caso na tabela abaixo.
+
+ATALHO UNIVERSAL (serve em qualquer versão):
+1. Pressione a tecla Windows + R.
+2. Digite write e pressione Enter. O WordPad abre na hora.
+
+PELO MENU INICIAR:
+• Windows 7 → Iniciar → Todos os Programas → Acessórios → WordPad.
+• Windows 10 / 11 → Menu Iniciar → digitar "WordPad" na busca → Enter.
+
+Se preferir, você também pode localizar o ícone do WordPad na lista de programas e fixá-lo na barra de tarefas, clicando com o botão direito → Fixar na barra de tarefas.`,
+          images: [
+            { src: "../../assets/img/windows/Aula6/image3.png", caption: "Ícone do WordPad na lista de programas do Windows." }
+          ],
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">ONDE ENCONTRAR O WORDPAD EM CADA VERSÃO</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Versão</th><th>Caminho</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Windows 7</strong></td><td>Iniciar → Todos os Programas → Acessórios → WordPad</td></tr>
+                  <tr><td><strong>Windows 10</strong></td><td>Menu Iniciar → digitar "WordPad" → Enter</td></tr>
+                  <tr><td><strong>Windows 11</strong></td><td>Menu Iniciar → digitar "WordPad" → Enter</td></tr>
+                  <tr><td><strong>Qualquer versão</strong></td><td><code>Win + R</code> → digitar <code>write</code> → Enter</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight"><strong>Dica do <code>write</code>:</strong> o comando <code>write</code> é o apelido interno do WordPad desde as primeiras versões do Windows — por isso ele abre o programa em qualquer máquina, do 7 ao 11.</div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Atalho rápido",
+          boxText: "Windows + R, digite write, Enter: o WordPad abre em qualquer versão do Windows sem precisar procurar no menu."
+        },
+        {
+          lessonNum: 6,
+          heading: "6.3 Faixa de Opções — Guia Página Inicial",
+          content: `Quando o WordPad abre, a faixa colorida no topo é a Faixa de Opções (Ribbon). É ali que ficam os comandos, separados por guias. A guia que abre por padrão é a Página Inicial, dividida em três grupos principais.
+
+GRUPO ÁREA DE TRANSFERÊNCIA:
+• Recortar (Ctrl+X) — remove o trecho selecionado para colá-lo em outro lugar.
+• Copiar (Ctrl+C) — faz uma cópia do trecho selecionado.
+• Colar (Ctrl+V) — insere o que foi recortado ou copiado na posição do cursor.
+
+GRUPO FONTE:
+• Tipo e tamanho da letra (ex.: Calibri, 11).
+• Negrito (Ctrl+B), Itálico (Ctrl+I) e Sublinhado (Ctrl+U).
+• Tachado, Sobrescrito e Subscrito.
+• Cor do texto e Realce (marca-texto).
+• Botão de aumentar/diminuir letra.
+
+GRUPO PARÁGRAFO:
+• Alinhamento: esquerda, centralizado, direita e justificado.
+• Marcadores (listas com bolinhas).
+• Recuo e Espaçamento entre linhas.
+
+DICA: passe o mouse sobre qualquer botão da Faixa de Opções e o Windows mostra uma pequena descrição do que ele faz.`,
+          images: [
+            { src: "../../assets/img/windows/Aula6/image6.png", caption: "Faixa de Opções do WordPad — Guia Página Inicial." },
+            { src: "../../assets/img/windows/Aula6/image2.png", caption: "Grupos Fonte e Parágrafo na guia Página Inicial." },
+            { src: "../../assets/img/windows/Aula6/image7.png", caption: "Principais comandos da Faixa de Opções do WordPad." }
+          ],
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">OS 3 GRUPOS DA GUIA "PÁGINA INICIAL"</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Grupo</th><th>Comandos principais</th><th>Atalhos</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Área de Transferência</strong></td><td>Recortar, Copiar, Colar</td><td>Ctrl+X, Ctrl+C, Ctrl+V</td></tr>
+                  <tr><td><strong>Fonte</strong></td><td>Tipo, tamanho, Negrito, Itálico, Sublinhado, Cor, Realce</td><td>Ctrl+B, Ctrl+I, Ctrl+U</td></tr>
+                  <tr><td><strong>Parágrafo</strong></td><td>Alinhamento, Marcadores, Recuo, Espaçamento</td><td>Ctrl+E, Ctrl+J</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Para lembrar",
+          boxText: "Página Inicial = tudo do dia a dia: recortar/copiar/colar, mudar a fonte e alinhar o parágrafo. As outras guias (Inserir e Exibir) têm usos mais específicos."
+        },
+        {
+          lessonNum: 6,
+          heading: "6.4 Inserir, Exibir e Menu Arquivo",
+          content: `Além da guia Página Inicial, o WordPad tem mais duas guias e o Menu Arquivo.
+
+GUIA INSERIR:
+• Data e hora — insere a data ou a hora atual no ponto do cursor.
+• Imagem — insere uma foto ou figura no documento.
+• Desenho — abre uma tela para fazer um desenho simples.
+• Objeto — insere um objeto criado em outro programa.
+
+GUIA EXIBIR:
+• Régua — mostra ou esconde a régua no topo do documento.
+• Unidades de medida — polegadas ou centímetros.
+• Quebra de linha — faz o texto se ajustar à largura da janela.
+• Zoom — aumenta ou diminui o tamanho da visualização.
+• Barra de status — mostra/oculta a barra de informações na base.
+
+MENU ARQUIVO (botão no canto superior esquerdo):
+• Novo — cria um documento em branco.
+• Abrir — abre um documento existente.
+• Salvar — grava o arquivo atual.
+• Salvar como — grava com outro nome, local ou formato.
+• Imprimir — envia o documento para a impressora.
+• Configurar página — ajusta margens e orientação (retrato ou paisagem).`,
+          images: [
+            { src: "../../assets/img/windows/Aula6/image4.png", caption: "Botão Arquivo (Menu WordPad)." },
+            { src: "../../assets/img/windows/Aula6/image1.png", caption: "Menu Arquivo do WordPad com os comandos Novo, Abrir, Salvar, Salvar como e Imprimir." }
+          ],
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">GUIA INSERIR E GUIA EXIBIR — para que servem</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Guia</th><th>Comando</th><th>O que faz</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td rowspan="2"><strong>Inserir</strong></td><td>Data e hora</td><td>Insere data/hora no texto</td></tr>
+                  <tr><td>Imagem</td><td>Coloca uma figura no documento</td></tr>
+                  <tr><td rowspan="2"><strong>Exibir</strong></td><td>Régua</td><td>Mostra/esconde a régua</td></tr>
+                  <tr><td>Zoom</td><td>Aumenta ou diminui a visualização</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fun-highlight"><strong>Menu Arquivo:</strong> é por ele que você <strong>cria (Novo), abre (Abrir), grava (Salvar / Salvar como), imprime (Imprimir)</strong> e ajusta a página (Configurar página). É o "menu de tudo" do WordPad.</div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Para lembrar",
+          boxText: "Inserir é para acrescentar coisas (data, imagem, desenho); Exibir é para ajustar como você vê o documento (régua, zoom); Menu Arquivo é para criar, abrir, salvar e imprimir."
+        },
+        {
+          lessonNum: 6,
+          heading: "6.5 Diferenças entre \"Salvar\" e \"Salvar Como\"",
+          content: `Essa é a dúvida mais comum de quem começa: os dois comandos gravam o documento, mas de formas diferentes.
+
+SALVAR (Ctrl+S):
+• Atualiza o arquivo que já existe, mantendo o mesmo nome, o mesmo local e o mesmo formato.
+• Não abre nenhuma janela: grava por cima da versão anterior.
+• Use sempre que estiver trabalhando e não quiser perder o que digitou.
+
+SALVAR COMO (F12):
+• Abre uma janela para você escolher nome, local e formato.
+• Pode criar uma cópia nova, deixando o arquivo original intacto.
+• Use quando quiser guardar uma versão diferente ou trocar o tipo do arquivo.
+
+FORMATOS MAIS COMUNS AO SALVAR COMO:
+• .rtf — Rich Text Format (padrão do WordPad, mantém a formatação).
+• .docx — documento do Microsoft Word.
+• .odt — documento do LibreOffice / OpenOffice.
+• .txt — texto simples, sem formatação.`,
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">SALVAR × SALVAR COMO</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Aspecto</th><th>Salvar (Ctrl+S)</th><th>Salvar como (F12)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Janela</td><td>Não abre</td><td>Abre para escolher</td></tr>
+                  <tr><td>Nome / local</td><td>Mantém o mesmo</td><td>Permite trocar</td></tr>
+                  <tr><td>Arquivo original</td><td>É sobrescrito</td><td>Fica intacto</td></tr>
+                  <tr><td>Quando usar</td><td>Continuar o trabalho</td><td>Criar cópia ou trocar formato</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          boxType: "warning",
+          boxTitle: "⚠️ Atenção",
+          boxText: "Salvar por cima do arquivo errado não tem 'voltar'. Na dúvida, use Salvar como para criar uma cópia com outro nome antes de mexer."
+        },
+        {
+          lessonNum: 6,
+          heading: "6.6 Exercício Prático — Relatório do PC",
+          content: `Agora você vai montar um relatório com as informações do seu próprio computador. Primeiro colete os dados, depois digite e formate no WordPad.
+
+PASSO 1 — COLETAR OS DADOS DO COMPUTADOR:
+1. Abra Esta Computador (Windows 10/11) ou Meu Computador (Windows 7).
+2. Clique com o botão direito e escolha Propriedades.
+3. Anote: o Processador, a Memória RAM instalada e o Tipo de sistema (32 ou 64 bits).
+4. Volte a Este Computador e veja o espaço total e livre do disco C:.
+5. Pressione Windows + R, digite cmd e Enter. Na janela preta, digite ipconfig e Enter. Anote o Endereço IPv4.
+
+PASSO 2 — MONTAR O TEXTO NO WORDPAD:
+1. Abra o WordPad e digite o título "RELATÓRIO DO MEU COMPUTADOR" em negrito e centralizado.
+2. Digite seu nome e a data.
+3. Crie as seções: Processador, Memória RAM, Tipo de sistema, Disco C: e Endereço IPv4.
+4. Use marcadores para listar cada informação coletada.
+5. Aplique negrito nos rótulos e salve como você aprendeu.`,
+          images: [
+            { src: "../../assets/img/windows/Aula6/image8.png", caption: "Aplicando formatação no WordPad." }
+          ],
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">MODELO — RELATÓRIO DO MEU COMPUTADOR</div>
+              <div style="text-align:center; font-weight:800; font-size:13px; color:#20130B; margin-bottom:8px;">RELATÓRIO DO MEU COMPUTADOR</div>
+              <div style="font-size:11.5px; color:#374151; line-height:1.9;">
+                Nome: ____________________ &nbsp;&nbsp; Data: ___/___/_____
+                <ul style="margin:8px 0 0 18px;">
+                  <li><strong>Processador:</strong> ____________________</li>
+                  <li><strong>Memória RAM:</strong> ____________________</li>
+                  <li><strong>Tipo de sistema:</strong> ____________________</li>
+                  <li><strong>Disco C: (espaço livre):</strong> ____________________</li>
+                  <li><strong>Endereço IPv4:</strong> ____________________</li>
+                </ul>
+              </div>
+            </div>
+            <div class="fun-highlight"><strong>O comando <code>ipconfig</code>:</strong> abre o Prompt de Comando com <code>Win + R</code>, digite <code>cmd</code>, Enter, e depois <code>ipconfig</code>. O <strong>Endereço IPv4</strong> aparece logo abaixo do nome do adaptador de rede — é o "número" do seu computador na rede.</div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Dica",
+          boxText: "Aperte Win + R, digite cmd, Enter e depois ipconfig: o Endereço IPv4 aparece abaixo de 'Adaptador Ethernet'. Anote exatamente como está na tela."
+        },
+        {
+          lessonNum: 6,
+          heading: "6.7 Criando a estrutura de pastas e salvando o arquivo",
+          content: `Um relatório perdido não serve para nada. Agora você vai criar uma estrutura de pastas com o seu nome e salvar o arquivo no lugar certo.
+
+PASSO 1 — CRIAR AS PASTAS:
+1. Abra o Explorador de Arquivos e entre em Documentos.
+2. Crie uma pasta com o seu nome e sobrenome, por exemplo: joao-silva.
+3. Dentro dela, crie cinco subpastas: Word, Windows, Excel, PowerPoint e Internet.
+
+PASSO 2 — SALVAR O RELATÓRIO:
+1. No WordPad, clique em Arquivo → Salvar como (ou pressione F12).
+2. Navegue até Documentos → joao-silva → Windows.
+3. No campo Nome do arquivo, digite: relatório aula - 6.
+4. Em Tipo, escolha Rich Text Format (.rtf) e clique em Salvar.
+
+PASSO 3 — SIMULAR A IMPRESSÃO:
+1. No WordPad, clique em Arquivo → Imprimir.
+2. Confira a pré-visualização da página.
+3. Clique em Cancelar — nesta aula não é preciso imprimir de verdade.
+
+RESULTADO: seu relatório fica guardado em Documentos\\seu-nome\\Windows\\relatório aula - 6.rtf.`,
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">ESTRUTURA DE PASTAS — Documentos</div>
+              <div style="font-family:'Courier New',monospace; font-size:12px; color:#20130B; line-height:1.9;">
+                📁 Documentos<br>
+                &nbsp;&nbsp;└─ 📁 <strong>seu-nome-sobrenome</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ 📁 Word<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ 📁 <strong>Windows</strong> &nbsp;← salve o relatório aqui<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ 📁 Excel<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ 📁 PowerPoint<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ 📁 Internet
+              </div>
+            </div>
+            <div class="fun-highlight"><strong>Nome do arquivo:</strong> <code>relatório aula - 6</code> salvo em <strong>Documentos\\seu-nome\\Windows\\</strong> no formato <strong>.rtf</strong>. Cada disciplina tem sua pasta — assim você acha qualquer trabalho em segundos.</div>
+          `,
+          boxType: "tip",
+          boxTitle: "💡 Para lembrar",
+          boxText: "Pasta com seu nome + uma subpasta por disciplina é o sistema mais simples de não perder trabalho. O relatório vai na subpasta Windows."
+        },
+        {
+          lessonNum: 6,
+          heading: "6.8 Revisão e Fixação",
+          content: `Vamos recapitular os pontos-chave da Aula 06 antes do Exercício de Fixação.
+
+RESUMO DO QUE VIMOS:
+• O WordPad é o editor de texto intermediário do Windows: mais que o Bloco de Notas, menos que o Word — e já vem instalado.
+• Para abrir: Win + R → write → Enter (serve em qualquer versão) ou busca do Menu Iniciar.
+• A guia Página Inicial tem 3 grupos: Área de Transferência, Fonte e Parágrafo.
+• Inserir acrescenta coisas (data, imagem); Exibir ajusta a visualização (régua, zoom); o Menu Arquivo cria, abre, salva e imprime.
+• Salvar (Ctrl+S) atualiza o arquivo; Salvar como (F12) cria cópia e permite trocar nome, local e formato (.rtf, .docx, .odt, .txt).
+• O relatório do PC usa Propriedades (processador, RAM, sistema) e o comando ipconfig (Endereço IPv4).
+• Organização: Documentos → pasta com seu nome → subpastas Word, Windows, Excel, PowerPoint e Internet.
+
+PRÓXIMO PASSO: clique no botão do Exercício de Fixação para responder às 5 perguntas desta aula.`,
+          html: `
+            <div class="es-sheet-box">
+              <div class="es-sheet-titlebar">🧠 RESUMO — AULA 06: WORDPAD</div>
+              <table class="mini-sheet">
+                <thead>
+                  <tr><th>Pergunta</th><th>Resposta curta</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>O que é o WordPad?</td><td>Editor de texto intermediário do Windows</td></tr>
+                  <tr><td>Como abrir rápido?</td><td>Win + R → <code>write</code> → Enter</td></tr>
+                  <tr><td>Grupos da Página Inicial?</td><td>Transferência, Fonte, Parágrafo</td></tr>
+                  <tr><td>Salvar × Salvar como?</td><td>Ctrl+S atualiza · F12 cria cópia</td></tr>
+                  <tr><td>Comando do IP?</td><td><code>ipconfig</code> no Prompt (CMD)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          `,
+          boxType: "tip",
+          boxTitle: "🏁 Resultado esperado",
+          boxText: "Você conhece o WordPad, sabe formatar e salvar um documento e já tem o Relatório do PC guardado na pasta certa."
+        },
+        {
           lessonNum: 8,
           chapter: "AULA 08: DIAGNÓSTICO DE MEMÓRIA, RESTAURAÇÃO DO SISTEMA E MÍDIA DE INSTALAÇÃO",
           heading: "8.1 Diagnóstico de Memória RAM do Windows (Teste de Memória)",
@@ -1859,6 +2248,267 @@ window.PDFLessons = (function() {
           boxText: "Se o crack promete 'ativar o Windows de graça', na prática ele entrega o computador nas mãos de cibercriminosos."
         },
         {
+          lessonNum: 9,
+          heading: "9.0 FASE 0 – Apresentação da Aula 09: Prática – Organização e Configuração do Windows",
+          content: `OBJETIVO: Aplicar, na prática, organização de pastas e arquivos, imagens, papel de parede, senha do usuário, ponto de restauração, diagnóstico e manutenção básica do Windows.
+
+ROTEIRO NUMERADO (PASSO A PASSO):
+1. Parte 1 – Organização de Pastas de uma Empresa
+2. Parte 2 – Organizando Fotos e Imagens
+3. Parte 3 – Alterando o Papel de Parede
+4. Parte 4 – Alterando a Senha do Usuário
+5. Parte 5 – Criando um Ponto de Restauração
+6. Parte 6 – Diagnóstico do Computador
+7. Parte 7 – Ferramentas de Manutenção do Windows
+8. Revisão e Exercício de Fixação
+
+Ao concluir cada etapa, marque o quadradinho correspondente para liberar a próxima fase.`,
+          images: [
+            { src: "../../assets/img/windows/Aula9/image1.png", caption: "Estrutura de pastas a ser criada na Área de Trabalho." }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Orientação",
+          boxText: "Prática integradora: siga a ordem das partes com calma e observe cada etapa."
+        },
+        {
+          lessonNum: 9,
+          heading: "9.1 Parte 1 – Organização de Pastas de uma Empresa",
+          content: `Vamos simular a organização dos arquivos de uma empresa fictícia chamada empresa-xyz, dividida em 4 setores: Financeiro, Vendas, TI e RH.
+
+PASSO A PASSO:
+1. Na Área de Trabalho, crie uma pasta chamada empresa-xyz.
+2. Dentro dela, crie 4 pastas: Financeiro, Vendas, TI e RH.
+3. Dentro de cada pasta de setor, crie 1 arquivo de texto com o nome dos funcionários daquele setor.
+4. Cada arquivo deve conter no mínimo 3 nomes de funcionários.`,
+          images: [
+            { src: "../../assets/img/windows/Aula9/image1.png", caption: "Estrutura de pastas empresa-xyz na Área de Trabalho." }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Dica",
+          boxText: "Botão direito → Novo > Pasta / Novo > Documento de Texto. Renomear com F2."
+        },
+        {
+          lessonNum: 9,
+          heading: "9.2 Parte 2 – Organizando Fotos e Imagens",
+          content: `Organize as imagens da pasta Imagens (ou Fotos) do seu usuário, separando por assunto: Astronomia e Natureza.
+
+PASSO A PASSO:
+1. Abra Imagens/Fotos do seu usuário.
+2. Crie as pastas Astronomia e Natureza.
+3. Mova cada imagem para a pasta correspondente ao assunto.
+4. Renomeie 2 imagens com nomes descritivos.`,
+          images: [
+            { src: "../../assets/img/windows/Aula9/image3.png", caption: "Pastas Astronomia e Natureza dentro de Imagens." }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Dica",
+          boxText: "Para mover: arrastar ou Recortar (Ctrl+X) e Colar (Ctrl+V). Para renomear: F2."
+        },
+        {
+          lessonNum: 9,
+          heading: "9.3 Parte 3 – Alterando o Papel de Parede",
+          content: `Escolha uma das imagens organizadas e defina-a como papel de parede da Área de Trabalho.
+
+PASSO A PASSO:
+1. Clique com o botão direito na Área de Trabalho → Personalizar.
+2. Em Plano de Fundo, clique em Procurar e selecione a imagem desejada.
+3. Observe o novo visual da Área de Trabalho.`,
+          images: [
+            { src: "../../assets/img/windows/Aula9/image2.png", caption: "Personalizar > Plano de Fundo." }
+          ]
+        },
+        {
+          lessonNum: 9,
+          heading: "9.4 Parte 4 – Alterando a Senha do Usuário",
+          content: `Pratique adicionar/alterar a senha do usuário em Configurações > Contas > Opções de entrada.
+
+PASSO A PASSO:
+1. Acesse Configurações > Contas > Opções de entrada.
+2. Em Senha, clique em Adicionar (ou Alterar).
+3. Para fins didáticos, utilize a senha 123 e confirme.
+
+ATENÇÃO: A senha 123 é APENAS para exercício em sala. No mundo real, use senhas fortes com letras, números e símbolos.`,
+          images: [
+            { src: "../../assets/img/windows/Aula9/image5.png", caption: "Opções de entrada para adicionar/alterar senha." }
+          ],
+          boxType: "warning",
+          boxTitle: "⚠️ Segurança",
+          boxText: "Nunca use senhas simples no mundo real. Prefira senhas fortes e únicas."
+        },
+        {
+          lessonNum: 9,
+          heading: "9.5 Parte 5 – Criando um Ponto de Restauração",
+          content: `Crie um ponto de restauração para ter uma \"foto\" das configurações atuais do sistema.
+
+PASSO A PASSO:
+1. Menu Iniciar → pesquisar Criar um ponto de restauração.
+2. Aba Proteção do Sistema → Criar...
+3. Digite o nome Ultimo Ponto e clique em Criar.
+4. Aguarde a conclusão.`,
+          images: [
+            { src: "../../assets/img/windows/Aula9/image4.png", caption: 'Criando o ponto de restauração com o nome "Ultimo Ponto".' }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Importante",
+          boxText: "O ponto de restauração permite voltar o sistema a um estado anterior caso ocorra algum problema."
+        },
+        {
+          lessonNum: 9,
+          heading: "9.6 Parte 6 – Diagnóstico do Computador",
+          content: `Verifique as configurações básicas do computador:
+
+1. Este Computador > Propriedades (processador, memória RAM, tipo de sistema)
+2. Win + R → msinfo32 (informações detalhadas)
+3. Verificar conexão de rede (Wi-Fi/Cabo)
+4. Conferir data/hora na barra de tarefas
+5. Opcional: Prompt de Comando → ipconfig`,
+          boxType: "tip",
+          boxTitle: "💡 Dica",
+          boxText: "Diagnóstico básico ajuda a identificar hardware, sistema e rede."
+        },
+        {
+          lessonNum: 9,
+          heading: "9.7 Parte 7 – Ferramentas de Manutenção do Windows",
+          content: `Conheça as principais ferramentas de manutenção:
+
+1. Recuperação: Configurações > Sistema > Recuperação > Redefinir este PC (opção Manter meus arquivos – APENAS demonstração)
+2. Limpeza de disco: Win + R → cleanmgr
+3. Segurança do Windows: verificar se o Microsoft Defender está ativo e atualizado
+
+ATENÇÃO: Na demonstração, NÃO conclua o processo de redefinição. Pare na tela de escolha.`,
+          boxType: "warning",
+          boxTitle: "⚠️ Cuidado",
+          boxText: "Execute apenas o que foi orientado. Em caso de dúvida, peça ajuda ao professor."
+        },
+        {
+          lessonNum: 9,
+          heading: "9.8 Revisão e Fixação – Prática Integradora",
+          content: `REVISÃO: Você praticou organização de pastas/arquivos, imagens, personalização, senha do usuário, ponto de restauração, diagnóstico e manutenção básica.
+
+FIXAÇÃO: Responda o Exercício de 5 Perguntas no portal para consolidar o aprendizado.
+
+Parabéns por concluir a prática integradora da Aula 09!`,
+          boxType: "tip",
+          boxTitle: "🎉 Fechamento",
+          boxText: "Integrar teoria e prática é a melhor forma de aprender!"
+        },
+        {
+          lessonNum: 10,
+          heading: "10.0 FASE 0 – Apresentação da Aula 10: Ferramentas Básicas do Windows (7, 10 e 11)",
+          content: `OBJETIVO: Conhecer e praticar as principais ferramentas básicas do Windows: acessar utilitários pelo Executar (Win + R), utilizar Calculadora, Bloco de Notas, Paint e Captura e Recorte, conhecer o Gerenciador de Tarefas, Informações do Sistema (msinfo32), Diagnóstico DirectX (dxdiag) e ter noções de Prompt de Comando e Windows PowerShell. Compatível com Windows 7 / 10 / 11.
+
+ROTEIRO NUMERADO (PASSO A PASSO):
+1. Acessando as ferramentas básicas do Windows
+2. Usando o Win + R (Executar) e comandos úteis
+3. Utilitários: Calculadora, Bloco de Notas, Paint e Captura e Recorte
+4. Gerenciador de Tarefas — monitorar e encerrar processos
+5. Informações do Sistema (msinfo32) e Diagnóstico DirectX (dxdiag)
+6. Prompt de Comando e Windows PowerShell — noções básicas
+7. Práticas "Mão na Massa"
+8. Exercício de Fixação — responder às perguntas
+
+Ao concluir cada etapa, marque o quadradinho correspondente para liberar a próxima fase.`,
+          images: [
+            { src: "../../assets/img/windows/Aula10/image1.png", caption: "Atalhos e utilitários básicos do Windows." }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Orientação",
+          boxText: "Siga a ordem com calma. Ao concluir cada etapa, marque o quadradinho correspondente."
+        },
+        {
+          lessonNum: 10,
+          heading: "10.1 Acessando as Ferramentas e Usando Win + R (Executar)",
+          content: `O atalho Win + R abre a caixa "Executar", permitindo abrir programas, pastas e utilitários diretamente por comando.
+
+COMANDOS ÚTEIS:
+- calc – Calculadora
+- notepad – Bloco de Notas
+- mspaint – Paint
+- msinfo32 – Informações do Sistema
+- dxdiag – Diagnóstico DirectX
+- taskmgr – Gerenciador de Tarefas
+- cmd – Prompt de Comando
+- powershell – Windows PowerShell
+- rstrui – Restauração do Sistema`,
+          images: [
+            { src: "../../assets/img/windows/Aula10/image2.png", caption: "Caixa Executar (Win + R)." }
+          ],
+          boxType: "code",
+          boxTitle: "⚡ Pratique",
+          boxText: "Teste os comandos acima um por um para conhecer cada utilitário."
+        },
+        {
+          lessonNum: 10,
+          heading: "10.2 Utilitários: Calculadora, Bloco de Notas, Paint e Captura e Recorte",
+          content: `Utilitários nativos presentes nas versões Windows 7/10/11: Bloco de Notas, Calculadora, Paint e Ferramenta de Captura/Recorte.
+
+EXEMPLO PRÁTICO:
+1. Abra o Bloco de Notas e salve como contato.txt
+2. Use a Calculadora para calcular 350 x 12 / 2
+3. Faça uma captura com a Ferramenta de Recorte e salve-a
+
+ATALHO: Windows + Shift + S (Windows 10/11)`,
+          images: [
+            { src: "../../assets/img/windows/Aula10/image3.png", caption: "Ferramenta de Recorte / Captura de tela." }
+          ],
+          boxType: "tip",
+          boxTitle: "💡 Dica",
+          boxText: "Pratique salvar arquivos em pastas organizadas para fixar o aprendizado."
+        },
+        {
+          lessonNum: 10,
+          heading: "10.3 Gerenciador de Tarefas, msinfo32 e dxdiag",
+          content: `GERENCIADOR DE TAREFAS (taskmgr ou Ctrl+Shift+Esc): monitora processos e desempenho.
+INFORMAÇÕES DO SISTEMA (msinfo32): exibe hardware, drivers e componentes.
+DIAGNÓSTICO DIRECTX (dxdiag): exibe informações de vídeo, áudio e testes DirectX.
+
+ATENÇÃO: Nunca encerre processos do sistema sem orientação do professor.`,
+          images: [
+            { src: "../../assets/img/windows/Aula10/image4.png", caption: "Gerenciador de Tarefas." },
+            { src: "../../assets/img/windows/Aula10/image5.png", caption: "Informações do Sistema (msinfo32)." }
+          ],
+          boxType: "warning",
+          boxTitle: "⚠️ Atenção",
+          boxText: "Tenha cuidado ao encerrar processos no Gerenciador de Tarefas."
+        },
+        {
+          lessonNum: 10,
+          heading: "10.4 Prompt de Comando e Windows PowerShell (Noções)",
+          content: `PROMPT DE COMANDO (cmd): interface em modo texto para executar comandos.
+WINDOWS POWERSHELL: mais moderno e poderoso.
+
+COMANDOS BÁSICOS:
+- ipconfig – informações de rede
+- cls – limpar tela
+- exit – sair`,
+          images: [
+            { src: "../../assets/img/windows/Aula10/image6.png", caption: "Prompt de Comando e Windows PowerShell." }
+          ],
+          boxType: "code",
+          boxTitle: "⚡ Pratique",
+          boxText: "Abra cmd e teste o comando ipconfig."
+        },
+        {
+          lessonNum: 10,
+          heading: "10.5 Práticas 'Mão na Massa' e Exercício de Fixação",
+          content: `PRÁTICAS:
+1. Abrir utilitários com Win + R
+2. Usar Calculadora, Bloco de Notas, Paint e Ferramenta de Recorte
+3. Explorar Gerenciador de Tarefas
+4. Consultar msinfo32 e dxdiag
+5. Abrir cmd/PowerShell e testar comandos
+
+EXERCÍCIO DE FIXAÇÃO: Responda às 5 perguntas no portal para consolidar o aprendizado.`,
+          images: [
+            { src: "../../assets/img/windows/Aula10/image7.png", caption: "Atividades práticas da aula." },
+            { src: "../../assets/img/windows/Aula10/image8.png", caption: "Ferramentas em ação." },
+            { src: "../../assets/img/windows/Aula10/image9.png", caption: "Revisão dos utilitários." }
+          ],
+          boxType: "tip",
+          boxTitle: "🎉 Fechamento",
+          boxText: "Conhecer estas ferramentas é fundamental para o dia a dia com o Windows."
+        },
+        {
           lessonNum: 71,
           chapter: "COMPLEMENTO 7A: BACKUP AUTOMÁTICO COM ARQUIVO .BAT",
           heading: "7A.1 O que é um arquivo .BAT?",
@@ -2089,25 +2739,603 @@ window.PDFLessons = (function() {
       moduleName: "Microsoft Word",
       sections: [
         {
-          chapter: "UNIDADE 1: EDIÇÃO E FORMATAÇÃO DE DOCUMENTOS",
-          heading: "1.1 Introdução ao Processamento de Texto",
-          content: "O Microsoft Word é o padrão da indústria para a criação de documentos impressos e digitais, como relatórios, cartas oficiais, contratos, livros e trabalhos científicos."
+          lessonNum: 1,
+          chapter: "AULA 01: INTRODUÇÃO AO WORD & DIGITAÇÃO EFICIENTE",
+          heading: "1.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Você vai aprender a dominar a área de trabalho do Microsoft Word: conhecer cada guia da Faixa de Opções, memorizar os atalhos de alta produtividade do Word em português (como Ctrl+B para salvar e Ctrl+S para sublinhado), gerar texto instantâneo com o comando =rand(), dominar os 3 marcadores da régua horizontal e adotar a postura ergonômica correta na digitação.
+
+COMO VAMOS FAZER (os 5 passos):
+1. Conhecer a interface, as Guias e a Faixa de Opções.
+2. Praticar os atalhos de produtividade do Word em Português.
+3. Gerar texto automático com o comando secreto =rand().
+4. Dominar a Régua e os 3 pontos de recuo de parágrafo.
+5. Aprender a digitação correta e as teclas especiais.
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Abra o Microsoft Word em um documento em branco e mantenha a janela maximizada.
+• Certifique-se de que a Faixa de Opções esteja visível no topo (Página Inicial, Inserir, Layout, etc.).
+• Se a régua não estiver visível, acesse a guia Exibir e marque a caixa Régua.
+
+O QUE VOCÊ VAI CONSEGUIR NO FINAL:
+Um documento formatado com parágrafos de teste, recuo correto de primeira linha pela régua (sem nunca usar barra de espaço repetida), títulos destacados com atalhos de teclado e salvo no seu computador em formato .docx.`,
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12px; color:#475569; margin:0 0 10px 0;">O objetivo desta aula é dominar a interface do Word, os atalhos em português, o comando de geração de texto =rand() e os 3 marcadores da régua.</p>
+  <div style="font-weight:800; color:#1E40AF; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 5 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">1</strong> Interface, Guias e Faixa de Opções</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">2</strong> Atalhos de Teclado em Português (Ctrl+B vs Ctrl+S)</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">3</strong> Gerador =rand() e Seleção Ágil com o Mouse</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">4</strong> A Régua e os 3 Marcadores de Recuo</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">5</strong> Ergonomia, Linha Guia e Teclas Especiais</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo possui seu check prático distribuído no portal ao final de cada fase.</p>
+  <div class="es-sheet-box" style="max-width:480px; margin-top:10px;">
+    <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">⚙️ Dica de Ouro do Professor Marcos Rangel</div>
+    <p style="margin:0; font-size:12px; color:#1F2937; padding:8px 10px; line-height:1.6;">
+      <strong>Nunca use a barra de espaço para afastar o início de um parágrafo!</strong> No Word profissional, parágrafos são alinhados movendo o marcador superior da régua ou com a tecla Tab.
+    </p>
+  </div>
+</div>`
         },
         {
-          heading: "1.2 Formatação de Fonte e Parágrafos",
-          content: `• Estilos de Texto: Negrito (Ctrl + N), Itálico (Ctrl + I), Sublinhado (Ctrl + S).\n• Alinhamentos de Parágrafo:\n  - Esquerda (Ctrl + Q)\n  - Centralizado (Ctrl + E)\n  - Direita (Ctrl + G)\n  - Justificado (Ctrl + J): Alinha margens esquerda e direita simultaneamente, essencial para documentos formais.`
+          lessonNum: 1,
+          heading: "1.1 Conhecendo a Interface do Word e a Faixa de Opções",
+          content: `Criado pela Microsoft em 1983, o Word é o mais popular processador de textos do mundo, utilizado para criar documentos pessoais, corporativos e acadêmicos.
+
+Anatomia da Interface:
+• Barra de Título: Fica no topo da janela e exibe o nome do documento ativo (ex: Documento1) e o nome do aplicativo.
+• Barra de Ferramentas de Acesso Rápido: Canto superior esquerdo, traz ícones de ações frequentes como Salvar, Desfazer e Refazer, totalmente personalizável.
+• Faixa de Opções (Ribbon): Centraliza todos os comandos em Guias temáticas:
+  - Página Inicial: Área de Transferência, Fonte (tamanho, cor, negrito), Parágrafo (alinhamentos, espaçamentos) e Estilos.
+  - Inserir: Páginas, Tabelas, Ilustrações (Imagens, Formas, Ícones), Cabeçalho e Rodapé, Texto e Símbolos.
+  - Layout / Layout da Página: Margens, Orientação (Retrato/Paisagem), Tamanho do papel e Colunas.
+  - Referências: Sumário automático, Notas de rodapé, Citações e Legendas.
+  - Revisão: Ortografia e Gramática, Dicionário de Sinônimos, Comentários e Controle de Alterações.
+  - Exibir / Exibição: Modos de exibição, Zoom e ativação da Régua.
+• Folha de Edição: Representa a página física de papel em branco onde o texto é digitado e diagramado.
+• Barra de Status: Rodapé inferior com contagem de páginas, contador de palavras em tempo real e idioma de correção.
+• Controle de Zoom: Controle deslizante no canto inferior direito para aproximar ou afastar a visualização.`,
+          image: "../../assets/img/word/Aula1/image4.png",
+          caption: "Barra de Ferramentas de Acesso Rápido e Faixa de Opções do Microsoft Word",
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">📋 Mapa Resumo das Principais Guias do Word</div>
+  <table class="mini-sheet">
+    <tr><th>Guia</th><th>Grupos Principais</th><th>Uso Principal</th></tr>
+    <tr><td><strong>Página Inicial</strong></td><td>Fonte, Parágrafo, Estilos</td><td>Formatação diária básica de textos e títulos</td></tr>
+    <tr><td><strong>Inserir</strong></td><td>Tabelas, Imagens, Cabeçalho</td><td>Adicionar elementos visuais e tabelas</td></tr>
+    <tr><td><strong>Layout</strong></td><td>Margens, Orientação, Colunas</td><td>Configurar tamanho de página e normas ABNT</td></tr>
+    <tr><td><strong>Revisão</strong></td><td>Ortografia, Comentários, Controle</td><td>Correção gramatical e revisão colaborativa</td></tr>
+    <tr><td><strong>Exibir</strong></td><td>Régua, Zoom, Modos de Exibição</td><td>Ajustar ferramentas de trabalho na tela</td></tr>
+  </table>
+</div>`
         },
         {
-          heading: "1.3 Tabelas, Imagens e Elementos Gráficos",
-          content: "Insira tabelas para organizar dados tabulares e ajuste a disposição do texto em torno de imagens inseridas. Utilize Quebra de Página (Ctrl + Enter) para iniciar novos capítulos corretamente."
+          lessonNum: 1,
+          heading: "1.2 Atalhos Fundamentais de Teclado no Word em Português",
+          content: `O uso de teclas de atalho acelera o trabalho de digitação em mais de 50%, evitando que as mãos saiam do teclado para buscar comandos simples no mouse.
+
+Principais Atalhos no Word em Português:
+• Ctrl + B: Salvar o documento ativo imediatamente (no Word em inglês é Ctrl + S).
+• Ctrl + N: Aplicar ou remover Negrito no texto selecionado.
+• Ctrl + I: Aplicar ou remover Itálico.
+• Ctrl + S: Aplicar ou remover Sublinhado (no Word em português, 'S' é de Sublinhado!).
+• Ctrl + T: Selecionar TODO o texto do documento (no Word em inglês é Ctrl + A).
+• Ctrl + Z: Desfazer a última alteração realizada.
+• Ctrl + Y: Refazer a última alteração desfeita.
+• Ctrl + C: Copiar o texto ou objeto selecionado para a Área de Transferência.
+• Ctrl + X: Recortar o texto ou objeto selecionado.
+• Ctrl + V: Colar o conteúdo da Área de Transferência.
+• Ctrl + Shift + C / Ctrl + Shift + V: Copiar e colar somente a formatação.
+
+ATENÇÃO AO ERRO MAIS COMUM:
+Muitos usuários habituados a outros programas apertam Ctrl + S achando que estão salvando o arquivo. No Word em português, Ctrl + S aplica SUBLINHADO ao texto! Para SALVAR no Word em português, memorize: aperte Ctrl + B (pense em 'B' de Baixar cópia / Backup).`,
+          image: "../../assets/img/word/Aula1/image1.png",
+          caption: "Cursor de texto e atalhos rápidos de formatação",
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#D97706; color:#fff;">⚠️ Alerta Crítico: Diferença de Idioma nos Atalhos</div>
+  <table class="mini-sheet">
+    <tr><th>Função</th><th>Word em Português (Brasil)</th><th>Word em Inglês (US)</th></tr>
+    <tr style="background:#FEF3C7; font-weight:700;"><td>SALVAR DOCUMENTO</td><td>Ctrl + B</td><td>Ctrl + S (Save)</td></tr>
+    <tr style="background:#EFF6FF;"><td>SUBLINHADO</td><td>Ctrl + S</td><td>Ctrl + U (Underline)</td></tr>
+    <tr><td>SELECIONAR TUDO</td><td>Ctrl + T (Tudo)</td><td>Ctrl + A (All)</td></tr>
+    <tr><td>NEGRITO</td><td>Ctrl + N (Negrito)</td><td>Ctrl + B (Bold)</td></tr>
+  </table>
+</div>`
         },
         {
-          heading: "1.4 Pincel de Formatação e Estilos Rápidos",
-          content: "O Pincel de Formatação copia todos os atributos visuais de um texto (fonte, tamanho, cor, espaçamento) e os aplica instantaneamente em outro trecho com um clique."
+          lessonNum: 1,
+          heading: "1.3 A Régua do Word e os Três Tipos de Recuo de Parágrafo",
+          content: `A Régua horizontal é o instrumento mais poderoso para alinhar margens e configurar parágrafos conforme as normas da ABNT.
+
+Como exibir a Régua:
+Acesse a guia Exibir e marque a caixa Régua.
+
+Dissecando os 3 Marcadores da Régua Horizontal:
+1. Triângulo Superior (apontando para baixo):
+   Controla o Recuo da Primeira Linha. Ao arrastá-lo para 1,25 cm ou 1,5 cm, apenas o início de cada parágrafo é afastado da margem esquerda. Padrão obrigatório da ABNT!
+2. Triângulo Inferior (apontando para cima):
+   Controla o Recuo Deslocado (ou Recuo Francês). Mantém a primeira linha fixa na margem e recua todas as linhas seguintes do parágrafo. Muito utilizado em bibliografias e listas.
+3. Retângulo da Base:
+   Controla o Recuo Esquerdo Total. Move todo o bloco do parágrafo de uma só vez (todas as linhas juntas). Utilizado em citações longas de mais de 3 linhas (recuo de 4 cm na ABNT).
+
+Marcador do Lado Direito:
+O triângulo único na extremidade direita controla o Recuo Direito, definindo onde o texto quebra antes da margem direita.`,
+          image: "../../assets/img/word/Aula1/image9.png",
+          caption: "Marcador de Recuo da Primeira Linha na Régua Horizontal do Word",
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">📐 Anatomia dos Marcadores da Régua Horizontal</div>
+  <div style="padding:12px; font-family:'Inter',sans-serif; font-size:13px; line-height:1.6; color:#1F2937;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span style="font-size:18px;">🔻</span>
+      <div><strong>Triângulo Superior:</strong> Recuo da 1ª Linha (marca 1,25 cm ABNT). Afasta só a primeira linha.</div>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span style="font-size:18px;">🔺</span>
+      <div><strong>Triângulo Inferior:</strong> Recuo Deslocado/Francês. Mantém a 1ª linha e recua as demais.</div>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span style="font-size:18px;">⏹️</span>
+      <div><strong>Retângulo na Base:</strong> Recuo Esquerdo Total. Arrasta todo o bloco do parágrafo junto.</div>
+    </div>
+  </div>
+</div>`
         },
         {
-          heading: "1.5 Normas ABNT Fundamentais",
-          content: "• Fonte: Arial ou Times New Roman tamanho 12 para corpo do texto.\n• Espaçamento entre linhas: 1,5 cm.\n• Margens: Superior 3cm, Esquerda 3cm, Inferior 2cm, Direita 2cm."
+          lessonNum: 1,
+          heading: "1.4 Seleção Ágil com o Mouse & O Comando Gerador =rand()",
+          content: `Para formatar qualquer trecho no Word, a regra de ouro é: "PRIMEIRO SELECIONAR, DEPOIS APLICAR O COMANDO". Dominar o mouse e a seleção economiza preciosos minutos de trabalho.
+
+Técnicas de Seleção com o Mouse:
+• 1 Clique Simples: Posiciona o cursor de inserção (o traço piscante) exatamente onde você deseja digitar.
+• 2 Cliques Rápidos (Duplo Clique): Seleciona a palavra inteira sobre a qual você clicou.
+• 3 Cliques Rápidos (Triplo Clique): Seleciona o parágrafo inteiro de uma só vez.
+• Clique na Margem Esquerda: Quando a seta do mouse aponta para a direita na margem branca, 1 clique seleciona a linha inteira. Clicar e arrastar para baixo seleciona múltiplas linhas.
+• Ctrl + Clique: Clica em qualquer palavra segurando a tecla Ctrl para selecionar a frase completa (do início até o ponto final).
+
+O Comando Mágico =rand():
+Como treinar formatações sem perder tempo digitando textos longos? O Word possui um gerador de texto randômico nativo.
+Basta digitar em uma linha em branco:
+=rand(parágrafos, frases)
+Exemplo: Digite =rand(3,4) e aperte Enter.
+O Word criará instantaneamente 3 parágrafos completos, cada um com 4 frases bem pontuadas em português para você treinar seleção, cores, alinhamentos e atalhos!`,
+          image: "../../assets/img/word/Aula1/image3.png",
+          caption: "Palavra selecionada com duplo clique do mouse",
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#16A34A; color:#fff;">✨ Dicas de Seleção Ágil & Comando =rand()</div>
+  <table class="mini-sheet">
+    <tr><th>Ação</th><th>Como Fazer</th><th>Resultado</th></tr>
+    <tr><td>Selecionar Palavra</td><td>Duplo clique na palavra</td><td>Palavra selecionada</td></tr>
+    <tr><td>Selecionar Parágrafo</td><td>Triplo clique no parágrafo</td><td>Todo o parágrafo selecionado</td></tr>
+    <tr><td>Selecionar Linha</td><td>1 clique na margem esquerda</td><td>Linha completa selecionada</td></tr>
+    <tr><td>Selecionar Frase</td><td>Ctrl + clique em qualquer palavra</td><td>Frase inteira até o ponto final</td></tr>
+    <tr style="background:#DCFCE7; font-weight:700;"><td>Gerar Texto de Teste</td><td>Digitar =rand(3,4) e teclar Enter</td><td>3 parágrafos de 4 frases prontos!</td></tr>
+  </table>
+</div>`
+        },
+        {
+          lessonNum: 1,
+          heading: "1.5 Ergonomia, Posição das Mãos e Domínio do Teclado",
+          content: `Digitar com rapidez e sem dor requer postura saudável e posicionamento correto das mãos sobre o teclado.
+
+Postura Ergonômica Recomendada:
+• Olhos na altura do terço superior do monitor para não forçar a coluna cervical.
+• Costas totalmente apoiadas no encosto da cadeira.
+• Antebraços e punhos retos, paralelos ao chão, evitando apoiar os pulsos nas bordas duras da mesa durante a digitação contínua.
+• Pés totalmente apoiados no chão ou em descanso de pés.
+
+A Linha Guia do Teclado:
+Observe que as teclas F e J possuem pequenas ranhuras ou relevos táteis. Elas servem para posicionar os indicadores sem precisar olhar para o teclado!
+• Mão Esquerda (linha ASDF): Mínimo no A, Anelar no S, Médio no D e Indicador no F.
+• Mão Direita (linha JKLÇ): Indicador no J, Médio no K, Anelar no L e Mínimo no Ç.
+• Dedos polegares: Responsáveis exclusivamente por acionar a Barra de Espaço.
+
+Funções das Teclas Especiais:
+• Shift: Pressionada junto com uma letra, digita a letra em maiúscula pontualmente. Pressionada com teclas de números ou pontuação, aciona o símbolo superior (ex: Shift + 1 = !).
+• Caps Lock (Fixa): Trava o teclado em maiúsculas contínuas.
+• Ctrl (Control): Usada em combinações de atalhos de alta velocidade.
+• Alt: Aciona os menus de navegação rápida por letras na Faixa de Opções.
+• Alt Gr: Aciona a terceira função de teclas com três símbolos (ex: Alt Gr + 2 = ²; Alt Gr + 3 = ³).
+• Backspace: Apaga o caractere situado À ESQUERDA do cursor.
+• Delete: Apaga o caractere situado À DIREITA do cursor.
+• Tecla Fn (Notebooks): Aciona recursos integrados de hardware (volume, brilho, projeção).`,
+          image: "../../assets/img/word/Aula1/image10.png",
+          caption: "Posicionamento correto dos dedos sobre a linha guia do teclado (ASDF - JKLÇ)",
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">⌨️ Mapa das Teclas Especiais</div>
+  <table class="mini-sheet">
+    <tr><th>Tecla</th><th>Ação Principal</th><th>Diferencial Importante</th></tr>
+    <tr><td><strong>Shift</strong></td><td>Maiúscula pontual e símbolo superior</td><td>Volta a minúsculas imediatamente ao soltar</td></tr>
+    <tr><td><strong>Ctrl</strong></td><td>Combinações de atalhos (Ctrl+B, Ctrl+N)</td><td>Não digita caracteres por si só</td></tr>
+    <tr><td><strong>Alt Gr</strong></td><td>Terceira função de teclas triplas</td><td>Acessa símbolos como ², ³, ª, º, §</td></tr>
+    <tr><td><strong>Backspace</strong></td><td>Apaga caractere à ESQUERDA</td><td>Move o cursor para trás apagando</td></tr>
+    <tr><td><strong>Delete</strong></td><td>Apaga caractere à DIREITA</td><td>Puxa o texto da frente apagando</td></tr>
+  </table>
+</div>`
+        },
+        {
+          lessonNum: 2,
+          chapter: "AULA 02: NORMAS ABNT & FORMATAÇÃO BÁSICA DE TRABALHOS",
+          heading: "2.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Você vai aprender a formatar documentos acadêmicos, escolares e profissionais dentro das normas rigorosas da ABNT (Associação Brasileira de Normas Técnicas). Vai dominar a regra de ouro das margens 3-3-2-2 cm, padronizar fontes sóbrias (Arial ou Times New Roman tamanho 12) e títulos em tamanho 14, configurar o parágrafo perfeito (justificado, entrelinhas 1,5 e recuo de 1,25 cm), inserir imagens com quebra fluida de texto e aplicar recursos editoriais como texto em duas colunas e letra capitular.
+
+COMO VAMOS FAZER (os 5 passos):
+1. Configurar as Margens da folha na regra "3-3-2-2 cm" (superior/esquerda 3 cm, inferior/direita 2 cm).
+2. Padronizar a Fonte (Arial ou Times New Roman 12) e Títulos em tamanho 14 negrito.
+3. Formatar o Parágrafo ABNT: Justificado (Ctrl+J), espaçamento 1,5 linha e recuo de 1,25 cm na 1ª linha.
+4. Inserir imagens com Quebra Automática de Texto no modo "Quadrado" para movimentação livre.
+5. Aplicar recursos editoriais avançados: Texto em Duas Colunas e Letra Capitular de revista.
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Abra um documento em branco no Word ou gere texto demonstrativo com o comando =rand(3,4).
+• Ative a régua horizontal na guia Exibir para visualizar recuos e margens em tempo real.
+• Lembre-se da regra de ouro do profissional: "Digite primeiro todo o texto, formate tudo depois!".
+
+O QUE VOCÊ VAI CONSEGUIR NO FINAL:
+Um trabalho perfeitamente formatado nos padrões oficiais da ABNT: margens 3-3-2-2 cm, fonte sóbria 12, títulos 14 em negrito, parágrafos justificados com espaçamento 1,5 e recuo de 1,25 cm, texto dividido em 2 colunas com capitular e imagem contornada por texto.`,
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12px; color:#475569; margin:0 0 10px 0;">O objetivo desta aula é capacitar você a formatar qualquer trabalho acadêmico ou relatório conforme as normas oficiais da ABNT.</p>
+  <div style="font-weight:800; color:#1E40AF; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 5 PASSOS DA AULA 02</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">1</strong> Margens ABNT 3-3-2-2 cm</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">2</strong> Tipografia: Arial/Times 12 e Títulos 14 Negrito</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">3</strong> Parágrafo: Justificado, 1,5 linha e Recuo 1,25 cm</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">4</strong> Imagens com Quebra de Texto "Quadrado"</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">5</strong> Duas Colunas & Letra Capitular</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo possui seu check prático distribuído no portal ao final de cada fase.</p>
+  <div class="es-sheet-box" style="max-width:500px; margin-top:10px;">
+    <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">💡 Dica do Professor Marcos Rangel</div>
+    <p style="margin:0; font-size:12px; color:#1F2937; padding:8px 10px; line-height:1.6;">
+      <strong>Nunca formate o texto enquanto estiver digitando!</strong> A alternância constante entre digitar e selecionar botões cansa a mente e quebra a linha de raciocínio. Primeiro coloque as ideias no papel; depois selecione tudo com Ctrl+T e aplique a ABNT de uma só vez.
+    </p>
+  </div>
+</div>`
+        },
+        {
+          lessonNum: 2,
+          heading: "2.1 O que é a ABNT e a Regra de Ouro das Margens 3-3-2-2",
+          content: `A ABNT (Associação Brasileira de Normas Técnicas) é o órgão responsável pela padronização científica e documental no Brasil. Seguir a ABNT não é mera burocracia: garante conforto visual de leitura, sobriedade profissional e viabilidade física na impressão e encadernação.
+
+Por que as Margens são 3-3-2-2?
+• Margem Superior: 3 cm
+• Margem Esquerda: 3 cm
+• Margem Inferior: 2 cm
+• Margem Direita: 2 cm
+
+A razão prática é simples: as margens Esquerda e Superior são maiores (3 cm) porque é por ali que as folhas são furadas para pastas de arquivo, grampeadas ou encadernadas em espiral. Se a margem esquerda tivesse apenas 1 cm ou 2 cm, a encadernação cobriria e cortaria o início de todas as palavras do texto! As margens Inferior e Direita recebem 2 cm porque nelas ficam apenas o número de página e o respiro do corte.
+
+Como Configurar as Margens no Word:
+1. Acesse a guia Layout da Página (ou Layout na versão mais recente).
+2. No grupo Configuração de Página, clique no botão Margens.
+3. No final da lista, clique em Margens Personalizadas...
+4. Na aba Margens da janela que se abre, digite:
+   - Superior: 3 cm
+   - Esquerda: 3 cm
+   - Inferior: 2 cm
+   - Direita: 2 cm
+5. Certifique-se de que a Orientação está em "Retrato" e clique no botão OK.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">📐 Diagrama Visual das Margens Oficiais da ABNT (Regra 3-3-2-2)</div>
+  <table class="mini-sheet" style="text-align:center;">
+    <tr><td colspan="3" style="background:#EFF6FF; color:#1E40AF; font-weight:700; padding:10px;">⬆️ MARGEM SUPERIOR: 3 cm (Cabeçalho e respiro de topo)</td></tr>
+    <tr>
+      <td style="width:28%; background:#DBEAFE; color:#1E3A8A; font-weight:700; padding:16px 8px;">⬅️ MARGEM ESQUERDA: 3 cm<br><span style="font-size:11px; font-weight:400; color:#3B82F6;">Espaço para espiral, furos e encadernação</span></td>
+      <td style="background:#FFFFFF; padding:20px 14px; font-size:12.5px; border:1.5px dashed #93C5FD;">
+        <strong>ÁREA ÚTIL DE TEXTO</strong><br>
+        <span style="font-size:11.5px; color:#64748B;">Fonte Arial ou Times 12 • Entrelinhas 1,5 • Justificado • Recuo 1,25 cm</span>
+      </td>
+      <td style="width:25%; background:#EFF6FF; color:#1E40AF; font-weight:700; padding:16px 8px;">➡️ MARGEM DIREITA: 2 cm<br><span style="font-size:11px; font-weight:400; color:#3B82F6;">Limite visual do texto</span></td>
+    </tr>
+    <tr><td colspan="3" style="background:#EFF6FF; color:#1E40AF; font-weight:700; padding:10px;">⬇️ MARGEM INFERIOR: 2 cm (Rodapé e número de página)</td></tr>
+  </table>
+</div>`
+        },
+        {
+          lessonNum: 2,
+          heading: "2.2 Tipografia Acadêmica — Fonte e Hierarquia de Tamanhos",
+          content: `A ABNT preza pela seriedade e facilidade de leitura. Por isso, veta expressamente o uso de fontes decorativas, manuscritas ou coloridas em trabalhos acadêmicos e técnicos.
+
+Regras Oficiais de Tipografia:
+• Famílias Permitidas: Arial (fonte moderna sem serifa) ou Times New Roman (fonte clássica com serifa). O aluno deve escolher uma única família e mantê-la em todo o trabalho.
+• Corpo do Texto: Tamanho 12. É a medida obrigatória para parágrafos, introdução, desenvolvimento e conclusões.
+• Títulos Principais e de Seções: Tamanho 14, formatados em Negrito (Ctrl+N). Conferem hierarquia visual clara aos capítulos.
+• Citações Longas e Elementos Especiais: Tamanho 10. Aplicado em citações diretas com mais de 3 linhas (que também recebem recuo especial de 4 cm da margem esquerda), notas de rodapé, paginação e legendas explicativas de tabelas e ilustrações.
+• Cor da Fonte: Exclusivamente Preto Automático. Trabalhos acadêmicos nunca devem conter palavras coloridas em azul, vermelho ou verde.
+
+Como Padronizar no Word:
+1. Pressione Ctrl+T para selecionar todo o documento.
+2. Na guia Página Inicial, grupo Fonte, selecione "Arial" ou "Times New Roman".
+3. Na caixa de tamanho, selecione "12".
+4. Selecione os títulos individualmente e altere o tamanho para 14, aplicando o atalho Ctrl+N para Negrito.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">📋 Tabela de Hierarquia de Tipografia ABNT</div>
+  <table class="mini-sheet">
+    <tr><th>Elemento do Trabalho</th><th>Fonte Permitida</th><th>Tamanho</th><th>Destaque / Estilo</th></tr>
+    <tr><td><strong>Títulos de Capítulos / Seções</strong></td><td>Arial ou Times New Roman</td><td>14</td><td><strong>Negrito (Ctrl+N)</strong></td></tr>
+    <tr><td><strong>Subtítulos (Seção Secundária)</strong></td><td>Arial ou Times New Roman</td><td>12</td><td><strong>Negrito (Ctrl+N)</strong></td></tr>
+    <tr style="background:#EFF6FF;"><td><strong>Corpo do Texto (Parágrafos)</strong></td><td>Arial ou Times New Roman</td><td><strong>12</strong></td><td>Normal, sem efeito</td></tr>
+    <tr><td><strong>Citações Longas (+3 linhas)</strong></td><td>Arial ou Times New Roman</td><td>10</td><td>Normal com recuo de 4 cm</td></tr>
+    <tr><td><strong>Notas de Rodapé e Legendas</strong></td><td>Arial ou Times New Roman</td><td>10</td><td>Normal</td></tr>
+  </table>
+</div>`
+        },
+        {
+          lessonNum: 2,
+          heading: "2.3 O Parágrafo Padrão ABNT (Justificado, 1,5 e Recuo de 1,25 cm)",
+          content: `O parágrafo é o bloco fundamental de construção do texto acadêmico. A ABNT estabelece três parâmetros inegociáveis para a sua formatação:
+
+1. Alinhamento Justificado (Atalho Ctrl+J):
+Diferente do alinhamento padrão à esquerda (que deixa a margem direita irregular e serrilhada), o alinhamento Justificado distribui sutilmente os espaços entre as palavras para que o texto termine perfeitamente alinhado tanto na margem esquerda quanto na margem direita.
+
+2. Espaçamento entre Linhas de 1,5 linha:
+O texto corrido não deve ser nem colado demais (simples) nem espaçado em excesso (duplo). O espaçamento 1,5 confere leveza à leitura e permite que professores e revisores façam anotações entre as linhas durante a banca examinadora.
+*Exceções:* Citações longas, notas de rodapé e referências bibliográficas utilizam espaçamento simples (1,0).
+
+3. Recuo de Primeira Linha em 1,25 cm:
+Todo novo parágrafo precisa indicar visualmente onde começa. A ABNT fixa esse recuo em exatamente 1,25 cm da margem esquerda.
+*Aviso Crucial:* É proibido usar a tecla Tab ou dar 5 espaços na barra de espaço para criar esse recuo! No Word profissional, parágrafos são configurados pela janela Parágrafo ou pelo marcador superior da régua.
+
+Passo a Passo na Janela de Parágrafo:
+1. Com o texto selecionado (Ctrl+T), acesse a guia Página Inicial.
+2. No grupo Parágrafo, clique no botão Alinhar Justificado (ou tecle Ctrl+J).
+3. Clique na setinha no canto inferior direito do grupo Parágrafo para abrir a caixa de diálogo completa.
+4. Em Recuo, no campo "Especial", selecione "Primeira linha" e digite "1,25 cm".
+5. Em Espaçamento, no campo "Espaçamento entre linhas", selecione "1,5 linhas".
+6. Certifique-se de que o Espaçamento "Antes" e "Depois" esteja zerado (0 pt) e clique em OK.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#16A34A; color:#fff;">⚖️ Quadro Comparativo: Sem Formatação vs Com Normas ABNT</div>
+  <table class="mini-sheet">
+    <tr><th>Item</th><th>❌ Documento Sem Formatação</th><th>✅ Trabalho Formatado na ABNT</th></tr>
+    <tr><td><strong>Margens</strong></td><td>Padrão do Word (2,5 cm em tudo)</td><td>Regra 3-3-2-2 cm (3 superior/esquerda, 2 inferior/direita)</td></tr>
+    <tr><td><strong>Fonte</strong></td><td>Fontes variadas (Calibri, Comic Sans, etc.)</td><td>Arial ou Times New Roman (padronizada)</td></tr>
+    <tr><td><strong>Tamanho</strong></td><td>Tamanhos desordenados (11, 13, 16)</td><td>Tamanho 12 no corpo e 14 negrito nos títulos</td></tr>
+    <tr><td><strong>Alinhamento</strong></td><td>Alinhado à esquerda (margem direita torta)</td><td><strong>Justificado (Ctrl+J)</strong> com margens retas</td></tr>
+    <tr><td><strong>Espaçamento</strong></td><td>Simples (1,0) ou linhas em branco vazias</td><td><strong>1,5 linha</strong> contínuo sem pular linhas em branco</td></tr>
+    <tr><td><strong>Início do Parágrafo</strong></td><td>Sem recuo ou espaços manuais soltos</td><td><strong>Recuo oficial de 1,25 cm</strong> na primeira linha</td></tr>
+  </table>
+</div>`
+        },
+        {
+          lessonNum: 2,
+          heading: "2.4 Inserção de Imagens e Quebra Automática de Texto (\"Quadrado\")",
+          content: `Ilustrações, gráficos e figuras tornam o trabalho acadêmico ou relatório muito mais rico e visualmente atraente. No entanto, muitos alunos enfrentam dificuldades porque a imagem inserida parece "teimosa", empurrando o texto e deixando imensos buracos brancos na folha.
+
+O Problema do Padrão "Em Linha com o Texto":
+Quando você clica em Inserir > Imagem, o Word aplica automaticamente a quebra "Em linha com o texto". Isso significa que o Word trata a figura como se fosse uma letra de texto gigantesca. Ela não pode ser arrastada livremente e corta o fluxo dos parágrafos.
+
+A Solução: Quebra de Texto "Quadrado" ou "Justo":
+1. Clique no documento onde deseja inserir a ilustração.
+2. Acesse a guia Inserir > Imagem e selecione a figura salva no computador.
+3. Clique com o botão esquerdo sobre a imagem inserida para selecioná-la. Note que surgirá no topo da tela a guia contextual Formatar Ferramentas de Imagem.
+4. Clique no botão Quebra Automática de Texto (ícone do cãozinho com linhas de texto ao redor).
+5. Escolha a opção Quadrado (ou Justo).
+6. Agora a imagem pode ser arrastada e solta com o mouse para qualquer posição da folha: o texto fluirá suavemente ao redor das quatro bordas da imagem, criando um acabamento elegante e profissional digno de uma publicação de jornal ou revista.
+
+Regra da ABNT para Figuras:
+Toda figura em trabalho acadêmico deve conter uma legenda no topo (ex: "Figura 1 – Estrutura do Sistema Solar") e a fonte consultada no rodapé (ex: "Fonte: NASA, 2026").`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#D97706; color:#fff;">🖼️ Modos de Quebra Automática de Texto no Word</div>
+  <table class="mini-sheet">
+    <tr><th>Modo de Quebra</th><th>Comportamento no Documento</th><th>Quando Usar</th></tr>
+    <tr><td><strong>Em linha com o texto</strong></td><td>Trava a imagem como se fosse uma letra; empurra a linha inteira para baixo</td><td>Apenas para ícones pequenininhos no meio da frase</td></tr>
+    <tr style="background:#FEF3C7; font-weight:700;"><td><strong>Quadrado</strong></td><td>Texto contorna as quatro faces da moldura da imagem; movimentação livre</td><td>Opção ideal para trabalhos ABNT, artigos e relatórios</td></tr>
+    <tr><td><strong>Justo</strong></td><td>Texto contorna a silhueta da figura (ótimo para PNGs transparentes)</td><td>Artigos criativos, folders e revistas</td></tr>
+    <tr><td><strong>Atrás do texto</strong></td><td>Imagem vira uma marca d'água de fundo sob o texto digitado</td><td>Certificados, diplomas e timbrados</td></tr>
+    <tr><td><strong>Em frente ao texto</strong></td><td>Imagem cobre e tampa as palavras que ficarem embaixo dela</td><td>Colagens livres e montagens visuais</td></tr>
+  </table>
+</div>`
+        },
+        {
+          lessonNum: 2,
+          heading: "2.5 Recursos Editoriais: Texto em Duas Colunas e Letra Capitular",
+          content: `Além dos relatórios formais, o Word é amplamente utilizado na diagramação de artigos científicos para congressos, resumos expandidos e informativos institucionais, que frequentemente adotam o formato em duas colunas e a charmosa letra capitular.
+
+1. Texto em Duas Colunas:
+Para dividir um texto em colunas sem afetar o título principal do documento:
+1. Digite primeiro o título e todos os parágrafos normalmente.
+2. Selecione exclusivamente os parágrafos que deseja dividir em colunas (NÃO selecione o título principal, para que ele permaneça centralizado de ponta a ponta na folha!).
+3. Acesse a guia Layout da Página (ou Layout) > botão Colunas.
+4. Selecione a opção "Duas".
+O Word criará automaticamente duas quebras de seção contínuas (uma no início e outra no fim da seleção) e distribuirá o texto em duas metades perfeitamente proporcionais.
+
+2. A Letra Capitular (Estilo Editorial):
+A capitular é aquela primeira letra grandiosa que ocupa várias linhas de altura no primeiro parágrafo de um capítulo ou artigo, herança clássica dos manuscritos medievais e muito utilizada na imprensa moderna.
+Como aplicar no Word:
+1. Posicione o cursor do mouse em qualquer palavra do primeiro parágrafo.
+2. Acesse a guia Inserir.
+3. No grupo Texto, clique no botão Letra Capitular.
+4. Escolha a opção "Em Texto" (ou "No Texto").
+A primeira letra do parágrafo se transformará imediatamente em um destaque editorial de 3 linhas de altura!
+
+Checklist Final da ABNT para Autoavaliação:
+Antes de considerar o trabalho finalizado, confira os 6 itens obrigatórios:
+[ ] Margens: Superior 3 cm, Esquerda 3 cm, Inferior 2 cm, Direita 2 cm.
+[ ] Fonte: Arial ou Times New Roman tamanho 12 no corpo.
+[ ] Títulos: Tamanho 14 em Negrito (Ctrl+N).
+[ ] Alinhamento: Justificado (Ctrl+J) em todos os parágrafos.
+[ ] Espaçamento: 1,5 linha contínuo no corpo de texto.
+[ ] Recuo: 1,25 cm na primeira linha de cada parágrafo.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">✨ Demonstração Visual: Duas Colunas com Letra Capitular</div>
+  <div style="padding:14px; background:#F8FAFC; border-radius:8px;">
+    <h4 style="text-align:center; margin:0 0 10px 0; color:#1E3A8A; font-size:14px;">ENERGIA ESCURA E A NOVA TEORIA DO UNIVERSO</h4>
+    <div style="display:flex; gap:16px;">
+      <div style="flex:1; font-size:11.5px; line-height:1.6; text-align:justify; color:#334155;">
+        <span style="float:left; font-size:38px; line-height:30px; padding-top:4px; padding-right:8px; padding-bottom:2px; font-weight:700; color:#2563EB; font-family:'Times New Roman', serif;">U</span>ma nova análise liderada por astrônomos desafia um dos conceitos mais debatidos na ciência moderna: a existência da energia escura. Este elemento foi introduzido como uma explicação para a aparente expansão acelerada do cosmos.
+      </div>
+      <div style="flex:1; font-size:11.5px; line-height:1.6; text-align:justify; color:#334155;">
+        O estudo introduz evidências para o modelo timescape, que questiona a uniformidade espacial. Em vez de considerar o cosmos como um espaço homogêneo, o novo modelo leva em conta variações gravitacionais.
+      </div>
+    </div>
+  </div>
+  <div class="es-sheet-titlebar" style="background:#16A34A; color:#fff; margin-top:14px;">✅ Checklist de Auditoria Final ABNT</div>
+  <table class="mini-sheet">
+    <tr><th>Regra</th><th>Valor Oficial ABNT</th><th>Status</th></tr>
+    <tr><td>Margens da Página</td><td>Superior 3 cm, Esquerda 3 cm, Inferior 2 cm, Direita 2 cm</td><td>☑ Aprovado</td></tr>
+    <tr><td>Tipografia do Texto</td><td>Arial ou Times New Roman tamanho 12</td><td>☑ Aprovado</td></tr>
+    <tr><td>Títulos Principais</td><td>Tamanho 14 em Negrito (Ctrl+N)</td><td>☑ Aprovado</td></tr>
+    <tr><td>Alinhamento do Parágrafo</td><td>Justificado (Ctrl+J) em ambas as bordas</td><td>☑ Aprovado</td></tr>
+    <tr><td>Espaçamento entre Linhas</td><td>1,5 linha no corpo do trabalho</td><td>☑ Aprovado</td></tr>
+    <tr><td>Recuo de Parágrafo</td><td>1,25 cm especial na primeira linha</td><td>☑ Aprovado</td></tr>
+  </table>
+</div>`
+        },
+        {
+          lessonNum: 3,
+          chapter: "AULA 03: FORMATAÇÃO AVANÇADA DE PARÁGRAFOS E ELEMENTOS VISUAIS",
+          heading: "3.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo): dominar a formatação cirúrgica de parágrafos no Microsoft Word, aprendendo a alinhar texto com atalhos, afastar blocos com medidas em pontos (pt), aplicar recuos especiais, criar caixas de destaque com bordas e sombreamento e proteger documentos com marca d'água.`,
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12.5px; color:#475569; margin:0 0 10px 0;">Cada passo possui um check prático distribuído no portal, posicionado ao final da fase correspondente.</p>
+  <div style="font-weight:800; color:#1E40AF; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 5 PASSOS DA AULA 03</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">1</strong> Quatro alinhamentos e atalhos</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">2</strong> Espaçamento Antes/Depois em pt</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">3</strong> Recuos especiais e citações</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">4</strong> Bordas e sombreamento</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">5</strong> Marca d'água de texto</span>
+  </div>
+  <div class="es-sheet-box" style="max-width:520px; margin-top:12px;">
+    <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">⚙️ FAIXA DE PREPARAÇÃO — antes da Fase 1</div>
+    <p style="margin:0; font-size:12px; color:#1F2937; padding:8px 10px; line-height:1.6;">
+      Abra um documento em branco e digite <strong>=rand(3,4)</strong> para gerar texto de treino. Ative a régua em <strong>Exibir &gt; Régua</strong>. Digite primeiro; formate depois.
+    </p>
+  </div>
+</div>`
+        },
+        {
+          lessonNum: 3,
+          heading: "3.1 Os Quatro Alinhamentos e Boas Práticas Editoriais",
+          content: `O alinhamento define como as linhas se apoiam nas margens. No Word em português, os quatro alinhamentos têm atalhos próprios, e usá-los corretamente evita gambiarras com a barra de espaço.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">⌨️ Os Quatro Alinhamentos do Word em Português</div>
+  <table class="mini-sheet">
+    <tr><th>Alinhamento</th><th>Atalho</th><th>Aparência</th><th>Onde usar</th></tr>
+    <tr><td><strong>Alinhar à Esquerda</strong></td><td>Ctrl + Q</td><td>Margem esquerda reta; direita irregular</td><td>Textos informais, listas e anotações</td></tr>
+    <tr><td><strong>Centralizar</strong></td><td>Ctrl + E</td><td>Texto no meio da linha</td><td>Títulos, capas, poesias e certificados</td></tr>
+    <tr><td><strong>Alinhar à Direita</strong></td><td>Ctrl + G</td><td>Margem direita reta; esquerda irregular</td><td>Datas de cartas, assinaturas e notas</td></tr>
+    <tr style="background:#EFF6FF;"><td><strong>Justificar</strong></td><td>Ctrl + J</td><td>Ambas as margens retas</td><td>Livros, jornais, relatórios e trabalhos ABNT</td></tr>
+  </table>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#16A34A; color:#fff;">💼 Exemplo: carta comercial com alinhamentos combinados</div>
+  <div style="background:#FFFFFF; border:1px solid #E2E8F0; border-radius:8px; padding:14px; font-size:12px; color:#334155; line-height:1.7;">
+    <p style="margin:0 0 10px 0; text-align:left;"><strong>WR Capacitação Profissional</strong><br>Av. Central, 100 — Sala 12</p>
+    <p style="margin:0 0 10px 0; text-align:center; font-weight:700;">COMUNICADO INTERNO Nº 03/2026</p>
+    <p style="margin:0 0 10px 0; text-align:right;">São Paulo, 2 de novembro de 2026.</p>
+    <p style="margin:0; text-align:justify;">Informamos que o laboratório de informática estará disponível para práticas de formatação nesta semana. Solicitamos que os alunos tragam seus arquivos salvos em nuvem ou em pendrive.</p>
+  </div>
+  <p style="margin:8px 0 0; font-size:11.5px; color:#475569;"><strong>Regra de ouro:</strong> nunca use a barra de espaço para empurrar texto para o centro ou para a direita. Use o alinhamento correto.</p>
+</div>`
+        },
+        {
+          lessonNum: 3,
+          heading: "3.2 Espaçamentos Entre Linhas e Espaçamentos em Pontos (pt)",
+          content: `Apertar Enter várias vezes para separar parágrafos é o erro clássico do iniciante: cria linhas vazias invisíveis, desalinha o texto e gera páginas extras. O ajuste profissional é feito na janela de Parágrafo, com medidas em pontos (pt).`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#DC2626; color:#fff;">❌ Jeito amador: Enter repetido cria linhas vazias invisíveis</div>
+  <div style="padding:12px 14px; background:#FEF2F2; border-radius:8px; font-size:12px; color:#7F1D1D; line-height:1.7;">
+    <p style="margin:0 0 6px 0;">Texto do primeiro parágrafo.</p>
+    <p style="margin:0 0 6px 0; font-family:'JetBrains Mono', monospace; color:#B91C1C;">↵ ↵ ↵</p>
+    <p style="margin:0;">Texto do segundo parágrafo. Se uma palavra for apagada, o bloco inteiro se desloca.</p>
+  </div>
+  <div class="es-sheet-titlebar" style="background:#16A34A; color:#fff; margin-top:12px;">✅ Jeito profissional: Espaçamento Depois em pontos (pt)</div>
+  <div style="padding:12px 14px; background:#F0FDF4; border-radius:8px; font-size:12px; color:#166534; line-height:1.7;">
+    <p style="margin:0 0 10px 0;">Texto do primeiro parágrafo.</p>
+    <p style="margin:0;">Texto do segundo parágrafo, afastado por <strong>Espaçamento Depois: 10 pt</strong>. Um único Enter basta.</p>
+  </div>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">📏 Campos da Janela de Parágrafo</div>
+  <table class="mini-sheet">
+    <tr><th>Campo</th><th>O que controla</th><th>Valor recomendado</th></tr>
+    <tr><td><strong>Espaçamento Antes</strong></td><td>Distância até o parágrafo anterior</td><td>0 pt no corpo ABNT; 6 a 12 pt em relatórios</td></tr>
+    <tr style="background:#EFF6FF;"><td><strong>Espaçamento Depois</strong></td><td>Distância após o término do parágrafo</td><td>6 pt ou 12 pt para separar blocos</td></tr>
+    <tr><td><strong>Entre linhas</strong></td><td>Distância entre linhas do mesmo parágrafo</td><td>1,5 linha no corpo ABNT; simples em citações</td></tr>
+  </table>
+  <p style="margin:8px 0 0; font-size:11.5px; color:#475569;"><strong>Atenção:</strong> 1 pt equivale a aproximadamente 0,35 mm. Ponto (pt) é medida absoluta; o campo “entre linhas” trabalha com múltiplos da altura da fonte (1,0; 1,5; 2,0).</p>
+</div>`
+        },
+        {
+          lessonNum: 3,
+          heading: "3.3 Tipos de Recuo de Parágrafo e Citações Longas ABNT",
+          content: `Recuo é o afastamento do parágrafo em relação às margens. A ABNT usa três situações distintas: primeira linha de 1,25 cm no corpo do texto, recuo deslocado nas referências e recuo de 4 cm nas citações longas.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#16A34A; color:#fff;">↪️ Demonstração Visual dos Três Recuos</div>
+  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:14px; font-size:12px; color:#334155; line-height:1.7;">
+    <div style="background:#FFFFFF; border:1px solid #E2E8F0; border-radius:6px; padding:10px 12px; margin-bottom:10px;">
+      <div style="font-size:10.5px; font-family:'JetBrains Mono', monospace; color:#1D4ED8; font-weight:700; margin-bottom:4px;">RECUO DE PRIMEIRA LINHA — 1,25 cm</div>
+      <p style="margin:0; text-indent:1.25cm;">A primeira linha começa deslocada e as linhas seguintes voltam à margem esquerda. É o recuo clássico dos parágrafos acadêmicos.</p>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E2E8F0; border-radius:6px; padding:10px 12px; margin-bottom:10px;">
+      <div style="font-size:10.5px; font-family:'JetBrains Mono', monospace; color:#B45309; font-weight:700; margin-bottom:4px;">RECUO DESLOCADO (PENDENTE / FRANCÊS)</div>
+      <p style="margin:0; padding-left:1.25cm; text-indent:-1.25cm;">SILVA, Marcos Rangel. Manual de formatação profissional. São Paulo: WR Editora, 2026.</p>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E2E8F0; border-radius:6px; padding:10px 12px;">
+      <div style="font-size:10.5px; font-family:'JetBrains Mono', monospace; color:#0F766E; font-weight:700; margin-bottom:4px;">CITAÇÃO LONGA — RECUO DE 4 CM, FONTE 10, SIMPLES</div>
+      <p style="margin:0; margin-left:4cm; font-size:10px; line-height:1.15; border-left:3px solid #BFDBFE; padding-left:8px;">A formatação de parágrafos não é um detalhe estético: ela organiza a leitura, hierarquiza a informação e demonstra domínio técnico sobre a ferramenta.</p>
+    </div>
+  </div>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">⚙️ Como Configurar no Word</div>
+  <table class="mini-sheet">
+    <tr><th>Tipo</th><th>Configuração</th><th>Uso</th></tr>
+    <tr><td><strong>Primeira linha</strong></td><td>Recuo &gt; Especial &gt; Primeira linha: 1,25 cm</td><td>Corpo do texto ABNT</td></tr>
+    <tr><td><strong>Deslocado</strong></td><td>Recuo &gt; Especial &gt; Deslocado</td><td>Referências bibliográficas</td></tr>
+    <tr><td><strong>Citação longa</strong></td><td>Recuo &gt; Esquerda: 4 cm; fonte 10; espaçamento simples</td><td>Citações diretas com mais de 3 linhas</td></tr>
+  </table>
+</div>`
+        },
+        {
+          lessonNum: 3,
+          heading: "3.4 Bordas, Sombreamento e Caixas de Destaque",
+          content: `Bordas desenham linhas ao redor do parágrafo; sombreamento pinta o fundo. Juntos, criam caixas de aviso e lembretes elegantes, sem precisar de imagens.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#D97706; color:#fff;">📌 Exemplo Real de Caixa de Destaque</div>
+  <div style="border:2px solid #2563EB; background:#FFF7ED; border-radius:8px; padding:14px 16px; font-size:12.5px; color:#7C2D12; line-height:1.7;">
+    <strong>📌 AVISO IMPORTANTE</strong><br>
+    As inscrições para a revisão de trabalhos encerram-se na sexta-feira. Procure a secretaria com antecedência para garantir o atendimento.
+  </div>
+  <p style="margin:8px 0 0; font-size:11.5px; color:#475569;">O efeito é obtido com <strong>Bordas Externas</strong> + <strong>Sombreamento</strong> suave, sem nenhuma imagem.</p>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">🎨 Passo a Passo no Word</div>
+  <table class="mini-sheet">
+    <tr><th>Etapa</th><th>Onde clicar</th><th>O que escolher</th></tr>
+    <tr><td><strong>1</strong></td><td>Selecione o parágrafo inteiro</td><td>Todo o bloco que ficará na caixa</td></tr>
+    <tr style="background:#EFF6FF;"><td><strong>2</strong></td><td>Seta do botão Bordas</td><td>Bordas Externas (ou Bordas e Sombreamento)</td></tr>
+    <tr style="background:#FEF3C7;"><td><strong>3</strong></td><td>Botão Sombreamento (balde de tinta)</td><td>Cor suave: cinza, bege, azul ou amarelo claro</td></tr>
+    <tr><td><strong>4</strong></td><td>Confira o resultado</td><td>A caixa envolve o texto sem cobri-lo</td></tr>
+  </table>
+</div>`
+        },
+        {
+          lessonNum: 3,
+          heading: "3.5 Marca d'Água: Protegendo e Identificando o Documento",
+          content: `A marca d'água é um texto ou imagem semitransparente aplicado ao fundo de todas as páginas. Serve para identificar versões preliminares, sinalizar confidencialidade ou registrar a propriedade do documento.`,
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">🖼️ Simulação de Página com Marca d'Água ao Fundo</div>
+  <div style="position:relative; overflow:hidden; background:#FFFFFF; border:1px solid #CBD5E1; border-radius:8px; padding:26px 18px; min-height:160px;">
+    <span style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%) rotate(-28deg); font-family:'Fraunces', serif; font-size:34px; font-weight:800; letter-spacing:2px; color:rgba(37, 99, 235, 0.16); white-space:nowrap;">CONFIDENCIAL</span>
+    <div style="position:relative; font-size:12px; color:#475569; line-height:1.7;">
+      <p style="margin:0 0 8px 0; font-weight:700; color:#1E3A8A;">RELATÓRIO INTERNO — VERSÃO PRELIMINAR</p>
+      <p style="margin:0 0 8px 0;">O texto permanece legível: a marca d'água fica atrás do conteúdo, em tom claro.</p>
+      <p style="margin:0;">Ela se repete automaticamente em cada página, sem colagem manual.</p>
+    </div>
+  </div>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#16A34A; color:#fff;">⚙️ Onde Encontrar a Marca d'Água</div>
+  <table class="mini-sheet">
+    <tr><th>Versão do Word</th><th>Caminho</th><th>Opções</th></tr>
+    <tr><td><strong>Word 2010 / 2013</strong></td><td>Layout da Página &gt; Plano de Fundo da Página &gt; Marca d'Água</td><td>Modelos prontos e personalização</td></tr>
+    <tr style="background:#EFF6FF;"><td><strong>Versões recentes</strong></td><td>Design &gt; Marca d'Água</td><td>Texto personalizado, imagem e remoção</td></tr>
+  </table>
+  <p style="margin:8px 0 0; font-size:11.5px; color:#475569;">A marca d'água pertence ao cabeçalho do documento: por isso se repete em todas as páginas e não é selecionada com um clique comum no corpo do texto. Para removê-la, use <strong>Remover Marca d'Água</strong> no mesmo menu.</p>
+</div>`
         }
       ]
     },
@@ -4579,12 +5807,17 @@ O Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, va
         1: "Aula 01: A História e o Funcionamento dos Computadores",
         2: "Aula 02: Introdução ao Windows — Seu Primeiro Passo no Mundo do Computador",
         3: "Aula 03: Medidas de Armazenamento no Computador — Do Bit ao Disco Rígido",
+        4: "Aula 04: Painel de Controle e Configurações do Windows",
+        5: "Aula 05: Área de Trabalho, Pastas e Arquivos",
+        6: "Aula 06: WordPad — Editor de Texto do Windows",
         7: "Aula 07: Segurança e Antivírus no Windows",
         71: "Complemento 7A — Backup Automático com Arquivo .BAT",
         81: "Complemento 8A — Tutorial: Como Criar Pendrive/DVD de Instalação do Windows",
-        8: "Aula 08: Diagnóstico de Memória, Restauração do Sistema e Mídia de Instalação",
-        4: "Aula 04: Painel de Controle e Configurações no Windows — Ajustes do Sistema",
-        5: "Aula 05: Área de Trabalho, Pastas e Arquivos — Do Ícone ao Explorador"
+        8: "Aula 08: Diagnóstico de Memória, Restauração do Sistema e Criação de Mídia de Instalação no Windows",
+        9: "Aula 09: Prática – Organização e Configuração do Windows",
+        10: "Aula 10: Ferramentas Básicas do Windows (7, 10 e 11)",
+        11: "Aula 11: Revisão Geral do Windows",
+        12: "Aula 12: Prova Final do Módulo Windows"
       },
       excel: {
         1: "Aula 01: Introdução ao Excel, Interface, Tipos de Dados e Navegação",
@@ -4600,6 +5833,20 @@ O Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, va
          11: "Aula 11: Projeto Vendas — Estruturação (Parte 1) — O Sistema de Controle de Vendas da Tech Solutions",
          12: "Aula 12: Projeto Vendas — Automação & Regras (Parte 2) — Dashboard e Tabela Dinâmica",
          13: "Aula 13: Projeto Vendas — Dashboard & Conclusão (Parte 3) — Macros, Botões e Entrega do Projeto"
+      },
+      word: {
+        1: "Aula 01: Introdução ao Word & Digitação Eficiente",
+        2: "Aula 02: Normas ABNT & Formatação Básica de Trabalhos",
+        3: "Aula 03: Formatação Avançada de Parágrafos & Elementos Visuais",
+        4: "Aula 04: Bordas Decorativas, Formas & Quebra de Texto",
+        5: "Aula 05: Estilos Rápidos & Pincel de Formatação",
+        6: "Aula 06: Layout de Página, Quebras de Seção & Cabeçalhos",
+        7: "Aula 07: Revisão de Texto, Comentários & Colaboração",
+        8: "Aula 08: Sumário Automático & Índices de Ilustrações",
+        9: "Aula 09: Oficina de Listas Multinível, Tabulação & Certificados",
+        10: "Aula 10: Pesquisa Acadêmica, Estrutura ABNT & Citações",
+        11: "Aula 11: Revisão Geral Integrada & Tabelas Profissionais",
+        12: "Aula 12: Prova Final do Módulo Word"
       }
     };
 
