@@ -36,7 +36,208 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL — COMEÇAR AQUI (15/10/2026) — Aula 05 do Windows: Área de Trabalho, Pastas e Arquivos (implementada do zero)
+## ✅ SESSÃO ATUAL (02/11/2026) — Módulo 2: Microsoft Word — Aula 03 (Formatação Avançada de Parágrafos & Elementos Visuais)
+
+Implementação completa da **Aula 03 do Módulo 2: Microsoft Word** ("Formatação Avançada de Parágrafos & Elementos Visuais"), desbloqueio no Hub com senha `wc003`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l3-check-1..5`), dois simuladores ao vivo, exercício de fixação com 5 questões e apostila PDF com seções 3.0–3.5 e ilustrações HTML reais.
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Desbloqueio no Hub** | `modules/word/index.html` | Card da Aula 03 com badge `🔓 Aula Liberada (Senha wc003)`; senha registrada em `promptLessonPassword` (`3: "wc003"`). |
+| **Tela da Aula 03** | `modules/word/index.html` → `#screen-lesson-3` | `<section class="screen-view">` irmã das demais telas, com botões de topo (voltar, imprimir, baixar PDF) e barra gamificada (`gamify-percent-3`, `gamify-bar-3`, `gamify-badge-box-3`). |
+| **FASE 0 Tutorial** | `#l3-fase-0` | Objetivo pedagógico, roteiro numerado em 5 chips, contador `#l3-checklist-status` ("▢ 0 / 5 Passos Concluídos") e botão de início. |
+| **Fases 1–5** | `#tab-btn-3-1..5` | 1. Quatro Alinhamentos; 2. Espaçamento em pt; 3. Recuos Especiais; 4. Bordas & Sombreamento; 5. Marca d'Água. Cada fase termina com `#l3-check-N` + `#check-read-3-N` (trava sequencial). |
+| **Simuladores** | `window.l3SetAlign()`, `window.l3SetSpace()` | Alinhamento ao vivo (esquerda/centro/direita/justificado) e espaçamento 0/6/12/18 pt com prévia visual. |
+| **Exercício de Fixação** | `QUESTIONS_LESSON_3` + `QUIZ_CFG[3]` | 5 questões; `moduleId: "word_lesson_3_quiz"`; gabarito `[2, 0, 1, 3, 2]`; persistência real via `QuizEngine.saveState/loadState` e botão "↺ Recomeçar o exercício". |
+| **Roteamento e progresso** | `modules/word/index.html` | Aula 3 adicionada a `TOTAL_TOPICS`, `SEQUENTIAL_LESSONS`, loops de inicialização/resultado (`[1,2,3]`) e `routes` (`3: "screen-lesson-3"`). |
+| **Apostila PDF** | `assets/js/pdf-lessons.js` → `LESSONS.word.sections` | Seções **3.0 a 3.5** com `lessonNum: 3`, cada uma com `html` ilustrado (`.mini-sheet`, `.es-sheet-box`, `.fun-highlight`); título via `moduleLessonTitles.word[3]`. |
+
+### 2. Validações Executadas (02/11/2026)
+
+- `node --check assets/js/pdf-lessons.js`: **OK** (zero erros de sintaxe).
+- Script inline de `modules/word/index.html` extraído e validado com `node --check`: **OK**.
+- Conferência estrutural via script: **5 fases**, **5 checks** (`l3-check-1..5`), **5 botões de leitura**, **6 abas** (5 fases + fixação), tags `<section>/<article>/<div>` da Aula 03 balanceadas.
+- Módulo Word no PDF: **18 seções** (6 por aula) e **6 seções da Aula 03** com `html` não vazio — nenhuma seção órfã sem `lessonNum` (Regra 8 do `AGENTS.md`).
+- **Pendente:** bateria CDP em navegador (modal `wc003`, sequência de checks 0→100%, simuladores, quiz 10,0 + SHA-256, popup do PDF 3 e auditoria mobile 375/390 px). A sessão não dispunha de Playwright/Puppeteer.
+
+### 3. Pendências Registradas
+
+- Aulas 04 a 11 do Word e Prova Final (spec atual ainda é de 10 questões; `Docs/SPEC-PROVA-FINAL-WORD.md` prevê 15).
+- Cards 4–11 do Hub exibem "🔓 Aula Liberada" mas `promptLessonPassword` só libera 1–3 e a Prova Final.
+- Todo o trabalho de Word/Windows continua **não commitado** (último commit `4a85fc9`, Windows Aula 5).
+
+---
+
+## 📅 SESSÃO ANTERIOR (29/10/2026) — Módulo 2: Microsoft Word — Aula 02 & Painel de Ações do Quiz (WhatsApp, E-mail, TXT, PDF)
+
+Implementação oficial e completa da **Aula 02 do Módulo 2: Microsoft Word** ("Normas ABNT & Formatação Básica de Trabalhos"), desbloqueio no Hub com senha `wb002`, FASE 0 tutorial com 5 passos e chips pedagógicos, 5 fases com checks distribuídos (`l2-check-1..5`), simulador visual de folha A4 com cotas dimensionais de margens (3-3-2-2 cm), regras de tipografia (Arial/Times 12 e títulos 14 negrito), parágrafo padrão ABNT (justificado, entrelinhas 1,5 e recuo de 1,25 cm), quebra automática de texto de imagens ("Quadrado"), recursos editoriais de duas colunas e letra capitular, exercício de fixação com 5 questões calibradas, persistência `QuizEngine.saveState/loadState`, emissão de certificado com Hash SHA-256 e apostila didática em PDF com 6 seções dedicadas e ilustrações HTML reais no `pdf-lessons.js`.
+
+Adicionalmente, atendendo à solicitação do usuário, foram implementados os **botões de ação e compartilhamento oficial** nos painéis de resultado dos Exercícios de Fixação das Aulas 01 e 02 (`#result-panel-1` e `#result-panel-2`), no mesmo padrão do módulo Internet e Windows:
+- 📄 **Baixar Comprovante Oficial (.txt)**: gera o arquivo `.txt` autenticado via `QuizEngine.downloadTxtReport`.
+- 📑 **Baixar Apostila em PDF**: abre popup para impressão/download via `PDFLessons.downloadLessonPDF("word", lessonNum)`.
+- 📱 **Enviar Resultado por WhatsApp**: formata a mensagem com nota, situação, aluno e código de autenticidade SHA-256 direcionada para o WhatsApp do Professor via `QuizEngine.buildWhatsAppUrl`.
+- 📧 **Enviar por E-mail**: alterna a visualização do painel `#email-panel-${lessonNum}` com o botão "Abrir no Gmail" (`QuizEngine.openGmailComposer`).
+- ↺ **Recomeçar o exercício**: limpa a chave do `localStorage` e recomeça a fixação do zero.
+
+Validado com **42 asserções automatizadas via CDP na Aula 02 (zero falhas)** e **regressão completa da Aula 01 com 49 asserções (zero falhas)**. Total: **91 asserções automatizadas com 100% de precisão**.
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Desbloqueio no Hub** | `modules/word/index.html` | Card da Aula 02 conectado ao gate de senha `wb002`, transformando badge em 🟢 após liberação. |
+| **Aula 02: FASE 0 Tutorial** | `modules/word/index.html` | Bloco `#l2-fase-0` com objetivo pedagógico, roteiro numerado dos 5 passos em chips, faixa de preparação, contador `#l2-checklist-status` ("▢ 0 / 5 Passos Concluídos") e botão de início. |
+| **5 Fases com Checks Distribuídos** | `modules/word/index.html` | Fases 1 a 5 com abas de navegação (`tab-btn-2-1..5`), textos didáticos, simulador de folha ABNT com cotas dimensionais (superior 3cm, esquerda 3cm para encadernação, inferior 2cm, direita 2cm), tipografia acadêmica, parágrafo justificado 1,5 com 1,25 cm, quebra de imagens no modo "Quadrado", texto em 2 colunas e letra capitular. Checks distribuídos `#l2-check-1..5` com trava sequencial. |
+| **Simulador de Folha ABNT (3-3-2-2)** | `modules/word/index.html` & `assets/css/style.css` | Componente visual `.abnt-sheet-sim` com bordas dimensionais, badges de cotas (`.abnt-dim-top/left/right/bottom`) e demonstração da área útil de texto. |
+| **Recursos Editoriais (Colunas e Capitular)** | `modules/word/index.html` | Layout editorial `.two-col-layout` com primeira letra em destaque `.drop-cap-lead` (3 linhas de altura) e checklist de auditoria final ABNT. |
+| **Exercício de Fixação & Assinatura** | `modules/word/index.html` | 5 Questões objetivas calibradas (`QUIZ_CFG[2]`), persistência no LocalStorage (`word_lesson_2_quiz`), botão "↺ Recomeçar o exercício", cálculo de nota e emissão de comprovante com Hash SHA-256 (`QuizEngine.generateDigitalSignature`). |
+| **Botões de Envio e Comprovantes (WhatsApp, E-mail, TXT, PDF)** | `modules/word/index.html` | Botões `#btn-download-txt-1/2`, `#btn-download-pdf-1/2`, `#btn-whatsapp-1/2`, `#btn-email-1/2` e subpainel `#email-panel-1/2` com `#btn-open-gmail-1/2` integrados ao `QuizEngine` e `PDFLessons`. |
+| **Apostila Didática em PDF** | `assets/js/pdf-lessons.js` | Título registrado em `moduleLessonTitles.word[2]`, 6 seções dedicadas (2.0 a 2.5) com `lessonNum: 2`, ilustrações HTML reais (`sec.html`, `.mini-sheet`, `.es-sheet-box`), diagrama visual de folha A4 com cotas e eliminação de seções órfãs (Regra 8). |
+
+### 2. Validações Executadas (29/10/2026)
+
+- `node --check assets/js/pdf-lessons.js`: **100% OK** (zero erros de sintaxe).
+- Script inline de `modules/word/index.html`: **100% OK** (validado via `new Function()`).
+- Bateria de Testes Automatizados da Aula 02 (`/tmp/test-word-aula2.js`): **42 asserções executadas, 0 falhas**:
+  - Hub inicial ativo e card da Aula 02 com badge 🔒.
+  - Modal de senha abre com largura real visível (765px) como filho direto de `<body>`.
+  - Rejeição de senha inválida e desbloqueio oficial com `wb002`.
+  - FASE 0, chips e status inicial do checklist ("▢ 0 / 5 Passos Concluídos").
+  - Trava sequencial: Passo 2 bloqueado até Passo 1 ser concluído.
+  - Conclusão sequencial até 100% (gamificação e persistência no LocalStorage).
+  - Troca de abas e renderização do simulador de folha ABNT 3-3-2-2.
+  - Fixação: resposta das 5 questões, nota 10,0/10,0 e assinatura digital `WR-XXXX-...`.
+  - Botões de Ação do Quiz: presença de TXT, PDF, WhatsApp, E-mail e painel com abertura no Gmail.
+  - URL do WhatsApp validada com Assinatura Digital e dados do aluno.
+  - Botão 'Recomeçar o exercício' reabrindo na Questão 1 com reset no LocalStorage.
+  - Geração de PDF da Aula 2: popup disparado sem erros com seções 2.0 a 2.5 e ilustrações HTML reais.
+  - Auditoria Mobile: viewport 375px sem nenhum overflow horizontal (`scrollWidth === clientWidth === 375`).
+- Bateria de Regressão da Aula 01 (`/tmp/test-word-aula1.js`): **49 asserções executadas, 0 falhas**:
+  - Todos os testes de FASE 0, checklist, 4 tabelas modernas, simulador da Régua, quiz, persistência, PDF e validação dos novos botões de ação (TXT, PDF, WhatsApp e E-mail).
+
+---
+
+## 📅 SESSÃO ANTERIOR (29/10/2026) — Módulo 2: Microsoft Word — Aula 01 & Redesign Moderno UI/UX de Tabelas e Guias
+
+Implementação oficial e completa da **Aula 01 do Módulo 2: Microsoft Word** ("Introdução ao Word & Digitação Eficiente"), estruturação do Hub do Portal com as 11 aulas e prova final, gerador de PDF com seções dedicadas e ilustrações HTML reais, e auditoria/redesign completo de todas as tabelas e guias de atalhos e cliques de mouse com base em modernos padrões de design web (`responsive-table`), validado com 41 testes automatizados via CDP (Chrome Headless).
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Hub do Módulo Word** | `modules/word/index.html` | Grade com os 12 cards (Aulas 01 a 11 + Prova Final), senhas de acesso, links para o portal e sanfona biográfica do Professor Marcos Rangel. |
+| **Modal de Senha Seguro** | `modules/word/index.html` | `#password-modal` inserido como filho direto de `<body>` (Regra 10 do `AGENTS.md`), validado com largura real > 0, senha oficial `wa001`. |
+| **Aula 01: FASE 0 Tutorial** | `modules/word/index.html` | Bloco `#l1-fase-0` com objetivo pedagógico, roteiro numerado dos 5 passos em chips, faixa de preparação, contador `#l1-checklist-status` ("▢ 0 / 5 Passos Concluídos") e botão de início. |
+| **5 Fases com Checks Distribuídos** | `modules/word/index.html` | Fases 1 a 5 com abas de navegação (`tab-btn-1-1..5`), textos didáticos, simulador visual da régua horizontal com 3 marcadores (1,25 cm ABNT), atalhos PT-BR (Ctrl+B vs Ctrl+S), comando `=rand(3,4)`, truques de mouse e ergonomia/teclas especiais. Checks distribuídos `#l1-check-1..5` e botões de leitura com trava sequencial. |
+| **Redesign Moderno UI/UX de Tabelas** | `modules/word/index.html` & `assets/css/style.css` | Substituição das tabelas cruas por cards estilizados (`.word-card-table-wrap`, `.word-card-table-header`, `.word-modern-table`): pills coloridas por guia (azul, verde, roxo, âmbar, ciano), chips de grupos de ferramentas, badges 3D para teclas (`<kbd>`/`.key-badge`), badges táteis de mouse (`.mouse-badge`), simulação de texto selecionado no Word (`.sel-sim-badge`) e destaques pedagógicos para atalhos críticos (`Ctrl+B` vs `Ctrl+S`). |
+| **Fallback Universal para `.es-sheet-box`** | `assets/css/style.css` | Definição global para `.es-sheet-box`, `.es-sheet-titlebar` e `.mini-sheet` evitando qualquer exibição crua de tabelas não migradas em qualquer tela da plataforma. |
+| **Exercício de Fixação & Assinatura** | `modules/word/index.html` | 5 Questões objetivas calibradas (`QUIZ_CFG[1]`), persistência no LocalStorage (`word_lesson_1_quiz`), botão "↺ Recomeçar o exercício", cálculo de nota e emissão de comprovante com Hash SHA-256 (`QuizEngine.generateDigitalSignature`). |
+| **Apostila Didática em PDF** | `assets/js/pdf-lessons.js` | Título registrado em `moduleLessonTitles.word[1]`, 6 seções dedicadas com `lessonNum: 1`, ilustrações HTML reais (`sec.html`, `.mini-sheet`, `.es-sheet-box`), imagens reais do acervo e eliminação de seções órfãs (Regra 8). |
+| **Acervo de Imagens da Aula 1** | `assets/img/word/Aula1/` | 13 imagens instrutivas copiadas do acervo original (`image1.png` a `image13.png`). |
+
+### 2. Validações Executadas (29/10/2026)
+
+- `node --check assets/js/pdf-lessons.js`: **100% OK** (zero erros de sintaxe).
+- Script inline de `modules/word/index.html`: **100% OK** (validado via `new Function()`).
+- Bateria de Testes Automatizados via CDP (`/tmp/test-word-aula1.js`): **41 asserções executadas, 0 falhas**:
+  - Hub inicial ativo com 12 cards.
+  - Modal de senha abre com largura > 0 (765px) e como filho direto de `<body>`.
+  - Desbloqueio da Aula 01 com a senha `wa001`.
+  - FASE 0, chips e status inicial do checklist.
+  - Trava sequencial: Passo 2 bloqueado até Passo 1 ser concluído.
+  - Conclusão sequencial até 100% (gamificação e persistência no LocalStorage).
+  - Troca de abas e simulador interativo da régua horizontal.
+  - Fixação: resposta das 5 questões, nota 10,0/10,0, assinatura SHA-256 e recomeço.
+  - Geração de PDF da Aula 1: popup com 31,9 KB de HTML estruturado com FASE 0 e imagens reais.
+  - Auditoria Mobile: viewport 375px sem nenhum overflow horizontal (`scrollWidth === clientWidth === 375`).
+  - Auditoria de Design UI/UX: 4 novos cartões `.word-card-table-wrap`, 4 tabelas `.word-modern-table`, 5 pills de guias, 14 chips de grupos, 5 badges de mouse, 5 simulações de seleção e 26 badges estéticos de teclas físicas.
+
+---
+
+## 📅 SESSÃO ANTERIOR (29/10/2026) — Módulo 2: Microsoft Word — Leitura do Acervo de Origem e Criação Completa dos SDDs/SPECs (Aulas 01 a 11 + Prova Final)
+
+Auditoria aprofundada da documentação existente (`AGENTS.md`, `Docs/SPEC-EXCEL-MASTER.md`, `Docs/SPEC-AULA-01-WINDOWS.md`, `Docs/SPEC-AULA-02-WINDOWS.md`, `Docs/SDD-AULA-08-SIMPLIFICACAO.md`), cruzamento com a arquitetura das aulas já implementadas nos módulos Windows e Excel, leitura analítica de cada aula do acervo original em `AulaOrigem/word/` e elaboração da suíte completa de especificações técnicas (SDDs / SPECs) para guiar a implementação do Módulo 2 (Microsoft Word) e de sua Avaliação Final.
+
+### 1. O que foi analisado e mapeado em `AulaOrigem/word/`
+
+| Item Original | Conteúdo Extraído | Destino no Módulo Word |
+|:---|:---|:---|
+| `Aula 1 Introducao_ao_Microsoft_Word_v2` (58 KB, 13 imagens) | Interface, Guias, Barra de Acesso Rápido, Zoom, seleção com mouse, atalhos PT-BR (`Ctrl+B`, `Ctrl+N`, `Ctrl+I`, `Ctrl+S`), gerador `=rand(p,l)`, régua e os 3 recuos, ergonomia e digitação (linha guia, Shift, Ctrl, Alt). | **Aula 01**: Introdução ao Word & Digitação Eficiente (`Docs/SPEC-AULA-01-WORD.md`) |
+| `Aula 2 Word_ABNT` (45 KB) | Conceito da ABNT, regra mnemônica 3-3-2-2 (margens), tipografia padrão (Arial/Times 12 e títulos 14 negrito), parágrafo (justificado `Ctrl+J`, entrelinhas 1,5, recuo 1,25 cm), numeração, quebra justa de imagem, 2 colunas e letra capitular. | **Aula 02**: Normas ABNT & Formatação Básica de Trabalhos (`Docs/SPEC-AULA-02-WORD.md`) |
+| `Aula 3 - Formatação de Parágrafos no Word 2010_2013` (54 KB) | 4 Alinhamentos, espaçamento entre linhas e entre parágrafos (pt Antes/Depois), recuo deslocado/francês, marcadores e numeração, caixas de destaque com bordas e sombreamento, marca d\x27água, artigo sobre Marte. | **Aula 03**: Formatação Avançada de Parágrafos & Elementos Visuais (`Docs/SPEC-AULA-03-WORD.md`) |
+| `Aula 4  USANDO FIGURAS BORDAS NO WORD 2010-2013` (65 KB, 2 imagens) | Orientação Paisagem, bordas de página técnicas e de arte (molduras), formas geométricas vetoriais, texto em formas, preenchimento, contorno, sombras, quebra de texto (quadrado/justo), camadas e agrupamento de cartazes. | **Aula 04**: Bordas Decorativas, Formas & Quebra de Texto (`Docs/SPEC-AULA-04-WORD.md`) |
+| `Aula 5 Word_Estilos_Formatacao_Avancada` (33 KB, 11 imagens) | Conceito de estilos, galeria de estilos rápidos (Normal, Título 1, Título 2), criação por exemplo, modificação em cascata global, duplo clique no Pincel de Formatação (`Ctrl+Shift+C/V`) e botão Limpar Formatação (borracha). | **Aula 05**: Estilos Rápidos & Pincel de Formatação (`Docs/SPEC-AULA-05-WORD.md`) |
+| `Aula 6 Word_Configuracao_de_Pagina_e_Layout` (44 KB) | Margens e tamanho oficial A4 (21 x 29,7 cm), Quebra de Página (`Ctrl+Enter`) vs Quebra de Seção (Próxima Página/Contínua), alternância de orientações mistas, cabeçalho e rodapé desvinculados ("Vincular ao Anterior"), Primeira Página Diferente, papel timbrado. | **Aula 06**: Layout de Página, Quebras de Seção & Cabeçalhos (`Docs/SPEC-AULA-06-WORD.md`) |
+| `Aula 07 Colaboracao_Comentarios_Word.html` (21 KB) | Guia Revisão, ortografia (`F7`), sinônimos (`Shift+F7`), balões de comentários (`Ctrl+Alt+M`), Controle de Alterações (Track Changes `Ctrl+Shift+E`), aceitar e rejeitar revisões, proteção do documento para comentários, higienização de metadados. | **Aula 07**: Revisão de Texto, Comentários & Colaboração (`Docs/SPEC-AULA-07-WORD.md`) |
+| `Aula 8 Sumário Automático no Word` (25 KB) | Erro do sumário manual, dependência dos estilos Título 1 e 2, inserção pela Guia Referências, atualização dinâmica de páginas e índice inteiro com `F9`, hiperlinks com `Ctrl+Clique`, legendas e Índice de Ilustrações. | **Aula 08**: Sumário Automático & Índices de Ilustrações (`Docs/SPEC-AULA-08-WORD.md`) |
+| `Aula 10 -Exercício_ Criando Listas no Word.md` (463 KB) | Listas multinível (`Tab` para rebaixar, `Shift+Tab` para promover), tabulação com pontos de preenchimento, oficina de Certificado de Conclusão e projeto prático "Ciclo Solar" (2 colunas, capitular, quebra justa de imagem e marca d\x27água). | **Aula 09**: Oficina de Listas Multinível, Tabulação & Certificados (`Docs/SPEC-AULA-09-WORD.md`) |
+| `Aula 10   Criando uma Pesquisa no Word seguindo regras simples da ABNT` (24 KB) | Metodologia científica vs plágio, estrutura completa (Capa, Folha de Rosto, Sumário, Introdução, Desenvolvimento, Conclusão, Referências), normas NBR 6023 para sites da internet, filtros Google e colagem limpa ("Manter Somente Texto"). | **Aula 10**: Pesquisa Acadêmica, Estrutura ABNT & Citações (`Docs/SPEC-AULA-10-WORD.md`) |
+| `AULA 11 - REVISÃO FINAL DO MICROSOFT WORD 2010` (37 KB) | Mapa mestre de atalhos e das 7 guias do Word, criação e formatação avançada de tabelas (linhas, colunas, mesclagem, 9 alinhamentos internos, sombreamento e alinhamento numérico à direita), 3 oficinas práticas de revisão geral. | **Aula 11**: Revisão Geral Integrada & Tabelas Profissionais (`Docs/SPEC-AULA-11-WORD.md`) |
+| `modules/word/index.html` + `Prova_Final_Windows 24_09_2026` | Avaliação formativa e somativa: 15 questões balanceadas cobrindo todo o currículo, nota mínima 7,0, persistência `QuizEngine.saveState/loadState`, botão recomeçar, breakdown detalhado e comprovante digital com Hash SHA-256. | **Prova Final**: Avaliação Prática & Teórica do Módulo Word (`Docs/SPEC-PROVA-FINAL-WORD.md`) |
+
+---
+
+### 2. Suíte de Documentação Entregue (13 Arquivos Criados)
+
+1. `Docs/SPEC-WORD-MASTER.md`: Arquitetura mestre do módulo, matriz de 11 aulas + prova, padrão de telas do portal, matriz de senhas (`wa001` a `wk011`), regras mobile globais (máximo 4px de padding lateral no mobile), requisitos de PDF (`pdf-lessons.js`) com `lessonNum` obrigatório e ilustrações HTML reais no `sec.html`.
+2. `Docs/SPEC-AULA-01-WORD.md`: Aula 01 (Interface, Guias, Atalhos PT-BR, Régua e Teclas Especiais).
+3. `Docs/SPEC-AULA-02-WORD.md`: Aula 02 (Normas ABNT, Margens 3-3-2-2, Parágrafos 1,5, Colunas e Capitular).
+4. `Docs/SPEC-AULA-03-WORD.md`: Aula 03 (4 Alinhamentos, Espaçamentos pt Antes/Depois, Recuo Deslocado e Marca d\x27Água).
+5. `Docs/SPEC-AULA-04-WORD.md`: Aula 04 (Bordas de Página Decorativas, Formas, Camadas e Cartazes em Paisagem).
+6. `Docs/SPEC-AULA-05-WORD.md`: Aula 05 (Galeria de Estilos, Modificação em Cascata e Pincel de Formatação).
+7. `Docs/SPEC-AULA-06-WORD.md`: Aula 06 (Tamanho A4, Quebra de Página vs Seção, Desvincular Cabeçalho e Papel Timbrado).
+8. `Docs/SPEC-AULA-07-WORD.md`: Aula 07 (Ortografia F7, Comentários, Controle de Alterações e Restringir Edição).
+9. `Docs/SPEC-AULA-08-WORD.md`: Aula 08 (Sumário Automático, Estilos Título 1/2, Atualização com F9 e Índice de Figuras).
+10. `Docs/SPEC-AULA-09-WORD.md`: Aula 09 (Listas Multinível Tab/Shift+Tab, Tabulação, Certificado e Projeto Ciclo Solar).
+11. `Docs/SPEC-AULA-10-WORD.md`: Aula 10 (Pesquisa Científica, Estrutura ABNT, Citações de Sites NBR 6023 e Anti-plágio).
+12. `Docs/SPEC-AULA-11-WORD.md`: Aula 11 (Tabelas Profissionais, Mesclagem, Sombreamento, Alinhamento Numérico e Mapa Geral).
+13. `Docs/SPEC-PROVA-FINAL-WORD.md`: Prova Final Oficial (15 questões calibradas, nota 0 a 10, aprovação 7,0, SHA-256 e Comprovante).
+
+---
+
+## ✅ SESSÃO ANTERIOR (21/10/2026) — Aula 09 do Windows: Prática – Organização e Configuração do Windows
+
+Implementada a **Aula 09** seguindo exatamente o padrão das Aulas 05/06. SDD criada em `Docs/SPEC-AULA-09-WINDOWS.md`, imagens copiadas para `assets/img/windows/Aula9/`.
+
+### 1. O que foi entregue
+
+| Peça | Onde |
+|:---|:---|
+| `screen-lesson-9` — **FASE 0** + fases 1–8 com checks distribuídos (`check-read-9-1..9`), abas `tab-btn-9-1..9` + `tab-btn-9-fix`, `fixation-panel-9`, `result-panel-9` | `modules/windows/index.html` |
+| Card "Aula 09" no hub → `active-lesson` com `badge-lesson-9` "🔒"/gamificação | idem |
+| `PASSWORD_A9="wr0926"`, rota `9:"screen-lesson-9"`, adicionado em `OPEN_LESSONS`, listeners e gate de senhas | idem |
+| `TOTAL_TOPICS[9]=9`, `SEQUENTIAL_LESSONS[9]=true`, `QUESTIONS_LESSON_9` (5×4), `QUIZ_CFG[9]` (`moduleId:"windows-aula-9"`, sig "Módulo 1 - Aula 9 (Windows)") com persistência `windows-aula-9:<nome>` (Regra 7) | idem |
+| `moduleLessonTitles.windows[9] = "Aula 09: Prática – Organização e Configuração do Windows"` | `assets/js/pdf-lessons.js` |
+| **9 seções `lessonNum: 9` (9.0–9.8)** com as **5 imagens reais** `image1.png`..`image5.png` e ilustrações HTML | `assets/js/pdf-lessons.js` |
+
+### 2. Validações executadas (21/10/2026)
+
+```bash
+node --check assets/js/pdf-lessons.js        # OK
+# script inline do modules/windows/index.html validado via Function() OK
+# servidor :8077 ativo
+/tmp/opencode/aula6test/validate2.mjs        # 22/22 passaram, 0 falharam
+/tmp/opencode/aula6test/validate_pdf.mjs     # 18/18 passaram, 0 falharam
+```
+
+- **Console limpo**, estrutura DOM/quiz/gating validados.
+- **Imagens Aula9**: 5/5 referenciadas.
+
+### 3. Pendente
+
+1. **Aprovação visual humana** (tela + PDF) — **Regra 12**.
+2. **Commit** (aguardando o professor). Arquivos: `modules/windows/index.html` (M), `assets/js/pdf-lessons.js` (M), `Docs/SPEC-AULA-09-WINDOWS.md` (novo), `assets/img/windows/Aula9/` (novo).
+
+---
+
+## ✅ SESSÃO ANTERIOR (21/10/2026) — Aula 06 do Windows: WordPad — Editor de Texto do Windows
+
+Implementada e **aprovada** a Aula 06. Validações 22/22 e 18/18. Atalhos padronizados em `Ctrl+B / Ctrl+I / Ctrl+U`. Imagens reais `Aula6/image1.png`..`image8.png`.
+
+---
+
+## ✅ SESSÃO ANTERIOR (15/10/2026) — Aula 05 do Windows: Área de Trabalho, Pastas e Arquivos (implementada do zero)
 
 Implementada a **Aula 05 do Windows** a partir do SDD `Docs/SPEC-AULA-05-WINDOWS.md` (escrito na mesma data e agora marcado 🟢 IMPLEMENTADA). Tela, hub, senha, quiz com persistência, leitura persistente, PDF com 9 seções e as 14 imagens reais, mobile.
 

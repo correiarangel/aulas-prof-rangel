@@ -15,10 +15,26 @@
 
 
 ### 📝 Módulo 2: Microsoft Word
-- [ ] **Material Didático Interativo por Aulas**: NÃO iniciado — atualmente contém apenas o simulado/prova de 10 questões
-- [x] Simulado/Prova de 10 Questões (nota mínima 7,0) com desbloqueio por checkbox de leitura do PDF
-- [x] Emissão de Comprovante TXT, PDF, WhatsApp e E-mail com SHA-256
-- [ ] Desenvolver o modelo de aulas didáticas interativas conforme o Master Lesson Blueprint
+- [x] **Especificação SDD Mestre**: Arquitetura do Módulo Word em 11 Aulas + Prova Final, Matriz de Senhas (`wa001`-`wk011`), Regras Mobile Globais (<=4px padding lateral) e Motor de PDF (`Docs/SPEC-WORD-MASTER.md`)
+- [x] **Especificações SDDs Completas das Aulas 01 a 11**:
+  - [x] Aula 01: Introdução ao Word & Digitação Eficiente (`Docs/SPEC-AULA-01-WORD.md`)
+  - [x] Aula 02: Normas ABNT & Formatação Básica de Trabalhos (`Docs/SPEC-AULA-02-WORD.md`)
+  - [x] Aula 03: Formatação Avançada de Parágrafos & Elementos Visuais (`Docs/SPEC-AULA-03-WORD.md`)
+  - [x] Aula 04: Bordas Decorativas, Formas & Quebra de Texto (`Docs/SPEC-AULA-04-WORD.md`)
+  - [x] Aula 05: Estilos Rápidos & Pincel de Formatação (`Docs/SPEC-AULA-05-WORD.md`)
+  - [x] Aula 06: Layout de Página, Quebras de Seção & Cabeçalhos (`Docs/SPEC-AULA-06-WORD.md`)
+  - [x] Aula 07: Revisão de Texto, Comentários & Colaboração (`Docs/SPEC-AULA-07-WORD.md`)
+  - [x] Aula 08: Sumário Automático & Índices de Ilustrações (`Docs/SPEC-AULA-08-WORD.md`)
+  - [x] Aula 09: Oficina de Listas Multinível, Tabulação & Certificados (`Docs/SPEC-AULA-09-WORD.md`)
+  - [x] Aula 10: Pesquisa Acadêmica, Estrutura ABNT & Citações (`Docs/SPEC-AULA-10-WORD.md`)
+  - [x] Aula 11: Revisão Geral Integrada & Tabelas Profissionais (`Docs/SPEC-AULA-11-WORD.md`)
+- [x] **Especificação da Avaliação Final**: Prova Final de 15 questões balanceadas, nota mínima 7,0, SHA-256 e Comprovante (`Docs/SPEC-PROVA-FINAL-WORD.md`)
+- [ ] **Implementação do Portal do Módulo Word**:
+  - [x] Aula 01: Introdução ao Word & Digitação Eficiente (Hub, FASE 0, 5 fases, simulador régua, atalhos PT-BR, quiz 5/5 e PDF com imagens reais)
+  - [x] Aula 02: Normas ABNT & Formatação Básica de Trabalhos (FASE 0, margens 3-3-2-2 com simulador, Arial/Times 12 e títulos 14, parágrafos 1,5 com 1,25 cm, quebra quadrado, 2 colunas e capitular, quiz 5/5 SHA-256 e PDF com seções dedicadas)
+  - [x] Aula 03: Formatação Avançada de Parágrafos & Elementos Visuais (FASE 0 com 5 chips, 4 alinhamentos com simulador ao vivo, espaçamento em pt 0/6/12/18, recuos primeira linha/deslocado/citação 4 cm, bordas e sombreamento, marca d'água, quiz 5/5 com persistência `word_lesson_3_quiz` e PDF com seções 3.0–3.5 ilustradas)
+  - [ ] Aulas 04 a 11 e Prova Final
+- [ ] **Apostila PDF do Módulo Word**: Portar seções para `assets/js/pdf-lessons.js` (Aulas 01, 02 e 03 já integradas com `lessonNum: 1, 2 e 3` e ilustrações HTML reais)
 
 ### 📝 Módulo 3: Microsoft Excel
 - [x] **Especificação SDD Mestre**: Arquitetura do Módulo Excel em 13 Aulas, Design Tokens Verde Excel, Matriz de Senhas (`xa001`-`xm013`) e Simulador Interativo (`Docs/SPEC-EXCEL-MASTER.md`)

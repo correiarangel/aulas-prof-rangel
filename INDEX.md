@@ -4,96 +4,16 @@
 ---
 
 ## 📅 Trabalho em Andamento & Último Status
-- **Data:** 06/09/2026
-- **Status:** Módulo 3 Microsoft Excel — Aulas 01 a 08 implementadas e validadas; **Aula 07 em implementação (Fase 3) — imagens corrigidas; requer ajuste do Pivot Lab e validação em navegador (retomada em outro momento)**; **Aula 08 implementada (Fase 3 concluída) e validada em Chrome headless (28/28 checks)**; Aulas 09-13 pendentes.
+- **Data:** 02/11/2026
+- **Status:** Módulo 2 Microsoft Word — Aulas 01, 02 e 03 implementadas. Especificação Mestre (`Docs/SPEC-WORD-MASTER.md`) + 11 SDDs das Aulas 01 a 11 (`Docs/SPEC-AULA-01-WORD.md` a `Docs/SPEC-AULA-11-WORD.md`) + Avaliação Final (`Docs/SPEC-PROVA-FINAL-WORD.md`) concluídos com sucesso. Aulas 01 e 02 validadas com testes automatizados CDP; Aula 03 validada por checagem estática (pendente bateria CDP). Módulo 3 Excel (Aulas 1-8 concluídas) e Módulo 1 Windows (Aulas 1-10 concluídas).
 - **Últimas Alterações:**
-  - **Implementação (Fase 3) da Aula 08 — concluída e validada** ([modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)): 9 tópicos (Tabela de Produtos; Tabela de Vendedores; Dados de Vendas com Validação de Dados; Estilos de Tabela + nome `TabelaVendas`; Colunas Calculadas Total/Comissão/Status; SOMASE + **Sales Lab 🖥️**; Classificar & Filtrar; Linha de Totais; Tabela Dinâmica), **5 imagens em `assets/img/excel/a8/`** (mapeamento posicional validado), card do hub `🔓 Aula Liberada (Senha xh008)`, **Simulador "Sales Lab"** (grade editável de 16 vendas com listas suspensas via tabelas de apoio, colunas calculadas, consulta `SOMASE` ao vivo, classificação decrescente, filtro Categoria/Total>500, Linha de Totais Soma/Contagem e Tabela Dinâmica com Segmentações — `SALES_DATA`, `renderSalesGrid()`, `updateSalesField()`, `applyVendedorFilter()`, `runSomaseQuery()`, `sortSalesDesc()`, `toggleTotalsRow()`, `renderSalesPivot()`, `initSalesLab()`; totais conferidos: Geral 25.285,00 / Qtd 51 / Comissão 1.264,25; por vendedor João 12.140, Ana 3.820, Maria 3.725, Pedro 5.600), **Quiz de 5 Questões com gabarito oficial `GABARITO_L8 = [0, 1, 2, 3, 0]`**, senha `xh008`, nota mínima 7,0 e Assinatura SHA-256.
-  - **Apostila PDF da Aula 08** ([assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)): 10 seções didáticas (8.1 Tabela de Produtos; 8.2 Tabela de Vendedores; 8.3 Dados de Vendas + Validação; 8.4 Estilos de Tabela + `TabelaVendas`; 8.5 Fórmulas Calculadas; 8.6 SOMASE; 8.7 Classificar & Filtrar; 8.8 Linha de Totais; 8.9 Tabela Dinâmica; 8.10 Exercício) · `moduleLessonTitles.excel[8]` adicionado.
-  - **Validação headless da Aula 08 (Chrome + playwright-core): 28/28 checks verdes** — desbloqueio por senha `xh008`, tópicos 1–9, gamificação 60%→100%, `SOMASE` B2→C2 (12.140/3.820/3.725/5.600), grade 16 linhas, Linha de Totais (25.285,00 / Contagem 16 / 1.264,25), classificação decrescente, filtro Móveis (4 linhas / soma 5.190), Tabela Dinâmica (Total Geral 25.285,00; vista Categoria; Segmentação Ana → 1.800,00) e quiz 10,0 + SHA-256. Único erro de console: favicon 404 (pré-existente).
-  - **Especificação SDD da Aula 08 (06/09/2026)** ([Docs/SPEC-EXCEL-AULA-08.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-08.md)): Controle de Vendas com a função **SOMASE** — 9 etapas (tabela de apoio de Produtos; tabela de apoio de Vendedores; Tabela de Dados de Vendas com Validação de Dados de listas suspensas via tabelas de apoio + lista fixa `Informática;Móveis`; Estilos de Tabela + nome `TabelaVendas`; colunas calculadas Total `=[@Quantidade]*[@[Vlr. Unit. (R$)]]`/Comissão 5%/Status `=SE()`; campo de consulta `=SOMASE(TabelaVendas[Vendedor];B2;TabelaVendas[Total])`; classificação e filtragem; Linha de Totais Soma/Contagem; Tabela Dinâmica por Vendedor e por Categoria/Produto com COLUNAS Vendedor + Segmentação de Dados), **5 imagens mapeadas por posição em `assets/img/excel/a8/`** (fonte sem `alt` — validar na Fase 3), **Simulador "Sales Lab"** e **Quiz de 5 Questões com gabarito `GABARITO_L8 = [0, 1, 2, 3, 0]`**, senha `xh008` — seguindo o pipeline SDD (Fase 0-2). **⚠️ Discrepância com o catálogo master**: o fonte cobre somente SOMASE; SOMASES/CONT.SE/CONT.SES/MÉDIASE registradas como extensão futura.
-  - **Correção do alinhamento de imagens da Aula 07 (06/09/2026)**: renomeação canônica (MD5) dos 16 PNGs descritivos de `assets/img/excel/a7/` para `image1..16.png` (remap verificado contra `AulaOrigem/.../images/`); fases 1–3 sem captura (ilustradas por réplicas HTML) e tópicos 4–9 com as 16 imagens na ordem correta em `modules/excel/index.html` e na apostila `assets/js/pdf-lessons.js`; `Docs/SPEC-EXCEL-AULA-07.md` (seção 4 + Anexo B com o mapeamento `imageN → legenda`) e teste de regressão `tests/validate_aula07_imagens.py` criado e verde.
-  - **Implementação (Fase 3, EM ANDAMENTO) da Aula 07** ([modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)): 9 tópicos (Planilha Base de 11 campos; Funções de Data DIA/MÊS/ANO; Validação de Dados Lista BOLETO/DÉBITO/PIX/TRANSFERÊNCIA; Criar Tabela Dinâmica; Selecionar Intervalo; Campos da Pivô; Ordenar Dados; Pivot Lab; Exercício Prático), **16 imagens em `assets/img/excel/a7/`**, **Simulador "Pivot Lab"** (checkboxes de campos Tipo/Grupo/Conta/Mês/Valor, filtro por Ano, ordenação decrescente e Estrutura de Tópicos +/− via `renderPivotTable()`, `applyPivotFilter()`, `sortPivotDesc()`, `togglePivotOutline()`), **Quiz de 5 Questões com gabarito oficial `GABARITO_L7 = [1, 2, 3, 0, 1]`**, senha `xg007`, nota mínima 7,0 e Assinatura Criptográfica SHA-256. **⚠️ PENDENTE DE VALIDAÇÃO** (Pivot Lab + navegador; imagens já corrigidas em 06/09 — ver "Próxima Tarefa" mais abaixo).
-  - **Apostila PDF da Aula 07** ([assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)): 9 seções didáticas (Planilha Base; Funções de Data; Validação de Dados; Criar Tabela Dinâmica; Selecionar Intervalo; Campos da Pivô; Ordenação Decrescente; Visualização/Filtros/Estrutura de Tópicos; Exercício Prático) · `moduleLessonTitles.excel[7]` adicionado.
-  - **Especificação SDD da Aula 07** ([Docs/SPEC-EXCEL-AULA-07.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-07.md)): Contas Pessoais & Tabela Dinâmica — 9 etapas (planilha base de lançamentos com 11 campos e funções HOJE/DIA/MÊS/ANO; Validação de Dados com lista BOLETO/DÉBITO/PIX/TRANSFERÊNCIA; renomeação das abas Lançamento/Análise; criação da Tabela Dinâmica em Inserir; seleção de intervalo; configuração de campos Tipo/Grupo/Conta/Valor/Mês em Linhas; ordenação decrescente; visualização/ocultação de Linhas e Grades + filtro por Ano; Estrutura de Tópicos +/−), **16 imagens em `assets/img/excel/a7/`**, **Simulador "Pivot Lab"** e **Quiz de 5 Questões com gabarito `GABARITO_L7 = [1, 2, 3, 0, 1]`**, senha `xg007` — seguindo o pipeline SDD (Fase 0-2).
-  - **Implementação (Fase 3) da Aula 06** ([modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)): 7 tópicos (HOJE; AGORA; DATA; DIA/MÊS/ANO; DIAS360; DIAS.ÚTEIS; Exercício Prático de Agenda de Contatos + Painel de Estatísticas + Alertas Automáticos + Prazo de Projeto), **Simulador "Date & Time Lab"** (grade editável de contatos João Silva/Maria Santos recalculando idade e dias sem contato ao vivo + painel `#dt-function-panel` com HOJE, AGORA, DATA, DIA/MÊS/ANO, comparativo DIAS360×DIAS.ÚTEIS e chips de alerta), **Quiz de 5 Questões com gabarito oficial `GABARITO_L6 = [1, 1, 2, 2, 1]`**, senha `xf006` e Assinatura Criptográfica SHA-256.
-  - **Apostila PDF da Aula 06** ([assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)): 7 seções didáticas (HOJE, AGORA, DATA, DIA/MÊS/ANO, DIAS360, DIAS.ÚTEIS, Exercício Prático de Agenda de Contatos) · `moduleLessonTitles.excel[6]` adicionado.
-  - **Apostila PDF da Aula 05** ([assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)): 7 seções didáticas com planilhas desenhadas em HTML estilo Excel (Tabela de Produtos, Metas Mensais, Frutas, Funcionários, Loja de Eletrônicos), gabarito das 5 tarefas e resumo das funções · `moduleLessonTitles.excel[5]` adicionado.
-  - **Implementação (Fase 3) da Aula 04** ([modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)): 7 tópicos (Revisão SE; SE+E; SE+OU; SE aninhado; NÃO; Logic Lab; Exercício Financeiro de Classificação de Clientes com Formatação Condicional `=$E2=`), **Simulador "Logic Lab"** (paleta editável de alunos + recálculo em tempo real SE/E/OU/SE aninhado + Modo NÃO de inversão lógica + mini-demo de Formatação Condicional verde/vermelho), **Quiz de 5 Questões com gabarito oficial `GABARITO_L4 = [0, 1, 1, 2, 0]`**, senha `xd004` e Assinatura Criptográfica SHA-256. Validado em Chrome headless (0 erros JS; quiz 5/5 → nota 10.0; SHA-256 emitido).
-  - **Apostila PDF da Aula 04** ([assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js)): 7 seções didáticas com planilhas desenhadas em HTML estilo Excel (Aprovação de Alunos, Nota+Frequência, Comparativo E×OU, Classificação de Notas, Reforço Escolar, Classificação de Clientes) e título de módulo atualizado.
-  - **Implementação da Aula 03** (Funções de Cálculo): 6 tópicos (SOMA, MÉDIA, MÁXIMO/MÍNIMO, CONT.VALORES/CONT.NÚM, Lab de Funções, 4 Exercícios Guiados), **Simulador Interativo "Function Lab"** (planilha de custos com valores editáveis que recalculam em tempo real + Modo Contadoras CONT.NÚM vs CONT.VALORES), **Quiz de 5 Questões com gabarito oficial `GABARITO_L3 = [1, 2, 1, 1, 0]`**, senha `xc003` e Assinatura Criptográfica SHA-256.
-  - **Refinamentos Aula 03**: correção de **contraste** do intro (texto `--ink-light` sobre fundo claro `--paper-beige` → `--ink-dark`); **planilhas desenhadas em HTML estilo Excel** (`.excel-sheet-preview`/`.mini-sheet`: título, colunas A–E, cabeçalho, 3+ linhas, linha de total) nos Tópicos 1 (SOMA), 2 (MÉDIA) e 3 (MÁXIMO/MÍNIMO) **no site e na apostila PDF**, espelhadas nos **4 Exercícios Guiados (3.6)**; nota `=MINIMOA(intervalo)` adicionada na 3.3 para Excel antigo. PDF renderizado e validado em Chrome headless (7 tabelas de planilha, 0 erros JS).
-  - **Reforço da Aula 01**: adicionado o **Tópico 7 "Introdução aos Operadores"** (`+ - * / %`) com tabela de operadores e **worksheet HTML estilo Excel** (letras de coluna A–E, cabeçalho, 5 linhas, total `=SOMA(E2:E6) → R$ 72,80`) + **Atividade Prática "Controle de Gastos Pessoais"** (aluno cria planilha real usando operadores básicos e `=SOMA()`); imagem PNG de operadores removida (tela e PDF); gamificação/guarda refatorada para dinâmica (7 tópicos Aula 1, 6 tópicos Aula 2); §1.2 imagem anatomia ampliada e §1.4 expandido (base sólida sobre tipos de dados e "número que não soma").
-  - **Reforço da Aula 02**: §2.2 com bloco "O que é uma FUNÇÃO?" e "Lista de Gatos" com `=SOMA(C2:C6)`; §2.6 com os 7 exercícios, cada um com **PNG da planilha resolvida + tabela HTML preenchida + passo a passo** (arquivos `aula2_ex1..ex7` gerados via PIL).
-  - **PDF atualizado** (`assets/js/pdf-lessons.js`): seções 1.7 (operadores → tabela estilo Excel + atividade de gastos, sem PNG ruim), 1.4, 2.2 e 2.6 com as novas imagens.
-  - Cumprimento estrito do pipeline de fases do `global-start-skill` (v6.0) — Fases 0-2 (Planejar→Validar→Especificar) e Fase 3 (Implementar) concluídas para a Aula 02.
-  - Centralização arquitetural em [SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md), SDD Mestre [SPEC-EXCEL-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-MASTER.md), SDD Aula 01 [SPEC-EXCEL-AULA-01.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-01.md), SDD Aula 02 [SPEC-EXCEL-AULA-02.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-02.md) e SDD Aula 03 [SPEC-EXCEL-AULA-03.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-03.md).
-  - Auditoria SDD realizada com sucesso (senhas `xa001`-`xm013`, quizzes com 5 questões e nota 7.0).
-  - **Implementação Completa da Aula 02** ([modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html)): 6 tópicos, **Simulador Interativo "Fórmula Builder"** (cálculo em tempo real dos 4 operadores + parser de fórmulas com referências relativas/absolutas `$A$1`, `SOMA`, `%` e `+ - * /`, divisão por zero, barra de fórmulas) e **Quiz de 5 Questões com gabarito oficial `GABARITO_L2 = [1, 2, 1, 1, 1]`**, senha `xb002` e Assinatura Criptográfica SHA-256.
-  - **Apostila PDF da Aula 02**: 6 seções didáticas adicionadas em [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js) com mapeamento de títulos de aulas agora module-aware (momento/bug do `lessonTitles` da Internet sobrescrever títulos do Excel corrigido).
-  - **Implementação Completa do Módulo Excel**: Aula 01 com 6 tópicos, Simulador Grid Inspector, integração visual com 6 imagens em `assets/img/excel/a1/` e quiz com SHA-256.
-- **Próxima Tarefa:** **Finalizar a Aula 07 em fase 3** (Contas Pessoais & Tabela Dinâmica — imagens já alinhadas/corrigidas):
-  1. **Corrigir o alinhamento de colunas do "Total Geral" no Pivot Lab** — `renderPivotTable()` emite 6 células quando o cabeçalho tem 5 (`assets/js` inline de `modules/excel/index.html`, seção Pivot Lab): o `colspan` da linha "Total Geral" é `N+1` mas deveria considerar também a coluna "Lançamentos" quando `showValor` está ativo.
-  2. **Revisar a semântica da linha de resumo** "Receitas vs Despesas" (posiciona 2 valores nas colunas "Total"/"Lançamentos" quando `showValor` ligado).
-  3. **Validar em navegador (Chrome headless)** o fluxo completo do quiz/A SHA-256 da Aula 07 (gabarito `GABARITO_L7 = [1, 2, 3, 0, 1]`, nota mínima 7,0), conforme padrão das aulas 01-06.
-  - Depois da validação da Aula 07: **Aulas 09 a 13 do Excel** (Aula 08 já implementada e validada — ver "Últimas Alterações" acima).
-- **🛑 Ponto de parada da sessão (06/09/2026):** Aula 08 do Excel **concluída e validada** (28/28 checks headless). Commits **não realizados** — o professor fará o commit manual das Aulas 07 e 08. Próxima sessão: ajustes pendentes da Aula 07 (Pivot Lab) → Aulas 09–13.
----
-
-### ✅ GRÁFICO REAL DO PROGRESSO DOS MÓDULOS
-| Módulo | Estado Real | Observação |
-|---|---|---|
-| **1. Windows** | 🟡 1 de 12 aulas | Aula 08 implementada; 11 aulas pendentes |
-| **2. Word** | 🔴 Não iniciado | Apenas simulado/prova de 10 questões (sem material didático por aulas) |
-| **3. Excel** | 🟡 Em progresso | Aulas 01 a 08 implementadas (Aula 01: 7 tópicos + operadores; Aula 02: SOMA e 7 planilhas; Aula 03: Funções de Cálculo + Function Lab; Aula 04: Funções Lógicas + Logic Lab; Aula 05: Funções de Pesquisa + Lookup Lab; Aula 06: Datas e Horas + Date & Time Lab; Aula 07: Contas Pessoais + Pivot Lab (PENDENTE ajuste/validação); Aula 08: Controle de Vendas + Sales Lab — concluída e validada); Aulas 09-13 pendentes |
-| **4. PowerPoint** | 🔴 Não iniciado | Apenas simulado/prova de 10 questões (sem material didático por aulas) |
-| **5. Internet** | 🟢 Completo | Aulas 01-03 + Prova Final + Certificado A4 Landscape |
+  - **Implementação da Aula 03 do Módulo 2 Word (02/11/2026)**: Tela `screen-lesson-3` com FASE 0 tutorial (5 passos/chips), 5 fases com checks distribuídos (`l3-check-1..5`), simulador ao vivo dos 4 alinhamentos (`l3SetAlign`), simulador de espaçamento em pontos 0/6/12/18 (`l3SetSpace`), recuos (primeira linha, deslocado/francês e citação longa ABNT a 4 cm), bordas e sombreamento, marca d'água, exercício de fixação com 5 questões e persistência `word_lesson_3_quiz` (senha `wc003`, gabarito `[2, 0, 1, 3, 2]`) e apostila PDF com seções 3.0–3.5 ilustradas por HTML real. Validação estática: `node --check` e script inline OK; pendente bateria CDP em navegador.
+  - **Implementação da Aula 02 do Módulo 2 Word (29/10/2026)**: Tela completa `screen-lesson-2` com FASE 0 tutorial (5 passos e chips), 5 fases didáticas com checks distribuídos (`l2-check-1..5`), simulador de folha ABNT 3-3-2-2 cm com cotas visuais, regras de tipografia (Arial/Times 12 e títulos 14 negrito), parágrafo ABNT (justificado, entrelinhas 1,5 e recuo 1,25 cm), quebra de imagens em "Quadrado", texto em 2 colunas com letra capitular, exercício de fixação com 5 questões, persistência `QuizEngine.saveState/loadState`, comprovante digital com Hash SHA-256 e apostila PDF gerada com seções dedicadas e ilustrações HTML reais no `pdf-lessons.js`. Validado com 34 testes automatizados via CDP (zero falhas).
+  - **Implementação da Aula 01 do Módulo 2 Word (29/10/2026)**: Hub do módulo, modal de senha, tela `screen-lesson-1`, simulador de régua horizontal, atalhos PT-BR, comando `=rand()`, redesign moderno de tabelas com cards e pills, fixação com 5 questões e apostila PDF com 13 imagens reais. Validado com 41 testes automatizados via CDP (zero falhas).
+  - **Especificações SDDs do Módulo 2 Word concluídas (29/10/2026)**: Leitura profunda de todo o acervo original em `AulaOrigem/word/`, cruzamento pedagógico com as normas obrigatórias de `AGENTS.md` (FASE 0 tutorial com roteiro passo a passo, checks distribuídos no fim de cada fase, regras mobile globais de largura máxima com <=4px de padding lateral, persistência real de quiz com `QuizEngine.saveState/loadState`, "↺ Recomeçar o exercício", ilustrações HTML reais no `sec.html` e campos `lessonNum` estritos para PDF).
+  - **Arquivos criados na suíte de documentação do Word**:
+    1. `Docs/SPEC-WORD-MASTER.md`: Arquitetura mestre, 11 aulas, matriz de senhas (`wa001` a `wk011`), regras do portal e PDF.
+    2. `Docs/SPEC-AULA-01-WORD.md` a `Docs/SPEC-AULA-11-WORD.md`: Especificações individuais detalhadas de cada aula com roteiros, simuladores e quizzes de fixação.
+    3. `Docs/SPEC-PROVA-FINAL-WORD.md`: Especificação da Prova Final com 15 questões balanceadas, aprovação >= 7,0, SHA-256 e emissão de comprovante.
 
 
-
-
-
----
-
-## 📁 Mapeamento da Estrutura de Arquivos
-
-```text
-/home/rangel/git-dev/aulas/
-├── index.html                    # Portal Principal (Hub Geral)
-├── README.md                     # Visão geral do repositório
-├── ROADMAP.md                    # Roadmap de progresso e funcionalidades
-├── INDEX.md                      # Índice e estado atual do projeto
-├── DOCUMENTATION.md              # Documentação técnica e Cronologia SDD
-├── assets/
-│   ├── css/
-│   │   └── style.css             # Estilos visuais e tokens de design
-│   ├── js/
-│   │   ├── pdf-lessons.js        # Motor de geração de PDF didático
-│   │   └── quiz-engine.js        # Motor de provas, persistência e SHA-256
-│   └── img/                      # Ativos visuais e ilustrações
-└── modules/
-    ├── windows/                  # Módulo 1: Windows
-    ├── word/                     # Módulo 2: Microsoft Word
-    ├── excel/                    # Módulo 3: Microsoft Excel
-    ├── powerpoint/               # Módulo 4: Microsoft PowerPoint
-    └── internet/                 # Módulo 5: Internet & Segurança
-        ├── index.html            # Hub do Módulo 5 + Aulas 1, 2 e 3
-        └── prova-internet.html   # Aula 04: Avaliação Final do Módulo Internet & Segurança
-```
-
----
-
-## 🛠️ Últimos Arquivos Trabalhados
-- [modules/excel/index.html](file:///home/rangel/git-dev/aulas/modules/excel/index.html) (Aula 01 → 7 tópicos + operadores; Aula 02 → FUNÇÃO SOMA + 7 planilhas; Aula 03 → Funções de Cálculo + Function Lab)
-- [assets/js/pdf-lessons.js](file:///home/rangel/git-dev/aulas/assets/js/pdf-lessons.js) (seções 1.7, 1.4, 2.2, 2.6 e Aula 03 com as seções de funções de cálculo)
-- [assets/img/excel/a2/](file:///home/rangel/git-dev/aulas/assets/img/excel/a2/) (9 PNGs de planilhas)
-- [Docs/SPEC-PROJECT-ARCHITECTURE.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-PROJECT-ARCHITECTURE.md)
-- [Docs/SPEC-EXCEL-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-MASTER.md)
-- [Docs/SPEC-EXCEL-AULA-01.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-01.md)
-- [Docs/SPEC-EXCEL-AULA-02.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-02.md)
-- [Docs/SPEC-EXCEL-AULA-03.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-03.md)
-- [Docs/SPEC-EXCEL-AULA-04.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-04.md)
-- [Docs/SPEC-EXCEL-AULA-07.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-07.md) (Contas Pessoais & Tabela Dinâmica)
-- [Docs/SPEC-EXCEL-AULA-08.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-AULA-08.md) (Controle de Vendas com a função SOMASE)
-- [ROADMAP.md](file:///home/rangel/git-dev/aulas/ROADMAP.md)
-- [INDEX.md](file:///home/rangel/git-dev/aulas/INDEX.md)
-- [DOCUMENTATION.md](file:///home/rangel/git-dev/aulas/DOCUMENTATION.md)
