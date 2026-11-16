@@ -36,7 +36,39 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL (03/11/2026) — Módulo 2: Microsoft Word — Aula 05 (Estilos Rápidos & Pincel de Formatação)
+## ✅ SESSÃO ATUAL (16/11/2026) — Módulo 2: Microsoft Word — Aula 06 (Layout de Página, Quebras de Seção & Cabeçalhos)
+
+Implementação completa da **Aula 06 do Módulo 2: Microsoft Word** (spec `Docs/SPEC-AULA-06-WORD.md`, status 🟢), desbloqueio no Hub com senha `wf006`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l6-check-1..5`), 3 simuladores ao vivo, exercício de fixação com 5 questões e apostila PDF com seções 6.0–6.5 e ilustrações HTML reais (material de origem **sem imagens** — 0 referências `src=`).
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Commit prévio** | `fd0893d` | Commit geral do trabalho pendente (50 arquivos: docs, specs e imagens) antes de iniciar a Aula 6. |
+| **Desbloqueio no Hub** | `modules/word/index.html` | Card Aula 06 com `active-lesson` + badge `🔓 Aula Liberada (Senha wf006)`; `promptLessonPassword` aceita aula 6; rota `6: "screen-lesson-6"`. |
+| **Tela da Aula 06** | `#screen-lesson-6` | Botões de topo, barra gamificada (`gamify-percent-6/-bar-6/-badge-box-6`), abas `tab-btn-6-1..5` + `tab-btn-6-fix`. |
+| **FASE 0 Tutorial** | `#l6-fase-0` | Objetivo, roteiro numerado (5 chips), faixa de preparação, contador `#l6-checklist-status`, hint de conclusão e `#btn-start-l6`. |
+| **Fases 1–5** | `#l6-phase-1..5` | 1. Papel A4 & Margens; 2. Quebra de Página (Ctrl+Enter); 3. Quebra de Seção; 4. Vincular ao Anterior; 5. Numeração ABNT & Timbrado. Cada fase termina com `#l6-check-N` + `#check-read-6-N`. |
+| **CSS dos simuladores** | bloco inline `<style>` | `.l6-sheet` (folha A4/paisagem), `.l6-arrow-break`, `.l6-enter-key` + media query 640px. |
+| **Simuladores** | `window.l6ShowPageBreak`, `l6SetSection`, `l6ToggleLink` (+ helper `ativarL6`) | Quebra de página (15 Enters vs Ctrl+Enter), tipos de quebra (página/seção próxima/seção contínua), desvinculação de cabeçalho da Seção 2. |
+| **Exercício de Fixação** | `QUESTIONS_LESSON_6` + `QUIZ_CFG[6]` | 5 questões, gabarito `[1,1,1,1,1]`, `moduleId: "word_lesson_6_quiz"`, persistência real e "↺ Recomeçar o exercício". |
+| **Roteamento e progresso** | `modules/word/index.html` | `TOTAL_TOPICS`/`SEQUENTIAL_LESSONS` com `6: 5/true`; loops de inicialização e vinculação de comprovantes em `[1,2,3,4,5,6]`. |
+| **Apostila PDF** | `assets/js/pdf-lessons.js` → `LESSONS.word.sections` | Seções **6.0 a 6.5** com `lessonNum: 6`, `html` ilustrado (`.es-sheet-box`, `.mini-sheet`, `.fun-highlight`, diagrama de seções e papel timbrado). |
+
+### 2. Validações Executadas (16/11/2026)
+
+- `node --check assets/js/pdf-lessons.js`: **OK**. Script inline de `modules/word/index.html` extraído e validado: **OK**.
+- Verificação estrutural: FASE 0, fases 1–5, checks 1–5, botões de leitura, abas, painéis de fixação/resultado, gamify, simuladores, rotas e loops — **todos presentes, sem IDs duplicados; tags balanceadas (section 6/6, div 124/124, table 2/2)**; 0 placeholders de imagem.
+- Verificação dos dados do PDF (`/tmp/opencode/check-pdf6.js`): 36 seções word, **6 da Aula 06 com `html` não vazio**, **0 seções órfãs**, título `moduleLessonTitles.word[6]` correto.
+- Revisão de fatos (Regra 12): A4 = 21,0 × 29,7 cm ✅; Carta ≈ 21,6 × 27,9 cm ✅; margem Normal 2,5 cm ✅; ABNT 3-3-2-2 ✅; Ctrl+Enter ✅. Corrigido: barra de status mostra "Seção: 2" (não "2/3") — tela e PDF.
+- Grep de artefatos (`JSTOR`, `será anunciado`, datas vencidas): limpo.
+
+### 3. Pendências da sessão (carregam para a próxima)
+
+- **Teste em navegador (CDP) da Aula 06**: modal `wf006`, cadeia de checks 0→100%, simuladores l6*, quiz 5/5 e PDF 6 (bateria estilo `/tmp/opencode/pdftest/`). Não executada nesta sessão.
+- Pendências pré-existentes seguem abertas: cards 09–12 do Excel com badge de desbloqueio errado; Prova Final do Word com 10 questões vs 15 na spec.
+
+## 📅 SESSÃO ANTERIOR (03/11/2026) — Módulo 2: Microsoft Word — Aula 05 (Estilos Rápidos & Pincel de Formatação)
 
 Implementação completa da **Aula 05 do Módulo 2: Microsoft Word**, desbloqueio no Hub com senha `we005`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l5-check-1..5`), nove simuladores ao vivo, exercício de fixação com 5 questões e apostila PDF com seções 5.0–5.5 e ilustrações HTML reais.
 

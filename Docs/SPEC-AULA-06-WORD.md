@@ -1,6 +1,6 @@
 # 📘 SPEC-AULA-06-WORD — Especificação Técnica e Pedagógica da Aula 06 (Word)
 ### Módulo 2: Microsoft Word | Prof. Marcos Rangel — WR Capacitação Profissional
-### Status: 📝 ESPECIFICADA E PRONTA PARA IMPLEMENTAÇÃO
+### Status: 🟢 IMPLEMENTADA (tela, JS, simuladores, PDF e quiz persistente)
 
 ---
 

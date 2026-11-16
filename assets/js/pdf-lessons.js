@@ -3822,6 +3822,145 @@ Diferença importante: limpar formatação não é o mesmo que colar sem formata
     <tr><td><strong>Limpeza</strong></td><td>Textos colados da web foram higienizados</td></tr>
   </table>
 </div>`
+        },
+        {
+          lessonNum: 6,
+          chapter: "AULA 06: LAYOUT DE PÁGINA, QUEBRAS DE SEÇÃO & CABEÇALHOS",
+          heading: "6.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Dominar a engenharia estrutural do documento Word: configurar o papel A4, entender a diferença vital entre quebra de página e quebra de seção, desvincular cabeçalhos para trabalhos ABNT e criar numeração de páginas que só aparece a partir da introdução.
+
+COMO VAMOS FAZER (os 5 passos):
+1. Padronizar o tamanho de papel oficial para A4 (21 x 29,7 cm).
+2. Aplicar a Quebra de Página com o atalho Ctrl + Enter.
+3. Inserir Quebra de Seção (Próxima Página) para alternar orientações.
+4. Desvincular Cabeçalhos e Rodapés com o botão "Vincular ao Anterior".
+5. Configurar numeração ABNT iniciando a partir da introdução.
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Abra o Microsoft Word e salve um documento em branco como Layout_Aula06.docx.
+• Digite dois títulos curtos (ex.: CAPÍTULO 1 e CAPÍTULO 2) e alguns parágrafos para teste.
+• Confira se a guia Layout da Página (2010/2013) ou Layout (2016 em diante) está visível — é a mesma guia, com o mesmo conteúdo.
+
+O MAPA RÁPIDO DAS CONFIGURAÇÕES:
+• Margens → Layout da Página > Margens.
+• Orientação → Layout da Página > Orientação.
+• Tamanho do papel → Layout da Página > Tamanho.
+• Quebras → Layout da Página > Quebras.
+• Número de página → Inserir > Número de Página.
+• Cabeçalho e rodapé → Inserir > Cabeçalho / Rodapé.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🗺️ Mapa rápido — onde está cada configuração</div><table class="mini-sheet"><tr><th>Configuração</th><th>Guia</th><th>Botão</th></tr><tr><td><strong>Margens</strong></td><td>Layout da Página</td><td>Margens</td></tr><tr><td><strong>Orientação</strong></td><td>Layout da Página</td><td>Orientação</td></tr><tr><td><strong>Tamanho do papel</strong></td><td>Layout da Página</td><td>Tamanho</td></tr><tr><td><strong>Quebras</strong></td><td>Layout da Página</td><td>Quebras</td></tr><tr><td><strong>Número de página</strong></td><td>Inserir</td><td>Número de Página</td></tr><tr><td><strong>Cabeçalho e rodapé</strong></td><td>Inserir</td><td>Cabeçalho / Rodapé</td></tr></table></div><div class="fun-highlight"><strong>Nota de versão:</strong> no Word 2010 e 2013 a guia se chama <strong>Layout da Página</strong>; em 2016 em diante, apenas <strong>Layout</strong>. É a mesma guia, com o mesmo conteúdo.</div>`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.1 O Padrão do Papel A4 e as Margens do Documento",
+          content: `O documento precisa ter o MESMO tamanho do papel que está na impressora — senão a impressão sai cortada ou deslocada. No Brasil, o padrão oficial para documentos formais e trabalhos acadêmicos é o A4 (norma internacional ISO 216), com medidas exatas de 21,0 cm de largura por 29,7 cm de altura.
+
+O PERIGO DO FORMATO CARTA (LETTER): padrão norte-americano. Muitas impressoras vêm de fábrica configuradas para Carta, e o Word pode herdar essa configuração. Quando um documento em Carta é impresso em folha A4, o resultado é texto cortado na base da página ou margens deslocadas.
+
+MARGENS — O ESPAÇO EM BRANCO ENTRE O TEXTO E AS BORDAS DA FOLHA:
+• Normal: margens iguais de 2,5 cm em todos os lados.
+• Estreita, Moderada e Larga: combinações fixas para usos específicos.
+• Margens Personalizadas: você digita o valor de cada lado (superior, inferior, esquerda e direita) e confirma em OK — é aqui que entram as medidas ABNT 3-3-2-2.
+
+DICA FINAL — VISUALIZAÇÃO DE IMPRESSÃO: antes de imprimir, use Arquivo > Imprimir. À direita aparece a visualização da impressão: confira margens, orientação e numeração ANTES de gastar papel.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">📐 Comparação dos formatos de papel</div><table class="mini-sheet"><tr><th>Formato</th><th>Origem</th><th>Medidas</th><th>Uso no Brasil</th></tr><tr><td><strong>A4</strong></td><td>Norma ISO 216</td><td>21,0 x 29,7 cm</td><td>✅ Padrão oficial — trabalhos e documentos formais</td></tr><tr><td><strong>Carta (Letter)</strong></td><td>Padrão norte-americano</td><td>21,6 x 27,9 cm</td><td>⚠️ Configuração de fábrica de muitas impressoras — causa texto cortado</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">⚙️ Botão Margens — modelos prontos</div><table class="mini-sheet"><tr><th>Modelo</th><th>Como funciona</th></tr><tr><td><strong>Normal</strong></td><td>2,5 cm em todos os lados</td></tr><tr><td><strong>Estreita / Moderada / Larga</strong></td><td>Combinações fixas pré-definidas</td></tr><tr><td><strong>Margens Personalizadas</strong></td><td>Você digita cada lado e confirma em OK — aqui entram as medidas ABNT 3-3-2-2</td></tr></table></div>`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.2 Quebra de Página (Ctrl + Enter) vs Múltiplos Enters",
+          content: `O ERRO DE QUEM NÃO FEZ O CURSO: terminar um capítulo e pressionar Enter 15 vezes até o texto pular para a folha seguinte. Funciona... até que uma linha seja adicionada lá em cima — quando isso acontece, todo o resto do trabalho desce e fica desalinhado, capítulo por capítulo, página por página.
+
+A REGRA DE OURO: sempre que terminar um capítulo, pressione Ctrl + Enter. O Word insere uma Quebra de Página INVISÍVEL, e o próximo título começa sempre no topo da folha seguinte, independentemente do que você adicionar antes.
+
+COMO INSERIR:
+1. Posicione o cursor exatamente onde o capítulo atual termina.
+2. Pressione Ctrl + Enter — ou, pela guia, Layout da Página > Quebras > Página.
+3. Para ver onde estão as quebras, ative o botão ¶ (Mostrar Tudo) na guia Página Inicial — a linha "Quebra de Página" aparece marcada no texto.
+
+POR QUE A QUEBRA INVISÍVEL É PROFISSIONAL: a Quebra de Página é um marcador de posição — ela diz ao Word "o próximo título pertence à próxima folha, sempre". Acrescentar um parágrafo na introdução? O Capítulo 2 continua no topo da sua folha. Excluir uma figura? Nada se desalinha.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">❌ vs ✅ — Os dois métodos de pular de página</div><table class="mini-sheet"><tr><th>Método</th><th>O que acontece</th><th>Resultado</th></tr><tr><td><strong>15 Enters (❌)</strong></td><td>O título é "empurrado" para o meio da folha seguinte</td><td>Qualquer linha adicionada em cima desalinha o trabalho inteiro</td></tr><tr><td><strong>Ctrl + Enter (✅)</strong></td><td>O Word insere uma quebra de página invisível</td><td>O capítulo sempre começa no topo da folha — nada o desloca</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">⌨️ O atalho da quebra de página</div><table class="mini-sheet"><tr><th style="width:45%;">Teclas</th><th>Efeito</th></tr><tr><td style="text-align:center;"><strong>Ctrl + Enter</strong></td><td>O texto seguinte começa imediatamente na nova folha, e a quebra permanece fixa mesmo que o conteúdo anterior cresça</td></tr></table></div><div class="fun-highlight"><strong>Modo investigação:</strong> ative o botão <strong>¶ (Mostrar Tudo)</strong> na guia Página Inicial para enxergar as quebras de página escondidas no texto — e os Enters desnecessários que devem ser apagados.</div>`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.3 Quebra de Seção — A Fronteira Entre Ambientes Diferentes",
+          content: `Quando a Quebra de Página não resolve: se você quiser colocar a página 4 DEITADA (Paisagem) para caber uma tabela grande, enquanto as páginas 1 a 3 continuam EM PÉ (Retrato), a quebra de página não serve — ela apenas empurra o cursor. Para isso existe a Quebra de Seção: uma barreira de isolamento arquitetural dentro do mesmo arquivo.
+
+PASSO A PASSO — PÁGINA 4 DEITADA COM TABELA GRANDE:
+1. Posicione o cursor no fim da página 3.
+2. Layout da Página > Quebras > Quebra de Seção: Próxima Página.
+3. Com o cursor já na página 4, abra Orientação e clique em Paisagem.
+4. Insira a tabela grande — as páginas 1 a 3 continuam intactas em Retrato!
+5. Para voltar ao retrato, insira outra Quebra de Seção (Próxima Página) no fim da página 4.
+
+OS 4 TIPOS DE QUEBRA (Layout da Página > Quebras):
+• Página: o texto seguinte começa numa nova página, sem mudar nada (capítulos).
+• Seção — Próxima Página: nova seção, em nova página, com configuração própria (alternar retrato/paisagem ou margens).
+• Seção — Contínua: nova seção na mesma página (intercalar trechos de 1 coluna com 2 ou 3 colunas).
+• Seção — Página par/ímpar: nova seção na próxima página par ou ímpar (montagem de livros).
+
+COMO SABER ONDE ESTÃO AS SEÇÕES: com o botão ¶ (Mostrar Tudo) ativo, o Word exibe a linha "Quebra de Seção (Próxima Página)" no ponto exato da divisão. A barra de status mostra em qual seção o cursor está (ex.: Seção: 2).`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🧱 Diagrama — orientação mista com Quebras de Seção</div>
+<div style="display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap;">
+  <div style="border:1.5px solid #1D4ED8; border-radius:4px; padding:10px 14px; background:#EFF6FF; text-align:center;"><div style="font-weight:800; color:#1D4ED8; font-size:11px;">SEÇÃO 1</div><div style="font-size:10px; color:#1E3A8A;">Retrato<br>Págs. 1 a 3<br>Margens ABNT</div></div>
+  <div style="font-weight:800; color:#92400E; font-size:10px; background:#FFFBEB; border:1.5px dashed #FCD34D; border-radius:6px; padding:6px;">🧱 Quebra de Seção<br>(Próxima Página)</div>
+  <div style="border:1.5px solid #B45309; border-radius:4px; padding:10px 14px; background:#FFFBEB; text-align:center;"><div style="font-weight:800; color:#B45309; font-size:11px;">SEÇÃO 2</div><div style="font-size:10px; color:#92400E;">Paisagem<br>Pág. 4<br>Tabela grande</div></div>
+  <div style="font-weight:800; color:#92400E; font-size:10px; background:#FFFBEB; border:1.5px dashed #FCD34D; border-radius:6px; padding:6px;">🧱 Quebra de Seção<br>(Próxima Página)</div>
+  <div style="border:1.5px solid #1D4ED8; border-radius:4px; padding:10px 14px; background:#EFF6FF; text-align:center;"><div style="font-weight:800; color:#1D4ED8; font-size:11px;">SEÇÃO 3</div><div style="font-size:10px; color:#1E3A8A;">Retrato<br>Págs. 5+<br>Continuação</div></div>
+</div>
+<div style="margin-top:8px; font-size:10.5px; color:#64748B; text-align:center;">Cada seção tem orientação, margens e cabeçalhos próprios — dentro do MESMO arquivo.</div>
+</div><div class="es-sheet-box"><div class="es-sheet-titlebar">🧭 Qual quebra usar em cada situação</div><table class="mini-sheet"><tr><th>Quebra</th><th>O que faz</th><th>Quando usar</th></tr><tr><td><strong>Página</strong></td><td>Pula de folha, sem mudar nada</td><td>Iniciar capítulos e tópicos</td></tr><tr><td><strong>Seção — Próxima Página</strong></td><td>Nova página com configuração própria</td><td>Alternar retrato/paisagem ou margens</td></tr><tr><td><strong>Seção — Contínua</strong></td><td>Nova seção na mesma página</td><td>Intercalar colunas (1 × 2 × 3)</td></tr><tr><td><strong>Seção — Página par/ímpar</strong></td><td>Nova seção na página par ou ímpar</td><td>Montagem de livros</td></tr></table></div>`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.4 Desvinculação de Cabeçalhos e Rodapés para Trabalhos ABNT",
+          content: `CABEÇALHO E RODAPÉ: as faixas no topo e no pé de cada página que repetem o mesmo conteúdo automaticamente (título do trabalho, nome da empresa, data, número de página). Você digita uma vez e o Word replica em todas as folhas. Para editar: duplo clique rápido na margem do topo (ou do pé) da folha — abre a guia contextual Ferramentas de Cabeçalho e Rodapé > Design.
+
+O BOTÃO DECISIVO — "VINCULAR AO ANTERIOR": por padrão, o Word repete o cabeçalho em todas as seções. Para criar seções com cabeçalhos diferentes: navegue até a Seção 2 e localize o botão Vincular ao Anterior (ele vem selecionado em destaque). Clique nele para desativar a seleção — o vínculo é quebrado e o cabeçalho da Seção 2 torna-se 100% independente. Faça o mesmo para o rodapé, se precisar: o vínculo do rodapé é independente do do cabeçalho.
+
+O SEGREDO DA CAPA — "PRIMEIRA PÁGINA DIFERENTE": marque essa opção na guia Design. A capa fica limpa — sem cabeçalho e sem número de página — enquanto as demais folhas mantêm tudo. É a combinação mais usada em trabalhos ABNT.
+
+ERRO CLÁSSICO: você edita o cabeçalho da página 1 e descobre que todas as páginas mudaram junto. Isso é o vínculo padrão em ação: sem quebra de seção, existe um único cabeçalho para o documento inteiro. Para cabeçalhos diferentes, primeiro crie a quebra de seção e depois desvincule.
+
+NUMERAÇÃO ABNT: a contagem de páginas começa na folha de rosto, mas o número só aparece impresso a partir da primeira página textual (Introdução). Resolva com Quebra de Seção + Desvincular Cabeçalho:
+1. Quebra de Seção (Próxima Página) entre a rosto/sumário e a Introdução.
+2. Com o cursor na seção da Introdução: Inserir > Número de Página > Início da Página > alinhamento à direita.
+3. Desvincule o cabeçalho/rodapé dessa seção.
+4. Em Formatar Números de Página...: continuar da seção anterior (ex.: "5") ou iniciar em 1.
+5. Fechar Cabeçalho e Rodapé.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🔗 Fluxo do botão "Vincular ao Anterior"</div><table class="mini-sheet"><tr><th>Passo</th><th>Ação</th><th>Resultado</th></tr><tr><td>1</td><td>Duplo clique no cabeçalho da Seção 2</td><td>Abre Ferramentas de Cabeçalho e Rodapé > Design</td></tr><tr><td>2</td><td>Clicar em <strong>Vincular ao Anterior</strong> (desativar)</td><td>Vínculo quebrado — a Seção 2 fica 100% independente</td></tr><tr><td>3</td><td>Digitar o novo cabeçalho</td><td>Seção 1 mantém o texto original, Seção 2 exibe o novo</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">📄 Numeração ABNT — conta, mas não mostra</div><table class="mini-sheet"><tr><th>Parte do trabalho</th><th>Conta?</th><th>Mostra o número?</th></tr><tr><td>Folha de rosto e sumário</td><td>✅ Sim</td><td>❌ Não (Primeira Página Diferente + desvinculado)</td></tr><tr><td>Introdução em diante</td><td>✅ Sim</td><td>✅ Sim — Início da Página, à direita</td></tr></table></div>`
+        },
+        {
+          lessonNum: 6,
+          heading: "6.5 Montagem Prática de Papel Timbrado Corporativo",
+          content: `O PAPEL TIMBRADO é o documento modelo com a identidade visual da empresa, criado com as ferramentas desta aula:
+
+• CABEÇALHO: insira a logomarca (Inserir > Imagem) no canto esquerdo ou direito, e o nome/slogan da empresa ao lado.
+• RODAPÉ: digite CNPJ, endereço e telefone de contato, centralizados.
+• NEGRITO nos textos do cabeçalho e do rodapé para destacar.
+• EXTRAS (opcional): Bordas de Página (Layout da Página/Design > Bordas de Página) e Marca D'água com o nome da empresa.
+• Ao fechar o cabeçalho, os dados ficam ESMACECIDOS E PROTEGIDOS — aparecem automaticamente em todas as páginas timbradas.
+
+OFICINA PRÁTICA — O RELATÓRIO COM PÁGINA DEITADA: junte tudo o que aprendeu — relatório em A4 retrato com cabeçalho e numeração no rodapé, uma tabela de vendas grande numa página paisagem no meio do documento (Quebra de Seção + Orientação) e capa limpa (Primeira Página Diferente). Salve como PDF em Arquivo > Imprimir > Microsoft Print to PDF e confira a visualização antes de entregar.
+
+✅ CHECKLIST DE AUDITORIA DA AULA 06 — antes de enviar o documento:
+• Papel: tamanho A4 (21 x 29,7 cm) confirmado em Layout da Página > Tamanho.
+• Quebras de página: capítulos iniciam com Ctrl + Enter, sem Enters repetidos.
+• Orientação mista: páginas deitadas isoladas por Quebras de Seção.
+• Cabeçalhos: vínculos desfeitos onde o texto precisa ser diferente.
+• Numeração: aparece só a partir da Introdução, no alinhamento ABNT.
+• Visualização: conferida em Arquivo > Imprimir antes de gastar papel.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🏢 Diagrama — a página timbrada da empresa</div>
+<div style="border:1.5px solid #94A3B8; border-radius:6px; overflow:hidden;">
+  <div style="background:#EFF6FF; border-bottom:1px dashed #94A3B8; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+    <div style="font-weight:800; color:#1D4ED8; font-size:11px;">[ LOGOMARCA ]</div>
+    <div style="font-size:10.5px; color:#1E3A8A; text-align:center; flex:1;"><strong>WR Capacitação Profissional</strong><br><span style="font-size:9px;">Capacitação que transforma vidas</span></div>
+    <div style="font-weight:700; color:#1D4ED8; font-size:10px;">⬅ Cabeçalho (repete em todas)</div>
+  </div>
+  <div style="padding:14px 12px; font-size:10.5px; color:#334155; line-height:1.7;">Área de texto do documento — cartas, orçamentos e relatórios saem com a identidade da empresa automaticamente.</div>
+  <div style="background:#F8FAFC; border-top:1px dashed #94A3B8; padding:8px 12px; font-size:9.5px; color:#475569; text-align:center;">CNPJ 00.000.000/0001-00 • Rua das Flores, 123 — Centro • (11) 90000-0000 ⬅ Rodapé (repete em todas)</div>
+</div>
+</div><div class="es-sheet-box"><div class="es-sheet-titlebar">✅ Checklist de Auditoria da Aula 06</div><table class="mini-sheet"><tr><th>Item</th><th>O que conferir</th></tr><tr><td><strong>Papel</strong></td><td>Tamanho A4 (21 x 29,7 cm) confirmado</td></tr><tr><td><strong>Quebras de página</strong></td><td>Capítulos com Ctrl + Enter, sem Enters repetidos</td></tr><tr><td><strong>Orientação mista</strong></td><td>Páginas deitadas isoladas por Quebras de Seção</td></tr><tr><td><strong>Cabeçalhos</strong></td><td>Vínculos desfeitos onde o texto muda</td></tr><tr><td><strong>Numeração</strong></td><td>Imprime só a partir da Introdução (ABNT)</td></tr><tr><td><strong>Visualização</strong></td><td>Conferida em Arquivo > Imprimir antes de imprimir</td></tr></table></div>`
         }
       ]
     },

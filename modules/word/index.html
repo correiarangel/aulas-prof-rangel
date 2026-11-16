@@ -1126,6 +1126,107 @@
       .l5-preview-text.is-h1 { font-size: 19px; }
       .l5-preview-text.is-h2 { font-size: 16px; }
     }
+
+    /* ============================================================
+       AULA 06 — LAYOUT DE PÁGINA, QUEBRAS DE SEÇÃO E CABEÇALHOS
+       ============================================================ */
+    .l6-page-sim {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .l6-sheet {
+      position: relative;
+      width: 168px;
+      min-height: 232px;
+      background: #FFFFFF;
+      border: 1.5px solid #94A3B8;
+      border-radius: 4px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.14);
+      padding: 26px 12px 20px;
+      font-size: 10px;
+      color: #334155;
+      overflow: hidden;
+      transition: width 0.4s ease, min-height 0.4s ease, transform 0.4s ease;
+    }
+    .l6-sheet.landscape {
+      width: 232px;
+      min-height: 168px;
+    }
+    .l6-sheet-tag {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      color: #1E40AF;
+    }
+    .l6-sheet.landscape .l6-sheet-tag { color: #B45309; }
+    .l6-sheet-head {
+      border-bottom: 1px dashed #94A3B8;
+      text-align: center;
+      font-size: 8.5px;
+      color: #64748B;
+      padding-bottom: 3px;
+      margin-bottom: 6px;
+      min-height: 16px;
+    }
+    .l6-sheet-head.is-empty::after { content: "(sem cabeçalho)"; }
+    .l6-sheet-head::after { content: "SEÇÃO 1 — Relatório Anual"; }
+    .l6-sheet-body p { margin: 0 0 5px; line-height: 1.55; }
+    .l6-sheet-foot {
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 8.5px;
+      color: #64748B;
+    }
+    .l6-sheet.landscape .l6-sheet-foot::after { content: "Tabela grande em paisagem"; }
+    .l6-arrow-break {
+      align-self: center;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: #1D4ED8;
+      background: #EFF6FF;
+      border: 1.5px dashed #93C5FD;
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+    .l6-arrow-break.section { color: #92400E; background: #FFFBEB; border-color: #FCD34D; }
+    .l6-break-demo p {
+      margin: 0 0 4px;
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .l6-break-demo .l6-new-page {
+      border-top: 2px dashed #1D4ED8;
+      margin-top: 10px;
+      padding-top: 8px;
+      font-weight: 700;
+      color: #1E40AF;
+    }
+    .l6-enter-key {
+      display: inline-block;
+      background: #1E40AF;
+      color: #FFFFFF;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+    @media (max-width: 640px) {
+      .l6-sheet { width: 148px; min-height: 210px; }
+      .l6-sheet.landscape { width: 210px; min-height: 148px; }
+    }
   </style>
 </head>
 <body>
@@ -1218,11 +1319,11 @@
           </div>
 
           <!-- AULA 06 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(6, 'Layout de Página, Quebras de Seção & Cabeçalhos')">
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(6, 'Layout de Página, Quebras de Seção & Cabeçalhos')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 06</span>
               <span class="lesson-name">Layout de Página & Quebras de Seção</span>
-              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wf006`)</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-6">🔒</span>
           </div>
@@ -5065,6 +5166,673 @@
     </section>
 
     <!-- ===================================================================
+         AULA 06 — LAYOUT DE PÁGINA, QUEBRAS DE SEÇÃO & CABEÇALHOS
+         =================================================================== -->
+    <section id="screen-lesson-6" class="screen-view">
+
+      <!-- Topo da Aula com Botões de Ação -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('word', 6)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra Gamificada de Progresso da Aula 6 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 6)</span>
+            <span id="gamify-percent-6">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-6" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-6">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <!-- Cartão Principal de Leitura -->
+      <article class="lesson-reading-card">
+        <span class="badge-word-blue">Módulo 2 • Aula 06</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 06: Layout de Página, Quebras de Seção &amp; Cabeçalhos</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <em>Tamanho A4, quebra de página (Ctrl+Enter), quebras de seção e desvinculação de cabeçalhos.</em> Leia cada etapa com atenção e aplique os comandos diretamente no seu Word!
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l6-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--word-blue); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:var(--word-blue-light); color:var(--word-blue-dark); border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar: O que vamos fazer e como</span>
+
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:14px 0 8px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Dominar a <strong>engenharia estrutural do documento</strong>: configurar o papel A4, entender a diferença vital entre <strong>quebra de página</strong> e <strong>quebra de seção</strong>, desvincular cabeçalhos para trabalhos ABNT e criar <strong>numeração de páginas</strong> que só aparece a partir da introdução.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo em 5 Fases)</h3>
+          <p style="margin:0 0 12px 0; font-size:13.5px; color:#475569; line-height:1.7;">
+            Os checks ficam distribuídos — posicionados no fim de cada fase, exatamente onde está a instrução prática. Cada passo é um check e só libera o próximo!
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px;" aria-label="Roteiro dos 5 passos">
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">1</strong>
+              <span>Padronizar o tamanho de papel oficial para A4 (21 x 29,7 cm).</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">2</strong>
+              <span>Aplicar a Quebra de Página com o atalho <kbd>Ctrl</kbd> + <kbd>Enter</kbd>.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">3</strong>
+              <span>Inserir Quebra de Seção (Próxima Página) para alternar orientações.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">4</strong>
+              <span>Desvincular Cabeçalhos e Rodapés com o botão “Vincular ao Anterior”.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">5</strong>
+              <span>Configurar numeração ABNT iniciando a partir da introdução.</span>
+            </div>
+          </div>
+
+          <div style="margin-top:18px; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-radius:10px; padding:14px 16px;">
+            <div style="font-weight:800; color:var(--word-blue-dark); font-size:14px; margin-bottom:4px;">⚙️ FAIXA DE PREPARAÇÃO — antes da Fase 1</div>
+            <ol style="font-size:13.5px; color:#374151; line-height:1.7; margin:0; padding-left:20px;">
+              <li>Abra o <strong>Microsoft Word</strong> e salve um documento em branco como <code>Layout_Aula06.docx</code>.</li>
+              <li>Digite dois títulos curtos (ex.: <code>CAPÍTULO 1</code> e <code>CAPÍTULO 2</code>) e alguns parágrafos para servir de teste.</li>
+              <li>Confira se a guia <strong>Layout da Página</strong> (Word 2010/2013) ou <strong>Layout</strong> (2016 em diante) está visível — é a mesma guia, com o mesmo conteúdo.</li>
+            </ol>
+          </div>
+
+          <div id="l6-checklist-status" style="margin-top:14px; font-size:14px; font-weight:700; color:var(--word-blue-dark);">▢ 0 / 5 Passos Concluídos</div>
+          <div id="l6-complete-hint" style="display:none; margin-top:8px; font-size:13.5px; font-weight:700; color:#15803D; background:#DCFCE7; border:1.5px solid #86EFAC; border-radius:8px; padding:10px 12px;">🎉 Todos os 5 passos concluídos — você concluiu a leitura e liberou o Exercício de Fixação!</div>
+
+          <div style="margin-top:20px; text-align:center;">
+            <button type="button" id="btn-start-l6" class="btn btn-primary" style="font-size:15px; padding:12px 28px;" onclick="switchTopicPhase(6, 1)">
+              ▶ ENTENDI! QUERO COMEÇAR A AULA ↓
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Abas de Tópicos da Aula 6 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-6-1" onclick="switchTopicPhase(6, 1)">1. Papel A4 &amp; Margens</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-2" onclick="switchTopicPhase(6, 2)">2. Quebra de Página</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-3" onclick="switchTopicPhase(6, 3)">3. Quebra de Seção</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-4" onclick="switchTopicPhase(6, 4)">4. Vincular ao Anterior</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-5" onclick="switchTopicPhase(6, 5)">5. Numeração &amp; Timbrado</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-fix" onclick="openFixationPanel(6)" style="background:var(--amber-soft); color:var(--teal-deep); font-weight:700;">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             FASE 1: O PADRÃO DO PAPEL A4 E AS MARGENS DO DOCUMENTO
+             =============================================================== -->
+        <section id="l6-phase-1" class="topic-phase-section active">
+          <h2>1. O Padrão do Papel A4 e as Margens do Documento</h2>
+          <p>
+            O documento precisa ter o <strong>mesmo tamanho do papel que está na impressora</strong> — senão a impressão sai cortada ou deslocada. No Brasil, o padrão oficial para documentos formais e trabalhos acadêmicos é o <strong>A4</strong> (norma internacional ISO 216), com medidas exatas de <strong>21,0 cm de largura por 29,7 cm de altura</strong>.
+          </p>
+          <p>
+            O perigo silencioso é o formato <strong>Carta (Letter)</strong>, padrão norte-americano: muitas impressoras vêm de fábrica configuradas para Carta, e o Word pode herdar essa configuração. Quando um documento em Carta é impresso em folha A4, o resultado é <strong>texto cortado na base da página</strong> ou margens deslocadas. Por isso, antes de qualquer trabalho: <strong>confira o Tamanho</strong>.
+          </p>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Onde conferir cada configuração da página</h3>
+            <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Mapa das configurações de página do Word">
+              <div class="word-card-table-header">
+                <div class="word-table-title">
+                  <span class="word-table-badge">MAPA RÁPIDO</span>
+                  <h3>🗺️ Configuração, guia e botão</h3>
+                </div>
+                <span class="word-table-hint">Layout da Página &amp; Inserir</span>
+              </div>
+              <div class="word-table-scroll">
+                <table class="word-modern-table">
+                  <thead>
+                    <tr>
+                      <th>Configuração</th>
+                      <th>Guia</th>
+                      <th>Botão</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="highlight-blue">
+                      <td><strong>Margens</strong></td>
+                      <td>Layout da Página</td>
+                      <td>Margens</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Orientação</strong></td>
+                      <td>Layout da Página</td>
+                      <td>Orientação</td>
+                    </tr>
+                    <tr class="highlight-amber">
+                      <td><strong>Tamanho do papel</strong></td>
+                      <td>Layout da Página</td>
+                      <td>Tamanho</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Quebras</strong></td>
+                      <td>Layout da Página</td>
+                      <td>Quebras</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Número de página</strong></td>
+                      <td>Inserir</td>
+                      <td>Número de Página</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Cabeçalho e rodapé</strong></td>
+                      <td>Inserir</td>
+                      <td>Cabeçalho / Rodapé</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin:12px 0 0; font-size:13px; color:#64748B;">💡 No Word 2010 e 2013 a guia se chama <strong>Layout da Página</strong>; em versões mais novas (2016 em diante) ela se chama apenas <strong>Layout</strong>. É a mesma guia, com o mesmo conteúdo.</p>
+          </div>
+
+          <div style="background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#1E40AF; margin:0 0 8px; font-size:16px;">📐 Margens: modelos prontos e personalizadas</h3>
+            <p style="margin:0 0 8px; font-size:14px; color:#1E3A8A; line-height:1.7;">
+              A margem é o <strong>espaço em branco entre o texto e as bordas da folha</strong>. Ela dá respiro ao texto e deixa área livre para encadernação e furos. O botão <strong>Margens</strong> oferece modelos prontos:
+            </p>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#1E3A8A; line-height:1.8;">
+              <li><strong>Normal</strong> — margens iguais de 2,5 cm em todos os lados.</li>
+              <li><strong>Estreita</strong>, <strong>Moderada</strong> e <strong>Larga</strong> — combinações fixas para usos específicos.</li>
+              <li><strong>Margens Personalizadas</strong> — você digita o valor de cada lado (superior, inferior, esquerda e direita) e confirma em <strong>OK</strong>. É aqui que entram as medidas ABNT 3-3-2-2 da Aula 02.</li>
+            </ul>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">🖨️ Dica final: a visualização de impressão</h3>
+            <p style="margin:0; font-size:14px; color:#78350F; line-height:1.7;">
+              Antes de imprimir, use <strong>Arquivo &gt; Imprimir</strong>. À direita aparece a <strong>visualização da impressão</strong>: confira margens, orientação e numeração <strong>antes de gastar papel</strong>. É o teste mais barato de formatação que existe.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 1 -->
+          <div class="phase-step-check" data-step="1" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l6-check-1" class="l6-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 1">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 1: PAPEL A4 E MARGENS</strong><br>
+              Verifiquei e configurei o tamanho do papel do documento estritamente como <strong>A4 (21 x 29,7 cm)</strong> e confirmei as margens do trabalho.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 2 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que configurei o papel A4 e localizei os botões de página no mapa de guias.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-1" onclick="markTopicRead(6, 1)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 1)">← Voltar à Fase 0</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 2)">Ir para 2. Quebra de Página →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 2: QUEBRA DE PÁGINA (CTRL+ENTER) VS MÚLTIPLOS ENTERS
+             =============================================================== -->
+        <section id="l6-phase-2" class="topic-phase-section">
+          <h2>2. Quebra de Página (Ctrl + Enter) vs Múltiplos Enters</h2>
+          <p>
+            O erro de quem não fez o curso: terminar um capítulo e pressionar <kbd>Enter</kbd> <strong>15 vezes</strong> até o texto pular para a folha seguinte. Funciona... até que uma linha seja adicionada lá em cima — quando isso acontece, <strong>todo o resto do trabalho desce e fica desalinhado</strong>, capítulo por capítulo, página por página.
+          </p>
+          <p>
+            A regra de ouro: sempre que terminar um capítulo, pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd>. O Word insere uma <strong>Quebra de Página invisível</strong>, e o próximo título começa sempre no <strong>topo da folha seguinte</strong>, independentemente do que você adicionar antes.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: compare os dois métodos de pular de página <span class="l5-demo-hint">#l6-break-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Métodos de quebra de página">
+              <button type="button" class="l5-sim-btn" onclick="l6ShowPageBreak('enters', this)">❌ Método dos 15 Enters</button>
+              <button type="button" class="l5-sim-btn active" onclick="l6ShowPageBreak('ctrl', this)">✅ Ctrl + Enter</button>
+            </div>
+            <div class="l5-stage" id="l6-break-stage">
+              <div class="l6-page-sim">
+                <div class="l6-sheet" id="l6-break-sheet1">
+                  <span class="l6-sheet-tag">FOLHA 1</span>
+                  <p style="font-weight:700; margin:0 0 4px;">Relatório — Capítulo 1</p>
+                  <div class="l6-break-demo" id="l6-break-demo1">
+                    <p>O texto do capítulo termina aqui.</p>
+                    <div id="l6-break-enters" style="display:none; line-height:1.9; color:#DC2626; font-weight:700;">⏎ ⏎ ⏎ ⏎ ⏎ ⏎ ⏎ ⏎ ⏎ ⏎ ⏎ ⏎ ⏎ ⏎ ⏎</div>
+                  </div>
+                </div>
+                <div class="l6-arrow-break" id="l6-break-arrow">▼<br>Ctrl + <span class="l6-enter-key">Enter</span></div>
+                <div class="l6-sheet" id="l6-break-sheet2">
+                  <span class="l6-sheet-tag">FOLHA 2</span>
+                  <div id="l6-break-demo2">
+                    <p style="margin:0 0 4px; color:#94A3B8;">(folha vazia)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="l6-break-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Com Ctrl + Enter, o Capítulo 2 sempre começa no topo da Folha 2 — nada o desloca.</div>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#166534; margin:0 0 8px; font-size:16px;">⚙️ Como inserir a Quebra de Página</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#166534; line-height:1.75;">
+              <li>Posicione o cursor exatamente onde o capítulo atual termina.</li>
+              <li>Pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd> — ou, pela guia, <strong>Layout da Página &gt; Quebras &gt; Página</strong>.</li>
+              <li>O texto seguinte começa imediatamente na nova folha, e a quebra permanece fixa mesmo que o conteúdo anterior cresça.</li>
+              <li>Para ver onde estão as quebras, ative o botão <strong>¶ (Mostrar Tudo)</strong> na guia Página Inicial — a linha “Quebra de Página” aparece marcada no texto.</li>
+            </ol>
+          </div>
+
+          <div style="background:#F0F9FF; border:1.5px solid #BAE6FD; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#0C4A6E; margin:0 0 8px; font-size:16px;">💼 Por que a quebra invisível é a solução profissional</h3>
+            <p style="margin:0; font-size:14px; color:#0C4A6E; line-height:1.7;">
+              A Quebra de Página é um <strong>marcador de posição</strong>: ela diz ao Word “o próximo título pertence à próxima folha, sempre”. O cliente pede para acrescentar um parágrafo na introdução? O Capítulo 2 continua no topo da sua folha. Excluir uma figura? Nada se desalinha. Com Enters, qualquer edição vira horas de correção manual.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 2 -->
+          <div class="phase-step-check" data-step="2" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l6-check-2" class="l6-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 2">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 2: QUEBRA DE PÁGINA</strong><br>
+              Pratiquei o atalho <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para forçar o início de um capítulo na próxima página — sem usar múltiplos Enters.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 3 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que pratiquei a Quebra de Página com Ctrl + Enter.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-2" onclick="markTopicRead(6, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 1)">← Voltar ao Tópico 1</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 3)">Ir para 3. Quebra de Seção →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 3: QUEBRA DE SEÇÃO — A FRONTEIRA ENTRE AMBIENTES
+             =============================================================== -->
+        <section id="l6-phase-3" class="topic-phase-section">
+          <h2>3. Quebra de Seção — A Fronteira Entre Ambientes Diferentes</h2>
+          <p>
+            Quando a Quebra de Página não resolve: e se você quiser colocar a página 4 <strong>deitada (Paisagem)</strong> para caber uma tabela grande, enquanto as páginas 1 a 3 continuam <strong>em pé (Retrato)</strong>? A quebra de página não muda configuração nenhuma — ela apenas empurra o cursor. Para isso existe a <strong>Quebra de Seção</strong>.
+          </p>
+          <p>
+            A Quebra de Seção cria uma <strong>barreira de isolamento arquitetural</strong> dentro do mesmo arquivo: a partir dela, a nova parte pode ter orientação, margens e cabeçalhos próprios, sem afetar nada do que veio antes.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: veja as três quebras da guia Layout da Página &gt; Quebras <span class="l5-demo-hint">#l6-section-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Tipos de quebra">
+              <button type="button" class="l5-sim-btn active" onclick="l6SetSection('page', this)">📄 Quebra de Página</button>
+              <button type="button" class="l5-sim-btn" onclick="l6SetSection('next', this)">🧱 Seção — Próxima Página</button>
+              <button type="button" class="l5-sim-btn" onclick="l6SetSection('continuous', this)">🔗 Seção — Contínua</button>
+            </div>
+            <div class="l5-stage" id="l6-section-stage">
+              <div class="l6-page-sim" id="l6-section-pages">
+                <div class="l6-sheet" id="l6-section-sheet1">
+                  <span class="l6-sheet-tag">SEÇÃO 1</span>
+                  <p style="font-weight:700; margin:0 0 4px;">Relatório Anual</p>
+                  <p>Páginas 1 a 3 em pé, com margens normais e cabeçalho padrão.</p>
+                </div>
+                <div class="l6-arrow-break" id="l6-section-arrow">▼<br>Ctrl + <span class="l6-enter-key">Enter</span></div>
+                <div class="l6-sheet" id="l6-section-sheet2">
+                  <span class="l6-sheet-tag" id="l6-section-sheet2-tag">SEÇÃO 1</span>
+                  <div id="l6-section-sheet2-body">
+                    <p style="margin:0 0 4px; color:#94A3B8;">(folha vazia)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="l6-section-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Quebra de Página: a Folha 2 continua no mesmo ambiente — orientação, margens e cabeçalho seguem idênticos.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Passo a passo: página 4 deitada com tabela grande</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Posicione o cursor no <strong>fim da página 3</strong>.</li>
+              <li>Ir na guia <strong>Layout da Página</strong> &gt; botão <strong>Quebras</strong> &gt; escolher <strong>Quebra de Seção: Próxima Página</strong>.</li>
+              <li>Com o cursor já na página 4, abra <strong>Orientação</strong> e clique em <strong>Paisagem</strong>.</li>
+              <li>Insira a tabela grande — as páginas 1 a 3 continuam intactas em <strong>Retrato</strong>!</li>
+              <li>Para voltar ao retrato depois da tabela, insira outra Quebra de Seção (Próxima Página) no fim da página 4 e reconfigure a orientação.</li>
+            </ol>
+          </div>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Tipos de quebra do Word">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">TIPOS DE QUEBRA</span>
+                <h3>🧭 Qual quebra usar em cada situação</h3>
+              </div>
+              <span class="word-table-hint">Layout da Página &gt; Quebras</span>
+            </div>
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead>
+                  <tr>
+                    <th>Quebra</th>
+                    <th>O que faz</th>
+                    <th>Quando usar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="highlight-blue">
+                    <td><strong>Página</strong></td>
+                    <td>O texto seguinte começa numa nova página, sem mudar nada</td>
+                    <td>Iniciar capítulos e tópicos</td>
+                  </tr>
+                  <tr class="highlight-amber">
+                    <td><strong>Seção — Próxima Página</strong></td>
+                    <td>Nova seção, em nova página, com configuração própria</td>
+                    <td>Alternar retrato/paisagem ou margens</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Seção — Contínua</strong></td>
+                    <td>Nova seção <strong>na mesma página</strong>, sem pular de folha</td>
+                    <td>Intercalar trechos de 1 coluna com 2 ou 3 colunas</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Seção — Página par/ímpar</strong></td>
+                    <td>Nova seção na próxima página par ou ímpar</td>
+                    <td>Montagem de livros com capítulos sempre à direita</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div style="background:#F5F3FF; border:1.5px solid #C4B5FD; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#5B21B6; margin:0 0 8px; font-size:16px;">🔍 Como saber onde estão as seções</h3>
+            <p style="margin:0; font-size:14px; color:#4C1D95; line-height:1.7;">
+              Com o botão <strong>¶ (Mostrar Tudo)</strong> ativo, o Word exibe a linha “<strong>Quebra de Seção (Próxima Página)</strong>” no ponto exato da divisão. A barra de status, no rodapé da janela, mostra em qual seção o cursor está (ex.: <em>Seção: 2</em>). Clicar dentro da seção é o pré-requisito para alterar qualquer configuração dela.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 3 -->
+          <div class="phase-step-check" data-step="3" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l6-check-3" class="l6-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 3">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 3: QUEBRA DE SEÇÃO</strong><br>
+              Inseri uma quebra de seção do tipo <strong>Próxima Página</strong> e alterei a orientação de uma folha — sem afetar as demais.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 4 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que inseri uma Quebra de Seção e alterei a orientação de uma folha.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-3" onclick="markTopicRead(6, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 2)">← Voltar ao Tópico 2</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 4)">Ir para 4. Vincular ao Anterior →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 4: CABEÇALHO, RODAPÉ E "VINCULAR AO ANTERIOR"
+             =============================================================== -->
+        <section id="l6-phase-4" class="topic-phase-section">
+          <h2>4. Cabeçalho, Rodapé e o Botão “Vincular ao Anterior”</h2>
+          <p>
+            <strong>Cabeçalho</strong> e <strong>rodapé</strong> são as faixas no topo e no pé de cada página que <strong>repetem o mesmo conteúdo automaticamente</strong>: título do trabalho, nome da empresa, data, endereço, número de página. Você digita uma vez e o Word replica em todas as folhas. Para editar, dê um <strong>duplo clique rápido na margem do topo</strong> (ou do pé) da folha — abre-se a guia contextual <strong>Ferramentas de Cabeçalho e Rodapé &gt; Design</strong>.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: desvincule o cabeçalho da Seção 2 e veja os dois ambientes <span class="l5-demo-hint">#l6-link-stage</span></div>
+            <div class="l5-btn-row">
+              <button type="button" class="l5-sim-btn" id="l6-link-btn" onclick="l6ToggleLink(this)" aria-pressed="true">🔗 Vinculado ao Anterior (ligado)</button>
+            </div>
+            <div class="l5-stage" id="l6-link-stage">
+              <div class="l6-page-sim">
+                <div class="l6-sheet">
+                  <span class="l6-sheet-tag">SEÇÃO 1</span>
+                  <div class="l6-sheet-head">Relatório Anual — 2026</div>
+                  <p style="font-weight:700; margin:0 0 4px;">Introdução</p>
+                  <p>Texto do relatório, com cabeçalho padrão em todas as páginas.</p>
+                  <div class="l6-sheet-foot">Pág. 1</div>
+                </div>
+                <div class="l6-arrow-break section">▼<br>Quebra de<br>Seção</div>
+                <div class="l6-sheet">
+                  <span class="l6-sheet-tag">SEÇÃO 2</span>
+                  <div class="l6-sheet-head" id="l6-section2-head">Relatório Anual — 2026</div>
+                  <div id="l6-section2-body">
+                    <p style="font-weight:700; margin:0 0 4px;">Anexo</p>
+                    <p>O cabeçalho da Seção 2 repete o da Seção 1 enquanto o vínculo estiver ligado.</p>
+                  </div>
+                  <div class="l6-sheet-foot">Pág. 8</div>
+                </div>
+              </div>
+            </div>
+            <div id="l6-link-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Por padrão, o Word repete o cabeçalho em todas as seções — a Seção 2 mostra o mesmo texto da Seção 1.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ O botão decisivo: “Vincular ao Anterior”</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Entre na Seção 2 com um duplo clique no cabeçalho dela (ou navegue entre seções com os botões <strong>Anterior/Próxima</strong> da guia Design).</li>
+              <li>Nessa guia, localize o botão <strong>Vincular ao Anterior</strong> — ele vem <strong>selecionado em destaque</strong> por padrão.</li>
+              <li><strong>Clique nele para desativar</strong> a seleção. O vínculo é quebrado e o cabeçalho da Seção 2 torna-se <strong>100% independente</strong>.</li>
+              <li>Digite o novo cabeçalho. A Seção 1 continua exibindo o texto original.</li>
+              <li>Faça o mesmo para o <strong>rodapé</strong>, se precisar — o vínculo do rodapé é independente do do cabeçalho.</li>
+            </ol>
+          </div>
+
+          <div style="background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#1E40AF; margin:0 0 8px; font-size:16px;">🖌️ O segredo da capa: “Primeira Página Diferente”</h3>
+            <p style="margin:0; font-size:14px; color:#1E3A8A; line-height:1.7;">
+              Para trabalhos ABNT e relatórios executivos, marque a opção <strong>Primeira Página Diferente</strong> (guia Design das ferramentas de Cabeçalho e Rodapé). A capa fica <strong>limpa</strong> — sem cabeçalho e sem número de página — enquanto as demais folhas mantêm tudo. É a combinação mais usada em trabalhos escolares e acadêmicos.
+            </p>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">⚠️ Erro clássico: editar o cabeçalho “errado”</h3>
+            <p style="margin:0; font-size:14px; color:#78350F; line-height:1.7;">
+              Você edita o cabeçalho da página 1 e descobre que <strong>todas as páginas mudaram junto</strong>. Isso é o vínculo padrão em ação: sem quebra de seção, existe um único cabeçalho para o documento inteiro. Para cabeçalhos diferentes em partes do documento, é preciso <strong>primeiro criar a quebra de seção</strong> (Fase 3) e <strong>depois desvincular</strong> (esta fase).
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 4 -->
+          <div class="phase-step-check" data-step="4" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l6-check-4" class="l6-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 4">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 4: DESVINCULAR CABEÇALHO</strong><br>
+              Desvinculei o cabeçalho da nova seção <strong>desmarcando o botão “Vincular ao Anterior”</strong> e confirmei que cada seção pode ter um texto próprio.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 5 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que desvinculei o cabeçalho com o botão “Vincular ao Anterior”.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-4" onclick="markTopicRead(6, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 3)">← Voltar ao Tópico 3</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 5)">Ir para 5. Numeração &amp; Timbrado →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 5: NUMERAÇÃO ABNT E PAPEL TIMBRADO
+             =============================================================== -->
+        <section id="l6-phase-5" class="topic-phase-section">
+          <h2>5. Numeração ABNT e Criação de Papel Timbrado</h2>
+          <p>
+            Nas normas da ABNT, a <strong>contagem de páginas começa na folha de rosto</strong>, mas o número só pode <strong>aparecer impresso a partir da primeira página textual</strong> (a Introdução). Essa exigência parece impossível — “conta, mas não mostra” — e é resolvida exatamente com a dupla que você acabou de dominar: <strong>Quebra de Seção + Desvincular Cabeçalho</strong>.
+          </p>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Passo a passo: numeração a partir da introdução</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Insira uma <strong>Quebra de Seção (Próxima Página)</strong> entre a folha de rosto/sumário e a Introdução.</li>
+              <li>Com o cursor na seção da Introdução, vá em <strong>Inserir &gt; Número de Página &gt; Início da Página</strong> e escolha o alinhamento <strong>à direita</strong>.</li>
+              <li>Se o número aparecer nas páginas anteriores, <strong>desvincule</strong> o cabeçalho/rodapé dessa seção (botão Vincular ao Anterior).</li>
+              <li>Em <strong>Formatar Números de Página...</strong>, defina se a numeração <strong>continua da seção anterior</strong> (ex.: começa impressa como “5”) ou se <strong>inicia em 1</strong>.</li>
+              <li>Clique em <strong>Fechar Cabeçalho e Rodapé</strong> para voltar ao texto.</li>
+            </ol>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#166534; margin:0 0 8px; font-size:16px;">🏢 Papel Timbrado Profissional</h3>
+            <p style="margin:0 0 8px; font-size:14px; color:#166534; line-height:1.7;">
+              O <strong>papel timbrado</strong> é o documento modelo com a identidade visual da empresa, criado com as ferramentas desta aula:
+            </p>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#166534; line-height:1.8;">
+              <li><strong>Cabeçalho:</strong> insira a <strong>logomarca</strong> (Inserir &gt; Imagem) no canto esquerdo ou direito, e o nome/slogan da empresa ao lado.</li>
+              <li><strong>Rodapé:</strong> digite <strong>CNPJ, endereço e telefone de contato</strong>, centralizados.</li>
+              <li><strong>Negrito</strong> nos textos do cabeçalho e do rodapé para destacar.</li>
+              <li>Extras (opcional): <strong>Bordas de Página</strong> (Layout da Página/Design &gt; Bordas de Página) e <strong>Marca D’água</strong> com o nome da empresa.</li>
+              <li>Ao fechar o cabeçalho, os dados ficam <strong>esmaecidos e protegidos</strong> — aparecem automaticamente em todas as páginas timbradas.</li>
+            </ul>
+          </div>
+
+          <div style="background:#F0F9FF; border:1.5px solid #BAE6FD; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#0C4A6E; margin:0 0 8px; font-size:16px;">💼 Oficina prática: o relatório com página deitada</h3>
+            <p style="margin:0; font-size:14px; color:#0C4A6E; line-height:1.7;">
+              Junte tudo o que aprendeu: relatório em <strong>A4 retrato</strong> com cabeçalho e numeração no rodapé, uma <strong>tabela de vendas grande</strong> numa página <strong>paisagem</strong> no meio do documento (Quebra de Seção + Orientação) e capa limpa (<strong>Primeira Página Diferente</strong>). Salve como PDF em <strong>Arquivo &gt; Imprimir &gt; Microsoft Print to PDF</strong> e confira a visualização antes de entregar.
+            </p>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <div style="font-weight:700; color:var(--teal-deep); font-size:16px; margin-bottom:8px;">✅ Checklist de Auditoria da Aula 06 — antes de enviar o documento</div>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.7;">
+              <li><strong>Papel:</strong> tamanho A4 (21 x 29,7 cm) confirmado em Layout da Página &gt; Tamanho.</li>
+              <li><strong>Quebras de página:</strong> capítulos iniciam com Ctrl + Enter, sem Enters repetidos.</li>
+              <li><strong>Orientação mista:</strong> páginas deitadas isoladas por Quebras de Seção.</li>
+              <li><strong>Cabeçalhos:</strong> vínculos desfeitos onde o texto precisa ser diferente.</li>
+              <li><strong>Numeração:</strong> aparece só a partir da Introdução, no alinhamento ABNT.</li>
+              <li><strong>Visualização:</strong> conferida em Arquivo &gt; Imprimir antes de gastar papel.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 5 -->
+          <div class="phase-step-check" data-step="5" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l6-check-5" class="l6-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 5">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 5: NUMERAÇÃO E TIMBRADO</strong><br>
+              Configurei a <strong>numeração de páginas independente</strong> (conta na rosto, imprime na introdução) e montei a estrutura de <strong>papel timbrado</strong>.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Exercício de Fixação →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que configurei a numeração ABNT e a estrutura de papel timbrado.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-5" onclick="markTopicRead(6, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 4)">← Voltar ao Tópico 4</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(6)">Iniciar Exercício de Fixação (5 Perguntas) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 6 (5 QUESTÕES)
+             =============================================================== -->
+        <div id="fixation-panel-6" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="badge-word-blue" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--teal-deep); margin-top:6px; font-size:24px;">Exercício de Fixação — Aula 06 (Layout &amp; Quebras)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft); font-weight:700;">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-6" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-6">QUESTÃO 1 / 5</span>
+                <span id="q-points-6">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-6"></div>
+
+              <button class="hint-toggle" id="btn-hint-6" type="button" onclick="toggleHint(6)">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-6"></div>
+
+              <div class="options" id="options-6"></div>
+
+              <div class="nav-row">
+                <button type="button" class="btn btn-ghost" id="btn-prev-6" onclick="prevQuestionGen(6)">← Anterior</button>
+                <div style="font-size:12px; color:var(--ink-soft); font-weight:600;">✓ Salvo automaticamente</div>
+                <button type="button" class="btn btn-primary" id="btn-next-6" onclick="nextQuestionGen(6)">Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             PAINEL DE RESULTADO DO EXERCÍCIO DE FIXAÇÃO DA AULA 6
+             =============================================================== -->
+        <div id="result-panel-6" class="fixation-panel">
+          <div class="card-quiz" style="text-align:center;">
+            <div class="result-badge" id="result-badge-6" style="margin:0 auto 16px;"></div>
+            <h2 id="result-title-6" style="color:var(--teal-deep); margin-bottom:8px; font-size:28px;"></h2>
+            <p id="result-sub-6" style="color:var(--ink-soft); margin-bottom:20px; font-size:16px;"></p>
+
+            <div style="font-size:42px; font-weight:800; color:var(--teal); font-family:'Fraunces', serif; margin-bottom:12px;">
+              <span id="result-score-6">0,0</span> <span style="font-size:20px; color:var(--ink-soft); font-family:'Inter';">/ 10,0</span>
+            </div>
+
+            <div class="signature-badge-box">
+              <div style="font-weight:700; color:#F8FAFC; margin-bottom:4px;">🔐 Comprovante Digital de Conclusão da Aula 06</div>
+              <div style="font-size:11.5px; color:#94A3B8;">Código de Autenticidade (SHA-256):</div>
+              <div class="signature-code-display" id="signature-code-6">GERANDO ASSINATURA...</div>
+              <div style="font-size:11px; color:#94A3B8; margin-top:4px;">WR Capacitação Profissional • Instrutor Marcos Rangel</div>
+            </div>
+
+            <h3 style="text-align:left; font-size:18px; color:var(--teal-deep); margin-top:24px;">Gabarito Comentado</h3>
+            <div class="breakdown" id="breakdown-6"></div>
+
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+              <button class="btn btn-primary" id="btn-download-txt-6" type="button">📄 Baixar Comprovante Oficial (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-6" type="button" style="background:var(--amber);">📑 Baixar Apostila em PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-6" type="button" style="justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+                Enviar Resultado por WhatsApp
+              </button>
+              <button class="btn btn-ghost" id="btn-email-6" type="button">📧 Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-6">
+              <p style="font-size:14px; margin-bottom:12px; color:var(--ink-soft);">Clique abaixo para abrir seu aplicativo de e-mail com o comprovante pronto:</p>
+              <button class="btn btn-primary" id="btn-open-gmail-6" type="button" style="width:100%;">Abrir no Gmail</button>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:20px;">
+              <button type="button" class="btn btn-ghost" onclick="restartQuizGen(6)">↺ Recomeçar o exercício</button>
+              <button type="button" class="btn btn-primary" onclick="showScreen('screen-hub')">Voltar ao Menu de Aulas →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- ===================================================================
          TELAS DA AVALIAÇÃO FINAL DO MÓDULO (PRESERVADAS)
          =================================================================== -->
     <div class="quiz-app" id="screen-start-app" style="padding:0;">
@@ -5512,6 +6280,65 @@
       }
     ];
 
+    // QUESTÕES DO EXERCÍCIO DE FIXAÇÃO DA AULA 06 (SPEC-AULA-06-WORD §4)
+    const QUESTIONS_LESSON_6 = [
+      {
+        q: "Qual é o atalho correto do teclado para inserir uma QUEBRA DE PÁGINA no Word?",
+        options: [
+          "Shift + Enter",
+          "Ctrl + Enter",
+          "Alt + Enter",
+          "Ctrl + Espaço"
+        ],
+        correct: 1,
+        hint: "Segure o Ctrl e toque em Enter para pular de folha com segurança."
+      },
+      {
+        q: "Qual é a diferença fundamental entre uma 'Quebra de Página' e uma 'Quebra de Seção'?",
+        options: [
+          "Não existe diferença, são exatamente a mesma coisa.",
+          "A Quebra de Página apenas pula de folha, enquanto a Quebra de Seção cria um bloco isolado que permite mudar margens, orientação e cabeçalhos.",
+          "A Quebra de Seção apaga os parágrafos anteriores.",
+          "A Quebra de Página só funciona se o computador estiver conectado à internet."
+        ],
+        correct: 1,
+        hint: "Seção cria compartimentos independentes dentro do mesmo documento."
+      },
+      {
+        q: "Qual tamanho de papel é o padrão oficial utilizado no Brasil para documentos formais e trabalhos acadêmicos?",
+        options: [
+          "Papel Carta (Letter).",
+          "Papel A4 (21,0 cm x 29,7 cm).",
+          "Papel Ofício 2.",
+          "Papel Envelope A6."
+        ],
+        correct: 1,
+        hint: "O padrão internacional ISO adotado no Brasil é o A4."
+      },
+      {
+        q: "Para que serve o botão 'Vincular ao Anterior' nas ferramentas de Cabeçalho e Rodapé?",
+        options: [
+          "Salvar o documento na nuvem.",
+          "Fazer com que o cabeçalho da seção atual repita obrigatoriamente o mesmo conteúdo da seção anterior.",
+          "Corrigir a ortografia de cabeçalhos antigos.",
+          "Enviar o documento por e-mail."
+        ],
+        correct: 1,
+        hint: "Ao desativar esse botão, o cabeçalho atual torna-se livre e independente."
+      },
+      {
+        q: "Qual recurso deve ser ativado para que a CAPA de um documento não exiba nenhum cabeçalho nem número de página?",
+        options: [
+          "Páginas Pares e Ímpares Diferentes.",
+          "Primeira Página Diferente.",
+          "Excluir Cabeçalho Global.",
+          "Modo Escuro."
+        ],
+        correct: 1,
+        hint: "O nome da opção indica claramente que a primeira folha terá comportamento próprio."
+      }
+    ];
+
     // QUESTÕES DA PROVA FINAL DO MÓDULO (10 QUESTÕES)
     const QUESTIONS_FINAL = [
       {
@@ -5643,8 +6470,8 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5){
-        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04, 05 e a Prova Final estão liberadas no portal.`);
+      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5 && lessonNum !== 6){
+        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 06 e a Prova Final estão liberadas no portal.`);
         return;
       }
 
@@ -5672,7 +6499,8 @@
           2: "screen-lesson-2",
           3: "screen-lesson-3",
           4: "screen-lesson-4",
-          5: "screen-lesson-5"
+          5: "screen-lesson-5",
+          6: "screen-lesson-6"
         };
         if(routes[targetLessonNum]){
           const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
@@ -6126,10 +6954,104 @@
     };
 
     // ===================================================================
+    // SIMULADORES DA AULA 06 (QUEBRA DE PÁGINA, SEÇÃO E VINCULAÇÃO)
+    // ===================================================================
+    function ativarL6(btn){
+      if(!btn || !btn.parentElement) return;
+      btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+        const ativo = (b === btn);
+        b.classList.toggle("active", ativo);
+        if(b.id !== "l6-link-btn") b.setAttribute("aria-pressed", ativo ? "true" : "false");
+      });
+    }
+
+    window.l6ShowPageBreak = function(mode, btn){
+      const enters = document.getElementById("l6-break-enters");
+      const demo2 = document.getElementById("l6-break-demo2");
+      const arrow = document.getElementById("l6-break-arrow");
+      const status = document.getElementById("l6-break-status");
+      if(!demo2 || !arrow) return;
+
+      if(mode === "enters"){
+        if(enters) enters.style.display = "block";
+        demo2.innerHTML = "<p style='margin:0 0 4px; color:#DC2626; font-weight:700;'>↓ CAPÍTULO 2 empurrado para o meio da folha ↓</p><p style='margin:0; color:#94A3B8;'>Com 15 Enters, qualquer linha adicionada em cima desalinha tudo.</p>";
+        arrow.innerHTML = "❌<br>15 × Enter";
+        if(status) status.textContent = "▸ Múltiplos Enters: a posição do Capítulo 2 depende do que está acima — qualquer edição desalinha o trabalho.";
+      } else {
+        if(enters) enters.style.display = "none";
+        demo2.innerHTML = "<p style='margin:0 0 4px; font-weight:700; color:#1E40AF;'>CAPÍTULO 2 — no topo da folha, sempre.</p><p style='margin:0; color:#334155;'>A Quebra de Página é fixa: independentemente do conteúdo anterior, o capítulo começa aqui.</p>";
+        arrow.innerHTML = "▼<br>Ctrl + <span class='l6-enter-key'>Enter</span>";
+        if(status) status.textContent = "▸ Com Ctrl + Enter, o Capítulo 2 sempre começa no topo da Folha 2 — nada o desloca.";
+      }
+
+      ativarL6(btn);
+    };
+
+    window.l6SetSection = function(mode, btn){
+      const sheet2 = document.getElementById("l6-section-sheet2");
+      const tag = document.getElementById("l6-section-sheet2-tag");
+      const arrow = document.getElementById("l6-section-arrow");
+      const body = document.getElementById("l6-section-sheet2-body");
+      const status = document.getElementById("l6-section-status");
+      if(!sheet2 || !arrow || !body) return;
+
+      sheet2.classList.remove("landscape");
+      body.innerHTML = "";
+
+      if(mode === "page"){
+        tag.textContent = "SEÇÃO 1";
+        arrow.innerHTML = "▼<br>Ctrl + <span class='l6-enter-key'>Enter</span>";
+        arrow.classList.remove("section");
+        arrow.className = "l6-arrow-break";
+        body.innerHTML = "<p style='margin:0 0 4px; color:#94A3B8;'>Página 4 nova, porém no <strong>mesmo ambiente</strong>: orientação, margens e cabeçalho seguem idênticos.</p>";
+        if(status) status.textContent = "▸ Quebra de Página: a Folha 2 continua no mesmo ambiente — orientação, margens e cabeçalho seguem idênticos.";
+      } else if(mode === "next"){
+        sheet2.classList.add("landscape");
+        tag.textContent = "SEÇÃO 2 — NOVO AMBIENTE";
+        arrow.innerHTML = "🧱<br>Quebra de<br>Seção";
+        arrow.className = "l6-arrow-break section";
+        body.innerHTML = "<p style='margin:0 0 4px; font-weight:700; color:#B45309;'>Página 4 deitada (Paisagem) — a tabela grande cabe inteira.</p><p style='margin:0; color:#334155;'>As páginas 1 a 3 continuam em pé (Retrato), intactas.</p>";
+        if(status) status.textContent = "▸ Quebra de Seção (Próxima Página): a Seção 2 tem orientação e configuração próprias — a Seção 1 não muda nada.";
+      } else {
+        tag.textContent = "SEÇÃO 2 — MESMA FOLHA";
+        arrow.innerHTML = "🔗<br>Quebra de<br>Seção Contínua";
+        arrow.className = "l6-arrow-break section";
+        body.innerHTML = "<p style='margin:0 0 4px; font-weight:700; color:#B45309;'>Nova seção sem pular de folha.</p><p style='margin:0; color:#334155;'>Ideal para intercalar um trecho de 1 coluna com um trecho de 2 ou 3 colunas na mesma página.</p>";
+        if(status) status.textContent = "▸ Quebra de Seção (Contínua): cria um novo ambiente sem pular de folha — usado para mudar colunas no meio da página.";
+      }
+
+      ativarL6(btn);
+    };
+
+    window.l6ToggleLink = function(btn){
+      const head = document.getElementById("l6-section2-head");
+      const body = document.getElementById("l6-section2-body");
+      const status = document.getElementById("l6-link-status");
+      if(!head || !btn) return;
+
+      const vinculado = btn.getAttribute("aria-pressed") !== "false";
+      if(vinculado){
+        btn.setAttribute("aria-pressed", "false");
+        btn.classList.remove("active");
+        btn.textContent = "⛓️ Desvinculado (clique para religar)";
+        head.textContent = "Anexo Técnico — Setor de Vendas";
+        if(body) body.innerHTML = "<p style='font-weight:700; margin:0 0 4px;'>Anexo</p><p>O cabeçalho da Seção 2 agora é 100% independente — a Seção 1 mantém o texto original.</p>";
+        if(status) status.textContent = "▸ Vincular ao Anterior DESATIVADO: o vínculo foi quebrado e a Seção 2 aceita um cabeçalho completamente novo, sem tocar na Seção 1.";
+      } else {
+        btn.setAttribute("aria-pressed", "true");
+        btn.classList.add("active");
+        btn.textContent = "🔗 Vinculado ao Anterior (ligado)";
+        head.textContent = "Relatório Anual — 2026";
+        if(body) body.innerHTML = "<p style='font-weight:700; margin:0 0 4px;'>Anexo</p><p>O cabeçalho da Seção 2 repete o da Seção 1 enquanto o vínculo estiver ligado.</p>";
+        if(status) status.textContent = "▸ Por padrão, o Word repete o cabeçalho em todas as seções — a Seção 2 mostra o mesmo texto da Seção 1.";
+      }
+    };
+
+    // ===================================================================
     // MARCAR LEITURA & GAMIFICAÇÃO COM PERSISTÊNCIA (LOCALSTORAGE)
     // ===================================================================
-    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5 };
-    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true };
+    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5, 6: 5 };
+    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true };
     const READ_STORAGE_KEY = "word_lessons_reading_progress";
 
     let readTopics = {};
@@ -6244,9 +7166,9 @@
       }
     }
 
-    // Inicialização da Leitura (Aulas 1, 2, 3, 4 e 5)
+    // Inicialização da Leitura (Aulas 1, 2, 3, 4, 5 e 6)
     loadReadTopics();
-    [1, 2, 3, 4, 5].forEach(function(num){
+    [1, 2, 3, 4, 5, 6].forEach(function(num){
       captureReadLabels(num);
       bindCheckboxes(num);
       paintReadLesson(num);
@@ -6323,6 +7245,16 @@
         moduleId: "word_lesson_5_quiz",
         title: "Módulo 2 — Aula 05: Estilos Rápidos & Pincel de Formatação",
         sig: "Módulo 2 - Aula 5 (Word)"
+      },
+      6: {
+        questions: QUESTIONS_LESSON_6,
+        name: "Aluno(a)",
+        answers: new Array(5).fill(null),
+        current: 0,
+        signature: null,
+        moduleId: "word_lesson_6_quiz",
+        title: "Módulo 2 — Aula 06: Layout de Página, Quebras de Seção & Cabeçalhos",
+        sig: "Módulo 2 - Aula 6 (Word)"
       }
     };
 
@@ -6525,7 +7457,7 @@
     window.getReportDataGen = getReportDataGen;
 
     // Vincular botões de Comprovante (.txt), PDF, WhatsApp e E-mail dos Exercícios de Fixação
-    ;[1, 2, 3, 4, 5].forEach(function(lessonNum){
+    ;[1, 2, 3, 4, 5, 6].forEach(function(lessonNum){
       const btnTxt = document.getElementById(`btn-download-txt-${lessonNum}`);
       if(btnTxt){
         btnTxt.onclick = () => window.QuizEngine.downloadTxtReport(getReportDataGen(lessonNum));
