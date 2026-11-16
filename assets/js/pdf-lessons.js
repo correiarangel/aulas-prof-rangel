@@ -3578,6 +3578,250 @@ Atenção: no Word, Ctrl + G abre "Ir Para". O atalho de agrupar é do PowerPoin
 <div class="fun-highlight">
   <strong>✅ Checklist final do cartaz:</strong> orientação em paisagem • borda visível e medida a partir do texto • formas com texto legível • efeitos sem excesso • nada escondido atrás de outra forma • elementos agrupados.
 </div>`
+        },
+        {
+          lessonNum: 5,
+          chapter: "AULA 05: ESTILOS RÁPIDOS, PINCEL DE FORMATAÇÃO E LIMPEZA",
+          heading: "5.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Você vai descobrir o recurso que separa os usuários amadores dos profissionais de Word: a gestão por Estilos. Em vez de formatar cada título manualmente, você cria o padrão uma única vez e aplica com 1 clique. No fim, vai economizar horas de trabalho, padronizar títulos e parágrafos e preparar o documento para gerar o sumário automático.
+
+COMO VAMOS FAZER (os 5 passos):
+1. Compreender o conceito e os 4 benefícios dos Estilos no Word.
+2. Aplicar estilos nativos (Normal, Título 1 e Título 2) respeitando a hierarquia.
+3. Modificar um estilo e testemunhar a atualização global em cascata.
+4. Criar um estilo próprio pelo método fácil "Criar por Exemplo".
+5. Dominar o duplo clique do Pincel de Formatação e o botão Limpar Formatação.
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Abra o Microsoft Word e salve um documento em branco como Estilos_Aula05.docx.
+• Digite três títulos curtos e dois parágrafos de texto comum para servir de teste.
+• Confira se o grupo Estilos está visível na guia Página Inicial (se a janela estiver estreita, clique na setinha para expandir a galeria).
+
+O QUE VOCÊ VAI CONSEGUIR NO FINAL:
+Um documento com hierarquia visual consistente, títulos padronizados por estilo, um estilo personalizado salvo na galeria e textos colados da internet devidamente higienizados — tudo pronto para o sumário automático.`,
+          image: "../../assets/img/word/Aula5/image4.png",
+          caption: "Galeria de Estilos Rápidos do Microsoft Word na guia Página Inicial",
+          html: `<div style="margin:16px 0;">
+  <p style="font-size:12px; color:#475569; margin:0 0 10px 0;">O objetivo desta aula é dominar a gestão por Estilos: aplicar, modificar, criar e limpar formatações com poucos cliques.</p>
+  <div style="font-weight:800; color:#1E40AF; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 5 PASSOS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">1</strong> Conceito e os 4 benefícios dos Estilos</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">2</strong> Galeria e hierarquia Título 1 e 2</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">3</strong> Modificar estilo e atualização em cascata</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">4</strong> Criar por Exemplo</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">5</strong> Pincel de Formatação e Limpar Formatação</span>
+  </div>
+  <p style="font-size:11.5px; color:#475569; margin:8px 0 0 0;">Cada passo tem um check no fim da fase onde ele é executado — o próximo só abre depois que o anterior for concluído.</p>
+  <div class="es-sheet-box" style="max-width:470px; background:#F8FAFC;">
+    <div class="es-sheet-titlebar">⚙️ FAIXA DE PREPARAÇÃO — antes do Tópico 1</div>
+    <table class="mini-sheet">
+      <tr><td><strong>1</strong></td><td>Abra o Word e salve o documento como <strong>Estilos_Aula05.docx</strong>.</td></tr>
+      <tr><td><strong>2</strong></td><td>Digite três títulos curtos e dois parágrafos de texto comum.</td></tr>
+      <tr><td><strong>3</strong></td><td>Confira o grupo <strong>Estilos</strong> na guia <strong>Página Inicial</strong>.</td></tr>
+    </table>
+  </div>
+</div>`
+        },
+        {
+          lessonNum: 5,
+          heading: "5.1 A Arquitetura de Estilos e a Produtividade Corporativa",
+          content: `Um estilo é um conjunto pré-definido de características visuais — fonte, tamanho, cor, espaçamento e recuo — salvo com um nome específico. Em vez de repetir cinco ajustes em cada título, você aplica o estilo inteiro com um único clique.
+
+O erro clássico do iniciante é formatar cada título manualmente: seleciona o texto, muda a fonte para 14, clica em Negrito, escolhe o azul e repete a operação em 30 títulos diferentes. Além de lento, esse método cria títulos ligeiramente diferentes entre si — um com 13,5 pt, outro com azul mais claro, outro sem negrito.
+
+OS 4 GRANDES BENEFÍCIOS DOS ESTILOS:
+1. AGILIDADE — aplica cinco formatações simultâneas em 1 único clique.
+2. UNIFORMIDADE — garante que todos os títulos do documento fiquem rigorosamente idênticos.
+3. ATUALIZAÇÃO GLOBAL EM CASCATA — se o orientador pedir para trocar a fonte dos 40 títulos de Arial para Times, basta alterar o estilo uma única vez e o documento inteiro se atualiza sozinho em 1 segundo.
+4. GERAÇÃO AUTOMÁTICA DO SUMÁRIO — o Word só monta o sumário automático se identificar a marcação de estilos (Título 1, Título 2).
+
+Em um ambiente corporativo, estilos são o que permitem que várias pessoas editem o mesmo documento sem que ele vire uma colcha de retalhos visual. O manual de identidade da empresa vira um conjunto de estilos, não uma sequência de instruções soltas.`,
+          image: "../../assets/img/word/Aula5/image5.png",
+          caption: "Galeria de estilos rápidos com os cartões Normal, Título 1, Título 2 e Citação",
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#1D4ED8; color:#fff;">🏛️ Os 4 Benefícios dos Estilos</div>
+  <table class="mini-sheet">
+    <tr><th>Benefício</th><th>O que resolve</th><th>Efeito prático</th></tr>
+    <tr style="background:#EFF6FF;"><td><strong>1. Agilidade</strong></td><td>Repetição de ajustes manuais</td><td>5 formatações em 1 clique</td></tr>
+    <tr><td><strong>2. Uniformidade</strong></td><td>Títulos ligeiramente diferentes</td><td>Todos os títulos idênticos</td></tr>
+    <tr style="background:#F0FDF4;"><td><strong>3. Cascata</strong></td><td>Mudança de padrão em documento grande</td><td>40 títulos atualizados de uma vez</td></tr>
+    <tr><td><strong>4. Sumário automático</strong></td><td>Sumário montado à mão</td><td>O Word reconhece a hierarquia</td></tr>
+  </table>
+</div>
+<div class="fun-highlight">
+  <strong>💡 Regra de ouro:</strong> formate o <strong>estilo</strong>, não o texto. Quando você altera o estilo, todos os trechos que o usam mudam juntos; quando altera só o texto, a mudança vale para ele e o documento volta a ficar inconsistente.
+</div>`
+        },
+        {
+          lessonNum: 5,
+          heading: "5.2 Galeria de Estilos e Modificação Global em Cascata",
+          content: `A Galeria de Estilos Rápidos fica no centro da guia Página Inicial, no grupo Estilos. Ela mostra os estilos mais usados; a setinha no canto abre a lista completa e o botão Mais revela opções como Selecionar Todos e Limpar Formatação.
+
+HIERARQUIA DOS ESTILOS NATIVOS:
+• Título 1 — capítulos de primeiro nível, como 1 INTRODUÇÃO e 2 DESENVOLVIMENTO.
+• Título 2 — seções secundárias, como 2.1 Histórico e 2.2 Conceitos Fundamentais.
+• Título 3 — subseções terciárias, como 2.2.1 Análise de Dados.
+• Normal — todo o parágrafo de texto comum do trabalho.
+• Citação — trechos destacados e transcrições longas.
+
+COMO MODIFICAR UM ESTILO:
+1. Clique com o botão direito no cartão Título 1 da galeria.
+2. Escolha Modificar...
+3. Na janela, ajuste fonte (Arial ou Times New Roman), tamanho, cor e negrito.
+4. Marque Atualizar automaticamente apenas se quiser que ajustes manuais sejam incorporados ao estilo.
+5. Clique em OK: todos os títulos marcados como Título 1 assumem a nova formatação imediatamente.
+
+A atualização em cascata é o coração da aula: o estilo é um objeto único, e cada título é apenas uma referência a ele. Mudou o objeto, todas as referências mudam juntas.`,
+          image: "../../assets/img/word/Aula5/image1.png",
+          caption: "Janela Modificar Estilo com fonte, tamanho, cor e opções de negrito",
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#0F766E; color:#fff;">🔗 O Estilo é um Objeto Único — os Títulos São Referências</div>
+  <div style="display:flex; flex-direction:column; gap:10px; padding:6px 0;">
+    <div style="align-self:center; background:#1D4ED8; color:#fff; border-radius:10px; padding:10px 22px; font-weight:800; font-size:12.5px; box-shadow:0 4px 10px rgba(29,78,216,0.25);">ESTILO TÍTULO 1 — Arial • 14 pt • azul • negrito</div>
+    <div style="text-align:center; color:#64748B; font-size:16px; line-height:1;">↓ ↓ ↓</div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <div style="background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:8px; padding:8px 12px; font-size:11px; font-weight:700; color:#1E3A8A;">1 INTRODUÇÃO</div>
+      <div style="background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:8px; padding:8px 12px; font-size:11px; font-weight:700; color:#1E3A8A;">2 DESENVOLVIMENTO</div>
+      <div style="background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:8px; padding:8px 12px; font-size:11px; font-weight:700; color:#1E3A8A;">3 CONCLUSÃO</div>
+    </div>
+    <div style="text-align:center; font-size:11.5px; color:#475569;">Ao alterar o objeto uma única vez, as três referências mudam no mesmo instante.</div>
+  </div>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#B45309; color:#fff;">⚠️ Cuidado com “Atualizar automaticamente”</div>
+  <p style="margin:0; font-size:11.5px; color:#78350F; line-height:1.7;">Com essa opção marcada, qualquer ajuste manual feito em um parágrafo que usa o estilo pode ser incorporado ao estilo inteiro. É útil durante a criação, mas perigosa na revisão final: um ajuste isolado pode alterar todos os títulos do documento. Para criar uma variação, prefira <strong>Novo Estilo Baseado em...</strong>.</p>
+</div>`
+        },
+        {
+          lessonNum: 5,
+          heading: "5.3 Criando Estilos Personalizados pelo Método “Criar por Exemplo”",
+          content: `Quando o documento precisa de um destaque que não existe na galeria — uma caixa de aviso, uma legenda de foto, um bloco de contato —, o caminho mais rápido é o Criar por Exemplo: você formata uma frase do jeito desejado e o Word transforma essa formatação em um novo estilo.
+
+COMO CRIAR UM ESTILO EM 10 SEGUNDOS:
+1. Digite uma frase e formate como desejar (por exemplo: verde escuro, itálico, 11 pt, recuo centralizado).
+2. Deixe essa frase selecionada.
+3. Clique com o botão direito na galeria de estilos (ou abra o menu da galeria) e escolha Salvar Seleção como um Novo Estilo Rápido...
+4. Digite um nome claro — como “Aviso do Professor” — e confirme.
+5. O novo estilo passa a aparecer na galeria e pode ser aplicado a qualquer trecho do documento.
+
+TIPOS DE ESTILO — ESCOLHA O TIPO CERTO ANTES DE SALVAR:
+• Parágrafo — formata o bloco inteiro: fonte, recuo, espaçamento e alinhamento. Use em títulos, avisos e citações longas.
+• Caractere — formata apenas o trecho selecionado dentro do parágrafo. Use em palavras em destaque e termos técnicos.
+• Tabela — formata bordas, sombreamento e alinhamento das células. Use em tabelas padronizadas do trabalho.
+• Lista — formata marcadores, numeração e níveis. Use em listas de requisitos e checklists.
+
+BOAS PRÁTICAS DE NOMENCLATURA:
+• Use nomes que expliquem a função: “Aviso do Professor”, “Legenda de Foto”, “Caixa de Contato”.
+• Evite nomes vagos como “Estilo 1” ou “Novo Estilo” — em um documento grande, ninguém lembra o que são.
+• Se o estilo nascer de outro, escolha Baseado em: para herdar comportamentos e facilitar ajustes futuros.
+• Marque Adicionar à galeria de estilos para que ele fique acessível com um clique.`,
+          image: "../../assets/img/word/Aula5/image3.png",
+          caption: "Janela Novo Estilo, com nome, tipo, estilo base e a opção Adicionar à galeria de estilos",
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#0F766E; color:#fff;">🧩 Os 4 Tipos de Estilo — escolha antes de salvar</div>
+  <table class="mini-sheet">
+    <tr><th>Tipo</th><th>O que formata</th><th>Exemplo de uso</th></tr>
+    <tr style="background:#ECFDF5;"><td><strong>Parágrafo</strong></td><td>O bloco inteiro: fonte, recuo, espaçamento e alinhamento</td><td>Títulos, avisos e citações longas</td></tr>
+    <tr><td><strong>Caractere</strong></td><td>Apenas o trecho selecionado dentro do parágrafo</td><td>Palavras em destaque e termos técnicos</td></tr>
+    <tr style="background:#EFF6FF;"><td><strong>Tabela</strong></td><td>Bordas, sombreamento e alinhamento das células</td><td>Tabelas padronizadas do trabalho</td></tr>
+    <tr><td><strong>Lista</strong></td><td>Marcadores, numeração e níveis</td><td>Listas de requisitos e checklists</td></tr>
+  </table>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#1D4ED8; color:#fff;">💾 Criar por Exemplo — 4 passos</div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap; padding:6px 0;">
+    <div style="flex:1; min-width:130px; background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:8px; padding:10px 12px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">1</strong><br>Formate uma frase do jeito desejado</div>
+    <div style="flex:1; min-width:130px; background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:8px; padding:10px 12px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">2</strong><br>Deixe a frase selecionada</div>
+    <div style="flex:1; min-width:130px; background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:8px; padding:10px 12px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">3</strong><br>Galeria &gt; Salvar Seleção como um Novo Estilo Rápido...</div>
+    <div style="flex:1; min-width:130px; background:#DCFCE7; border:1.5px solid #86EFAC; border-radius:8px; padding:10px 12px; font-size:11.5px; color:#166534;"><strong style="color:#15803D;">4</strong><br>Dê um nome claro e confirme</div>
+  </div>
+</div>
+<div class="fun-highlight">
+  <strong>💡 Regra de ouro da nomenclatura:</strong> um estilo é uma ferramenta de trabalho em equipe. “Aviso do Professor” explica a função; “Estilo 1” não explica nada — e em um documento com 20 estilos personalizados, ninguém lembra o que cada número faz.
+</div>`
+        },
+        {
+          lessonNum: 5,
+          heading: "5.4 O Pincel de Formatação e Seus Truques Avançados",
+          content: `O Pincel de Formatação copia a aparência de um texto (fonte, cor, tamanho, negrito) e aplica em outro trecho, sem copiar o conteúdo. É a ferramenta ideal para replicar um destaque pontual sem criar um estilo novo.
+
+CLIQUE SIMPLES × DUPLO CLIQUE:
+• Clique simples — copia a formatação para um único trecho e desativa o pincel em seguida. Use em ajustes pontuais.
+• Duplo clique — trava o pincel ativo e permite pintar vários trechos espalhados pelo texto. Use para padronizar dezenas de palavras sem voltar ao menu.
+• Tecla Esc — solta o pincel travado e volta o cursor ao normal.
+
+ATALHOS DE TECLADO:
+• Ctrl + Shift + C — copia a formatação do texto selecionado.
+• Ctrl + Shift + V — cola a formatação copiada no trecho selecionado.
+
+COMO USAR O PINCEL TRAVADO:
+1. Selecione a palavra que já está formatada como você quer.
+2. Dê dois cliques rápidos no ícone do Pincel de Formatação.
+3. O cursor fica com o ícone do pincel: clique em quantos trechos precisar.
+4. Pressione Esc para soltar o pincel.
+
+Atenção: o pincel copia apenas a formatação de caractere e de parágrafo — ele não copia o texto, nem imagens, nem o conteúdo da área de transferência.`,
+          image: "../../assets/img/word/Aula5/image6.png",
+          caption: "Ícone do Pincel de Formatação no grupo Área de Transferência",
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#0F766E; color:#fff;">🖌️ Clique Simples × Duplo Clique × Atalhos</div>
+  <table class="mini-sheet">
+    <tr><th>Ação</th><th>Comportamento</th><th>Quando usar</th></tr>
+    <tr><td><strong>Clique simples</strong></td><td>Copia para <strong>um único trecho</strong> e desativa</td><td>Ajuste pontual em uma palavra ou frase</td></tr>
+    <tr style="background:#ECFDF5;"><td><strong>Duplo clique</strong></td><td><strong>Trava</strong> o pincel e permite pintar vários trechos</td><td>Padronizar dezenas de palavras</td></tr>
+    <tr><td><strong>Tecla Esc</strong></td><td>Solta o pincel travado</td><td>Encerrar a pintura</td></tr>
+    <tr style="background:#EFF6FF;"><td><strong>Ctrl + Shift + C</strong></td><td>Copia a formatação do texto selecionado</td><td>Atalho para copiar sem o botão</td></tr>
+    <tr><td><strong>Ctrl + Shift + V</strong></td><td>Cola a formatação copiada</td><td>Atalho para aplicar sem o botão</td></tr>
+  </table>
+</div>
+<div class="fun-highlight">
+  <strong>🎯 Truque do duplo clique:</strong> o pincel travado continua ativo até você pressionar <strong>Esc</strong>. É a diferença entre pintar <strong>1</strong> trecho e pintar <strong>quantos quiser</strong>.
+</div>`
+        },
+        {
+          lessonNum: 5,
+          heading: "5.5 Higienização de Textos e o Botão Limpar Formatação",
+          content: `Ao colar um texto copiado da internet, ele costuma trazer fontes estranhas, fundos cinzas, links azuis e tamanhos que não combinam com o documento. O botão Limpar Toda a Formatação resolve isso em um clique.
+
+ONDE FICA: guia Página Inicial, grupo Fonte. O ícone é uma letra A com uma borrachinha rosa ao lado.
+
+O QUE ELE FAZ: remove a formatação direta — fontes, cores, tamanhos, negrito e sublinhado — e devolve o texto ao estilo Normal. Em algumas versões, listas e numeração podem exigir remoção manual após a limpeza.
+
+FLUXO RECOMENDADO PARA TEXTO DA WEB:
+1. Cole o texto no documento.
+2. Selecione o trecho colado.
+3. Clique em Limpar Toda a Formatação (a borracha).
+4. Aplique o estilo desejado: Normal, Citação ou um estilo personalizado.
+
+Diferença importante: limpar formatação não é o mesmo que colar sem formatação. O atalho Ctrl + Shift + V cola o texto já sem a formatação de origem; a borracha limpa um texto que já está no documento. Os dois caminhos levam ao mesmo resultado visual — texto puro, pronto para receber o padrão do trabalho.`,
+          image: "../../assets/img/word/Aula5/image9.png",
+          caption: "Botão Limpar Toda a Formatação no grupo Fonte da guia Página Inicial",
+          html: `<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#B45309; color:#fff;">🧽 Antes × Depois da Borracha</div>
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <div style="flex:1; min-width:180px; background:#FEF2F2; border:1.5px solid #FCA5A5; border-radius:8px; padding:12px;">
+      <div style="font-weight:800; color:#991B1B; font-size:12px; margin-bottom:6px;">❌ Antes (formatado pela web)</div>
+      <div style="font-size:11.5px; color:#7F1D1D; line-height:1.7;"><span style="background:#FEF08A;">Notícia importante</span> — texto com <span style="color:#1D4ED8; text-decoration:underline;">link azul</span>, fundo cinza e fonte diferente do documento.</div>
+    </div>
+    <div style="flex:1; min-width:180px; background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:8px; padding:12px;">
+      <div style="font-weight:800; color:#166534; font-size:12px; margin-bottom:6px;">✅ Depois (Limpar Toda a Formatação)</div>
+      <div style="font-size:11.5px; color:#166534; line-height:1.7;">Notícia importante — texto limpo, na fonte e no tamanho do estilo Normal, pronto para receber o estilo do trabalho.</div>
+    </div>
+  </div>
+</div>
+<div class="es-sheet-box" style="margin:14px 0;">
+  <div class="es-sheet-titlebar" style="background:#1D4ED8; color:#fff;">✅ Checklist de Auditoria da Aula 05</div>
+  <table class="mini-sheet">
+    <tr><th>Item</th><th>O que conferir</th></tr>
+    <tr><td><strong>Hierarquia</strong></td><td>Título 1, 2 e 3 na ordem correta, sem pular níveis</td></tr>
+    <tr><td><strong>Uniformidade</strong></td><td>Títulos do mesmo nível visualmente idênticos</td></tr>
+    <tr><td><strong>Corpo do texto</strong></td><td>Parágrafos comuns permanecem no estilo Normal</td></tr>
+    <tr><td><strong>Estilos personalizados</strong></td><td>Nomes claros e presença confirmada na galeria</td></tr>
+    <tr><td><strong>Pincel</strong></td><td>Nenhum trecho ficou com formatação copiada por engano</td></tr>
+    <tr><td><strong>Limpeza</strong></td><td>Textos colados da web foram higienizados</td></tr>
+  </table>
+</div>`
         }
       ]
     },

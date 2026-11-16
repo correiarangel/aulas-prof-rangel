@@ -876,6 +876,256 @@
       .l4-shape.roundRect, .l4-shape.arrow, .l4-shape.banner { width: 180px; }
       .l4-shape.star { width: 128px; height: 128px; }
     }
+
+    /* ============================================================
+       AULA 05 — ESTILOS RÁPIDOS, PINCEL DE FORMATAÇÃO E LIMPEZA
+       ============================================================ */
+    .l5-demo-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--line-light);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 20px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .l5-demo-head {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--word-blue-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .l5-demo-hint {
+      font-size: 12px;
+      font-weight: 600;
+      color: #64748B;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .l5-btn-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .l5-sim-btn {
+      border: 1.5px solid var(--word-blue-border);
+      background: var(--word-blue-light);
+      color: var(--word-blue-dark);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .l5-sim-btn:hover { border-color: var(--word-blue); }
+    .l5-sim-btn.active {
+      background: var(--word-blue);
+      border-color: var(--word-blue);
+      color: #FFFFFF;
+    }
+    .l5-stage {
+      background: #F8FAFC;
+      border: 1.5px dashed #93C5FD;
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 190px;
+    }
+    .l5-doc {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 20px 22px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.10);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .l5-doc-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #1D4ED8;
+      margin: 0 0 4px;
+      transition: color 0.25s ease, font-size 0.25s ease, font-family 0.25s ease;
+    }
+    .l5-doc-sub {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1E3A8A;
+      margin: 10px 0 3px;
+      transition: color 0.25s ease, font-family 0.25s ease;
+    }
+    .l5-doc-body {
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .l5-cascade-stage.alt .l5-doc-title {
+      color: #0F766E;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 19px;
+    }
+    .l5-cascade-stage.alt .l5-doc-sub {
+      color: #115E59;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    .l5-gallery {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .l5-gal-chip {
+      border: 1.5px solid #CBD5E1;
+      background: #FFFFFF;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #334155;
+      transition: all 0.15s ease;
+    }
+    .l5-gal-chip:hover { border-color: var(--word-blue); }
+    .l5-gal-chip.active {
+      background: #1D4ED8;
+      border-color: #1D4ED8;
+      color: #FFFFFF;
+    }
+    .l5-gallery-preview {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 18px 20px;
+      min-height: 150px;
+    }
+    .l5-preview-text { margin: 0; transition: all 0.2s ease; }
+    .l5-preview-text.is-normal { font-size: 13px; color: #334155; line-height: 1.7; }
+    .l5-preview-text.is-h1 { font-size: 22px; font-weight: 800; color: #1D4ED8; }
+    .l5-preview-text.is-h2 { font-size: 18px; font-weight: 700; color: #1E40AF; }
+    .l5-preview-text.is-h3 { font-size: 15px; font-weight: 700; color: #1E3A8A; }
+    .l5-preview-text.is-quote {
+      font-size: 13px;
+      font-style: italic;
+      color: #7C3AED;
+      border-left: 4px solid #A78BFA;
+      padding-left: 12px;
+      line-height: 1.7;
+    }
+    .l5-mod-preview {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 18px 20px;
+    }
+    .l5-mod-heading {
+      margin: 0 0 4px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #1D4ED8;
+      font-family: 'Inter', Arial, sans-serif;
+      transition: all 0.2s ease;
+    }
+    .l5-mod-preview.times .l5-mod-heading { font-family: Georgia, 'Times New Roman', serif; }
+    .l5-mod-preview.size-14 .l5-mod-heading { font-size: 19px; }
+    .l5-mod-preview.size-12 .l5-mod-heading { font-size: 16px; }
+    .l5-mod-preview.color-black .l5-mod-heading { color: #111827; }
+    .l5-mod-preview.color-blue .l5-mod-heading { color: #1D4ED8; }
+    .l5-mod-preview.bold-off .l5-mod-heading { font-weight: 400; }
+    .l5-create-preview {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 18px 20px;
+      min-height: 96px;
+    }
+    .l5-create-text {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      font-style: italic;
+      color: #0F766E;
+      border-left: 4px solid #0F766E;
+      padding-left: 12px;
+      line-height: 1.6;
+    }
+    .l5-gallery-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .l5-chip-new {
+      background: #0F766E;
+      color: #FFFFFF;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+    .l5-brush-stage {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 18px 20px;
+    }
+    .l5-brush-paragraph {
+      margin: 0 0 10px;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.6;
+      transition: all 0.15s ease;
+    }
+    .l5-brush-paragraph:last-child { margin-bottom: 0; }
+    .l5-brush-paragraph.paintable { cursor: crosshair; box-shadow: 0 0 0 2px #93C5FD inset; }
+    .l5-brush-paragraph.painted {
+      background: #ECFDF5;
+      color: #065F46;
+      font-weight: 700;
+      border-left: 3px solid #10B981;
+    }
+    .l5-brush-tool.active {
+      background: #0F766E;
+      border-color: #0F766E;
+      color: #FFFFFF;
+    }
+    .l5-clean-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .l5-clean-card {
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 12.5px;
+      line-height: 1.7;
+    }
+    .l5-clean-card.dirty {
+      background: #FEF3C7;
+      border: 1.5px solid #FCD34D;
+      color: #7C2D12;
+      font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+    }
+    .l5-clean-card.clean {
+      background: #F0FDF4;
+      border: 1.5px solid #86EFAC;
+      color: #166534;
+    }
+    @media (max-width: 640px) {
+      .l5-stage { padding: 12px; }
+      .l5-doc { padding: 16px 14px; }
+      .l5-doc-title { font-size: 15px; }
+      .l5-gallery-preview, .l5-mod-preview, .l5-create-preview, .l5-brush-stage { padding: 14px 12px; }
+      .l5-preview-text.is-h1 { font-size: 19px; }
+      .l5-preview-text.is-h2 { font-size: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -958,11 +1208,11 @@
           </div>
 
           <!-- AULA 05 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(5, 'Estilos Rápidos & Pincel de Formatação')">
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(5, 'Estilos Rápidos & Pincel de Formatação')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 05</span>
               <span class="lesson-name">Estilos Rápidos & Pincel de Formatação</span>
-              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `we005`)</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-5">🔒</span>
           </div>
@@ -4052,6 +4302,769 @@
     </section>
 
     <!-- ===================================================================
+         AULA 05 — ESTILOS RÁPIDOS, PINCEL DE FORMATAÇÃO & LIMPEZA
+         =================================================================== -->
+    <section id="screen-lesson-5" class="screen-view">
+
+      <!-- Topo da Aula com Botões de Ação -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('word', 5)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra Gamificada de Progresso da Aula 5 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 5)</span>
+            <span id="gamify-percent-5">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-5" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-5">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <!-- Cartão Principal de Leitura -->
+      <article class="lesson-reading-card">
+        <span class="badge-word-blue">Módulo 2 • Aula 05</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 05: Estilos Rápidos &amp; Pincel de Formatação</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <em>Hierarquia visual, criação de estilos por exemplo, atualização em cascata e limpeza de formatação.</em> Leia cada etapa com atenção e aplique os comandos diretamente no seu Word!
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l5-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--word-blue); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:var(--word-blue-light); color:var(--word-blue-dark); border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar: O que vamos fazer e como</span>
+
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:14px 0 8px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Descobrir o recurso que separa os usuários amadores dos profissionais de Word: a <strong>gestão por Estilos</strong>. Você vai economizar horas de trabalho braçal, padronizar títulos e parágrafos e preparar o documento para gerar o <strong>sumário automático</strong> — sem formatar cada trecho manualmente.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo em 5 Fases)</h3>
+          <p style="margin:0 0 12px 0; font-size:13.5px; color:#475569; line-height:1.7;">
+            Os checks ficam distribuídos — posicionados no fim de cada fase, exatamente onde está a instrução prática. Cada passo é um check e só libera o próximo!
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px;" aria-label="Roteiro dos 5 passos">
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">1</strong>
+              <span>Compreender o conceito e os 4 benefícios dos Estilos no Word.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">2</strong>
+              <span>Aplicar estilos nativos (Normal, Título 1 e Título 2) respeitando a hierarquia.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">3</strong>
+              <span>Modificar um estilo e testemunhar a atualização global automática.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">4</strong>
+              <span>Criar um estilo próprio pelo método fácil “Criar por Exemplo”.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">5</strong>
+              <span>Dominar o duplo clique do Pincel de Formatação e o botão Limpar Formatação.</span>
+            </div>
+          </div>
+
+          <img src="../../assets/img/word/Aula5/image4.png" alt="Aula 05 de Word: Estilos e Formatação Avançada" class="img-showcase" style="max-width:620px;">
+          <p class="img-caption">Imagem 01/11 — Capa da Aula 05: Estilos e Formatação Avançada no Microsoft Word.</p>
+
+          <div style="margin-top:18px; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-radius:10px; padding:14px 16px;">
+            <div style="font-weight:800; color:var(--word-blue-dark); font-size:14px; margin-bottom:4px;">⚙️ FAIXA DE PREPARAÇÃO — antes da Fase 1</div>
+            <ol style="font-size:13.5px; color:#374151; line-height:1.7; margin:0; padding-left:20px;">
+              <li>Abra o <strong>Microsoft Word</strong> e salve um documento em branco como <code>Estilos_Aula05.docx</code>.</li>
+              <li>Digite três títulos curtos e dois parágrafos de texto comum para servir de teste.</li>
+              <li>Confira se o grupo <strong>Estilos</strong> está visível na guia <strong>Página Inicial</strong> (se a janela estiver estreita, clique na setinha para expandir a galeria).</li>
+            </ol>
+          </div>
+
+          <div id="l5-checklist-status" style="margin-top:14px; font-size:14px; font-weight:700; color:var(--word-blue-dark);">▢ 0 / 5 Passos Concluídos</div>
+          <div id="l5-complete-hint" style="display:none; margin-top:8px; font-size:13.5px; font-weight:700; color:#15803D; background:#DCFCE7; border:1.5px solid #86EFAC; border-radius:8px; padding:10px 12px;">🎉 Todos os 5 passos concluídos — você concluiu a leitura e liberou o Exercício de Fixação!</div>
+
+          <div style="margin-top:20px; text-align:center;">
+            <button type="button" id="btn-start-l5" class="btn btn-primary" style="font-size:15px; padding:12px 28px;" onclick="switchTopicPhase(5, 1)">
+              ▶ ENTENDI! QUERO COMEÇAR A AULA ↓
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Abas de Tópicos da Aula 5 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-5-1" onclick="switchTopicPhase(5, 1)">1. Por Que Estilos?</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-2" onclick="switchTopicPhase(5, 2)">2. Galeria &amp; Hierarquia</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-3" onclick="switchTopicPhase(5, 3)">3. Modificar Estilo</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-4" onclick="switchTopicPhase(5, 4)">4. Criar por Exemplo</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-5" onclick="switchTopicPhase(5, 5)">5. Pincel &amp; Borracha</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-5-fix" onclick="openFixationPanel(5)" style="background:var(--amber-soft); color:var(--teal-deep); font-weight:700;">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             FASE 1: POR QUE USAR ESTILOS?
+             =============================================================== -->
+        <section id="l5-phase-1" class="topic-phase-section active">
+          <h2>1. Por Que Usar Estilos? A Revolução da Produtividade</h2>
+          <p>
+            O erro clássico do iniciante é formatar cada título <strong>manualmente</strong>: seleciona o texto, muda a fonte para 14, clica em Negrito, escolhe o azul e repete a operação em 30 títulos diferentes. Além de lento, esse método cria títulos ligeiramente diferentes entre si — um com 13,5 pt, outro com azul mais claro, outro sem negrito.
+          </p>
+          <p>
+            Um <strong>Estilo</strong> é um conjunto de características visuais (fonte, tamanho, cor, espaçamento e recuo) salvo com um nome. Ao aplicar o estilo <strong>Título 1</strong>, o Word executa cinco ou seis formatações de uma só vez, com um único clique, e garante que todos os títulos fiquem rigorosamente iguais.
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:18px 0;">
+            <div style="background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:12px; padding:16px 18px;">
+              <div style="font-weight:800; color:#1E40AF; font-size:15px; margin-bottom:6px;">⚡ 1. Agilidade</div>
+              <p style="margin:0; font-size:13.5px; color:#1E3A8A; line-height:1.7;">Aplica várias formatações simultâneas em <strong>1 único clique</strong>, em vez de cinco comandos separados.</p>
+            </div>
+            <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px;">
+              <div style="font-weight:800; color:#166534; font-size:15px; margin-bottom:6px;">📏 2. Uniformidade</div>
+              <p style="margin:0; font-size:13.5px; color:#166534; line-height:1.7;">Todos os títulos do documento ficam <strong>rigorosamente idênticos</strong> — sem diferenças de tamanho ou cor.</p>
+            </div>
+            <div style="background:#FFF7ED; border:1.5px solid #FDBA74; border-radius:12px; padding:16px 18px;">
+              <div style="font-weight:800; color:#9A3412; font-size:15px; margin-bottom:6px;">🔁 3. Atualização em Cascata</div>
+              <p style="margin:0; font-size:13.5px; color:#9A3412; line-height:1.7;">Mude o estilo <strong>uma única vez</strong> e o documento inteiro se atualiza sozinho em segundos.</p>
+            </div>
+            <div style="background:#F5F3FF; border:1.5px solid #C4B5FD; border-radius:12px; padding:16px 18px;">
+              <div style="font-weight:800; color:#5B21B6; font-size:15px; margin-bottom:6px;">📑 4. Sumário Automático</div>
+              <p style="margin:0; font-size:13.5px; color:#5B21B6; line-height:1.7;">O Word só monta o sumário automático quando identifica a <strong>marcação de estilos</strong> (Título 1, Título 2...).</p>
+            </div>
+          </div>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: veja a atualização global em cascata <span class="l5-demo-hint">#l5-cascade-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Botões do simulador de atualização em cascata">
+              <button type="button" class="l5-sim-btn active" onclick="l5SetCascade('base', this)">📘 Estilo original (azul)</button>
+              <button type="button" class="l5-sim-btn" onclick="l5SetCascade('alt', this)">🎨 Trocar fonte e cor do Título 1</button>
+            </div>
+            <div class="l5-stage l5-cascade-stage" id="l5-cascade-stage">
+              <div class="l5-doc">
+                <p class="l5-doc-title">1 INTRODUÇÃO</p>
+                <p class="l5-doc-body">O projeto nasceu da necessidade de organizar os dados da pesquisa de campo.</p>
+                <p class="l5-doc-sub">1.1 Justificativa</p>
+                <p class="l5-doc-body">A padronização visual facilita a leitura e a avaliação do trabalho.</p>
+                <p class="l5-doc-sub">1.2 Objetivos</p>
+                <p class="l5-doc-body">Descrever o problema, propor a solução e medir os resultados.</p>
+                <p class="l5-doc-title">2 DESENVOLVIMENTO</p>
+                <p class="l5-doc-body">Aqui entram os capítulos centrais, sempre marcados com Título 1.</p>
+              </div>
+            </div>
+            <div id="l5-cascade-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Estilo Título 1 original — os títulos foram aplicados com 1 clique cada.</div>
+          </div>
+
+          <div style="background:#F0F9FF; border:1.5px solid #BAE6FD; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#0C4A6E; margin:0 0 8px; font-size:16px;">💼 Exemplo prático: o pedido de última hora</h3>
+            <p style="margin:0; font-size:14px; color:#0C4A6E; line-height:1.7;">
+              O orientador pede para trocar a fonte dos 40 títulos de Arial para Times New Roman. Com formatação manual, seriam 40 seleções e 40 alterações — com risco de esquecer algum. Com estilos, basta abrir <strong>Modificar</strong> no estilo Título 1, trocar a fonte e confirmar: os 40 títulos mudam juntos, na mesma fração de segundo.
+            </p>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Como aplicar um estilo nativo</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Selecione o título (ou apenas clique dentro dele).</li>
+              <li>Na guia <strong>Página Inicial</strong>, localize o grupo <strong>Estilos</strong>.</li>
+              <li>Clique no cartão <strong>Título 1</strong>. O texto assume instantaneamente toda a formatação do estilo.</li>
+              <li>Repita para cada capítulo. O parágrafo comum deve permanecer no estilo <strong>Normal</strong>.</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/word/Aula5/image5.png" alt="Galeria de Estilos Rápidos na guia Página Inicial do Word" class="img-showcase" style="max-width:560px;">
+          <p class="img-caption">Imagem 02/11 — Galeria de Estilos Rápidos: os cartões Normal, Título 1, Título 2 e Citação ficam no grupo Estilos da guia Página Inicial.</p>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 1 -->
+          <div class="phase-step-check" data-step="1" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l5-check-1" class="l5-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 1">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 1: POR QUE USAR ESTILOS</strong><br>
+              Entendi os <strong>4 benefícios dos estilos</strong> (agilidade, uniformidade, atualização em cascata e sumário automático) e a importância de não formatar título por título.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 2 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que compreendi os benefícios dos estilos e a atualização em cascata.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-1" onclick="markTopicRead(5, 1)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 1)">← Voltar à Fase 0</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 2)">Ir para 2. Galeria &amp; Hierarquia →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 2: A GALERIA DE ESTILOS E A HIERARQUIA
+             =============================================================== -->
+        <section id="l5-phase-2" class="topic-phase-section">
+          <h2>2. A Galeria de Estilos e a Hierarquia Título 1, 2 e 3</h2>
+          <p>
+            A <strong>Galeria de Estilos Rápidos</strong> fica no centro da guia <strong>Página Inicial</strong>, no grupo <strong>Estilos</strong>. Ela mostra os estilos mais usados; a setinha no canto abre a lista completa e o botão <strong>Mais</strong> revela opções como <em>Selecionar Todos</em> e <em>Limpar Formatação</em>.
+          </p>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Hierarquia dos estilos nativos do Word">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">HIERARQUIA DE TÍTULOS</span>
+                <h3>🏷️ Cada nível tem um papel no documento</h3>
+              </div>
+              <span class="word-table-hint">Página Inicial &gt; Estilos</span>
+            </div>
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead>
+                  <tr>
+                    <th>Estilo</th>
+                    <th>Nível</th>
+                    <th>Exemplo de uso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="highlight-blue">
+                    <td><strong>Título 1</strong></td>
+                    <td>Capítulo principal</td>
+                    <td><code>1 INTRODUÇÃO</code>, <code>2 DESENVOLVIMENTO</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Título 2</strong></td>
+                    <td>Seção secundária</td>
+                    <td><code>2.1 Histórico</code>, <code>2.2 Conceitos</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Título 3</strong></td>
+                    <td>Subseção terciária</td>
+                    <td><code>2.2.1 Análise de Dados</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Normal</strong></td>
+                    <td>Corpo do texto</td>
+                    <td>Todos os parágrafos comuns do trabalho</td>
+                  </tr>
+                  <tr class="highlight-amber">
+                    <td><strong>Citação</strong></td>
+                    <td>Trecho destacado</td>
+                    <td>Transcrições longas e citações diretas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: clique em um estilo e veja o resultado <span class="l5-demo-hint">#l5-gallery-preview-text</span></div>
+            <div class="l5-gallery" role="group" aria-label="Estilos da galeria">
+              <button type="button" class="l5-gal-chip" onclick="l5SetGallery('normal', this)">Normal</button>
+              <button type="button" class="l5-gal-chip active" onclick="l5SetGallery('h1', this)">Título 1</button>
+              <button type="button" class="l5-gal-chip" onclick="l5SetGallery('h2', this)">Título 2</button>
+              <button type="button" class="l5-gal-chip" onclick="l5SetGallery('h3', this)">Título 3</button>
+              <button type="button" class="l5-gal-chip" onclick="l5SetGallery('quote', this)">Citação</button>
+            </div>
+            <div class="l5-gallery-preview">
+              <p class="l5-preview-text is-h1" id="l5-gallery-preview-text">1 INTRODUÇÃO</p>
+            </div>
+            <div id="l5-gallery-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Estilo selecionado: Título 1 — capítulos de primeiro nível.</div>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#166534; margin:0 0 8px; font-size:16px;">⌨️ Atalhos que economizam cliques</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#166534; line-height:1.75;">
+              <li><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd> aplica <strong>Título 1</strong> ao parágrafo atual.</li>
+              <li><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> aplica <strong>Título 2</strong>; <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>3</kbd> aplica <strong>Título 3</strong>.</li>
+              <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd> devolve o parágrafo ao estilo <strong>Normal</strong>.</li>
+            </ul>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">🗂️ Mapa de navegação de um trabalho acadêmico</h3>
+            <div style="font-size:13.5px; color:#374151; line-height:1.9;">
+              <div style="font-weight:800; color:#1E40AF;">1 INTRODUÇÃO <span style="font-weight:600; color:#64748B;">(Título 1)</span></div>
+              <div style="padding-left:20px;">1.1 Justificativa <span style="color:#64748B;">(Título 2)</span></div>
+              <div style="padding-left:20px;">1.2 Objetivos <span style="color:#64748B;">(Título 2)</span></div>
+              <div style="padding-left:40px;">1.2.1 Objetivo geral <span style="color:#64748B;">(Título 3)</span></div>
+              <div style="padding-left:40px;">1.2.2 Objetivos específicos <span style="color:#64748B;">(Título 3)</span></div>
+              <div style="font-weight:800; color:#1E40AF; margin-top:6px;">2 DESENVOLVIMENTO <span style="font-weight:600; color:#64748B;">(Título 1)</span></div>
+            </div>
+            <p style="margin:10px 0 0; font-size:12.5px; color:#64748B;">A numeração dos capítulos é digitada por você; o estilo cuida da aparência. O sumário automático usa essa mesma hierarquia para montar os níveis.</p>
+          </div>
+
+          <div style="background:#F5F3FF; border:1.5px solid #C4B5FD; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#5B21B6; margin:0 0 8px; font-size:16px;">🎨 Conjuntos de Estilos e Temas</h3>
+            <p style="margin:0; font-size:14px; color:#4C1D95; line-height:1.7;">
+              A galeria não trabalha sozinha: o botão <strong>Alterar Estilos</strong> (grupo Estilos) oferece <strong>Conjuntos de Estilos</strong>, que trocam de uma vez a combinação de fonte, cor e espaçamento de todos os estilos do documento, e a guia <strong>Design &gt; Temas</strong> aplica um pacote completo de cores e fontes. É o atalho para mudar a identidade visual inteira do trabalho sem tocar em cada título.
+            </p>
+          </div>
+
+          <img src="../../assets/img/word/Aula5/image8.png" alt="Menu de Conjuntos de Estilos e Temas do Word" class="img-showcase" style="max-width:600px;">
+          <p class="img-caption">Imagem 03/11 — Conjuntos de Estilos e Temas: a troca global de cores, fontes e espaçamento do documento.</p>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 2 -->
+          <div class="phase-step-check" data-step="2" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l5-check-2" class="l5-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 2">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 2: GALERIA E HIERARQUIA</strong><br>
+              Apliquei os estilos <strong>Título 1</strong> e <strong>Título 2</strong> no meu documento, respeitando a hierarquia dos capítulos e mantendo o corpo do texto em <strong>Normal</strong>.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 3 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que apliquei Título 1 e Título 2 respeitando a hierarquia.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-2" onclick="markTopicRead(5, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 1)">← Voltar ao Tópico 1</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 3)">Ir para 3. Modificar Estilo →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 3: MODIFICANDO UM ESTILO EXISTENTE
+             =============================================================== -->
+        <section id="l5-phase-3" class="topic-phase-section">
+          <h2>3. Modificando um Estilo Existente e a Atualização em Cascata</h2>
+          <p>
+            Modificar um estilo é diferente de formatar um texto. Quando você altera o <strong>estilo</strong>, todos os trechos que usam aquele estilo são atualizados automaticamente. Quando você altera apenas um texto selecionado, a mudança vale só para ele — e o documento volta a ficar inconsistente.
+          </p>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Passo a passo para ajustar o estilo Título 1</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Na galeria de estilos, clique com o <strong>botão direito</strong> sobre o cartão <strong>Título 1</strong>.</li>
+              <li>Escolha <strong>Modificar...</strong>.</li>
+              <li>Na janela, ajuste a <strong>fonte</strong> (Arial ou Times New Roman), o <strong>tamanho</strong>, a <strong>cor</strong> e o <strong>negrito</strong>.</li>
+              <li>Se quiser que o estilo acompanhe ajustes feitos no texto, marque <strong>Atualizar automaticamente</strong>.</li>
+              <li>Clique em <strong>OK</strong>. Todos os títulos marcados como Título 1 assumem a nova formatação imediatamente.</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/word/Aula5/image1.png" alt="Janela Modificar Estilo do Word" class="img-showcase" style="max-width:520px;">
+          <p class="img-caption">Imagem 04/11 — Janela Modificar Estilo: aqui se ajustam fonte, tamanho, cor e negrito do estilo inteiro.</p>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">⚠️ Cuidado com “Atualizar automaticamente”</h3>
+            <p style="margin:0; font-size:14px; color:#78350F; line-height:1.7;">
+              Com essa opção marcada, qualquer ajuste manual feito em um parágrafo que usa o estilo pode ser incorporado ao estilo inteiro. É útil durante a criação, mas perigosa na revisão final: um ajuste isolado pode alterar todos os títulos do documento. Se o objetivo é criar uma <strong>variação</strong> (por exemplo, um título de apêndice), prefira <strong>Novo Estilo Baseado em...</strong> em vez de modificar o original.
+            </p>
+          </div>
+
+          <div style="background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#1E40AF; margin:0 0 8px; font-size:16px;">📚 Nota de precisão sobre ABNT e tamanho de título</h3>
+            <p style="margin:0; font-size:14px; color:#1E3A8A; line-height:1.7;">
+              A NBR 14724 define a estrutura do trabalho e o padrão do <strong>corpo do texto</strong> (fonte 12, espaçamento 1,5), mas <strong>não fixa 14 pt para títulos</strong>. O tamanho 14 é uma convenção comum em modelos de faculdade. O que realmente importa é manter a <strong>hierarquia visível</strong> (Título 1 maior que Título 2, que é maior que Título 3) e a <strong>uniformidade</strong> em todo o documento. Confirme sempre o manual da sua instituição.
+            </p>
+          </div>
+
+          <img src="../../assets/img/word/Aula5/image10.png" alt="Ajustes de formatação do estilo no Word" class="img-showcase" style="max-width:560px;">
+          <p class="img-caption">Imagem 05/11 — Ajustes de formatação do estilo: cada alteração confirmada aqui se propaga para todos os títulos que usam o estilo.</p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: modifique o estilo e veja os 3 títulos mudarem juntos <span class="l5-demo-hint">#l5-mod-preview</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Fonte do estilo">
+              <button type="button" class="l5-sim-btn active" onclick="l5SetMod('font', 'arial', this)">Fonte Arial</button>
+              <button type="button" class="l5-sim-btn" onclick="l5SetMod('font', 'times', this)">Fonte Times New Roman</button>
+            </div>
+            <div class="l5-btn-row" role="group" aria-label="Tamanho do estilo">
+              <button type="button" class="l5-sim-btn" onclick="l5SetMod('size', 12, this)">Tamanho 12</button>
+              <button type="button" class="l5-sim-btn active" onclick="l5SetMod('size', 14, this)">Tamanho 14</button>
+            </div>
+            <div class="l5-btn-row" role="group" aria-label="Cor do estilo">
+              <button type="button" class="l5-sim-btn active" onclick="l5SetMod('color', 'blue', this)">Cor azul</button>
+              <button type="button" class="l5-sim-btn" onclick="l5SetMod('color', 'black', this)">Cor preta</button>
+            </div>
+            <div class="l5-btn-row" role="group" aria-label="Negrito do estilo">
+              <button type="button" class="l5-sim-btn active" id="l5-mod-bold" onclick="l5ToggleModBold(this)" aria-pressed="true">Negrito ligado</button>
+            </div>
+            <div class="l5-mod-preview size-14 color-blue" id="l5-mod-preview">
+              <p class="l5-mod-heading">1 INTRODUÇÃO</p>
+              <p class="l5-mod-heading">2 DESENVOLVIMENTO</p>
+              <p class="l5-mod-heading">3 CONCLUSÃO</p>
+            </div>
+            <div id="l5-mod-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Estilo Título 1: Arial • 14 pt • azul • negrito — os 3 títulos estão iguais.</div>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 3 -->
+          <div class="phase-step-check" data-step="3" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l5-check-3" class="l5-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 3">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 3: MODIFICAR ESTILO</strong><br>
+              Abri <strong>Modificar...</strong> no estilo Título 1 e ajustei fonte, tamanho, cor e negrito. Confirmei que <strong>todos os títulos do documento mudaram juntos</strong>, sem edição manual.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 4 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que modifiquei o estilo Título 1 e conferi a atualização em cascata.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-3" onclick="markTopicRead(5, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 2)">← Voltar ao Tópico 2</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 4)">Ir para 4. Criar por Exemplo →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 4: CRIANDO ESTILOS PERSONALIZADOS
+             =============================================================== -->
+        <section id="l5-phase-4" class="topic-phase-section">
+          <h2>4. Criando Estilos Personalizados pelo Método “Criar por Exemplo”</h2>
+          <p>
+            Quando o documento precisa de um destaque que não existe na galeria — uma caixa de aviso, uma legenda de foto, um bloco de contato —, o caminho mais rápido é o <strong>Criar por Exemplo</strong>: você formata uma frase do jeito desejado e o Word transforma essa formatação em um novo estilo.
+          </p>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Como criar um estilo em 10 segundos</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Digite uma frase e formate como desejar (por exemplo: verde escuro, itálico, 11 pt, recuo centralizado).</li>
+              <li>Deixe essa frase <strong>selecionada</strong>.</li>
+              <li>Clique com o botão direito na galeria de estilos (ou abra o menu da galeria) e escolha <strong>Salvar Seleção como um Novo Estilo Rápido...</strong>.</li>
+              <li>Digite um nome claro — como <strong>“Aviso do Professor”</strong> — e confirme.</li>
+              <li>O novo estilo passa a aparecer na galeria e pode ser aplicado a qualquer trecho do documento.</li>
+            </ol>
+          </div>
+
+          <img src="../../assets/img/word/Aula5/image3.png" alt="Janela Novo Estilo do Word" class="img-showcase" style="max-width:640px;">
+          <p class="img-caption">Imagem 06/11 — Janela Novo Estilo: nome, tipo, estilo base e a opção Adicionar à galeria de estilos.</p>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Tipos de estilo do Word">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">TIPOS DE ESTILO</span>
+                <h3>🧩 Escolha o tipo certo antes de salvar</h3>
+              </div>
+              <span class="word-table-hint">Galeria &gt; Novo Estilo</span>
+            </div>
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead>
+                  <tr>
+                    <th>Tipo</th>
+                    <th>O que formata</th>
+                    <th>Exemplo de uso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="highlight-blue">
+                    <td><strong>Parágrafo</strong></td>
+                    <td>O bloco inteiro: fonte, recuo, espaçamento e alinhamento</td>
+                    <td>Títulos, avisos e citações longas</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Caractere</strong></td>
+                    <td>Apenas o trecho selecionado dentro do parágrafo</td>
+                    <td>Palavras em destaque e termos técnicos</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tabela</strong></td>
+                    <td>Bordas, sombreamento e alinhamento das células</td>
+                    <td>Tabelas padronizadas do trabalho</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Lista</strong></td>
+                    <td>Marcadores, numeração e níveis</td>
+                    <td>Listas de requisitos e checklists</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: salve a seleção como um novo estilo rápido <span class="l5-demo-hint">#l5-gallery-chips</span></div>
+            <div class="l5-create-preview">
+              <p class="l5-create-text">⚠️ Atenção: entregar o trabalho revisado até sexta-feira.</p>
+            </div>
+            <div class="l5-btn-row" style="margin-top:14px;">
+              <button type="button" class="l5-sim-btn" id="l5-save-style" onclick="l5SaveStyle(this)">💾 Salvar Seleção como um Novo Estilo Rápido...</button>
+              <button type="button" class="l5-sim-btn" onclick="l5ResetStyle()">↺ Apagar estilo criado</button>
+            </div>
+            <div class="l5-gallery-chips" id="l5-gallery-chips"></div>
+            <div id="l5-create-status" style="margin-top:8px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Nenhum estilo personalizado criado ainda.</div>
+          </div>
+
+          <div style="background:#F5F3FF; border:1.5px solid #C4B5FD; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#5B21B6; margin:0 0 8px; font-size:16px;">💡 Boas práticas de nomenclatura</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#5B21B6; line-height:1.75;">
+              <li>Use nomes que expliquem a <strong>função</strong>: “Aviso do Professor”, “Legenda de Foto”, “Caixa de Contato”.</li>
+              <li>Evite nomes vagos como “Estilo 1” ou “Novo Estilo” — em um documento grande, ninguém lembra o que são.</li>
+              <li>Se o estilo nascer de outro, escolha <strong>Baseado em:</strong> para herdar comportamentos e facilitar ajustes futuros.</li>
+              <li>Marque <strong>Adicionar à galeria de estilos</strong> para que ele fique acessível com um clique.</li>
+            </ul>
+          </div>
+
+          <img src="../../assets/img/word/Aula5/image7.png" alt="Definição do nome e do tipo do novo estilo no Word" class="img-showcase" style="max-width:380px;">
+          <p class="img-caption">Imagem 07/11 — Definição do nome e do tipo: escolha Parágrafo, Caractere, Tabela ou Lista antes de salvar.</p>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 4 -->
+          <div class="phase-step-check" data-step="4" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l5-check-4" class="l5-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 4">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 4: CRIAR POR EXEMPLO</strong><br>
+              Criei um <strong>estilo personalizado</strong> pelo método “Criar por Exemplo”, dei um nome claro e confirmei que ele aparece na <strong>galeria de estilos</strong>.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 5 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que criei um estilo personalizado e o salvei na galeria.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-4" onclick="markTopicRead(5, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 3)">← Voltar ao Tópico 3</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(5, 5)">Ir para 5. Pincel &amp; Borracha →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 5: PINCEL DE FORMATAÇÃO E LIMPEZA
+             =============================================================== -->
+        <section id="l5-phase-5" class="topic-phase-section">
+          <h2>5. O Pincel de Formatação Avançado e a Borracha de Limpeza</h2>
+          <p>
+            O <strong>Pincel de Formatação</strong> copia a aparência de um texto (fonte, cor, tamanho, negrito) e aplica em outro trecho, sem copiar o conteúdo. É a ferramenta ideal para replicar um destaque pontual sem criar um estilo novo.
+          </p>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Clique simples versus duplo clique no pincel de formatação">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">PINCEL DE FORMATAÇÃO</span>
+                <h3>🖌️ Clique simples × duplo clique</h3>
+              </div>
+              <span class="word-table-hint">Página Inicial &gt; grupo Área de Transferência</span>
+            </div>
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead>
+                  <tr>
+                    <th>Ação</th>
+                    <th>Comportamento</th>
+                    <th>Quando usar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Clique simples</strong></td>
+                    <td>Copia a formatação para <strong>um único trecho</strong> e desativa o pincel em seguida</td>
+                    <td>Ajuste pontual em uma palavra ou frase</td>
+                  </tr>
+                  <tr class="highlight-blue">
+                    <td><strong>Duplo clique</strong></td>
+                    <td><strong>Trava</strong> o pincel ativo e permite pintar vários trechos espalhados pelo texto</td>
+                    <td>Padronizar dezenas de palavras sem voltar ao menu</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tecla Esc</strong></td>
+                    <td>Solta o pincel travado e volta o cursor ao normal</td>
+                    <td>Encerrar a pintura</td>
+                  </tr>
+                  <tr class="highlight-amber">
+                    <td><strong>Ctrl + Shift + C</strong></td>
+                    <td>Copia a formatação do texto selecionado</td>
+                    <td>Atalho para copiar sem usar o botão</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ctrl + Shift + V</strong></td>
+                    <td>Cola a formatação copiada no trecho selecionado</td>
+                    <td>Atalho para aplicar sem usar o botão</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <img src="../../assets/img/word/Aula5/image6.png" alt="Pincel de Formatação no grupo Área de Transferência do Word" class="img-showcase" style="max-width:520px;">
+          <p class="img-caption">Imagem 08/11 — Pincel de Formatação no grupo Área de Transferência da guia Página Inicial.</p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: arme o pincel e pinte os parágrafos <span class="l5-demo-hint">#l5-brush-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Modos do pincel de formatação">
+              <button type="button" class="l5-sim-btn l5-brush-tool" id="l5-brush-once" onclick="l5ArmBrush('once', this)" aria-pressed="false">🖌️ Clique simples (1 trecho)</button>
+              <button type="button" class="l5-sim-btn l5-brush-tool" id="l5-brush-lock" onclick="l5ArmBrush('lock', this)" aria-pressed="false">🖌️🖌️ Duplo clique (travado)</button>
+              <button type="button" class="l5-sim-btn" onclick="l5ReleaseBrush()">Esc — soltar pincel</button>
+            </div>
+            <div class="l5-brush-stage" id="l5-brush-stage">
+              <p class="l5-brush-paragraph" onclick="l5PaintBrush(this)">Este parágrafo está sem destaque e serve de ponto de partida.</p>
+              <p class="l5-brush-paragraph" onclick="l5PaintBrush(this)">Clique aqui depois de armar o pincel para receber a formatação.</p>
+              <p class="l5-brush-paragraph" onclick="l5PaintBrush(this)">Com o pincel travado, você pode continuar pintando outros trechos.</p>
+            </div>
+            <div id="l5-brush-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Pincel desativado. Escolha um modo e clique nos parágrafos.</div>
+          </div>
+
+          <img src="../../assets/img/word/Aula5/image11.png" alt="Ícone do Pincel de Formatação na faixa de opções" class="img-showcase" style="max-width:240px;">
+          <p class="img-caption">Imagem 09/11 — Ícone do Pincel de Formatação: o desenho do pincel indica que a ferramenta está pronta para copiar formato.</p>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">🧽 Limpar Toda a Formatação: a borracha do Word</h3>
+            <p style="margin:0 0 10px; font-size:14px; color:#374151; line-height:1.7;">
+              O botão <strong>Limpar Toda a Formatação</strong> fica no grupo <strong>Fonte</strong> da guia <strong>Página Inicial</strong> e tem o ícone de uma letra <strong>A</strong> com uma <strong>borrachinha rosa</strong> ao lado. Ele remove a formatação direta — fontes estranhas, cores, tamanhos, negrito e sublinhado — e devolve o texto ao estilo <strong>Normal</strong>.
+            </p>
+            <p style="margin:0; font-size:14px; color:#374151; line-height:1.7;">
+              É a ferramenta ideal para higienizar textos copiados da internet, que costumam trazer fundo cinza, links azuis e fontes que não combinam com o documento. Depois de limpar, aplique o estilo desejado (Normal, Citação ou um estilo personalizado). Em algumas versões, listas e numeração podem exigir remoção manual após a limpeza.
+            </p>
+          </div>
+
+          <img src="../../assets/img/word/Aula5/image9.png" alt="Botão Limpar Toda a Formatação no grupo Fonte do Word" class="img-showcase" style="max-width:560px;">
+          <p class="img-caption">Imagem 10/11 — Botão Limpar Toda a Formatação no grupo Fonte da guia Página Inicial.</p>
+
+          <img src="../../assets/img/word/Aula5/image2.png" alt="Ícone da borracha do comando Limpar Formatação" class="img-showcase" style="max-width:64px;">
+          <p class="img-caption">Imagem 11/11 — Ícone da borracha: a letra A com a borrachinha rosa identifica o comando de limpeza.</p>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 12px; font-size:17px;">🔍 Antes e depois: texto colado da web</h3>
+            <div class="l5-clean-grid">
+              <div class="l5-clean-card dirty">
+                <strong style="display:block; margin-bottom:4px;">❌ Antes (formatado pela web)</strong>
+                <span style="background:#FEF08A;">Notícia importante</span> — texto com <span style="color:#1D4ED8; text-decoration:underline;">link azul</span>, fundo cinza e fonte diferente do documento.
+              </div>
+              <div class="l5-clean-card clean">
+                <strong style="display:block; margin-bottom:4px;">✅ Depois (Limpar Toda a Formatação)</strong>
+                Notícia importante — texto limpo, na fonte e no tamanho do estilo Normal, pronto para receber o estilo do trabalho.
+              </div>
+            </div>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:18px 20px; margin:20px 0;">
+            <div style="font-weight:700; color:#15803D; font-size:16px; margin-bottom:8px;">✅ Checklist de Auditoria da Aula 05 — antes de enviar o documento</div>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#166534; line-height:1.7;">
+              <li><strong>Hierarquia:</strong> Título 1, 2 e 3 aplicados na ordem correta, sem pular níveis.</li>
+              <li><strong>Uniformidade:</strong> todos os títulos do mesmo nível estão visualmente idênticos.</li>
+              <li><strong>Corpo do texto:</strong> parágrafos comuns permanecem no estilo Normal.</li>
+              <li><strong>Estilos personalizados:</strong> nomes claros e presença confirmada na galeria.</li>
+              <li><strong>Pincel:</strong> nenhum trecho ficou com formatação copiada por engano.</li>
+              <li><strong>Limpeza:</strong> textos colados da web foram higienizados antes da entrega.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 5 -->
+          <div class="phase-step-check" data-step="5" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l5-check-5" class="l5-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 5">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 5: PINCEL E LIMPEZA</strong><br>
+              Dominei o <strong>duplo clique do Pincel de Formatação</strong> (travado até pressionar <kbd>Esc</kbd>) e usei o botão <strong>Limpar Toda a Formatação</strong> para higienizar um texto colado.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Exercício de Fixação →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que pratiquei o pincel travado e a limpeza de formatação.</span>
+            <button type="button" class="read-check-btn" id="check-read-5-5" onclick="markTopicRead(5, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(5, 4)">← Voltar ao Tópico 4</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(5)">Iniciar Exercício de Fixação (5 Perguntas) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 5 (5 QUESTÕES)
+             =============================================================== -->
+        <div id="fixation-panel-5" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="badge-word-blue" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--teal-deep); margin-top:6px; font-size:24px;">Exercício de Fixação — Aula 05 (Estilos &amp; Pincel)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft); font-weight:700;">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-5" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-5">QUESTÃO 1 / 5</span>
+                <span id="q-points-5">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-5"></div>
+
+              <button class="hint-toggle" id="btn-hint-5" type="button" onclick="toggleHint(5)">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-5"></div>
+
+              <div class="options" id="options-5"></div>
+
+              <div class="nav-row">
+                <button type="button" class="btn btn-ghost" id="btn-prev-5" onclick="prevQuestionGen(5)">← Anterior</button>
+                <div style="font-size:12px; color:var(--ink-soft); font-weight:600;">✓ Salvo automaticamente</div>
+                <button type="button" class="btn btn-primary" id="btn-next-5" onclick="nextQuestionGen(5)">Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             PAINEL DE RESULTADO DO EXERCÍCIO DE FIXAÇÃO DA AULA 5
+             =============================================================== -->
+        <div id="result-panel-5" class="fixation-panel">
+          <div class="card-quiz" style="text-align:center;">
+            <div class="result-badge" id="result-badge-5" style="margin:0 auto 16px;"></div>
+            <h2 id="result-title-5" style="color:var(--teal-deep); margin-bottom:8px; font-size:28px;"></h2>
+            <p id="result-sub-5" style="color:var(--ink-soft); margin-bottom:20px; font-size:16px;"></p>
+
+            <div style="font-size:42px; font-weight:800; color:var(--teal); font-family:'Fraunces', serif; margin-bottom:12px;">
+              <span id="result-score-5">0,0</span> <span style="font-size:20px; color:var(--ink-soft); font-family:'Inter';">/ 10,0</span>
+            </div>
+
+            <div class="signature-badge-box">
+              <div style="font-weight:700; color:#F8FAFC; margin-bottom:4px;">🔐 Comprovante Digital de Conclusão da Aula 05</div>
+              <div style="font-size:11.5px; color:#94A3B8;">Código de Autenticidade (SHA-256):</div>
+              <div class="signature-code-display" id="signature-code-5">GERANDO ASSINATURA...</div>
+              <div style="font-size:11px; color:#94A3B8; margin-top:4px;">WR Capacitação Profissional • Instrutor Marcos Rangel</div>
+            </div>
+
+            <h3 style="text-align:left; font-size:18px; color:var(--teal-deep); margin-top:24px;">Gabarito Comentado</h3>
+            <div class="breakdown" id="breakdown-5"></div>
+
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+              <button class="btn btn-primary" id="btn-download-txt-5" type="button">📄 Baixar Comprovante Oficial (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-5" type="button" style="background:var(--amber);">📑 Baixar Apostila em PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-5" type="button" style="justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+                Enviar Resultado por WhatsApp
+              </button>
+              <button class="btn btn-ghost" id="btn-email-5" type="button">📧 Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-5">
+              <p style="font-size:14px; margin-bottom:12px; color:var(--ink-soft);">Clique abaixo para abrir seu aplicativo de e-mail com o comprovante pronto:</p>
+              <button class="btn btn-primary" id="btn-open-gmail-5" type="button" style="width:100%;">Abrir no Gmail</button>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:20px;">
+              <button type="button" class="btn btn-ghost" onclick="restartQuizGen(5)">↺ Recomeçar o exercício</button>
+              <button type="button" class="btn btn-primary" onclick="showScreen('screen-hub')">Voltar ao Menu de Aulas →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- ===================================================================
          TELAS DA AVALIAÇÃO FINAL DO MÓDULO (PRESERVADAS)
          =================================================================== -->
     <div class="quiz-app" id="screen-start-app" style="padding:0;">
@@ -4440,6 +5453,65 @@
       }
     ];
 
+    // QUESTÕES DO EXERCÍCIO DE FIXAÇÃO DA AULA 05 (SPEC-AULA-05-WORD §4)
+    const QUESTIONS_LESSON_5 = [
+      {
+        q: "Qual é a maior vantagem de utilizar ESTILOS (como Título 1 e Título 2) em vez de formatar títulos manualmente?",
+        options: [
+          "Diminuir o tamanho do arquivo em 90%.",
+          "Permitir a atualização global de todos os títulos em um clique e possibilitar a criação do sumário automático.",
+          "Ocultar o texto de outras pessoas.",
+          "Não permitir que o documento seja impresso."
+        ],
+        correct: 1,
+        hint: "Estilos garantem padronização automática e alimentam o sumário."
+      },
+      {
+        q: "O que acontece quando você clica DUAS VEZES seguidas (duplo clique) no botão do Pincel de Formatação?",
+        options: [
+          "O pincel é excluído da barra de ferramentas.",
+          "O pincel fica 'travado', permitindo copiar a formatação para vários trechos de texto sem desativar.",
+          "O texto selecionado fica em negrito e itálico.",
+          "O Word fecha o documento."
+        ],
+        correct: 1,
+        hint: "O duplo clique mantém o pincel ativo até você pressionar a tecla Esc."
+      },
+      {
+        q: "Qual tecla do teclado deve ser pressionada para desativar o Pincel de Formatação que foi travado com duplo clique?",
+        options: [
+          "Tecla Enter.",
+          "Tecla Esc.",
+          "Tecla Espaço.",
+          "Tecla Tab."
+        ],
+        correct: 1,
+        hint: "Pense na tecla de escape (sair) no canto superior esquerdo do teclado."
+      },
+      {
+        q: "Qual é a função do botão 'Limpar Toda a Formatação' (ícone de uma letra A com uma borrachinha ao lado)?",
+        options: [
+          "Excluir todo o texto do documento.",
+          "Remover todas as formatações visuais (cores, fontes estranhas, tamanhos) e retornar o texto ao padrão Normal.",
+          "Corrigir os erros ortográficos da língua portuguesa.",
+          "Salvar o arquivo em PDF."
+        ],
+        correct: 1,
+        hint: "É a ferramenta ideal para higienizar textos copiados da internet."
+      },
+      {
+        q: "Se você modificar a cor do estilo 'Título 1' de azul para preto, o que acontecerá com os demais títulos do documento que já usavam esse estilo?",
+        options: [
+          "Permanecerão azuis até que você mude um por um.",
+          "Serão excluídos do documento.",
+          "Todos os títulos vinculados ao Título 1 mudarão instantaneamente para preto de forma automática.",
+          "O Word emitirá um alerta de erro."
+        ],
+        correct: 2,
+        hint: "Esta é a chamada atualização global em cascata proporcionada pelos estilos."
+      }
+    ];
+
     // QUESTÕES DA PROVA FINAL DO MÓDULO (10 QUESTÕES)
     const QUESTIONS_FINAL = [
       {
@@ -4571,8 +5643,8 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4){
-        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04 e a Prova Final estão liberadas no portal.`);
+      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5){
+        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04, 05 e a Prova Final estão liberadas no portal.`);
         return;
       }
 
@@ -4599,7 +5671,8 @@
           1: "screen-lesson-1",
           2: "screen-lesson-2",
           3: "screen-lesson-3",
-          4: "screen-lesson-4"
+          4: "screen-lesson-4",
+          5: "screen-lesson-5"
         };
         if(routes[targetLessonNum]){
           const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
@@ -4618,7 +5691,7 @@
     });
 
     // ===================================================================
-    // NAVEGAÇÃO DE TÓPICOS DAS AULAS (AULAS 01 A 04)
+    // NAVEGAÇÃO DE TÓPICOS DAS AULAS (AULAS 01 A 05)
     // ===================================================================
     window.switchTopicPhase = function(lessonNum, phaseNum) {
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
@@ -4848,10 +5921,215 @@
     };
 
     // ===================================================================
+    // SIMULADORES DA AULA 05 (ESTILOS, CASCATA, PINCEL E LIMPEZA)
+    // ===================================================================
+    window.l5SetCascade = function(mode, btn){
+      const stage = document.getElementById("l5-cascade-stage");
+      const status = document.getElementById("l5-cascade-status");
+      if(!stage) return;
+
+      const alternativo = mode === "alt";
+      stage.classList.toggle("alt", alternativo);
+      if(status){
+        status.textContent = alternativo
+          ? "▸ Estilo Título 1 modificado: Georgia, 19 px e verde-petróleo — todos os títulos mudaram juntos, sem edição manual."
+          : "▸ Estilo Título 1 original — os títulos foram aplicados com 1 clique cada.";
+      }
+
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          const ativo = (b === btn);
+          b.classList.toggle("active", ativo);
+          b.setAttribute("aria-pressed", ativo ? "true" : "false");
+        });
+      }
+    };
+
+    const L5_GALLERY = {
+      normal: { texto: "Este é um parágrafo comum do corpo do texto, no estilo Normal.", rotulo: "Normal — corpo do texto, fonte e espaçamento padrão." },
+      h1: { texto: "1 INTRODUÇÃO", rotulo: "Título 1 — capítulos de primeiro nível." },
+      h2: { texto: "1.1 Justificativa", rotulo: "Título 2 — seções secundárias." },
+      h3: { texto: "1.1.1 Objetivo geral", rotulo: "Título 3 — subseções terciárias." },
+      quote: { texto: "“A padronização visual facilita a leitura e a avaliação do trabalho.”", rotulo: "Citação — trecho destacado com recuo e itálico." }
+    };
+
+    window.l5SetGallery = function(kind, btn){
+      const preview = document.getElementById("l5-gallery-preview-text");
+      const status = document.getElementById("l5-gallery-status");
+      const cfg = L5_GALLERY[kind];
+      if(!preview || !cfg) return;
+
+      preview.className = "l5-preview-text is-" + kind;
+      preview.textContent = cfg.texto;
+      if(status) status.textContent = "▸ Estilo selecionado: " + cfg.rotulo;
+
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-gal-chip").forEach(function(b){
+          const ativo = (b === btn);
+          b.classList.toggle("active", ativo);
+          b.setAttribute("aria-pressed", ativo ? "true" : "false");
+        });
+      }
+    };
+
+    const l5ModState = { font: "arial", size: 14, color: "blue", bold: true };
+
+    function l5PaintMod(){
+      const preview = document.getElementById("l5-mod-preview");
+      const status = document.getElementById("l5-mod-status");
+      if(!preview) return;
+
+      preview.classList.toggle("times", l5ModState.font === "times");
+      preview.classList.toggle("size-14", l5ModState.size === 14);
+      preview.classList.toggle("size-12", l5ModState.size === 12);
+      preview.classList.toggle("color-blue", l5ModState.color === "blue");
+      preview.classList.toggle("color-black", l5ModState.color === "black");
+      preview.classList.toggle("bold-off", !l5ModState.bold);
+
+      if(status){
+        status.textContent = "▸ Estilo Título 1: "
+          + (l5ModState.font === "times" ? "Times New Roman" : "Arial")
+          + " • " + l5ModState.size + " pt"
+          + " • " + (l5ModState.color === "black" ? "preto" : "azul")
+          + " • " + (l5ModState.bold ? "negrito" : "sem negrito")
+          + " — os 3 títulos estão iguais.";
+      }
+    }
+
+    function l5AtivarMod(btn){
+      if(!btn || !btn.parentElement) return;
+      btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+        const ativo = (b === btn);
+        b.classList.toggle("active", ativo);
+        b.setAttribute("aria-pressed", ativo ? "true" : "false");
+      });
+    }
+
+    window.l5SetMod = function(prop, value, btn){
+      if(prop === "font") l5ModState.font = value;
+      if(prop === "size") l5ModState.size = Number(value);
+      if(prop === "color") l5ModState.color = value;
+      l5PaintMod();
+      l5AtivarMod(btn);
+    };
+
+    window.l5ToggleModBold = function(btn){
+      l5ModState.bold = !l5ModState.bold;
+      if(btn){
+        btn.classList.toggle("active", l5ModState.bold);
+        btn.setAttribute("aria-pressed", l5ModState.bold ? "true" : "false");
+        btn.textContent = l5ModState.bold ? "Negrito ligado" : "Negrito desligado";
+      }
+      l5PaintMod();
+    };
+
+    window.l5SaveStyle = function(btn){
+      const chips = document.getElementById("l5-gallery-chips");
+      const status = document.getElementById("l5-create-status");
+      if(!chips) return;
+
+      if(chips.querySelector(".l5-chip-new")){
+        if(status) status.textContent = "▸ O estilo “Aviso do Professor” já está na galeria — pronto para ser aplicado.";
+        return;
+      }
+
+      const chip = document.createElement("span");
+      chip.className = "l5-chip-new";
+      chip.textContent = "⚠️ Aviso do Professor";
+      chips.appendChild(chip);
+
+      if(status) status.textContent = "▸ Estilo “Aviso do Professor” criado e adicionado à galeria — aplique com 1 clique.";
+      if(btn){
+        btn.classList.add("active");
+        btn.setAttribute("aria-pressed", "true");
+      }
+    };
+
+    window.l5ResetStyle = function(){
+      const chips = document.getElementById("l5-gallery-chips");
+      const status = document.getElementById("l5-create-status");
+      const btn = document.getElementById("l5-save-style");
+      if(chips) chips.innerHTML = "";
+      if(status) status.textContent = "▸ Nenhum estilo personalizado criado ainda.";
+      if(btn){
+        btn.classList.remove("active");
+        btn.setAttribute("aria-pressed", "false");
+      }
+    };
+
+    let l5BrushMode = null;
+
+    function l5BrushParagraphs(){
+      return document.querySelectorAll("#l5-brush-stage .l5-brush-paragraph");
+    }
+
+    window.l5ArmBrush = function(mode, btn){
+      l5BrushMode = mode;
+      const status = document.getElementById("l5-brush-status");
+
+      document.querySelectorAll(".l5-brush-tool").forEach(function(b){
+        const ativo = (b === btn);
+        b.classList.toggle("active", ativo);
+        b.setAttribute("aria-pressed", ativo ? "true" : "false");
+      });
+
+      l5BrushParagraphs().forEach(function(p){
+        p.classList.add("paintable");
+      });
+
+      if(status){
+        status.textContent = mode === "lock"
+          ? "▸ Pincel travado (duplo clique): clique em quantos parágrafos quiser. Pressione Esc para soltar."
+          : "▸ Pincel armado (clique simples): ele será desativado após pintar 1 trecho.";
+      }
+    };
+
+    window.l5ReleaseBrush = function(){
+      l5BrushMode = null;
+      const status = document.getElementById("l5-brush-status");
+
+      document.querySelectorAll(".l5-brush-tool").forEach(function(b){
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
+
+      l5BrushParagraphs().forEach(function(p){
+        p.classList.remove("paintable");
+      });
+
+      if(status) status.textContent = "▸ Pincel desativado (Esc). Escolha um modo e clique nos parágrafos.";
+    };
+
+    window.l5PaintBrush = function(el){
+      const status = document.getElementById("l5-brush-status");
+      if(!el) return;
+
+      if(!l5BrushMode){
+        if(status) status.textContent = "▸ Pincel desativado. Escolha “Clique simples” ou “Duplo clique” antes de pintar.";
+        return;
+      }
+
+      el.classList.add("painted");
+      const pintados = document.querySelectorAll("#l5-brush-stage .l5-brush-paragraph.painted").length;
+
+      if(l5BrushMode === "once"){
+        l5BrushMode = null;
+        document.querySelectorAll(".l5-brush-tool").forEach(function(b){
+          b.classList.remove("active");
+          b.setAttribute("aria-pressed", "false");
+        });
+        l5BrushParagraphs().forEach(function(p){ p.classList.remove("paintable"); });
+        if(status) status.textContent = "▸ Formatação aplicada a 1 trecho — o pincel foi desativado automaticamente.";
+      } else if(status){
+        status.textContent = "▸ Pincel travado: " + pintados + (pintados === 1 ? " trecho pintado" : " trechos pintados") + ". Continue clicando ou pressione Esc.";
+      }
+    };
+
+    // ===================================================================
     // MARCAR LEITURA & GAMIFICAÇÃO COM PERSISTÊNCIA (LOCALSTORAGE)
     // ===================================================================
-    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5 };
-    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true };
+    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5 };
+    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true };
     const READ_STORAGE_KEY = "word_lessons_reading_progress";
 
     let readTopics = {};
@@ -4966,9 +6244,9 @@
       }
     }
 
-    // Inicialização da Leitura (Aulas 1, 2, 3 e 4)
+    // Inicialização da Leitura (Aulas 1, 2, 3, 4 e 5)
     loadReadTopics();
-    [1, 2, 3, 4].forEach(function(num){
+    [1, 2, 3, 4, 5].forEach(function(num){
       captureReadLabels(num);
       bindCheckboxes(num);
       paintReadLesson(num);
@@ -4993,7 +6271,7 @@
     });
 
     // ===================================================================
-    // MOTOR DE EXERCÍCIOS DE FIXAÇÃO (AULAS 01 A 04)
+    // MOTOR DE EXERCÍCIOS DE FIXAÇÃO (AULAS 01 A 05)
     // ===================================================================
     const QUIZ_CFG = {
       1: {
@@ -5035,6 +6313,16 @@
         moduleId: "word_lesson_4_quiz",
         title: "Módulo 2 — Aula 04: Bordas Decorativas, Formas & Quebra de Texto",
         sig: "Módulo 2 - Aula 4 (Word)"
+      },
+      5: {
+        questions: QUESTIONS_LESSON_5,
+        name: "Aluno(a)",
+        answers: new Array(5).fill(null),
+        current: 0,
+        signature: null,
+        moduleId: "word_lesson_5_quiz",
+        title: "Módulo 2 — Aula 05: Estilos Rápidos & Pincel de Formatação",
+        sig: "Módulo 2 - Aula 5 (Word)"
       }
     };
 
@@ -5237,7 +6525,7 @@
     window.getReportDataGen = getReportDataGen;
 
     // Vincular botões de Comprovante (.txt), PDF, WhatsApp e E-mail dos Exercícios de Fixação
-    ;[1, 2, 3, 4].forEach(function(lessonNum){
+    ;[1, 2, 3, 4, 5].forEach(function(lessonNum){
       const btnTxt = document.getElementById(`btn-download-txt-${lessonNum}`);
       if(btnTxt){
         btnTxt.onclick = () => window.QuizEngine.downloadTxtReport(getReportDataGen(lessonNum));

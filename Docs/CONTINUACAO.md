@@ -36,7 +36,43 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL (02/11/2026) — Módulo 2: Microsoft Word — Aula 04 (Bordas Decorativas, Formas & Quebra de Texto)
+## ✅ SESSÃO ATUAL (03/11/2026) — Módulo 2: Microsoft Word — Aula 05 (Estilos Rápidos & Pincel de Formatação)
+
+Implementação completa da **Aula 05 do Módulo 2: Microsoft Word**, desbloqueio no Hub com senha `we005`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l5-check-1..5`), nove simuladores ao vivo, exercício de fixação com 5 questões e apostila PDF com seções 5.0–5.5 e ilustrações HTML reais.
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Desbloqueio no Hub** | `modules/word/index.html` | Card da Aula 05 com `active-lesson` e badge `🔓 Aula Liberada (Senha we005)`; `promptLessonPassword` libera a aula 5 (`5: "we005"`) e a rota `5: "screen-lesson-5"` foi adicionada ao `btn-confirm-unlock`. |
+| **Tela da Aula 05** | `modules/word/index.html` → `#screen-lesson-5` | Botões de topo (voltar, imprimir, baixar PDF) e barra gamificada (`gamify-percent-5`, `gamify-bar-5`, `gamify-badge-box-5`). |
+| **FASE 0 Tutorial** | `#l5-fase-0` | Objetivo, roteiro numerado em 5 chips, faixa de preparação, contador `#l5-checklist-status` e botão `#btn-start-l5`. |
+| **Fases 1–5** | `#tab-btn-5-1..5` | 1. Por Que Estilos?; 2. Galeria & Hierarquia; 3. Modificar Estilo; 4. Criar por Exemplo; 5. Pincel & Borracha. Cada fase termina com `#l5-check-N` + `#check-read-5-N`. |
+| **Simuladores** | `window.l5SetCascade`, `l5SetGallery`, `l5SetMod`, `l5ToggleModBold`, `l5SaveStyle`, `l5ResetStyle`, `l5ArmBrush`, `l5ReleaseBrush`, `l5PaintBrush` | Atualização em cascata, galeria/hierarquia, janela Modificar (fonte/tamanho/cor/negrito), criação por exemplo e pincel travado. |
+| **Exercício de Fixação** | `QUESTIONS_LESSON_5` + `QUIZ_CFG[5]` | 5 questões; `moduleId: "word_lesson_5_quiz"`; gabarito `[1, 1, 1, 1, 2]`; persistência real e botão "↺ Recomeçar o exercício". |
+| **Roteamento e progresso** | `modules/word/index.html` | Aula 5 em `TOTAL_TOPICS`, `SEQUENTIAL_LESSONS`, loops de inicialização/resultado (`[1,2,3,4,5]`) e `routes` (`5: "screen-lesson-5"`). |
+| **Apostila PDF** | `assets/js/pdf-lessons.js` → `LESSONS.word.sections` | Seções **5.0 a 5.5** com `lessonNum: 5`, imagens reais (`image1/3/4/5/6/9.png`) e `html` ilustrado (`.mini-sheet`, `.es-sheet-box`, `.fun-highlight`). |
+| **Imagens** | `assets/img/word/Aula5/` | 11 imagens copiadas do acervo `AulaOrigem/word/Aula 5 Word_Estilos_Formatacao_Avancada/images/`. |
+
+### 2. Validações Executadas (03/11/2026)
+
+- `node --check assets/js/pdf-lessons.js`: **OK**.
+- Script inline de `modules/word/index.html` extraído e validado com `node --check`: **OK**.
+- Conferência estrutural: **5 fases**, **5 checks** (`l5-check-1..5`), **5 botões de leitura**, **6 abas** (5 fases + fixação), FASE 0 presente, IDs de gamificação corretos, **zero** placeholders "🖼️ Referência de imagem".
+- Módulo Word no PDF: **30 seções** (6 por aula), **6 seções da Aula 05** com `html` não vazio; nenhuma seção órfã sem `lessonNum` (Regra 8 do `AGENTS.md`).
+- Todos os caminhos `../../assets/img/word/Aula5/...` referenciados no PDF existem no disco.
+- Revisão de conteúdo (Regra 12): lido o texto renderizado das 5 fases e das 6 seções PDF; incluída uma **nota de precisão ABNT** (a NBR 14724 não fixa 14 pt para títulos — 14 pt é convenção de modelos de faculdade), evitando afirmação falsa.
+- **Pendente:** bateria CDP em navegador (modal `we005`, checks 0→100%, simuladores, quiz 10,0 + SHA-256, PDF 5 e auditoria mobile 375/390 px). A sessão não dispunha de Playwright/Puppeteer.
+
+### 3. Pendências Registradas
+
+- Aulas 06 a 11 do Word e Prova Final (spec ainda prevê 15 questões; `QUESTIONS_FINAL` segue com 10).
+- Cards 09–12 do módulo Excel ainda anunciam `🔓 Aula Liberada (Senha ...)` embora `promptLessonPassword` recuse.
+- Trabalho de Word/Windows continua **não commitado** (inclui `modules/windows/index.html` e specs futuras não rastreadas).
+
+---
+
+## 📅 SESSÃO ANTERIOR (02/11/2026) — Módulo 2: Microsoft Word — Aula 04 (Bordas Decorativas, Formas & Quebra de Texto)
 
 Implementação completa da **Aula 04 do Módulo 2: Microsoft Word**, desbloqueio no Hub com senha `wd004`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l4-check-1..5`), oito simuladores ao vivo, exercício de fixação com 5 questões e apostila PDF com seções 4.0–4.5 e ilustrações HTML reais.
 

@@ -260,6 +260,65 @@
     .b-tag.no { background: var(--warn-bg); color: var(--warn); }
     .email-panel { margin-top: 14px; padding: 16px; border-radius: 12px; border: 1.5px dashed var(--line); background: #FBFCFC; color: var(--ink-dark); display: none; }
     .email-panel.show { display: block; }
+
+    /* ================================================================
+       ILUSTRAÇÕES HTML DA AULA 6 (WordPad) — caixas, tabelas e
+       árvores de pasta desenhadas com o próprio HTML (sem imagem
+       externa). Sem @media: o comportamento responsivo vem das
+       regras mobile globais de assets/css/style.css.
+       ================================================================ */
+    .wp-illus {
+      background: var(--paper-white);
+      border: 1.5px solid var(--line-light);
+      border-left: 5px solid var(--teal);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 18px 0;
+      box-shadow: var(--shadow-sm);
+      color: var(--ink-dark);
+    }
+    .wp-illus-title {
+      background: var(--teal);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 9px 13px;
+      border-radius: 8px;
+      margin: -14px -16px 12px -16px;
+      font-family: 'Inter', sans-serif;
+    }
+    .wp-illus .lesson-table { font-size: 15px; }
+    .wp-illus .lesson-table th { padding: 10px 14px; }
+    .wp-illus .lesson-table td { padding: 10px 14px; }
+    .wp-tree {
+      background: #F4EBE2;
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      overflow-x: auto;
+    }
+    .wp-tree pre {
+      margin: 0;
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--ink-dark);
+      white-space: pre;
+    }
+    .wp-report {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 20px;
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #20130B;
+    }
+    .wp-report-title { margin: 0 0 6px; font-size: 17px; font-weight: 700; text-align: center; letter-spacing: 0.5px; }
+    .wp-report-sub { margin: 0 0 14px; text-align: center; font-size: 12.5px; color: #6B4A32; }
+    .wp-report-h { margin: 10px 0 2px; font-weight: 700; color: #1F4E5F; }
+    .wp-report-l { margin: 0; }
   </style>
 </head>
 <body>
@@ -351,14 +410,14 @@
             <span style="font-size:20px;">📂</span>
           </div>
 
-          <!-- AULA 6 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(6, 'WordPad — Editor de Texto do Windows')">
+          <!-- AULA 6 — LIBERADA E COMPLETA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(6, 'WordPad — Editor de Texto do Windows')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num">AULA 06</span>
               <span class="lesson-name">WordPad — Editor de Texto do Windows</span>
-              <span style="font-size:13px; color:#F4E8DC; font-weight:600; margin-top:4px; opacity:0.95;">🔒 Em Construção</span>
+              <span style="font-size:13px; color:#F4E8DC; font-weight:600; margin-top:4px; opacity:0.95;" id="badge-lesson-6">🟢 Disponível</span>
             </div>
-            <span style="font-size:20px;">🚧</span>
+            <span style="font-size:20px;">📝</span>
           </div>
 
           <!-- AULA 7 — LIBERADA E COMPLETA -->
@@ -401,34 +460,34 @@
             <span style="font-size:24px;" id="badge-lesson-81">🔒</span>
           </div>
 
-          <!-- AULA 9 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(9, 'Prática: Organização e Configuração do Windows')">
+          <!-- AULA 9 — LIBERADA E COMPLETA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(9, 'Prática – Organização e Configuração do Windows')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num">AULA 09</span>
-              <span class="lesson-name">Prática: Organização e Configuração do Windows</span>
-              <span style="font-size:13px; color:#F4E8DC; font-weight:600; margin-top:4px; opacity:0.95;">🔒 Em Construção</span>
+              <span class="lesson-name">Prática – Organização e Configuração do Windows</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha em Aula)</span>
             </div>
-            <span style="font-size:20px;">🚧</span>
+            <span style="font-size:24px;" id="badge-lesson-9">🔒</span>
           </div>
 
-          <!-- AULA 10 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(10, 'Ferramentas Básicas do Windows (7, 10 e 11)')">
+          <!-- AULA 10 — LIBERADA E COMPLETA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(10, 'Ferramentas Básicas do Windows (7, 10 e 11)')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num">AULA 10</span>
               <span class="lesson-name">Ferramentas Básicas do Windows (7, 10 e 11)</span>
-              <span style="font-size:13px; color:#F4E8DC; font-weight:600; margin-top:4px; opacity:0.95;">🔒 Em Construção</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha em Aula)</span>
             </div>
-            <span style="font-size:20px;">🚧</span>
+            <span style="font-size:24px;" id="badge-lesson-10">🔒</span>
           </div>
 
-          <!-- AULA 11 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(11, 'Revisão Geral do Windows')">
+          <!-- AULA 11 — LIBERADA E COMPLETA -->
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(11, 'Revisão Geral do Windows')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num">AULA 11</span>
               <span class="lesson-name">Revisão Geral do Windows</span>
-              <span style="font-size:13px; color:#F4E8DC; font-weight:600; margin-top:4px; opacity:0.95;">🔒 Em Construção</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha em Aula)</span>
             </div>
-            <span style="font-size:20px;">🚧</span>
+            <span style="font-size:24px;" id="badge-lesson-11">🔒</span>
           </div>
 
           <!-- AULA 12 — PROVA FINAL DO MÓDULO (abre modules/windows/prova-windows.html) -->
@@ -528,6 +587,41 @@
           </div>
         </div>
 
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l8-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Aprender a diagnosticar a memória RAM, utilizar a restauração do sistema (Windows 10/11) e a restauração por pontos de restauração, além de criar uma mídia de instalação USB do Windows com a <strong>Media Creation Tool</strong>. Compatível com <strong>Windows 7 / 10 / 11</strong>.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li>Diagnóstico de Memória RAM — executar o Diagnóstico de Memória do Windows.</li>
+            <li>Restauração do Windows 11 e Windows 10 — opções "Manter meus arquivos" x "Remover tudo".</li>
+            <li>Restauração por Ponto de Restauração — usar o Painel de Controle e o comando <code>rstrui</code>.</li>
+            <li>Criar Pendrive de Instalação do Windows 10/11 com a Media Creation Tool.</li>
+            <li>Formatar pendrive em FAT32 em caso de erro na criação da mídia.</li>
+            <li>Exercício de Fixação — responder às 5 perguntas.</li>
+          </ol>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
+            🏁 Resultado esperado: ao final, você saberá testar a memória RAM, restaurar o sistema com segurança, criar pontos de restauração lógicos e gerar um pendrive inicializável para reinstalação do Windows.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro desta aula e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-8-1" onclick="markTopicRead(8, 1)">
+              <span>☐ Entendi o roteiro — começar a aula!</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(8, 1)">Ir para 1. Diagnóstico de RAM →</button>
+          </div>
+        </div>
+
         <!-- ÍNDICE DE TÓPICOS DA AULA 8 -->
         <nav class="topic-tabs-bar no-print">
           <button type="button" class="topic-tab-btn active" id="tab-btn-8-1" onclick="switchTopicPhase(8, 1)">1. Diagnóstico de RAM</button>
@@ -570,7 +664,7 @@
           <!-- Checkbox de Leitura & Prática Tópico 1 -->
           <div class="read-check-box no-print">
             <span>📖 Certifico que entendi como localizar e executar o Diagnóstico de Memória RAM nativo do Windows.</span>
-            <button type="button" class="read-check-btn" id="check-read-8-1" onclick="markTopicRead(8, 1)">
+            <button type="button" class="read-check-btn" id="check-read-8-2" onclick="markTopicRead(8, 2)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -636,7 +730,7 @@
           <!-- Checkbox de Leitura & Prática Tópico 2 -->
           <div class="read-check-box no-print">
             <span>📖 Certifico que compreendi o processo de restauração padrão no Windows 11 e Windows 10 (Manter vs Remover).</span>
-            <button type="button" class="read-check-btn" id="check-read-8-2" onclick="markTopicRead(8, 2)">
+            <button type="button" class="read-check-btn" id="check-read-8-3" onclick="markTopicRead(8, 3)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -702,7 +796,7 @@
           <!-- Checkbox de Leitura & Prática Tópico 3 -->
           <div class="read-check-box no-print">
             <span>📖 Certifico que entendi como utilizar os Pontos de Restauração e o comando rápido rstrui.</span>
-            <button type="button" class="read-check-btn" id="check-read-8-3" onclick="markTopicRead(8, 3)">
+            <button type="button" class="read-check-btn" id="check-read-8-4" onclick="markTopicRead(8, 4)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -838,7 +932,7 @@
           <!-- Checkbox de Leitura & Prática Tópico 4 -->
           <div class="read-check-box no-print">
             <span>📖 Certifico que aprendi o processo completo de criação da mídia de boot USB com a Media Creation Tool.</span>
-            <button type="button" class="read-check-btn" id="check-read-8-4" onclick="markTopicRead(8, 4)">
+            <button type="button" class="read-check-btn" id="check-read-8-5" onclick="markTopicRead(8, 5)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -888,7 +982,7 @@
           <!-- Checkbox de Leitura & Prática Tópico 5 -->
           <div class="read-check-box no-print">
             <span>📖 Certifico que entendi como formatar um pendrive em FAT32 para corrigir falhas de gravação.</span>
-            <button type="button" class="read-check-btn" id="check-read-8-5" onclick="markTopicRead(8, 5)">
+            <button type="button" class="read-check-btn" id="check-read-8-6" onclick="markTopicRead(8, 6)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -1060,6 +1154,771 @@
     <!-- ===================================================================
          TELA 3: AULA 1 — A HISTÓRIA E O FUNCIONAMENTO DOS COMPUTADORES (LIBERADA)
          =================================================================== -->
+    <section id="screen-lesson-10" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')">← Voltar ao Menu</button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">🖨️ Imprimir Aula</button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 10)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">📑 Baixar Apostila PDF</button>
+        </div>
+      </div>
+
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 10)</span>
+            <span id="gamify-percent-10">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-10"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-10">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <header style="margin-bottom:20px;">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Aula 10</span>
+          <h1 style="color:var(--teal-deep); font-size:32px; margin:8px 0 0; line-height:1.3;">Aula 10: Ferramentas Básicas e Personalização no Windows (7, 10 e 11)</h1>
+          <p style="color:var(--ink-soft); margin:8px 0 0; font-size:16px;">Personalização, utilitários nativos, ferramentas de acessibilidade, atalhos e prática orientada.</p>
+        </header>
+
+        <!-- FASE 0 -->
+        <div id="l10-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">Ensinar como usar as <strong>ferramentas nativas</strong> e <strong>personalizar o Windows</strong> de forma clara, comparando as versões <strong>7, 10 e 11</strong>.</p>
+
+          <div class="wp-illus" style="border-left:4px solid var(--teal); margin-top:16px;">
+            <div class="wp-illus-title">🎯 Objetivo (conforme apostila)</div>
+            <p style="margin:6px 0 2px; font-size:15px; line-height:1.8; color:var(--ink);">Ensinar como usar ferramentas nativas e personalizar o Windows de forma clara, comparando as versões 7, 10 e 11.</p>
+          </div>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li><strong>1.</strong> Panorama rápido: o que muda entre Windows 7, 10 e 11</li>
+            <li><strong>2.</strong> Personalização: Temas, Cores e Plano de Fundo</li>
+            <li><strong>3.</strong> Bloco de Notas</li>
+            <li><strong>4.</strong> Calculadora</li>
+            <li><strong>5.</strong> Ferramenta de Captura / Recorte</li>
+            <li><strong>6.</strong> Gravador de Voz</li>
+            <li><strong>7.</strong> Lupa e Teclado Virtual</li>
+            <li><strong>8.</strong> Atividade Final</li>
+            <li><strong>9.</strong> Recursos de Apoio e Revisão</li>
+          </ol>
+
+          <p style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--teal-deep);">
+            ⚙️ <strong>Orientação:</strong> siga na ordem e marque o quadradinho ao final de cada fase para liberar a próxima.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro desta aula e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-1" onclick="markTopicRead(10, 1)"><span>☐ Entendi o roteiro — começar a prática!</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 1)">Ir para 1. Panorama Rápido: o que muda entre as versões →</button>
+          </div>
+        </div>
+
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-10-1" onclick="switchTopicPhase(10, 1)">1. Panorama Rápido</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-2" onclick="switchTopicPhase(10, 2)">2. Personalização</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-3" onclick="switchTopicPhase(10, 3)">3. Bloco de Notas</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-4" onclick="switchTopicPhase(10, 4)">4. Calculadora</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-5" onclick="switchTopicPhase(10, 5)">5. Captura / Recorte</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-6" onclick="switchTopicPhase(10, 6)">6. Gravador de Voz</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-7" onclick="switchTopicPhase(10, 7)">7. Lupa e Teclado Virtual</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-8" onclick="switchTopicPhase(10, 8)">8. Atividade Final</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-9" onclick="switchTopicPhase(10, 9)">9. Recursos de Apoio</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-fix" onclick="openFixationPanel(10)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- FASE 1 -->
+        <section id="l10-phase-1" class="topic-phase-section active">
+          <h2>1. Panorama Rápido: o que muda entre as versões</h2>
+          <p>Antes de começar a prática, veja como cada recurso muda (ou não) de nome e local entre Windows 7, 10 e 11:</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📊 Comparação entre versões</div>
+            <div style="overflow-x:auto; margin-top:10px;">
+              <table style="width:100%; border-collapse:collapse; font-size:14.5px;">
+                <thead>
+                  <tr style="background:#1F4E79; color:#fff;">
+                    <th style="padding:10px; border:1px solid #1F4E79; text-align:left;">Item</th>
+                    <th style="padding:10px; border:1px solid #1F4E79; text-align:left;">Windows 7</th>
+                    <th style="padding:10px; border:1px solid #1F4E79; text-align:left;">Windows 10</th>
+                    <th style="padding:10px; border:1px solid #1F4E79; text-align:left;">Windows 11</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td style="padding:9px; border:1px solid var(--line);">Início / Menu Start</td><td style="padding:9px; border:1px solid var(--line);">Estilo clássico</td><td style="padding:9px; border:1px solid var(--line);">Estilo "blocos vivos"</td><td style="padding:9px; border:1px solid var(--line);">Estilo moderno, centralizado</td></tr>
+                  <tr style="background:#f8fafc;"><td style="padding:9px; border:1px solid var(--line);">Personalização</td><td style="padding:9px; border:1px solid var(--line);">Painel de Controle</td><td style="padding:9px; border:1px solid var(--line);">Configurações (novo menu)</td><td style="padding:9px; border:1px solid var(--line);">Configurações com visual moderno</td></tr>
+                  <tr><td style="padding:9px; border:1px solid var(--line);">Teclado Virtual / Lupa</td><td style="padding:9px; border:1px solid var(--line);">Mesma localização</td><td style="padding:9px; border:1px solid var(--line);">Igual ao 7, com atalhos modernos</td><td style="padding:9px; border:1px solid var(--line);">Igual ao 10</td></tr>
+                  <tr style="background:#f8fafc;"><td style="padding:9px; border:1px solid var(--line);">Ferramenta de Captura</td><td style="padding:9px; border:1px solid var(--line);">Apenas "Snipping Tool"</td><td style="padding:9px; border:1px solid var(--line);">"Ferramenta de Captura" ou Snip</td><td style="padding:9px; border:1px solid var(--line);">"Ferramenta de Recorte" aprimorada</td></tr>
+                  <tr><td style="padding:9px; border:1px solid var(--line);">Bloco de Notas / Calculadora</td><td style="padding:9px; border:1px solid var(--line);">Idênticos</td><td style="padding:9px; border:1px solid var(--line);">Atualizados, mesmos atalhos</td><td style="padding:9px; border:1px solid var(--line);">Interface moderna, mesma função</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <img src="../../assets/img/windows/Aula10/image7.png" alt="Comparação visual entre Windows 7, 10 e 11" class="img-showcase">
+          <p class="img-caption">Comparação visual: temas e ferramentas nos três sistemas.</p>
+          <img src="../../assets/img/windows/Aula10/image3.png" alt="Demonstração de personalização" class="img-showcase">
+          <p class="img-caption">Demonstração prática de personalização no Windows.</p>
+          <img src="../../assets/img/windows/Aula10/image8.png" alt="Interface das versões" class="img-showcase">
+          <p class="img-caption">Visão comparativa das interfaces.</p>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que analisei o panorama comparativo entre Windows 7, 10 e 11.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-2" onclick="markTopicRead(10, 2)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 0)">← Voltar ao FASE 0</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 2)">Ir para 2. Personalização →</button>
+          </div>
+        </section>
+
+        <!-- FASE 2 -->
+        <section id="l10-phase-2" class="topic-phase-section">
+          <h2>2. Personalização do Windows (Temas, Cores e Plano de Fundo)</h2>
+          <h3>2.1 Temas e Cores</h3>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Windows 7</div>
+            <ul style="margin:8px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Clique com o botão direito na área de trabalho e escolha <strong>"Personalizar"</strong></li>
+              <li>Escolha entre temas Aero, clássico ou alto contraste</li>
+              <li>Para mudar a cor da janela, use a opção <strong>"Cor da Janela"</strong></li>
+            </ul>
+          </div>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Windows 10</div>
+            <ul style="margin:8px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Clique com o botão direito e escolha <strong>"Personalizar"</strong></li>
+              <li>Vá em <strong>"Cores"</strong> e selecione o tema Claro ou Escuro</li>
+              <li>É possível escolher se o tema afeta só os aplicativos ou também a barra de tarefas</li>
+            </ul>
+          </div>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Windows 11</div>
+            <ul style="margin:8px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Mesmo caminho do Windows 10, com visual mais limpo</li>
+              <li>A barra de tarefas pode ser centralizada nas configurações</li>
+            </ul>
+          </div>
+          <img src="../../assets/img/windows/Aula10/image7.png" alt="Temas e cores nos três sistemas" class="img-showcase">
+          <p class="img-caption">Comparação visual: temas e cores nos três sistemas, lado a lado.</p>
+
+          <h3>2.2 Plano de Fundo</h3>
+          <p>O processo é o mesmo em todas as versões do Windows:</p>
+          <ul style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li>Clique com o botão direito na área de trabalho</li>
+            <li>Escolha <strong>"Personalizar"</strong> e depois <strong>"Plano de Fundo"</strong></li>
+            <li>Selecione uma imagem do computador ou defina uma cor sólida</li>
+          </ul>
+          <img src="../../assets/img/windows/Aula10/image5.png" alt="Configuração de plano de fundo" class="img-showcase">
+          <p class="img-caption">Tela de configuração de plano de fundo.</p>
+          <img src="../../assets/img/windows/Aula10/image6.png" alt="Configuração de plano de fundo Windows 10/11" class="img-showcase">
+          <p class="img-caption">Tela de configuração de plano de fundo nas versões mais recentes.</p>
+          <img src="../../assets/img/windows/Aula10/image9.png" alt="Plano de fundo aplicado" class="img-showcase">
+          <p class="img-caption">Exemplo prático de plano de fundo aplicado.</p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que pratiquei alteração de tema/cores e plano de fundo.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-3" onclick="markTopicRead(10, 3)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 3)">Ir para 3. Bloco de Notas →</button>
+          </div>
+        </section>
+
+        <!-- FASE 3 -->
+        <section id="l10-phase-3" class="topic-phase-section">
+          <h2>3. Bloco de Notas</h2>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Como abrir</div>
+            <div style="overflow-x:auto; margin-top:10px;">
+              <table style="width:100%; border-collapse:collapse; font-size:14.5px;">
+                <thead>
+                  <tr style="background:#1F4E79; color:#fff;">
+                    <th style="padding:10px; border:1px solid #1F4E79;">Versão</th>
+                    <th style="padding:10px; border:1px solid #1F4E79;">Como abrir</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td style="padding:9px; border:1px solid var(--line);">Windows 7</td><td style="padding:9px; border:1px solid var(--line);">Menu Iniciar > Acessórios > Bloco de Notas</td></tr>
+                  <tr style="background:#f8fafc;"><td style="padding:9px; border:1px solid var(--line);">Windows 10 / 11</td><td style="padding:9px; border:1px solid var(--line);">Menu Iniciar > pesquisar "Bloco de Notas"</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="wp-illus" style="border-left:4px solid #2e7d32; background:#e6f4e6;">
+            <div class="wp-illus-title" style="color:#2e7d32;">Exemplo prático</div>
+            <p style="margin:6px 0 2px; font-size:15px; color:var(--ink);">Escrever nome e telefone e salvar o arquivo como <strong>contato.txt</strong> na área de trabalho.</p>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que abri o Bloco de Notas, escrevi e salvei um arquivo .TXT.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-4" onclick="markTopicRead(10, 4)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 4)">Ir para 4. Calculadora →</button>
+          </div>
+        </section>
+
+        <!-- FASE 4 -->
+        <section id="l10-phase-4" class="topic-phase-section">
+          <h2>4. Calculadora</h2>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Como abrir</div>
+            <div style="overflow-x:auto; margin-top:10px;">
+              <table style="width:100%; border-collapse:collapse; font-size:14.5px;">
+                <thead>
+                  <tr style="background:#1F4E79; color:#fff;">
+                    <th style="padding:10px; border:1px solid #1F4E79;">Versão</th>
+                    <th style="padding:10px; border:1px solid #1F4E79;">Como abrir</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td style="padding:9px; border:1px solid var(--line);">Windows 7</td><td style="padding:9px; border:1px solid var(--line);">Iniciar > Acessórios > Calculadora</td></tr>
+                  <tr style="background:#f8fafc;"><td style="padding:9px; border:1px solid var(--line);">Windows 10 / 11</td><td style="padding:9px; border:1px solid var(--line);">Digitar "Calculadora" na pesquisa, ou usar Windows + R e digitar <code>calc</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="wp-illus" style="border-left:4px solid #2e7d32; background:#e6f4e6;">
+            <div class="wp-illus-title" style="color:#2e7d32;">Exemplo prático</div>
+            <p style="margin:6px 0 2px; font-size:15px; color:var(--ink);">Calcular <strong>350 × 12 ÷ 2</strong>.</p>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que abri a Calculadora e fiz o cálculo proposto.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-5" onclick="markTopicRead(10, 5)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 5)">Ir para 5. Ferramenta de Captura / Recorte →</button>
+          </div>
+        </section>
+
+        <!-- FASE 5 -->
+        <section id="l10-phase-5" class="topic-phase-section">
+          <h2>5. Ferramenta de Captura / Recorte</h2>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Como abrir</div>
+            <div style="overflow-x:auto; margin-top:10px;">
+              <table style="width:100%; border-collapse:collapse; font-size:14.5px;">
+                <thead>
+                  <tr style="background:#1F4E79; color:#fff;">
+                    <th style="padding:10px; border:1px solid #1F4E79;">Versão</th>
+                    <th style="padding:10px; border:1px solid #1F4E79;">Como abrir</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td style="padding:9px; border:1px solid var(--line);">Windows 7</td><td style="padding:9px; border:1px solid var(--line);">"Snipping Tool" no Menu Iniciar, dentro de Acessórios</td></tr>
+                  <tr style="background:#f8fafc;"><td style="padding:9px; border:1px solid var(--line);">Windows 10</td><td style="padding:9px; border:1px solid var(--line);">"Ferramenta de Captura", ou atalho <strong>Windows + Shift + S</strong></td></tr>
+                  <tr><td style="padding:9px; border:1px solid var(--line);">Windows 11</td><td style="padding:9px; border:1px solid var(--line);">"Ferramenta de Recorte", com interface renovada</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="wp-illus" style="border-left:4px solid #2e7d32; background:#e6f4e6;">
+            <div class="wp-illus-title" style="color:#2e7d32;">Exemplo prático</div>
+            <p style="margin:6px 0 2px; font-size:15px; color:var(--ink);">Capturar uma área retangular da tela e colar o resultado no <strong>Paint</strong>.</p>
+          </div>
+          <img src="../../assets/img/windows/Aula10/image1.png" alt="Ferramenta de Captura/Recorte" class="img-showcase">
+          <p class="img-caption">Ferramenta de Captura / Recorte em uso.</p>
+          <img src="../../assets/img/windows/Aula10/image2.png" alt="Captura de tela" class="img-showcase">
+          <p class="img-caption">Exemplo de captura de tela.</p>
+          <img src="../../assets/img/windows/Aula10/image4.png" alt="Captura e recorte" class="img-showcase">
+          <p class="img-caption">Demonstração da ferramenta de recorte.</p>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que fiz uma captura de tela com a Ferramenta de Captura/Recorte.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-6" onclick="markTopicRead(10, 6)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 6)">Ir para 6. Gravador de Voz →</button>
+          </div>
+        </section>
+
+        <!-- FASE 6 -->
+        <section id="l10-phase-6" class="topic-phase-section">
+          <h2>6. Gravador de Voz</h2>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Como usar</div>
+            <div style="overflow-x:auto; margin-top:10px;">
+              <table style="width:100%; border-collapse:collapse; font-size:14.5px;">
+                <thead>
+                  <tr style="background:#1F4E79; color:#fff;">
+                    <th style="padding:10px; border:1px solid #1F4E79;">Versão</th>
+                    <th style="padding:10px; border:1px solid #1F4E79;">Como usar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td style="padding:9px; border:1px solid var(--line);">Windows 7</td><td style="padding:9px; border:1px solid var(--line);">Requer microfone instalado; usa o gravador de som básico</td></tr>
+                  <tr style="background:#f8fafc;"><td style="padding:9px; border:1px solid var(--line);">Windows 10 / 11</td><td style="padding:9px; border:1px solid var(--line);">"Gravador de Voz" pelo Menu Iniciar, ou <strong>Windows + G</strong> (Barra de Jogo) para gravações</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="wp-illus" style="border-left:4px solid #2e7d32; background:#e6f4e6;">
+            <div class="wp-illus-title" style="color:#2e7d32;">Exemplo prático</div>
+            <p style="margin:6px 0 2px; font-size:15px; color:var(--ink);">Gravar o aluno dizendo a frase: <strong>"Hoje aprendi a usar o Windows"</strong>.</p>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que conheci e pratiquei o Gravador de Voz.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-7" onclick="markTopicRead(10, 7)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 7)">Ir para 7. Lupa e Teclado Virtual →</button>
+          </div>
+        </section>
+
+        <!-- FASE 7 -->
+        <section id="l10-phase-7" class="topic-phase-section">
+          <h2>7. Lupa e Teclado Virtual</h2>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Como abrir</div>
+            <div style="overflow-x:auto; margin-top:10px;">
+              <table style="width:100%; border-collapse:collapse; font-size:14.5px;">
+                <thead>
+                  <tr style="background:#1F4E79; color:#fff;">
+                    <th style="padding:10px; border:1px solid #1F4E79;">Versão</th>
+                    <th style="padding:10px; border:1px solid #1F4E79;">Abrir Lupa</th>
+                    <th style="padding:10px; border:1px solid #1F4E79;">Abrir Teclado Virtual</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td style="padding:9px; border:1px solid var(--line);">Windows 7</td><td style="padding:9px; border:1px solid var(--line);">Acessórios > Acessibilidade > Lupa</td><td style="padding:9px; border:1px solid var(--line);">Acessórios > Acessibilidade > Teclado Virtual</td></tr>
+                  <tr style="background:#f8fafc;"><td style="padding:9px; border:1px solid var(--line);">Windows 10 / 11</td><td style="padding:9px; border:1px solid var(--line);">Atalho <strong>Windows + +</strong> (mais)</td><td style="padding:9px; border:1px solid var(--line);">Pesquisar "Teclado Virtual" no Menu Iniciar</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="wp-illus" style="border-left:4px solid #2e7d32; background:#e6f4e6;">
+            <div class="wp-illus-title" style="color:#2e7d32;">Exemplo prático</div>
+            <p style="margin:6px 0 2px; font-size:15px; color:var(--ink);">Ativar a lupa e o teclado virtual para digitar o nome do aluno na tela.</p>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que conheci a Lupa e o Teclado Virtual.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-8" onclick="markTopicRead(10, 8)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 6)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 8)">Ir para 8. Atividade Final →</button>
+          </div>
+        </section>
+
+        <!-- FASE 8 -->
+        <section id="l10-phase-8" class="topic-phase-section">
+          <h2>8. Atividade Final</h2>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Atividades a realizar</div>
+            <ol style="margin:10px 0 4px 22px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Mude o plano de fundo da área de trabalho.</li>
+              <li>Escolha um tema claro ou escuro.</li>
+              <li>Abra o Bloco de Notas e, usando o teclado virtual, escreva o lembrete <strong>"Prova final 29 de Setembro"</strong>. Depois, crie uma pasta chamada <strong>"Lembretes"</strong> dentro da sua pasta pessoal e salve a anotação com o nome <strong>"data da prova"</strong>.</li>
+              <li>Use a calculadora para fazer um cálculo simples.</li>
+              <li>Capture a tela e cole a imagem no Paint, ou salve-a diretamente na sua pasta pessoal.</li>
+              <li>Grave a sua voz usando o Gravador de Voz.</li>
+              <li>Acesse a pasta <strong>Download</strong>, veja se possui arquivos de áudio, mova-os para <strong>Músicas</strong>; se tiver arquivos de vídeo, mova para <strong>Vídeos</strong>; imagens para <strong>Imagens</strong>.</li>
+              <li>Na pasta <strong>Imagens</strong>, organize as imagens criando pastas por tipo. Crie uma pasta para um grupo se houver <strong>2 ou mais imagens</strong> do mesmo grupo.</li>
+            </ol>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que realizei todas as atividades propostas.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-9" onclick="markTopicRead(10, 9)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 7)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 9)">Ir para 9. Recursos de Apoio →</button>
+          </div>
+        </section>
+
+        <!-- FASE 9 -->
+        <section id="l10-phase-9" class="topic-phase-section">
+          <h2>9. Recursos de Apoio</h2>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Simulador</div>
+            <p style="margin:6px 0 2px; font-size:15px; color:var(--ink);"><strong>Simulador de Windows:</strong> <a href="https://copy.sh/v86" target="_blank" rel="noopener noreferrer">https://copy.sh/v86</a> (emula o Windows e vários outros sistemas operacionais)</p>
+          </div>
+          <div class="wp-illus">
+            <div class="wp-illus-title">Atalhos universais úteis</div>
+            <ul style="margin:8px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li><strong>Win + D:</strong> mostrar a área de trabalho</li>
+            </ul>
+            <img src="../../assets/img/windows/Aula10/image1.png" alt="Atalho Win + D" class="img-showcase">
+            <ul style="margin:8px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li><strong>Win + R:</strong> abrir a caixa "Executar"</li>
+            </ul>
+            <img src="../../assets/img/windows/Aula10/image2.png" alt="Caixa Executar Win + R" class="img-showcase">
+            <ul style="margin:8px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li><strong>Alt + Tab:</strong> alternar entre janelas abertas</li>
+            </ul>
+            <img src="../../assets/img/windows/Aula10/image4.png" alt="Alternando janelas com Alt + Tab" class="img-showcase">
+          </div>
+          <p style="background:#F0F9F4; border:1px solid #c8e6d0; border-radius:12px; padding:14px 16px; font-size:15px; color:var(--teal-deep); font-weight:600;">
+            🎉 Agora faça o <strong>Exercício de Fixação</strong> com 5 perguntas para consolidar o aprendizado.
+          </p>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 8)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(10)">Ir para Exercícios de Fixação →</button>
+          </div>
+        </section>
+
+        <!-- PAINEL DE FIXAÇÃO -->
+        <section id="fixation-panel-10" class="fixation-panel no-print" style="display:none;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+            <div>
+              <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none;"><span class="dot"></span> EXERCÍCIO DE FIXAÇÃO</span>
+              <h2 style="color:var(--teal-deep); margin:10px 0 0; font-size:24px;">Aula 10 — Ferramentas Básicas e Personalização no Windows (7, 10 e 11)</h2>
+              <p style="color:var(--ink-soft); margin:6px 0 0;">Responda as 5 questões. Ao final, assine e gere seu resultado.</p>
+            </div>
+            <button type="button" class="btn btn-ghost" onclick="closeFixationPanel(10)">← Voltar às Fases</button>
+          </div>
+          <div id="quiz-app-10"></div>
+        </section>
+
+        <!-- PAINEL DE RESULTADO -->
+        <section id="result-panel-10" class="fixation-panel no-print" style="display:none;">
+          <div style="text-align:center; margin-bottom:18px;">
+            <span class="eyebrow-badge" style="background:#E8F6EF; color:#1F7C3F; border:none;"><span class="dot"></span> RESULTADO DO EXERCÍCIO</span>
+            <h2 style="color:var(--teal-deep); margin:12px 0 6px; font-size:26px;">Parabéns por concluir a Aula 10!</h2>
+            <p style="color:var(--ink-soft); margin:0;">Confira sua nota e assine para registrar.</p>
+          </div>
+          <div id="quiz-result-10"></div>
+          <div style="text-align:center; margin-top:18px;">
+            <button type="button" class="btn btn-ghost" onclick="closeResultPanel(10)">← Voltar às Fases</button>
+          </div>
+        </section>
+      </article>
+    </section>
+
+<section id="screen-lesson-11" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')">← Voltar ao Menu</button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">🖨️ Imprimir Aula</button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 11)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">📑 Baixar Apostila PDF</button>
+        </div>
+      </div>
+
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DA AULA 9 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 11)</span>
+            <span id="gamify-percent-11">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-11"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-11">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <header style="margin-bottom:20px;">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Aula 11</span>
+          <h1 style="color:var(--teal-deep); font-size:32px; margin:8px 0 0; line-height:1.3;">Aula 11: Revisão Geral do Windows</h1>
+          <p style="color:var(--ink-soft); margin:8px 0 0; font-size:16px;">Revisão geral e integradora de todo o conteúdo do Módulo 1 Windows: histórico, arquivos/pastas, segurança, diagnóstico e ferramentas básicas.</p>
+        </header>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL -->
+        <div id="l11-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Revisar e fixar, de forma prática e integrada, os principais conteúdos das Aulas 01 a 10: noções de computador, Windows, arquivos/pastas, WordPad, segurança/antivírus, diagnóstico/restauração, prática integradora e ferramentas básicas.
+          </p>
+
+          <img src="../../assets/img/windows/Aula9/image1.png" alt="Estrutura de pastas empresa-xyz na Área de Trabalho" class="img-showcase">
+          <p class="img-caption">Imagem 01/05 — Estrutura de pastas a ser criada na Área de Trabalho.</p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li><strong>1.</strong> Revisão: História e funcionamento dos computadores.</li>
+            <li><strong>2.</strong> Revisão: Windows, Área de Trabalho, Pastas e Arquivos.</li>
+            <li><strong>3.</strong> Revisão: WordPad e formatação básica.</li>
+            <li><strong>4.</strong> Revisão: Segurança, antivírus e firewall.</li>
+            <li><strong>5.</strong> Revisão: Diagnóstico, restauração e criação de mídia.</li>
+            <li><strong>6.</strong> Revisão: Ferramentas básicas e prática integradora.</li>
+          </ol>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
+            🏁 Resultado esperado: ao final, você saberá utilizar as principais ferramentas básicas do Windows (Executar, utilitários, Gerenciador de Tarefas, diagnóstico e noções de Prompt/PowerShell) em qualquer versão (7/10/11).
+          </p>
+          <p style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px; margin-top:10px; font-size:14.5px; color:var(--teal-deep);">
+            ⚙️ <strong>Orientação prática:</strong> siga a ordem das partes com calma. Ao concluir cada etapa, marque o quadradinho correspondente para liberar a próxima fase.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro desta prática e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-1" onclick="markTopicRead(11, 1)"><span>☐ Entendi o roteiro — começar a prática!</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 1)">Ir para 1. Parte 1 – Organização de Pastas de uma Empresa →</button>
+          </div>
+        </div>
+
+        <!-- ÍNDICE DE TÓPICOS -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-11-1" onclick="switchTopicPhase(11, 1)">1. Organização de Pastas</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-2" onclick="switchTopicPhase(11, 2)">2. Organizando Imagens</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-3" onclick="switchTopicPhase(11, 3)">3. Papel de Parede</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-4" onclick="switchTopicPhase(11, 4)">4. Alterando a Senha</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-5" onclick="switchTopicPhase(11, 5)">5. Ponto de Restauração</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-6" onclick="switchTopicPhase(11, 6)">6. Diagnóstico do PC</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-7" onclick="switchTopicPhase(11, 7)">7. Ferramentas de Manutenção</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-8" onclick="switchTopicPhase(11, 8)">8. Revisão</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-fix" onclick="openFixationPanel(11)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- FASE 1 -->
+        <section id="l11-phase-1" class="topic-phase-section active">
+          <h2>1. Parte 1 – Organização de Pastas de uma Empresa</h2>
+          <p>Vamos simular a organização dos arquivos de uma empresa fictícia chamada <strong>empresa-xyz</strong>, dividida em 4 setores.</p>
+          <img src="../../assets/img/windows/Aula9/image1.png" alt="Estrutura de pastas empresa-xyz na Área de Trabalho" class="img-showcase">
+          <p class="img-caption">Imagem 01/05 — Estrutura de pastas a ser criada na Área de Trabalho.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo a passo</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Na <strong>Área de Trabalho</strong>, crie uma pasta chamada <code>empresa-xyz</code>.</li>
+              <li>Dentro dela, crie 4 pastas: <code>Financeiro</code>, <code>Vendas</code>, <code>TI</code> e <code>RH</code>.</li>
+              <li>Dentro de cada pasta de setor, crie 1 arquivo de texto (.TXT ou .DOCX) com o nome dos funcionários daquele setor.</li>
+              <li>Cada arquivo deve conter <strong>no mínimo 3 nomes</strong> de funcionários.</li>
+            </ol>
+          </div>
+          <div class="wp-illus">
+            <div class="wp-illus-title">💡 Dica</div>
+            <p style="margin:6px 0 2px; font-size:14.8px; line-height:1.8; color:var(--ink);">Botão direito → <strong>Novo > Pasta</strong> / <strong>Novo > Documento de Texto</strong>. Para renomear: clique com o botão direito → <strong>Renomear</strong> ou pressione <strong>F2</strong>.</p>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que criei a estrutura empresa-xyz com os 4 setores e os arquivos de texto.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-2" onclick="markTopicRead(11, 2)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 2)">Ir para 2. Organizando Imagens →</button>
+          </div>
+        </section>
+
+        <!-- FASE 2 -->
+        <section id="l11-phase-2" class="topic-phase-section">
+          <h2>2. Parte 2 – Organizando Fotos e Imagens</h2>
+          <p>Vamos organizar as imagens da pasta <strong>Imagens</strong> (ou <strong>Fotos</strong>) do seu usuário.</p>
+          <img src="../../assets/img/windows/Aula9/image3.png" alt="Pastas Astronomia e Natureza dentro de Imagens" class="img-showcase">
+          <p class="img-caption">Imagem 02/05 — Pastas Astronomia e Natureza dentro de Imagens.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo a passo</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Abra a pasta <strong>Imagens</strong> (ou <strong>Fotos</strong>) do seu usuário.</li>
+              <li>Crie as pastas <code>Astronomia</code> e <code>Natureza</code>.</li>
+              <li>Mova cada imagem para a pasta correspondente ao assunto.</li>
+              <li>Escolha <strong>2 imagens</strong> e renomeie-as com nomes descritivos (ex.: <code>lua-cheia.jpg</code>).</li>
+            </ol>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que organizei as imagens nas pastas Astronomia e Natureza, movendo e renomeando arquivos.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-3" onclick="markTopicRead(11, 3)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 3)">Ir para 3. Alterando o Papel de Parede →</button>
+          </div>
+        </section>
+
+        <!-- FASE 3 -->
+        <section id="l11-phase-3" class="topic-phase-section">
+          <h2>3. Parte 3 – Alterando o Papel de Parede</h2>
+          <p>Escolha uma das imagens que você organizou e defina-a como papel de parede da Área de Trabalho.</p>
+          <img src="../../assets/img/windows/Aula9/image2.png" alt="Personalizar > Plano de Fundo" class="img-showcase">
+          <p class="img-caption">Imagem 03/05 — Personalizar > Plano de Fundo.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo a passo</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Clique com o botão direito em um espaço vazio da <strong>Área de Trabalho</strong> → <strong>Personalizar</strong>.</li>
+              <li>Em <strong>Plano de Fundo</strong>, clique em <strong>Procurar</strong> e selecione a imagem desejada.</li>
+              <li>Observe a Área de Trabalho com o novo papel de parede.</li>
+            </ol>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que alterei o papel de parede da Área de Trabalho com uma das imagens organizadas.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-4" onclick="markTopicRead(11, 4)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 4)">Ir para 4. Alterando a Senha do Usuário →</button>
+          </div>
+        </section>
+
+        <!-- FASE 4 -->
+        <section id="l11-phase-4" class="topic-phase-section">
+          <h2>4. Parte 4 – Alterando a Senha do Usuário</h2>
+          <p>Neste exercício, vamos adicionar/alterar a senha da conta do usuário para praticar o processo.</p>
+          <img src="../../assets/img/windows/Aula9/image5.png" alt="Configurações > Contas > Opções de entrada" class="img-showcase">
+          <p class="img-caption">Imagem 04/05 — Opções de entrada para adicionar/alterar senha.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo a passo</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Abra <strong>Configurações > Contas > Opções de entrada</strong>.</li>
+              <li>Em <strong>Senha</strong>, clique em <strong>Adicionar</strong> (ou <strong>Alterar</strong>).</li>
+              <li>Para fins didáticos, use <code>123</code> e confirme.</li>
+            </ol>
+          </div>
+          <div class="wp-illus" style="border-left:4px solid #b23a32;">
+            <div class="wp-illus-title" style="color:#b23a32;">⚠️ Atenção</div>
+            <p style="margin:6px 0 2px; font-size:14.8px; line-height:1.8; color:var(--ink);">A senha <strong>123</strong> é <strong>apenas para exercício em sala</strong>. No mundo real, use uma senha forte com letras maiúsculas/minúsculas, números e símbolos, com pelo menos 8 caracteres.</p>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que pratiquei o processo de adicionar/alterar senha no Windows.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-5" onclick="markTopicRead(11, 5)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 5)">Ir para 5. Criando um Ponto de Restauração →</button>
+          </div>
+        </section>
+
+        <!-- FASE 5 -->
+        <section id="l11-phase-5" class="topic-phase-section">
+          <h2>5. Parte 5 – Criando um Ponto de Restauração</h2>
+          <p>Um ponto de restauração é como uma "foto" das configurações do sistema, útil caso algo dê errado.</p>
+          <img src="../../assets/img/windows/Aula9/image4.png" alt="Ponto de restauração Ultimo Ponto" class="img-showcase">
+          <p class="img-caption">Imagem 05/05 — Criando o ponto de restauração.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo a passo</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Clique no <strong>Menu Iniciar</strong> e pesquise por <code>Criar um ponto de restauração</code>.</li>
+              <li>Na aba <strong>Proteção do Sistema</strong>, clique em <strong>Criar...</strong>.</li>
+              <li>Digite o nome <code>Ultimo Ponto</code> e clique em <strong>Criar</strong>.</li>
+              <li>Aguarde a conclusão e feche a janela.</li>
+            </ol>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que criei o ponto de restauração com o nome "Ultimo Ponto".</span>
+            <button type="button" class="read-check-btn" id="check-read-11-6" onclick="markTopicRead(11, 6)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 6)">Ir para 6. Diagnóstico do Computador →</button>
+          </div>
+        </section>
+
+        <!-- FASE 6 -->
+        <section id="l11-phase-6" class="topic-phase-section">
+          <h2>6. Parte 6 – Diagnóstico do Computador</h2>
+          <p>Vamos verificar as configurações básicas do computador.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">🧪 Verificações</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li><strong>Propriedades do Sistema:</strong> <code>Este Computador > Propriedades</code> — ver Processador, Memória RAM, Tipo de sistema.</li>
+              <li><strong>Informações detalhadas:</strong> <code>Win + R > msinfo32</code> — consultar informações completas do sistema.</li>
+              <li><strong>Rede:</strong> verificar conexão (Wi-Fi/Cabo) e, se desejado, <code>ipconfig</code> no Prompt de Comando.</li>
+              <li><strong>Hora/Data:</strong> conferir na barra de tarefas.</li>
+            </ol>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que realizei o diagnóstico básico (sistema, memória, rede e hora/data).</span>
+            <button type="button" class="read-check-btn" id="check-read-11-7" onclick="markTopicRead(11, 7)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 7)">Ir para 7. Ferramentas de Manutenção →</button>
+          </div>
+        </section>
+
+        <!-- FASE 7 -->
+        <section id="l11-phase-7" class="topic-phase-section">
+          <h2>7. Parte 7 – Ferramentas de Manutenção do Windows</h2>
+          <p>Conhecendo ferramentas importantes para manutenção e segurança básica.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">🛠️ Principais ferramentas</div>
+            <ul style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li><strong>Recuperação:</strong> <code>Configurações > Sistema > Recuperação > Redefinir este PC</code> — conhecer a opção <strong>Manter meus arquivos</strong> (apenas demonstração, não executar).</li>
+              <li><strong>Limpeza de disco:</strong> <code>cleanmgr</code> (<code>Win + R</code>) — liberar espaço em disco.</li>
+              <li><strong>Segurança do Windows:</strong> verificar se o <strong>Microsoft Defender</strong> está ativo e atualizado.</li>
+            </ul>
+          </div>
+          <div class="wp-illus" style="border-left:4px solid #b23a32;">
+            <div class="wp-illus-title" style="color:#b23a32;">⚠️ Cuidado</div>
+            <p style="margin:6px 0 2px; font-size:14.8px; line-height:1.8; color:var(--ink);">Na demonstração, <strong>não conclua</strong> o "Redefinir este PC". Pare na tela de escolha e mostre ao professor.</p>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que conheci as ferramentas de recuperação, limpeza e segurança do Windows.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-8" onclick="markTopicRead(11, 8)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 6)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 8)">Ir para 8. Revisão da Prática →</button>
+          </div>
+        </section>
+
+        <!-- FASE 8 -->
+        <section id="l11-phase-8" class="topic-phase-section">
+          <h2>8. Revisão da Prática</h2>
+          <p>Parabéns! Você concluiu a prática integradora da Aula 10.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">✅ O que você praticou</div>
+            <ul style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Criação e organização de pastas e arquivos</li>
+              <li>Classificação, movimentação e renomeação de imagens</li>
+              <li>Personalização (papel de parede)</li>
+              <li>Segurança básica (senha do usuário)</li>
+              <li>Proteção (ponto de restauração)</li>
+              <li>Diagnóstico e manutenção básica do Windows</li>
+            </ul>
+          </div>
+          <p style="background:#F0F9F4; border:1px solid #c8e6d0; border-radius:12px; padding:14px 16px; font-size:15px; color:var(--teal-deep); font-weight:600;">
+            🎉 Agora faça o <strong>Exercício de Fixação</strong> com 5 perguntas para consolidar o aprendizado.
+          </p>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que revisei toda a prática integradora da Aula 10.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-9" onclick="markTopicRead(11, 9)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 7)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(11)">Ir para Exercícios de Fixação →</button>
+          </div>
+        </section>
+
+        <!-- PAINEL DE FIXAÇÃO / QUIZ AULA 9 -->
+        <section id="fixation-panel-11" class="fixation-panel no-print" style="display:none;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+            <div>
+              <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none;"><span class="dot"></span> EXERCÍCIO DE FIXAÇÃO</span>
+              <h2 style="color:var(--teal-deep); margin:10px 0 0; font-size:24px;">Aula 10 — Ferramentas Básicas do Windows (7, 10 e 11)</h2>
+              <p style="color:var(--ink-soft); margin:6px 0 0;">Responda as 5 questões. Ao final, assine e gere seu resultado.</p>
+            </div>
+            <button type="button" class="btn btn-ghost" onclick="closeFixationPanel(10)">← Voltar às Fases</button>
+          </div>
+          <div id="quiz-app-10"></div>
+        </section>
+
+        <!-- PAINEL DE RESULTADO AULA 9 -->
+        <section id="result-panel-11" class="fixation-panel no-print" style="display:none;">
+          <div style="text-align:center; margin-bottom:18px;">
+            <span class="eyebrow-badge" style="background:#E8F6EF; color:#1F7C3F; border:none;"><span class="dot"></span> RESULTADO DO EXERCÍCIO</span>
+            <h2 style="color:var(--teal-deep); margin:12px 0 6px; font-size:26px;">Parabéns por concluir a Aula 10!</h2>
+            <p style="color:var(--ink-soft); margin:0;">Confira sua nota e assine para registrar.</p>
+          </div>
+          <div id="quiz-result-10"></div>
+          <div style="text-align:center; margin-top:18px;">
+            <button type="button" class="btn btn-ghost" onclick="closeResultPanel(10)">← Voltar às Fases</button>
+          </div>
+        </section>
+      </article>
+    </section>
+
+
+    <!-- ===================================================================
+         TELA 6: COMPLEMENTO 8A — TUTORIAL DE CRIAÇÃO DE MÍDIA DE INSTALAÇÃO
+         =================================================================== -->
+
     <section id="screen-lesson-1" class="screen-view">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
         <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
@@ -4030,6 +4889,711 @@
         </div>
       </article>
     </section>
+    <section id="screen-lesson-6" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">← Voltar ao Menu do Módulo</button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">🖨️ Imprimir Aula Completa (HTML Origem)</button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 6)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">📑 Baixar Apostila PDF</button>
+        </div>
+      </div>
+
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DA AULA 6 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 6)</span>
+            <span id="gamify-percent-6">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-6"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-6">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <header style="margin-bottom:20px;">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Aula 6</span>
+          <h1 style="color:var(--teal-deep); font-size:32px; margin:8px 0 0; line-height:1.3;">Aula 06: WordPad — Editor de Texto do Windows</h1>
+          <p style="color:var(--ink-soft); margin:8px 0 0; font-size:16px;">O editor de texto que já vem pronto no Windows: o que é, como abrir, a Faixa de Opções, <strong>Salvar × Salvar Como</strong> e o primeiro relatório do seu computador</p>
+        </header>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l6-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Conhecer o <strong>WordPad</strong>, o editor de texto que acompanha o Windows gratuitamente: entender <strong>o que ele é</strong> e como difere do Bloco de Notas e do Microsoft Word, <strong>abrí-lo</strong> no Windows 7, 10 e 11, usar a <strong>Faixa de Opções</strong> (Página Inicial, Inserir, Exibir e Menu Arquivo), <strong>distinguir “Salvar” de “Salvar Como”</strong> e criar o <strong>primeiro relatório do seu computador</strong> — coletando informações reais do sistema e organizando arquivos em pastas.
+          </p>
+
+          <img src="../../assets/img/windows/Aula6/image5.png" alt="Janela do WordPad aberta no Windows com a Faixa de Opções visível no topo" class="img-showcase">
+          <p class="img-caption">Imagem 01/08 — WordPad aberto, com a Faixa de Opções visível.</p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li>Entender <strong>o que é o WordPad</strong> e como ele se compara com o Bloco de Notas e com o Microsoft Word.</li>
+            <li><strong>Abrir o WordPad</strong> no Windows 7, no Windows 10 e no Windows 11.</li>
+            <li>Usar a guia <strong>Página Inicial</strong> da Faixa de Opções: Área de Transferência, Fonte e Parágrafo.</li>
+            <li>Explorar a guia <strong>Inserir</strong>, a guia <strong>Exibir</strong> e o <strong>Menu Arquivo</strong>.</li>
+            <li>Distinguir <strong>“Salvar” (Ctrl+S)</strong> de <strong>“Salvar como” (F12)</strong> e saber quando usar cada um.</li>
+            <li><strong>Exercício 1:</strong> coletar informações do computador (Propriedades + <code>ipconfig</code>) e montar o <strong>Relatório do PC</strong> no WordPad.</li>
+            <li><strong>Exercício 2:</strong> criar a estrutura de pastas em <code>Documentos</code> e salvar o relatório dentro dela.</li>
+            <li><strong>Simular a impressão</strong> (Ctrl+P), revisar a aula e fazer o exercício de fixação.</li>
+          </ol>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
+            🏁 Resultado esperado: ao final, você terá um <strong>relatório do seu computador</strong> pronto, formatado, salvo em uma pasta organizada — e saberá exatamente quando usar <em>Salvar</em> ou <em>Salvar Como</em>.
+          </p>
+          <p style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px; margin-top:10px; font-size:14.5px; color:var(--teal-deep);">
+            ⚙️ <strong>Preparação:</strong> abra o <strong>Prompt de Comando</strong> (tecla <code>Windows + R</code> → digite <code>cmd</code> → Enter) porque ele será usado no Exercício 1. Ao concluir cada etapa, marque o quadradinho correspondente para liberar a próxima fase.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro desta aula e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-1" onclick="markTopicRead(6, 1)">
+              <span>☐ Entendi o roteiro — começar a aula!</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 1)">Ir para 1. O que é o WordPad? →</button>
+          </div>
+        </div>
+
+        <!-- ÍNDICE DE TÓPICOS DA AULA 6 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-6-1" onclick="switchTopicPhase(6, 1)">1. O que é o WordPad?</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-2" onclick="switchTopicPhase(6, 2)">2. Abrindo o WordPad</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-3" onclick="switchTopicPhase(6, 3)">3. Faixa de Opções — Página Inicial</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-4" onclick="switchTopicPhase(6, 4)">4. Inserir, Exibir e Menu Arquivo</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-5" onclick="switchTopicPhase(6, 5)">5. Salvar × Salvar Como</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-6" onclick="switchTopicPhase(6, 6)">6. Exercício — Relatório do PC</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-7" onclick="switchTopicPhase(6, 7)">7. Pastas, Salvamento e Impressão</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-8" onclick="switchTopicPhase(6, 8)">8. Revisão</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-6-fix" onclick="openFixationPanel(6)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             TÓPICO 1 DA AULA 6: O QUE É O WORDPAD?
+             =============================================================== -->
+        <section id="l6-phase-1" class="topic-phase-section active">
+          <h2>1. O que é o WordPad?</h2>
+          <p>
+            O <strong>WordPad</strong> é um <strong>editor de texto básico que acompanha o Windows gratuitamente</strong>. Ele é <strong>mais avançado que o Bloco de Notas</strong>, mas <strong>mais simples que o Microsoft Word</strong> — uma boa opção intermediária para digitar textos com alguma formatação, sem precisar instalar nada.
+          </p>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">📊 Bloco de Notas × WordPad × Microsoft Word</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead>
+                <tr><th style="width:22%;">Recurso</th><th style="width:26%;">Bloco de Notas</th><th style="width:26%;">WordPad</th><th style="width:26%;">Microsoft Word</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Formatação de texto</strong></td><td>Não</td><td><strong>Sim</strong> (negrito, itálico, sublinhado, cores, realce)</td><td>Sim (completa)</td></tr>
+                <tr><td><strong>Imagens no documento</strong></td><td>Não</td><td><strong>Sim</strong></td><td>Sim</td></tr>
+                <tr><td><strong>Tabelas e gráficos</strong></td><td>Não</td><td>Não</td><td>Sim</td></tr>
+                <tr><td><strong>Instalação</strong></td><td>Já vem pronto</td><td>Já vem pronto</td><td>Precisa instalar (pago ou versão gratuita)</td></tr>
+                <tr><td><strong>Para que serve</strong></td><td>Listas, anotações rápidas</td><td>Cartas, ofícios, relatórios simples</td><td>Trabalhos escolares e profissionais</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">⭐ Características principais do WordPad</div>
+            <ul style="margin:10px 0 4px 20px; line-height:1.8; font-size:15px; color:var(--ink);">
+              <li>Permite <strong>formatação básica de texto</strong>: negrito, itálico e sublinhado.</li>
+              <li>Suporta <strong>diferentes fontes e tamanhos de letra</strong>.</li>
+              <li>Permite <strong>inserir imagens</strong> dentro do documento.</li>
+              <li>Salva em vários formatos: <code>.rtf</code>, <code>.docx</code>, <code>.odt</code> e <code>.txt</code>.</li>
+              <li>É ideal para <strong>documentos simples</strong>, cartas curtas e relatórios básicos.</li>
+            </ul>
+          </div>
+
+          <p style="background:#FFF4E6; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; font-size:14.5px; color:var(--amber-dark);">
+            ⚠️ <strong>Atenção — o WordPad foi descontinuado:</strong> a Microsoft <strong>removeu o WordPad de todas as edições do Windows a partir do Windows 11, versão 24H2</strong> (e também o retirou da Microsoft Store). Ele <strong>continua disponível</strong> no Windows 7, no Windows 10 e no Windows 11 anterior à versão 24H2. Se o seu computador não tiver o programa, peça ao professor a instalação do pacote oficial antes de iniciar os exercícios.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi o que é o WordPad e como ele difere do Bloco de Notas e do Word.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-2" onclick="markTopicRead(6, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="document.getElementById('l6-fase-0').scrollIntoView({behavior:'smooth', block:'start'})">← Voltar ao Início da Aula</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 2)">Ir para 2. Abrindo o WordPad →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 2 DA AULA 6: ABRINDO O WORDPAD
+             =============================================================== -->
+        <section id="l6-phase-2" class="topic-phase-section">
+          <h2>2. Como abrir o WordPad</h2>
+          <p>
+            O caminho muda um pouco de uma versão para outra do Windows. No <strong>Windows 7</strong> o programa fica escondido dentro de <em>Acessórios</em>; no <strong>Windows 10 e 11</strong> o <strong>Menu Iniciar</strong> já encontra pelo nome.
+          </p>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">🪟 Caminho para abrir conforme a versão do Windows</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead>
+                <tr><th style="width:26%;">Versão do Windows</th><th>Caminho para abrir</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Windows 7</strong></td>
+                  <td><strong>Menu Iniciar → Todos os Programas → Acessórios → WordPad</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Windows 10 / 11</strong></td>
+                  <td><strong>Menu Iniciar → digite “WordPad” na busca → pressione Enter</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; margin:18px 0;">
+            <div style="flex:1; min-width:220px;">
+              <img src="../../assets/img/windows/Aula6/image3.png" alt="Ícone do programa WordPad" class="img-showcase">
+              <p class="img-caption" style="text-align:left;">Imagem 02/08 — O ícone do WordPad.</p>
+            </div>
+            <div class="wp-illus" style="flex:2; min-width:280px; margin-top:0;">
+              <div class="wp-illus-title">⚡ Atalho mais rápido (vale para todas as versões)</div>
+              <p style="margin:10px 0 4px; font-size:15px; line-height:1.7; color:var(--ink);">
+                Aperte a tecla <strong>Windows + R</strong>, digite <code>wordpad</code> e pressione <strong>Enter</strong>. O programa abre direto, sem passar pelo Menu Iniciar.
+              </p>
+            </div>
+          </div>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; font-size:14.5px; color:var(--amber-dark);">
+            💡 <strong>Dica:</strong> ao abrir o WordPad pela primeira vez, aproveite para deixar a janela <strong>maximizada</strong> (botão quadrado no canto superior direito). As ferramentas da Faixa de Opções ficam mais fáceis de usar.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei abrir o WordPad no Windows 7, 10 e 11.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-3" onclick="markTopicRead(6, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 3)">Ir para 3. Faixa de Opções — Página Inicial →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 3 DA AULA 6: FAIXA DE OPÇÕES — PÁGINA INICIAL
+             =============================================================== -->
+        <section id="l6-phase-3" class="topic-phase-section">
+          <h2>3. Faixa de Opções — Guia Página Inicial</h2>
+          <p>
+            O WordPad organiza suas ferramentas em uma <strong>faixa de opções</strong> (<em>ribbon</em>), dividida em <strong>guias</strong>. A guia que fica aberta ao iniciar o programa é a <strong>“Página Inicial”</strong>, onde estão os comandos mais usados do dia a dia.
+          </p>
+
+          <img src="../../assets/img/windows/Aula6/image6.png" alt="Faixa de opções do WordPad com a guia Página Inicial selecionada" class="img-showcase">
+          <p class="img-caption">Imagem 03/08 — Faixa de Opções do WordPad — guia “Página Inicial”.</p>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">✂️ Área de Transferência</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead><tr><th style="width:34%;">Comando</th><th>Função</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Recortar (Ctrl+X)</strong></td><td>Remove o texto selecionado e guarda para colar em outro lugar</td></tr>
+                <tr><td><strong>Copiar (Ctrl+C)</strong></td><td>Copia o texto selecionado, mantendo o original no lugar</td></tr>
+                <tr><td><strong>Colar (Ctrl+V)</strong></td><td>Insere o texto que foi recortado ou copiado</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">🔤 Fonte</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead><tr><th style="width:34%;">Comando</th><th>Função</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Tipo de fonte</strong></td><td>Escolhe a família da letra (Arial, Calibri, Times New Roman...)</td></tr>
+                <tr><td><strong>Tamanho</strong></td><td>Define o tamanho da letra (8, 10, 12, 14...)</td></tr>
+                <tr><td><strong>Negrito (Ctrl+B)</strong></td><td>Deixa o texto em negrito</td></tr>
+                <tr><td><strong>Itálico (Ctrl+I)</strong></td><td>Inclina o texto</td></tr>
+                <tr><td><strong>Sublinhado (Ctrl+U)</strong></td><td>Sublinha o texto</td></tr>
+                <tr><td><strong>Tachado</strong></td><td>Risca o texto no meio</td></tr>
+                <tr><td><strong>Sobrescrito / Subscrito</strong></td><td>Usado em fórmulas matemáticas e notas</td></tr>
+                <tr><td><strong>Cor do texto</strong></td><td>Altera a cor da fonte</td></tr>
+                <tr><td><strong>Realce</strong></td><td>Marca o texto com uma cor de fundo, como um marca-texto</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; margin:18px 0;">
+            <div style="flex:1; min-width:240px;">
+              <img src="../../assets/img/windows/Aula6/image2.png" alt="Grupos Fonte e Parágrafo da guia Página Inicial do WordPad" class="img-showcase">
+              <p class="img-caption" style="text-align:left;">Imagem 04/08 — Grupos Fonte e Parágrafo na guia Página Inicial.</p>
+            </div>
+            <div style="flex:1; min-width:240px;">
+              <img src="../../assets/img/windows/Aula6/image7.png" alt="Detalhamento dos comandos do grupo Parágrafo do WordPad" class="img-showcase">
+              <p class="img-caption" style="text-align:left;">Imagem 05/08 — Detalhamento do grupo Parágrafo.</p>
+            </div>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">¶ Parágrafo</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead><tr><th style="width:34%;">Comando</th><th>Função</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Alinhamento</strong></td><td>Esquerda, Centro, Direita ou Justificado</td></tr>
+                <tr><td><strong>Marcadores</strong></td><td>Cria listas com marcadores (<em>bullets</em>)</td></tr>
+                <tr><td><strong>Recuo</strong></td><td>Ajusta as margens do parágrafo</td></tr>
+                <tr><td><strong>Espaçamento entre linhas</strong></td><td>Define o espaço entre as linhas do texto</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px; font-size:14.5px; color:var(--teal-deep);">
+            ⌨️ <strong>Atalhos que economizam tempo:</strong> <code>Ctrl+C</code> copiar · <code>Ctrl+X</code> recortar · <code>Ctrl+V</code> colar · <code>Ctrl+B</code> negrito · <code>Ctrl+I</code> itálico · <code>Ctrl+U</code> sublinhado.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei usar os grupos Transferência, Fonte e Parágrafo da guia Página Inicial.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-4" onclick="markTopicRead(6, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 4)">Ir para 4. Inserir, Exibir e Menu Arquivo →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 4 DA AULA 6: INSERIR, EXIBIR E MENU ARQUIVO
+             =============================================================== -->
+        <section id="l6-phase-4" class="topic-phase-section">
+          <h2>4. Guias Inserir e Exibir + Menu Arquivo</h2>
+          <p>
+            Além da Página Inicial, o WordPad tem a guia <strong>Inserir</strong>, a guia <strong>Exibir</strong> e o <strong>Menu Arquivo</strong> (o botão verde, no canto superior esquerdo). Juntas, elas permitem inserir figuras, ajustar a visualização da tela e controlar o documento inteiro.
+          </p>
+
+          <img src="../../assets/img/windows/Aula6/image8.png" alt="Guia Inserir da Faixa de Opções do WordPad" class="img-showcase">
+          <p class="img-caption">Imagem 06/08 — Guia “Inserir” da Faixa de Opções do WordPad.</p>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">➕ Guia Inserir — os comandos principais</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead><tr><th style="width:34%;">Comando</th><th>Função</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Imagem</strong></td><td>Coloca uma figura do computador dentro do documento (bmp, gif, jpg, png, tif, wmf)</td></tr>
+                <tr><td><strong>Data e Hora</strong></td><td>Insere a data e a hora atuais no ponto em que o cursor estiver</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">👁️ Guia Exibir — os comandos principais</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead><tr><th style="width:34%;">Comando</th><th>Função</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Régua</strong></td><td>Mostra ou oculta a régua usada para medidas</td></tr>
+                <tr><td><strong>Unidades</strong></td><td>Define a unidade de medida (cm, polegadas)</td></tr>
+                <tr><td><strong>Quebra de linha</strong></td><td>Ajusta como o texto é exibido na tela</td></tr>
+                <tr><td><strong>Zoom</strong></td><td>Aumenta ou diminui a visualização — <strong>não altera a impressão</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; margin:18px 0;">
+            <div style="flex:1; min-width:240px;">
+              <img src="../../assets/img/windows/Aula6/image4.png" alt="Botão Arquivo (Menu WordPad) no canto superior esquerdo" class="img-showcase">
+              <p class="img-caption" style="text-align:left;">Imagem 07/08 — O botão <em>Arquivo</em> (Menu WordPad).</p>
+            </div>
+            <div style="flex:1; min-width:240px;">
+              <img src="../../assets/img/windows/Aula6/image1.png" alt="Menu Arquivo do WordPad aberto com os comandos Novo, Abrir, Salvar, Salvar como e Imprimir" class="img-showcase">
+              <p class="img-caption" style="text-align:left;">Imagem 08/08 — Menu Arquivo aberto: Novo, Abrir, Salvar, Salvar como e Imprimir.</p>
+            </div>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">📁 Menu Arquivo — os comandos principais</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead><tr><th style="width:34%;">Comando</th><th>Função</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Novo</strong></td><td>Cria um novo documento em branco</td></tr>
+                <tr><td><strong>Abrir</strong></td><td>Abre um documento já existente</td></tr>
+                <tr><td><strong>Salvar</strong></td><td>Salva o documento atual</td></tr>
+                <tr><td><strong>Salvar como</strong></td><td>Salva o documento com novo nome, local ou formato</td></tr>
+                <tr><td><strong>Imprimir</strong></td><td>Envia o documento para a impressora</td></tr>
+                <tr><td><strong>Configurar página</strong></td><td>Define margens, tamanho do papel e orientação</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que conheço as guias Inserir e Exibir e os comandos do Menu Arquivo.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-5" onclick="markTopicRead(6, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 5)">Ir para 5. Salvar × Salvar Como →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 5 DA AULA 6: SALVAR x SALVAR COMO
+             =============================================================== -->
+        <section id="l6-phase-5" class="topic-phase-section">
+          <h2>5. Diferenças entre “Salvar” e “Salvar Como”</h2>
+          <p>
+            Estes dois comandos confundem muita gente — e a confusão custa trabalho perdido. A regra curta é: <strong>“Salvar” atualiza o arquivo que já existe; “Salvar Como” cria um arquivo novo</strong>.
+          </p>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:stretch; margin:18px 0;">
+            <div class="wp-illus" style="flex:1; min-width:280px; margin:0;">
+              <div class="wp-illus-title">💾 SALVAR (Ctrl+S)</div>
+              <p style="margin:10px 0 4px; font-size:14.5px; line-height:1.7; color:var(--ink);"><strong>Quando usar:</strong></p>
+              <ul style="margin:0 0 10px 20px; line-height:1.75; font-size:14.5px; color:var(--ink);">
+                <li>O documento <strong>já foi salvo</strong> antes</li>
+                <li>Deseja <strong>atualizar</strong> o arquivo existente</li>
+                <li>Quer manter o <strong>mesmo nome e local</strong></li>
+              </ul>
+              <p style="margin:0 0 4px; font-size:14.5px; line-height:1.7; color:var(--ink);"><strong>O que acontece:</strong></p>
+              <ul style="margin:0 0 10px 20px; line-height:1.75; font-size:14.5px; color:var(--ink);">
+                <li><strong>Sobrescreve</strong> o arquivo anterior</li>
+                <li>Mantém o nome e o local</li>
+                <li>É um processo <strong>mais rápido</strong></li>
+              </ul>
+              <p style="margin:0; font-size:14px; color:var(--ink-soft); background:#F4EBE2; border-radius:8px; padding:10px 12px;"><strong>Exemplo:</strong> você abre “relatório aula - 6.rtf”, corrige um erro de digitação e clica em Salvar — o arquivo é atualizado automaticamente, sem abrir nenhuma janela.</p>
+            </div>
+
+            <div class="wp-illus" style="flex:1; min-width:280px; margin:0;">
+              <div class="wp-illus-title">📂 SALVAR COMO (F12)</div>
+              <p style="margin:10px 0 4px; font-size:14.5px; line-height:1.7; color:var(--ink);"><strong>Quando usar:</strong></p>
+              <ul style="margin:0 0 10px 20px; line-height:1.75; font-size:14.5px; color:var(--ink);">
+                <li>É a <strong>primeira vez</strong> que o documento é salvo</li>
+                <li>Quer criar uma <strong>cópia com nome diferente</strong></li>
+                <li>Precisa <strong>mudar o local ou o formato</strong> do arquivo</li>
+              </ul>
+              <p style="margin:0 0 4px; font-size:14.5px; line-height:1.7; color:var(--ink);"><strong>O que acontece:</strong></p>
+              <ul style="margin:0 0 10px 20px; line-height:1.75; font-size:14.5px; color:var(--ink);">
+                <li>Abre uma janela para escolher <strong>nome, local e tipo</strong></li>
+                <li><strong>Cria um novo</strong> arquivo</li>
+                <li>Mantém o <strong>arquivo original intacto</strong></li>
+              </ul>
+              <p style="margin:0; font-size:14px; color:var(--ink-soft); background:#F4EBE2; border-radius:8px; padding:10px 12px;"><strong>Exemplo:</strong> você tem “relatório aula - 6.rtf” e usa Salvar Como para criar um novo arquivo — o original continua intacto, sem ser apagado.</p>
+            </div>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">🗂️ Formatos que o WordPad salva</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead><tr><th style="width:22%;">Extensão</th><th style="width:38%;">Nome no menu Salvar como</th><th>Quando usar</th></tr></thead>
+              <tbody>
+                <tr><td><code>.rtf</code></td><td>Documento Rich Text</td><td>Padrão do WordPad; guarda a formatação e abre no Word</td></tr>
+                <tr><td><code>.docx</code></td><td>Documento do Office Open XML</td><td>Para entregar no padrão do Microsoft Word</td></tr>
+                <tr><td><code>.odt</code></td><td>Documento de Texto OpenDocument</td><td>Padrão do LibreOffice / Writer</td></tr>
+                <tr><td><code>.txt</code></td><td>Texto (sem formatação)</td><td>Texto puro, sem negrito, fontes ou imagens</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; font-size:14.5px; color:var(--amber-dark);">
+            💡 <strong>DICA:</strong> na dúvida, use <code>Ctrl+S</code> sempre que terminar uma parte do trabalho — isso evita perder alterações em caso de falta de energia ou travamento do computador.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que sei a diferença entre Salvar e Salvar Como e quando usar cada um.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-6" onclick="markTopicRead(6, 6)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 6)">Ir para 6. Exercício — Relatório do PC →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 6 DA AULA 6: EXERCÍCIO — RELATÓRIO DO PC
+             =============================================================== -->
+        <section id="l6-phase-6" class="topic-phase-section">
+          <h2>6. Exercício Prático — Criar o Relatório do PC</h2>
+          <p>
+            Agora a prática: você vai levantar os dados <strong>reais</strong> do seu computador e transformá-los em um documento formatado dentro do WordPad.
+          </p>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo 1 — Obter as informações do computador</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead><tr><th style="width:26%;">O que coletar</th><th style="width:38%;">Como chegar lá</th><th>O que anotar</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Memória RAM, Processador e Sistema</strong></td>
+                  <td>Clique com o botão direito em “Meu Computador” ou “Este Computador” → <strong>Propriedades</strong></td>
+                  <td>Processador, Memória RAM instalada e Tipo de sistema (32 ou 64 bits)</td>
+                </tr>
+                <tr>
+                  <td><strong>Armazenamento</strong></td>
+                  <td>Abra “Meu Computador” ou “Este Computador”</td>
+                  <td>Espaço disponível no disco C: e nos demais discos</td>
+                </tr>
+                <tr>
+                  <td><strong>IP Local</strong></td>
+                  <td><code>Windows + R</code> → digite <code>cmd</code> → Enter → digite <code>ipconfig</code> → Enter</td>
+                  <td>O endereço <strong>IPv4</strong> (ex.: 192.168.1.100)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">📄 Passo 2 — Digitar o modelo do relatório no WordPad</div>
+            <div class="wp-report">
+              <p class="wp-report-title">MODELO DO RELATÓRIO</p>
+              <p class="wp-report-sub">Data: <strong>[DATA]</strong> &nbsp;|&nbsp; Aluno(a): <strong>[SEU NOME COMPLETO]</strong> &nbsp;|&nbsp; Turma: <strong>[SUA TURMA]</strong></p>
+              <p class="wp-report-h">1. Informações do Sistema</p>
+              <p class="wp-report-l">Sistema Operacional: Windows [7 / 10 / 11] &nbsp;·&nbsp; Tipo de Sistema: [32 bits / 64 bits] &nbsp;·&nbsp; Versão: [Ex.: Windows 11 Pro]</p>
+              <p class="wp-report-h">2. Processador</p>
+              <p class="wp-report-l">Modelo: [Ex.: Intel Core i5-8250U] &nbsp;·&nbsp; Velocidade: [Ex.: 1,60 GHz] &nbsp;·&nbsp; Núcleos: [Ex.: 4 núcleos]</p>
+              <p class="wp-report-h">3. Memória RAM</p>
+              <p class="wp-report-l">Memória Instalada: [Ex.: 8,00 GB] &nbsp;·&nbsp; Memória Disponível: [Ex.: 4,50 GB]</p>
+              <p class="wp-report-h">4. Armazenamento — Disco Local (C:)</p>
+              <p class="wp-report-l">Capacidade Total: [Ex.: 500 GB] &nbsp;·&nbsp; Espaço Livre: [Ex.: 150 GB] &nbsp;·&nbsp; Espaço Usado: [Ex.: 350 GB]</p>
+              <p class="wp-report-h">5. Configurações de Rede</p>
+              <p class="wp-report-l">Endereço IP Local: [Ex.: 192.168.1.100]</p>
+              <p class="wp-report-h">6. Conclusão</p>
+              <p class="wp-report-l">Este relatório detalha as principais configurações de hardware e software do computador utilizado nas aulas de informática. As informações são fundamentais para compreender as capacidades e limitações do equipamento.</p>
+            </div>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">🎨 Passo 3 — Formatação do documento</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead><tr><th style="width:26%;">Elemento</th><th>Formatação</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Título</strong></td><td>Fonte Arial ou Calibri, tamanho 16, Negrito, Centralizado</td></tr>
+                <tr><td><strong>Subtítulos</strong></td><td>Tamanho 12, Negrito, Alinhamento à esquerda</td></tr>
+                <tr><td><strong>Texto normal</strong></td><td>Tamanho 11, Alinhamento à esquerda</td></tr>
+                <tr><td><strong>Cores (opcional)</strong></td><td>Títulos em azul, subtítulos em verde</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px; font-size:14.5px; color:var(--teal-deep);">
+            ✅ <strong>Checklist do exercício:</strong> <em>(1)</em> dados coletados nas Propriedades e no <code>ipconfig</code>; <em>(2)</em> modelo completo digitado no WordPad; <em>(3)</em> título centralizado em negrito tamanho 16; <em>(4)</em> subtítulos em negrito tamanho 12; <em>(5)</em> texto normal tamanho 11.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que montei o relatório do meu computador com os dados reais coletados.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-7" onclick="markTopicRead(6, 7)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 7)">Ir para 7. Pastas, Salvamento e Impressão →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 7 DA AULA 6: ESTRUTURA DE PASTAS, SALVAR E IMPRIMIR
+             =============================================================== -->
+        <section id="l6-phase-7" class="topic-phase-section">
+          <h2>7. Criando a estrutura de pastas, salvando e imprimindo</h2>
+          <p>
+            Um documento só é útil se estiver <strong>no lugar certo</strong>. Vamos criar a sua estrutura padrão de pastas dentro de <code>Documentos</code> e guardar o relatório nela.
+          </p>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">📂 Passo a passo — criar a estrutura de pastas</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.85; font-size:15px; color:var(--ink);">
+              <li>Abra a pasta <strong>“Documentos”</strong>.</li>
+              <li>Clique com o botão direito na área vazia.</li>
+              <li>Selecione <strong>“Novo” → “Pasta”</strong>.</li>
+              <li>Nomeie a pasta como <strong>[Nome-Sobrenome]</strong> (ex.: “João Silva Santos”).</li>
+              <li>Dê um <strong>duplo clique</strong> na pasta recém-criada para entrar nela.</li>
+              <li>Repita o processo de criação de pasta para cada uma das <strong>5 subpastas</strong> abaixo.</li>
+            </ol>
+            <div class="wp-tree">
+<pre>
+📁 Documentos
+└─ 📁 [Seu Nome]
+   ├─ 📁 Word
+   ├─ 📁 Windows
+   ├─ 📁 Excel
+   ├─ 📁 PowerPoint
+   └─ 📁 Internet
+</pre>
+            </div>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">💾 Passo a passo — salvar o relatório</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.85; font-size:15px; color:var(--ink);">
+              <li>No WordPad, clique em <strong>“Arquivo” → “Salvar como”</strong> (ou tecle <code>F12</code>).</li>
+              <li>Navegue até: <strong>Documentos → [Seu Nome] → Windows</strong>.</li>
+              <li><strong>Nome do arquivo:</strong> <code>relatório aula - 6</code></li>
+              <li><strong>Tipo:</strong> Documento Rich Text (<code>.rtf</code>) ou Documento do Office Open XML (<code>.docx</code>)</li>
+              <li>Clique em <strong>“Salvar”</strong>.</li>
+              <li>Da próxima vez que for corrigir o texto, use <strong>Ctrl+S</strong> — sem abrir janela.</li>
+            </ol>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">🖨️ Passo a passo — simulação de impressão (não imprima!)</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.85; font-size:15px; color:var(--ink);">
+              <li>Acesse <strong>“Arquivo” → “Imprimir”</strong> (ou <code>Ctrl + P</code>).</li>
+              <li><strong>Não imprima</strong> — apenas observe as opções disponíveis: seleção de impressora, número de cópias, páginas específicas e orientação (<strong>Retrato</strong>/<strong>Paisagem</strong>).</li>
+              <li>Clique em <strong>“Cancelar”</strong> para sair sem gastar folha.</li>
+            </ol>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que criei a estrutura de pastas e salvei o relatório dentro dela.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-8" onclick="markTopicRead(6, 8)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 6)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(6, 8)">Ir para 8. Revisão →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TÓPICO 8 DA AULA 6: REVISÃO
+             =============================================================== -->
+        <section id="l6-phase-8" class="topic-phase-section">
+          <h2>8. Revisão da Aula</h2>
+          <p>
+            Antes de partir para o exercício de fixação, revise os pontos-chave desta aula:
+          </p>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">🧠 Resumo — Aula 06: WordPad</div>
+            <table class="lesson-table" style="font-size:15px; margin:0;">
+              <thead><tr><th style="width:30%;">Tema</th><th>O que ficou claro</th></tr></thead>
+              <tbody>
+                <tr><td><strong>1. O que é</strong></td><td>Editor de texto gratuito do Windows, intermediário entre o Bloco de Notas e o Microsoft Word. Removido a partir do Windows 11 24H2.</td></tr>
+                <tr><td><strong>2. Como abrir</strong></td><td>Windows 7: Iniciar → Todos os Programas → Acessórios → WordPad. Windows 10/11: buscar “WordPad” no Menu Iniciar.</td></tr>
+                <tr><td><strong>3. Página Inicial</strong></td><td>Área de Transferência (Ctrl+C/X/V), Fonte (Ctrl+B/I/U) e Parágrafo (alinhamento, marcadores, recuo, espaçamento).</td></tr>
+                <tr><td><strong>4. Inserir / Exibir / Arquivo</strong></td><td>Inserir figuras e data/hora; régua, unidades, quebra de linha e zoom; Novo, Abrir, Salvar, Salvar como, Imprimir e Configurar página.</td></tr>
+                <tr><td><strong>5. Salvar × Salvar Como</strong></td><td><strong>Ctrl+S</strong> atualiza o arquivo existente; <strong>F12</strong> cria um arquivo novo com outro nome, local ou formato (.rtf, .docx, .odt, .txt).</td></tr>
+                <tr><td><strong>6. Relatório do PC</strong></td><td>Dados coletados em Propriedades (processador, RAM, sistema, disco) e no <code>ipconfig</code> (IPv4), aplicados em um documento formatado.</td></tr>
+                <tr><td><strong>7. Pastas e impressão</strong></td><td>Estrutura <code>Documentos\[Nome-Sobrenome]\{Word, Windows, Excel, PowerPoint, Internet}</code>, arquivo “relatório aula - 6” e simulação de impressão com Ctrl+P.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="wp-illus">
+            <div class="wp-illus-title">📌 Regras de bolso</div>
+            <ul style="margin:10px 0 4px 20px; line-height:1.8; font-size:15px; color:var(--ink);">
+              <li><strong>Primeiro salvamento = “Salvar como”</strong>. Depois disso, <strong>Ctrl+S</strong> para atualizar.</li>
+              <li><strong>Nunca</strong> use “Salvar como” só para corrigir um erro de digitação — isso cria cópias desnecessárias.</li>
+              <li>Formatos: <code>.rtf</code> (padrão do WordPad), <code>.docx</code> (Word), <code>.odt</code> (Writer), <code>.txt</code> (texto puro).</li>
+              <li>Antes de entregar, confira o arquivo na pasta: nome, local e formato.</li>
+            </ul>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que revisei a aula inteira e estou pronto para o exercício de fixação.</span>
+            <button type="button" class="read-check-btn" id="check-read-6-9" onclick="markTopicRead(6, 9)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(6, 7)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(6)">Ir para o Exercício de Fixação 📝</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DE FIXAÇÃO — EXERCÍCIO DE 5 PERGUNTAS (AULA 6)
+             =============================================================== -->
+        <div id="fixation-panel-6" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--amber-deep); margin-top:4px; font-size:24px;">Exercício de Fixação — Aula 6</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft);">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-6" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-6">QUESTÃO 1 / 5</span>
+                <span id="q-points-6">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-6"></div>
+
+              <button class="hint-toggle" id="btn-hint-6" type="button">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-6"></div>
+
+              <div class="options" id="options-6"></div>
+
+              <div class="nav-row">
+                <button class="btn btn-ghost" id="btn-prev-6" type="button">← Anterior</button>
+                <span style="font-size:12px; color:var(--ink-soft); font-family:'JetBrains Mono';">✓ Salvo automaticamente</span>
+                <button class="btn btn-primary" id="btn-next-6" type="button" disabled>Próxima →</button>
+              </div>
+              <div style="display:flex; justify-content:flex-end; margin-top:12px;">
+                <button class="btn btn-ghost" id="btn-restart-6" type="button" style="font-size:11px; padding:5px 10px;">↺ Recomeçar o exercício</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL DE RESULTADO E ASSINATURA SHA-256 DA AULA 6 -->
+        <div id="result-panel-6" class="fixation-panel">
+          <div class="card-quiz">
+            <div class="result-badge" id="result-badge-6"></div>
+            <h1 id="result-title-6"></h1>
+            <p style="color:var(--ink-soft);" id="result-sub-6"></p>
+            <div style="font-family:'JetBrains Mono'; font-size:16px; margin: 16px 0;">
+              Nota Final: <b id="result-score-6" style="font-size:24px; color:var(--ink);">0,0</b> / 10,0
+            </div>
+
+            <div class="signature-badge-box" id="signature-box-6">
+              <div class="signature-badge-header">
+                <span>🔒 Assinatura Digital Anti-Fraude (Verificação de Autenticidade)</span>
+              </div>
+              <div class="signature-code-display" id="signature-code-6">WR-AUTH-CALCULATING...</div>
+              <div class="signature-badge-desc">
+                Código de autenticidade criptográfico (SHA-256) gerado automaticamente para o aluno. Evita adulterações no comprovante ou na nota.
+              </div>
+            </div>
+
+            <div class="breakdown" id="breakdown-6"></div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary" id="btn-download-txt-6" type="button">Baixar Comprovante (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-6" type="button" style="background:var(--amber);">📑 Baixar Apostila PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-6" type="button">Enviar WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-email-6" type="button">Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-6">
+              <p style="font-size:13.5px; color:var(--ink-soft);">Abriremos o e-mail preenchido para <strong>okcomputer.use.linux@gmail.com</strong> contendo sua Assinatura Digital.</p>
+              <input type="email" id="input-email-6" placeholder="Seu e-mail (para cópia)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--line); margin-bottom:12px;">
+              <button class="btn btn-amber" id="btn-open-gmail-6" type="button">Baixar e Abrir E-mail →</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
     <section id="screen-lesson-7" class="screen-view">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
         <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
@@ -4079,8 +5643,8 @@
         </div>
 
         <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
-        <div style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
-          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Preparação Teórica e Prática</span>
+        <div id="l7-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
           <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo desta aula</h2>
           <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
             Entender os recursos de segurança nativos do Windows: usar a Central de Segurança/Ações, manter o antivírus e o firewall ativos, conferir as atualizações, criar backups e pontos de restauração, e reconhecer os riscos da pirataria de programas e jogos. Compatível com <strong>Windows 7 / 10 / 11</strong>.
@@ -4088,18 +5652,31 @@
 
           <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
           <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
-            <li>Abrir a Central de Segurança (Central de Ações no Windows 7) e ver o estado geral de proteção.</li>
-            <li>Verificar se o antivírus do Windows está ativado.</li>
-            <li>Fazer uma verificação rápida de vírus.</li>
-            <li>Conferir as atualizações de segurança no Windows Update.</li>
-            <li>Abrir o Firewall e confirmar que está ativado nas três redes.</li>
-            <li>Criar um Ponto de Restauração chamado "Teste de segurança".</li>
-            <li>Reconhecer os riscos da pirataria de programas e jogos.</li>
+            <li>Central de Segurança (Central de Ações) — verificar o estado geral de proteção.</li>
+            <li>Antivírus do Windows — verificar se está ativado e fazer verificação rápida.</li>
+            <li>Atualizações de Segurança — conferir o Windows Update.</li>
+            <li>Firewall do Windows — confirmar que está ativado nas três redes.</li>
+            <li>Ferramenta de Backup — entender e acessar.</li>
+            <li>Ponto de Restauração — criar o ponto "Teste de segurança".</li>
+            <li>Os riscos da pirataria — reconhecer e evitar.</li>
+            <li>Exercício de Fixação — responder às 5 perguntas.</li>
           </ol>
 
           <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
             🏁 Resultado esperado: ao final da aula, seu computador estará com o antivírus ativo, firewall ligado nas três redes, atualizações verificadas, um ponto de restauração criado e você saberá identificar riscos de segurança, inclusive da pirataria de software.
           </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro desta aula e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-1" onclick="markTopicRead(7, 1)">
+              <span>☐ Entendi o roteiro — começar a aula!</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 1)">Ir para 1. Central de Segurança →</button>
+          </div>
         </div>
 
         <!-- ÍNDICE DE TÓPICOS DA AULA 7 -->
@@ -4155,7 +5732,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que aprendi a abrir a Central de Segurança/Ações no Windows 7, 10 e 11 e a interpretar o status de proteção.</span>
-            <button type="button" class="read-check-btn" id="check-read-7-1" onclick="markTopicRead(7, 1)">
+            <button type="button" class="read-check-btn" id="check-read-7-2" onclick="markTopicRead(7, 2)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -4228,7 +5805,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que verifiquei o Windows Defender no meu computador e realizei uma verificação rápida de vírus.</span>
-            <button type="button" class="read-check-btn" id="check-read-7-2" onclick="markTopicRead(7, 2)">
+            <button type="button" class="read-check-btn" id="check-read-7-3" onclick="markTopicRead(7, 3)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -4278,7 +5855,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que acessei o Windows Update no meu computador e cliquei em "Verificar atualizações".</span>
-            <button type="button" class="read-check-btn" id="check-read-7-3" onclick="markTopicRead(7, 3)">
+            <button type="button" class="read-check-btn" id="check-read-7-4" onclick="markTopicRead(7, 4)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -4343,7 +5920,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que abri o Firewall do meu computador e confirmei que está ativado nas três redes.</span>
-            <button type="button" class="read-check-btn" id="check-read-7-4" onclick="markTopicRead(7, 4)">
+            <button type="button" class="read-check-btn" id="check-read-7-5" onclick="markTopicRead(7, 5)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -4388,7 +5965,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que entendi como acessar a ferramenta de Backup no meu Windows e a importância das cópias de segurança.</span>
-            <button type="button" class="read-check-btn" id="check-read-7-5" onclick="markTopicRead(7, 5)">
+            <button type="button" class="read-check-btn" id="check-read-7-6" onclick="markTopicRead(7, 6)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -4432,7 +6009,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que criei no meu computador um ponto de restauração chamado "Teste de segurança".</span>
-            <button type="button" class="read-check-btn" id="check-read-7-6" onclick="markTopicRead(7, 6)">
+            <button type="button" class="read-check-btn" id="check-read-7-7" onclick="markTopicRead(7, 7)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -4470,7 +6047,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que reconheço os riscos da pirataria de programas e jogos e sei evitá-los.</span>
-            <button type="button" class="read-check-btn" id="check-read-7-7" onclick="markTopicRead(7, 7)">
+            <button type="button" class="read-check-btn" id="check-read-7-8" onclick="markTopicRead(7, 8)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -4598,8 +6175,8 @@
         </p>
 
         <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
-        <div style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
-          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Preparação Teórica e Prática</span>
+        <div id="l71-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
           <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo deste complemento</h2>
           <ul style="color:var(--ink); font-size:15.5px; line-height:1.8; margin-left:20px;">
             <li>Entender o que é um arquivo <strong>.bat</strong> e para que ele serve.</li>
@@ -4610,15 +6187,28 @@
 
           <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
           <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
-            <li>Entender o que é um arquivo .bat e como ele executa comandos.</li>
-            <li>Praticar criando o script "Olá, Mundo!".</li>
-            <li>Montar o script de backup com o comando <code>xcopy</code>.</li>
-            <li>Executar o backup e conferir se os arquivos foram copiados para o pendrive.</li>
+            <li>O que é um arquivo .BAT e como ele funciona.</li>
+            <li>Criando o primeiro script: "Olá, Mundo!".</li>
+            <li>Montando o script de backup com o comando <code>xcopy</code>.</li>
+            <li>Executando o backup e conferindo os arquivos no pendrive.</li>
+            <li>Exercício de Fixação — responder às 5 perguntas.</li>
           </ol>
 
           <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
             🏁 Resultado esperado: um arquivo <code>backup.bat</code> pronto no seu computador que, com um clique duplo, copia a pasta escolhida para o pendrive e confirma com a mensagem "Backup concluido!".
           </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro deste complemento e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-71-1" onclick="markTopicRead(71, 1)">
+              <span>☐ Entendi o roteiro — começar o complemento!</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(71, 1)">Ir para 1. O que é um .BAT? →</button>
+          </div>
         </div>
 
         <!-- ÍNDICE DE TÓPICOS DO COMPLEMENTO 7A -->
@@ -4652,7 +6242,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que entendi o que é um arquivo .bat e como ele executa comandos automaticamente.</span>
-            <button type="button" class="read-check-btn" id="check-read-71-1" onclick="markTopicRead(71, 1)">
+            <button type="button" class="read-check-btn" id="check-read-71-2" onclick="markTopicRead(71, 2)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -4704,7 +6294,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que criei o arquivo ola_mundo.bat no meu computador e o executei com sucesso.</span>
-            <button type="button" class="read-check-btn" id="check-read-71-2" onclick="markTopicRead(71, 2)">
+            <button type="button" class="read-check-btn" id="check-read-71-3" onclick="markTopicRead(71, 3)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -4767,7 +6357,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que montei o script backup.bat e ajustei as linhas ORIGEM e DESTINO com as minhas informações.</span>
-            <button type="button" class="read-check-btn" id="check-read-71-3" onclick="markTopicRead(71, 3)">
+            <button type="button" class="read-check-btn" id="check-read-71-4" onclick="markTopicRead(71, 4)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -4903,6 +6493,331 @@
     </section>
 
     <!-- ===================================================================
+         TELA 9: AULA 09 — PRÁTICA: ORGANIZAÇÃO E CONFIGURAÇÃO DO WINDOWS
+         =================================================================== -->
+    <section id="screen-lesson-9" class="screen-view">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')">← Voltar ao Menu</button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">🖨️ Imprimir Aula</button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('windows', 9)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">📑 Baixar Apostila PDF</button>
+        </div>
+      </div>
+
+      <!-- PAINEL GAMIFICADO DE PROGRESSO DA AULA 9 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 9)</span>
+            <span id="gamify-percent-9">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-9"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-9">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <article class="lesson-reading-card">
+        <header style="margin-bottom:20px;">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; font-size:14px;">Módulo 1 • Aula 9</span>
+          <h1 style="color:var(--teal-deep); font-size:32px; margin:8px 0 0; line-height:1.3;">Aula 09: Prática – Organização e Configuração do Windows</h1>
+          <p style="color:var(--ink-soft); margin:8px 0 0; font-size:16px;">Prática integradora: pastas e arquivos, organização de imagens, papel de parede, senha do usuário, ponto de restauração, diagnóstico e manutenção básica</p>
+        </header>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL -->
+        <div id="l9-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Aplicar, na prática, tudo o que foi visto nas aulas anteriores: <strong>criar e organizar pastas e arquivos</strong>, <strong>classificar e renomear imagens</strong>, <strong>alterar o papel de parede</strong>, <strong>adicionar/alterar a senha do usuário</strong>, <strong>criar um ponto de restauração</strong>, <strong>realizar diagnóstico básico</strong> e conhecer as <strong>ferramentas de manutenção</strong> do Windows.
+          </p>
+
+          <img src="../../assets/img/windows/Aula9/image1.png" alt="Estrutura de pastas empresa-xyz na Área de Trabalho" class="img-showcase">
+          <p class="img-caption">Imagem 01/05 — Estrutura de pastas a ser criada na Área de Trabalho.</p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
+          <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
+            <li><strong>Parte 1:</strong> Organizar pastas de uma empresa (<code>empresa-xyz</code>) por setor e criar arquivos com nomes de funcionários.</li>
+            <li><strong>Parte 2:</strong> Organizar imagens nas pastas <code>Astronomia</code> e <code>Natureza</code>, movendo e renomeando com <code>F2</code>.</li>
+            <li><strong>Parte 3:</strong> Alterar o papel de parede da Área de Trabalho.</li>
+            <li><strong>Parte 4:</strong> Alterar/adicionar senha do usuário (exercício didático).</li>
+            <li><strong>Parte 5:</strong> Criar um ponto de restauração com o nome <code>Ultimo Ponto</code>.</li>
+            <li><strong>Parte 6:</strong> Diagnóstico do computador (sistema, memória, rede/IP).</li>
+            <li><strong>Parte 7:</strong> Ferramentas de manutenção (demonstração orientada).</li>
+            <li><strong>Revisão:</strong> Integrar tudo o que foi praticado e fazer o exercício de fixação.</li>
+          </ol>
+
+          <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
+            🏁 Resultado esperado: ao final, você saberá utilizar as principais ferramentas básicas do Windows (Executar, utilitários, Gerenciador de Tarefas, diagnóstico e noções de Prompt/PowerShell) em qualquer versão (7/10/11).
+          </p>
+          <p style="background:#E7F0F5; border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px; margin-top:10px; font-size:14.5px; color:var(--teal-deep);">
+            ⚙️ <strong>Orientação:</strong> siga a ordem das partes com calma. Ao concluir cada etapa, marque o quadradinho correspondente para liberar a próxima fase.
+          </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro desta prática e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-1" onclick="markTopicRead(9, 1)"><span>☐ Entendi o roteiro — começar a prática!</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 1)">Ir para 1. Parte 1 – Organização de Pastas de uma Empresa →</button>
+          </div>
+        </div>
+
+        <!-- ÍNDICE DE TÓPICOS -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-9-1" onclick="switchTopicPhase(9, 1)">1. Organização de Pastas</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-2" onclick="switchTopicPhase(9, 2)">2. Organizando Imagens</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-3" onclick="switchTopicPhase(9, 3)">3. Papel de Parede</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-4" onclick="switchTopicPhase(9, 4)">4. Alterando a Senha</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-5" onclick="switchTopicPhase(9, 5)">5. Ponto de Restauração</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-6" onclick="switchTopicPhase(9, 6)">6. Diagnóstico do PC</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-7" onclick="switchTopicPhase(9, 7)">7. Ferramentas de Manutenção</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-8" onclick="switchTopicPhase(9, 8)">8. Revisão</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-fix" onclick="openFixationPanel(9)" style="background:var(--amber-soft); color:var(--teal-deep);">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- FASE 1 -->
+        <section id="l9-phase-1" class="topic-phase-section active">
+          <h2>1. Parte 1 – Organização de Pastas de uma Empresa</h2>
+          <p>Vamos simular a organização dos arquivos de uma empresa fictícia chamada <strong>empresa-xyz</strong>, dividida em 4 setores.</p>
+          <img src="../../assets/img/windows/Aula9/image1.png" alt="Estrutura de pastas empresa-xyz na Área de Trabalho" class="img-showcase">
+          <p class="img-caption">Imagem 01/05 — Estrutura de pastas a ser criada na Área de Trabalho.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo a passo</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Na <strong>Área de Trabalho</strong>, crie uma pasta chamada <code>empresa-xyz</code>.</li>
+              <li>Dentro dela, crie 4 pastas: <code>Financeiro</code>, <code>Vendas</code>, <code>TI</code> e <code>RH</code>.</li>
+              <li>Dentro de cada pasta de setor, crie 1 arquivo de texto (.TXT ou .DOCX) com o nome dos funcionários daquele setor.</li>
+              <li>Cada arquivo deve conter <strong>no mínimo 3 nomes</strong> de funcionários.</li>
+            </ol>
+          </div>
+          <div class="wp-illus">
+            <div class="wp-illus-title">💡 Dica</div>
+            <p style="margin:6px 0 2px; font-size:14.8px; line-height:1.8; color:var(--ink);">Botão direito → <strong>Novo > Pasta</strong> / <strong>Novo > Documento de Texto</strong>. Para renomear: clique com o botão direito → <strong>Renomear</strong> ou pressione <strong>F2</strong>.</p>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que criei a estrutura empresa-xyz com os 4 setores e os arquivos de texto.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-2" onclick="markTopicRead(9, 2)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 2)">Ir para 2. Organizando Imagens →</button>
+          </div>
+        </section>
+
+        <!-- FASE 2 -->
+        <section id="l9-phase-2" class="topic-phase-section">
+          <h2>2. Parte 2 – Organizando Fotos e Imagens</h2>
+          <p>Vamos organizar as imagens da pasta <strong>Imagens</strong> (ou <strong>Fotos</strong>) do seu usuário.</p>
+          <img src="../../assets/img/windows/Aula9/image3.png" alt="Pastas Astronomia e Natureza dentro de Imagens" class="img-showcase">
+          <p class="img-caption">Imagem 02/05 — Pastas Astronomia e Natureza dentro de Imagens.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo a passo</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Abra a pasta <strong>Imagens</strong> (ou <strong>Fotos</strong>) do seu usuário.</li>
+              <li>Crie as pastas <code>Astronomia</code> e <code>Natureza</code>.</li>
+              <li>Mova cada imagem para a pasta correspondente ao assunto.</li>
+              <li>Escolha <strong>2 imagens</strong> e renomeie-as com nomes descritivos (ex.: <code>lua-cheia.jpg</code>).</li>
+            </ol>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que organizei as imagens nas pastas Astronomia e Natureza, movendo e renomeando arquivos.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-3" onclick="markTopicRead(9, 3)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 1)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 3)">Ir para 3. Alterando o Papel de Parede →</button>
+          </div>
+        </section>
+
+        <!-- FASE 3 -->
+        <section id="l9-phase-3" class="topic-phase-section">
+          <h2>3. Parte 3 – Alterando o Papel de Parede</h2>
+          <p>Escolha uma das imagens que você organizou e defina-a como papel de parede da Área de Trabalho.</p>
+          <img src="../../assets/img/windows/Aula9/image2.png" alt="Personalizar > Plano de Fundo" class="img-showcase">
+          <p class="img-caption">Imagem 03/05 — Personalizar > Plano de Fundo.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo a passo</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Clique com o botão direito em um espaço vazio da <strong>Área de Trabalho</strong> → <strong>Personalizar</strong>.</li>
+              <li>Em <strong>Plano de Fundo</strong>, clique em <strong>Procurar</strong> e selecione a imagem desejada.</li>
+              <li>Observe a Área de Trabalho com o novo papel de parede.</li>
+            </ol>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que alterei o papel de parede da Área de Trabalho com uma das imagens organizadas.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-4" onclick="markTopicRead(9, 4)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 2)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 4)">Ir para 4. Alterando a Senha do Usuário →</button>
+          </div>
+        </section>
+
+        <!-- FASE 4 -->
+        <section id="l9-phase-4" class="topic-phase-section">
+          <h2>4. Parte 4 – Alterando a Senha do Usuário</h2>
+          <p>Neste exercício, vamos adicionar/alterar a senha da conta do usuário para praticar o processo.</p>
+          <img src="../../assets/img/windows/Aula9/image5.png" alt="Configurações > Contas > Opções de entrada" class="img-showcase">
+          <p class="img-caption">Imagem 04/05 — Opções de entrada para adicionar/alterar senha.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo a passo</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Abra <strong>Configurações > Contas > Opções de entrada</strong>.</li>
+              <li>Em <strong>Senha</strong>, clique em <strong>Adicionar</strong> (ou <strong>Alterar</strong>).</li>
+              <li>Para fins didáticos, use <code>123</code> e confirme.</li>
+            </ol>
+          </div>
+          <div class="wp-illus" style="border-left:4px solid #b23a32;">
+            <div class="wp-illus-title" style="color:#b23a32;">⚠️ Atenção</div>
+            <p style="margin:6px 0 2px; font-size:14.8px; line-height:1.8; color:var(--ink);">A senha <strong>123</strong> é <strong>apenas para exercício em sala</strong>. No mundo real, use uma senha forte com letras maiúsculas/minúsculas, números e símbolos, com pelo menos 8 caracteres.</p>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que pratiquei o processo de adicionar/alterar senha no Windows.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-5" onclick="markTopicRead(9, 5)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 3)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 5)">Ir para 5. Criando um Ponto de Restauração →</button>
+          </div>
+        </section>
+
+        <!-- FASE 5 -->
+        <section id="l9-phase-5" class="topic-phase-section">
+          <h2>5. Parte 5 – Criando um Ponto de Restauração</h2>
+          <p>Um ponto de restauração é como uma "foto" das configurações do sistema, útil caso algo dê errado.</p>
+          <img src="../../assets/img/windows/Aula9/image4.png" alt="Ponto de restauração Ultimo Ponto" class="img-showcase">
+          <p class="img-caption">Imagem 05/05 — Criando o ponto de restauração.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">📋 Passo a passo</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Clique no <strong>Menu Iniciar</strong> e pesquise por <code>Criar um ponto de restauração</code>.</li>
+              <li>Na aba <strong>Proteção do Sistema</strong>, clique em <strong>Criar...</strong>.</li>
+              <li>Digite o nome <code>Ultimo Ponto</code> e clique em <strong>Criar</strong>.</li>
+              <li>Aguarde a conclusão e feche a janela.</li>
+            </ol>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que criei o ponto de restauração com o nome "Ultimo Ponto".</span>
+            <button type="button" class="read-check-btn" id="check-read-9-6" onclick="markTopicRead(9, 6)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 4)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 6)">Ir para 6. Diagnóstico do Computador →</button>
+          </div>
+        </section>
+
+        <!-- FASE 6 -->
+        <section id="l9-phase-6" class="topic-phase-section">
+          <h2>6. Parte 6 – Diagnóstico do Computador</h2>
+          <p>Vamos verificar as configurações básicas do computador.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">🧪 Verificações</div>
+            <ol style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li><strong>Propriedades do Sistema:</strong> <code>Este Computador > Propriedades</code> — ver Processador, Memória RAM, Tipo de sistema.</li>
+              <li><strong>Informações detalhadas:</strong> <code>Win + R > msinfo32</code> — consultar informações completas do sistema.</li>
+              <li><strong>Rede:</strong> verificar conexão (Wi-Fi/Cabo) e, se desejado, <code>ipconfig</code> no Prompt de Comando.</li>
+              <li><strong>Hora/Data:</strong> conferir na barra de tarefas.</li>
+            </ol>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que realizei o diagnóstico básico (sistema, memória, rede e hora/data).</span>
+            <button type="button" class="read-check-btn" id="check-read-9-7" onclick="markTopicRead(9, 7)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 5)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 7)">Ir para 7. Ferramentas de Manutenção →</button>
+          </div>
+        </section>
+
+        <!-- FASE 7 -->
+        <section id="l9-phase-7" class="topic-phase-section">
+          <h2>7. Parte 7 – Ferramentas de Manutenção do Windows</h2>
+          <p>Conhecendo ferramentas importantes para manutenção e segurança básica.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">🛠️ Principais ferramentas</div>
+            <ul style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li><strong>Recuperação:</strong> <code>Configurações > Sistema > Recuperação > Redefinir este PC</code> — conhecer a opção <strong>Manter meus arquivos</strong> (apenas demonstração, não executar).</li>
+              <li><strong>Limpeza de disco:</strong> <code>cleanmgr</code> (<code>Win + R</code>) — liberar espaço em disco.</li>
+              <li><strong>Segurança do Windows:</strong> verificar se o <strong>Microsoft Defender</strong> está ativo e atualizado.</li>
+            </ul>
+          </div>
+          <div class="wp-illus" style="border-left:4px solid #b23a32;">
+            <div class="wp-illus-title" style="color:#b23a32;">⚠️ Cuidado</div>
+            <p style="margin:6px 0 2px; font-size:14.8px; line-height:1.8; color:var(--ink);">Na demonstração, <strong>não conclua</strong> o "Redefinir este PC". Pare na tela de escolha e mostre ao professor.</p>
+          </div>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que conheci as ferramentas de recuperação, limpeza e segurança do Windows.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-8" onclick="markTopicRead(9, 8)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 6)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 8)">Ir para 8. Revisão da Prática →</button>
+          </div>
+        </section>
+
+        <!-- FASE 8 -->
+        <section id="l9-phase-8" class="topic-phase-section">
+          <h2>8. Revisão da Prática</h2>
+          <p>Parabéns! Você concluiu a prática integradora da Aula 10.</p>
+          <div class="wp-illus">
+            <div class="wp-illus-title">✅ O que você praticou</div>
+            <ul style="margin:10px 0 4px 20px; line-height:1.9; font-size:15px; color:var(--ink);">
+              <li>Criação e organização de pastas e arquivos</li>
+              <li>Classificação, movimentação e renomeação de imagens</li>
+              <li>Personalização (papel de parede)</li>
+              <li>Segurança básica (senha do usuário)</li>
+              <li>Proteção (ponto de restauração)</li>
+              <li>Diagnóstico e manutenção básica do Windows</li>
+            </ul>
+          </div>
+          <p style="background:#F0F9F4; border:1px solid #c8e6d0; border-radius:12px; padding:14px 16px; font-size:15px; color:var(--teal-deep); font-weight:600;">
+            🎉 Agora faça o <strong>Exercício de Fixação</strong> com 5 perguntas para consolidar o aprendizado.
+          </p>
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que revisei toda a prática integradora da Aula 10.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-9" onclick="markTopicRead(9, 9)"><span>☐ Marcar Leitura Concluída</span></button>
+          </div>
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 7)">← Voltar</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(9)">Ir para Exercícios de Fixação →</button>
+          </div>
+        </section>
+
+        <!-- PAINEL DE FIXAÇÃO / QUIZ AULA 9 -->
+        <section id="fixation-panel-9" class="fixation-panel no-print" style="display:none;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+            <div>
+              <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none;"><span class="dot"></span> EXERCÍCIO DE FIXAÇÃO</span>
+              <h2 style="color:var(--teal-deep); margin:10px 0 0; font-size:24px;">Aula 10 — Ferramentas Básicas do Windows (7, 10 e 11)</h2>
+              <p style="color:var(--ink-soft); margin:6px 0 0;">Responda as 5 questões. Ao final, assine e gere seu resultado.</p>
+            </div>
+            <button type="button" class="btn btn-ghost" onclick="closeFixationPanel(10)">← Voltar às Fases</button>
+          </div>
+          <div id="quiz-app-10"></div>
+        </section>
+
+        <!-- PAINEL DE RESULTADO AULA 9 -->
+        <section id="result-panel-9" class="fixation-panel no-print" style="display:none;">
+          <div style="text-align:center; margin-bottom:18px;">
+            <span class="eyebrow-badge" style="background:#E8F6EF; color:#1F7C3F; border:none;"><span class="dot"></span> RESULTADO DO EXERCÍCIO</span>
+            <h2 style="color:var(--teal-deep); margin:12px 0 6px; font-size:26px;">Parabéns por concluir a Aula 10!</h2>
+            <p style="color:var(--ink-soft); margin:0;">Confira sua nota e assine para registrar.</p>
+          </div>
+          <div id="quiz-result-10"></div>
+          <div style="text-align:center; margin-top:18px;">
+            <button type="button" class="btn btn-ghost" onclick="closeResultPanel(10)">← Voltar às Fases</button>
+          </div>
+        </section>
+      </article>
+    </section>
+
+
+    <!-- ===================================================================
          TELA 6: COMPLEMENTO 8A — TUTORIAL DE CRIAÇÃO DE MÍDIA DE INSTALAÇÃO
          =================================================================== -->
     <section id="screen-lesson-81" class="screen-view">
@@ -4944,8 +6859,8 @@
         </p>
 
         <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
-        <div style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
-          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Preparação Teórica e Prática</span>
+        <div id="l81-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--amber); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:#FFE4C7; color:#8A5A17; border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar</span>
           <h2 style="color:var(--teal-deep); font-size:25px; margin:12px 0 6px;">🎯 Objetivo deste complemento</h2>
           <ul style="color:var(--ink); font-size:15.5px; line-height:1.8; margin-left:20px;">
             <li>Entender a importância e o funcionamento da ferramenta oficial <strong>Media Creation Tool</strong>.</li>
@@ -4956,17 +6871,30 @@
 
           <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo)</h3>
           <ol style="margin-left:22px; line-height:1.9; font-size:15px; color:var(--ink);">
-            <li>Entender o que é a Media Creation Tool e o que é necessário (material).</li>
-            <li>Baixar a ferramenta do site oficial da Microsoft.</li>
-            <li>Executar o assistente e aceitar os termos de licença.</li>
-            <li>Escolher idioma, edição e arquitetura da instalação.</li>
-            <li>Escolher entre gravar em pendrive USB ou baixar Arquivo ISO.</li>
-            <li>Resolver o erro "a unidade deve ter pelo menos 8 GB" (formatação FAT32).</li>
+            <li>Introdução e material necessário — entender o que é a Media Creation Tool.</li>
+            <li>Baixando a ferramenta do site oficial da Microsoft.</li>
+            <li>Executando o assistente e aceitando os termos de licença.</li>
+            <li>Escolhendo idioma, edição e arquitetura da instalação.</li>
+            <li>Pendrive USB ou Arquivo ISO — escolher e gravar.</li>
+            <li>Resolvendo o erro de formatação (FAT32).</li>
+            <li>Exercício de Fixação — responder às 5 perguntas.</li>
           </ol>
 
           <p style="background:#FFF9F2; border:1px dashed var(--amber); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:14.5px; color:var(--amber-dark); font-weight:600;">
             🏁 Resultado esperado: um pendrive pronto para instalar o Windows em qualquer computador, pronto para ser usado na aula de Formatação (Complemento 5B).
           </p>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que li o objetivo e o roteiro deste complemento e estou pronto para começar.</span>
+            <button type="button" class="read-check-btn" id="check-read-81-1" onclick="markTopicRead(81, 1)">
+              <span>☐ Entendi o roteiro — começar o complemento!</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <span></span>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(81, 1)">Ir para 1. Intro →</button>
+          </div>
         </div>
 
         <!-- ÍNDICE DE TÓPICOS DO COMPLEMENTO 8A -->
@@ -5006,7 +6934,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que entendi o que é a Media Creation Tool e que tenho um pendrive de 8 GB.</span>
-            <button type="button" class="read-check-btn" id="check-read-81-1" onclick="markTopicRead(81, 1)">
+            <button type="button" class="read-check-btn" id="check-read-81-2" onclick="markTopicRead(81, 2)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -5042,7 +6970,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que baixei o arquivo MediaCreationTool do site oficial da Microsoft.</span>
-            <button type="button" class="read-check-btn" id="check-read-81-2" onclick="markTopicRead(81, 2)">
+            <button type="button" class="read-check-btn" id="check-read-81-3" onclick="markTopicRead(81, 3)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -5081,7 +7009,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que executei o assistente, aceitei os termos e escolhi a opção de criar mídia de instalação.</span>
-            <button type="button" class="read-check-btn" id="check-read-81-3" onclick="markTopicRead(81, 3)">
+            <button type="button" class="read-check-btn" id="check-read-81-4" onclick="markTopicRead(81, 4)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -5117,7 +7045,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que selecionei as opções recomendadas (idioma, edição e arquitetura) no assistente.</span>
-            <button type="button" class="read-check-btn" id="check-read-81-4" onclick="markTopicRead(81, 4)">
+            <button type="button" class="read-check-btn" id="check-read-81-5" onclick="markTopicRead(81, 5)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -5162,7 +7090,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que escolhi a opção de pendrive USB e a ferramenta concluiu a gravação com êxito.</span>
-            <button type="button" class="read-check-btn" id="check-read-81-5" onclick="markTopicRead(81, 5)">
+            <button type="button" class="read-check-btn" id="check-read-81-6" onclick="markTopicRead(81, 6)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -5208,7 +7136,7 @@
 
           <div class="read-check-box no-print">
             <span>📖 Certifico que aprendi a resolver o erro de formatação formatando o pendrive como FAT32.</span>
-            <button type="button" class="read-check-btn" id="check-read-81-6" onclick="markTopicRead(81, 6)">
+            <button type="button" class="read-check-btn" id="check-read-81-7" onclick="markTopicRead(81, 7)">
               <span>☐ Marcar Leitura e Prática Concluídas</span>
             </button>
           </div>
@@ -5489,8 +7417,10 @@
     const PASSWORD_A3 = "wr0326";
     const PASSWORD_A4 = "wr0426";
     const PASSWORD_A5 = "wr0526";
+    const PASSWORD_A6 = "wr0626";
     const PASSWORD_A7 = "wr0726";
     const PASSWORD_A8 = "wr0826";
+    const PASSWORD_A9 = "wr0926";
     const MODULE_ID = "windows";
     const MODULE_TITLE = "Módulo 1: Sistema Operacional Windows";
     const PASS_SCORE = 7.0;
@@ -5843,6 +7773,63 @@
         hint: "Copiar mantém o original; recortar (mover) transporta o item para o destino."
       }
     ];
+    const QUESTIONS_LESSON_6 = [
+      {
+        q: "O WordPad pode ser descrito como:",
+        options: [
+          "Um programa de edição de imagens parecido com o Paint",
+          "Um editor de texto básico que acompanha o Windows gratuitamente, mais avançado que o Bloco de Notas e mais simples que o Microsoft Word",
+          "Um programa de planilhas idêntico ao Excel",
+          "Um navegador de internet instalado junto com o Windows"
+        ],
+        correct: 1,
+        hint: "Ele digita e formata textos (negrito, itálico, sublinhado) e salva em .rtf, .docx, .odt e .txt."
+      },
+      {
+        q: "No Windows 10 e no Windows 11, qual é o caminho mais prático para abrir o WordPad?",
+        options: [
+          "Menu Iniciar -> Todos os Programas -> Acessórios -> WordPad",
+          "Painel de Controle -> Programas e Recursos -> WordPad",
+          "Menu Iniciar -> digitar \"WordPad\" na busca -> pressionar Enter",
+          "Clique com o botão direito na Área de Trabalho -> Novo -> Documento de Texto"
+        ],
+        correct: 2,
+        hint: "O caminho com 'Todos os Programas -> Acessórios' é do Windows 7. No 10 e no 11 basta buscar pelo nome."
+      },
+      {
+        q: "Qual comando atualiza um arquivo que já existe, sem abrir a janela de escolha de nome, local e formato?",
+        options: [
+          "Salvar (Ctrl+S)",
+          "Salvar como (F12)",
+          "Abrir",
+          "Configurar página"
+        ],
+        correct: 0,
+        hint: "O 'Salvar' sobrescreve o arquivo anterior e mantém o nome e o local. O 'Salvar como' cria um arquivo novo."
+      },
+      {
+        q: "Para criar uma cópia do documento com outro nome, outro local ou outro formato, deve-se usar:",
+        options: [
+          "Recortar (Ctrl+X)",
+          "Copiar (Ctrl+C)",
+          "Imprimir (Ctrl+P)",
+          "Salvar como (F12)"
+        ],
+        correct: 3,
+        hint: "O 'Salvar como' abre a janela para escolher nome, local e tipo, e mantém o arquivo original intacto."
+      },
+      {
+        q: "No Prompt de Comando (CMD), qual comando exibe o endereço IP local (IPv4) do computador?",
+        options: [
+          "diskpart",
+          "ipconfig",
+          "format",
+          "regedit"
+        ],
+        correct: 1,
+        hint: "Apertar Windows + R, digitar cmd, Enter e depois ipconfig: o endereço IPv4 aparece logo abaixo de 'Adaptador Ethernet'."
+      }
+    ];
     const QUESTIONS_LESSON_7 = [
       {
         q: "Qual é a função da Central de Segurança do Windows (Windows 7)?",
@@ -5901,7 +7888,115 @@
       }
     ];
 
+    // QUESTÕES DO QUIZ DE FIXAÇÃO DA AULA 10 (5 QUESTÕES)
+    const QUESTIONS_LESSON_10 = [
+      {
+        text: "Qual combinação de teclas abre a caixa Executar (Run) no Windows?",
+        options: [
+          "Win + R",
+          "Win + E",
+          "Alt + F4",
+          "Ctrl + Alt + Del"
+        ],
+        correct: 0
+      },
+      {
+        text: "Para abrir o Gerenciador de Tarefas rapidamente, podemos usar:",
+        options: [
+          "Ctrl + Shift + Esc",
+          "Win + L",
+          "F2",
+          "Alt + Tab"
+        ],
+        correct: 0
+      },
+      {
+        text: "O comando msinfo32 serve para:",
+        options: [
+          "Ver informações detalhadas do sistema",
+          "Formatar o disco rígido",
+          "Criar uma pasta",
+          "Bloquear a tela"
+        ],
+        correct: 0
+      },
+      {
+        text: "O comando dxdiag é utilizado para:",
+        options: [
+          "Verificar informações de vídeo e som (DirectX)",
+          "Renomear arquivos",
+          "Alterar papel de parede",
+          "Criar ponto de restauração"
+        ],
+        correct: 0
+      },
+      {
+        text: "Qual ferramenta nativa do Windows permite fazer capturas de tela parciais?",
+        options: [
+          "Ferramenta de Captura/Recorte (Snipping Tool)",
+          "Bloco de Notas",
+          "Calculadora",
+          "Lixeira"
+        ],
+        correct: 0
+      }
+    ];
+
     // QUESTÕES DO QUIZ DE FIXAÇÃO DO COMPLEMENTO 7A (5 QUESTÕES)
+    // QUESTÕES DO QUIZ DE FIXAÇÃO DA AULA 9 (5 QUESTÕES)
+    const QUESTIONS_LESSON_9 = [
+      {
+        text: "Na prática, para organizar arquivos por setor, o ideal é:",
+        options: [
+          "Colocar todos os arquivos na Área de Trabalho sem separação",
+          "Criar pastas separadas por setor dentro da pasta da empresa",
+          "Deixar tudo em Documentos sem organizar",
+          "Juntar todos os arquivos em um único arquivo"
+        ],
+        correct: 1
+      },
+      {
+        text: "Para renomear um arquivo rapidamente, utilizamos:",
+        options: [
+          "Ctrl+C",
+          "Alt+Tab",
+          "F2",
+          "Shift+Delete"
+        ],
+        correct: 2
+      },
+      {
+        text: "Para alterar o plano de fundo do Windows, o caminho mais direto é:",
+        options: [
+          "Abrir a Lixeira",
+          "Clique direito na Área de Trabalho > Personalizar > Plano de Fundo",
+          "Abrir o Bloco de Notas",
+          "Executar o calc.exe"
+        ],
+        correct: 1
+      },
+      {
+        text: "Qual a finalidade de um Ponto de Restauração?",
+        options: [
+          "Apagar todos os arquivos pessoais",
+          "Aumentar a velocidade da internet",
+          "Permitir voltar o sistema a um estado anterior caso ocorra algum problema",
+          "Instalar novos programas automaticamente"
+        ],
+        correct: 2
+      },
+      {
+        text: "Qual das opções representa uma senha mais segura para uso real?",
+        options: [
+          "123456",
+          "senha",
+          "marcos",
+          "R3ceita$2024!"
+        ],
+        correct: 3
+      }
+    ];
+
     const QUESTIONS_LESSON_71 = [
       {
         q: "O que é um arquivo .bat?",
@@ -6098,10 +8193,10 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      // Aulas liberadas: 1, 2, 3, 4, 5, 7 (com complemento 71) e 8 (com complemento 81). Demais estão em construção!
-      const OPEN_LESSONS = [1, 2, 3, 4, 5, 7, 8, 71, 81];
-      if(!OPEN_LESSONS.includes(lessonNum)){
-        alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 07 e 08 estão disponíveis no portal.`);
+      // Aulas liberadas: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 (com complementos 71, 81). Aula 12 = prova final.
+      const OPEN_LESSONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 71, 81];
+      if(!OPEN_LESSONS.includes(lessonNum) && lessonNum !== 12){
+        alert(`🔒 A ${lessonTitle} está em construção!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 06, 07, 08, 09, 10 e 11 estão disponíveis no portal.`);
         return;
       }
 
@@ -6122,8 +8217,8 @@
     document.getElementById("btn-confirm-unlock").onclick = function(){
       const typed = document.getElementById("modal-pass-field").value.trim().toLowerCase();
 
-      // Aceita wr0126 (Aula 1) / wr0226 (Aula 2) / wr0326 (Aula 3) / wr0426 (Aula 4) / wr0526 (Aula 5) / wr0726 (Aula 7 e Complemento 7A) / wr0826 (Aula 8 e Complemento 8A) ou senhas de teste a001/b002/c003/d004/e005/h008/wr0926
-      if(typed === PASSWORD_WR || typed === PASSWORD_A7 || typed === PASSWORD_A1 || typed === PASSWORD_A2 || typed === PASSWORD_A3 || typed === PASSWORD_A4 || typed === PASSWORD_A5 || typed === PASSWORD_A8 || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "e005" || typed === "h008"){
+      // Aceita wr0126 (Aula 1) / wr0226 (Aula 2) / wr0326 (Aula 3) / wr0426 (Aula 4) / wr0526 (Aula 5) / wr0626 (Aula 6) / wr0726 (Aula 7 e Complemento 7A) / wr0826 (Aula 8 e Complemento 8A) / wr0926 / wr1026 / wr1126 ou senhas de teste
+      if(typed === PASSWORD_WR || typed === PASSWORD_A7 || typed === PASSWORD_A1 || typed === PASSWORD_A2 || typed === PASSWORD_A3 || typed === PASSWORD_A4 || typed === PASSWORD_A5 || typed === PASSWORD_A6 || typed === PASSWORD_A8 || typed === PASSWORD_A9 || typed === "wr1026" || typed === "wr1126" || typed === "a001" || typed === "b002" || typed === "c003" || typed === "d004" || typed === "e005" || typed === "h008"){
         closePasswordModal();
         const routes = {
           1:  "screen-lesson-1",
@@ -6131,16 +8226,22 @@
           3:  "screen-lesson-3",
           4:  "screen-lesson-4",
           5:  "screen-lesson-5",
+          6:  "screen-lesson-6",
           7:  "screen-lesson-7",
           71: "screen-lesson-71",
           81: "screen-lesson-81",
+          9:  "screen-lesson-9",
           8:  "screen-lesson-8",
+          10: "screen-lesson-10",
+          11: "screen-lesson-11",
           12: "screen-quiz"
         };
         if(routes[targetLessonNum]){
           const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
           if(badge) badge.textContent = "🟢";
           showScreen(routes[targetLessonNum]);
+        } else if(targetLessonNum === 12){
+          window.location.href = './prova-windows.html';
         }
       } else {
         alert("❌ Senha incorreta. Por favor, verifique com o professor a senha desta aula.");
@@ -6171,9 +8272,9 @@
       if(activePhase) activePhase.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    // MARCAR LEITURA / GAMIFICAÇÃO (AULAS 1, 2, 3, 4, 5, 7, 8 E COMPLEMENTOS 71 e 81)
-    const TOTAL_TOPICS = { 1: 7, 2: 10, 3: 10, 4: 9, 5: 9, 7: 7, 8: 5, 71: 4, 81: 6 };
-    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 7: true, 71: true, 81: true };
+    // MARCAR LEITURA / GAMIFICAÇÃO (AULAS 1, 2, 3, 4, 5, 6, 7, 8 E COMPLEMENTOS 71 e 81)
+    const TOTAL_TOPICS = { 1: 7, 2: 10, 3: 10, 4: 9, 5: 9, 6: 9, 7: 8, 8: 6, 9: 9, 10: 9, 11: 6, 71: 4, 81: 6 };
+    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 71: true, 81: true };
     // A leitura concluída é estado do aluno: precisa sobreviver ao F5. Sem isto o
     // progresso vivia num Set em memória e a barra voltava para 0% ao recarregar.
     const READ_STORAGE_KEY = "wrWindowsReadTopics";
@@ -6288,7 +8389,7 @@
       });
     })();
 
-    // ABRIR EXERCÍCIO DE FIXAÇÃO (AULAS 1, 2, 3, 4, 7, 8 E COMPLEMENTOS 71 e 81)
+    // ABRIR EXERCÍCIO DE FIXAÇÃO (AULAS 1, 2, 3, 4, 5, 6, 7, 8 E COMPLEMENTOS 71 e 81)
     window.openFixationPanel = function(lessonNum) {
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-phase-section`).forEach(s => s.classList.remove("active"));
       document.querySelectorAll(`#screen-lesson-${lessonNum} .topic-tab-btn`).forEach(b => b.classList.remove("active"));
@@ -6600,7 +8701,7 @@
     };
 
     // ===================================================================
-    // MOTOR GENÉRICO DE QUIZ DE FIXAÇÃO (AULA 7 E COMPLEMENTOS 71/81)
+    // MOTOR GENÉRICO DE QUIZ DE FIXAÇÃO (AULAS 5, 6, 7 E COMPLEMENTOS 71/81)
     // ===================================================================
     const QUIZ_CFG = {
       1:  { questions: QUESTIONS_LESSON_1,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-1",  title: "Módulo 1 — Aula 1: A História e o Funcionamento dos Computadores",             sig: "Módulo 1 - Aula 1 (Windows)" },
@@ -6608,9 +8709,14 @@
       3:  { questions: QUESTIONS_LESSON_3,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-3",  title: "Módulo 1 — Aula 3: Medidas de Armazenamento no Computador",                     sig: "Módulo 1 - Aula 3 (Windows)" },
 
       4:  { questions: QUESTIONS_LESSON_4,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-4",  title: "Módulo 1 — Aula 4: Painel de Controle e Configurações",                     sig: "Módulo 1 - Aula 4 (Windows)" },
-      5:  { questions: QUESTIONS_LESSON_5,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-5",  title: "Módulo 1 — Aula 5: Área de Trabalho, Pastas e Arquivos",                    sig: "Módulo 1 - Aula 5 (Windows)" },      7:  { questions: QUESTIONS_LESSON_7,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-7",  title: "Módulo 1 — Aula 7: Segurança e Antivírus no Windows",                          sig: "Módulo 1 - Aula 7 (Windows)" },
+      5:  { questions: QUESTIONS_LESSON_5,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-5",  title: "Módulo 1 — Aula 5: Área de Trabalho, Pastas e Arquivos",                    sig: "Módulo 1 - Aula 5 (Windows)" },
+      6:  { questions: QUESTIONS_LESSON_6,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-6",  title: "Módulo 1 — Aula 6: WordPad — Editor de Texto do Windows",                   sig: "Módulo 1 - Aula 6 (Windows)" },
+      7:  { questions: QUESTIONS_LESSON_7,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-7",  title: "Módulo 1 — Aula 7: Segurança e Antivírus no Windows",                          sig: "Módulo 1 - Aula 7 (Windows)" },
+      8:  { questions: QUESTIONS_LESSON_8,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-8",  title: "Módulo 1 — Aula 8: Diagnóstico de Memória, Restauração do Sistema e Mídia de Instalação", sig: "Módulo 1 - Aula 8 (Windows)" },
+      9:  { questions: QUESTIONS_LESSON_9,  name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-9",  title: "Módulo 1 — Aula 9: Prática – Organização e Configuração do Windows",           sig: "Módulo 1 - Aula 9 (Windows)" },
+      10: { questions: QUESTIONS_LESSON_10, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-10", title: "Módulo 1 — Aula 10: Ferramentas Básicas do Windows (7, 10 e 11)", sig: "Módulo 1 - Aula 10 (Windows)" },
       71: { questions: QUESTIONS_LESSON_71, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-71", title: "Módulo 1 — Complemento 7A: Backup Automático com Arquivo .BAT",                  sig: "Módulo 1 - Complemento 7A (Windows)" },
-      81: { questions: QUESTIONS_LESSON_81, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-81", title: "Módulo 1 — Complemento 8A: Tutorial de Criação de Mídia de Instalação",        sig: "Módulo 1 - Complemento 8A (Windows)" }
+      81: { questions: QUESTIONS_LESSON_81, name: "Aluno(a)", answers: new Array(5).fill(null), current: 0, signature: null, moduleId: "windows-aula-81", title: "Módulo 1 — Complemento 8A: Tutorial: Criar Pendrive/DVD de Instalação do Windows", sig: "Módulo 1 - Complemento 8A (Windows)" }
     };
 
     function renderTrailGen(lessonNum) {
@@ -6770,8 +8876,8 @@
       };
     }
 
-    // EVENTOS DOS QUIZZES DAS AULAS 1, 2, 3, 4, 7 E COMPLEMENTOS (1, 2, 3, 4, 7, 71, 81)
-    [1, 2, 3, 4, 5, 7, 71, 81].forEach(function(lessonNum){
+    // EVENTOS DOS QUIZZES DAS AULAS 1, 2, 3, 4, 5, 6, 7 E COMPLEMENTOS (1, 2, 3, 4, 5, 6, 7, 71, 81)
+    [1, 2, 3, 4, 5, 6, 7, 71, 81].forEach(function(lessonNum){
       document.getElementById(`btn-hint-${lessonNum}`).onclick = () => {
         document.getElementById(`hint-box-${lessonNum}`).classList.toggle("show");
       };
