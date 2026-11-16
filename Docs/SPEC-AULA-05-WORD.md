@@ -169,3 +169,19 @@ Seções com `lessonNum: 5` (padrão do módulo: `N.0` + uma seção por fase):
 | Exercício de fixação | `QUESTIONS_LESSON_5` + `QUIZ_CFG[5]` | `moduleId: "word_lesson_5_quiz"`, gabarito `[1, 1, 1, 1, 2]`, persistência `QuizEngine` e "↺ Recomeçar o exercício". |
 | Roteamento e progresso | `modules/word/index.html` | Aula 5 em `TOTAL_TOPICS`, `SEQUENTIAL_LESSONS`, loops `[1,2,3,4,5]` e `routes` (`5: "screen-lesson-5"`). |
 | Apostila PDF | `assets/js/pdf-lessons.js` → `LESSONS.word.sections` | Seções **5.0 a 5.5** com `lessonNum: 5`, imagens reais e `html` ilustrado. |
+
+### 5.2 Correção de Imagens no PDF (16/11/2026 — pedido do usuário)
+
+**Defeito detectado:** a **tela** já usava as 11 imagens do acervo (`assets/img/word/Aula5/image1..11.png`), mas o **PDF** usava apenas 6 (`image4` na 5.0; `image5` na 5.1; `image1` na 5.2; `image3` na 5.3; `image6` na 5.4; `image9` na 5.5) — 5 imagens ficavam de fora da apostila.
+
+**Correção aplicada:** seções 5.1–5.5 convertidas de campo único `image:` para arrays `images` (2 figuras por seção, cada uma com legenda descritiva):
+
+| Seção | Imagem original | Imagem adicionada | Legenda (resumo) |
+| :--- | :--- | :--- | :--- |
+| 5.1 | `image5` (aplicar estilo ao título) | `image8` | Aba Design > Temas: pacote completo de cores e fontes em um clique |
+| 5.2 | `image1` (Modificar estilo / Atualizar automaticamente) | `image10` | Galeria com hierarquia visível: Título 1 > Título 2 > Título 3 |
+| 5.3 | `image3` (criar estilo com nome) | `image7` | Janela "Criar Novo Estilo": Baseado em + Adicionar à galeria |
+| 5.4 | `image6` (pincel aplicando formatação) | `image11` | Pincel desativado com Esc: cursor volta ao normal |
+| 5.5 | `image9` (fluxo de limpar formatação) | `image2` | Botão "Limpar Toda a Formatação" no grupo Fonte (guia Início) |
+
+**Resultado:** o PDF da Aula 05 agora usa as **11 imagens** (mesma cobertura da tela). Validado com `node --check` OK e contagem por seção (2 imagens em cada seção 5.1–5.5, 1 na 5.0); sem seções órfãs.

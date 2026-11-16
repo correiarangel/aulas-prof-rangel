@@ -1,6 +1,6 @@
 # 📘 SPEC-AULA-07-WORD — Especificação Técnica e Pedagógica da Aula 07 (Word)
 ### Módulo 2: Microsoft Word | Prof. Marcos Rangel — WR Capacitação Profissional
-### Status: 📝 ESPECIFICADA E PRONTA PARA IMPLEMENTAÇÃO
+### Status: 🟢 IMPLEMENTADA (tela, JS, simuladores, PDF e quiz persistente — pendente teste CDP)
 
 ---
 
@@ -46,7 +46,7 @@
 | **Senha de Acesso** | `wg007` |
 | **Estrutura de Fases** | **FASE 0** (Tutorial com 5 passos e chips) + **5 Fases de Leitura** com checks distribuídos |
 | **Checks Distribuídos** | `l7-check-1` a `l7-check-5` (1 no fim de cada fase, nunca agrupados) |
-| **Progresso Gamificado** | `#gamify-fill-7`, `#gamify-label-7` (0% a 100%), `#gamify-badge-box-7` |
+| **Progresso Gamificado** | `#gamify-percent-7`, `#gamify-bar-7`, `#gamify-badge-box-7` (0% a 100%) |
 | **Persistência LocalStorage** | Leitura: `word_lesson_7_progress` \| Quiz: `word_lesson_7_quiz` |
 
 ---
@@ -149,12 +149,84 @@
 
 ## 📑 5. Especificação para a Apostila em PDF (`assets/js/pdf-lessons.js`)
 
-Seções com `lessonNum: 7`:
+Seções com `lessonNum: 7` (padrão do módulo: `N.0` + uma seção por fase):
+- **Seção 7.0**: *FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer*
+  - Objetivo, os 5 passos, faixa de preparação (texto de Astronomia como prática) e tabela-roteiro com passos/atalhos (`F7`, `Ctrl+Alt+M`, `Ctrl+Shift+E`).
 - **Seção 7.1**: *A Guia Revisão e a Higiene da Língua Portuguesa*
-  - O uso do F7, atalhos de sinônimos (`Shift+F7`) e interpretação das cores de sublinhado ondulado.
+  - O uso do `F7`, atalhos de sinônimos (`Shift + F7`), interpretação das cores de sublinhado ondulado e contagem de palavras.
 - **Seção 7.2**: *Comunicação em Equipe com Balões de Comentários*
-  - Ilustração HTML (`sec.html`): Simulação visual de um parágrafo com balão de comentário lateral contendo nome do revisor, data e texto de observação.
+  - Ilustração HTML (`sec.html`): simulação visual de um parágrafo com balão de comentário lateral contendo nome do revisor, data, texto de observação e resposta de revisora; tabela do ciclo de vida (Novo/Responder/Resolver/Excluir).
 - **Seção 7.3**: *Auditoria Editorial: O Controle de Alterações (Track Changes)*
-  - Exemplo prático do texto com marcações de inserção (sublinhado azul) e exclusão (tachado vermelho).
-- **Seção 7.4**: *Fluxo de Aprovação: Aceitar, Rejeitar e Restringir Edição*
-  - Guia definitivo de finalização de documentos antes da remessa para clientes ou orientadores de TCC.
+  - Ilustração HTML: exemplo prático do texto com marcações de inserção (sublinhado azul) e exclusão (tachado vermelho); tabela de comportamento do recurso.
+- **Seção 7.4**: *Fluxo de Aprovação: Aceitar, Rejeitar e Finalizar o Documento*
+  - Tabela Aceitar vs Rejeitar, fluxo de finalização em 3 passos e a regra de segurança profissional ("nunca envie com marcações").
+- **Seção 7.5**: *Restringir Edição, Inspecionar Metadados e Marcar como Final*
+  - Fluxo da proteção em 4 passos, tabela de higienização (Arquivo > Informações), checklist de auditoria da aula e alerta da senha de proteção.
+
+**Fonte de imagens:** o material de origem da Aula 07 **não possui imagens** (0 referências `src=` no HTML original — verificado por script). Em conformidade com a Regra 2 do `AGENTS.md`, o PDF usa **ilustrações HTML reais** (`sec.html` com `.es-sheet-box`, `.mini-sheet`, `.fun-highlight`), não placeholders.
+
+---
+
+## 🧩 6. Registro de Implementação (16/11/2026)
+
+| Peça | Onde | Estado |
+| :--- | :--- | :--- |
+| Tela da aula | `modules/word/index.html` → `#screen-lesson-7` | ✅ `<section class="screen-view">` como irmã das demais telas, antes da Prova Final |
+| Desbloqueio no Hub | card Aula 07 | ✅ `active-lesson` + badge `🔓 Aula Liberada (Senha wg007)`; gate em `promptLessonPassword` (`lessonNum !== 7`) e rota `7: "screen-lesson-7"` |
+| FASE 0 | `#l7-fase-0` | ✅ Objetivo + roteiro em 5 chips + faixa de preparação + contador `#l7-checklist-status` + `#l7-complete-hint` + botão `#btn-start-l7` |
+| Fases 1–5 | `#l7-phase-1..5` + `#tab-btn-7-1..5` | ✅ 1. Ortografia & Sinônimos; 2. Comentários; 3. Controlar Alterações; 4. Aceitar & Rejeitar; 5. Proteção & Finalização |
+| Checks distribuídos | `#l7-check-1..5` + `#check-read-7-1..5` | ✅ Um check no fim de cada fase (nada agrupado), com trava sequencial |
+| Simuladores | `window.l7SetSpell()`, `l7CommentAction()`, `l7ToggleTrack()`, `l7Decide()`, `l7ToggleProtect()` | ✅ Marcações F7/ondulados e sinônimos; ciclo de vida do comentário (novo/responder/resolver/excluir); Track Changes liga/desliga (inserida sublinhada azul, apagada tachada vermelha); aceitar/rejeitar revisão com restauração; proteção "somente comentários" bloqueando edição |
+| CSS dos simuladores | bloco inline `<style>` | ✅ `.l7-doc-stage`, `.l7-wavy-red/.l7-wavy-blue`, `.l7-syn-panel`, `.l7-comment-row`, `.l7-balloon` (+ `.resolved`), `.l7-track-insert/.l7-track-del`, `.l7-protect-note` + media query 640px |
+| Fixação | `QUESTIONS_LESSON_7` + `QUIZ_CFG[7]` | ✅ 5 questões; `moduleId: "word_lesson_7_quiz"`; gabarito `[2, 2, 1, 1, 1]`; persistência `QuizEngine` e "↺ Recomeçar o exercício" |
+| Roteamento e progresso | `TOTAL_TOPICS`, `SEQUENTIAL_LESSONS` (`7: 5/true`), loops de inicialização e de comprovantes `[1,2,3,4,5,6,7]` | ✅ Aula 7 integrada à cadeia |
+| Resultado e comprovante | `#result-panel-7`, `#signature-code-7`, `#breakdown-7`, botões .txt/PDF/WhatsApp/e-mail | ✅ Mesmo contrato das Aulas 1–6 |
+| Apostila PDF | `assets/js/pdf-lessons.js` → `LESSONS.word.sections` | ✅ Seções 7.0–7.5 com `lessonNum: 7` e `html` ilustrado (0 placeholders) |
+
+---
+
+## ✅ 7. Validações Executadas (16/11/2026)
+
+- `node --check assets/js/pdf-lessons.js`: **OK**. Script inline de `modules/word/index.html` extraído (todos os `<script>` concatenados em `/tmp/opencode/word_inline.js`) e checado: **OK**.
+- Conferência estrutural: FASE 0 (1), fases 1–5, checks 1–5, botões de leitura, abas 1–5 + fix, painéis de fixação/resultado, IDs gamify, IDs e funções dos simuladores, gate, rota, `TOTAL_TOPICS 7`, `QUIZ_CFG[7]`, `QUESTIONS_LESSON_7`, loops `[1,2,3,4,5,6,7]` — **todos presentes, 0 IDs duplicados, tags balanceadas** (`section` 6/6, `article` 1/1, `div` 125/125, `nav` 1/1, `table` 3/3), 0 placeholders "🖼️ Referência de imagem".
+- Gabarito extraído da implementação: `['2','2','1','1','1']` — confere com a spec §4.
+- Dados do PDF (script `/tmp/opencode/check-pdf7.js`, padrão `new Function` sobre `const LESSONS = {` + `const moduleLessonTitles = {`): 42 seções word, **6 da Aula 07 com `html` não vazio**, **0 seções órfãs** (sem `lessonNum`), título `moduleLessonTitles.word[7]` correto, sem `${` interpolado e sem artefatos ("JSTOR" etc.).
+- Barra de senha: `wg007` liberada junto com as senhas mestras (`wa001`, `wb002`, `wr0926`, `admin`).
+
+---
+
+## 🧾 8. Fatos Conferidos e Correções (Regra 12 do AGENTS.md)
+
+Atalhos e conceitos verificados contra o material de origem: `F7` (ortografia/gramática) ✅, `Shift + F7` (sinônimos) ✅, `Ctrl + Alt + M` (novo comentário) ✅, `Ctrl + Shift + E` (controlar alterações) ✅, ondulado vermelho = ortografia / azul-verde = gramática ✅, palavra apagada fica tachada em vez de sumir ✅, modos de visualização (Marcação Simples, Todas as Marcações, Sem Marcação, Original) ✅.
+
+Correções de texto aplicadas durante a revisão (nada factual estava errado; erros de redação):
+1. **PDF 7.4**: "Marcação Simple" → **"Marcação Simples"** (tradução quebrada).
+2. **Tela, Fase 4**: "navegue com Anterior e Próxima pular de alteração em alteração" → **"use os botões Anterior e Próxima para pular de alteração em alteração"** (verbo faltando).
+
+---
+
+## 🧪 9. Harnesses de Teste (§9.1 — padrão SPEC-AULA-02-WINDOWS)
+
+| # | Caso de teste | Passos | Resultado esperado |
+| :--- | :--- | :--- | :--- |
+| H1 | Desbloqueio da aula | Hub > clicar no card Aula 07 > digitar `wg007` | Abre `#screen-lesson-7`; senha errada mostra alerta "está em preparação" |
+| H2 | Cadeia de checks sequenciais | Marcar `#l7-check-1..5` em ordem; tentar marcar o 2 antes do 1 | Contador `#l7-checklist-status` vai de 0/5 a 5/5; `#l7-complete-hint` aparece ao completar |
+| H3 | Gamificação de leitura | Marcar `#check-read-7-1..5` | Barra `#gamify-bar-7` avança em %; badge `#gamify-badge-box-7` muda ao completar |
+| H4 | Simulador de ortografia | `l7SetSpell('f7')` → ondulados; `l7SetSpell('syn')` → painel de sinônimos; `'clean'` limpa | Estados alternam e o texto de status muda em cada modo |
+| H5 | Ciclo do comentário | `l7CommentAction('new')` → `'reply'` → `'resolve'` → `'delete'` | Balão aparece com autor/data; resposta agrupada; resolvido esmaece/riska; excluir volta ao estado limpo |
+| H6 | Track Changes | `l7ToggleTrack()` desliga e religa | Desligado: tachado some da marcação ativa e status explica; ligado: marcações voltam |
+| H7 | Aceitar/Rejeitar | `l7Decide('accept')` / `('reject')` / `('reset')` | Aceito: só o texto preto comum; rejeitado: texto original; reset restaura as marcações |
+| H8 | Proteção | `l7ToggleProtect()` | Alterna nota "🚫 Edição bloqueada (só comentários)" ↔ "✅ Documento liberado" |
+| H9 | Fixação 5 questões | Responder as 5 com `QUIZ_CFG[7]`; recarregar a página e reabrir o painel | Pontuação 10,0; "✓ Salvo automaticamente" é verdade (estado em `word_lesson_7_quiz`); gabarito comentado; SHA-256 exibido |
+| H10 | Recomeçar | "↺ Recomeçar o exercício" | Apaga `word_lesson_7_quiz` do localStorage e zera o estado em memória |
+| H11 | Apostila PDF | Botão "📑 Baixar Apostila PDF" | Popup com capa, seções 7.0–7.5, ilustrações HTML renderizadas, sem imagens quebradas |
+| H12 | Mobile 375/390px | ReRule 6 do AGENTS.md | Conteúdo ocupa ~100% da largura (máx. ~4px de margem); sem "efeito linguiça" |
+
+**Status dos harnesses:** H1–H12 **não executados em navegador real** nesta sessão (sem CDP/Playwright disponível); cobertos por checagem estática + `node --check`. Executar na próxima sessão com navegador.
+
+---
+
+## 📌 10. Pendências da Aula 07
+
+- [ ] Rodar H1–H12 em navegador (CDP) — Aulas 06 e 07.
+- [x] Commit — realizado como `2399b5c` (16/11/2026): Aula 07 + correções de imagens das Aulas 04/05 + documentação.

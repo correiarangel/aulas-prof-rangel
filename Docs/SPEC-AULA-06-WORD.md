@@ -143,3 +143,9 @@ Seções com `lessonNum: 6`:
   - Fluxograma do botão "Vincular ao Anterior" desativado para ocultar número na capa e sumário.
 - **Seção 6.4**: *Montagem Prática de Papel Timbrado Corporativo*
   - Passo a passo para fixar logotipo no cabeçalho e dados institucionais no rodapé.
+
+### 5.1 Fontes de Imagem da Aula 06 (verificado em 16/11/2026)
+
+O material de origem (`Aula 6 Word_Configuracao_de_Pagina_e_Layout.html`) **não possui imagens**: 0 referências `src=` (verificado por script — o HTML original é texto puro). Em conformidade com a Regra 2 do `AGENTS.md`, o PDF da Aula 06 usa **ilustrações HTML reais** desenhadas (`sec.html` com `.es-sheet-box`, `.mini-sheet`, `.fun-highlight` — folhas retrato/paisagem, diagrama de quebras de seção, fluxograma do "Vincular ao Anterior"), não placeholders. Não há acervo de imagens a copiar para esta aula.
+
+Seções efetivamente implementadas com `lessonNum: 6` (lista canônica): **6.0** FASE 0, **6.1** O Padrão do Papel A4 e as Margens do Documento, **6.2** Quebra de Página (Ctrl + Enter) vs Múltiplos Enters, **6.3** Quebra de Seção — A Fronteira Entre Ambientes Diferentes, **6.4** Desvinculação de Cabeçalhos e Rodapés para Trabalhos ABNT, **6.5** Montagem Prática de Papel Timbrado Corporativo.

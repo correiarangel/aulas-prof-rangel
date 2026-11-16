@@ -165,3 +165,21 @@ Seções com `lessonNum: 4`:
 **Validações estáticas executadas:** `node --check assets/js/pdf-lessons.js` OK; script inline de `modules/word/index.html` extraído e checado OK; conferência estrutural (5 fases, 5 checks, 5 botões de leitura, 6 abas, 6 seções da Aula 04 com `lessonNum: 4`, zero placeholders "🖼️ Referência de imagem", tags `<section>/<article>/<div>/<nav>/<table>` balanceadas).
 
 **Pendente de validação em navegador:** bateria CDP automatizada (desbloqueio `wd004`, checks sequenciais, simuladores, quiz 5/5 com SHA-256, PDF da Aula 4 e auditoria mobile 375/390 px). Não havia Playwright/Puppeteer disponível na sessão de implementação.
+
+---
+
+## 🖼️ 7. Correção de Imagens (16/11/2026 — pedido do usuário)
+
+**Defeito detectado:** as 2 imagens do acervo original (`images/image1.png`, `image2.png`) **existiam no material de origem mas nunca tinham sido copiadas nem usadas** — a tela e o PDF da Aula 04 estavam com zero imagens (violava a Regra 2 do `AGENTS.md`).
+
+**Correção aplicada:**
+
+| Peça | Onde | O que foi feito |
+| :--- | :--- | :--- |
+| Acervo de imagens | `assets/img/word/Aula4/` (nova pasta) | Cópia de `image1.png` (cartaz "Vende-se Geladinho") e `image2.png` (cartaz de alerta de alta tensão) |
+| Tela da aula | `#screen-lesson-4`, Fase 5 (antes do Checklist de Auditoria) | Vitrine "🖼️ Exemplos reais: cartazes montados com o que você aprendeu" com as 2 imagens (`.img-showcase` + `.img-caption`, numeração 1/2 e 2/2) |
+| Apostila PDF | `assets/js/pdf-lessons.js` → seção 4.5 | Campo `images` (array) com os 2 cartazes, `wide: true` e legendas descritivas |
+
+**Conteúdo das imagens:** `image2.png` = cartaz de alerta de alta tensão com moldura de borda de página (moldura vermelha) e formas de raio; `image1.png` = cartaz de venda com formas, setas e texto estilizado em **folha em modo paisagem** (resultado final dos tópicos 4.1–4.5).
+
+**Validação:** `node --check` OK nos 2 arquivos; contagem por seção confirma 2 imagens na 4.5; sem seções órfãs. Status geral da aula permanece ✅ IMPLEMENTADA (aguardando CDP + commit).

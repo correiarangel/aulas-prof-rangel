@@ -1227,6 +1227,91 @@
       .l6-sheet { width: 148px; min-height: 210px; }
       .l6-sheet.landscape { width: 210px; min-height: 148px; }
     }
+
+    /* ============================================================
+       AULA 07 — REVISÃO, COMENTÁRIOS E CONTROLE DE ALTERAÇÕES
+       ============================================================ */
+    .l7-doc-stage {
+      background: #FFFFFF;
+      border: 1.5px solid #94A3B8;
+      border-radius: 6px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+      padding: 16px 18px;
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.8;
+    }
+    .l7-wavy-red { text-decoration: underline wavy #DC2626; text-decoration-skip-ink: none; }
+    .l7-wavy-blue { text-decoration: underline wavy #2563EB; text-decoration-skip-ink: none; }
+    .l7-syn-panel {
+      margin-top: 10px;
+      border: 1.5px dashed #93C5FD;
+      background: #EFF6FF;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12.5px;
+      color: #1E3A8A;
+      display: none;
+    }
+    .l7-comment-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .l7-comment-text { flex: 1 1 260px; min-width: 0; }
+    .l7-balloon {
+      flex: 0 1 220px;
+      background: #FFF7ED;
+      border: 1.5px solid #FDBA74;
+      border-left: 4px solid #EA580C;
+      border-radius: 10px 10px 10px 2px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #7C2D12;
+      display: none;
+    }
+    .l7-balloon-author {
+      font-weight: 800;
+      font-size: 11px;
+      color: #EA580C;
+      margin-bottom: 3px;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+    }
+    .l7-balloon-reply {
+      margin-top: 8px;
+      border-top: 1px dashed #FDBA74;
+      padding-top: 6px;
+      color: #9A3412;
+      display: none;
+    }
+    .l7-balloon.resolved {
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+      border-left-color: #64748B;
+      color: #475569;
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+    }
+    .l7-balloon.resolved .l7-balloon-author { color: #64748B; }
+    .l7-track-insert { color: #1D4ED8; text-decoration: underline; font-weight: 700; }
+    .l7-track-del { color: #DC2626; text-decoration: line-through; }
+    .l7-protect-note {
+      margin-top: 10px;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+      display: none;
+    }
+    .l7-protect-note.blocked { display: block; background: #FEF2F2; border: 1.5px solid #FECACA; color: #B91C1C; }
+    .l7-protect-note.open { display: block; background: #F0FDF4; border: 1.5px solid #BBF7D0; color: #166534; }
+    @media (max-width: 640px) {
+      .l7-doc-stage { padding: 14px 12px; font-size: 12.5px; }
+      .l7-balloon { flex: 1 1 100%; }
+    }
   </style>
 </head>
 <body>
@@ -1329,11 +1414,11 @@
           </div>
 
           <!-- AULA 07 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(7, 'Revisão de Texto, Comentários & Colaboração')">
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(7, 'Revisão de Texto, Comentários & Colaboração')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 07</span>
               <span class="lesson-name">Revisão de Texto & Comentários</span>
-              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wg007`)</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-7">🔒</span>
           </div>
@@ -4284,6 +4369,16 @@
             <p style="margin:10px 0 0; font-size:12.5px; color:#64748B;">Atenção: no Word, <kbd>Ctrl</kbd> + <kbd>G</kbd> abre “Ir Para”. O atalho de agrupar é do PowerPoint, não do Word.</p>
           </div>
 
+          <!-- EXEMPLOS REAIS DO RESULTADO (ACERVO DA AULA 04) -->
+          <div style="margin:22px 0 6px 0; padding:18px 20px; background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px;">
+            <div style="font-weight:700; color:var(--teal-deep); font-size:16px; margin-bottom:4px;">🖼️ Exemplos reais: cartazes montados com o que você aprendeu</div>
+            <p style="font-size:13.5px; color:#475569; margin:0 0 6px;">Cartazes completos feitos no Word 2010-2013 com <strong>folha em modo paisagem</strong>, moldura de borda de página, formas geométricas com texto, preenchimento e efeitos — a prova de que a técnica sai do papel.</p>
+            <img src="../../assets/img/word/Aula4/image2.png" alt="Cartaz de alerta de alta tensão feito no Word com moldura de borda vermelha, formas e texto" class="img-showcase" style="max-width:560px;">
+            <p class="img-caption">Imagem 1/2 — Cartaz de alerta: moldura de borda de página, raios (formas) e caixa de texto com aviso.</p>
+            <img src="../../assets/img/word/Aula4/image1.png" alt="Cartaz Vende-se Geladinho feito no Word com formas geométricas, setas e WordArt" class="img-showcase" style="max-width:560px;">
+            <p class="img-caption">Imagem 2/2 — Cartaz de venda: formas com preenchimento, setas, estrelas e texto estilizado em paisagem.</p>
+          </div>
+
           <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:18px 20px; margin:20px 0;">
             <div style="font-weight:700; color:#15803D; font-size:16px; margin-bottom:8px;">✅ Checklist de Auditoria da Aula 04 — antes de enviar o cartaz</div>
             <ul style="margin:0; padding-left:22px; font-size:14px; color:#166534; line-height:1.7;">
@@ -5833,6 +5928,631 @@
     </section>
 
     <!-- ===================================================================
+         AULA 07 — REVISÃO DE TEXTO, COMENTÁRIOS & COLABORAÇÃO
+         =================================================================== -->
+    <section id="screen-lesson-7" class="screen-view">
+
+      <!-- Topo da Aula com Botões de Ação -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('word', 7)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra Gamificada de Progresso da Aula 7 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 7)</span>
+            <span id="gamify-percent-7">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-7" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-7">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <!-- Cartão Principal de Leitura -->
+      <article class="lesson-reading-card">
+        <span class="badge-word-blue">Módulo 2 • Aula 07</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 07: Revisão de Texto, Comentários &amp; Colaboração</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <em>Ortografia (F7), comentários na margem, controle de alterações e proteção de documentos.</em> Leia cada etapa com atenção e aplique os comandos diretamente no seu Word!
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l7-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--word-blue); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:var(--word-blue-light); color:var(--word-blue-dark); border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar: O que vamos fazer e como</span>
+
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:14px 0 8px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Aprender a <strong>revisar textos de forma colaborativa e profissional</strong>: usar a verificação gramatical, dialogar através de <strong>comentários laterais</strong>, registrar edições com o <strong>Controle de Alterações</strong> e proteger o arquivo contra edições indevidas.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo em 5 Fases)</h3>
+          <p style="margin:0 0 12px 0; font-size:13.5px; color:#475569; line-height:1.7;">
+            Os checks ficam distribuídos — posicionados no fim de cada fase, exatamente onde está a instrução prática. Cada passo é um check e só libera o próximo!
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px;" aria-label="Roteiro dos 5 passos">
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">1</strong>
+              <span>Executar a Verificação Ortográfica e Gramatical com a tecla <kbd>F7</kbd>.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">2</strong>
+              <span>Inserir e responder a Comentários na margem do documento.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">3</strong>
+              <span>Ativar o Controle de Alterações (Track Changes) para auditar edições.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">4</strong>
+              <span>Aceitar e Rejeitar alterações sugeridas por revisores.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">5</strong>
+              <span>Proteger o documento restringindo a edição apenas a comentários.</span>
+            </div>
+          </div>
+
+          <div style="margin-top:18px; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-radius:10px; padding:14px 16px;">
+            <div style="font-weight:800; color:var(--word-blue-dark); font-size:14px; margin-bottom:4px;">⚙️ FAIXA DE PREPARAÇÃO — antes da Fase 1</div>
+            <ol style="font-size:13.5px; color:#374151; line-height:1.7; margin:0; padding-left:20px;">
+              <li>Abra o <strong>Microsoft Word</strong> e digite (ou copie) um texto de prática — sugerimos um trecho sobre <strong>Astronomia</strong>: planetas, estrelas e galáxias servem perfeitamente.</li>
+              <li>Aplique a formatação ABNT que você já domina: fonte <strong>Arial ou Times New Roman</strong>, tamanho <strong>12</strong>, espaçamento <strong>1,5</strong>.</li>
+              <li>Salve o arquivo como <code>Revisao_Aula07.docx</code> — será o laboratório de revisão desta aula.</li>
+            </ol>
+          </div>
+
+          <div id="l7-checklist-status" style="margin-top:14px; font-size:14px; font-weight:700; color:var(--word-blue-dark);">▢ 0 / 5 Passos Concluídos</div>
+          <div id="l7-complete-hint" style="display:none; margin-top:8px; font-size:13.5px; font-weight:700; color:#15803D; background:#DCFCE7; border:1.5px solid #86EFAC; border-radius:8px; padding:10px 12px;">🎉 Todos os 5 passos concluídos — você concluiu a leitura e liberou o Exercício de Fixação!</div>
+
+          <div style="margin-top:20px; text-align:center;">
+            <button type="button" id="btn-start-l7" class="btn btn-primary" style="font-size:15px; padding:12px 28px;" onclick="switchTopicPhase(7, 1)">
+              ▶ ENTENDI! QUERO COMEÇAR A AULA ↓
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Abas de Tópicos da Aula 7 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-7-1" onclick="switchTopicPhase(7, 1)">1. Ortografia &amp; Sinônimos</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-2" onclick="switchTopicPhase(7, 2)">2. Comentários</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-3" onclick="switchTopicPhase(7, 3)">3. Controlar Alterações</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-4" onclick="switchTopicPhase(7, 4)">4. Aceitar &amp; Rejeitar</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-5" onclick="switchTopicPhase(7, 5)">5. Proteção &amp; Finalização</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-7-fix" onclick="openFixationPanel(7)" style="background:var(--amber-soft); color:var(--teal-deep); font-weight:700;">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             FASE 1: VERIFICAÇÃO ORTOGRÁFICA, GRAMATICAL E SINÔNIMOS
+             =============================================================== -->
+        <section id="l7-phase-1" class="topic-phase-section active">
+          <h2>1. Verificação Ortográfica, Gramatical e Sinônimos</h2>
+          <p>
+            A <strong>tecla salvadora</strong> do revisor: pressione <kbd>F7</kbd> em qualquer momento. O Word analisa todo o texto do início ao fim e abre o painel lateral de correção. É o atalho clássico da guia <strong>Revisão</strong> — a "higiene da língua portuguesa" de qualquer documento profissional.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: as marcações do revisor na tela <span class="l5-demo-hint">#l7-spell-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Modos do simulador de revisão">
+              <button type="button" class="l5-sim-btn" onclick="l7SetSpell('clean', this)">📄 Texto sem revisão</button>
+              <button type="button" class="l5-sim-btn active" onclick="l7SetSpell('f7', this)">🔎 F7 — marcações</button>
+              <button type="button" class="l5-sim-btn" onclick="l7SetSpell('syn', this)">📚 Shift + F7 — Sinônimos</button>
+            </div>
+            <div class="l5-stage" id="l7-spell-stage">
+              <div class="l7-doc-stage">
+                <p id="l7-spell-text" style="margin:0;">
+                  A <span id="l7-err1">astronimia</span> estuda os corpos celestes. Com <span id="l7-err2">o o</span> avanço da tecnologia, os <span id="l7-err3">telescopio</span> permitem observar galáxias distantes.
+                </p>
+                <div class="l7-syn-panel" id="l7-syn-panel">
+                  <strong>Dicionário de Sinônimos — "observar":</strong> examinar, espiar, contemplar, vigiar, estudar, analisar. <br>💡 Substitua palavras repetitivas para enriquecer o vocabulário do texto.
+                </div>
+              </div>
+            </div>
+            <div id="l7-spell-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ F7 ativo: vermelho ondulado = erro ortográfico • azul ondulado = erro gramatical ou de concordância.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Entendendo as marcações na tela</h3>
+            <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Marcações do revisor do Word">
+              <div class="word-card-table-header">
+                <div class="word-table-title">
+                  <span class="word-table-badge">GUARDAR NA CABEÇA</span>
+                  <h3>🎨 O que significa cada sublinhado</h3>
+                </div>
+                <span class="word-table-hint">Guia Revisão</span>
+              </div>
+              <div class="word-table-scroll">
+                <table class="word-modern-table">
+                  <thead>
+                    <tr>
+                      <th>Marcação</th>
+                      <th>Significado</th>
+                      <th>Exemplo típico</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="highlight-amber">
+                      <td><strong style="color:#DC2626;">Ondulado vermelho</strong></td>
+                      <td>Erro ortográfico ou palavra fora do dicionário</td>
+                      <td>Nomes próprios, termos técnicos, digitação errada</td>
+                    </tr>
+                    <tr class="highlight-blue">
+                      <td><strong style="color:#2563EB;">Ondulado azul ou verde</strong></td>
+                      <td>Erro gramatical, concordância ou pontuação</td>
+                      <td>"o o" duplicado, sujeito/verbo sem concordância, espaço duplo</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin:12px 0 0; font-size:13px; color:#64748B;">💡 Clique com o botão direito sobre qualquer palavra ondulada para ver as sugestões de correção do Word.</p>
+          </div>
+
+          <div style="background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#1E40AF; margin:0 0 8px; font-size:16px;">✍️ Dois aliados a mais da guia Revisão</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#1E3A8A; line-height:1.8;">
+              <li><strong>Dicionário de Sinônimos</strong> — selecione uma palavra repetitiva e pressione <kbd>Shift</kbd> + <kbd>F7</kbd>. O painel oferece alternativas para enriquecer o texto.</li>
+              <li><strong>Contagem de Palavras</strong> — requisito indispensável para resumos acadêmicos com limite (ex.: <strong>250 a 500 palavras</strong>). O total aparece no canto inferior esquerdo da janela ou no botão da guia Revisão.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 1 -->
+          <div class="phase-step-check" data-step="1" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l7-check-1" class="l7-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 1">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 1: ORTOGRAFIA E SINÔNIMOS</strong><br>
+              Executei a verificação ortográfica e gramatical com a tecla <kbd>F7</kbd> e consultei o dicionário de sinônimos com <kbd>Shift</kbd> + <kbd>F7</kbd>.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 2 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que executei a verificação com F7 e explorei os sinônimos.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-1" onclick="markTopicRead(7, 1)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 1)">← Voltar à Fase 0</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 2)">Ir para 2. Comentários →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 2: INSERÇÃO DE COMENTÁRIOS E TRABALHO EM EQUIPE
+             =============================================================== -->
+        <section id="l7-phase-2" class="topic-phase-section">
+          <h2>2. Inserção de Comentários e Trabalho em Equipe</h2>
+          <p>
+            Ninguém trabalha sozinho: contratos, relatórios empresariais e artigos acadêmicos passam por <strong>múltiplos leitores</strong> — chefes, orientadores, colegas. Os <strong>comentários</strong> são anotações laterais que <strong>não alteram o texto da folha</strong>: são o canal de diálogo entre autores e revisores.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: o ciclo de vida de um comentário <span class="l5-demo-hint">#l7-comment-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Ações do comentário">
+              <button type="button" class="l5-sim-btn" onclick="l7CommentAction('new')">➕ Novo Comentário</button>
+              <button type="button" class="l5-sim-btn" onclick="l7CommentAction('reply')">↩ Responder</button>
+              <button type="button" class="l5-sim-btn" onclick="l7CommentAction('resolve')">✔ Resolver</button>
+              <button type="button" class="l5-sim-btn" onclick="l7CommentAction('delete')">🗑 Excluir</button>
+            </div>
+            <div class="l5-stage" id="l7-comment-stage">
+              <div class="l7-comment-row">
+                <div class="l7-comment-text">
+                  <p style="margin:0 0 6px; font-weight:700;">A Exploração do Universo</p>
+                  <p style="margin:0;">A <span id="l7-comment-anchor" style="background:#FEF3C7; border-radius:3px; padding:0 2px;">astronomia</span> é uma das ciências mais antigas da humanidade, dedicada ao estudo dos corpos celestes.</p>
+                </div>
+                <div class="l7-balloon" id="l7-balloon">
+                  <div class="l7-balloon-author"><span>👤 Marcos Rangel</span><span id="l7-balloon-date">hoje</span></div>
+                  <div id="l7-balloon-body">Professor, favor verificar se esta data está correta.</div>
+                  <div class="l7-balloon-reply" id="l7-balloon-reply">↩ Revisora Ana: correção enviada — vale conferir a fonte!</div>
+                </div>
+              </div>
+            </div>
+            <div id="l7-comment-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Sem comentário: o texto está limpo. Clique em "➕ Novo Comentário" para abrir o balão na margem direita.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Passo a passo: inserir um comentário</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li><strong>Selecione a frase</strong> que gera dúvida ou merece sugestão.</li>
+              <li>Na guia <strong>Revisão</strong>, clique em <strong>Novo Comentário</strong> — ou use o atalho <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd>.</li>
+              <li>Digite a observação no balão que surge à <strong>direita da folha</strong>, com identificação do autor. Ex.: <em>"Professor, favor verificar se esta data está correta"</em>.</li>
+              <li>Para <strong>responder</strong>, clique no botão de resposta dentro do próprio balão. Para <strong>encerrar</strong>, use <strong>Resolver</strong> ou <strong>Excluir</strong>.</li>
+            </ol>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">💬 Bom uso dos comentários</h3>
+            <p style="margin:0; font-size:14px; color:#78350F; line-height:1.7;">
+              Use comentários para <strong>sugestões</strong>, não para edições: <em>"inserir referência aqui"</em>, <em>"reformular este trecho"</em>, <em>"conferir citação"</em>. O texto original permanece intacto — a decisão final é sempre do autor.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 2 -->
+          <div class="phase-step-check" data-step="2" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l7-check-2" class="l7-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 2">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 2: COMENTÁRIOS</strong><br>
+              Inseri comentários na lateral do texto para sugerir melhorias sem alterar o documento, e pratiquei responder/resolver um balão.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 3 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que inseri e gerenciei comentários na margem do documento.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-2" onclick="markTopicRead(7, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 1)">← Voltar ao Tópico 1</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 3)">Ir para 3. Controlar Alterações →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 3: O PODER DO CONTROLE DE ALTERAÇÕES (TRACK CHANGES)
+             =============================================================== -->
+        <section id="l7-phase-3" class="topic-phase-section">
+          <h2>3. O Poder do Controle de Alterações (Track Changes)</h2>
+          <p>
+            O recurso <strong>mais poderoso de auditoria de texto</strong> do Word. Quando ativar? Sempre que você for <strong>revisar o texto de outra pessoa</strong> ou enviar uma <strong>minuta de contrato</strong> para revisão. Cada letra fica registrada: quem alterou, o quê, e quando.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: ligue o Track Changes e edite o texto <span class="l5-demo-hint">#l7-track-stage</span></div>
+            <div class="l5-btn-row">
+              <button type="button" class="l5-sim-btn active" id="l7-track-btn" onclick="l7ToggleTrack(this)" aria-pressed="true">🟢 Controlar Alterações: ATIVO (Ctrl + Shift + E)</button>
+            </div>
+            <div class="l5-stage" id="l7-track-stage">
+              <div class="l7-doc-stage">
+                <p id="l7-track-text" style="margin:0;">
+                  Nebulosas, buracos negros e <span id="l7-del-word" class="l7-track-del">asteroides</span> <span id="l7-ins-word" class="l7-track-insert">supernovas</span> são fenômenos que desafiam nossa compreensão.
+                </p>
+              </div>
+            </div>
+            <div id="l7-track-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Com o recurso ativo: a palavra digitada entra sublinhada em azul; a palavra apagada NÃO some — fica riscada em vermelho, aguardando decisão.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Como o Word se comporta com o recurso ativado</h3>
+            <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Comportamento do Controle de Alterações">
+              <div class="word-card-table-header">
+                <div class="word-table-title">
+                  <span class="word-table-badge">MEMÓRIA VIVA</span>
+                  <h3>🕵️ O que fica registrado</h3>
+                </div>
+                <span class="word-table-hint">Ctrl + Shift + E</span>
+              </div>
+              <div class="word-table-scroll">
+                <table class="word-modern-table">
+                  <thead>
+                    <tr>
+                      <th>Sua ação</th>
+                      <th>O que o Word mostra</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="highlight-blue">
+                      <td><strong>Digitar uma palavra nova</strong></td>
+                      <td>Ela aparece <span class="l7-track-insert">sublinhada e em cor destacada</span></td>
+                    </tr>
+                    <tr class="highlight-amber">
+                      <td><strong>Apagar uma palavra (Backspace/Delete)</strong></td>
+                      <td>Ela <strong>não desaparece</strong>: fica <span class="l7-track-del">riscada no meio (tachada)</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Alterar formatação</strong></td>
+                      <td>O registro da mudança aparece na lateral do documento</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Desativar o recurso</strong></td>
+                      <td>Clique novamente em <strong>Controlar Alterações</strong> — o botão fica destacado quando ativo</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin:12px 0 0; font-size:13px; color:#64748B;">💡 Para personalizar cores e formatos das marcações, use a seta ao lado do botão → <strong>Alterar Opções de Controle</strong>.</p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 3 -->
+          <div class="phase-step-check" data-step="3" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l7-check-3" class="l7-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 3">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 3: CONTROLAR ALTERAÇÕES</strong><br>
+              Ativei o Controle de Alterações (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>) e verifiquei o registro visual de palavras inseridas e excluídas.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 4 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que ativei o Track Changes e observei as marcações de inserção e exclusão.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-3" onclick="markTopicRead(7, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 2)">← Voltar ao Tópico 2</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 4)">Ir para 4. Aceitar &amp; Rejeitar →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 4: O RITUAL DE ACEITAR OU REJEITAR REVISÕES
+             =============================================================== -->
+        <section id="l7-phase-4" class="topic-phase-section">
+          <h2>4. O Ritual de Aceitar ou Rejeitar Revisões</h2>
+          <p>
+            Depois da revisão, o autor principal <strong>decide</strong> o que fica. Na guia <strong>Revisão</strong>, grupo <em>Alterações</em>, use os botões <strong>Anterior</strong> e <strong>Próxima</strong> para pular de alteração em alteração, e para cada sugestão clique em <strong>Aceitar</strong> (incorpora a mudança) ou <strong>Rejeitar</strong> (restaura o texto original).
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: decida cada revisão <span class="l5-demo-hint">#l7-review-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Decisões de revisão">
+              <button type="button" class="l5-sim-btn" onclick="l7Decide('accept', this)">✅ Aceitar</button>
+              <button type="button" class="l5-sim-btn" onclick="l7Decide('reject', this)">❌ Rejeitar</button>
+              <button type="button" class="l5-sim-btn" onclick="l7Decide('reset', this)">↺ Restaurar simulação</button>
+            </div>
+            <div class="l5-stage" id="l7-review-stage">
+              <div class="l7-doc-stage">
+                <p id="l7-review-text" style="margin:0;">
+                  Nebulosas, buracos negros e <span id="l7-rev-del" class="l7-track-del">asteroides</span> <span id="l7-rev-ins" class="l7-track-insert">supernovas</span> são fenômenos que desafiam nossa compreensão.
+                </p>
+              </div>
+            </div>
+            <div id="l7-review-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Pendente: clique em "✅ Aceitar" para incorporar "supernovas" e apagar "asteroides", ou "❌ Rejeitar" para devolver o texto original.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ O que cada decisão produz</h3>
+            <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Efeitos de aceitar e rejeitar">
+              <div class="word-card-table-header">
+                <div class="word-table-title">
+                  <span class="word-table-badge">DECISÃO FINAL</span>
+                  <h3>⚖️ Aceitar vs Rejeitar</h3>
+                </div>
+                <span class="word-table-hint">Guia Revisão &gt; Alterações</span>
+              </div>
+              <div class="word-table-scroll">
+                <table class="word-modern-table">
+                  <thead>
+                    <tr>
+                      <th>Botão</th>
+                      <th>Efeito no texto</th>
+                      <th>Quando usar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="highlight-blue">
+                      <td><strong>Aceitar</strong></td>
+                      <td>O riscado é excluído de vez e o sublinhado vira texto comum preto</td>
+                      <td>A correção do revisor estava boa</td>
+                    </tr>
+                    <tr class="highlight-amber">
+                      <td><strong>Rejeitar</strong></td>
+                      <td>A sugestão é descartada e o texto original é preservado</td>
+                      <td>A sugestão foi inadequada</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Aceitar/Rejeitar Todas</strong></td>
+                      <td>Aplica a decisão a todas as revisões de uma vez</td>
+                      <td>Finalização rápida de textos simples</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin:12px 0 0; font-size:13px; color:#64748B;">💡 Modos de visualização disponíveis: <strong>Marcação Simples</strong>, <strong>Todas as Marcações</strong>, <strong>Sem Marcação</strong> e <strong>Original</strong>.</p>
+          </div>
+
+          <div style="background:#FEF2F2; border:1.5px solid #FECACA; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#B91C1C; margin:0 0 8px; font-size:16px;">🚨 Regra de segurança profissional</h3>
+            <p style="margin:0; font-size:14px; color:#7F1D1D; line-height:1.7;">
+              <strong>Nunca envie um arquivo final para um cliente com o controle de alterações aberto!</strong> As marcações revelam todo o processo de edição — inclusive o que foi apagado. Antes de emitir o documento final, clique em <strong>Aceitar Todas as Alterações</strong> e confira a ortografia mais uma vez.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 4 -->
+          <div class="phase-step-check" data-step="4" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l7-check-4" class="l7-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 4">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 4: ACEITAR E REJEITAR</strong><br>
+              Naveguei pelas revisões do documento praticando as opções <strong>Aceitar</strong> e <strong>Rejeitar</strong>, com atenção à regra de finalização.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 5 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que pratiquei Aceitar e Rejeitar revisões.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-4" onclick="markTopicRead(7, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 3)">← Voltar ao Tópico 3</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(7, 5)">Ir para 5. Proteção &amp; Finalização →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 5: RESTRIÇÃO DE EDIÇÃO E HIGIENIZAÇÃO DE METADADOS
+             =============================================================== -->
+        <section id="l7-phase-5" class="topic-phase-section">
+          <h2>5. Restrição de Edição e Higienização de Metadados</h2>
+          <p>
+            A última milha da revisão: garantir que o arquivo <strong>chegue intacto</strong> ao destinatário. Duas ferramentas fazem isso: <strong>Restringir Edição</strong> (controla o que os outros podem fazer) e <strong>Inspecionar Documento</strong> (remove dados pessoais e revisões ocultas antes de converter para PDF ou enviar a clientes).
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: documento protegido — tente editar <span class="l5-demo-hint">#l7-protect-stage</span></div>
+            <div class="l5-btn-row">
+              <button type="button" class="l5-sim-btn active" id="l7-protect-btn" onclick="l7ToggleProtect(this)" aria-pressed="true">🔒 Protegido — somente comentários</button>
+            </div>
+            <div class="l5-stage" id="l7-protect-stage">
+              <div class="l7-doc-stage">
+                <p style="margin:0;">A Via Láctea contém cerca de <strong>200 bilhões</strong> de estrelas. O Sistema Solar é apenas um pequeno ponto nesta imensidão cósmica.</p>
+                <div class="l7-protect-note blocked" id="l7-protect-note">🚫 Edição bloqueada: com a proteção ativa, só é possível <strong>inserir comentários</strong> — nem uma vírgula do texto original pode ser alterada.</div>
+              </div>
+            </div>
+            <div id="l7-protect-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Proteção ativa (Restringir Edição → Comentários → Sim, Aplicar Proteção). Qualquer pessoa pode ler e comentar, mas não editar.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Passo a passo: Restringir Edição</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Na guia <strong>Revisão</strong>, clique em <strong>Restringir Edição</strong>.</li>
+              <li>Marque <em>"Permitir apenas este tipo de edição no documento"</em> e selecione <strong>Comentários</strong> (ou <em>Controlar alterações</em>, se for o caso).</li>
+              <li>Clique em <strong>Sim, Aplicar Proteção</strong> e defina uma <strong>senha</strong> (opcional, porém recomendado).</li>
+              <li>Para remover: <strong>Parar Proteção</strong> + senha. <strong>Guarde a senha em local seguro</strong> — sem ela não é possível desproteger o documento.</li>
+            </ol>
+          </div>
+
+          <div style="background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#1E40AF; margin:0 0 8px; font-size:16px;">🧹 Higienização final antes da entrega</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#1E3A8A; line-height:1.8;">
+              <li><strong>Inspecionar Documento</strong> — Menu <em>Arquivo &gt; Informações &gt; Verificar se Há Problemas &gt; Inspecionar Documento</em>. Marque todas as opções, clique em <strong>Inspecionar</strong> e depois em <strong>Remover Tudo</strong>. Elimina dados pessoais, comentários antigos e revisões ocultas.</li>
+              <li><strong>Marcar como Final</strong> — Menu <em>Arquivo &gt; Informações &gt; Proteger Documento &gt; Marcar como Final</em>. O documento passa a ser <strong>somente leitura</strong> e exibe um aviso amarelo no topo; para editar novamente, clique em <strong>Editar Mesmo Assim</strong>.</li>
+            </ul>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <div style="font-weight:700; color:var(--teal-deep); font-size:16px; margin-bottom:8px;">✅ Checklist de Auditoria da Aula 07 — antes de enviar o documento</div>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.7;">
+              <li><strong>Ortografia:</strong> F7 executado no documento inteiro, sem ondulados pendentes.</li>
+              <li><strong>Comentários:</strong> todos resolvidos ou excluídos.</li>
+              <li><strong>Revisões:</strong> todas aceitas ou rejeitadas — nenhuma marcação restante.</li>
+              <li><strong>Metadados:</strong> inspeção executada e dados pessoais removidos.</li>
+              <li><strong>Proteção:</strong> restrição aplicada quando o destinatário só deve comentar.</li>
+              <li><strong>Finalização:</strong> "Marcar como Final" apenas quando o documento não for mais alterado.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 5 -->
+          <div class="phase-step-check" data-step="5" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l7-check-5" class="l7-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 5">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 5: PROTEÇÃO E HIGIENIZAÇÃO</strong><br>
+              Apliquei a restrição de edição para comentários e entendi a inspeção de metadados antes da entrega formal.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Exercício de Fixação →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que apliquei a restrição de edição e a higienização do documento.</span>
+            <button type="button" class="read-check-btn" id="check-read-7-5" onclick="markTopicRead(7, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(7, 4)">← Voltar ao Tópico 4</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(7)">Iniciar Exercício de Fixação (5 Perguntas) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 7 (5 QUESTÕES)
+             =============================================================== -->
+        <div id="fixation-panel-7" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="badge-word-blue" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--teal-deep); margin-top:6px; font-size:24px;">Exercício de Fixação — Aula 07 (Revisão &amp; Colaboração)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft); font-weight:700;">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-7" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-7">QUESTÃO 1 / 5</span>
+                <span id="q-points-7">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-7"></div>
+
+              <button class="hint-toggle" id="btn-hint-7" type="button" onclick="toggleHint(7)">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-7"></div>
+
+              <div class="options" id="options-7"></div>
+
+              <div class="nav-row">
+                <button type="button" class="btn btn-ghost" id="btn-prev-7" onclick="prevQuestionGen(7)">← Anterior</button>
+                <div style="font-size:12px; color:var(--ink-soft); font-weight:600;">✓ Salvo automaticamente</div>
+                <button type="button" class="btn btn-primary" id="btn-next-7" onclick="nextQuestionGen(7)">Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             PAINEL DE RESULTADO DO EXERCÍCIO DE FIXAÇÃO DA AULA 7
+             =============================================================== -->
+        <div id="result-panel-7" class="fixation-panel">
+          <div class="card-quiz" style="text-align:center;">
+            <div class="result-badge" id="result-badge-7" style="margin:0 auto 16px;"></div>
+            <h2 id="result-title-7" style="color:var(--teal-deep); margin-bottom:8px; font-size:28px;"></h2>
+            <p id="result-sub-7" style="color:var(--ink-soft); margin-bottom:20px; font-size:16px;"></p>
+
+            <div style="font-size:42px; font-weight:800; color:var(--teal); font-family:'Fraunces', serif; margin-bottom:12px;">
+              <span id="result-score-7">0,0</span> <span style="font-size:20px; color:var(--ink-soft); font-family:'Inter';">/ 10,0</span>
+            </div>
+
+            <div class="signature-badge-box">
+              <div style="font-weight:700; color:#F8FAFC; margin-bottom:4px;">🔐 Comprovante Digital de Conclusão da Aula 07</div>
+              <div style="font-size:11.5px; color:#94A3B8;">Código de Autenticidade (SHA-256):</div>
+              <div class="signature-code-display" id="signature-code-7">GERANDO ASSINATURA...</div>
+              <div style="font-size:11px; color:#94A3B8; margin-top:4px;">WR Capacitação Profissional • Instrutor Marcos Rangel</div>
+            </div>
+
+            <h3 style="text-align:left; font-size:18px; color:var(--teal-deep); margin-top:24px;">Gabarito Comentado</h3>
+            <div class="breakdown" id="breakdown-7"></div>
+
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+              <button class="btn btn-primary" id="btn-download-txt-7" type="button">📄 Baixar Comprovante Oficial (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-7" type="button" style="background:var(--amber);">📑 Baixar Apostila em PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-7" type="button" style="justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+                Enviar Resultado por WhatsApp
+              </button>
+              <button class="btn btn-ghost" id="btn-email-7" type="button">📧 Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-7">
+              <p style="font-size:14px; margin-bottom:12px; color:var(--ink-soft);">Clique abaixo para abrir seu aplicativo de e-mail com o comprovante pronto:</p>
+              <button class="btn btn-primary" id="btn-open-gmail-7" type="button" style="width:100%;">Abrir no Gmail</button>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:20px;">
+              <button type="button" class="btn btn-ghost" onclick="restartQuizGen(7)">↺ Recomeçar o exercício</button>
+              <button type="button" class="btn btn-primary" onclick="showScreen('screen-hub')">Voltar ao Menu de Aulas →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- ===================================================================
          TELAS DA AVALIAÇÃO FINAL DO MÓDULO (PRESERVADAS)
          =================================================================== -->
     <div class="quiz-app" id="screen-start-app" style="padding:0;">
@@ -6339,6 +7059,65 @@
       }
     ];
 
+    // QUESTÕES DO EXERCÍCIO DE FIXAÇÃO DA AULA 07 (SPEC-AULA-07-WORD §4)
+    const QUESTIONS_LESSON_7 = [
+      {
+        q: "Qual é o atalho clássico do teclado para iniciar a Verificação Ortográfica e Gramatical em todo o documento no Word?",
+        options: [
+          "F1",
+          "F5",
+          "F7",
+          "F12"
+        ],
+        correct: 2,
+        hint: "A tecla de função F7 é o atalho universal do revisor ortográfico."
+      },
+      {
+        q: "O que acontece visualmente no documento quando o recurso 'Controlar Alterações' está ativado e você apaga uma palavra?",
+        options: [
+          "A palavra desaparece para sempre.",
+          "A tela inteira fica preta.",
+          "A palavra não desaparece imediatamente; fica riscada no meio (tachada) em cor destacada.",
+          "O computador emite um aviso sonoro e trava o teclado."
+        ],
+        correct: 2,
+        hint: "O controle de alterações mantém o histórico do que foi apagado para aprovação posterior."
+      },
+      {
+        q: "Para que serve o recurso de 'Comentários' localizado na guia Revisão do Word?",
+        options: [
+          "Enviar mensagens de WhatsApp pelo Word.",
+          "Fazer anotações em balões laterais sem alterar o conteúdo original do texto.",
+          "Trocar a cor da folha de papel.",
+          "Inserir um gráfico de pizza."
+        ],
+        correct: 1,
+        hint: "Permite dialogar com o autor sugerindo correções sem misturar com o texto."
+      },
+      {
+        q: "Quando um revisor recebe um documento com alterações controladas, qual botão ele deve clicar para aprovar uma sugestão e torná-la definitiva no texto?",
+        options: [
+          "Botão Rejeitar.",
+          "Botão Aceitar.",
+          "Botão Desfazer.",
+          "Botão Recortar."
+        ],
+        correct: 1,
+        hint: "Aceitar valida a alteração sugerida e remove a marcação de revisão."
+      },
+      {
+        q: "Qual é a principal utilidade da ferramenta 'Restringir Edição' do Word?",
+        options: [
+          "Impedir que o arquivo seja aberto sem internet.",
+          "Limitar o que outros usuários podem fazer no documento, como permitir exclusivamente a inserção de comentários.",
+          "Diminuir o tamanho das imagens.",
+          "Transformar o texto em planilha do Excel."
+        ],
+        correct: 1,
+        hint: "Garante que ninguém altere o conteúdo original indevidamente."
+      }
+    ];
+
     // QUESTÕES DA PROVA FINAL DO MÓDULO (10 QUESTÕES)
     const QUESTIONS_FINAL = [
       {
@@ -6470,8 +7249,8 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5 && lessonNum !== 6){
-        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 06 e a Prova Final estão liberadas no portal.`);
+      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5 && lessonNum !== 6 && lessonNum !== 7){
+        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 06, 07 e a Prova Final estão liberadas no portal.`);
         return;
       }
 
@@ -6500,7 +7279,8 @@
           3: "screen-lesson-3",
           4: "screen-lesson-4",
           5: "screen-lesson-5",
-          6: "screen-lesson-6"
+          6: "screen-lesson-6",
+          7: "screen-lesson-7"
         };
         if(routes[targetLessonNum]){
           const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
@@ -7048,10 +7828,166 @@
     };
 
     // ===================================================================
+    // SIMULADORES DA AULA 07 (ORTOGRAFIA, COMENTÁRIOS E TRACK CHANGES)
+    // ===================================================================
+    window.l7SetSpell = function(mode, btn){
+      const err1 = document.getElementById("l7-err1");
+      const err2 = document.getElementById("l7-err2");
+      const err3 = document.getElementById("l7-err3");
+      const syn = document.getElementById("l7-syn-panel");
+      const status = document.getElementById("l7-spell-status");
+      if(!err1 || !err2 || !err3 || !syn) return;
+
+      if(mode === "clean"){
+        err1.classList.remove("l7-wavy-red");
+        err2.classList.remove("l7-wavy-blue");
+        err3.classList.remove("l7-wavy-red");
+        syn.style.display = "none";
+        if(status) status.textContent = "▸ Texto sem revisão: os erros estão lá, mas invisíveis — só o F7 os revela.";
+      } else if(mode === "f7"){
+        err1.classList.add("l7-wavy-red");
+        err2.classList.add("l7-wavy-blue");
+        err3.classList.add("l7-wavy-red");
+        syn.style.display = "none";
+        if(status) status.textContent = "▸ F7 ativo: vermelho ondulado = erro ortográfico • azul ondulado = erro gramatical ou de concordância.";
+      } else {
+        err1.classList.add("l7-wavy-red");
+        err2.classList.remove("l7-wavy-blue");
+        err3.classList.add("l7-wavy-red");
+        syn.style.display = "block";
+        if(status) status.textContent = "▸ Shift + F7: o Dicionário de Sinônimos oferece alternativas para trocar a palavra repetitiva 'observar'.";
+      }
+
+      if(btn && btn.parentElement) btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+        b.classList.toggle("active", b === btn);
+      });
+    };
+
+    window.l7CommentAction = function(action){
+      const balloon = document.getElementById("l7-balloon");
+      const anchor = document.getElementById("l7-comment-anchor");
+      const reply = document.getElementById("l7-balloon-reply");
+      const status = document.getElementById("l7-comment-status");
+      if(!balloon || !anchor) return;
+
+      if(action === "new"){
+        balloon.style.display = "block";
+        balloon.classList.remove("resolved");
+        reply.style.display = "none";
+        anchor.style.background = "#FEF3C7";
+        if(status) status.textContent = "▸ Comentário criado (Ctrl + Alt + M): o balão abriu na margem direita com o nome do autor — o texto original continua intacto.";
+      } else if(action === "reply"){
+        if(balloon.style.display === "none"){
+          if(status) status.textContent = "▸ Nenhum comentário aberto: clique primeiro em '➕ Novo Comentário'.";
+          return;
+        }
+        balloon.classList.remove("resolved");
+        reply.style.display = "block";
+        if(status) status.textContent = "▸ Resposta enviada dentro do balão: a conversa fica agrupada na mesma anotação, como um chat lateral.";
+      } else if(action === "resolve"){
+        if(balloon.style.display === "none"){
+          if(status) status.textContent = "▸ Nenhum comentário aberto: clique primeiro em '➕ Novo Comentário'.";
+          return;
+        }
+        balloon.classList.add("resolved");
+        if(status) status.textContent = "▸ Resolvido: o balão fica esmaecido e riscado indicando que a observação foi tratada — o histórico continua guardado.";
+      } else {
+        balloon.style.display = "none";
+        balloon.classList.remove("resolved");
+        reply.style.display = "none";
+        anchor.style.background = "transparent";
+        if(status) status.textContent = "▸ Excluído: o balão desapareceu e o trecho voltou ao estado original. Sem comentário: o texto está limpo.";
+      }
+    };
+
+    window.l7ToggleTrack = function(btn){
+      const delWord = document.getElementById("l7-del-word");
+      const insWord = document.getElementById("l7-ins-word");
+      const status = document.getElementById("l7-track-status");
+      if(!btn) return;
+
+      const ativo = btn.getAttribute("aria-pressed") !== "false";
+      if(ativo){
+        btn.setAttribute("aria-pressed", "false");
+        btn.classList.remove("active");
+        btn.textContent = "⚪ Controlar Alterações: DESATIVADO (clique para religar)";
+        if(delWord) delWord.style.display = "none";
+        if(insWord) { insWord.classList.remove("l7-track-insert"); insWord.style.textDecoration = "none"; insWord.style.color = "inherit"; insWord.style.fontWeight = "400"; }
+        if(status) status.textContent = "▸ Recurso desativado: o Word para de registrar edições. As marcações que já existiam continuam no documento até serem aceitas ou rejeitadas.";
+      } else {
+        btn.setAttribute("aria-pressed", "true");
+        btn.classList.add("active");
+        btn.textContent = "🟢 Controlar Alterações: ATIVO (Ctrl + Shift + E)";
+        if(delWord) delWord.style.display = "inline";
+        if(insWord) { insWord.classList.add("l7-track-insert"); insWord.style.textDecoration = ""; insWord.style.color = ""; insWord.style.fontWeight = ""; }
+        if(status) status.textContent = "▸ Com o recurso ativo: a palavra digitada entra sublinhada em azul; a palavra apagada NÃO some — fica riscada em vermelho, aguardando decisão.";
+      }
+    };
+
+    window.l7Decide = function(action, btn){
+      const revDel = document.getElementById("l7-rev-del");
+      const revIns = document.getElementById("l7-rev-ins");
+      const status = document.getElementById("l7-review-status");
+      if(!revDel || !revIns) return;
+
+      if(action === "accept"){
+        revDel.style.display = "none";
+        revIns.classList.remove("l7-track-insert");
+        revIns.style.textDecoration = "none";
+        revIns.style.color = "inherit";
+        revIns.style.fontWeight = "400";
+        if(status) status.textContent = "▸ ACEITO: 'supernovas' virou texto comum preto e 'asteroides' foi excluído de vez. A revisão foi incorporada ao documento final.";
+      } else if(action === "reject"){
+        revDel.style.display = "none";
+        revDel.style.color = "inherit";
+        revDel.style.textDecoration = "none";
+        revIns.style.display = "none";
+        if(status) status.textContent = "▸ REJEITADO: a sugestão foi descartada e o texto original foi preservado — a marcação desapareceu.";
+      } else {
+        revDel.style.display = "inline";
+        revDel.style.color = "";
+        revDel.style.textDecoration = "";
+        revIns.style.display = "inline";
+        revIns.classList.add("l7-track-insert");
+        revIns.style.textDecoration = "";
+        revIns.style.color = "";
+        revIns.style.fontWeight = "";
+        if(status) status.textContent = "▸ Pendente: clique em '✅ Aceitar' para incorporar 'supernovas' e apagar 'asteroides', ou '❌ Rejeitar' para devolver o texto original.";
+      }
+
+      if(btn && btn.parentElement && action !== "reset") btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+        b.classList.toggle("active", b === btn);
+      });
+    };
+
+    window.l7ToggleProtect = function(btn){
+      const note = document.getElementById("l7-protect-note");
+      const status = document.getElementById("l7-protect-status");
+      if(!btn || !note) return;
+
+      const protegido = btn.getAttribute("aria-pressed") !== "false";
+      if(protegido){
+        btn.setAttribute("aria-pressed", "false");
+        btn.classList.remove("active");
+        btn.textContent = "🔓 Desprotegido (clique para proteger)";
+        note.className = "l7-protect-note open";
+        note.textContent = "✅ Documento liberado: agora qualquer pessoa pode editar o texto livremente — use 'Restringir Edição' para voltar a proteger.";
+        if(status) status.textContent = "▸ Proteção removida (Parar Proteção + senha): o documento voltou a aceitar edições de qualquer revisor.";
+      } else {
+        btn.setAttribute("aria-pressed", "true");
+        btn.classList.add("active");
+        btn.textContent = "🔒 Protegido — somente comentários";
+        note.className = "l7-protect-note blocked";
+        note.textContent = "🚫 Edição bloqueada: com a proteção ativa, só é possível inserir comentários — nem uma vírgula do texto original pode ser alterada.";
+        if(status) status.textContent = "▸ Proteção ativa (Restringir Edição → Comentários → Sim, Aplicar Proteção). Qualquer pessoa pode ler e comentar, mas não editar.";
+      }
+    };
+
+    // ===================================================================
     // MARCAR LEITURA & GAMIFICAÇÃO COM PERSISTÊNCIA (LOCALSTORAGE)
     // ===================================================================
-    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5, 6: 5 };
-    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true };
+    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5, 6: 5, 7: 5 };
+    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true };
     const READ_STORAGE_KEY = "word_lessons_reading_progress";
 
     let readTopics = {};
@@ -7166,9 +8102,9 @@
       }
     }
 
-    // Inicialização da Leitura (Aulas 1, 2, 3, 4, 5 e 6)
+    // Inicialização da Leitura (Aulas 1, 2, 3, 4, 5, 6 e 7)
     loadReadTopics();
-    [1, 2, 3, 4, 5, 6].forEach(function(num){
+    [1, 2, 3, 4, 5, 6, 7].forEach(function(num){
       captureReadLabels(num);
       bindCheckboxes(num);
       paintReadLesson(num);
@@ -7255,6 +8191,16 @@
         moduleId: "word_lesson_6_quiz",
         title: "Módulo 2 — Aula 06: Layout de Página, Quebras de Seção & Cabeçalhos",
         sig: "Módulo 2 - Aula 6 (Word)"
+      },
+      7: {
+        questions: QUESTIONS_LESSON_7,
+        name: "Aluno(a)",
+        answers: new Array(5).fill(null),
+        current: 0,
+        signature: null,
+        moduleId: "word_lesson_7_quiz",
+        title: "Módulo 2 — Aula 07: Revisão de Texto, Comentários & Colaboração",
+        sig: "Módulo 2 - Aula 7 (Word)"
       }
     };
 
@@ -7457,7 +8403,7 @@
     window.getReportDataGen = getReportDataGen;
 
     // Vincular botões de Comprovante (.txt), PDF, WhatsApp e E-mail dos Exercícios de Fixação
-    ;[1, 2, 3, 4, 5, 6].forEach(function(lessonNum){
+    ;[1, 2, 3, 4, 5, 6, 7].forEach(function(lessonNum){
       const btnTxt = document.getElementById(`btn-download-txt-${lessonNum}`);
       if(btnTxt){
         btnTxt.onclick = () => window.QuizEngine.downloadTxtReport(getReportDataGen(lessonNum));

@@ -3554,6 +3554,10 @@ Desagrupar: devolve a independência a cada forma.
 Passo a passo: segure Ctrl e clique em cada forma (ou arraste uma seleção ao redor de todas); solte o Ctrl e clique com o botão direito sobre o conjunto; escolha Agrupar > Agrupar. As alças de seleção passam a envolver o bloco inteiro.
 
 Atenção: no Word, Ctrl + G abre "Ir Para". O atalho de agrupar é do PowerPoint, não do Word.`,
+          images: [
+            { src: "../../assets/img/word/Aula4/image2.png", caption: "Cartaz de alerta de alta tensão: moldura de borda de página, formas de raio e caixa de texto com aviso", wide: true },
+            { src: "../../assets/img/word/Aula4/image1.png", caption: "Cartaz Vende-se Geladinho: formas com preenchimento, setas, estrelas e texto estilizado em paisagem", wide: true }
+          ],
           html: `<div class="es-sheet-box" style="margin:14px 0;">
   <div class="es-sheet-titlebar" style="background:#16A34A; color:#fff;">🧩 Simulação: Ordem das Camadas e Grupo Selecionado</div>
   <div style="position:relative; height:150px; background:#F8FAFC; border:1.5px dashed #93C5FD; border-radius:8px; overflow:hidden;">
@@ -3637,7 +3641,10 @@ OS 4 GRANDES BENEFÍCIOS DOS ESTILOS:
 4. GERAÇÃO AUTOMÁTICA DO SUMÁRIO — o Word só monta o sumário automático se identificar a marcação de estilos (Título 1, Título 2).
 
 Em um ambiente corporativo, estilos são o que permitem que várias pessoas editem o mesmo documento sem que ele vire uma colcha de retalhos visual. O manual de identidade da empresa vira um conjunto de estilos, não uma sequência de instruções soltas.`,
-          image: "../../assets/img/word/Aula5/image5.png",
+          images: [
+            { src: "../../assets/img/word/Aula5/image5.png", caption: "Aplique o estilo ao título: com o cursor no título, um clique na galeria faz o parágrafo inteiro assumir a formatação do estilo." },
+            { src: "../../assets/img/word/Aula5/image8.png", caption: "Aba Design > Temas: um clique aplica um pacote completo de cores e fontes, mudando a identidade visual de todo o documento de uma vez." }
+          ],
           caption: "Galeria de estilos rápidos com os cartões Normal, Título 1, Título 2 e Citação",
           html: `<div class="es-sheet-box" style="margin:14px 0;">
   <div class="es-sheet-titlebar" style="background:#1D4ED8; color:#fff;">🏛️ Os 4 Benefícios dos Estilos</div>
@@ -3673,7 +3680,10 @@ COMO MODIFICAR UM ESTILO:
 5. Clique em OK: todos os títulos marcados como Título 1 assumem a nova formatação imediatamente.
 
 A atualização em cascata é o coração da aula: o estilo é um objeto único, e cada título é apenas uma referência a ele. Mudou o objeto, todas as referências mudam juntas.`,
-          image: "../../assets/img/word/Aula5/image1.png",
+          images: [
+            { src: "../../assets/img/word/Aula5/image1.png", caption: "Modificar estilo com a marcação \"Atualizar automaticamente\": ao confirmar com OK, todos os títulos marcados como Título 1 assumem a nova formatação imediatamente." },
+            { src: "../../assets/img/word/Aula5/image10.png", caption: "Galeria de estilos com hierarquia visível: Título 1 maior que Título 2, que é maior que Título 3 — a ordem visual do documento fica evidente." }
+          ],
           caption: "Janela Modificar Estilo com fonte, tamanho, cor e opções de negrito",
           html: `<div class="es-sheet-box" style="margin:14px 0;">
   <div class="es-sheet-titlebar" style="background:#0F766E; color:#fff;">🔗 O Estilo é um Objeto Único — os Títulos São Referências</div>
@@ -3716,7 +3726,10 @@ BOAS PRÁTICAS DE NOMENCLATURA:
 • Evite nomes vagos como “Estilo 1” ou “Novo Estilo” — em um documento grande, ninguém lembra o que são.
 • Se o estilo nascer de outro, escolha Baseado em: para herdar comportamentos e facilitar ajustes futuros.
 • Marque Adicionar à galeria de estilos para que ele fique acessível com um clique.`,
-          image: "../../assets/img/word/Aula5/image3.png",
+          images: [
+            { src: "../../assets/img/word/Aula5/image3.png", caption: "Criar estilo por exemplo: dê um nome claro — como \"Aviso do Professor\" — e o novo estilo passa a aparecer na galeria para aplicar com um clique." },
+            { src: "../../assets/img/word/Aula5/image7.png", caption: "Janela \"Criar Novo Estilo\": escolha \"Baseado em\" para herdar comportamentos e marque \"Adicionar à galeria de estilos\" para deixá-lo acessível." }
+          ],
           caption: "Janela Novo Estilo, com nome, tipo, estilo base e a opção Adicionar à galeria de estilos",
           html: `<div class="es-sheet-box" style="margin:14px 0;">
   <div class="es-sheet-titlebar" style="background:#0F766E; color:#fff;">🧩 Os 4 Tipos de Estilo — escolha antes de salvar</div>
@@ -3762,7 +3775,10 @@ COMO USAR O PINCEL TRAVADO:
 4. Pressione Esc para soltar o pincel.
 
 Atenção: o pincel copia apenas a formatação de caractere e de parágrafo — ele não copia o texto, nem imagens, nem o conteúdo da área de transferência.`,
-          image: "../../assets/img/word/Aula5/image6.png",
+          images: [
+            { src: "../../assets/img/word/Aula5/image6.png", caption: "Pincel de Formatação: copia a formatação copiada e a aplica no trecho selecionado com um clique (ou com o atalho do teclado)." },
+            { src: "../../assets/img/word/Aula5/image11.png", caption: "Pincel de Formatação desativado (Esc): o cursor volta ao normal quando você termina de pintar os trechos." }
+          ],
           caption: "Ícone do Pincel de Formatação no grupo Área de Transferência",
           html: `<div class="es-sheet-box" style="margin:14px 0;">
   <div class="es-sheet-titlebar" style="background:#0F766E; color:#fff;">🖌️ Clique Simples × Duplo Clique × Atalhos</div>
@@ -3795,7 +3811,10 @@ FLUXO RECOMENDADO PARA TEXTO DA WEB:
 4. Aplique o estilo desejado: Normal, Citação ou um estilo personalizado.
 
 Diferença importante: limpar formatação não é o mesmo que colar sem formatação. O atalho Ctrl + Shift + V cola o texto já sem a formatação de origem; a borracha limpa um texto que já está no documento. Os dois caminhos levam ao mesmo resultado visual — texto puro, pronto para receber o padrão do trabalho.`,
-          image: "../../assets/img/word/Aula5/image9.png",
+          images: [
+            { src: "../../assets/img/word/Aula5/image9.png", caption: "Fluxo do botão Limpar Formatação: o texto com formatação mista volta ao padrão, pronto para receber o estilo do trabalho." },
+            { src: "../../assets/img/word/Aula5/image2.png", caption: "Botão \"Limpar Toda a Formatação\" no grupo Fonte, da guia Início — a borracha que devolve o texto ao formato básico." }
+          ],
           caption: "Botão Limpar Toda a Formatação no grupo Fonte da guia Página Inicial",
           html: `<div class="es-sheet-box" style="margin:14px 0;">
   <div class="es-sheet-titlebar" style="background:#B45309; color:#fff;">🧽 Antes × Depois da Borracha</div>
@@ -3961,6 +3980,141 @@ OFICINA PRÁTICA — O RELATÓRIO COM PÁGINA DEITADA: junte tudo o que aprendeu
   <div style="background:#F8FAFC; border-top:1px dashed #94A3B8; padding:8px 12px; font-size:9.5px; color:#475569; text-align:center;">CNPJ 00.000.000/0001-00 • Rua das Flores, 123 — Centro • (11) 90000-0000 ⬅ Rodapé (repete em todas)</div>
 </div>
 </div><div class="es-sheet-box"><div class="es-sheet-titlebar">✅ Checklist de Auditoria da Aula 06</div><table class="mini-sheet"><tr><th>Item</th><th>O que conferir</th></tr><tr><td><strong>Papel</strong></td><td>Tamanho A4 (21 x 29,7 cm) confirmado</td></tr><tr><td><strong>Quebras de página</strong></td><td>Capítulos com Ctrl + Enter, sem Enters repetidos</td></tr><tr><td><strong>Orientação mista</strong></td><td>Páginas deitadas isoladas por Quebras de Seção</td></tr><tr><td><strong>Cabeçalhos</strong></td><td>Vínculos desfeitos onde o texto muda</td></tr><tr><td><strong>Numeração</strong></td><td>Imprime só a partir da Introdução (ABNT)</td></tr><tr><td><strong>Visualização</strong></td><td>Conferida em Arquivo > Imprimir antes de imprimir</td></tr></table></div>`
+        },
+        {
+          lessonNum: 7,
+          chapter: "AULA 07: REVISÃO DE TEXTO, COMENTÁRIOS & COLABORAÇÃO",
+          heading: "7.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Aprender a revisar textos de forma colaborativa e profissional: usar a verificação gramatical, dialogar através de comentários laterais, registrar edições com o Controle de Alterações e proteger o arquivo contra edições indevidas.
+
+COMO VAMOS FAZER (os 5 passos):
+1. Executar a Verificação Ortográfica e Gramatical com a tecla F7.
+2. Inserir e responder a Comentários na margem do documento.
+3. Ativar o Controle de Alterações (Track Changes) para auditar edições.
+4. Aceitar e Rejeitar alterações sugeridas por revisores.
+5. Proteger o documento restringindo a edição apenas a comentários.
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Abra o Microsoft Word e digite (ou copie) um texto de prática — sugerimos um trecho sobre Astronomia: planetas, estrelas e galáxias servem perfeitamente.
+• Aplique a formatação ABNT que você já domina: fonte Arial ou Times New Roman, tamanho 12, espaçamento 1,5.
+• Salve o arquivo como Revisao_Aula07.docx — será o laboratório de revisão desta aula.
+
+TEXTO SUGERIDO PARA PRÁTICA (A Exploração do Universo):
+A astronomia é uma das ciências mais antigas da humanidade, dedicada ao estudo dos corpos celestes. A Via Láctea, nossa galáxia, contém cerca de 200 bilhões de estrelas. Nebulosas, buracos negros e supernovas são fenômenos que ainda desafiam nossa compreensão.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🗺️ Roteiro da Aula 07 — revisão colaborativa</div><table class="mini-sheet"><tr><th>Passo</th><th>O que praticar</th><th>Atalho / botão</th></tr><tr><td>1</td><td>Verificação Ortográfica e Gramatical</td><td>Tecla <strong>F7</strong></td></tr><tr><td>2</td><td>Comentários na margem</td><td><strong>Ctrl + Alt + M</strong></td></tr><tr><td>3</td><td>Controlar Alterações (Track Changes)</td><td><strong>Ctrl + Shift + E</strong></td></tr><tr><td>4</td><td>Aceitar / Rejeitar revisões</td><td>Guia Revisão &gt; Alterações</td></tr><tr><td>5</td><td>Restringir Edição e higienizar</td><td>Guia Revisão + Arquivo &gt; Informações</td></tr></table></div><div class="fun-highlight"><strong>Por que isso importa:</strong> ninguém trabalha sozinho — contratos, relatórios empresariais e artigos acadêmicos passam por múltiplos leitores, chefes e orientadores. Dominar a revisão é dominar o trabalho em equipe.</div>`
+        },
+        {
+          lessonNum: 7,
+          heading: "7.1 A Guia Revisão e a Higiene da Língua Portuguesa",
+          content: `A TECLA SALVADORA: pressione F7 em qualquer momento. O Word analisa todo o texto do início ao fim e abre o painel lateral de correção. É o atalho clássico da guia Revisão.
+
+ENTENDENDO AS MARCAÇÕES NA TELA:
+• Ondulado vermelho: erro ortográfico ou palavra fora do dicionário (nomes próprios, termos técnicos, digitação errada). Botão direito sobre a palavra mostra as sugestões de correção.
+• Ondulado azul ou verde: erro de concordância gramatical, pontuação ou espaçamento duplo acidental.
+
+DICIONÁRIO DE SINÔNIMOS: selecione uma palavra repetitiva e pressione Shift + F7. O painel oferece alternativas (ex.: "observar" — examinar, contemplar, estudar, analisar) para enriquecer o vocabulário do texto.
+
+CONTAGEM DE PALAVRAS: requisito indispensável para resumos acadêmicos com limite de palavras (ex.: 250 a 500 palavras). O total aparece no canto inferior esquerdo da janela ou no botão da guia Revisão.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🎨 O que significa cada sublinhado ondulado</div><table class="mini-sheet"><tr><th>Marcação</th><th>Significado</th><th>Exemplo típico</th></tr><tr><td><strong style="color:#DC2626;">Ondulado vermelho</strong></td><td>Erro ortográfico ou palavra fora do dicionário</td><td>"astronimia", "telescopio"</td></tr><tr><td><strong style="color:#2563EB;">Ondulado azul/verde</strong></td><td>Erro gramatical, concordância ou pontuação</td><td>"o o" duplicado, verbo sem concordância</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">⌨️ Atalhos da higiene do texto</div><table class="mini-sheet"><tr><th>Tecla</th><th>O que faz</th></tr><tr><td style="text-align:center;"><strong>F7</strong></td><td>Verificação Ortográfica e Gramatical em todo o documento</td></tr><tr><td style="text-align:center;"><strong>Shift + F7</strong></td><td>Dicionário de Sinônimos da palavra selecionada</td></tr></table></div><div class="fun-highlight"><strong>Contagem de palavras:</strong> resumos acadêmicos têm limite (ex.: 250 a 500 palavras). Acompanhe o total no canto inferior esquerdo da janela do Word.</div>`
+        },
+        {
+          lessonNum: 7,
+          heading: "7.2 Comunicação em Equipe com Balões de Comentários",
+          content: `O QUE SÃO: anotações laterais que NÃO alteram o texto da folha — o canal de diálogo entre alunos, professores e colegas de empresa. Os balões aparecem na margem direita da tela com identificação do autor e a data.
+
+PASSO A PASSO PARA INSERIR:
+1. Selecione a palavra ou frase que gera dúvida.
+2. Vá na guia Revisão e clique em Novo Comentário (atalho Ctrl + Alt + M).
+3. Digite a observação no balão lateral. Ex.: "Professor, favor verificar se esta data está correta".
+4. Para responder, clique no botão Responder dentro do próprio balão; para encerrar, use Resolver ou Excluir.
+
+BOM USO: comentários servem para sugestões, não para edições — "inserir referência aqui", "reformular este trecho", "conferir citação". O texto original permanece intacto: a decisão final é sempre do autor.
+
+EXERCÍCIO DA APOSTILA ORIGINAL: adicione 3 comentários no texto de astronomia sugerindo melhorias ou fazendo perguntas.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">💬 Como o comentário aparece na margem</div>
+<div style="display:flex; gap:10px; align-items:flex-start; flex-wrap:wrap;">
+  <div style="flex:1 1 240px; border:1px solid #CBD5E1; border-radius:6px; padding:10px 12px; font-size:11px; color:#334155; line-height:1.7;">A <span style="background:#FEF3C7; border-radius:3px; padding:0 2px;">astronomia</span> é uma das ciências mais antigas da humanidade, dedicada ao estudo dos corpos celestes.<div style="margin-top:6px; font-size:9.5px; color:#94A3B8;">↑ trecho selecionado antes de comentar</div></div>
+  <div style="flex:0 1 230px; background:#FFF7ED; border:1.5px solid #FDBA74; border-left:4px solid #EA580C; border-radius:10px 10px 10px 2px; padding:10px 12px; font-size:10.5px; color:#7C2D12;">
+    <div style="display:flex; justify-content:space-between; font-weight:800; color:#EA580C; font-size:10px;"><span>👤 Marcos Rangel</span><span>hoje</span></div>
+    Professor, favor verificar se esta data está correta.
+    <div style="margin-top:6px; border-top:1px dashed #FDBA74; padding-top:5px; color:#9A3412;">↩ Revisora Ana: correção enviada — vale conferir a fonte!</div>
+  </div>
+</div>
+<div style="margin-top:8px; font-size:10.5px; color:#64748B; text-align:center;">O balão fica na margem direita, com autor, data e o fio de conversa — sem tocar no texto.</div>
+</div><div class="es-sheet-box"><div class="es-sheet-titlebar">🔁 Ciclo de vida do comentário</div><table class="mini-sheet"><tr><th>Ação</th><th>Efeito</th></tr><tr><td><strong>Novo Comentário</strong> (Ctrl + Alt + M)</td><td>Abre o balão na margem direita</td></tr><tr><td><strong>Responder</strong></td><td>Conversa agrupada dentro do mesmo balão</td></tr><tr><td><strong>Resolver</strong></td><td>Marca como tratado (esmaecido) sem apagar o histórico</td></tr><tr><td><strong>Excluir</strong></td><td>Remove o balão e a seleção volta ao normal</td></tr></table></div>`
+        },
+        {
+          lessonNum: 7,
+          heading: "7.3 Auditoria Editorial: O Controle de Alterações (Track Changes)",
+          content: `O QUE É: o recurso mais poderoso de auditoria de texto do Word. Registra automaticamente todas as modificações — quem alterou, o quê, em qual data e horário.
+
+QUANDO ATIVAR: sempre que você for revisar o texto de outra pessoa ou enviar uma minuta de contrato para revisão.
+
+COMO ATIVAR: guia Revisão e clique no botão Controlar Alterações (atalho Ctrl + Shift + E). O botão fica destacado quando ativo.
+
+COMO O WORD SE COMPORTA COM O RECURSO ATIVO:
+• Digitar uma palavra nova: ela fica sublinhada e em cor destacada (azul).
+• Apagar uma palavra (Backspace/Delete): ela NÃO desaparece — fica riscada no meio (tachada em vermelho), aguardando decisão.
+• Alterar formatação: o registro da mudança aparece na lateral do documento.
+
+PERSONALIZAÇÃO: use a seta ao lado do botão → Alterar Opções de Controle para ajustar cores e formatos das marcações.
+
+EXERCÍCIO DA APOSTILA ORIGINAL: ative o controle de alterações e faça 5 modificações no texto (adicionar, excluir ou substituir palavras). Depois desative clicando novamente no botão.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🕵️ Exemplo de texto com marcações de revisão</div>
+<div style="border:1px solid #CBD5E1; border-radius:6px; padding:10px 12px; font-size:11.5px; color:#334155; line-height:1.9;">
+Nebulosas, buracos negros e <span style="color:#DC2626; text-decoration:line-through;">asteroides</span> <span style="color:#1D4ED8; text-decoration:underline; font-weight:700;">supernovas</span> são fenômenos que desafiam nossa compreensão.
+</div>
+<div style="margin-top:6px; font-size:10.5px; color:#64748B; text-align:center;"><span style="color:#1D4ED8;">Sublinhado azul</span> = palavra inserida • <span style="color:#DC2626;">tachado vermelho</span> = palavra apagada (não sumiu — espera decisão)</div>
+</div><div class="es-sheet-box"><div class="es-sheet-titlebar">⚙️ Comportamento com o recurso ativado</div><table class="mini-sheet"><tr><th>Sua ação</th><th>O que o Word mostra</th></tr><tr><td><strong>Digitar palavra nova</strong></td><td>Sublinhada e em cor destacada</td></tr><tr><td><strong>Apagar palavra</strong></td><td>Não desaparece: fica riscada no meio (tachada)</td></tr><tr><td><strong>Alterar formatação</strong></td><td>Registro da mudança na lateral</td></tr><tr><td><strong>Desativar</strong></td><td>Clique novamente em Controlar Alterações (botão destacado quando ativo)</td></tr></table></div><div class="fun-highlight"><strong>Memória viva:</strong> com o Track Changes ativo, o documento guarda exatamente quem alterou o quê e em qual data e horário — a auditoria completa do texto.</div>`
+        },
+        {
+          lessonNum: 7,
+          heading: "7.4 Fluxo de Aprovação: Aceitar, Rejeitar e Finalizar o Documento",
+          content: `DEPOIS DA REVISÃO, O AUTOR DECIDE: na guia Revisão, grupo Alterações, use as setas Anterior e Próxima para pular de alteração em alteração. Para cada sugestão:
+• Aceitar: incorpora a mudança — o texto riscado é excluído de vez e o sublinhado vira texto comum preto.
+• Rejeitar: descarta a sugestão e preserva o texto original.
+• Aceitar Todas / Rejeitar Todas: aplica a decisão a todas as revisões de uma vez.
+
+MODOS DE VISUALIZAÇÃO: Marcação Simples, Todas as Marcações, Sem Marcação ou Original.
+
+REGRA DE SEGURANÇA PROFISSIONAL: nunca envie um arquivo final para um cliente com o controle de alterações aberto! As marcações revelam todo o processo de edição — inclusive o que foi apagado. Antes de emitir o documento final, clique em Aceitar Todas as Alterações e confira a ortografia mais uma vez.
+
+FINALIZAR DOCUMENTO (apostila original):
+1. Aceite ou rejeite todas as alterações pendentes.
+2. Resolva e exclua os comentários já tratados.
+3. Verifique ortografia e gramática (F7).
+
+EXERCÍCIO: revise as alterações — aceite 3 e rejeite 2.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">⚖️ Aceitar vs Rejeitar</div><table class="mini-sheet"><tr><th>Botão</th><th>Efeito no texto</th><th>Quando usar</th></tr><tr><td><strong>Aceitar</strong></td><td>O riscado é excluído de vez e o sublinhado vira texto comum preto</td><td>A correção do revisor estava boa</td></tr><tr><td><strong>Rejeitar</strong></td><td>A sugestão é descartada e o texto original é preservado</td><td>A sugestão foi inadequada</td></tr><tr><td><strong>Aceitar/Rejeitar Todas</strong></td><td>Aplica a decisão a todas as revisões de uma vez</td><td>Finalização rápida de textos simples</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🚦 Fluxo de finalização em 3 passos</div><table class="mini-sheet"><tr><th>Ordem</th><th>Ação</th><th>Verificação</th></tr><tr><td>1</td><td>Aceitar ou rejeitar todas as alterações pendentes</td><td>Nenhuma marcação restante</td></tr><tr><td>2</td><td>Resolver e excluir os comentários tratados</td><td>Zero balões na margem</td></tr><tr><td>3</td><td>Verificar ortografia e gramática</td><td>F7 sem ondulados</td></tr></table></div><div class="fun-highlight"><strong>Nunca entregue com marcações!</strong> O arquivo final para o cliente sai sempre com Aceitar Todas as Alterações aplicado — as revisões revelam o processo de edição inteiro.</div>`
+        },
+        {
+          lessonNum: 7,
+          heading: "7.5 Restringir Edição, Inspecionar Metadados e Marcar como Final",
+          content: `RESTRINGIR EDIÇÃO — impede alterações não autorizadas durante a revisão:
+1. Guia Revisão e clique em Restringir Edição.
+2. Marque "Permitir apenas este tipo de edição no documento" e selecione Comentários (ou Controlar alterações).
+3. Clique em Sim, Aplicar Proteção e defina uma senha (opcional, porém recomendado).
+4. Para remover: Parar Proteção + senha.
+IMPORTANTE: guarde a senha em local seguro — sem ela não é possível desproteger o documento.
+
+INSPECIONAR DOCUMENTO — remoção de dados pessoais antes da entrega formal:
+• Arquivo → Informações → Verificar se Há Problemas → Inspecionar Documento.
+• Marque todas as opções, clique em Inspecionar e depois em Remover Tudo.
+• Elimina dados pessoais, comentários antigos e revisões ocultas antes de converter para PDF ou enviar a clientes.
+
+MARCAR COMO FINAL — versão somente leitura:
+• Arquivo → Informações → Proteger Documento → Marcar como Final → OK.
+• O documento passa a ser somente leitura e exibe um aviso amarelo no topo. Para editar novamente, clique em Editar Mesmo Assim.
+
+✅ CHECKLIST DE AUDITORIA DA AULA 07 — antes de enviar o documento:
+• Ortografia: F7 executado no documento inteiro, sem ondulados pendentes.
+• Comentários: todos resolvidos ou excluídos.
+• Revisões: todas aceitas ou rejeitadas — nenhuma marcação restante.
+• Metadados: inspeção executada e dados pessoais removidos.
+• Proteção: restrição aplicada quando o destinatário só deve comentar.
+• Finalização: "Marcar como Final" apenas quando o documento não for mais alterado.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🔒 Fluxo da proteção de documento</div><table class="mini-sheet"><tr><th>Passo</th><th>Ação</th><th>Resultado</th></tr><tr><td>1</td><td>Revisão &gt; Restringir Edição</td><td>Abre o painel de restrição</td></tr><tr><td>2</td><td>Selecionar "Comentários"</td><td>Só comentários serão permitidos</td></tr><tr><td>3</td><td>Sim, Aplicar Proteção + senha</td><td>Leitura e comentário liberados; edição bloqueada</td></tr><tr><td>4</td><td>Parar Proteção + senha</td><td>Documento liberado para edição</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🧹 Higienização final (Arquivo &gt; Informações)</div><table class="mini-sheet"><tr><th>Ferramenta</th><th>O que faz</th></tr><tr><td><strong>Inspecionar Documento</strong></td><td>Remove dados pessoais, comentários antigos e revisões ocultas</td></tr><tr><td><strong>Marcar como Final</strong></td><td>Documento somente leitura com aviso amarelo no topo (reversível em "Editar Mesmo Assim")</td></tr></table></div><div class="fun-highlight"><strong>Senha da proteção:</strong> guarde em local seguro — sem ela não é possível desproteger o documento.</div>`
         }
       ]
     },

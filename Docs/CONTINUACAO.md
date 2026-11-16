@@ -36,7 +36,43 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL (16/11/2026) — Módulo 2: Microsoft Word — Aula 06 (Layout de Página, Quebras de Seção & Cabeçalhos)
+## ✅ SESSÃO ATUAL (16/11/2026) — Módulo 2: Microsoft Word — Aula 07 (Revisão de Texto, Comentários & Colaboração)
+
+Implementação completa da **Aula 07 do Módulo 2: Microsoft Word** (spec `Docs/SPEC-AULA-07-WORD.md`, status 🟢), desbloqueio no Hub com senha `wg007`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l7-check-1..5`), 4 simuladores ao vivo, exercício de fixação com 5 questões e apostila PDF com seções 7.0–7.5 e ilustrações HTML reais (material de origem **sem imagens** — 0 referências `src=`). ⚠️ **Trabalho NÃO commitado — o usuário pediu para commitar somente quando ele pedir.**
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Desbloqueio no Hub** | `modules/word/index.html` | Card Aula 07 com `active-lesson` + badge `🔓 Aula Liberada (Senha wg007)`; `promptLessonPassword` aceita aula 7; rota `7: "screen-lesson-7"`. |
+| **Tela da Aula 07** | `#screen-lesson-7` | Botões de topo, barra gamificada (`gamify-percent-7/-bar-7/-badge-box-7`), abas `tab-btn-7-1..5` + `tab-btn-7-fix`. |
+| **FASE 0 Tutorial** | `#l7-fase-0` | Objetivo, roteiro numerado (5 chips), faixa de preparação (texto de Astronomia como prática), contador `#l7-checklist-status` e `#btn-start-l7`. |
+| **Fases 1–5** | `#l7-phase-1..5` | 1. Ortografia & Sinônimos; 2. Comentários; 3. Controlar Alterações; 4. Aceitar & Rejeitar; 5. Proteção & Finalização. Cada fase termina com `#l7-check-N` + `#check-read-7-N`. |
+| **CSS dos simuladores** | bloco inline `<style>` | `.l7-doc-stage`, `.l7-wavy-red/.l7-wavy-blue`, `.l7-balloon` (+ `.resolved`), `.l7-track-insert/.l7-track-del`, `.l7-protect-note` + media query 640px. |
+| **Simuladores** | `window.l7SetSpell`, `l7CommentAction`, `l7ToggleTrack`, `l7Decide`, `l7ToggleProtect` | Marcações F7/sinônimos; ciclo de vida do comentário (novo/responder/resolver/excluir); Track Changes ligado/desligado; aceitar/rejeitar revisão; proteção de edição. |
+| **Exercício de Fixação** | `QUESTIONS_LESSON_7` + `QUIZ_CFG[7]` | 5 questões da spec §4, gabarito `[2,2,1,1,1]`, `moduleId: "word_lesson_7_quiz"`, persistência real e "↺ Recomeçar o exercício". |
+| **Roteamento e progresso** | `modules/word/index.html` | `TOTAL_TOPICS`/`SEQUENTIAL_LESSONS` com `7: 5/true`; loops de inicialização e vinculação de comprovantes em `[1,2,3,4,5,6,7]`. |
+| **Apostila PDF** | `assets/js/pdf-lessons.js` → `LESSONS.word.sections` | Seções **7.0 a 7.5** com `lessonNum: 7`, `html` ilustrado (balão de comentário, texto com marcações de revisão, tabelas de atalhos e fluxos). |
+
+### 2. Validações Executadas (16/11/2026)
+
+- `node --check assets/js/pdf-lessons.js`: **OK**. Script inline de `modules/word/index.html` extraído e validado: **OK**.
+- Verificação estrutural: FASE 0, fases 1–5, checks 1–5, botões de leitura, abas, painéis de fixação/resultado, gamify, simuladores, rotas e loops — **todos presentes, sem IDs duplicados; tags balanceadas (section 6/6, div 125/125, table 3/3)**; 0 placeholders de imagem; gabarito `[2,2,1,1,1]` conferido.
+- Verificação dos dados do PDF (`/tmp/opencode/check-pdf7.js`): 42 seções word, **6 da Aula 07 com `html` não vazio**, **0 seções órfãs**, título `moduleLessonTitles.word[7]` correto, sem `${`/artefatos.
+- Revisão de fatos (Regra 12): F7 ✅, Shift+F7 ✅, Ctrl+Alt+M ✅, Ctrl+Shift+E ✅, ondulado vermelho/azul ✅. Corrigidos 2 defeitos de texto: "Marcação Simple" → "Marcação Simples" (PDF 7.4) e "navegue com Anterior e Próxima pular" → "use os botões ... para pular" (tela, Fase 4).
+
+### 3. Pendências da sessão (carregam para a próxima)
+
+- **Commit `2399b5c` (16/11/2026)** — Aula 07 + correções de imagens das Aulas 04/05 + documentação das specs 04/05/06/07 commitados conforme pedido do usuário.
+- **Correção de imagens das Aulas 04 e 05 (16/11/2026, pedido do usuário)** — incluída neste commit pendente:
+  - **Aula 04**: as 2 imagens do acervo original (`AulaOrigem/word/Aula 4 .../images/image1.png`, `image2.png`) nunca tinham sido copiadas. Criada `assets/img/word/Aula4/` (cópia das duas), inserida vitrine na **tela da Fase 5** (antes do Checklist de Auditoria, com `.img-showcase` + `.img-caption`) e array `images` (2 cartazes, `wide: true`) na **seção PDF 4.5**.
+  - **Aula 05**: tela já usava as 11 imagens, mas o PDF usava só 6. PDF das seções 5.1–5.5 convertido de `image:` para arrays `images` (2 por seção, com legendas): 5.1 +image8 (Design > Temas); 5.2 +image10 (hierarquia Título 1>2>3); 5.3 +image7 (janela Criar Novo Estilo); 5.4 +image11 (pincel desativado/Esc); 5.5 +image2 (botão Limpar Toda a Formatação). **O PDF da Aula 05 agora usa as 11 imagens.**
+  - Validado: `node --check` nos 2 arquivos OK; contagem por seção conferida; sem seções órfãs.
+- **Teste em navegador (CDP)** das Aulas 06 e 07: modal, cadeia de checks 0→100%, simuladores, quiz 5/5 e PDF.
+- **Documentação completa (16/11/2026)**: `SPEC-AULA-07-WORD.md` completada (§5 integral com 7.0–7.5, IDs de gamify corrigidos, §6 registro de implementação, §7 validações, §8 fatos conferidos e 2 correções de texto, §9.1 com 12 harnesses, §10 pendências); `SPEC-AULA-04-WORD.md` ganhou §7 "Correção de Imagens"; `SPEC-AULA-05-WORD.md` ganhou §5.2 (PDF com as 11 imagens); `SPEC-AULA-06-WORD.md` ganhou §5.1 (0 imagens na origem + lista canônica de seções 6.0–6.5).
+- Pendências pré-existentes seguem abertas: cards 09–12 do Excel com badge de desbloqueio errado; Prova Final do Word com 10 questões vs 15 na spec.
+
+## ✅ SESSÃO ANTERIOR (16/11/2026) — Módulo 2: Microsoft Word — Aula 06 (Layout de Página, Quebras de Seção & Cabeçalhos)
 
 Implementação completa da **Aula 06 do Módulo 2: Microsoft Word** (spec `Docs/SPEC-AULA-06-WORD.md`, status 🟢), desbloqueio no Hub com senha `wf006`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l6-check-1..5`), 3 simuladores ao vivo, exercício de fixação com 5 questões e apostila PDF com seções 6.0–6.5 e ilustrações HTML reais (material de origem **sem imagens** — 0 referências `src=`).
 
