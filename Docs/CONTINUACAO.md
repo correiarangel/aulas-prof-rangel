@@ -36,7 +36,45 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL (16/11/2026) — Módulo 2: Microsoft Word — Pendências Fechadas (Prova Final 10→15) + Validação CDP
+## ✅ SESSÃO ATUAL (18/11/2026) — Módulo 2: Microsoft Word — Aula 09 (Listas, Tabulação & Certificados)
+
+Implementação completa da **Aula 09 do Módulo Word** (spec `Docs/SPEC-AULA-09-WORD.md`, status 🟢), desbloqueio no Hub com senha `wi009`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l9-check-1..5`), 5 simuladores ao vivo, exercício de fixação persistente com 5 questões (gabarito `[1,1,1,1,1]`) e apostila PDF com 6 seções (9.0–9.5), ilustrações HTML reais e 2 imagens extraídas do material-base. Commit preparado junto com a Aula 08 (`313556d` já commitado antes desta sessão).
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Card liberado** | `modules/word/index.html` | Aula 09 com `active-lesson` + `🔓 Aula Liberada (Senha wi009)`; guarda em `promptLessonPassword` aceita 9; rota `9: "screen-lesson-9"`; `TOTAL_TOPICS[9]=5`, `SEQUENTIAL_LESSONS[9]`, loops de leitura/comprovantes até 9. |
+| **Tela da Aula 09** | `#screen-lesson-9` | Barra `gamify-percent-9`/`gamify-bar-9`/`gamify-badge-box-9`; abas `tab-btn-9-1..5` + `tab-btn-9-fix`; FASE 0 com roteiro numerado e faixa de preparação; 5 fases (Listas multinível / Tabulação / Certificado / 2 colunas+capitular / Imagem+marca d'água), cada uma com check + `check-read-9-N`. |
+| **Simuladores** | `window.l9ListLevel`, `l9TabAlign`, `l9Cert`, `l9Layout`, `l9Finish` | Demonstram Tab/Shift+Tab, pontos de preenchimento, paisagem+moldura+assinaturas, colunas+capitular e quebra justa+marca d'água. |
+| **Quiz persistente** | `QUESTIONS_LESSON_9` + `QUIZ_CFG[9]` | `moduleId: "word_lesson_9_quiz"`, 5 questões (todas corretas = alternativa b), painéis `fixation-panel-9`/`result-panel-9`, gravação ao responder/navegar/assinar, restauração ao abrir e `↺ Recomeçar o exercício`. Correção aplicada ao `prevQuestionGen` genérico: agora também chama `persistQuizGen` (beneficia todas as aulas). |
+| **Apostila PDF** | `assets/js/pdf-lessons.js` | 6 seções `lessonNum: 9` (9.0–9.5), cada uma com ilustração HTML real (`.mini-sheet`, `.es-sheet-box`); imagens `assets/img/word/Aula9/image1.png` (certificado) e `image2.png` (campo magnético solar/ESA). |
+| **Spec** | `Docs/SPEC-AULA-09-WORD.md` | Status 🟢; IDs gamificados corrigidos para os reais; seção 6 com implementação e validações. |
+
+### 2. Localizadores e comandos úteis
+
+- Arquivo principal: `modules/word/index.html` (tela ~linha 7281 em diante; questões ~8548; simuladores ~8860; `QUIZ_CFG[9]` ~10028).
+- PDF: `assets/js/pdf-lessons.js` — bloco `word` com 9 aulas × 6 seções cada.
+- Servidor: `python3 -m http.server 8765` na raiz; harnesses em `/tmp/opencode/cdp_test.js` (tela/quiz/persistência), `/tmp/opencode/pdf_test.js` (popup PDF — **usar `--disable-popup-blocking`**), `/tmp/opencode/mobile_test.js` (375 px), `/tmp/opencode/audit_aula9.js` (seções PDF via VM).
+- Validação rápida: `node --check assets/js/pdf-lessons.js` e extrair o `<script>` inline para `node --check /tmp/opencode/word_inline.js`.
+
+### 3. Validações (todas passaram)
+
+- Sintaxe JS: OK (PDF + inline do HTML).
+- Estrutura: FASE 0, 5 fases, 5 checks, 5 read-checks, 6 abas, 6 seções PDF.
+- CDP desktop (1100 px): largura real dos painéis (> 0), 5 simuladores globais, quiz 5/5 → **10,0**; chave `word_lesson_9_quiz:aluno(a)` salva `1,1,1,1,1`, restaurada após reload e removida no restart.
+- CDP mobile (375 px): 4 px de margem, largura 367/375 — sem "linguiça".
+- CDP popup PDF: 9.0–9.5, 6 ilustrações, 2 imagens `Aula9/` com `naturalWidth` 538 e 254 — carregadas.
+- Auditoria de conteúdo renderizado: nenhum artefato (`JSTOR`, "ainda não", "será anunciado", conversões erradas).
+
+### 4. Próximos passos
+
+- Aula 10 do Word (senha `wj010`) — verificar spec em `Docs/` e material em `AulaOrigem/word/`.
+- Commitar a Aula 09 quando o usuário pedir (padrão desta sessão: Aula 08 já em `313556d`).
+
+---
+
+## ✅ SESSÃO RETROSPECTIVA (16/11/2026) — Módulo 2: Microsoft Word — Pendências Fechadas (Prova Final 10→15) + Validação CDP
 
 Sessão de ajuste de pendências (pedido do usuário: "ajuste todas as pendências e depois aula 8"). ⚠️ **Trabalho NÃO commitado — commitar somente quando o usuário pedir.**
 

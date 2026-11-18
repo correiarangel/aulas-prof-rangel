@@ -1409,6 +1409,68 @@
       .l8-style-doc, .l8-toc { padding: 12px 10px; font-size: 11.5px; }
       .l8-toc-line { font-size: 11px; }
     }
+
+    /* ============================================================
+       AULA 09 — LISTAS MULTINÍVEL, TABULAÇÃO & CERTIFICADOS
+       ============================================================ */
+    .l9-paper {
+      background: #FFFFFF;
+      border: 1.5px solid #94A3B8;
+      border-radius: 6px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+      padding: 14px 18px;
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 1.9;
+    }
+    .l9-list-line { white-space: nowrap; }
+    .l9-list-line.l9-level-2 { padding-left: 30px; color: #1E3A8A; }
+    .l9-list-line.l9-level-3 { padding-left: 60px; color: #7C3AED; }
+    .l9-list-badge {
+      display: inline-block; min-width: 34px; font-weight: 800; color: #2563EB;
+    }
+    .l9-dots { flex: 1; border-bottom: 1.5px dotted #94A3B8; margin: 0 6px; min-width: 18px; transform: translateY(-3px); }
+    .l9-price { font-variant-numeric: tabular-nums; font-weight: 700; }
+    .l9-menu-bad { font-family: 'Courier New', monospace; color: #B91C1C; background: #FEF2F2; border-radius: 6px; padding: 10px 12px; }
+    .l9-menu-good { display: none; font-family: 'Courier New', monospace; color: #166534; background: #F0FDF4; border-radius: 6px; padding: 10px 12px; }
+    .l9-cert-sheet {
+      border: 1.5px solid #CBD5E1; border-radius: 4px; padding: 12px 14px;
+      background: #FFFDF7; text-align: center; font-family: Georgia, serif;
+    }
+    .l9-cert-sheet.l9-landscape { min-height: 100px; border: 8px double #B8860B; }
+    .l9-cert-title { font-size: 16px; color: #7C2D12; letter-spacing: 1px; }
+    .l9-cert-lines { font-size: 11px; color: #475569; margin-top: 6px; }
+    .l9-sign-row { display: none; margin-top: 10px; font-size: 10.5px; }
+    .l9-sign-line { display: flex; justify-content: space-between; gap: 10px; }
+    .l9-sign-line span { border-top: 1px solid #334155; padding-top: 3px; min-width: 45%; text-align: left; }
+    .l9-article {
+      display: none; position: relative; overflow: hidden; background: #FFFDF7;
+      border: 1.5px solid #E2E8F0; border-radius: 6px; padding: 12px 14px;
+    }
+    .l9-article-title {
+      text-align: center; font-family: Impact, sans-serif; font-size: 15px; color: #DC2626;
+      text-decoration: underline; letter-spacing: 0.5px; margin-bottom: 8px;
+    }
+    .l9-columns { display: flex; gap: 14px; text-align: justify; font-size: 10.8px; line-height: 1.6; }
+    .l9-columns > div { flex: 1; min-width: 0; }
+    .l9-dropcap { float: left; font-family: 'Times New Roman', serif; font-size: 34px; line-height: 26px; padding: 3px 6px 2px 0; color: #B91C1C; font-weight: 700; }
+    .l9-watermark {
+      display: none; position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%) rotate(-35deg);
+      font-size: 22px; font-weight: 800; color: rgba(148, 163, 184, 0.38); white-space: nowrap; pointer-events: none;
+    }
+    .l9-wrap-indicator {
+      display: none; margin-top: 10px; border: 1.5px dashed #2563EB; background: #EFF6FF;
+      border-radius: 8px; padding: 10px 14px; font-size: 12px; color: #1E3A8A; font-weight: 700;
+    }
+    .l9-status { margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--word-blue-dark); }
+    @media (max-width: 640px) {
+      .l9-paper { padding: 12px 10px; font-size: 11.5px; }
+      .l9-list-line.l9-level-2 { padding-left: 20px; }
+      .l9-list-line.l9-level-3 { padding-left: 40px; }
+      .l9-cert-title { font-size: 13px; }
+      .l9-columns { gap: 10px; font-size: 10px; }
+      .l9-watermark { font-size: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -1531,11 +1593,11 @@
           </div>
 
           <!-- AULA 09 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(9, 'Oficina de Listas Multinível, Tabulação & Certificados')">
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(9, 'Oficina de Listas Multinível, Tabulação & Certificados')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 09</span>
               <span class="lesson-name">Listas Multinível, Tabulação & Certificados</span>
-              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wi009`)</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-9">🔒</span>
           </div>
@@ -7280,6 +7342,585 @@
     </section>
 
     <!-- ===================================================================
+         AULA 09: OFICINA DE LISTAS MULTINÍVEL, TABULAÇÃO & CERTIFICADOS
+         =================================================================== -->
+    <section id="screen-lesson-9" class="screen-view">
+
+      <!-- Topo da Aula com Botões de Ação -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('word', 9)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra Gamificada de Progresso da Aula 9 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 9)</span>
+            <span id="gamify-percent-9">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-9" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-9">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <!-- Cartão Principal de Leitura -->
+      <article class="lesson-reading-card">
+        <span class="badge-word-blue">Módulo 2 • Aula 09</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 09: Oficina de Listas Multinível, Tabulação &amp; Certificados</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <em>Listas hierárquicas com Tab/Shift+Tab, tabulação com pontos de preenchimento, certificado em paisagem e o projeto integrado "Ciclo Solar".</em> Leia cada etapa e aplique os comandos no seu Word!
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l9-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--word-blue); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:var(--word-blue-light); color:var(--word-blue-dark); border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar: O que vamos fazer e como</span>
+
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:14px 0 8px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Transformar o Word em uma <strong>ferramenta de design editorial</strong>: montar listas hierárquicas com <kbd>Tab</kbd> e <kbd>Shift</kbd> + <kbd>Tab</kbd>, alinhar valores com <strong>paradas de tabulação</strong>, produzir um <strong>Certificado de Conclusão</strong> e diagramar o artigo científico <strong>"O Ciclo Solar, um Pulsar de Energia Estelar"</strong> com duas colunas, letra capitular, imagem com quebra justa e marca d'água.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo em 5 Fases)</h3>
+          <p style="margin:0 0 12px 0; font-size:13.5px; color:#475569; line-height:1.7;">
+            Os checks ficam distribuídos — posicionados no fim de cada fase, exatamente onde está a instrução prática. Cada passo é um check e só libera o próximo!
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px;" aria-label="Roteiro dos 5 passos">
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">1</strong>
+              <span>Construir a lista de livros por gênero com <kbd>Tab</kbd> (rebaixa) e <kbd>Shift</kbd> + <kbd>Tab</kbd> (promove).</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">2</strong>
+              <span>Alinhar preços com paradas de tabulação e pontos de preenchimento — sem tabelas e sem espaços.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">3</strong>
+              <span>Montar o Certificado de Conclusão em paisagem, com moldura de arte e assinaturas alinhadas.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">4</strong>
+              <span>Formatar o título do artigo e diagramar o texto em duas colunas com letra capitular.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">5</strong>
+              <span>Inserir a imagem com quebra justa e aplicar a marca d'água "Sistema Solar".</span>
+            </div>
+          </div>
+
+          <div style="margin-top:18px; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-radius:10px; padding:14px 16px;">
+            <div style="font-weight:800; color:var(--word-blue-dark); font-size:14px; margin-bottom:4px;">⚙️ FAIXA DE PREPARAÇÃO — antes da Fase 1</div>
+            <ol style="font-size:13.5px; color:#374151; line-height:1.7; margin:0; padding-left:20px;">
+              <li>Abra o <strong>Microsoft Word</strong> e comece um documento chamado <code>Listas_Aula09.docx</code>.</li>
+              <li>Digite o título <strong>Minhas Listas de Livros</strong> e separe cinco blocos por gênero: Ficção Científica, Fantasia, Suspense &amp; Mistério, Clássicos da Literatura e Desenvolvimento Pessoal.</li>
+              <li>Deixe espaço para mais dois projetos no mesmo arquivo: o <strong>Certificado de Conclusão</strong> e o artigo <strong>O Ciclo Solar</strong> (texto e imagem disponíveis no material da aula).</li>
+            </ol>
+          </div>
+
+          <div id="l9-checklist-status" style="margin-top:14px; font-size:14px; font-weight:700; color:var(--word-blue-dark);">▢ 0 / 5 Passos Concluídos</div>
+          <div id="l9-complete-hint" style="display:none; margin-top:8px; font-size:13.5px; font-weight:700; color:#15803D; background:#DCFCE7; border:1.5px solid #86EFAC; border-radius:8px; padding:10px 12px;">🎉 Todos os 5 passos concluídos — você concluiu a leitura e liberou o Exercício de Fixação!</div>
+
+          <div style="margin-top:20px; text-align:center;">
+            <button type="button" id="btn-start-l9" class="btn btn-primary" style="font-size:15px; padding:12px 28px;" onclick="switchTopicPhase(9, 1)">
+              ▶ ENTENDI! QUERO COMEÇAR A AULA ↓
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Abas de Tópicos da Aula 9 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-9-1" onclick="switchTopicPhase(9, 1)">1. Listas Multinível</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-2" onclick="switchTopicPhase(9, 2)">2. Tabulação &amp; Pontos</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-3" onclick="switchTopicPhase(9, 3)">3. Certificado</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-4" onclick="switchTopicPhase(9, 4)">4. 2 Colunas &amp; Capitular</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-5" onclick="switchTopicPhase(9, 5)">5. Imagem &amp; Marca d'Água</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-9-fix" onclick="openFixationPanel(9)" style="background:var(--amber-soft); color:var(--teal-deep); font-weight:700;">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             FASE 1: LISTAS MULTINÍVEL — TAB E SHIFT+TAB
+             =============================================================== -->
+        <section id="l9-phase-1" class="topic-phase-section active">
+          <h2>1. Listas Multinível — a Mágica do Tab e Shift+Tab</h2>
+          <p>
+            Uma <strong>lista multinível</strong> é uma lista com subtópicos alinhados internamente — por exemplo: <em>1. Informática → 1.1 Hardware → 1.1.1 Placa-Mãe</em>. O iniciante tenta simular isso com barra de espaço; o profissional usa os <strong>comandos de nível do Word</strong>, que numuram e alinham sozinhos.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: a hierarquia obedece ao teclado <span class="l5-demo-hint">#l9-list-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Controle dos níveis da lista">
+              <button type="button" class="l5-sim-btn" onclick="l9ListLevel('reset', this)">↺ Reiniciar lista</button>
+              <button type="button" class="l5-sim-btn" onclick="l9ListLevel('tab', this)">Tab → rebaixar nível</button>
+              <button type="button" class="l5-sim-btn" onclick="l9ListLevel('shift', this)">Shift + Tab → promover nível</button>
+            </div>
+            <div class="l5-stage" id="l9-list-stage">
+              <div class="l9-paper">
+                <div style="font-weight:800; text-align:center; font-size:13px; letter-spacing:1px; margin-bottom:6px;">📚 MINHAS LISTAS DE LIVROS</div>
+                <div id="l9-list-lines"></div>
+              </div>
+            </div>
+            <div class="l9-status" id="l9-list-status">▸ Comece com a lista simples e use as teclas para criar os subníveis — o Word troca o marcador e a numeração automaticamente.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⌨️ Como controlar os níveis com o teclado</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Digite o item do primeiro nível e pressione <kbd>Enter</kbd> para criar a próxima linha.</li>
+              <li>Pressione <kbd>Tab</kbd>: o Word recua o item e troca o marcador para o subnível (1.1, 1.1.1...).</li>
+              <li>Pressione <kbd>Shift</kbd> + <kbd>Tab</kbd>: o item volta um nível e reassume a numeração principal.</li>
+              <li>Os comandos também estão em <strong>Página Inicial &gt; Parágrafo &gt; Marcadores / Numeração / Lista de Vários Níveis</strong>.</li>
+            </ol>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">💬 O erro clássico da lista</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#78350F; line-height:1.8;">
+              <li><strong>Nunca use espaços</strong> para indentar: o espaço é texto morto, o comando de nível é estrutura.</li>
+              <li>Pressione <kbd>Tab</kbd> no <strong>início do item</strong>. No meio da palavra, o Word insere uma tabulação dentro do texto.</li>
+              <li>O material original pede cinco gêneros: Ficção Científica, Fantasia, Suspense &amp; Mistério, Clássicos da Literatura e Desenvolvimento Pessoal — gênero no nível 1, livro no nível 2.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 1 -->
+          <div class="phase-step-check" data-step="1" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l9-check-1" class="l9-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 1">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 1: LISTAS MULTINÍVEL</strong><br>
+              Construí uma lista hierárquica com os gêneros no nível 1 e os livros no nível 2, alternando os níveis com <kbd>Tab</kbd> e <kbd>Shift</kbd> + <kbd>Tab</kbd> — sem usar espaços.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 2 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que construí uma lista multinível com Tab e Shift+Tab.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-1" onclick="markTopicRead(9, 1)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 1)">← Voltar à Fase 0</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 2)">Ir para 2. Tabulação &amp; Pontos →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 2: TABULAÇÃO E PONTOS DE PREENCHIMENTO
+             =============================================================== -->
+        <section id="l9-phase-2" class="topic-phase-section">
+          <h2>2. Tabulação Profissional e Linhas Pontilhadas</h2>
+          <p>
+            O erro clássico: digitar o nome de um prato e apertar barra de espaço(dezenas de vezes) ou enfileirar pontinhos até o preço chegar perto da margem. Na primeira mudança de fonte, <strong>tudo desalinha</strong>. A solução é uma <strong>parada de tabulação com preenchimento pontilhado</strong>.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: espaços versus parada de tabulação <span class="l5-demo-hint">#l9-tab-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Modos de alinhamento">
+              <button type="button" class="l5-sim-btn" onclick="l9TabAlign('spaces', this)">❌ Espaços e pontinhos</button>
+              <button type="button" class="l5-sim-btn" onclick="l9TabAlign('tab', this)">✅ Parada de tabulação</button>
+            </div>
+            <div class="l5-stage" id="l9-tab-stage">
+              <div class="l9-paper">
+                <div style="font-weight:800; text-align:center; font-size:12px; margin-bottom:8px;">CARDÁPIO — comparação honesta</div>
+                <div class="l9-menu-bad" id="l9-menu-bad">
+                  <div>Pizza Margherita ............... R$ 59,90</div>
+                  <div>Lasanha a Bolonhesa ....... R$ 64,50</div>
+                  <div style="font-size:10.5px; margin-top:6px;">↑ Espaços proporcionais: cada fonte desalinha os preços.</div>
+                </div>
+                <div class="l9-menu-good" id="l9-menu-good">
+                  <div style="display:flex; align-items:baseline;"><span>Pizza Margherita</span><span class="l9-dots"></span><span class="l9-price">R$ 59,90</span></div>
+                  <div style="display:flex; align-items:baseline;"><span>Lasanha à Bolonhesa</span><span class="l9-dots"></span><span class="l9-price">R$ 64,50</span></div>
+                  <div style="display:flex; align-items:baseline;"><span>Salada Caesar</span><span class="l9-dots"></span><span class="l9-price">R$ 38,00</span></div>
+                  <div style="font-size:10.5px; margin-top:6px;">↑ Uma única Tab entre item e preço: os pontos são desenhados pelo Word.</div>
+                </div>
+              </div>
+            </div>
+            <div class="l9-status" id="l9-tab-status">▸ Ajuste a parada na régua e use uma única tecla Tab — o alinhamento é milimétrico e sobrevive a qualquer mudança de fonte.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Passo a passo: configurar a parada</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Selecione as linhas do cardápio (ou do formulário).</li>
+              <li>Na <strong>régua horizontal</strong>, dê <strong>duplo clique</strong> na posição desejada (ex.: 15 cm).</li>
+              <li>Na janela <strong>Tabulação</strong>, escolha <strong>Alinhamento à Direita</strong> e, em Preenchimento, marque o <strong>tipo 2 (pontilhado)</strong>.</li>
+              <li>Confirme com OK. Digite o item, pressione <kbd>Tab</kbd> <strong>uma vez</strong> e digite o preço.</li>
+              <li>Para ajustar depois: <strong>Página Inicial &gt; Parágrafo &gt; Tabulações</strong>.</li>
+            </ol>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 8px; font-size:16px;">✅ Por que não usar uma tabela?</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.8;">
+              <li>A tabulação não cria células, não adiciona bordas e acompanha o fluxo do texto.</li>
+              <li>É a ferramenta ideal para <strong>cardápios, índices, formulários e linhas de assinatura</strong>.</li>
+              <li>Teste rápido: aumente a fonte de 11 para 12. Se os preços continuarem alinhados, a parada está funcionando.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 2 -->
+          <div class="phase-step-check" data-step="2" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l9-check-2" class="l9-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 2">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 2: TABULAÇÃO COM PONTOS</strong><br>
+              Configurei paradas de tabulação com preenchimento pontilhado e alinhei preços com uma única tecla <kbd>Tab</kbd>, sem tabelas e sem espaços.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 3 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que alinhei valores com paradas de tabulação e pontos de preenchimento.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-2" onclick="markTopicRead(9, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 1)">← Voltar ao Tópico 1</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 3)">Ir para 3. Certificado →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 3: OFICINA DO CERTIFICADO DE CONCLUSÃO
+             =============================================================== -->
+        <section id="l9-phase-3" class="topic-phase-section">
+          <h2>3. Oficina: Certificado de Conclusão de Curso</h2>
+          <p>
+            Agora vamos montar o certificado do material original. <strong>A ordem importa</strong>: primeiro a folha, depois a moldura, depois o texto e, por fim, as assinaturas alinhadas com tabulação.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: montando o diploma passo a passo <span class="l5-demo-hint">#l9-cert-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Etapas do certificado">
+              <button type="button" class="l5-sim-btn" onclick="l9Cert('reset', this)">1️⃣ Retrato (antes)</button>
+              <button type="button" class="l5-sim-btn" onclick="l9Cert('landscape', this)">2️⃣ Paisagem + moldura</button>
+              <button type="button" class="l5-sim-btn" onclick="l9Cert('signatures', this)">3️⃣ Assinaturas</button>
+            </div>
+            <div class="l5-stage" id="l9-cert-stage">
+              <div class="l9-cert-sheet" id="l9-cert-sheet">
+                <div class="l9-cert-title">CERTIFICADO DE CONCLUSÃO</div>
+                <div class="l9-cert-lines">Certificamos que <strong>[NOME DO ALUNO]</strong> concluiu com êxito o curso<br>no dia 18 de novembro de 2026.</div>
+                <div class="l9-sign-row" id="l9-sign-row">
+                  <div class="l9-sign-line"><span>Prof. Marcos Rangel — Instrutor</span><span>Direção — WR Capacitação</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="l9-status" id="l9-cert-status">▸ Comece pela folha: Layout da Página &gt; Orientação &gt; Paisagem. Margens Estreitas (1,27 cm) para não cortar a moldura.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Anatomia do certificado">
+              <div class="word-card-table-header">
+                <div class="word-table-title">
+                  <span class="word-table-badge">GUARDAR NA CABEÇA</span>
+                  <h3>📜 Anatomia de um certificado profissional</h3>
+                </div>
+                <span class="word-table-hint">Layout da Página</span>
+              </div>
+              <div class="word-table-scroll">
+                <table class="word-modern-table">
+                  <thead><tr><th>Elemento</th><th>Configuração</th><th>Onde ajustar</th></tr></thead>
+                  <tbody>
+                    <tr class="highlight-blue"><td><strong>Folha</strong></td><td>Paisagem + margens Estreitas (1,27 cm)</td><td>Layout da Página</td></tr>
+                    <tr class="highlight-blue"><td><strong>Moldura</strong></td><td>Bordas da Página &gt; Arte</td><td>Design / Layout da Página</td></tr>
+                    <tr><td><strong>Título</strong></td><td>Fonte clássica (Monotype Corsiva / Times New Roman) 36 pt, centralizada</td><td>Página Inicial &gt; Fonte</td></tr>
+                    <tr><td><strong>Texto</strong></td><td>Caixa de texto sem preenchimento e sem contorno</td><td>Inserir &gt; Caixa de Texto</td></tr>
+                    <tr class="highlight-amber"><td><strong>Assinaturas</strong></td><td>Duas linhas com parada de tabulação</td><td>Régua &gt; Tabulação</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin:12px 0 0; font-size:13px; color:#64748B;">💡 Dica: salve uma cópia <strong>sem o nome do aluno</strong> como molde. Assim você reaproveita a diagramação para toda a turma.</p>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <div style="font-weight:700; color:var(--teal-deep); font-size:15px; margin-bottom:8px;">✅ Checklist de entrega do certificado</div>
+            <p style="margin:0; font-size:13.5px; color:#374151; line-height:1.8;">
+              Orientação paisagem ✔ | margens estreitas ✔ | moldura de arte ✔ | título 36 pt ✔ | caixa de texto invisível ✔ | assinaturas alinhadas ✔ | nome do homenageado digitado por último ✔
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 3 -->
+          <div class="phase-step-check" data-step="3" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l9-check-3" class="l9-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 3">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 3: CERTIFICADO DE CONCLUSÃO</strong><br>
+              Montei a estrutura completa do certificado em paisagem, com moldura de arte, título clássico e assinaturas alinhadas por tabulação.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 4 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que montei o certificado com moldura e assinaturas alinhadas.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-3" onclick="markTopicRead(9, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 2)">← Voltar ao Tópico 2</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 4)">Ir para 4. Colunas &amp; Capitular →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 4: DIAGRAMAÇÃO EM 2 COLUNAS E LETRA CAPITULAR
+             =============================================================== -->
+        <section id="l9-phase-4" class="topic-phase-section">
+          <h2>4. Diagramação Editorial: 2 Colunas e Letra Capitular</h2>
+          <p>
+            O projeto integrador usa o artigo <strong>"O ciclo solar, um pulsar de energia estelar"</strong>, divulgado pela <strong>ESA</strong> (Agência Espacial Europeia). O Sol segue um ritmo de aproximadamente <strong>11 anos</strong>: torna-se muito ativo (máximo solar), acalma-se (mínimo solar) e recomeça o ciclo.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: aplicando a diagramação editorial <span class="l5-demo-hint">#l9-layout-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Etapas da diagramação">
+              <button type="button" class="l5-sim-btn" onclick="l9Layout('title', this)">1️⃣ Título Impact 18</button>
+              <button type="button" class="l5-sim-btn" onclick="l9Layout('columns', this)">2️⃣ Duas colunas</button>
+              <button type="button" class="l5-sim-btn" onclick="l9Layout('dropcap', this)">3️⃣ Letra capitular</button>
+            </div>
+            <div class="l5-stage" id="l9-layout-stage">
+              <div class="l9-article" id="l9-article">
+                <div class="l9-watermark" id="l9-watermark-a">Sistema Solar</div>
+                <div class="l9-article-title" id="l9-article-title">O CICLO SOLAR, UM PULSAR DE ENERGIA ESTELAR</div>
+                <div class="l9-columns" id="l9-columns" style="display:none;">
+                  <div><span class="l9-dropcap" id="l9-dropcap" style="display:none;">O</span> Sol segue um ritmo de aproximadamente 11 anos, despertando e tornando-se muito ativo antes de se acalmar novamente — um ciclo estelar conhecido como ciclo solar.</div>
+                  <div>Os polos magnéticos tendem a trocar de lugar a cada 11 anos. A inversão ocorre no máximo solar e o campo se reorganiza até o mínimo solar, quando um novo ciclo se inicia.</div>
+                </div>
+                <div id="l9-layout-placeholder" style="text-align:center; color:#94A3B8; font-size:11.5px; padding:18px 0;">Clique nas etapas acima para montar a página do artigo.</div>
+              </div>
+            </div>
+            <div class="l9-status" id="l9-layout-status">▸ Aplique as etapas em ordem: primeiro o título, depois as colunas e por fim a letra capitular.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Passo a passo: formatar o artigo</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li><strong>Título:</strong> fonte <strong>Impact 18</strong>, negrito, sublinhado, centralizado e cor vermelha.</li>
+              <li><strong>Corpo:</strong> <strong>Verdana 12</strong>, justificado, espaçamento entre linhas de <strong>1,5</strong>.</li>
+              <li>Selecione os parágrafos &gt; <strong>Layout da Página &gt; Colunas &gt; Duas</strong> (com respiro central).</li>
+              <li>Clique no início do texto &gt; <strong>Inserir &gt; Letra Capitular &gt; No Texto</strong>.</li>
+              <li>Se quiser destacar o bloco, aplique <strong>Bordas</strong> simples ao redor do artigo.</li>
+            </ol>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">🖼️ O que diz o material original</h3>
+            <p style="margin:0; font-size:14px; color:#78350F; line-height:1.8;">
+              O roteiro pede expressamente: título centralizado em Impact 18, texto justificado em Verdana 12 com espaçamento 1,5, <strong>duas colunas</strong> e <strong>letra capitular</strong> na abertura. A capitular é aplicada <strong>apenas no primeiro parágrafo</strong> — repeti-la em todos os parágrafos é erro comum.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 4 -->
+          <div class="phase-step-check" data-step="4" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l9-check-4" class="l9-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 4">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 4: 2 COLUNAS E LETRA CAPITULAR</strong><br>
+              Formatei o título em Impact 18 vermelho e dividi o texto do artigo em duas colunas com letra capitular no parágrafo de abertura.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 5 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que formatei o título e a diagramação em duas colunas com capitular.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-4" onclick="markTopicRead(9, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 3)">← Voltar ao Tópico 3</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(9, 5)">Ir para 5. Imagem &amp; Marca d'Água →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 5: IMAGEM COM QUEBRA FLUIDA E MARCA D'ÁGUA
+             =============================================================== -->
+        <section id="l9-phase-5" class="topic-phase-section">
+          <h2>5. Imagem com Quebra Fluida e Marca d'Água</h2>
+          <p>
+            Falta o toque final. A imagem do <strong>campo magnético solar</strong> (ilustração da ESA) deve ser posicionada entre as duas colunas com <strong>quebra de texto Justa ou Quadrado</strong> — o texto contorna a figura dos dois lados. Depois, aplica-se a marca d'água personalizada <strong>"Sistema Solar"</strong>.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: finalizando o projeto <span class="l5-demo-hint">#l9-finish-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Quebra de texto e marca d'água">
+              <button type="button" class="l5-sim-btn" onclick="l9Finish('wrap', this)">🧲 Quebra Justa na imagem</button>
+              <button type="button" class="l5-sim-btn" onclick="l9Finish('watermark', this)">💧 Marca d'água "Sistema Solar"</button>
+            </div>
+            <div class="l5-stage" id="l9-finish-stage">
+              <div style="display:flex; gap:14px; align-items:flex-start; flex-wrap:wrap;">
+                <div style="flex:0 1 200px; text-align:center;">
+                  <img src="../../assets/img/word/Aula9/image2.png" alt="Campo magnético do Sol durante um mínimo solar (ESA)" style="max-width:100%; height:auto; border:1px solid #CBD5E1; border-radius:6px;">
+                  <div style="font-size:10px; color:#64748B; margin-top:4px;">Figura 1: campo magnético solar (ESA)</div>
+                </div>
+                <div style="flex:1 1 260px; font-size:12px; color:#334155; line-height:1.8; text-align:justify; min-width:0;">
+                  Assim como um ímã, o Sol possui polos norte e sul e linhas de campo magnético que se estendem muito além da estrela. A origem desse campo é o movimento constante de partículas eletricamente carregadas no interior do Sol.
+                </div>
+              </div>
+              <div class="l9-wrap-indicator" id="l9-wrap-indicator">✅ Quebra de texto <strong>Justa</strong> aplicada: o texto contorna o contorno da imagem sem sobrepor o campo magnético.</div>
+              <div class="l9-watermark" id="l9-watermark-final" style="display:none; position:relative; left:auto; top:auto; transform:rotate(-8deg); text-align:center; padding:16px 0;">Sistema Solar</div>
+            </div>
+            <div class="l9-status" id="l9-finish-status">▸ Selecione a imagem &gt; aba Formato da Imagem &gt; Quebra de Texto &gt; Justo (ou Quadrado). A marca d'água fica em Layout da Página &gt; Marca d'Água &gt; Personalizada.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Quebras de texto e marca d'água">
+              <div class="word-card-table-header">
+                <div class="word-table-title">
+                  <span class="word-table-badge">ÚLTIMOS DETALHES</span>
+                  <h3>🧭 Quebra de texto e marca d'água</h3>
+                </div>
+                <span class="word-table-hint">Formatar Imagem</span>
+              </div>
+              <div class="word-table-scroll">
+                <table class="word-modern-table">
+                  <thead><tr><th>Recurso</th><th>Opção</th><th>Efeito</th></tr></thead>
+                  <tbody>
+                    <tr class="highlight-blue"><td><strong>Quebra de texto</strong></td><td>Quadrado</td><td>O texto contorna o retângulo da imagem</td></tr>
+                    <tr class="highlight-blue"><td><strong>Quebra de texto</strong></td><td>Justo</td><td>O texto acompanha o contorno da figura — o mais fluido entre colunas</td></tr>
+                    <tr class="highlight-amber"><td><strong>Marca d'água</strong></td><td>Personalizada: "Sistema Solar"</td><td>Cinza semitransparente, disposta em diagonal</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin:12px 0 0; font-size:13px; color:#64748B;">💡 A marca d'água não deve atrapalhar a leitura: use cinza claro e mantenha o texto do artigo bem legível por cima.</p>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <div style="font-weight:700; color:var(--teal-deep); font-size:16px; margin-bottom:8px;">✅ Checklist de Auditoria da Aula 09 — antes de entregar</div>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.7;">
+              <li><strong>Lista:</strong> os cinco gêneros no nível 1 e os livros no nível 2 (com Tab/Shift+Tab, jamais espaços).</li>
+              <li><strong>Tabulação:</strong> um único Tab entre item e preço; linha pontilhada reta até a margem.</li>
+              <li><strong>Certificado:</strong> orientação paisagem e moldura visível em toda a borda da folha.</li>
+              <li><strong>Artigo:</strong> colunas com respiro central e capitular apenas no primeiro parágrafo.</li>
+              <li><strong>Imagem:</strong> quebra justa, sem sobrepor o texto; marca d'água discreta e legível.</li>
+              <li><strong>Sumário:</strong> atualizado com <kbd>F9</kbd> (Aula 08) na versão final que será entregue.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 5 -->
+          <div class="phase-step-check" data-step="5" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l9-check-5" class="l9-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 5">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 5: IMAGEM E MARCA D'ÁGUA</strong><br>
+              Posicionei a imagem com quebra de texto justa e apliquei a marca d'água "Sistema Solar" ao artigo do Ciclo Solar.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Exercício de Fixação →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que posicionei a imagem com quebra justa e apliquei a marca d'água.</span>
+            <button type="button" class="read-check-btn" id="check-read-9-5" onclick="markTopicRead(9, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(9, 4)">← Voltar ao Tópico 4</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(9)">Iniciar Exercício de Fixação (5 Perguntas) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 9 (5 QUESTÕES)
+             =============================================================== -->
+        <div id="fixation-panel-9" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="badge-word-blue" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--teal-deep); margin-top:6px; font-size:24px;">Exercício de Fixação — Aula 09 (Listas, Tabulação &amp; Certificados)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft); font-weight:700;">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-9" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-9">QUESTÃO 1 / 5</span>
+                <span id="q-points-9">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-9"></div>
+
+              <button class="hint-toggle" id="btn-hint-9" type="button" onclick="toggleHint(9)">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-9"></div>
+
+              <div class="options" id="options-9"></div>
+
+              <div class="nav-row">
+                <button type="button" class="btn btn-ghost" id="btn-prev-9" onclick="prevQuestionGen(9)">← Anterior</button>
+                <div style="font-size:12px; color:var(--ink-soft); font-weight:600;">✓ Salvo automaticamente</div>
+                <button type="button" class="btn btn-primary" id="btn-next-9" onclick="nextQuestionGen(9)">Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             PAINEL DE RESULTADO DO EXERCÍCIO DE FIXAÇÃO DA AULA 9
+             =============================================================== -->
+        <div id="result-panel-9" class="fixation-panel">
+          <div class="card-quiz" style="text-align:center;">
+            <div class="result-badge" id="result-badge-9" style="margin:0 auto 16px;"></div>
+            <h2 id="result-title-9" style="color:var(--teal-deep); margin-bottom:8px; font-size:28px;"></h2>
+            <p id="result-sub-9" style="color:var(--ink-soft); margin-bottom:20px; font-size:16px;"></p>
+
+            <div style="font-size:42px; font-weight:800; color:var(--teal); font-family:'Fraunces', serif; margin-bottom:12px;">
+              <span id="result-score-9">0,0</span> <span style="font-size:20px; color:var(--ink-soft); font-family:'Inter';">/ 10,0</span>
+            </div>
+
+            <div class="signature-badge-box">
+              <div style="font-weight:700; color:#F8FAFC; margin-bottom:4px;">🔐 Comprovante Digital de Conclusão da Aula 09</div>
+              <div style="font-size:11.5px; color:#94A3B8;">Código de Autenticidade (SHA-256):</div>
+              <div class="signature-code-display" id="signature-code-9">GERANDO ASSINATURA...</div>
+              <div style="font-size:11px; color:#94A3B8; margin-top:4px;">WR Capacitação Profissional • Instrutor Marcos Rangel</div>
+            </div>
+
+            <h3 style="text-align:left; font-size:18px; color:var(--teal-deep); margin-top:24px;">Gabarito Comentado</h3>
+            <div class="breakdown" id="breakdown-9"></div>
+
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+              <button class="btn btn-primary" id="btn-download-txt-9" type="button">📄 Baixar Comprovante Oficial (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-9" type="button" style="background:var(--amber);">📑 Baixar Apostila em PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-9" type="button" style="justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+                Enviar Resultado por WhatsApp
+              </button>
+              <button class="btn btn-ghost" id="btn-email-9" type="button">📧 Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-9">
+              <p style="font-size:14px; margin-bottom:12px; color:var(--ink-soft);">Clique abaixo para abrir seu aplicativo de e-mail com o comprovante pronto:</p>
+              <button class="btn btn-primary" id="btn-open-gmail-9" type="button" style="width:100%;">Abrir no Gmail</button>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:20px;">
+              <button type="button" class="btn btn-ghost" onclick="restartQuizGen(9)">↺ Recomeçar o exercício</button>
+              <button type="button" class="btn btn-primary" onclick="showScreen('screen-hub')">Voltar ao Menu de Aulas →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- ===================================================================
          TELAS DA AVALIAÇÃO FINAL DO MÓDULO (PRESERVADAS)
          =================================================================== -->
     <div class="quiz-app" id="screen-start-app" style="padding:0;">
@@ -7904,6 +8545,65 @@
       }
     ];
 
+    // QUESTÕES DA AULA 09 (5 QUESTÕES — LISTAS, TABULAÇÃO & CERTIFICADOS)
+    const QUESTIONS_LESSON_9 = [
+      {
+        q: "Em uma lista com marcadores ou numerada, qual tecla REBAIXA o item atual para um subnível mais interno?",
+        options: [
+          "Tecla Enter.",
+          "Tecla Tab.",
+          "Tecla Backspace.",
+          "Tecla CapsLock."
+        ],
+        correct: 1,
+        hint: "A tecla Tab avança a indentação no início do item para criar subitens hierárquicos."
+      },
+      {
+        q: "Qual combinação de teclas faz o item de uma lista RETORNAR para o nível hierárquico superior?",
+        options: [
+          "Ctrl + Tab",
+          "Shift + Tab",
+          "Alt + Tab",
+          "Ctrl + Shift + Enter"
+        ],
+        correct: 1,
+        hint: "O Shift inverte a direção natural do Tab, trazendo o item de volta para a esquerda."
+      },
+      {
+        q: "Para alinhar preços com linha pontilhada em um cardápio, sem usar tabelas, qual recurso devemos usar?",
+        options: [
+          "Barra de espaço segurada por vários segundos.",
+          "Paradas de Tabulação com preenchimento pontilhado.",
+          "Ferramentas de desenho do Paint.",
+          "WordArt de tamanho gigante."
+        ],
+        correct: 1,
+        hint: "A ferramenta de Tabulação preenche os espaços com linhas ou pontos matematicamente retos."
+      },
+      {
+        q: "Qual recurso transforma a primeira letra do parágrafo de abertura em uma letra grande ocupando várias linhas?",
+        options: [
+          "Marca-texto amarelo.",
+          "Letra Capitular (Drop Cap).",
+          "Sublinhado duplo.",
+          "Sobrescrito."
+        ],
+        correct: 1,
+        hint: "É a clássica 'Letra Capitular', usada na abertura de capítulos de livros e revistas."
+      },
+      {
+        q: "Em qual orientação de página deve ser montado um Certificado de Conclusão tradicional?",
+        options: [
+          "Orientação Retrato.",
+          "Orientação Paisagem.",
+          "Orientação Vertical Invertida.",
+          "Orientação Circular."
+        ],
+        correct: 1,
+        hint: "Paisagem coloca a folha deitada — formato tradicional de diplomas e certificados."
+      }
+    ];
+
     // QUESTÕES DA PROVA FINAL DO MÓDULO (10 QUESTÕES)
     const QUESTIONS_FINAL = [
       {
@@ -8105,8 +8805,8 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5 && lessonNum !== 6 && lessonNum !== 7 && lessonNum !== 8){
-        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 06, 07, 08 e a Prova Final estão liberadas no portal.`);
+      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5 && lessonNum !== 6 && lessonNum !== 7 && lessonNum !== 8 && lessonNum !== 9){
+        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 06, 07, 08, 09 e a Prova Final estão liberadas no portal.`);
         return;
       }
 
@@ -8137,7 +8837,8 @@
           5: "screen-lesson-5",
           6: "screen-lesson-6",
           7: "screen-lesson-7",
-          8: "screen-lesson-8"
+          8: "screen-lesson-8",
+          9: "screen-lesson-9"
         };
         if(routes[targetLessonNum]){
           const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
@@ -8945,10 +9646,160 @@
     };
 
     // ===================================================================
+    // SIMULADORES DA AULA 09 — LISTAS, TABULAÇÃO & CERTIFICADOS
+    // ===================================================================
+    const L9_LIST_INITIAL = [
+      { text: "1. Ficção Científica", level: 1 },
+      { text: "Duna — Frank Herbert", level: 2 },
+      { text: "2. Fantasia", level: 1 },
+      { text: "O Senhor dos Anéis — J.R.R. Tolkien", level: 2 },
+      { text: "3. Suspense & Mistério", level: 1 }
+    ];
+    let l9ListState = L9_LIST_INITIAL.map(function(item){ return Object.assign({}, item); });
+    let l9LayoutState = { title: false, columns: false, dropcap: false };
+
+    function l9RenderList(){
+      const box = document.getElementById("l9-list-lines");
+      if(!box) return;
+      box.innerHTML = l9ListState.map(function(item){
+        const cls = item.level === 3 ? "l9-level-3" : (item.level === 2 ? "l9-level-2" : "");
+        const prefix = item.level === 1 ? "<strong>" + item.text + "</strong>" : (item.level === 2 ? "• " + item.text : "– " + item.text);
+        return '<div class="l9-list-line ' + cls + '">' + prefix + "</div>";
+      }).join("");
+    }
+    l9RenderList();
+
+    window.l9ListLevel = function(mode, btn){
+      const status = document.getElementById("l9-list-status");
+      const last = l9ListState[l9ListState.length - 1];
+      if(mode === "reset"){
+        l9ListState = L9_LIST_INITIAL.map(function(item){ return Object.assign({}, item); });
+        if(status) status.textContent = "▸ Lista reiniciada: gêneros no nível 1, livros no nível 2. Agora experimente Tab e Shift+Tab.";
+      } else if(mode === "tab"){
+        if(last.level < 3){
+          last.level += 1;
+          if(status) status.textContent = "▸ Tab pressionado no início do item: '" + last.text + "' desceu para o nível " + last.level + ". O Word trocou o marcador e recuou o texto automaticamente.";
+        } else if(status){
+          status.textContent = "▸ Este item já está no nível 3 (o mais profundo deste exemplo). Para subir, use Shift+Tab.";
+        }
+      } else if(mode === "shift"){
+        if(last.level > 1){
+          last.level -= 1;
+          if(status) status.textContent = "▸ Shift+Tab pressionado: '" + last.text + "' subiu para o nível " + last.level + ". O item reassumiu a numeração/marcador do nível superior.";
+        } else if(status){
+          status.textContent = "▸ Este item já está no nível 1 — não há como promover além do topo da lista.";
+        }
+      }
+      l9RenderList();
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l9TabAlign = function(mode, btn){
+      const bad = document.getElementById("l9-menu-bad");
+      const good = document.getElementById("l9-menu-good");
+      const status = document.getElementById("l9-tab-status");
+      if(!bad || !good || !status) return;
+      if(mode === "tab"){
+        bad.style.display = "none";
+        good.style.display = "block";
+        status.textContent = "▸ Parada de tabulação aplicada: duplo clique na régua (15 cm), alinhamento à direita e preenchimento tipo 2. Um Tab por linha — os preços fecham na margem.";
+      } else {
+        bad.style.display = "block";
+        good.style.display = "none";
+        status.textContent = "▸ Com espaços e pontinhos digitados à mão, basta trocar a fonte para os preços desalinharem. Nunca faça isso em um trabalho profissional.";
+      }
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l9Cert = function(mode, btn){
+      const sheet = document.getElementById("l9-cert-sheet");
+      const signs = document.getElementById("l9-sign-row");
+      const status = document.getElementById("l9-cert-status");
+      if(!sheet || !signs || !status) return;
+      if(mode === "reset"){
+        sheet.classList.remove("l9-landscape");
+        signs.style.display = "none";
+        status.textContent = "▸ Retrato: formato comum de texto. Um certificado tradicional nunca fica de pé — mude para paisagem.";
+      } else if(mode === "landscape"){
+        sheet.classList.add("l9-landscape");
+        signs.style.display = "none";
+        status.textContent = "▸ Paisagem aplicada com moldura de arte (Bordas da Página) e margens estreitas de 1,27 cm. O diploma já está com o formato tradicional.";
+      } else {
+        sheet.classList.add("l9-landscape");
+        signs.style.display = "flex";
+        status.textContent = "▸ Assinaturas alinhadas com parada de tabulação: o nome do instrutor fica à esquerda e o cargo da direção à direita, na mesma linha.";
+      }
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l9Layout = function(mode, btn){
+      const article = document.getElementById("l9-article");
+      const columns = document.getElementById("l9-columns");
+      const dropcap = document.getElementById("l9-dropcap");
+      const title = document.getElementById("l9-article-title");
+      const placeholder = document.getElementById("l9-layout-placeholder");
+      const status = document.getElementById("l9-layout-status");
+      if(!article || !status) return;
+
+      if(mode === "title") l9LayoutState.title = true;
+      if(mode === "columns") l9LayoutState.columns = true;
+      if(mode === "dropcap") l9LayoutState.dropcap = true;
+
+      article.style.display = "block";
+      if(placeholder) placeholder.style.display = "none";
+      if(title && l9LayoutState.title) title.style.fontSize = "18px";
+      if(columns) columns.style.display = l9LayoutState.columns ? "flex" : "none";
+      if(dropcap) dropcap.style.display = l9LayoutState.dropcap ? "block" : "none";
+
+      if(mode === "title"){
+        status.textContent = "▸ Título formatado: Impact 18, negrito, sublinhado, centralizado e vermelho — exatamente como pede o material original.";
+      } else if(mode === "columns"){
+        status.textContent = "▸ Texto dividido em duas colunas com respiro central (Layout da Página > Colunas > Duas) e corpo Verdana 12 justificado.";
+      } else {
+        status.textContent = "▸ Letra Capitular aplicada apenas no primeiro parágrafo (Inserir > Letra Capitular > No Texto) — visual de publicação formal.";
+      }
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l9Finish = function(mode, btn){
+      const wrap = document.getElementById("l9-wrap-indicator");
+      const mark = document.getElementById("l9-watermark-final");
+      const status = document.getElementById("l9-finish-status");
+      if(mode === "wrap"){
+        if(wrap) wrap.style.display = "block";
+        if(status) status.textContent = "▸ Quebra de texto Justa aplicada: o texto contorna o contorno da imagem (campo magnético solar — ESA) sem sobrepor a figura.";
+      } else {
+        if(mark) mark.style.display = "block";
+        if(status) status.textContent = "▸ Marca d'água personalizada 'Sistema Solar' inserida em cinza semitransparente e diagonal (Layout da Página > Marca d'Água).";
+      }
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    // ===================================================================
     // MARCAR LEITURA & GAMIFICAÇÃO COM PERSISTÊNCIA (LOCALSTORAGE)
     // ===================================================================
-    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5, 6: 5, 7: 5, 8: 5 };
-    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true };
+    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5, 6: 5, 7: 5, 8: 5, 9: 5 };
+    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true };
     const READ_STORAGE_KEY = "word_lessons_reading_progress";
 
     let readTopics = {};
@@ -9063,9 +9914,9 @@
       }
     }
 
-    // Inicialização da Leitura (Aulas 1 a 8)
+    // Inicialização da Leitura (Aulas 1 a 9)
     loadReadTopics();
-    [1, 2, 3, 4, 5, 6, 7, 8].forEach(function(num){
+    [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function(num){
       captureReadLabels(num);
       bindCheckboxes(num);
       paintReadLesson(num);
@@ -9172,6 +10023,16 @@
         moduleId: "word_lesson_8_quiz",
         title: "Módulo 2 — Aula 08: Sumário Automático & Índices de Ilustrações",
         sig: "Módulo 2 - Aula 8 (Word)"
+      },
+      9: {
+        questions: QUESTIONS_LESSON_9,
+        name: "Aluno(a)",
+        answers: new Array(5).fill(null),
+        current: 0,
+        signature: null,
+        moduleId: "word_lesson_9_quiz",
+        title: "Módulo 2 — Aula 09: Oficina de Listas Multinível, Tabulação & Certificados",
+        sig: "Módulo 2 - Aula 9 (Word)"
       }
     };
 
@@ -9270,6 +10131,7 @@
       if(cfg.current > 0){
         cfg.current--;
         renderQuestionGen(lessonNum);
+        persistQuizGen(lessonNum);
       }
     };
 
@@ -9374,7 +10236,7 @@
     window.getReportDataGen = getReportDataGen;
 
     // Vincular botões de Comprovante (.txt), PDF, WhatsApp e E-mail dos Exercícios de Fixação
-    ;[1, 2, 3, 4, 5, 6, 7, 8].forEach(function(lessonNum){
+    ;[1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function(lessonNum){
       const btnTxt = document.getElementById(`btn-download-txt-${lessonNum}`);
       if(btnTxt){
         btnTxt.onclick = () => window.QuizEngine.downloadTxtReport(getReportDataGen(lessonNum));

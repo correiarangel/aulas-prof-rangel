@@ -1,6 +1,6 @@
 # 📘 SPEC-AULA-09-WORD — Especificação Técnica e Pedagógica da Aula 09 (Word)
 ### Módulo 2: Microsoft Word | Prof. Marcos Rangel — WR Capacitação Profissional
-### Status: 📝 ESPECIFICADA E PRONTA PARA IMPLEMENTAÇÃO
+### Status: 🟢 IMPLEMENTADA E VALIDADA (18/11/2026)
 
 ---
 
@@ -41,7 +41,7 @@
 | **Senha de Acesso** | `wi009` |
 | **Estrutura de Fases** | **FASE 0** (Tutorial com 5 passos e chips) + **5 Fases de Leitura** com checks distribuídos |
 | **Checks Distribuídos** | `l9-check-1` a `l9-check-5` (1 no fim de cada fase, nunca agrupados) |
-| **Progresso Gamificado** | `#gamify-fill-9`, `#gamify-label-9` (0% a 100%), `#gamify-badge-box-9` |
+| **Progresso Gamificado** | `#gamify-percent-9`, `#gamify-bar-9` (0% a 100%), `#gamify-badge-box-9` — padrão real do módulo (a spec original citava `#gamify-fill-9`/`#gamify-label-9`, nomes que não existem no HTML) |
 | **Persistência LocalStorage** | Leitura: `word_lesson_9_progress` \| Quiz: `word_lesson_9_quiz` |
 
 ---
@@ -139,12 +139,36 @@
 
 ## 📑 5. Especificação para a Apostila em PDF (`assets/js/pdf-lessons.js`)
 
-Seções com `lessonNum: 9`:
+Seções com `lessonNum: 9` (implementadas **6**, de 9.0 a 9.5 — todas com `sec.html` real renderizado em `<div class="pdf-html-illustration">`):
+- **Seção 9.0**: *O que vamos fazer / Como vamos fazer* — FASE 0 da apostila: objetivo + roteiro numerado dos 5 passos (checks distribuídos no portal).
 - **Seção 9.1**: *Engenharia de Listas: Marcadores, Numeração e Listas Multinível*
   - O guia definitivo das teclas `Tab` e `Shift+Tab`.
 - **Seção 9.2**: *Tabulação Avançada e Pontos de Preenchimento*
   - Ilustração HTML (`sec.html`): Modelo visual de linha de cardápio com item alinhado à esquerda, linha pontilhada guia e valor em R$ alinhado perfeitamente à direita.
 - **Seção 9.3**: *Projeto Prático: O Certificado de Conclusão de Curso*
   - Anatomia de um certificado profissional: moldura de arte, tipografia formal e blocos de assinatura.
+  - Imagem de arquivo: `../../assets/img/word/Aula9/image1.png` (538×384 — modelo de certificado extraído do material-base).
 - **Seção 9.4**: *Diagramação Científica: O Projeto Ciclo Solar*
   - Integração de 2 colunas, capitular, quebra de texto justa e marca d'água.
+  - Imagem de arquivo: `../../assets/img/word/Aula9/image2.png` (254×254 — campo magnético solar/ESA).
+- **Seção 9.5**: *Síntese e Checklist de Auditoria* — resumo dos 5 comandos + checklist final de entrega.
+
+---
+
+## ✅ 6. Implementação e Validação (18/11/2026)
+
+### 6.1 Arquivos alterados
+| Arquivo | Mudança |
+|:---|:---|
+| `modules/word/index.html` | Card liberado (`active-lesson` + `wi009`); `#screen-lesson-9` completo; CSS `.l9-*`; 5 simuladores `l9ListLevel`, `l9TabAlign`, `l9Cert`, `l9Layout`, `l9Finish`; `QUESTIONS_LESSON_9`; `QUIZ_CFG[9]`; rotas/`TOTAL_TOPICS`/`SEQUENTIAL_LESSONS`/loops de inicialização até 9; persistência de navegação (`prevQuestionGen` também chama `persistQuizGen`). |
+| `assets/js/pdf-lessons.js` | Bloco Word com 6 seções `lessonNum: 9` (9.0–9.5), ilustrações HTML reais e 2 imagens de arquivo. |
+| `assets/img/word/Aula9/image1.png`, `image2.png` | Imagens extraídas do material-base. |
+
+### 6.2 Validações executadas
+- `node --check assets/js/pdf-lessons.js` → OK.
+- Script inline do HTML extraído (107 KB) → `node --check` OK.
+- Estrutura: FASE 0, 5 fases, `l9-check-1..5`, `check-read-9-1..5`, painéis `fixation-panel-9`/`result-panel-9`, 6 abas, 6 seções PDF.
+- CDP (Chrome headless, viewport 1100 px): painéis com largura real (> 0); 5 simuladores globais presentes; quiz 5/5 com nota **10,0** (gabarito `[1,1,1,1,1]`); chave `word_lesson_9_quiz:aluno(a)` gravada com `answers 1,1,1,1,1`, restaurada após reload (QUESTÃO 5/5, 1 opção selecionada) e apagada por `restartQuizGen(9)`.
+- CDP (375 px): `.container` e `.lesson-reading-card` a 4 px da borda, largura 367/375; sem "efeito linguiça".
+- CDP popup PDF (`--disable-popup-blocking`): 9.0–9.5 presentes, 6 `.pdf-html-illustration`, 6 `.mini-sheet`, 2 imagens `Aula9/` carregadas (`naturalWidth` 538 e 254), avatar do professor carregado.
+- Auditoria de texto renderizado: zeros para `JSTOR`, "ainda não", "será anunciado", "a partir de 20" e conversões erradas de MB.

@@ -4268,6 +4268,137 @@ EXERCÍCIO PRÁTICO DA APOSTILA ORIGINAL: crie um documento com uma página de s
 • Entrega: sumário atualizado antes de imprimir ou enviar — nunca na versão final desatualizado.`,
           html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🖼️ Legenda + Índice de Ilustrações em 2 etapas</div><table class="mini-sheet"><tr><th>Etapa</th><th>Comando</th><th>Resultado</th></tr><tr><td>1. Etiquetar cada imagem</td><td>Clique na foto &gt; <strong>Referências &gt; Inserir Legenda</strong> &gt; tipo (Figura/Tabela) + nome</td><td>Numeração automática: Figura 1, Figura 2, Figura 3…</td></tr><tr><td>2. Gerar o índice</td><td>Cursor no local &gt; <strong>Referências &gt; Inserir Índice de Ilustrações</strong> &gt; tipo (Figuras ou Tabelas) &gt; OK</td><td>Lista separada com todas as figuras e suas páginas</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🖱️ Navegação pelo sumário</div><table class="mini-sheet"><tr><th>Ação</th><th>Teclas</th><th>Resultado</th></tr><tr><td>Ir ao capítulo</td><td><strong>Ctrl + Clique</strong> na linha do sumário</td><td>O Word leva você direto para aquela página</td></tr><tr><td>Voltar ao sumário</td><td><strong>Alt + ←</strong></td><td>Retorna ao ponto de origem</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🎨 Personalização do sumário (Referências &gt; Sumário &gt; Inserir Sumário)</div>
 <div style="font-size:11.5px; color:#334155; line-height:1.9;">• Quantos níveis aparecem (Título 1, 2 e 3)<br>• Alinhamento dos números de página<br>• Visual/formatos diferentes<br>• Confirme com <strong>OK</strong></div></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🧭 Resumo — quatro passos da aula</div><table class="mini-sheet"><tr><th>Passo</th><th>O que fazer</th></tr><tr><td>1 — Marcar títulos</td><td>Selecionar cada título e aplicar Título 1, Título 2 ou Título 3 nos Estilos</td></tr><tr><td>2 — Criar o sumário</td><td>Referências &gt; Sumário &gt; Sumário Automático 1</td></tr><tr><td>3 — Atualizar</td><td>Clicar no sumário &gt; Atualizar Sumário &gt; Atualizar o índice inteiro</td></tr><tr><td>4 — Antes de entregar</td><td>Sempre atualizar o sumário antes de imprimir ou enviar</td></tr></table></div><div class="fun-highlight"><strong>Hiperlink vivo:</strong> qualquer linha do sumário automático funciona como link — Ctrl + Clique navega, Alt + ← volta.</div>`
+        },
+        {
+          lessonNum: 9,
+          chapter: "AULA 09: OFICINA DE LISTAS MULTINÍVEL, TABULAÇÃO & CERTIFICADOS",
+          heading: "9.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo): sair da digitação simples e entregar três projetos editoriais completos no Word — uma lista hierárquica de livros, um Certificado de Conclusão de Curso e a diagramação final do artigo científico "O Ciclo Solar, um Pulsar de Energia Estelar" (texto da Agência Espacial Europeia — ESA).
+
+O material de origem desta aula reúne listas de livros por gênero (Ficção Científica, Fantasia, Suspense & Mistério, Clássicos e Desenvolvimento Pessoal), a oficina do certificado e o artigo do Ciclo Solar com suas especificações de diagramação.
+
+COMO VAMOS FAZER (o roteiro de 5 passos):
+1. Construir listas multinível alternando níveis com Tab (rebaixa) e Shift+Tab (promove).
+2. Alinhar preços e índices com paradas de tabulação e pontos de preenchimento automáticos — sem tabelas e sem espaços.
+3. Montar um Certificado de Conclusão em paisagem, com moldura de arte e assinaturas alinhadas.
+4. Diagramar o artigo "O Ciclo Solar" com título Impact 18, duas colunas e letra capitular.
+5. Posicionar a imagem do campo magnético com quebra justa e aplicar a marca d'água "Sistema Solar".
+
+Cada passo termina com um check no portal: marque-o somente depois de executar a instrução na sua própria cópia do documento.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🗺️ Roteiro da Aula 09 — cinco oficinas, um check em cada uma</div><table class="mini-sheet"><tr><th>Passo</th><th>Oficina</th><th>Recurso-chave</th></tr><tr><td>1</td><td>Listas de livros hierárquicas</td><td><strong>Tab</strong> / <strong>Shift+Tab</strong></td></tr><tr><td>2</td><td>Cardápio com preços alinhados</td><td>Tabulação com pontos</td></tr><tr><td>3</td><td>Certificado de Conclusão</td><td>Paisagem + borda de arte</td></tr><tr><td>4</td><td>Artigo "O Ciclo Solar"</td><td>2 colunas + capitular</td></tr><tr><td>5</td><td>Imagem justa + marca d'água</td><td>Quebra Justa / Sistema Solar</td></tr></table></div><div class="fun-highlight"><strong>Por que esta aula importa:</strong> é a oficina que transforma tudo o que você aprendeu sobre estilos, parágrafos e páginas em três entregas profissionais — uma lista organizada, um diploma e um artigo diagramado.</div>`
+        },
+        {
+          lessonNum: 9,
+          chapter: "AULA 09: OFICINA DE LISTAS MULTINÍVEL, TABULAÇÃO & CERTIFICADOS",
+          heading: "9.1 FASE 1 — Engenharia de Listas: Marcadores, Numeração e Multinível",
+          content: `Uma lista multinível é uma lista com subtópicos alinhados internamente. Em vez de digitar espaços para "fazer" hierarquia, você usa os controles reais do Word:
+
+COMO CONTROLAR OS NÍVEIS COM O TECLADO:
+1. Digite o item do primeiro nível e pressione Enter para criar a próxima linha.
+2. Pressione a tecla Tab: o Word recua o item e troca automaticamente o marcador/numeração para o subnível (1.1, 1.1.1...).
+3. Pressione Shift+Tab: o item volta um nível e reassume a numeração principal.
+4. Para criar vários níveis de uma vez, repita Tab antes de digitar o texto do item.
+
+ONDE ESTÃO OS COMANDOS: aba Página Inicial (Início) > grupo Parágrafo > botões Marcadores, Numeração e Lista de Vários Níveis. O botão da seta ao lado abre a galeria de modelos.
+
+EXERCÍCIO DO MATERIAL ORIGINAL: digite o título "Minhas Listas de Livros" e monte cinco blocos — Ficção Científica (Duna, Neuromancer, Fundação...), Fantasia (O Senhor dos Anéis, As Crônicas de Nárnia...), Suspense & Mistério (O Código Da Vinci, Garota Exemplar...), Clássicos da Literatura (Dom Quixote, Orgulho e Preconceito...) e Desenvolvimento Pessoal (Hábitos Atômicos, Como Fazer Amigos e Influenciar Pessoas...). Use Tab e Shift+Tab para transformar os títulos de gênero em nível 1 e os livros em nível 2.
+
+REGRA DE OURO: nunca use a barra de espaço para indentar uma lista. O espaço é texto morto; o comando de nível é uma estrutura que o Word reconhece e numera sozinho.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🌳 Árvore da lista multinível — o que Tab e Shift+Tab fazem</div><div style="padding:12px 14px; font-size:12px; line-height:1.8; color:#334155;"><div><strong>1. Ficção Científica</strong> <span style="color:#64748B;">(nível 1)</span></div><div style="margin-left:26px;">1.1 Duna — Frank Herbert <span style="color:#64748B;">(Tab → nível 2)</span></div><div style="margin-left:26px;">1.2 Neuromancer — William Gibson</div><div style="margin-left:52px;">1.2.1 Edição comemorativa <span style="color:#64748B;">(Tab outra vez → nível 3)</span></div><div style="margin-left:26px;">1.3 Fundação — Isaac Asimov <span style="color:#64748B;">(Shift+Tab → voltou ao nível 2)</span></div><div><strong>2. Fantasia</strong> <span style="color:#64748B;">(Shift+Tab → voltou ao nível 1)</span></div></div></div><div class="es-sheet-box"><div class="es-sheet-titlebar">⌨️ As duas teclas que governam a hierarquia</div><table class="mini-sheet"><tr><th>Tecla</th><th>Efeito</th><th>Resultado visual</th></tr><tr><td><strong>Tab</strong></td><td>Rebaixa o item para o subnível</td><td>O marcador muda e o texto entra para a direita</td></tr><tr><td><strong>Shift + Tab</strong></td><td>Promove o item para o nível superior</td><td>O texto volta para a esquerda e a numeração principal retorna</td></tr></table></div><div class="fun-highlight"><strong>Atenção:</strong> pressione Tab no <strong>início do item</strong>. Se o cursor estiver no meio do texto, o Word insere uma tabulação dentro da palavra em vez de mudar o nível.</div>`
+        },
+        {
+          lessonNum: 9,
+          chapter: "AULA 09: OFICINA DE LISTAS MULTINÍVEL, TABULAÇÃO & CERTIFICADOS",
+          heading: "9.2 FASE 2 — Tabulação Avançada e Pontos de Preenchimento",
+          content: `O erro clássico: digitar o nome de um prato, apertar barra de espaço dezenas de vezes (ou enfileirar pontinhos) até o preço chegar perto da margem direita. Na primeira mudança de fonte, tudo desalinha.
+
+A solução profissional é a parada de tabulação com preenchimento pontilhado:
+
+1. Selecione as linhas do cardápio (ou do índice/formulário).
+2. Na régua horizontal, clique DUAS VEZES na posição desejada da parada (ex.: 15 cm).
+3. Na janela Tabulação que abre, escolha Alinhamento à Direita e, em Preenchimento, marque o tipo 2 (pontilhado).
+4. Confirme com OK. Agora digite o item, pressione UMA VEZ a tecla Tab e digite o preço: o Word desenha a linha pontilhada perfeita até a margem.
+
+ONDE AJUSTAR DEPOIS: Página Inicial > grupo Parágrafo > botão Parágrafos (seta pequena) > botão Tabulações. Lá você altera a posição, o alinhamento e o tipo de preenchimento sem refazer o texto.
+
+VANTAGENS SOBRE UMA TABELA: a tabulação não cria células, não adiciona bordas e acompanha o fluxo do texto — ideal para cardápios, índices, formulários e linhas de assinatura do certificado da próxima fase.
+
+REGRA DE OURO: uma parada por coluna de informação. Nunca misture espaços e tabulações na mesma linha.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🍽️ Modelo visual — cardápio com preço alinhado à direita</div><div style="padding:14px; background:#F8FAFC; border-radius:8px; font-family:'Courier New', monospace; font-size:12.5px; color:#1E293B; line-height:2.1;"><div>Pizza Margherita<span style="border-bottom:2px dotted #94A3B8; display:inline-block; width:150px; margin:0 6px;"></span>R$ 59,90</div><div>Lasanha à Bolonhesa<span style="border-bottom:2px dotted #94A3B8; display:inline-block; width:128px; margin:0 6px;"></span>R$ 64,50</div><div>Salada Caesar<span style="border-bottom:2px dotted #94A3B8; display:inline-block; width:178px; margin:0 6px;"></span>R$ 38,00</div><div style="margin-top:6px; font-family:Arial, sans-serif; font-size:11px; color:#64748B;">Uma única Tab entre o nome e o preço — os pontos são desenhados pelo Word.</div></div></div><div class="es-sheet-box"><div class="es-sheet-titlebar">⚙️ Configurando a parada na régua</div><table class="mini-sheet"><tr><th>Ação</th><th>Configuração</th></tr><tr><td>1. Duplo clique na régua</td><td>Na posição desejada (ex.: 15 cm)</td></tr><tr><td>2. Alinhamento</td><td><strong>À Direita</strong> — o preço termina na parada</td></tr><tr><td>3. Preenchimento</td><td><strong>Tipo 2 (pontilhado)</strong></td></tr><tr><td>4. Uso</td><td>Digite o texto > <strong>Tab</strong> uma vez > digite o valor</td></tr></table></div><div class="fun-highlight"><strong>Teste rápido:</strong> aumente a fonte de 11 para 12. Se os preços continuarem alinhados, a parada de tabulação está funcionando — com espaços, tudo teria ficado torto.</div>`
+        },
+        {
+          lessonNum: 9,
+          chapter: "AULA 09: OFICINA DE LISTAS MULTINÍVEL, TABULAÇÃO & CERTIFICADOS",
+          heading: "9.3 FASE 3 — Projeto Prático: o Certificado de Conclusão de Curso",
+          content: `Agora vamos montar o certificado do material original do zero. A ordem dos passos importa: primeiro a folha, depois a moldura, depois o texto.
+
+PASSO A PASSO:
+1. Aba Layout da Página > Orientação > Paisagem. O diploma fica deitado, formato tradicional.
+2. Margens > Estreitas (1,27 cm nas quatro bordas) — aproveita a folha sem cortar a moldura.
+3. Aba Design (ou Layout da Página) > Bordas da Página > moldura elegante do menu Arte.
+4. Título principal: WordArt ou fonte clássica (Monotype Corsiva ou Times New Roman) tamanho 36, centralizado, com o nome do curso.
+5. Texto de certificação: caixa de texto sem preenchimento e sem contorno, para não criar uma "caixa" visível sobre a moldura.
+6. Rodapé: duas linhas de assinatura (Instrutor e Diretor) alinhadas com tabulação — o nome fica à esquerda e o cargo à direita, na mesma linha.
+
+CHECKLIST DE ENTREGA: orientação paisagem ✔ | margens estreitas ✔ | moldura de arte ✔ | título 36 ✔ | caixa de texto invisível ✔ | assinaturas alinhadas ✔ | nome do homenageado digitado por último ✔
+
+DICA: salve uma cópia sem o nome do aluno como modelo (molde). Assim você reaproveita o diploma para toda a turma sem refazer a diagramação.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">📜 Anatomia de um certificado profissional</div><table class="mini-sheet"><tr><th>Elemento</th><th>Configuração</th><th>Onde ajustar</th></tr><tr><td>Folha</td><td>Paisagem + margens Estreitas (1,27 cm)</td><td>Layout da Página</td></tr><tr><td>Moldura</td><td>Bordas da Página > Arte</td><td>Design / Layout da Página</td></tr><tr><td>Título</td><td>Fonte clássica 36 pt, centralizada</td><td>Página Inicial > Fonte</td></tr><tr><td>Texto</td><td>Caixa sem preenchimento e sem contorno</td><td>Inserir > Caixa de Texto</td></tr><tr><td>Assinaturas</td><td>Duas linhas com parada de tabulação</td><td>Régua > Tabulação</td></tr></table></div>`,
+          images: [
+            { src: "../../assets/img/word/Aula9/image1.png", caption: "Modelo de Certificado de Conclusão de Curso do material de origem: moldura decorativa, tipografia formal e blocos de assinatura." }
+          ]
+        },
+        {
+          lessonNum: 9,
+          chapter: "AULA 09: OFICINA DE LISTAS MULTINÍVEL, TABULAÇÃO & CERTIFICADOS",
+          heading: "9.4 FASE 4 e 5 — Diagramação Científica: o Projeto Ciclo Solar",
+          content: `O artigo "O ciclo solar, um pulsar de energia estelar" usa texto divulgado pela ESA (Agência Espacial Europeia). O Sol segue um ritmo de aproximadamente 11 anos: torna-se muito ativo (máximo solar), acalma-se (mínimo solar) e inicia um novo ciclo. Você vai diagramar esse texto aplicando tudo o que aprendeu.
+
+FORMATAÇÃO DO TÍTULO:
+• Alinhado ao centro, negrito e sublinhado.
+• Fonte Impact, tamanho 18, cor vermelha.
+
+FORMATAÇÃO DO TEXTO:
+• Justificado, fonte Verdana 12, espaçamento entre linhas de 1,5.
+• Letra Capitular na primeira letra do parágrafo de abertura (Inserir > Letra Capitular > No Texto).
+• Duas colunas com respiro central (Layout da Página > Colunas > Duas).
+• Bordas simples ao redor do bloco, se desejar destacar o artigo.
+
+IMAGEM COM QUEBRA FLUIDA:
+• Insira a imagem do campo magnético solar no meio do texto.
+• Em Quebra de Texto, escolha Quadrado ou Justo e posicione-a entre as duas colunas. O texto contorna a figura dos dois lados.
+
+MARCA D'ÁGUA:
+• Layout da Página > Marca d'Água > Marca d'Água Personalizada.
+• Texto: "Sistema Solar", cor cinza semitransparente, disposição diagonal.
+
+CHECKLIST FINAL DO PROJETO: título Impact 18 vermelho ✔ | Verdana 12 justificado 1,5 ✔ | capitular aplicada ✔ | duas colunas ✔ | imagem com quebra justa ✔ | marca d'água "Sistema Solar" ✔ | sumário do trabalho atualizado (Aula 08) antes de entregar ✔`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🗞️ Prévia da diagramação — 2 colunas, capitular e marca d'água</div><div style="padding:14px; background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px; position:relative; overflow:hidden;"><div style="position:absolute; left:50%; top:45%; transform:translate(-50%,-50%) rotate(-35deg); font-size:22px; color:rgba(148,163,184,0.35); font-weight:800; white-space:nowrap;">Sistema Solar</div><h4 style="text-align:center; color:#DC2626; font-family:Impact, sans-serif; font-weight:700; text-decoration:underline; font-size:17px; margin:0 0 10px;">O CICLO SOLAR, UM PULSAR DE ENERGIA ESTELAR</h4><div style="display:flex; gap:16px; position:relative;"><div style="flex:1; font-size:11px; line-height:1.6; text-align:justify; color:#334155;"><span style="float:left; font-size:36px; line-height:28px; padding:3px 7px 2px 0; font-weight:700; color:#B91C1C; font-family:'Times New Roman', serif;">O</span> Sol segue um ritmo de aproximadamente 11 anos, despertando e tornando-se muito ativo antes de se acalmar novamente — um ciclo estelar conhecido como ciclo solar.</div><div style="flex:1; font-size:11px; line-height:1.6; text-align:justify; color:#334155;">Os polos magnéticos tendem a trocar de lugar a cada 11 anos. A inversão ocorre no máximo solar e o campo se reorganiza até o mínimo solar, quando um novo ciclo se inicia.</div></div></div></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🧭 Quebra de texto da imagem</div><table class="mini-sheet"><tr><th>Opção</th><th>Efeito</th></tr><tr><td><strong>Quadrado</strong></td><td>O texto contorna o retângulo da imagem</td></tr><tr><td><strong>Justo</strong></td><td>O texto acompanha o contorno da figura — o mais fluido entre colunas</td></tr></table></div><div class="fun-highlight"><strong>Fato conferido:</strong> o ciclo solar dura cerca de 11 anos e a imagem do campo magnético é uma ilustração da ESA — a fonte está creditada no próprio material da aula.</div>`,
+          images: [
+            { src: "../../assets/img/word/Aula9/image2.png", caption: "O campo magnético do Sol durante um mínimo solar (ESA) — imagem usada no projeto do artigo, com quebra de texto justa entre as colunas." }
+          ]
+        },
+        {
+          lessonNum: 9,
+          chapter: "AULA 09: OFICINA DE LISTAS MULTINÍVEL, TABULAÇÃO & CERTIFICADOS",
+          heading: "9.5 Resumo da Aula — Quatro Ferramentas, Três Projetos",
+          content: `PARA FIXAR O APRENDIZADO:
+• Tab rebaixa o item da lista para um subnível; Shift+Tab promove de volta. Nunca use espaços para criar hierarquia.
+• Parada de tabulação com preenchimento pontilhado = alinhamento perfeito de preços, índices e assinaturas sem tabelas.
+• Certificado tradicional: paisagem, margens estreitas (1,27 cm), moldura de arte, título 36 e assinaturas alinhadas.
+• Diagramação editorial: título Impact 18 vermelho centralizado; corpo Verdana 12 justificado com 1,5; duas colunas; letra capitular.
+• Imagem entre colunas com quebra Justa ou Quadrado; marca d'água personalizada "Sistema Solar" em diagonal.
+
+✅ CHECKLIST DE AUDITORIA DA AULA 09 — antes de entregar:
+• Lista: os cinco gêneros estão no nível 1 e os livros no nível 2 (use Tab/Shift+Tab, não espaços).
+• Tabulação: um único Tab entre o item e o preço; linha pontilhada reta até a margem.
+• Certificado: orientação paisagem e moldura visível em toda a borda da folha.
+• Artigo: colunas com respiro central e capitular apenas no primeiro parágrafo.
+• Imagem: quebra justa, sem sobrepor o texto; marca d'água discreta e legível.
+• Sumário: atualizado com F9 (Aula 08) na versão final que será entregue.
+
+PRÓXIMO PASSO: na Aula 10 você vai estruturar uma pesquisa acadêmica completa seguindo as normas ABNT — capa, folha de rosto, sumário, citações e referências.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🧰 Caixa de ferramentas da Aula 09</div><table class="mini-sheet"><tr><th>Ferramenta</th><th>Comando / tecla</th><th>Uso no projeto</th></tr><tr><td>Lista multinível</td><td><strong>Tab</strong> / <strong>Shift+Tab</strong></td><td>Lista de livros por gênero</td></tr><tr><td>Tabulação</td><td>Duplo clique na régua > À Direita + pontos</td><td>Cardápio e assinaturas</td></tr><tr><td>Orientação</td><td>Layout da Página > Paisagem</td><td>Certificado</td></tr><tr><td>Colunas + Capitular</td><td>Layout da Página > Colunas · Inserir > Letra Capitular</td><td>Artigo Ciclo Solar</td></tr><tr><td>Quebra de texto</td><td>Quadrado / Justo</td><td>Imagem do campo magnético</td></tr><tr><td>Marca d'água</td><td>Personalizada > "Sistema Solar"</td><td>Artigo final</td></tr></table></div><div class="fun-highlight"><strong>Integração:</strong> a Aula 09 fecha o ciclo de formatação — listas, páginas, estilos, figuras e sumário (Aula 08) trabalham juntos na entrega final.</div>`
         }
       ]
     },
