@@ -36,9 +36,46 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL (18/11/2026) — Módulo 2: Microsoft Word — Aula 11 (Revisão Geral Integrada & Tabelas Profissionais)
+## ✅ SESSÃO ATUAL (18/11/2026) — Módulo 2: Microsoft Word — Aula 12 (Avaliação Final / Prova de Conhecimento Word 2010)
 
-Implementação completa da **Aula 11 do Módulo Word**, no molde exato das Aulas 09/10 (pedido do usuário: "veja o status atual você acabou de implementar aula nove segue para aula 10 nos mesmos padrões"). Spec `Docs/SPEC-AULA-11-WORD.md`. Senha `wk011`, FASE 0 tutorial com roteiro numerado de 5 passos, 5 fases com checks distribuídos, 6 simuladores, quiz persistente e apostila PDF com 4 seções ilustradas. ⚠️ **Nada foi commitado nesta sessão** — a Aula 09 está no commit `184d089` (fix `c35c0c1`); Aula 10 e Aula 11 seguem pendentes de commit, a pedido.
+A pedido do usuário ("commita e procede com aula 12 prova final"), o trabalho pendente das Aulas 10/11 foi commitado como **`047d7ab`** e a Avaliação Final foi recalibrada a partir do material-base `AulaOrigem/word/PROVA DE CONHECIMENTO – MICROSOFT WORD 2010,14-05-26/PROVADECONHECIMENTOMICROSOFTWORD2010140526.html`. ⚠️ **Nada desta sessão foi commitado** — `047d7ab` cobre exclusivamente Aulas 10/11 e seus docs.
+
+### 1. Decisões do usuário (esclarecidas antes da implementação)
+
+- O arquivo `AulaOrigem/word/Prova_Final_Windows 24_09_2026/` é uma **prova de Windows**. O formulário "Relatório de Configuração do Computador" (Nome do Usuário, Sistema Operacional, Processador, Memória RAM, Armazenamento Total) **não se aplica ao Word** e **não foi implementado**.
+- O envio do comprovante **continua idêntico às outras aulas**: TXT, WhatsApp, e-mail e assinatura SHA-256 via `QuizEngine` — nenhuma alteração nesse fluxo.
+- O banco de questões foi recriado com base na "PROVA DE CONHECIMENTO – MICROSOFT WORD 2010"; a Parte 1 (digitação ABNT) não é automatizável no quiz e seus requisitos aparecem nas questões 09, 13 e 14.
+
+### 2. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Banco da prova** | `modules/word/index.html` — `QUESTIONS_FINAL` | 15 questões: Q01–Q10 = Parte 2 do material; Q11–Q13 = dissertativas da Parte 3 convertidas em objetivas; Q14 (ABNT) e Q15 (tabelas) complementares. Gabarito **`[2,1,2,1,0,2,0,1,0,2,0,0,0,1,1]`**. Dicas pedagógicas reescritas. |
+| **Identificação Aula 12** | card do hub | `AULA 12 · AVALIAÇÃO FINAL` no card que abre `showScreen('screen-start')`. |
+| **Instruções iniciais** | `#screen-start` | Descrição alinhada ao novo banco (função/desenvolvedor, formatos, atalhos, guias, régua, quebras, visualização de impressão, PDF, ABNT e tabelas). |
+| **Retomada segura** | `FINAL_BANK_VERSION` | `bankVersion = "word2010-2026-11-18"` no estado; estados antigos (sem a versão) são descartados automaticamente em `checkResume` e no clique de retomada; ao iniciar, o estado é recriado se a versão divergir. |
+| **Recomeço da prova** | `#btn-restart-final` | Botão `↺ Recomeçar a avaliação` na tela de resultado: apaga `word_final_exam_state`, zera o estado em memória e volta à identificação — passo que a SPEC previa mas não estava implementado. |
+| **Comprovante** | `quiz-engine.js` + handlers | Intacto: `saveState`/`loadState`, `generateDigitalSignature` (SHA-256), `downloadTxtReport`, WhatsApp e Gmail. |
+| **SPEC** | `Docs/SPEC-PROVA-FINAL-WORD.md` | §3 reescrita com as 15 questões, origem e gabarito consolidado; §2 registra a versão do banco; status atualizado. |
+
+### 3. Validações (todas passaram)
+
+- `node --check assets/js/pdf-lessons.js` OK; script inline do HTML OK (1 script, 0 erros).
+- 796 IDs sem duplicatas; `btn-restart-final` presente; 15 questões com 4 alternativas e gabarito conferido.
+- **Nenhum** campo do formulário de Windows no módulo Word (grep por "Relatório de Configuração", "Memória RAM", "Sistema Operacional" etc.).
+- Auditoria de conteúdo (regra 12): sem `Ctrl+Q`, `JSTOR`, datas vencidas, erros de unidade ou artefatos de geração.
+- ⚠️ Bateria CDP em navegador **não executada** (sem Playwright/Puppeteer no ambiente).
+
+### 4. Próximos passos
+
+- Bateria CDP: iniciar prova, 15/15, nota 10,0, SHA-256, retomada, botão de recomeço e mobile 375 px.
+- Commitar a Aula 12 somente quando o usuário pedir.
+
+---
+
+## ✅ SESSÃO ANTERIOR (18/11/2026) — Módulo 2: Microsoft Word — Aula 11 (Revisão Geral Integrada & Tabelas Profissionais)
+
+Implementação completa da **Aula 11 do Módulo Word**, no molde exato das Aulas 09/10 (pedido do usuário: "veja o status atual você acabou de implementar aula nove segue para aula 10 nos mesmos padrões"). Spec `Docs/SPEC-AULA-11-WORD.md`. Senha `wk011`, FASE 0 tutorial com roteiro numerado de 5 passos, 5 fases com checks distribuídos, 6 simuladores, quiz persistente e apostila PDF com 4 seções ilustradas. ✅ **Commitada em `047d7ab`** na sessão seguinte (junto com a Aula 10), a pedido do usuário.
 
 ### 1. O que foi entregue
 
@@ -68,7 +105,7 @@ Implementação completa da **Aula 11 do Módulo Word**, no molde exato das Aula
 ### 4. Próximos passos
 
 - Bateria CDP em navegador (modal `wk011`, checks 0→100%, simuladores, nota 10,0, popup do PDF, mobile 375 px) — não executada: ambiente sem Playwright/Puppeteer.
-- Commitar Aula 10 + Aula 11 somente quando o usuário pedir.
+- ✅ Aula 10 + Aula 11 commitadas em `047d7ab` na sessão da Aula 12.
 
 ---
 

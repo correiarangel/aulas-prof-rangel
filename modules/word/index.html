@@ -1730,7 +1730,7 @@
           <!-- AVALIAÇÃO FINAL DO MÓDULO WORD -->
           <div class="lesson-card-item" onclick="showScreen('screen-start')" style="border-color:var(--amber); background:linear-gradient(135deg, rgba(37,99,235,0.15), var(--card-brown));">
             <div style="display:flex; flex-direction:column;">
-              <span class="lesson-num" style="color:var(--amber);">AVALIAÇÃO FINAL</span>
+              <span class="lesson-num" style="color:var(--amber);">AULA 12 · AVALIAÇÃO FINAL</span>
               <span class="lesson-name">📝 Prova Final do Módulo Word</span>
               <span style="font-size:12px; color:var(--amber); font-weight:700; margin-top:4px;">🔓 Prova Liberada (Simulado & Certificação)</span>
             </div>
@@ -9154,7 +9154,7 @@
           <div class="eyebrow-badge"><span class="dot"></span> Avaliação Somativa Oficial</div>
           <h1>Módulo 2 — Microsoft Word</h1>
           <p style="color:var(--ink-soft); margin-bottom:18px;">
-            Esta avaliação contém 15 questões abrangentes sobre o Microsoft Word: interface, régua e recuos, normas ABNT, alinhamentos, imagens e bordas, estilos, quebras de página e seção, revisão colaborativa e tabelas. Nota mínima para aprovação e emissão de certificado: <strong>7,0</strong>.
+            Esta avaliação contém 15 questões objetivas baseadas na Prova de Conhecimento do Microsoft Word 2010: função e desenvolvedor do programa, formatos de arquivo, atalhos essenciais, guias da Faixa de Opções, régua e recuos, quebras de página, visualização de impressão, seleção e inserção de recursos, exportação em PDF, normas ABNT e tabelas. Nota mínima para aprovação e emissão de comprovante: <strong>7,0</strong>.
           </p>
 
           <!-- PDF Lesson Download & Checkbox Requirement -->
@@ -9239,6 +9239,7 @@
               Enviar Resultado por WhatsApp
             </button>
             <button class="btn btn-ghost" id="btn-email" type="button">📧 Enviar por E-mail</button>
+            <button class="btn btn-ghost" id="btn-restart-final" type="button">↺ Recomeçar a avaliação</button>
             <button class="btn btn-ghost" type="button" onclick="showScreen('screen-hub')" style="margin-top:8px;">← Voltar ao Menu do Módulo</button>
           </div>
 
@@ -9942,166 +9943,151 @@
     ];
 
     // QUESTÕES DA PROVA FINAL DO MÓDULO (10 QUESTÕES)
+    // Banco oficial da Avaliação Final, calibrado a partir do material-base
+    // "PROVA DE CONHECIMENTO – MICROSOFT WORD 2010,14-05-26":
+    // Q01-Q10 = Parte 2 (múltipla escolha); Q11-Q13 = Parte 3 (dissertativas
+    // convertidas para objetivas); Q14-Q15 = complementos de ABNT e tabelas
+    // (Parte 1 e fechamento do curso). Gabarito: [2,1,2,1,0,2,0,1,0,2,0,0,0,1,1].
     const QUESTIONS_FINAL = [
       {
-        q: "Qual é a combinação de teclas do teclado utilizada para SALVAR o documento atual no Microsoft Word?",
-        options: ["Ctrl + S", "Ctrl + B", "Ctrl + P", "Ctrl + A"],
+        q: "Qual é a principal função do Microsoft Word?",
+        options: [
+          "Criar planilhas de cálculo.",
+          "Editar imagens bitmap.",
+          "Produzir documentos de texto.",
+          "Navegar na internet."
+        ],
+        correct: 2,
+        hint: "O Word é um processador de textos: sua função é produzir, formatar e editar documentos de texto. Planilhas são do Excel."
+      },
+      {
+        q: "Qual empresa desenvolveu o programa Microsoft Word?",
+        options: ["Google", "Microsoft", "Oracle", "Corel"],
+        correct: 1,
+        hint: "O Word faz parte do pacote Microsoft Office, criado e mantido pela Microsoft."
+      },
+      {
+        q: "Qual é o formato de arquivo padrão utilizado pelo Word 2010 para salvar documentos?",
+        options: [".xls", ".ppt", ".docx", ".html"],
+        correct: 2,
+        hint: "Desde o Word 2007 o padrão é .docx (compactado, baseado em XML). .xls é do Excel e .ppt é do PowerPoint."
+      },
+      {
+        q: "Qual opção deve ser usada ao gravar um documento pela primeira vez?",
+        options: ["Fechar", "Salvar", "Visualizar Impressão", "Copiar"],
+        correct: 1,
+        hint: "Na primeira gravação, use Salvar (Ctrl+S) para escolher nome, formato e local do arquivo."
+      },
+      {
+        q: "O que o atalho Ctrl + Z realiza no Word?",
+        options: [
+          "Reverte a última ação.",
+          "Abre um novo documento.",
+          "Imprime o arquivo.",
+          "Cola um texto."
+        ],
         correct: 0,
-        hint: "Ctrl + S salva em qualquer idioma. Ctrl + B aplica Negrito (Bold) e Ctrl + A seleciona tudo (All)."
+        hint: "Ctrl+Z é Desfazer: volta uma ação por vez. Ctrl+Y é Refazer e Ctrl+V é Colar."
       },
       {
-        q: "Na régua horizontal do Word, qual marcador é responsável EXCLUSIVAMENTE por recuar a primeira linha de cada parágrafo?",
+        q: "Em qual guia da Faixa de Opções podemos alterar a orientação da página entre Retrato e Paisagem?",
+        options: ["Inserir", "Revisão", "Layout da Página", "Exibição"],
+        correct: 2,
+        hint: "A guia Layout da Página reúne Margens, Orientação, Tamanho, Colunas e Quebras."
+      },
+      {
+        q: "Para modificar a cor das letras de um texto selecionado, qual guia deve ser utilizada?",
         options: [
-          "O retângulo inferior na base da régua.",
-          "O triângulo superior apontado para baixo.",
-          "O triângulo inferior apontado para cima.",
-          "O marcador circular da margem direita."
+          "Página Inicial",
+          "Correspondências",
+          "Referências",
+          "Exibição"
+        ],
+        correct: 0,
+        hint: "A guia Página Inicial concentra fonte, tamanho, negrito, cor da fonte, alinhamentos e estilos."
+      },
+      {
+        q: "Como adicionar uma nova quebra de página no Word 2010?",
+        options: [
+          "Usando Ctrl + N.",
+          "Escolhendo 'Quebras' na guia Layout da Página.",
+          "Clicando em Salvar.",
+          "Acessando a guia Revisão."
         ],
         correct: 1,
-        hint: "O triângulo superior com a ponta voltada para baixo comanda exclusivamente a primeira linha do parágrafo."
+        hint: "Em Layout da Página > Quebras > Página. O atalho direto é Ctrl+Enter; Ctrl+N cria um documento novo."
       },
       {
-        q: "Segundo a norma da Associação Brasileira de Normas Técnicas (ABNT), quais devem ser as medidas padrão das margens de uma folha A4 para trabalhos acadêmicos?",
+        q: "Qual é a utilidade da régua exibida no Word?",
         options: [
-          "Superior 2 cm, Esquerda 2 cm, Inferior 3 cm e Direita 3 cm.",
-          "Superior 3 cm, Esquerda 3 cm, Inferior 2 cm e Direita 2 cm.",
-          "Todas as quatro margens com exatamente 2,5 cm.",
-          "Superior 4 cm, Esquerda 3 cm, Inferior 3 cm e Direita 2 cm."
+          "Ajustar margens e recuos.",
+          "Inserir figuras.",
+          "Alterar o idioma do texto.",
+          "Exibir comentários."
         ],
-        correct: 1,
-        hint: "Lembre-se da regra '3-3-2-2': as margens esquerda e superior recebem 3 cm para dar espaço à encadernação e perfuração da folha."
+        correct: 0,
+        hint: "A régua horizontal mostra margens, recuos de primeira linha, recuo esquerdo e paradas de tabulação."
       },
       {
-        q: "Qual das alternativas abaixo apresenta a configuração de tipografia e parágrafo exigida pela ABNT para o corpo do texto de um trabalho acadêmico?",
+        q: "Para que serve a visualização de impressão no Word?",
+        options: [
+          "Corrigir ortografia.",
+          "Inserir tabelas.",
+          "Mostrar como o documento ficará impresso.",
+          "Alterar o tamanho da folha."
+        ],
+        correct: 2,
+        hint: "A Visualização de Impressão mostra a paginação final exatamente como sairá na impressora antes de imprimir."
+      },
+      {
+        q: "Qual atalho de teclado seleciona todo o texto de um documento no Word?",
+        options: ["Ctrl + A", "Ctrl + C", "Ctrl + V", "Ctrl + X"],
+        correct: 0,
+        hint: "Ctrl+A seleciona tudo (All). Depois é possível copiar (Ctrl+C), recortar (Ctrl+X) ou colar (Ctrl+V)."
+      },
+      {
+        q: "Quais recursos estão disponíveis na guia 'Inserir' do Word?",
+        options: [
+          "Tabela, Imagem e Cabeçalho e Rodapé.",
+          "Negrito, Itálico e Sublinhado.",
+          "Margens, Orientação e Colunas.",
+          "Sumário Automático, Legenda e Notas de Rodapé."
+        ],
+        correct: 0,
+        hint: "A guia Inserir adiciona objetos ao documento: tabelas, imagens, formas, cabeçalho/rodapé, números de página e quebras."
+      },
+      {
+        q: "Como salvar ou imprimir um documento no formato PDF diretamente pelo Word 2010?",
+        options: [
+          "Arquivo > Salvar como > tipo PDF (ou Imprimir > Microsoft Print to PDF).",
+          "Copiar o texto e colar no Paint.",
+          "Renomear o arquivo .docx para .pdf.",
+          "Apertar Ctrl+P e escolher a opção 'Imagem'."
+        ],
+        correct: 0,
+        hint: "Em Arquivo > Salvar como, escolha o tipo PDF; alternativamente, use Imprimir > Microsoft Print to PDF. Renomear a extensão não converte o arquivo."
+      },
+      {
+        q: "Qual configuração de parágrafo atende às normas ABNT para o corpo de um trabalho acadêmico?",
         options: [
           "Fonte Comic Sans 14, alinhamento centralizado e espaçamento simples.",
-          "Fonte Arial ou Times New Roman tamanho 12, alinhamento Justificado, espaçamento entre linhas de 1,5 e recuo de 1,25 cm na primeira linha.",
-          "Fonte Calibri 11, alinhamento à esquerda, espaçamento duplo e sem recuo.",
+          "Fonte Arial ou Times New Roman 12, justificado, entrelinha 1,5 e recuo de 1,25 cm na primeira linha.",
+          "Fonte Calibri 11, alinhamento à esquerda e espaçamento duplo.",
           "Fonte Courier New 10, alinhamento à direita e espaçamento triplo."
         ],
         correct: 1,
-        hint: "A ABNT exige seriedade: Arial ou Times New Roman tamanho 12, texto justificado (Ctrl+J), entrelinhas 1,5 e recuo de 1,25 cm."
+        hint: "A ABNT pede Arial/Times New Roman 12, texto justificado (Ctrl+J), entrelinha 1,5 e recuo de 1,25 cm na primeira linha."
       },
       {
-        q: "Qual alinhamento de texto faz com que as margens esquerda e direita do parágrafo fiquem perfeitamente retas e alinhadas simultaneamente?",
-        options: [
-          "Alinhar à Esquerda (Ctrl + L).",
-          "Centralizar (Ctrl + E).",
-          "Alinhar à Direita (Ctrl + R).",
-          "Justificar (Ctrl + J)."
-        ],
-        correct: 3,
-        hint: "O alinhamento justificado distribui o espaçamento entre as palavras para que o texto forme um bloco reto nas duas laterais."
-      },
-      {
-        q: "Qual é o método profissional e correto no Word para distanciar dois parágrafos sem precisar pressionar a tecla Enter repetidas vezes?",
-        options: [
-          "Ajustar o valor do campo 'Espaçamento Depois' (medido em pontos - pt) na janela de Parágrafo.",
-          "Aumentar o tamanho da fonte para 72 no final da frase.",
-          "Desenhar uma linha invisível do Paint entre os parágrafos.",
-          "Segurar a barra de espaço até pular de linha."
-        ],
-        correct: 0,
-        hint: "O espaçamento 'Depois' em pontos (ex: 6 pt ou 12 pt) afasta os parágrafos com precisão milimétrica sem criar linhas em branco."
-      },
-      {
-        q: "Ao inserir uma imagem no Word, ela frequentemente impede a movimentação livre do cursor. Qual opção de 'Quebra Automática de Texto' deve ser selecionada para que a imagem possa ser arrastada e o texto flua ao redor de suas bordas?",
-        options: [
-          "Alinhado com o texto.",
-          "Quadrado (ou Justo).",
-          "Ocultar texto.",
-          "Enviar para trás da tela."
-        ],
-        correct: 1,
-        hint: "A opção Quadrado ou Justo liberta a imagem da trava de linha, fazendo o texto contorná-la suavemente."
-      },
-      {
-        q: "Em qual ferramenta da caixa de diálogo 'Bordas e Sombreamento' o usuário pode escolher molduras ilustradas prontas (como estrelas, fitas ou temas decorativos) para criar um certificado?",
-        options: [
-          "No menu suspenso 'Arte'.",
-          "No controle de brilho da imagem.",
-          "No botão de verificação ortográfica.",
-          "Na régua de tabulação decimal."
-        ],
-        correct: 0,
-        hint: "O campo 'Arte' na aba Bordas da Página oferece dezenas de molduras gráficas decorativas."
-      },
-      {
-        q: "Se um documento de 80 páginas possui todos os títulos formatados com o estilo nativo 'Título 1' e o orientador solicitar a mudança da cor dos títulos de azul para preto, qual é a forma mais rápida e profissional de realizar a alteração?",
-        options: [
-          "Percorrer as 80 páginas selecionando cada título individualmente para trocar a cor.",
-          "Clicar com o botão direito sobre o estilo 'Título 1' na Galeria de Estilos, escolher 'Modificar', alterar a cor para preto e salvar.",
-          "Excluir todos os títulos e digitá-los novamente.",
-          "Aplicar uma marca d'água preta sobre a folha."
-        ],
-        correct: 1,
-        hint: "Modificar o estilo atualiza todos os títulos vinculados a ele instantaneamente em uma fração de segundo."
-      },
-      {
-        q: "Qual ação deve ser executada no botão do Pincel de Formatação para que ele permaneça 'travado/ativo', permitindo copiar o formato para múltiplos trechos de texto sem desativar após o primeiro clique?",
-        options: [
-          "Clicar com o botão direito do mouse.",
-          "Dar um clique duplo (dois cliques rápidos) sobre o ícone do Pincel.",
-          "Segurar a tecla Enter enquanto clica no pincel.",
-          "Arrastar o pincel para a lixeira do Windows."
-        ],
-        correct: 1,
-        hint: "Dois cliques no pincel travam a ferramenta. Para destravar após o uso, basta pressionar a tecla Esc."
-      },
-      {
-        q: "Para criar um documento onde a página 3 esteja na orientação Paisagem (horizontal), enquanto as páginas 1, 2 e 4 permanecem na orientação Retrato (vertical), qual recurso estrutural é OBRIGATÓRIO utilizar?",
-        options: [
-          "Quebra de Página simples (Ctrl + Enter).",
-          "Quebra de Seção do tipo 'Próxima Página'.",
-          "Diminuir o zoom para 10%.",
-          "Inserir uma caixa de texto gigante."
-        ],
-        correct: 1,
-        hint: "A Quebra de Seção cria um novo compartimento independente no arquivo, permitindo trocar a orientação da página sem afetar o restante."
-      },
-      {
-        q: "Na elaboração de um Trabalho de Conclusão de Curso (TCC), a Capa e o Sumário não devem exibir numeração de página impressa, mas a numeração deve começar na Introdução. Como isso é tecnicamente viabilizado no Word?",
-        options: [
-          "Colocando um corretivo branco sobre a tela do monitor.",
-          "Inserindo uma Quebra de Seção antes da Introdução e desativando o botão 'Vincular ao Anterior' no cabeçalho da nova seção.",
-          "Apagando o número de todas as páginas ao mesmo tempo.",
-          "Criando arquivos de texto separados no Bloco de Notas."
-        ],
-        correct: 1,
-        hint: "Desativar o botão 'Vincular ao Anterior' quebra o cordão umbilical entre as seções, permitindo que a Introdução tenha cabeçalho próprio."
-      },
-      {
-        q: "Durante a revisão de um contrato no Word, o que acontece com uma palavra excluída quando o recurso 'Controlar Alterações' (Track Changes) está ATIVADO?",
-        options: [
-          "A palavra desaparece do documento imediatamente sem deixar vestígios.",
-          "A palavra permanece visível, mas fica riscada no meio (com efeito tachado) e em cor destacada para aprovação posterior.",
-          "O Word fecha o arquivo e pede uma senha de administrador.",
-          "A palavra é enviada automaticamente para a impressora."
-        ],
-        correct: 1,
-        hint: "O controle de alterações mantém o texto apagado riscado em vermelho até que o revisor clique em 'Aceitar' ou 'Rejeitar'."
-      },
-      {
-        q: "O que faz com que o comando 'Sumário Automático' da guia Referências consiga identificar perfeitamente os títulos e as respectivas páginas do trabalho?",
-        options: [
-          "A quantidade de pontos digitados manualmente entre o título e o número.",
-          "A aplicação prévia dos Estilos 'Título 1', 'Título 2' e 'Título 3' nos títulos do documento.",
-          "A cor da fonte do texto.",
-          "O tamanho das imagens inseridas na capa."
-        ],
-        correct: 1,
-        hint: "O sumário automático depende 100% da leitura dos estilos de título aplicados na estrutura do trabalho."
-      },
-      {
-        q: "Em uma tabela comercial de orçamento criada no Word, qual é o alinhamento de texto recomendado para a coluna que contém os valores e preços em Reais (R$)?",
+        q: "Em uma tabela comercial de orçamento, qual é o alinhamento recomendado para a coluna de valores em Reais (R$)?",
         options: [
           "Alinhar à Esquerda.",
           "Alinhar à Direita.",
           "Justificado.",
-          "Letra Capitular."
+          "Centralizado."
         ],
         correct: 1,
-        hint: "Alinhar à direita faz com que as casas decimais (centavos) fiquem rigorosamente alinhadas na mesma linha vertical, facilitando a leitura de valores."
+        hint: "Alinhar à direita deixa as casas decimais na mesma coluna vertical, facilitando a comparação dos valores."
       }
     ];
 
@@ -11937,13 +11923,17 @@
     const FINAL_TOTAL = QUESTIONS_FINAL.length;
     const FINAL_POINTS = 10.0 / FINAL_TOTAL;
     const FINAL_STORAGE = "word_final_exam_state";
+    // Identifica o banco de questoes vigente. Um estado salvo com outra versao
+    // nao pode ser retomado: as respostas apontariam para questoes diferentes.
+    const FINAL_BANK_VERSION = "word2010-2026-11-18";
 
     let finalState = {
       name: "",
       answers: new Array(FINAL_TOTAL).fill(null),
       current: 0,
       signature: null,
-      pdfRead: false
+      pdfRead: false,
+      bankVersion: FINAL_BANK_VERSION
     };
 
     function checkStartUnlock(){
@@ -11962,7 +11952,9 @@
       const box = document.getElementById("resume-box");
       if(!name.trim()) { box.style.display = "none"; return; }
       const loaded = window.QuizEngine.loadState(FINAL_STORAGE, name);
-      box.style.display = loaded ? "flex" : "none";
+      const usable = loaded && loaded.bankVersion === FINAL_BANK_VERSION;
+      if(loaded && !usable) localStorage.removeItem(FINAL_STORAGE);
+      box.style.display = usable ? "flex" : "none";
     }
 
     function renderFinalTrail(){
@@ -12093,6 +12085,17 @@
         if(!document.getElementById("check-read-pdf").checked){
           alert("Por favor, confirme que estudou a apostila didática."); return;
         }
+        if(finalState.bankVersion !== FINAL_BANK_VERSION){
+          finalState = {
+            name: "",
+            answers: new Array(FINAL_TOTAL).fill(null),
+            current: 0,
+            signature: null,
+            pdfRead: false,
+            bankVersion: FINAL_BANK_VERSION
+          };
+          localStorage.removeItem(FINAL_STORAGE);
+        }
         finalState.name = name;
         finalState.pdfRead = true;
         showScreen("screen-quiz");
@@ -12106,7 +12109,7 @@
       btnResume.onclick = () => {
         const name = nameInput.value.trim();
         const loaded = window.QuizEngine.loadState(FINAL_STORAGE, name);
-        if(loaded){
+        if(loaded && loaded.bankVersion === FINAL_BANK_VERSION){
           finalState = loaded;
           if(document.getElementById("check-read-pdf")) document.getElementById("check-read-pdf").checked = finalState.pdfRead || false;
           checkStartUnlock();
@@ -12144,6 +12147,23 @@
     const btnDownloadTxt = document.getElementById("btn-download");
     if(btnDownloadTxt){
       btnDownloadTxt.onclick = () => window.QuizEngine.downloadTxtReport(getReportDataFinal());
+    }
+
+    const btnRestartFinal = document.getElementById("btn-restart-final");
+    if(btnRestartFinal){
+      btnRestartFinal.onclick = () => {
+        localStorage.removeItem(FINAL_STORAGE);
+        finalState = {
+          name: "",
+          answers: new Array(FINAL_TOTAL).fill(null),
+          current: 0,
+          signature: null,
+          pdfRead: false,
+          bankVersion: FINAL_BANK_VERSION
+        };
+        checkStartUnlock();
+        showScreen("screen-start");
+      };
     }
 
     const btnWhatsapp = document.getElementById("btn-whatsapp");

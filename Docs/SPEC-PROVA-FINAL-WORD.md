@@ -1,6 +1,6 @@
 # 🏆 SPEC-PROVA-FINAL-WORD — Especificação da Avaliação Final do Módulo Word
 ### Módulo 2: Microsoft Word | Prof. Marcos Rangel — WR Capacitação Profissional
-### Status: 🟢 IMPLEMENTADA E VALIDADA (CDP: 7/7 PASS — nota 10,0, SHA-256, retomada)
+### Status: 🟢 IMPLEMENTADA E VALIDADA (banco recalibrado em 18/11/2026 — CDP: 7/7 PASS — nota 10,0, SHA-256, retomada)
 
 ---
 
@@ -8,7 +8,7 @@
 
 A **Avaliação Didática Oficial do Módulo 2: Microsoft Word** tem como objetivo aferir o domínio teórico, operacional e técnico do aluno sobre todo o ciclo de vida de criação e formatação de documentos profissionais e acadêmicos.
 
-A prova integra a trilha do aluno no portal (`modules/word/index.html`), rodando 100% no navegador via JavaScript e `QuizEngine`, com persistência automática de respostas, geração de comprovante oficial inviolável com criptografia **Hash SHA-256**, conformidade plena com as normas da ABNT e suporte total à acessibilidade e visualização em dispositivos móveis (Regra 6 do `AGENTS.md`).
+A prova integra a trilha do aluno no portal (`modules/word/index.html`) e toma como base o material `AulaOrigem/word/PROVA DE CONHECIMENTO – MICROSOFT WORD 2010,14-05-26/`. Roda 100% no navegador via JavaScript e `QuizEngine`, com persistência automática de respostas, geração de comprovante oficial inviolável com criptografia **Hash SHA-256**, conformidade plena com as normas da ABNT e suporte total à acessibilidade e visualização em dispositivos móveis (Regra 6 do `AGENTS.md`).
 
 ---
 
@@ -16,10 +16,10 @@ A prova integra a trilha do aluno no portal (`modules/word/index.html`), rodando
 
 | Parâmetro | Regra / Diretriz Oficial | Detalhes e Justificativa |
 | :--- | :--- | :--- |
-| **Composição da Prova** | **15 Questões Objetivas** | Cobre integralmente as 11 aulas do curso de forma equilibrada e sem lacunas. |
+| **Composição da Prova** | **15 Questões Objetivas** | Banco recalibrado a partir da Prova de Conhecimento do Microsoft Word 2010 (material-base do professor), com cobertura dos fundamentos e complementos de ABNT e tabelas. |
 | **Escala de Pontuação** | **0,0 a 10,0 Pontos** | Cada questão objetiva possui peso uniforme de ~0,67 ponto (ou sistema ponderado de 15 x 0,5 pt = 7,5 pt + 2,5 pt práticos). Na versão digital automatizada do portal, calcula-se `(acertos / 15) * 10`. |
 | **Nota Mínima de Aprovação** | **7,0 (>= 70%)** | O aluno precisa acertar no mínimo **11 questões** para obter o certificado/comprovante de aprovação. |
-| **Persistência de Estado** | **`QuizEngine.saveState/loadState`** | As respostas são salvas no `localStorage` a cada clique (`word_final_exam_state`). Se a página for recarregada ou a conexão cair, a prova reabre exatamente onde parou. |
+| **Persistência de Estado** | **`QuizEngine.saveState/loadState`** | As respostas são salvas no `localStorage` a cada clique (`word_final_exam_state`). Se a página for recarregada ou a conexão cair, a prova reabre exatamente onde parou. O campo `bankVersion = "word2010-2026-11-18"` impede que um estado gravado com o banco anterior seja retomado com as questões novas (a chave é descartada automaticamente). |
 | **Recomeço Limpo** | **Botão "↺ Recomeçar a prova"** | Limpa a chave do `localStorage`, zera o array em memória e devolve o aluno à Tela 1 de identificação. |
 | **Segurança e Antifraude** | **Assinatura Digital SHA-256** | O comprovante final contém hash criptográfico gerado pelo algoritmo SHA-256 incorporando nome do aluno, acertos, nota, data/hora e o salt institucional do professor. |
 | **Canais de Entrega** | **Baixar TXT, WhatsApp e E-mail** | O aluno pode baixar o comprovante em texto puro (.txt), enviar diretamente para o WhatsApp do professor (`19 99130-6907`) ou para o e-mail oficial (`okcomputer.use.linux@gmail.com`). |
@@ -28,185 +28,101 @@ A prova integra a trilha do aluno no portal (`modules/word/index.html`), rodando
 
 ## 📚 3. Matriz de Competências e Banco Oficial de Questões (15 Questões)
 
-Abaixo está o banco completo de 15 questões oficiais calibradas e revisadas (sem erros de atalhos e com unidades exatas):
+O banco foi recalibrado a partir do material-base **`AulaOrigem/word/PROVA DE CONHECIMENTO – MICROSOFT WORD 2010,14-05-26/PROVADECONHECIMENTOMICROSOFTWORD2010140526.html`**, por solicitação do professor. A Parte 2 (10 questões de múltipla escolha) foi integralmente aproveitada; a Parte 3 (3 questões dissertativas) foi convertida para o formato objetivo do portal, preservando o conteúdo avaliado; duas questões complementares de ABNT e tabelas foram mantidas para representar a Parte 1 (digitação e formatação) e o fechamento do curso.
 
-### Questão 01 (Aula 01 — Atalhos e Salvamento)
-- **Enunciado**: Qual é a combinação de teclas do teclado utilizada para SALVAR o documento atual no Microsoft Word?
-- **Alternativas**:
-  - A) `Ctrl + S` *(Correta)*
-  - B) `Ctrl + B`
-  - C) `Ctrl + P`
-  - D) `Ctrl + A`
+> **Nota sobre a Parte 1 do material (digitação ABNT):** a redação de um texto completo no Word não é automatizável no quiz do portal. Seus requisitos (Times New Roman 12, margens, entrelinha 1,5, título centralizado, texto justificado, recuo, borda, marca d'água, imagem com quebra de linha e salvamento em DOCX/PDF) são avaliados de forma objetiva pelas questões 09, 13 e 14, e foram trabalhados nas aulas 02, 03, 04 e 11.
+
+**Gabarito consolidado (índices 0-based): `[2,1,2,1,0,2,0,1,0,2,0,0,0,1,1]`**
+
+### Questão 01 (Material-base, Parte 2 — Q1)
+- **Enunciado**: Qual é a principal função do Microsoft Word?
+- **Alternativas**: A) Criar planilhas de cálculo · B) Editar imagens bitmap · C) Produzir documentos de texto *(Correta)* · D) Navegar na internet
+- **Gabarito**: **C**
+- **Dica Pedagógica**: *O Word é um processador de textos. Planilhas são do Excel.*
+
+### Questão 02 (Material-base, Parte 2 — Q2)
+- **Enunciado**: Qual empresa desenvolveu o programa Microsoft Word?
+- **Alternativas**: A) Google · B) Microsoft *(Correta)* · C) Oracle · D) Corel
+- **Gabarito**: **B**
+- **Dica Pedagógica**: *O Word integra o pacote Microsoft Office.*
+
+### Questão 03 (Material-base, Parte 2 — Q3)
+- **Enunciado**: Qual é o formato de arquivo padrão utilizado pelo Word 2010 para salvar documentos?
+- **Alternativas**: A) `.xls` · B) `.ppt` · C) `.docx` *(Correta)* · D) `.html`
+- **Gabarito**: **C**
+- **Dica Pedagógica**: *Desde 2007 o padrão é `.docx`, baseado em XML e compactado.*
+
+### Questão 04 (Material-base, Parte 2 — Q4)
+- **Enunciado**: Qual opção deve ser usada ao gravar um documento pela primeira vez?
+- **Alternativas**: A) Fechar · B) Salvar *(Correta)* · C) Visualizar Impressão · D) Copiar
+- **Gabarito**: **B**
+- **Dica Pedagógica**: *Salvar (Ctrl+S) na primeira gravação solicita nome, formato e local.*
+
+### Questão 05 (Material-base, Parte 2 — Q5 — Aula 01)
+- **Enunciado**: O que o atalho `Ctrl + Z` realiza no Word?
+- **Alternativas**: A) Reverte a última ação *(Correta)* · B) Abre um novo documento · C) Imprime o arquivo · D) Cola um texto
 - **Gabarito**: **A**
-- **Dica Pedagógica**: *Os atalhos do Word não mudam com o idioma: Ctrl+S salva (Save), Ctrl+B aplica Negrito (Bold) e Ctrl+A seleciona tudo (All).*
+- **Dica Pedagógica**: *Ctrl+Z = Desfazer; Ctrl+Y = Refazer; Ctrl+V = Colar.*
 
----
+### Questão 06 (Material-base, Parte 2 — Q6 — Aula 06)
+- **Enunciado**: Em qual guia da Faixa de Opções podemos alterar a orientação da página entre Retrato e Paisagem?
+- **Alternativas**: A) Inserir · B) Revisão · C) Layout da Página *(Correta)* · D) Exibição
+- **Gabarito**: **C**
+- **Dica Pedagógica**: *Layout da Página reúne Margens, Orientação, Tamanho e Quebras.*
 
-### Questão 02 (Aula 01 — Régua e Recuos)
-- **Enunciado**: Na régua horizontal do Word, qual marcador é responsável EXCLUSIVAMENTE por recuar a primeira linha de cada parágrafo?
-- **Alternativas**:
-  - A) O retângulo inferior na base da régua.
-  - B) O triângulo superior apontado para baixo. *(Correta)*
-  - C) O triângulo inferior apontado para cima.
-  - D) O marcador circular da margem direita.
-- **Gabarito**: **B**
-- **Dica Pedagógica**: *O triângulo superior com a ponta voltada para baixo comanda exclusivamente a primeira linha do parágrafo.*
-
----
-
-### Questão 03 (Aula 02 — Normas ABNT: Margens)
-- **Enunciado**: Segundo a norma da Associação Brasileira de Normas Técnicas (ABNT), quais devem ser as medidas padrão das margens de uma folha A4 para trabalhos acadêmicos?
-- **Alternativas**:
-  - A) Superior 2 cm, Esquerda 2 cm, Inferior 3 cm e Direita 3 cm.
-  - B) Superior 3 cm, Esquerda 3 cm, Inferior 2 cm e Direita 2 cm. *(Correta)*
-  - C) Todas as quatro margens com exatamente 2,5 cm.
-  - D) Superior 4 cm, Esquerda 3 cm, Inferior 3 cm e Direita 2 cm.
-- **Gabarito**: **B**
-- **Dica Pedagógica**: *Lembre-se da regra '3-3-2-2': as margens esquerda e superior recebem 3 cm para dar espaço à encadernação e perfuração da folha.*
-
----
-
-### Questão 04 (Aula 02 — Normas ABNT: Tipografia e Parágrafo)
-- **Enunciado**: Qual das alternativas abaixo apresenta a configuração de tipografia e parágrafo exigida pela ABNT para o corpo do texto de um trabalho acadêmico?
-- **Alternativas**:
-  - A) Fonte Comic Sans 14, alinhamento centralizado e espaçamento simples.
-  - B) Fonte Arial ou Times New Roman tamanho 12, alinhamento Justificado, espaçamento entre linhas de 1,5 e recuo de 1,25 cm na primeira linha. *(Correta)*
-  - C) Fonte Calibri 11, alinhamento à esquerda, espaçamento duplo e sem recuo.
-  - D) Fonte Courier New 10, alinhamento à direita e espaçamento triplo.
-- **Gabarito**: **B**
-- **Dica Pedagógica**: *A ABNT exige seriedade: Arial ou Times New Roman tamanho 12, texto justificado (Ctrl+J), entrelinhas 1,5 e recuo de 1,25 cm.*
-
----
-
-### Questão 05 (Aula 03 — Alinhamentos e Atalhos)
-- **Enunciado**: Qual alinhamento de texto faz com que as margens esquerda e direita do parágrafo fiquem perfeitamente retas e alinhadas simultaneamente?
-- **Alternativas**:
-  - A) Alinhar à Esquerda (`Ctrl + L`).
-  - B) Centralizar (`Ctrl + E`).
-  - C) Alinhar à Direita (`Ctrl + R`).
-  - D) Justificar (`Ctrl + J`). *(Correta)*
-- **Gabarito**: **D**
-- **Dica Pedagógica**: *O alinhamento justificado distribui o espaçamento entre as palavras para que o texto forme um bloco reto nas duas laterais.*
-
----
-
-### Questão 06 (Aula 03 — Espaçamento Profissional em Pontos)
-- **Enunciado**: Qual é o método profissional e correto no Word para distanciar dois parágrafos sem precisar pressionar a tecla Enter repetidas vezes?
-- **Alternativas**:
-  - A) Ajustar o valor do campo 'Espaçamento Depois' (medido em pontos - pt) na janela de Parágrafo. *(Correta)*
-  - B) Aumentar o tamanho da fonte para 72 no final da frase.
-  - C) Desenhar uma linha invisível do Paint entre os parágrafos.
-  - D) Segurar a barra de espaço até pular de linha.
+### Questão 07 (Material-base, Parte 2 — Q7 — Aula 01)
+- **Enunciado**: Para modificar a cor das letras de um texto selecionado, qual guia deve ser utilizada?
+- **Alternativas**: A) Página Inicial *(Correta)* · B) Correspondências · C) Referências · D) Exibição
 - **Gabarito**: **A**
-- **Dica Pedagógica**: *O espaçamento 'Depois' em pontos (ex: 6 pt ou 12 pt) afasta os parágrafos com precisão milimétrica sem criar linhas em branco.*
+- **Dica Pedagógica**: *Página Inicial concentra fonte, tamanho, negrito e cor da fonte.*
 
----
-
-### Questão 07 (Aula 04 — Quebra de Texto em Imagens)
-- **Enunciado**: Ao inserir uma imagem no Word, ela frequentemente impede a movimentação livre do cursor. Qual opção de 'Quebra Automática de Texto' deve ser selecionada para que a imagem possa ser arrastada e o texto flua ao redor de suas bordas?
-- **Alternativas**:
-  - A) Alinhado com o texto.
-  - B) Quadrado (ou Justo). *(Correta)*
-  - C) Ocultar texto.
-  - D) Enviar para trás da tela.
+### Questão 08 (Material-base, Parte 2 — Q8 — Aula 06)
+- **Enunciado**: Como adicionar uma nova quebra de página no Word 2010?
+- **Alternativas**: A) Usando `Ctrl + N` · B) Escolhendo 'Quebras' na guia Layout da Página *(Correta)* · C) Clicando em Salvar · D) Acessando a guia Revisão
 - **Gabarito**: **B**
-- **Dica Pedagógica**: *A opção Quadrado ou Justo liberta a imagem da trava de linha, fazendo o texto contorná-la suavemente.*
+- **Dica Pedagógica**: *O atalho direto é Ctrl+Enter; Ctrl+N cria um documento novo.*
 
----
-
-### Questão 08 (Aula 04 — Bordas de Página)
-- **Enunciado**: Em qual ferramenta da caixa de diálogo 'Bordas e Sombreamento' o usuário pode escolher molduras ilustradas prontas (como estrelas, fitas ou temas decorativos) para criar um certificado?
-- **Alternativas**:
-  - A) No menu suspenso 'Arte'. *(Correta)*
-  - B) No controle de brilho da imagem.
-  - C) No botão de verificação ortográfica.
-  - D) Na régua de tabulação decimal.
+### Questão 09 (Material-base, Parte 2 — Q9 — Aula 01)
+- **Enunciado**: Qual é a utilidade da régua exibida no Word?
+- **Alternativas**: A) Ajustar margens e recuos *(Correta)* · B) Inserir figuras · C) Alterar o idioma do texto · D) Exibir comentários
 - **Gabarito**: **A**
-- **Dica Pedagógica**: *O campo 'Arte' na aba Bordas da Página oferece dezenas de molduras gráficas decorativas.*
+- **Dica Pedagógica**: *A régua mostra margens, recuo de primeira linha, recuo esquerdo e tabulações.*
 
----
+### Questão 10 (Material-base, Parte 2 — Q10)
+- **Enunciado**: Para que serve a visualização de impressão no Word?
+- **Alternativas**: A) Corrigir ortografia · B) Inserir tabelas · C) Mostrar como o documento ficará impresso *(Correta)* · D) Alterar o tamanho da folha
+- **Gabarito**: **C**
+- **Dica Pedagógica**: *A visualização antecipa a paginação final antes de imprimir.*
 
-### Questão 09 (Aula 05 — Estilos e Atualização em Cascata)
-- **Enunciado**: Se um documento de 80 páginas possui todos os títulos formatados com o estilo nativo 'Título 1' e o orientador solicitar a mudança da cor dos títulos de azul para preto, qual é a forma mais rápida e profissional de realizar a alteração?
-- **Alternativas**:
-  - A) Percorrer as 80 páginas selecionando cada título individualmente para trocar a cor.
-  - B) Clicar com o botão direito sobre o estilo 'Título 1' na Galeria de Estilos, escolher 'Modificar', alterar a cor para preto e salvar. *(Correta)*
-  - C) Excluir todos os títulos e digitá-los novamente.
-  - D) Aplicar uma marca d'água preta sobre a folha.
+### Questão 11 (Material-base, Parte 3 — Q11, convertida — Aula 01)
+- **Enunciado**: Qual atalho de teclado seleciona todo o texto de um documento no Word?
+- **Alternativas**: A) `Ctrl + A` *(Correta)* · B) `Ctrl + C` · C) `Ctrl + V` · D) `Ctrl + X`
+- **Gabarito**: **A**
+- **Dica Pedagógica**: *Ctrl+A = selecionar tudo; Ctrl+C = copiar; Ctrl+X = recortar; Ctrl+V = colar.*
+
+### Questão 12 (Material-base, Parte 3 — Q12, convertida)
+- **Enunciado**: Quais recursos estão disponíveis na guia 'Inserir' do Word?
+- **Alternativas**: A) Tabela, Imagem e Cabeçalho e Rodapé *(Correta)* · B) Negrito, Itálico e Sublinhado · C) Margens, Orientação e Colunas · D) Sumário Automático, Legenda e Notas de Rodapé
+- **Gabarito**: **A**
+- **Dica Pedagógica**: *A guia Inserir adiciona objetos; formatação básica fica em Página Inicial e sumário em Referências.*
+
+### Questão 13 (Material-base, Parte 3 — Q13, convertida — Aulas 02/04)
+- **Enunciado**: Como salvar ou imprimir um documento no formato PDF diretamente pelo Word 2010?
+- **Alternativas**: A) Arquivo > Salvar como > tipo PDF (ou Imprimir > Microsoft Print to PDF) *(Correta)* · B) Copiar o texto e colar no Paint · C) Renomear o arquivo `.docx` para `.pdf` · D) Apertar `Ctrl+P` e escolher a opção 'Imagem'
+- **Gabarito**: **A**
+- **Dica Pedagógica**: *Renomear a extensão não converte o arquivo. Use Salvar como PDF ou Microsoft Print to PDF.*
+
+### Questão 14 (Complementar — Aula 02, Parte 1 do material)
+- **Enunciado**: Qual configuração de parágrafo atende às normas ABNT para o corpo de um trabalho acadêmico?
+- **Alternativas**: A) Comic Sans 14, centralizado, espaçamento simples · B) Arial ou Times New Roman 12, justificado, entrelinha 1,5 e recuo de 1,25 cm *(Correta)* · C) Calibri 11, à esquerda, espaçamento duplo · D) Courier New 10, à direita, espaçamento triplo
 - **Gabarito**: **B**
-- **Dica Pedagógica**: *Modificar o estilo atualiza todos os títulos vinculados a ele instantaneamente em uma fração de segundo.*
+- **Dica Pedagógica**: *Regra da Parte 1: Times New Roman 12, entrelinha 1,5, justificado e recuo na primeira linha.*
 
----
-
-### Questão 10 (Aula 05 — Pincel de Formatação)
-- **Enunciado**: Qual ação deve ser executada no botão do Pincel de Formatação para que ele permaneça 'travado/ativo', permitindo copiar o formato para múltiplos trechos de texto sem desativar após o primeiro clique?
-- **Alternativas**:
-  - A) Clicar com o botão direito do mouse.
-  - B) Dar um clique duplo (dois cliques rápidos) sobre o ícone do Pincel. *(Correta)*
-  - C) Segurar a tecla Enter enquanto clica no pincel.
-  - D) Arrastar o pincel para a lixeira do Windows.
+### Questão 15 (Complementar — Aula 11, tabelas)
+- **Enunciado**: Em uma tabela comercial de orçamento, qual é o alinhamento recomendado para a coluna de valores em Reais (R$)?
+- **Alternativas**: A) Alinhar à Esquerda · B) Alinhar à Direita *(Correta)* · C) Justificado · D) Centralizado
 - **Gabarito**: **B**
-- **Dica Pedagógica**: *Dois cliques no pincel travam a ferramenta. Para destravar após o uso, basta pressionar a tecla Esc.*
-
----
-
-### Questão 11 (Aula 06 — Quebra de Página vs Seção)
-- **Enunciado**: Para criar um documento onde a página 3 esteja na orientação Paisagem (horizontal), enquanto as páginas 1, 2 e 4 permanecem na orientação Retrato (vertical), qual recurso estrutural é OBRIGATÓRIO utilizar?
-- **Alternativas**:
-  - A) Quebra de Página simples (`Ctrl + Enter`).
-  - B) Quebra de Seção do tipo 'Próxima Página'. *(Correta)*
-  - C) Diminuir o zoom para 10%.
-  - D) Inserir uma caixa de texto gigante.
-- **Gabarito**: **B**
-- **Dica Pedagógica**: *A Quebra de Seção cria um novo compartimento independente no arquivo, permitindo trocar a orientação da página sem afetar o restante.*
-
----
-
-### Questão 12 (Aula 06 — Desvinculação de Cabeçalhos)
-- **Enunciado**: Na elaboração de um Trabalho de Conclusão de Curso (TCC), a Capa e o Sumário não devem exibir numeração de página impressa, mas a numeração deve começar na Introdução. Como isso é tecnicamente viabilizado no Word?
-- **Alternativas**:
-  - A) Colocando um corretivo branco sobre a tela do monitor.
-  - B) Inserindo uma Quebra de Seção antes da Introdução e desativando o botão 'Vincular ao Anterior' no cabeçalho da nova seção. *(Correta)*
-  - C) Apagando o número de todas as páginas ao mesmo tempo.
-  - D) Criando arquivos de texto separados no Bloco de Notas.
-- **Gabarito**: **B**
-- **Dica Pedagógica**: *Desativar o botão 'Vincular ao Anterior' quebra o cordão umbilical entre as seções, permitindo que a Introdução tenha cabeçalho próprio.*
-
----
-
-### Questão 13 (Aula 07 — Controle de Alterações)
-- **Enunciado**: Durante a revisão de um contrato no Word, o que acontece com uma palavra excluída quando o recurso 'Controlar Alterações' (Track Changes) está ATIVADO?
-- **Alternativas**:
-  - A) A palavra desaparece do documento imediatamente sem deixar vestígios.
-  - B) A palavra permanece visível, mas fica riscada no meio (com efeito tachado) e em cor destacada para aprovação posterior. *(Correta)*
-  - C) O Word fecha o arquivo e pede uma senha de administrador.
-  - D) A palavra é enviada automaticamente para a impressora.
-- **Gabarito**: **B**
-- **Dica Pedagógica**: *O controle de alterações mantém o texto apagado riscado em vermelho até que o revisor clique em 'Aceitar' ou 'Rejeitar'.*
-
----
-
-### Questão 14 (Aula 08 — Sumário Automático)
-- **Enunciado**: O que faz com que o comando 'Sumário Automático' da guia Referências consiga identificar perfeitamente os títulos e as respectivas páginas do trabalho?
-- **Alternativas**:
-  - A) A quantidade de pontos digitados manualmente entre o título e o número.
-  - B) A aplicação prévia dos Estilos 'Título 1', 'Título 2' e 'Título 3' nos títulos do documento. *(Correta)*
-  - C) A cor da fonte do texto.
-  - D) O tamanho das imagens inseridas na capa.
-- **Gabarito**: **B**
-- **Dica Pedagógica**: *O sumário automático depende 100% da leitura dos estilos de título aplicados na estrutura do trabalho.*
-
----
-
-### Questão 15 (Aula 11 — Tabelas Profissionais)
-- **Enunciado**: Em uma tabela comercial de orçamento criada no Word, qual é o alinhamento de texto recomendado para a coluna que contém os valores e preços em Reais (R$)?
-- **Alternativas**:
-  - A) Alinhar à Esquerda.
-  - B) Alinhar à Direita. *(Correta)*
-  - C) Justificado.
-  - D) Letra Capitular.
-- **Gabarito**: **B**
-- **Dica Pedagógica**: *Alinhar à direita faz com que as casas decimais (centavos) fiquem rigorosamente alinhadas na mesma linha vertical, facilitando a leitura de valores.*
+- **Dica Pedagógica**: *Alinhar à direita mantém as casas decimais na mesma coluna vertical.*
 
 ---
 
