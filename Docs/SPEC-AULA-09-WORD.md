@@ -162,7 +162,7 @@ Seções com `lessonNum: 9` (implementadas **6**, de 9.0 a 9.5 — todas com `se
 |:---|:---|
 | `modules/word/index.html` | Card liberado (`active-lesson` + `wi009`); `#screen-lesson-9` completo; CSS `.l9-*`; 5 simuladores `l9ListLevel`, `l9TabAlign`, `l9Cert`, `l9Layout`, `l9Finish`; `QUESTIONS_LESSON_9`; `QUIZ_CFG[9]`; rotas/`TOTAL_TOPICS`/`SEQUENTIAL_LESSONS`/loops de inicialização até 9; persistência de navegação (`prevQuestionGen` também chama `persistQuizGen`). |
 | `assets/js/pdf-lessons.js` | Bloco Word com 6 seções `lessonNum: 9` (9.0–9.5), ilustrações HTML reais e 2 imagens de arquivo. |
-| `assets/img/word/Aula9/image1.png`, `image2.png` | Imagens extraídas do material-base. |
+| `assets/img/word/Aula9/image1.png`, `image2.png` | Imagens extraídas do material-base. `image1.png` (certificado) aparece na **tela da Fase 3** (figura com legenda ao lado do simulador) **e** na seção 9.3 do PDF; `image2.png` (campo magnético) aparece na Fase 5 e na seção 9.4. |
 
 ### 6.2 Validações executadas
 - `node --check assets/js/pdf-lessons.js` → OK.
@@ -172,3 +172,4 @@ Seções com `lessonNum: 9` (implementadas **6**, de 9.0 a 9.5 — todas com `se
 - CDP (375 px): `.container` e `.lesson-reading-card` a 4 px da borda, largura 367/375; sem "efeito linguiça".
 - CDP popup PDF (`--disable-popup-blocking`): 9.0–9.5 presentes, 6 `.pdf-html-illustration`, 6 `.mini-sheet`, 2 imagens `Aula9/` carregadas (`naturalWidth` 538 e 254), avatar do professor carregado.
 - Auditoria de texto renderizado: zeros para `JSTOR`, "ainda não", "será anunciado", "a partir de 20" e conversões erradas de MB.
+- Correção pós-commit (18/11/2026): a imagem do certificado estava apenas no PDF; passou a ser exibida também na Fase 3 da tela, com `alt`, legenda e `max-width:100%` (mobile preservado).

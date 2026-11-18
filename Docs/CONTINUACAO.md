@@ -49,6 +49,7 @@ Implementação completa da **Aula 09 do Módulo Word** (spec `Docs/SPEC-AULA-09
 | **Simuladores** | `window.l9ListLevel`, `l9TabAlign`, `l9Cert`, `l9Layout`, `l9Finish` | Demonstram Tab/Shift+Tab, pontos de preenchimento, paisagem+moldura+assinaturas, colunas+capitular e quebra justa+marca d'água. |
 | **Quiz persistente** | `QUESTIONS_LESSON_9` + `QUIZ_CFG[9]` | `moduleId: "word_lesson_9_quiz"`, 5 questões (todas corretas = alternativa b), painéis `fixation-panel-9`/`result-panel-9`, gravação ao responder/navegar/assinar, restauração ao abrir e `↺ Recomeçar o exercício`. Correção aplicada ao `prevQuestionGen` genérico: agora também chama `persistQuizGen` (beneficia todas as aulas). |
 | **Apostila PDF** | `assets/js/pdf-lessons.js` | 6 seções `lessonNum: 9` (9.0–9.5), cada uma com ilustração HTML real (`.mini-sheet`, `.es-sheet-box`); imagens `assets/img/word/Aula9/image1.png` (certificado) e `image2.png` (campo magnético solar/ESA). |
+| **Correção da imagem do certificado** | `modules/word/index.html` (Fase 3) | A imagem `image1.png` estava só no PDF. Agora aparece também na tela: figura com `<img alt>`, legenda explicativa e `max-width:100%`, posicionada entre o simulador e a tabela "Anatomia do certificado". |
 | **Spec** | `Docs/SPEC-AULA-09-WORD.md` | Status 🟢; IDs gamificados corrigidos para os reais; seção 6 com implementação e validações. |
 
 ### 2. Localizadores e comandos úteis
