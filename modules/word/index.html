@@ -1312,6 +1312,103 @@
       .l7-doc-stage { padding: 14px 12px; font-size: 12.5px; }
       .l7-balloon { flex: 1 1 100%; }
     }
+
+    /* ============================================================
+       AULA 08 — SUMÁRIO AUTOMÁTICO & ÍNDICES
+       ============================================================ */
+    .l8-style-doc {
+      background: #FFFFFF;
+      border: 1.5px solid #94A3B8;
+      border-radius: 6px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+      padding: 14px 18px;
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 1.9;
+    }
+    .l8-style-h1 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1F3864;
+      border-bottom: 2px solid #2E74B5;
+      padding-bottom: 3px;
+      margin: 6px 0 4px;
+    }
+    .l8-style-h2 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #2E74B5;
+      margin: 5px 0 3px;
+    }
+    .l8-style-hint {
+      font-size: 10px;
+      color: #94A3B8;
+      font-weight: 700;
+      margin-left: 6px;
+    }
+    .l8-toc {
+      display: none;
+      background: #FFFFFF;
+      border: 1.5px solid #94A3B8;
+      border-radius: 6px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+      padding: 14px 18px;
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 2;
+    }
+    .l8-toc-line {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .l8-toc-line.l8-toc-sub { padding-left: 22px; }
+    .l8-toc-title { font-weight: 700; color: #1F2937; }
+    .l8-toc-sub .l8-toc-title { font-weight: 500; color: #475569; }
+    .l8-toc-dots { flex: 1; border-bottom: 1.5px dotted #94A3B8; margin: 0 6px; min-width: 20px; transform: translateY(-3px); }
+    .l8-toc-page { font-variant-numeric: tabular-nums; }
+    .l8-toc-click { cursor: pointer; border-radius: 3px; }
+    .l8-toc-click:hover { background: #DBEAFE; }
+    .l8-toc-click .l8-toc-title { color: #1D4ED8; }
+    .l8-jump-page {
+      display: none;
+      margin-top: 10px;
+      border: 1.5px dashed #2E74B5;
+      background: #EFF6FF;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #1E3A8A;
+      font-weight: 700;
+    }
+    .l8-f9-window {
+      display: none;
+      margin-top: 10px;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 8px;
+      background: #F8FAFC;
+      padding: 12px 14px;
+      font-size: 12px;
+      color: #334155;
+    }
+    .l8-f9-window strong { color: #1F2937; }
+    .l8-f9-radio { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; }
+    .l8-caption-note {
+      display: none;
+      margin-top: 10px;
+      border: 1.5px dashed #93C5FD;
+      background: #EFF6FF;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #1E3A8A;
+    }
+    @media (max-width: 640px) {
+      .l8-style-doc, .l8-toc { padding: 12px 10px; font-size: 11.5px; }
+      .l8-toc-line { font-size: 11px; }
+    }
   </style>
 </head>
 <body>
@@ -1424,11 +1521,11 @@
           </div>
 
           <!-- AULA 08 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(8, 'Sumário Automático & Índices de Ilustrações')">
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(8, 'Sumário Automático & Índices de Ilustrações')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 08</span>
               <span class="lesson-name">Sumário Automático & Índices</span>
-              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wh008`)</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-8">🔒</span>
           </div>
@@ -6553,6 +6650,636 @@
     </section>
 
     <!-- ===================================================================
+         AULA 08: SUMÁRIO AUTOMÁTICO & ÍNDICES DE ILUSTRAÇÕES
+         =================================================================== -->
+    <section id="screen-lesson-8" class="screen-view">
+
+      <!-- Topo da Aula com Botões de Ação -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('word', 8)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra Gamificada de Progresso da Aula 8 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 8)</span>
+            <span id="gamify-percent-8">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-8" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-8">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <!-- Cartão Principal de Leitura -->
+      <article class="lesson-reading-card">
+        <span class="badge-word-blue">Módulo 2 • Aula 08</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 08: Sumário Automático &amp; Índices de Ilustrações</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <em>Estilos hierárquicos (Título 1/2), guia Referências, atualização com F9 e hiperlinks.</em> Leia cada etapa com atenção e aplique os comandos diretamente no seu Word!
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l8-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--word-blue); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:var(--word-blue-light); color:var(--word-blue-dark); border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar: O que vamos fazer e como</span>
+
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:14px 0 8px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Dominar a criação do <strong>Sumário Automático oficial</strong> no Word — acabando de uma vez por todas com a digitação manual de pontinhos — e aprender a atualizar páginas instantaneamente com a tecla <kbd>F9</kbd>, navegar com <kbd>Ctrl</kbd> + <kbd>Clique</kbd> e gerar o <strong>Índice de Ilustrações</strong>.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo em 5 Fases)</h3>
+          <p style="margin:0 0 12px 0; font-size:13.5px; color:#475569; line-height:1.7;">
+            Os checks ficam distribuídos — posicionados no fim de cada fase, exatamente onde está a instrução prática. Cada passo é um check e só libera o próximo!
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px;" aria-label="Roteiro dos 5 passos">
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">1</strong>
+              <span>Marcar a hierarquia de todos os capítulos com Estilos (Título 1 e Título 2).</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">2</strong>
+              <span>Inserir o Sumário Automático oficial pela Guia Referências.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">3</strong>
+              <span>Navegar pelo documento usando <kbd>Ctrl</kbd> + <kbd>Clique</kbd> no sumário.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">4</strong>
+              <span>Atualizar páginas e títulos automaticamente usando a tecla <kbd>F9</kbd>.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">5</strong>
+              <span>Inserir legendas em imagens e gerar o Índice de Ilustrações.</span>
+            </div>
+          </div>
+
+          <div style="margin-top:18px; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-radius:10px; padding:14px 16px;">
+            <div style="font-weight:800; color:var(--word-blue-dark); font-size:14px; margin-bottom:4px;">⚙️ FAIXA DE PREPARAÇÃO — antes da Fase 1</div>
+            <ol style="font-size:13.5px; color:#374151; line-height:1.7; margin:0; padding-left:20px;">
+              <li>Abra o <strong>Microsoft Word</strong> e monte um documento de prática com pelo menos <strong>3 capítulos principais</strong> e <strong>2 subcapítulos</strong> — pode ser um mini-trabalho sobre Astronomia.</li>
+              <li>Deixe <strong>páginas de conteúdo suficientes</strong> para o sumário ter números diferentes (digite vários parágrafos ou use o gerador <code>=rand(3,4)</code> que você já conhece).</li>
+              <li>Salve o arquivo como <code>Sumario_Aula08.docx</code> — será o laboratório desta aula.</li>
+            </ol>
+          </div>
+
+          <div id="l8-checklist-status" style="margin-top:14px; font-size:14px; font-weight:700; color:var(--word-blue-dark);">▢ 0 / 5 Passos Concluídos</div>
+          <div id="l8-complete-hint" style="display:none; margin-top:8px; font-size:13.5px; font-weight:700; color:#15803D; background:#DCFCE7; border:1.5px solid #86EFAC; border-radius:8px; padding:10px 12px;">🎉 Todos os 5 passos concluídos — você concluiu a leitura e liberou o Exercício de Fixação!</div>
+
+          <div style="margin-top:20px; text-align:center;">
+            <button type="button" id="btn-start-l8" class="btn btn-primary" style="font-size:15px; padding:12px 28px;" onclick="switchTopicPhase(8, 1)">
+              ▶ ENTENDI! QUERO COMEÇAR A AULA ↓
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Abas de Tópicos da Aula 8 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-8-1" onclick="switchTopicPhase(8, 1)">1. O Erro do Sumário Manual</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-8-2" onclick="switchTopicPhase(8, 2)">2. Estilos Título 1 &amp; 2</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-8-3" onclick="switchTopicPhase(8, 3)">3. Inserir o Sumário</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-8-4" onclick="switchTopicPhase(8, 4)">4. Atualizar com F9</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-8-5" onclick="switchTopicPhase(8, 5)">5. Navegação &amp; Índice de Figuras</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-8-fix" onclick="openFixationPanel(8)" style="background:var(--amber-soft); color:var(--teal-deep); font-weight:700;">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             FASE 1: POR QUE O SUMÁRIO MANUAL É UM ERRO INACEITÁVEL
+             =============================================================== -->
+        <section id="l8-phase-1" class="topic-phase-section active">
+          <h2>1. Por Que o Sumário Manual é um Erro Inaceitável</h2>
+          <p>
+            O sumário é a <strong>lista no início do documento</strong> que mostra o nome de cada capítulo e a página exata em que ele está. O grande erro do iniciante é tentar fazer o sumário <strong>digitando o título, enchendo de pontos com o teclado e digitando o número da página no final</strong>. O resultado fica torto, desalinhado e obsoleto na primeira edição do texto.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Comparação: sumário manual vs sumário automático <span class="l5-demo-hint">#l8-compare-stage</span></div>
+            <div class="l5-stage" id="l8-compare-stage">
+              <div style="display:flex; gap:14px; align-items:flex-start; flex-wrap:wrap;">
+                <div style="flex:1 1 280px; min-width:0;">
+                  <div style="font-weight:800; color:#B91C1C; font-size:13px; margin-bottom:6px;">❌ MANUAL (digitado à mão)</div>
+                  <div class="l8-style-doc" style="border-color:#FECACA;">
+                    <div style="font-variant-numeric:tabular-nums;">1. INTRODUÇÃO ...................... 3</div>
+                    <div style="font-variant-numeric:tabular-nums;">2. DESENVOLVIMENTO ......... 5</div>
+                    <div style="font-variant-numeric:tabular-nums;">3. CONCLUSÃO ............... 10</div>
+                    <div style="margin-top:8px; font-size:10.5px; color:#DC2626;">↑ Fontes proporcionais têm larguras variáveis: os números da margem direita ficam tortos. E se o texto crescer, é refazer tudo à mão.</div>
+                  </div>
+                </div>
+                <div style="flex:1 1 280px; min-width:0;">
+                  <div style="font-weight:800; color:#166534; font-size:13px; margin-bottom:6px;">✅ AUTOMÁTICO (tabulação do Word)</div>
+                  <div class="l8-toc" style="display:block; border-color:#BBF7D0;">
+                    <div class="l8-toc-line"><span class="l8-toc-title">1. INTRODUÇÃO</span><span class="l8-toc-dots"></span><span class="l8-toc-page">3</span></div>
+                    <div class="l8-toc-line"><span class="l8-toc-title">2. DESENVOLVIMENTO</span><span class="l8-toc-dots"></span><span class="l8-toc-page">5</span></div>
+                    <div class="l8-toc-line"><span class="l8-toc-title">3. CONCLUSÃO</span><span class="l8-toc-dots"></span><span class="l8-toc-page">10</span></div>
+                    <div style="margin-top:8px; font-size:10.5px; color:#166534;">↑ Preenchimento por tabulação milimétrica, calculado pelo Word em milissegundos.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ A ABNT e o mercado exigem sumários automáticos: alinhados, atualizáveis e navegáveis.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Manual vs Automático — a comparação honesta</h3>
+            <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Comparação entre sumário manual e automático">
+              <div class="word-card-table-header">
+                <div class="word-table-title">
+                  <span class="word-table-badge">GUARDAR NA CABEÇA</span>
+                  <h3>⚖️ Os dois caminhos do sumário</h3>
+                </div>
+                <span class="word-table-hint">Guia Referências</span>
+              </div>
+              <div class="word-table-scroll">
+                <table class="word-modern-table">
+                  <thead>
+                    <tr>
+                      <th>Critério</th>
+                      <th>Sumário manual (digitado)</th>
+                      <th>Sumário automático (Word)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="highlight-amber">
+                      <td><strong>Alinhamento dos números</strong></td>
+                      <td>Torto — pontos contados à mão nunca fecham</td>
+                      <td>Perfeito — tabulação milimétrica automática</td>
+                    </tr>
+                    <tr class="highlight-amber">
+                      <td><strong>Números de página</strong></td>
+                      <td>Você conta manualmente (e erra)</td>
+                      <td>O Word calcula os números em milissegundos</td>
+                    </tr>
+                    <tr class="highlight-blue">
+                      <td><strong>Quando o texto muda</strong></td>
+                      <td>Recalcular o sumário inteiro à mão</td>
+                      <td>Atualizar com <kbd>F9</kbd> em menos de 1 segundo</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Navegação</strong></td>
+                      <td>Nenhuma — é só texto morto</td>
+                      <td><kbd>Ctrl</kbd> + <kbd>Clique</kbd> salta para o capítulo</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin:12px 0 0; font-size:13px; color:#64748B;">💡 O pesadelo da revisão: se o orientador pedir para acrescentar um parágrafo na página 2, <strong>todas</strong> as páginas subsequentes mudam — no manual, você refaz tudo.</p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 1 -->
+          <div class="phase-step-check" data-step="1" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l8-check-1" class="l8-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 1">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 1: O ERRO DO SUMÁRIO MANUAL</strong><br>
+              Compreendi por que a ABNT e o mercado exigem sumários automáticos em vez de manuais (alinhamento, atualização e navegação).
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 2 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que compreendi por que o sumário manual é um erro inaceitável.</span>
+            <button type="button" class="read-check-btn" id="check-read-8-1" onclick="markTopicRead(8, 1)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(8, 1)">← Voltar à Fase 0</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(8, 2)">Ir para 2. Estilos Título 1 &amp; 2 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 2: A MARCAÇÃO COM TÍTULO 1 E TÍTULO 2
+             =============================================================== -->
+        <section id="l8-phase-2" class="topic-phase-section">
+          <h2>2. Preparando o Terreno — A Marcação com Título 1 e Título 2</h2>
+          <p>
+            O Word <strong>não sabe o que é um título</strong> até que você o ensine através da <strong>Galeria de Estilos</strong>. O Sumário Automático consulta esse mapa interno de estilos: <strong>Título 1</strong> para capítulos principais (ex.: <em>1 INTRODUÇÃO</em>, <em>2 REFERENCIAL TEÓRICO</em>), <strong>Título 2</strong> para seções secundárias (ex.: <em>2.1 Definições Básicas</em>) e <strong>Título 3</strong> para subdivisões. O texto corrido deve permanecer sempre com o estilo <strong>Normal</strong>.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: ensine o Word a reconhecer seus títulos <span class="l5-demo-hint">#l8-style-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Estilos da Galeria">
+              <button type="button" class="l5-sim-btn active" onclick="l8MarkStyle('normal', this)">Aa Normal</button>
+              <button type="button" class="l5-sim-btn" onclick="l8MarkStyle('t1', this)">AaBbCcD Título 1</button>
+              <button type="button" class="l5-sim-btn" onclick="l8MarkStyle('t2', this)">AaBbCcD Título 2</button>
+            </div>
+            <div class="l5-stage" id="l8-style-stage">
+              <div class="l8-style-doc">
+                <div id="l8-doc-title">O Universo em Expansão</div>
+                <div id="l8-doc-title-hint" class="l8-style-hint" style="display:none;">◀ setinha cinza: o Word já reconhece este parágrafo como cabeçalho hierárquico</div>
+                <div>A astronomia observa galáxias que se afastam umas das outras cada vez mais rápido.</div>
+              </div>
+            </div>
+            <div id="l8-style-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Selecione o título na esquerda e clique no estilo da Galeria de Estilos (guia Página Inicial). O texto corrido deve ficar sempre como Normal.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Passo a passo: marcar os títulos</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li><strong>Selecione o texto do título</strong> com o mouse (clique no início e arraste até o final).</li>
+              <li>Na parte de cima da tela, clique na aba <strong>Início</strong> (Página Inicial).</li>
+              <li>Localize o grupo chamado <strong>Estilos</strong> (fica no meio da barra).</li>
+              <li>Clique no estilo correto: <strong>Título 1</strong> para capítulos principais, <strong>Título 2</strong> para subcapítulos, <strong>Título 3</strong> para divisões menores.</li>
+            </ol>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">💬 Como saber se funcionou (e o erro clássico)</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#78350F; line-height:1.8;">
+              <li>O texto <strong>muda de aparência</strong> (fica maior ou colorido). Isso é normal — significa que o estilo foi aplicado.</li>
+              <li><strong>Teste visual:</strong> ao passar o mouse sobre um Título 1 ou 2, aparece uma pequena <strong>setinha cinza</strong> ao lado dele — o Word já o reconhece como cabeçalho hierárquico.</li>
+              <li><strong>Problema comum:</strong> se aparecer no sumário um texto que você não queria, é porque ele está marcado como título sem querer. Selecione esse texto e clique em <strong>Normal</strong> nos Estilos para corrigir.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 2 -->
+          <div class="phase-step-check" data-step="2" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l8-check-2" class="l8-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 2">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 2: MARCAR OS TÍTULOS COM ESTILOS</strong><br>
+              Apliquei os estilos <strong>Título 1</strong> e <strong>Título 2</strong> em todos os capítulos e subtópicos do documento, mantendo o texto corrido como Normal.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 3 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que marquei a hierarquia dos capítulos com Título 1 e Título 2.</span>
+            <button type="button" class="read-check-btn" id="check-read-8-2" onclick="markTopicRead(8, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(8, 1)">← Voltar ao Tópico 1</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(8, 3)">Ir para 3. Inserir o Sumário →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 3: INSERINDO O SUMÁRIO EM 1 CLIQUE
+             =============================================================== -->
+        <section id="l8-phase-3" class="topic-phase-section">
+          <h2>3. Inserindo o Sumário em 1 Clique</h2>
+          <p>
+            <strong>Onde posicionar:</strong> deixe uma <strong>página inteira reservada</strong> após a Folha de Rosto e antes da Introdução. <strong>Somente siga estes passos depois de marcar todos os títulos</strong> conforme a Fase 2 — sem estilos, o sumário nasce vazio.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: gere o Sumário Automático <span class="l5-demo-hint">#l8-insert-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Comandos do sumário">
+              <button type="button" class="l5-sim-btn" onclick="l8InsertTOC('reset', this)">📄 Página em branco (antes)</button>
+              <button type="button" class="l5-sim-btn" onclick="l8InsertTOC('insert', this)">📚 Referências &gt; Sumário &gt; Automático 1</button>
+            </div>
+            <div class="l5-stage" id="l8-insert-stage">
+              <div class="l8-style-doc" id="l8-insert-doc">
+                <div style="font-weight:800; text-align:center; font-size:13px; letter-spacing:1px;">TRABALHO DE CONCLUSÃO DE CURSO</div>
+                <div id="l8-insert-blank" style="margin-top:10px; border:1.5px dashed #CBD5E1; border-radius:8px; padding:14px; text-align:center; color:#94A3B8; font-size:11.5px;">Página reservada para o SUMÁRIO (criada com Ctrl + Enter após o Ctrl + Home)</div>
+                <div class="l8-toc" id="l8-insert-toc">
+                  <div style="font-weight:800; text-align:center; font-size:12px; letter-spacing:1px; margin-bottom:6px;">SUMÁRIO</div>
+                  <div class="l8-toc-line"><span class="l8-toc-title">1. INTRODUÇÃO</span><span class="l8-toc-dots"></span><span class="l8-toc-page">3</span></div>
+                  <div class="l8-toc-line l8-toc-sub"><span class="l8-toc-title">1.1 Objetivo Geral</span><span class="l8-toc-dots"></span><span class="l8-toc-page">3</span></div>
+                  <div class="l8-toc-line l8-toc-sub"><span class="l8-toc-title">1.2 Objetivo Específico</span><span class="l8-toc-dots"></span><span class="l8-toc-page">4</span></div>
+                  <div class="l8-toc-line"><span class="l8-toc-title">2. DESENVOLVIMENTO</span><span class="l8-toc-dots"></span><span class="l8-toc-page">5</span></div>
+                  <div class="l8-toc-line l8-toc-sub"><span class="l8-toc-title">2.1 Primeiro Tópico</span><span class="l8-toc-dots"></span><span class="l8-toc-page">5</span></div>
+                  <div class="l8-toc-line"><span class="l8-toc-title">3. CONCLUSÃO</span><span class="l8-toc-dots"></span><span class="l8-toc-page">10</span></div>
+                  <div class="l8-toc-line"><span class="l8-toc-title">REFERÊNCIAS</span><span class="l8-toc-dots"></span><span class="l8-toc-page">12</span></div>
+                </div>
+              </div>
+            </div>
+            <div id="l8-insert-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ O Word varre o documento, localiza todos os títulos marcados, puxa a numeração de páginas exata e gera as guias de preenchimento pontilhadas retas.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Passo a passo: criar o sumário</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Vá para o início do documento pressionando <kbd>Ctrl</kbd> + <kbd>Home</kbd>.</li>
+              <li>Crie uma <strong>página em branco</strong> antes do texto pressionando <kbd>Ctrl</kbd> + <kbd>Enter</kbd>.</li>
+              <li>Clique no início dessa página em branco.</li>
+              <li>Na parte de cima da tela, clique na aba <strong>Referências</strong> — fica <strong>entre as abas Layout da Página e Correspondências</strong>.</li>
+              <li>Clique no botão <strong>Sumário</strong> (fica no canto esquerdo da aba).</li>
+              <li>Escolha <strong>Sumário Automático 1</strong> ou <strong>Sumário Automático 2</strong>. Pronto!</li>
+            </ol>
+          </div>
+
+          <div style="background:#FEF2F2; border:1.5px solid #FECACA; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#B91C1C; margin:0 0 8px; font-size:16px;">🚨 O sumário nasceu vazio?</h3>
+            <p style="margin:0; font-size:14px; color:#7F1D1D; line-height:1.7;">
+              Se o sumário aparecer vazio (ou sem um capítulo), <strong>o título não foi marcado com estilo</strong>. Volte à Fase 2, aplique Título 1/Título 2 no capítulo que faltou, e depois atualize o sumário (Fase 4). A ordem importa: <strong>primeiro os estilos, depois o sumário</strong>.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 3 -->
+          <div class="phase-step-check" data-step="3" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l8-check-3" class="l8-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 3">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 3: INSERIR O SUMÁRIO AUTOMÁTICO</strong><br>
+              Inseri o <strong>Sumário Automático 1</strong> através da guia <strong>Referências &gt; Sumário</strong>, em uma página em branco reservada.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 4 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que inseri o Sumário Automático pela guia Referências.</span>
+            <button type="button" class="read-check-btn" id="check-read-8-3" onclick="markTopicRead(8, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(8, 2)">← Voltar ao Tópico 2</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(8, 4)">Ir para 4. Atualizar com F9 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 4: A MÁGICA DA ATUALIZAÇÃO COM A TECLA F9
+             =============================================================== -->
+        <section id="l8-phase-4" class="topic-phase-section">
+          <h2>4. A Mágica da Atualização com a Tecla F9</h2>
+          <p>
+            Cenário real: você terminou o sumário, mas o professor mandou <strong>adicionar mais 3 páginas</strong> sobre a história do tema. E agora? O sumário <strong>não se atualiza sozinho</strong> quando você muda o documento — você precisa atualizar manualmente antes de imprimir ou enviar.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: atualize o sumário depois de mudanças <span class="l5-demo-hint">#l8-update-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Opções de atualização">
+              <button type="button" class="l5-sim-btn" onclick="l8Update('pages', this)">🔢 Atualizar apenas os números de página</button>
+              <button type="button" class="l5-sim-btn" onclick="l8Update('full', this)">📝 Atualizar o índice inteiro</button>
+            </div>
+            <div class="l5-stage" id="l8-update-stage">
+              <div class="l8-style-doc">
+                <div style="font-size:11px; color:#64748B; margin-bottom:6px;">Cenário: foi adicionado texto novo (páginas mudaram) <strong>e</strong> um novo capítulo <strong>2.3 Metodologia</strong> com Título 2.</div>
+                <div class="l8-toc" id="l8-update-toc" style="display:block; box-shadow:none;">
+                  <div class="l8-toc-line"><span class="l8-toc-title">1. INTRODUÇÃO</span><span class="l8-toc-dots"></span><span class="l8-toc-page">3</span></div>
+                  <div class="l8-toc-line"><span class="l8-toc-title">2. DESENVOLVIMENTO</span><span class="l8-toc-dots"></span><span class="l8-toc-page">5</span></div>
+                  <div class="l8-toc-line l8-toc-sub"><span class="l8-toc-title">2.1 Primeiro Tópico</span><span class="l8-toc-dots"></span><span class="l8-toc-page">5</span></div>
+                  <div class="l8-toc-line l8-toc-sub" id="l8-update-metodologia" style="display:none;"><span class="l8-toc-title">2.3 Metodologia</span><span class="l8-toc-dots"></span><span class="l8-toc-page">8</span></div>
+                  <div class="l8-toc-line"><span class="l8-toc-title">3. CONCLUSÃO</span><span class="l8-toc-dots" id="l8-update-dots"></span><span class="l8-toc-page" id="l8-update-page">10</span></div>
+                </div>
+              </div>
+            </div>
+            <div id="l8-update-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Clique em qualquer lugar dentro do sumário, clique no botão "Atualizar Sumário..." que aparece acima dele (ou pressione <kbd>F9</kbd>) e escolha a opção na janela.</div>
+            <div class="l8-f9-window" id="l8-f9-window">
+              <strong>Atualizar Sumário</strong><br>
+              <div class="l8-f9-radio"><span>◯</span><span><strong>Atualizar apenas os números de página</strong> — use se o texto apenas mudou de tamanho, sem títulos novos.</span></div>
+              <div class="l8-f9-radio"><span>◯</span><span><strong>Atualizar o índice inteiro</strong> — use se você trocou o nome de algum capítulo ou adicionou seções novas (serve para qualquer situação).</span></div>
+            </div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Como atualizar (3 caminhos)</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>Clique em <strong>qualquer lugar dentro do sumário</strong>.</li>
+              <li>Clique no botão <strong>Atualizar Sumário</strong> que aparece em cima dele — ou clique com o <strong>botão direito</strong> no sumário e escolha <strong>Atualizar campo</strong> — ou simplesmente pressione <kbd>F9</kbd> com o sumário selecionado.</li>
+              <li>Na janela que abrir, escolha a opção e clique em <strong>OK</strong>. O sumário refaz todos os cálculos <strong>em menos de 1 segundo</strong>!</li>
+            </ol>
+            <p style="margin:10px 0 0; font-size:13px; color:#64748B;">💡 Em caso de dúvida, escolha sempre <strong>Atualizar o índice inteiro</strong> — a opção serve para qualquer situação.</p>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">🗓️ Quando atualizar</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#78350F; line-height:1.8;">
+              <li>Adicionou ou removeu texto (os <strong>números de página</strong> mudam).</li>
+              <li>Criou um <strong>novo capítulo</strong> ou subcapítulo.</li>
+              <li><strong>Mudou o nome</strong> de algum título.</li>
+              <li><strong>Regra de ouro:</strong> sempre atualizar o sumário <strong>antes de imprimir ou enviar</strong> o trabalho.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 4 -->
+          <div class="phase-step-check" data-step="4" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l8-check-4" class="l8-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 4">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 4: ATUALIZAÇÃO COM F9</strong><br>
+              Pratiquei a atualização do sumário com a tecla <kbd>F9</kbd>, escolhendo a opção <strong>Atualizar o índice inteiro</strong>.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 5 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que pratiquei a atualização do sumário com a tecla F9.</span>
+            <button type="button" class="read-check-btn" id="check-read-8-4" onclick="markTopicRead(8, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(8, 3)">← Voltar ao Tópico 3</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(8, 5)">Ir para 5. Navegação &amp; Índice de Figuras →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 5: NAVEGAÇÃO ÁGIL E ÍNDICE DE FIGURAS
+             =============================================================== -->
+        <section id="l8-phase-5" class="topic-phase-section">
+          <h2>5. Navegação Ágil e Índice de Figuras</h2>
+          <p>
+            No Word, <strong>qualquer linha do sumário automático funciona como hiperlink</strong>: segure a tecla <kbd>Ctrl</kbd> e clique no capítulo para <strong>navegar instantaneamente</strong> até a página dele. Para voltar ao sumário, pressione <kbd>Alt</kbd> + <kbd>←</kbd> (Seta para a esquerda). Se o trabalho tem imagens ou tabelas, você pode criar uma <strong>lista separada</strong> só para elas — o Índice de Ilustrações.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: navegação com Ctrl + Clique e índice de figuras <span class="l5-demo-hint">#l8-nav-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Navegação e legendas">
+              <button type="button" class="l5-sim-btn" onclick="l8Navigate(3)">🖱️ Ctrl + Clique em "1. INTRODUÇÃO"</button>
+              <button type="button" class="l5-sim-btn" onclick="l8Navigate(10)">🖱️ Ctrl + Clique em "3. CONCLUSÃO"</button>
+              <button type="button" class="l5-sim-btn" onclick="l8Caption('legend')">🖼️ Inserir Legenda</button>
+              <button type="button" class="l5-sim-btn" onclick="l8Caption('index')">📋 Inserir Índice de Ilustrações</button>
+            </div>
+            <div class="l5-stage" id="l8-nav-stage">
+              <div class="l8-style-doc">
+                <div class="l8-toc" style="display:block; box-shadow:none;">
+                  <div class="l8-toc-line l8-toc-click" onclick="l8Navigate(3)" role="button" tabindex="0"><span class="l8-toc-title">1. INTRODUÇÃO</span><span class="l8-toc-dots"></span><span class="l8-toc-page">3</span></div>
+                  <div class="l8-toc-line l8-toc-click" onclick="l8Navigate(10)" role="button" tabindex="0"><span class="l8-toc-title">3. CONCLUSÃO</span><span class="l8-toc-dots"></span><span class="l8-toc-page">10</span></div>
+                </div>
+                <div class="l8-jump-page" id="l8-jump-page"></div>
+                <div id="l8-legend-note" style="display:none; margin-top:10px; border:1px solid #CBD5E1; border-radius:6px; padding:10px 14px; font-size:12px; color:#334155;">
+                  <div style="text-align:center; font-variant-numeric:tabular-nums;">🌌 [ imagem do documento ]</div>
+                  <div style="margin-top:6px; font-size:11px; color:#475569;"><strong>Figura 1:</strong> Esquema dos Planetas — legenda numerada automaticamente (Figura 1, Figura 2, Figura 3…).</div>
+                </div>
+                <div class="l8-caption-note" id="l8-caption-index">
+                  <strong>Índice de Ilustrações</strong><br>
+                  Figura 1: Esquema dos Planetas ......................... 6<br>
+                  <span style="font-size:10.5px; color:#64748B;">↑ lista separada, criada em Referências &gt; Inserir Índice de Ilustrações</span>
+                </div>
+              </div>
+            </div>
+            <div id="l8-nav-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Segure <kbd>Ctrl</kbd> e clique numa linha do sumário: o Word salta direto para a página do capítulo. Para voltar ao sumário: <kbd>Alt</kbd> + <kbd>←</kbd>.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Índice de Ilustrações em 2 etapas</h3>
+            <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Etapas do índice de ilustrações">
+              <div class="word-card-table-header">
+                <div class="word-table-title">
+                  <span class="word-table-badge">REFERÊNCIAS</span>
+                  <h3>🖼️ Legendas + índice de figuras</h3>
+                </div>
+                <span class="word-table-hint">Guia Referências</span>
+              </div>
+              <div class="word-table-scroll">
+                <table class="word-modern-table">
+                  <thead>
+                    <tr>
+                      <th>Etapa</th>
+                      <th>Comando</th>
+                      <th>Resultado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="highlight-blue">
+                      <td><strong>1. Etiquetar cada imagem</strong></td>
+                      <td>Clique na foto &gt; <strong>Referências &gt; Inserir Legenda</strong> &gt; tipo (Figura/Tabela) + nome</td>
+                      <td>O Word numera sozinho: Figura 1, Figura 2, Figura 3…</td>
+                    </tr>
+                    <tr class="highlight-blue">
+                      <td><strong>2. Gerar o índice</strong></td>
+                      <td>Cursor no local &gt; <strong>Referências &gt; Inserir Índice de Ilustrações</strong> &gt; tipo &gt; OK</td>
+                      <td>Lista separada com todas as figuras e suas páginas</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin:12px 0 0; font-size:13px; color:#64748B;">💡 Personalização do sumário: clique no sumário &gt; <strong>Referências &gt; Sumário &gt; Inserir Sumário</strong> — ajuste quantos níveis aparecem, o alinhamento dos números e o visual.</p>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <div style="font-weight:700; color:var(--teal-deep); font-size:16px; margin-bottom:8px;">✅ Checklist de Auditoria da Aula 08 — antes de entregar o trabalho</div>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.7;">
+              <li><strong>Estilos:</strong> todos os capítulos marcados com Título 1/Título 2 (sem texto indesejado no sumário).</li>
+              <li><strong>Posição:</strong> sumário em página própria, após os elementos pré-textuais.</li>
+              <li><strong>Atualização:</strong> F9 executado com "Atualizar o índice inteiro" na última versão do texto.</li>
+              <li><strong>Legendas:</strong> imagens etiquetadas com "Figura X" numerado automaticamente.</li>
+              <li><strong>Índices:</strong> Índice de Ilustrações/Tabelas gerados, quando o trabalho tiver figuras.</li>
+              <li><strong>Entrega:</strong> sumário atualizado <strong>antes de imprimir ou enviar</strong> — nunca na versão final desatualizado.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 5 -->
+          <div class="phase-step-check" data-step="5" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l8-check-5" class="l8-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 5">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 5: NAVEGAÇÃO E ÍNDICE DE FIGURAS</strong><br>
+              Testei a navegação rápida com <kbd>Ctrl</kbd> + <kbd>Clique</kbd> e criei uma legenda de imagem com o Índice de Ilustrações.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Exercício de Fixação →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que testei a navegação Ctrl + Clique e o Índice de Ilustrações.</span>
+            <button type="button" class="read-check-btn" id="check-read-8-5" onclick="markTopicRead(8, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(8, 4)">← Voltar ao Tópico 4</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(8)">Iniciar Exercício de Fixação (5 Perguntas) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 8 (5 QUESTÕES)
+             =============================================================== -->
+        <div id="fixation-panel-8" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="badge-word-blue" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--teal-deep); margin-top:6px; font-size:24px;">Exercício de Fixação — Aula 08 (Sumário Automático &amp; Índices)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft); font-weight:700;">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-8" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-8">QUESTÃO 1 / 5</span>
+                <span id="q-points-8">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-8"></div>
+
+              <button class="hint-toggle" id="btn-hint-8" type="button" onclick="toggleHint(8)">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-8"></div>
+
+              <div class="options" id="options-8"></div>
+
+              <div class="nav-row">
+                <button type="button" class="btn btn-ghost" id="btn-prev-8" onclick="prevQuestionGen(8)">← Anterior</button>
+                <div style="font-size:12px; color:var(--ink-soft); font-weight:600;">✓ Salvo automaticamente</div>
+                <button type="button" class="btn btn-primary" id="btn-next-8" onclick="nextQuestionGen(8)">Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             PAINEL DE RESULTADO DO EXERCÍCIO DE FIXAÇÃO DA AULA 8
+             =============================================================== -->
+        <div id="result-panel-8" class="fixation-panel">
+          <div class="card-quiz" style="text-align:center;">
+            <div class="result-badge" id="result-badge-8" style="margin:0 auto 16px;"></div>
+            <h2 id="result-title-8" style="color:var(--teal-deep); margin-bottom:8px; font-size:28px;"></h2>
+            <p id="result-sub-8" style="color:var(--ink-soft); margin-bottom:20px; font-size:16px;"></p>
+
+            <div style="font-size:42px; font-weight:800; color:var(--teal); font-family:'Fraunces', serif; margin-bottom:12px;">
+              <span id="result-score-8">0,0</span> <span style="font-size:20px; color:var(--ink-soft); font-family:'Inter';">/ 10,0</span>
+            </div>
+
+            <div class="signature-badge-box">
+              <div style="font-weight:700; color:#F8FAFC; margin-bottom:4px;">🔐 Comprovante Digital de Conclusão da Aula 08</div>
+              <div style="font-size:11.5px; color:#94A3B8;">Código de Autenticidade (SHA-256):</div>
+              <div class="signature-code-display" id="signature-code-8">GERANDO ASSINATURA...</div>
+              <div style="font-size:11px; color:#94A3B8; margin-top:4px;">WR Capacitação Profissional • Instrutor Marcos Rangel</div>
+            </div>
+
+            <h3 style="text-align:left; font-size:18px; color:var(--teal-deep); margin-top:24px;">Gabarito Comentado</h3>
+            <div class="breakdown" id="breakdown-8"></div>
+
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+              <button class="btn btn-primary" id="btn-download-txt-8" type="button">📄 Baixar Comprovante Oficial (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-8" type="button" style="background:var(--amber);">📑 Baixar Apostila em PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-8" type="button" style="justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+                Enviar Resultado por WhatsApp
+              </button>
+              <button class="btn btn-ghost" id="btn-email-8" type="button">📧 Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-8">
+              <p style="font-size:14px; margin-bottom:12px; color:var(--ink-soft);">Clique abaixo para abrir seu aplicativo de e-mail com o comprovante pronto:</p>
+              <button class="btn btn-primary" id="btn-open-gmail-8" type="button" style="width:100%;">Abrir no Gmail</button>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:20px;">
+              <button type="button" class="btn btn-ghost" onclick="restartQuizGen(8)">↺ Recomeçar o exercício</button>
+              <button type="button" class="btn btn-primary" onclick="showScreen('screen-hub')">Voltar ao Menu de Aulas →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- ===================================================================
          TELAS DA AVALIAÇÃO FINAL DO MÓDULO (PRESERVADAS)
          =================================================================== -->
     <div class="quiz-app" id="screen-start-app" style="padding:0;">
@@ -6568,7 +7295,7 @@
           <div class="eyebrow-badge"><span class="dot"></span> Avaliação Somativa Oficial</div>
           <h1>Módulo 2 — Microsoft Word</h1>
           <p style="color:var(--ink-soft); margin-bottom:18px;">
-            Esta avaliação contém 10 questões abrangentes sobre o Microsoft Word, alinhamentos, formatações de texto, tabelas e normas ABNT. Nota mínima para aprovação e emissão de certificado: <strong>7,0</strong>.
+            Esta avaliação contém 15 questões abrangentes sobre o Microsoft Word: interface, régua e recuos, normas ABNT, alinhamentos, imagens e bordas, estilos, quebras de página e seção, revisão colaborativa e tabelas. Nota mínima para aprovação e emissão de certificado: <strong>7,0</strong>.
           </p>
 
           <!-- PDF Lesson Download & Checkbox Requirement -->
@@ -6609,8 +7336,8 @@
         <div class="trail" id="trail"></div>
         <div class="card-quiz">
           <div class="q-meta">
-            <span id="q-count">QUESTÃO 1 / 10</span>
-            <span id="q-points">VALE 1,0 PONTO</span>
+            <span id="q-count">QUESTÃO 1 / 15</span>
+            <span id="q-points">CADA QUESTÃO VALE ~0,67 PT</span>
           </div>
           <div class="q-text" id="q-text"></div>
 
@@ -7118,97 +7845,226 @@
       }
     ];
 
+    // QUESTÕES DA AULA 08 (5 QUESTÕES — SUMÁRIO AUTOMÁTICO & ÍNDICES)
+    const QUESTIONS_LESSON_8 = [
+      {
+        q: "Antes de criar o Sumário Automático, qual preparo o documento PRECISA ter?",
+        options: [
+          "Imagens em todas as páginas.",
+          "Todos os títulos marcados com Estilos (Título 1 para capítulos e Título 2 para subcapítulos).",
+          "Cada título digitado em CAIXA ALTA manualmente.",
+          "Uma tabela no final do documento."
+        ],
+        correct: 1,
+        hint: "O sumário automático lê o mapa interno de estilos do documento: sem estilos, o sumário nasce vazio."
+      },
+      {
+        q: "Em qual guia do Word fica o botão 'Sumário' para inserir o Sumário Automático?",
+        options: [
+          "Início",
+          "Layout da Página",
+          "Referências",
+          "Exibir"
+        ],
+        correct: 2,
+        hint: "A guia Referências fica entre as abas Layout da Página e Correspondências."
+      },
+      {
+        q: "Qual tecla atualiza o sumário (recolocando os números de página) após você editar o texto?",
+        options: [
+          "F5",
+          "F7",
+          "F9",
+          "F12"
+        ],
+        correct: 2,
+        hint: "Clique dentro do sumário e pressione a tecla de função F9 — o Word refaz os cálculos em menos de 1 segundo."
+      },
+      {
+        q: "Na janela 'Atualizar Sumário', qual opção serve para QUALQUER situação (inclusive quando você mudou o nome de capítulos ou adicionou seções)?",
+        options: [
+          "Atualizar apenas os números de página.",
+          "Remover o sumário e digitar de novo.",
+          "Atualizar o índice inteiro.",
+          "Não há opções nessa janela."
+        ],
+        correct: 2,
+        hint: "Em caso de dúvida, escolha sempre 'Atualizar o índice inteiro' — a opção cobre qualquer mudança."
+      },
+      {
+        q: "Como navegar instantaneamente até o capítulo a partir do sumário automático?",
+        options: [
+          "Segurar Ctrl e clicar na linha do capítulo (Ctrl + Clique).",
+          "Dar dois cliques no número da página.",
+          "Pressionar a tecla F1 com o sumário aberto.",
+          "Copiar o título e colar na barra de pesquisa."
+        ],
+        correct: 0,
+        hint: "Toda linha do sumário automático funciona como hiperlink: Ctrl + Clique salta para a página do capítulo."
+      }
+    ];
+
     // QUESTÕES DA PROVA FINAL DO MÓDULO (10 QUESTÕES)
     const QUESTIONS_FINAL = [
       {
-        q: "Qual das opções descreve a função principal do Microsoft Word?",
+        q: "Qual é a combinação de teclas do teclado utilizada para SALVAR o documento atual no Microsoft Word configurado em português?",
+        options: ["Ctrl + S", "Ctrl + B", "Ctrl + P", "Ctrl + A"],
+        correct: 1,
+        hint: "Cuidado com a pegadinha clássica: no Word em inglês é Ctrl+S, mas no Word em português o atalho de salvar é Ctrl+B e Ctrl+S aplica Sublinhado."
+      },
+      {
+        q: "Na régua horizontal do Word, qual marcador é responsável EXCLUSIVAMENTE por recuar a primeira linha de cada parágrafo?",
         options: [
-          "Criar planilhas de cálculo e gerenciar bancos de dados financeiros.",
-          "Editar e processar textos profissionais, cartas, relatórios e trabalhos.",
-          "Criar apresentações de slides com transições e efeitos visuais.",
-          "Desenvolver softwares e páginas de programação avançada."
+          "O retângulo inferior na base da régua.",
+          "O triângulo superior apontado para baixo.",
+          "O triângulo inferior apontado para cima.",
+          "O marcador circular da margem direita."
         ],
         correct: 1,
-        hint: "O Word é mundialmente reconhecido como editor de textos profissional."
+        hint: "O triângulo superior com a ponta voltada para baixo comanda exclusivamente a primeira linha do parágrafo."
       },
       {
-        q: "Qual atalho de teclado é utilizado para JUSTIFICAR um parágrafo no Microsoft Word?",
-        options: ["Ctrl + J", "Ctrl + Q", "Ctrl + E", "Ctrl + G"],
-        correct: 0,
-        hint: "A letra J vem de Justificar, alinhando simultaneamente as margens esquerda e direita."
-      },
-      {
-        q: "Para que serve a ferramenta 'Pincel de Formatação' no Word?",
+        q: "Segundo a norma da Associação Brasileira de Normas Técnicas (ABNT), quais devem ser as medidas padrão das margens de uma folha A4 para trabalhos acadêmicos?",
         options: [
-          "Inserir desenhos e ilustrações vetoriais na folha.",
-          "Copiar a formatação visual (fonte, cor, tamanho) de um texto e aplicá-la em outro.",
-          "Apagar todo o texto digitado na página.",
-          "Verificar e corrigir a ortografia automaticamente."
+          "Superior 2 cm, Esquerda 2 cm, Inferior 3 cm e Direita 3 cm.",
+          "Superior 3 cm, Esquerda 3 cm, Inferior 2 cm e Direita 2 cm.",
+          "Todas as quatro margens com exatamente 2,5 cm.",
+          "Superior 4 cm, Esquerda 3 cm, Inferior 3 cm e Direita 2 cm."
         ],
         correct: 1,
-        hint: "Ele copia o estilo visual sem alterar o conteúdo das palavras."
+        hint: "Lembre-se da regra '3-3-2-2': as margens esquerda e superior recebem 3 cm para dar espaço à encadernação e perfuração da folha."
       },
       {
-        q: "Qual tecla de atalho é utilizada para inserir uma QUEBRA DE PÁGINA no Word?",
-        options: ["Enter", "Shift + Enter", "Ctrl + Enter", "Alt + Enter"],
-        correct: 2,
-        hint: "Pressione Ctrl junto com a tecla Enter para iniciar o próximo capítulo em uma nova folha."
-      },
-      {
-        q: "Segundo a norma ABNT básica, qual é a medida padrão recomendada para a Margem Superior e Esquerda de um trabalho acadêmico?",
+        q: "Qual das alternativas abaixo apresenta a configuração de tipografia e parágrafo exigida pela ABNT para o corpo do texto de um trabalho acadêmico?",
         options: [
-          "2 cm e 2 cm",
-          "3 cm e 3 cm",
-          "1,5 cm e 2 cm",
-          "4 cm e 4 cm"
+          "Fonte Comic Sans 14, alinhamento centralizado e espaçamento simples.",
+          "Fonte Arial ou Times New Roman tamanho 12, alinhamento Justificado, espaçamento entre linhas de 1,5 e recuo de 1,25 cm na primeira linha.",
+          "Fonte Calibri 11, alinhamento à esquerda, espaçamento duplo e sem recuo.",
+          "Fonte Courier New 10, alinhamento à direita e espaçamento triplo."
         ],
         correct: 1,
-        hint: "A regra mnemônica clássica da ABNT é 3-3-2-2 (3 cm superior e esquerda, 2 cm inferior e direita)."
+        hint: "A ABNT exige seriedade: Arial ou Times New Roman tamanho 12, texto justificado (Ctrl+J), entrelinhas 1,5 e recuo de 1,25 cm."
       },
       {
-        q: "Qual tecla de função no teclado aciona o Verificador Ortográfico e Gramatical no Word?",
-        options: ["F2", "F5", "F7", "F12"],
-        correct: 2,
-        hint: "A tecla de atalho universal de revisão de texto no Office é o F7."
-      },
-      {
-        q: "O que acontece ao clicar 2 vezes rapidamente sobre uma palavra no documento?",
+        q: "Qual alinhamento de texto faz com que as margens esquerda e direita do parágrafo fiquem perfeitamente retas e alinhadas simultaneamente?",
         options: [
-          "A palavra é apagada do texto.",
-          "A palavra inteira é selecionada.",
-          "O documento inteiro é salvo.",
-          "Abre-se o menu de impressão."
+          "Alinhar à Esquerda (Ctrl + Q).",
+          "Centralizar (Ctrl + E).",
+          "Alinhar à Direita (Ctrl + G).",
+          "Justificar (Ctrl + J)."
         ],
-        correct: 1,
-        hint: "O duplo clique seleciona a palavra completa com pontualidade."
+        correct: 3,
+        hint: "O alinhamento justificado distribui o espaçamento entre as palavras para que o texto forme um bloco reto nas duas laterais."
       },
       {
-        q: "Qual tecla deve ser pressionada para apagar um caractere situado à DIREITA do cursor?",
-        options: ["Backspace", "Delete", "Esc", "End"],
-        correct: 1,
-        hint: "Backspace apaga para a esquerda; Delete apaga para a direita."
-      },
-      {
-        q: "Para salvar uma cópia de um documento com outro nome ou formato (como PDF), qual menu deve ser acessado?",
+        q: "Qual é o método profissional e correto no Word para distanciar dois parágrafos sem precisar pressionar a tecla Enter repetidas vezes?",
         options: [
-          "Arquivo > Salvar Como",
-          "Exibir > Modos de Exibição",
-          "Inserir > Quebra de Página",
-          "Layout > Colunas"
+          "Ajustar o valor do campo 'Espaçamento Depois' (medido em pontos - pt) na janela de Parágrafo.",
+          "Aumentar o tamanho da fonte para 72 no final da frase.",
+          "Desenhar uma linha invisível do Paint entre os parágrafos.",
+          "Segurar a barra de espaço até pular de linha."
         ],
         correct: 0,
-        hint: "O comando 'Salvar Como' permite renomear o arquivo ou escolher o formato PDF."
+        hint: "O espaçamento 'Depois' em pontos (ex: 6 pt ou 12 pt) afasta os parágrafos com precisão milimétrica sem criar linhas em branco."
       },
       {
-        q: "Qual recurso do Word permite criar um sumário dinâmico que atualiza os números das páginas automaticamente?",
+        q: "Ao inserir uma imagem no Word, ela frequentemente impede a movimentação livre do cursor. Qual opção de 'Quebra Automática de Texto' deve ser selecionada para que a imagem possa ser arrastada e o texto flua ao redor de suas bordas?",
         options: [
-          "Digitar os tópicos manualmente com pontos até o fim da linha.",
-          "Aplicar os estilos de Título (Título 1, Título 2) e inserir o Sumário pela guia Referências.",
-          "Desenhar uma tabela invisível no início do trabalho.",
-          "Usar a caixa de texto da guia Inserir."
+          "Alinhado com o texto.",
+          "Quadrado (ou Justo).",
+          "Ocultar texto.",
+          "Enviar para trás da tela."
         ],
         correct: 1,
-        hint: "O sumário automático depende exclusivamente da hierarquia dos Estilos de Título."
+        hint: "A opção Quadrado ou Justo liberta a imagem da trava de linha, fazendo o texto contorná-la suavemente."
+      },
+      {
+        q: "Em qual ferramenta da caixa de diálogo 'Bordas e Sombreamento' o usuário pode escolher molduras ilustradas prontas (como estrelas, fitas ou temas decorativos) para criar um certificado?",
+        options: [
+          "No menu suspenso 'Arte'.",
+          "No controle de brilho da imagem.",
+          "No botão de verificação ortográfica.",
+          "Na régua de tabulação decimal."
+        ],
+        correct: 0,
+        hint: "O campo 'Arte' na aba Bordas da Página oferece dezenas de molduras gráficas decorativas."
+      },
+      {
+        q: "Se um documento de 80 páginas possui todos os títulos formatados com o estilo nativo 'Título 1' e o orientador solicitar a mudança da cor dos títulos de azul para preto, qual é a forma mais rápida e profissional de realizar a alteração?",
+        options: [
+          "Percorrer as 80 páginas selecionando cada título individualmente para trocar a cor.",
+          "Clicar com o botão direito sobre o estilo 'Título 1' na Galeria de Estilos, escolher 'Modificar', alterar a cor para preto e salvar.",
+          "Excluir todos os títulos e digitá-los novamente.",
+          "Aplicar uma marca d'água preta sobre a folha."
+        ],
+        correct: 1,
+        hint: "Modificar o estilo atualiza todos os títulos vinculados a ele instantaneamente em uma fração de segundo."
+      },
+      {
+        q: "Qual ação deve ser executada no botão do Pincel de Formatação para que ele permaneça 'travado/ativo', permitindo copiar o formato para múltiplos trechos de texto sem desativar após o primeiro clique?",
+        options: [
+          "Clicar com o botão direito do mouse.",
+          "Dar um clique duplo (dois cliques rápidos) sobre o ícone do Pincel.",
+          "Segurar a tecla Enter enquanto clica no pincel.",
+          "Arrastar o pincel para a lixeira do Windows."
+        ],
+        correct: 1,
+        hint: "Dois cliques no pincel travam a ferramenta. Para destravar após o uso, basta pressionar a tecla Esc."
+      },
+      {
+        q: "Para criar um documento onde a página 3 esteja na orientação Paisagem (horizontal), enquanto as páginas 1, 2 e 4 permanecem na orientação Retrato (vertical), qual recurso estrutural é OBRIGATÓRIO utilizar?",
+        options: [
+          "Quebra de Página simples (Ctrl + Enter).",
+          "Quebra de Seção do tipo 'Próxima Página'.",
+          "Diminuir o zoom para 10%.",
+          "Inserir uma caixa de texto gigante."
+        ],
+        correct: 1,
+        hint: "A Quebra de Seção cria um novo compartimento independente no arquivo, permitindo trocar a orientação da página sem afetar o restante."
+      },
+      {
+        q: "Na elaboração de um Trabalho de Conclusão de Curso (TCC), a Capa e o Sumário não devem exibir numeração de página impressa, mas a numeração deve começar na Introdução. Como isso é tecnicamente viabilizado no Word?",
+        options: [
+          "Colocando um corretivo branco sobre a tela do monitor.",
+          "Inserindo uma Quebra de Seção antes da Introdução e desativando o botão 'Vincular ao Anterior' no cabeçalho da nova seção.",
+          "Apagando o número de todas as páginas ao mesmo tempo.",
+          "Criando arquivos de texto separados no Bloco de Notas."
+        ],
+        correct: 1,
+        hint: "Desativar o botão 'Vincular ao Anterior' quebra o cordão umbilical entre as seções, permitindo que a Introdução tenha cabeçalho próprio."
+      },
+      {
+        q: "Durante a revisão de um contrato no Word, o que acontece com uma palavra excluída quando o recurso 'Controlar Alterações' (Track Changes) está ATIVADO?",
+        options: [
+          "A palavra desaparece do documento imediatamente sem deixar vestígios.",
+          "A palavra permanece visível, mas fica riscada no meio (com efeito tachado) e em cor destacada para aprovação posterior.",
+          "O Word fecha o arquivo e pede uma senha de administrador.",
+          "A palavra é enviada automaticamente para a impressora."
+        ],
+        correct: 1,
+        hint: "O controle de alterações mantém o texto apagado riscado em vermelho até que o revisor clique em 'Aceitar' ou 'Rejeitar'."
+      },
+      {
+        q: "O que faz com que o comando 'Sumário Automático' da guia Referências consiga identificar perfeitamente os títulos e as respectivas páginas do trabalho?",
+        options: [
+          "A quantidade de pontos digitados manualmente entre o título e o número.",
+          "A aplicação prévia dos Estilos 'Título 1', 'Título 2' e 'Título 3' nos títulos do documento.",
+          "A cor da fonte do texto.",
+          "O tamanho das imagens inseridas na capa."
+        ],
+        correct: 1,
+        hint: "O sumário automático depende 100% da leitura dos estilos de título aplicados na estrutura do trabalho."
+      },
+      {
+        q: "Em uma tabela comercial de orçamento criada no Word, qual é o alinhamento de texto recomendado para a coluna que contém os valores e preços em Reais (R$)?",
+        options: [
+          "Alinhar à Esquerda.",
+          "Alinhar à Direita.",
+          "Justificado.",
+          "Letra Capitular."
+        ],
+        correct: 1,
+        hint: "Alinhar à direita faz com que as casas decimais (centavos) fiquem rigorosamente alinhadas na mesma linha vertical, facilitando a leitura de valores."
       }
     ];
 
@@ -7249,8 +8105,8 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5 && lessonNum !== 6 && lessonNum !== 7){
-        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 06, 07 e a Prova Final estão liberadas no portal.`);
+      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5 && lessonNum !== 6 && lessonNum !== 7 && lessonNum !== 8){
+        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 06, 07, 08 e a Prova Final estão liberadas no portal.`);
         return;
       }
 
@@ -7280,7 +8136,8 @@
           4: "screen-lesson-4",
           5: "screen-lesson-5",
           6: "screen-lesson-6",
-          7: "screen-lesson-7"
+          7: "screen-lesson-7",
+          8: "screen-lesson-8"
         };
         if(routes[targetLessonNum]){
           const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
@@ -7984,10 +8841,114 @@
     };
 
     // ===================================================================
+    // SIMULADORES DA AULA 08 — SUMÁRIO AUTOMÁTICO & ÍNDICES
+    // ===================================================================
+    window.l8MarkStyle = function(mode, btn){
+      const title = document.getElementById("l8-doc-title");
+      const hint = document.getElementById("l8-doc-title-hint");
+      const status = document.getElementById("l8-style-status");
+      if(!title || !status) return;
+
+      title.className = "";
+      title.style.cssText = "";
+      if(hint) hint.style.display = "none";
+
+      if(mode === "t1"){
+        title.className = "l8-style-h1";
+        if(hint) hint.style.display = "block";
+        if(status) status.textContent = "▸ TÍTULO 1 aplicado: o texto ganhou a aparência de capítulo principal (maiúsculo/colorido) e entrou no mapa de estilos nível 1 — aparecerá no sumário como capítulo.";
+      } else if(mode === "t2"){
+        title.className = "l8-style-h2";
+        if(hint) hint.style.display = "block";
+        if(status) status.textContent = "▸ TÍTULO 2 aplicado: o texto entrou como subcapítulo (nível 2) — aparecerá no sumário indentado, logo abaixo do Título 1 correspondente.";
+      } else {
+        if(status) status.textContent = "▸ Normal aplicado: o texto voltou a ser parágrafo comum — não aparecerá no sumário. Use Normal para corrigir texto marcado como título por engano.";
+      }
+
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l8InsertTOC = function(action, btn){
+      const blank = document.getElementById("l8-insert-blank");
+      const toc = document.getElementById("l8-insert-toc");
+      const status = document.getElementById("l8-insert-status");
+      if(!blank || !toc || !status) return;
+
+      if(action === "insert"){
+        blank.style.display = "none";
+        toc.style.display = "block";
+        if(status) status.textContent = "▸ Sumário Automático 1 gerado! O Word varreu o documento, localizou os títulos marcados, puxou a numeração exata de páginas e desenhou as guias pontilhadas retas — sem nenhum ponto digitado à mão.";
+      } else {
+        blank.style.display = "block";
+        toc.style.display = "none";
+        if(status) status.textContent = "▸ Página em branco reservada (Ctrl + Home + Ctrl + Enter). Sem os estilos da Fase 2, o sumário nasceria vazio — primeiro marque os títulos!";
+      }
+
+      if(btn && btn.parentElement && action !== "reset"){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l8Update = function(mode, btn){
+      const metodologia = document.getElementById("l8-update-metodologia");
+      const page = document.getElementById("l8-update-page");
+      const win = document.getElementById("l8-f9-window");
+      const status = document.getElementById("l8-update-status");
+      if(!metodologia || !page || !status) return;
+
+      if(mode === "pages"){
+        page.textContent = "12";
+        if(status) status.textContent = "▸ 'Atualizar apenas os números de página': CONCLUSÃO foi reposicionada para a página 12. Mas atenção: o capítulo 2.3 Metodologia NÃO aparece — esta opção não reavalia os títulos.";
+      } else if(mode === "full"){
+        metodologia.style.display = "flex";
+        page.textContent = "12";
+        if(status) status.textContent = "▸ 'Atualizar o índice inteiro': o Word revarreu todos os estilos — o novo capítulo 2.3 Metodologia apareceu e as páginas foram recalculadas. Opção serve para qualquer situação!";
+        if(win) win.style.display = "block";
+      }
+
+      if(btn && btn.parentElement && mode){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l8Navigate = function(page){
+      const jump = document.getElementById("l8-jump-page");
+      const status = document.getElementById("l8-nav-status");
+      if(!jump || !status) return;
+
+      jump.style.display = "block";
+      jump.textContent = `⤵ Você saltou direto para a página ${page} do documento (capítulo clicado). Para voltar ao sumário: Alt + ← (Seta para a esquerda).`;
+      if(status) status.textContent = `▸ Ctrl + Clique executado: o Word navegou instantaneamente para a página ${page}. Toda linha do sumário automático é um hiperlink.`;
+    };
+
+    window.l8Caption = function(action){
+      const legend = document.getElementById("l8-legend-note");
+      const index = document.getElementById("l8-caption-index");
+      const status = document.getElementById("l8-nav-status");
+      if(!legend || !index || !status) return;
+
+      if(action === "legend"){
+        legend.style.display = "block";
+        if(status) status.textContent = "▸ Legenda inserida (Referências > Inserir Legenda): o Word numerou sozinho como Figura 1 — a próxima imagem seria Figura 2 automaticamente.";
+      } else {
+        index.style.display = "block";
+        if(status) status.textContent = "▸ Índice de Ilustrações gerado (Referências > Inserir Índice de Ilustrações): lista separada com as figuras etiquetadas e as páginas delas.";
+      }
+    };
+
+    // ===================================================================
     // MARCAR LEITURA & GAMIFICAÇÃO COM PERSISTÊNCIA (LOCALSTORAGE)
     // ===================================================================
-    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5, 6: 5, 7: 5 };
-    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true };
+    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5, 6: 5, 7: 5, 8: 5 };
+    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true };
     const READ_STORAGE_KEY = "word_lessons_reading_progress";
 
     let readTopics = {};
@@ -8102,9 +9063,9 @@
       }
     }
 
-    // Inicialização da Leitura (Aulas 1, 2, 3, 4, 5, 6 e 7)
+    // Inicialização da Leitura (Aulas 1 a 8)
     loadReadTopics();
-    [1, 2, 3, 4, 5, 6, 7].forEach(function(num){
+    [1, 2, 3, 4, 5, 6, 7, 8].forEach(function(num){
       captureReadLabels(num);
       bindCheckboxes(num);
       paintReadLesson(num);
@@ -8201,6 +9162,16 @@
         moduleId: "word_lesson_7_quiz",
         title: "Módulo 2 — Aula 07: Revisão de Texto, Comentários & Colaboração",
         sig: "Módulo 2 - Aula 7 (Word)"
+      },
+      8: {
+        questions: QUESTIONS_LESSON_8,
+        name: "Aluno(a)",
+        answers: new Array(5).fill(null),
+        current: 0,
+        signature: null,
+        moduleId: "word_lesson_8_quiz",
+        title: "Módulo 2 — Aula 08: Sumário Automático & Índices de Ilustrações",
+        sig: "Módulo 2 - Aula 8 (Word)"
       }
     };
 
@@ -8403,7 +9374,7 @@
     window.getReportDataGen = getReportDataGen;
 
     // Vincular botões de Comprovante (.txt), PDF, WhatsApp e E-mail dos Exercícios de Fixação
-    ;[1, 2, 3, 4, 5, 6, 7].forEach(function(lessonNum){
+    ;[1, 2, 3, 4, 5, 6, 7, 8].forEach(function(lessonNum){
       const btnTxt = document.getElementById(`btn-download-txt-${lessonNum}`);
       if(btnTxt){
         btnTxt.onclick = () => window.QuizEngine.downloadTxtReport(getReportDataGen(lessonNum));

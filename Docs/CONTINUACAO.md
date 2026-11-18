@@ -36,7 +36,35 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL (16/11/2026) — Módulo 2: Microsoft Word — Aula 07 (Revisão de Texto, Comentários & Colaboração)
+## ✅ SESSÃO ATUAL (16/11/2026) — Módulo 2: Microsoft Word — Pendências Fechadas (Prova Final 10→15) + Validação CDP
+
+Sessão de ajuste de pendências (pedido do usuário: "ajuste todas as pendências e depois aula 8"). ⚠️ **Trabalho NÃO commitado — commitar somente quando o usuário pedir.**
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Pendência "cards 09–12 do Excel" — DESATUALIZADA** | `modules/excel/index.html` | Auditoria: todas as 13 telas (`screen-lesson-1..13`), 13 senhas (`xa001`..`xm013`), quizzes L9/L10 (`GABARITO_L9 [1,2,1,2,3]`, `GABARITO_L10 [2,1,2,1,0]`), painéis de entrega l11–l13 e 65+ seções PDF (7–11 por aula) já implementados. `promptLessonPassword` abre modal sem gate (o `alertLockedLesson` é código morto). Nada a corrigir — pendência resolvida por implementação anterior. |
+| **Prova Final do Word 10→15 questões** | `modules/word/index.html` | `QUESTIONS_FINAL` substituída integralmente pelas **15 questões oficiais** de `Docs/SPEC-PROVA-FINAL-WORD.md` (gabarito `[1,1,1,1,3,0,1,0,1,1,1,1,1,1,1]` conferido == spec, A=0..D=3). Texto fixos atualizados: intro "15 questões abrangentes…"; `#q-count` "QUESTÃO 1 / 15"; `#q-points` "CADA QUESTÃO VALE ~0,67 PT" (fluxo JS já era dinâmico via `FINAL_TOTAL = QUESTIONS_FINAL.length`; 15 × (10/15) = 10,0). |
+| **Status da spec Prova Final** | `Docs/SPEC-PROVA-FINAL-WORD.md` | `📝 ESPECIFICADA` → `🟢 IMPLEMENTADA E VALIDADA (CDP: 7/7 PASS …)`. |
+| **Ambiente CDP construído** | `/tmp/opencode/` | `playwright-core` instalado em `/tmp/opencode/node_modules/`; browser em cache `~/.cache/ms-playwright/chromium_headless_shell-1243/…/chrome-headless-shell` (v153). `file://` + `waitUntil: "domcontentloaded"` (NUNCA `"load"` — trava). |
+| **Harness Aulas 06/07** | `/tmp/opencode/cdp-word-67.js` | **14/14 PASS, 0 erros de página**: H1-A6 senha `wf006`; H2-A6 checks 5/5; H3-A6 gamificação 100%; H1-A7 senha `wg007`; H2-A7 FASE 0→fase 1; H4 F7/ondulados + Shift+F7/sinônimos; H5 ciclo do comentário (novo/responder/resolver/excluir); H6 Track liga/desliga; H7 aceitar/rejeitar/reset; H8 proteção alterna; H9 quiz salvo (`word_lesson_7_quiz:aluno(a)`); H9b nota 10,0 + SHA-256 + breakdown 5; H10 recomeçar zera; H11 `downloadLessonPDF` dispara popup. |
+| **Harness Prova Final** | `/tmp/opencode/cdp-word-final.js` | **7/7 PASS, 0 erros de página**: PF1 "QUESTÃO 1 / 15"; PF2 nota 10,0 com 15/15; PF3 SHA-256 (`WR-…`); PF4 gabarito comentado com 15 linhas; PF5 texto "15 de 15 questões"; PF6 estado salvo (chave real = `word_final_exam_state:aluno(a) teste` — `saveState` anexa `:nome` em minúsculas); PF7 retomada abre na QUESTÃO 15 / 15. |
+
+### 2. Aprendizados de ambiente (reusar na próxima sessão)
+
+- Internos do quiz do Word são **privados** (`QUIZ_CFG` → ReferenceError em `page.evaluate`) — dirigir o quiz **só por UI**: clicar `#options-N .opt:nth-child(correta+1)` + `#btn-next-N`; globais reais: `promptLessonPassword`, `switchTopicPhase`, `openFixationPanel`, `restartQuizGen`, `renderQuestionGen`, `persistQuizGen`, simulators `l6*/l7*`.
+- `page.evaluate` não vê variáveis Node (causou `ReferenceError: keys is not defined` — recalcular dentro do evaluate).
+- Chave de persistência: `<moduleId>:<nome em minúsculas, trim>` (ex.: `word_lesson_7_quiz:aluno(a)`, `word_final_exam_state:aluno(a) teste`).
+- Aula 06: o toggle de proteção 1º clique **libera** e o 2º **bloqueia** (estado inicial já protegido).
+
+### 3. Pendências para a próxima
+
+- **Implementar Aula 08 (Sumário Automático & Índices)** — spec `Docs/SPEC-AULA-08-WORD.md`; origem `AulaOrigem/word/Aula 8 Sumário Automático no Word` (verificar imagens; provável 0 → ilustrações HTML). Padrão: card no hub + senha, FASE 0 + 5 fases com checks `l8-check-1..5`, gamify `*-8`, simuladores `l8*`, `QUESTIONS_LESSON_8` + `QUIZ_CFG[8]` (`word_lesson_8_quiz`), PDF seções 8.0–8.5, loops/rotas/`TOTAL_TOPICS` até 8.
+- Validar Aula 08 (node --check, estrutural, `check-pdf*.js`, CDP estendendo `/tmp/opencode/cdp-word-67.js`).
+- Commit aguardando pedido explícito do usuário (alterações: Prova Final + docs desta sessão + tudo da Aula 07/imagens já commitado em `2399b5c`).
+
+## ✅ SESSÃO ANTERIOR (16/11/2026) — Módulo 2: Microsoft Word — Aula 07 (Revisão de Texto, Comentários & Colaboração)
 
 Implementação completa da **Aula 07 do Módulo 2: Microsoft Word** (spec `Docs/SPEC-AULA-07-WORD.md`, status 🟢), desbloqueio no Hub com senha `wg007`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l7-check-1..5`), 4 simuladores ao vivo, exercício de fixação com 5 questões e apostila PDF com seções 7.0–7.5 e ilustrações HTML reais (material de origem **sem imagens** — 0 referências `src=`). ⚠️ **Trabalho NÃO commitado — o usuário pediu para commitar somente quando ele pedir.**
 

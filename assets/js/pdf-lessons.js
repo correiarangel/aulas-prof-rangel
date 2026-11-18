@@ -4115,6 +4115,159 @@ MARCAR COMO FINAL — versão somente leitura:
 • Proteção: restrição aplicada quando o destinatário só deve comentar.
 • Finalização: "Marcar como Final" apenas quando o documento não for mais alterado.`,
           html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🔒 Fluxo da proteção de documento</div><table class="mini-sheet"><tr><th>Passo</th><th>Ação</th><th>Resultado</th></tr><tr><td>1</td><td>Revisão &gt; Restringir Edição</td><td>Abre o painel de restrição</td></tr><tr><td>2</td><td>Selecionar "Comentários"</td><td>Só comentários serão permitidos</td></tr><tr><td>3</td><td>Sim, Aplicar Proteção + senha</td><td>Leitura e comentário liberados; edição bloqueada</td></tr><tr><td>4</td><td>Parar Proteção + senha</td><td>Documento liberado para edição</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🧹 Higienização final (Arquivo &gt; Informações)</div><table class="mini-sheet"><tr><th>Ferramenta</th><th>O que faz</th></tr><tr><td><strong>Inspecionar Documento</strong></td><td>Remove dados pessoais, comentários antigos e revisões ocultas</td></tr><tr><td><strong>Marcar como Final</strong></td><td>Documento somente leitura com aviso amarelo no topo (reversível em "Editar Mesmo Assim")</td></tr></table></div><div class="fun-highlight"><strong>Senha da proteção:</strong> guarde em local seguro — sem ela não é possível desproteger o documento.</div>`
+        },
+        {
+          lessonNum: 8,
+          chapter: "AULA 08: SUMÁRIO AUTOMÁTICO & ÍNDICES DE ILUSTRAÇÕES",
+          heading: "8.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo):
+Aprender a criar aquela lista do início do trabalho que mostra onde cada capítulo está — e o Word faz tudo sozinho. Você vai marcar a hierarquia dos títulos com Estilos, inserir o Sumário Automático, atualizar páginas com a tecla F9, navegar com Ctrl + Clique e gerar o Índice de Ilustrações.
+
+COMO VAMOS FAZER (os 5 passos):
+1. Marcar a hierarquia de todos os capítulos com Estilos (Título 1 e Título 2).
+2. Inserir o Sumário Automático pela Guia Referências.
+3. Navegar pelo documento usando Ctrl + Clique no sumário.
+4. Atualizar páginas e títulos automaticamente usando a tecla F9.
+5. Inserir legendas em imagens e gerar o Índice de Ilustrações.
+
+PREPARAÇÃO ANTES DO TÓPICO 1:
+• Abra o Microsoft Word e monte um documento de prática com pelo menos 3 capítulos principais e 2 subcapítulos — pode ser um mini-trabalho sobre Astronomia.
+• Deixe páginas de conteúdo suficientes para o sumário ter números diferentes (vários parágrafos ou o gerador =rand(3,4)).
+• Salve o arquivo como Sumario_Aula08.docx — será o laboratório desta aula.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🗺️ Roteiro da Aula 08 — o Word faz o sumário sozinho</div><table class="mini-sheet"><tr><th>Passo</th><th>O que fazer</th><th>Onde</th></tr><tr><td>1</td><td>Marcar títulos com Título 1 / Título 2</td><td>Guia Início &gt; grupo Estilos</td></tr><tr><td>2</td><td>Inserir o Sumário Automático</td><td>Referências &gt; Sumário &gt; Automático 1</td></tr><tr><td>3</td><td>Navegar pelo documento</td><td><strong>Ctrl + Clique</strong> na linha do sumário</td></tr><tr><td>4</td><td>Atualizar páginas e títulos</td><td>Tecla <strong>F9</strong> (ou Atualizar Sumário)</td></tr><tr><td>5</td><td>Legendas + Índice de Ilustrações</td><td>Referências &gt; Inserir Legenda / Índice de Ilustrações</td></tr></table></div><div class="fun-highlight"><strong>Por que isso importa:</strong> a ABNT e o mercado exigem sumários alinhados e atualizados. O sumário digitado à mão fica torto, desalinhado e fica obsoleto na primeira edição do texto.</div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.1 O Que É um Sumário e Por Que o Manual é um Erro",
+          content: `DEFINIÇÃO: o sumário é a lista no início do documento que mostra o nome de cada capítulo e em qual página ele está.
+
+MODELO ESPERADO (TCC):
+1. INTRODUÇÃO ......................... 3
+1.1 Objetivo Geral ................. 3
+2. DESENVOLVIMENTO .................... 5
+3. CONCLUSÃO .......................... 10
+REFERÊNCIAS .......................... 12
+
+Título 1 = capítulos principais | Título 2 = subcapítulos.
+
+O GRANDE ERRO DO INICIANTE: tentar fazer o sumário digitando o título, enchendo de pontos com o teclado e digitando o número da página no final. O resultado fica torto, desalinhado e fica obsoleto na primeira edição do texto — se o orientador pedir para acrescentar um parágrafo na página 2, TODAS as páginas subsequentes mudam e você refaz o sumário inteiro à mão.
+
+O QUE O WORD FAZ: o Sumário Automático consulta o mapa interno de estilos, calcula a numeração em milissegundos, alinha os números por tabulação milimétrica e transforma cada linha em hiperlink navegável.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">⚖️ Manual vs Automático — a comparação honesta</div><table class="mini-sheet"><tr><th>Critério</th><th>Manual (digitado à mão)</th><th>Automático (Word)</th></tr><tr><td>Alinhamento dos números</td><td>Torto — pontos contados à mão nunca fecham</td><td>Perfeito — tabulação milimétrica</td></tr><tr><td>Números de página</td><td>Contados manualmente (e errados)</td><td>Calculados pelo Word em milissegundos</td></tr><tr><td>Quando o texto muda</td><td>Recalcular tudo à mão</td><td>Atualizar com <strong>F9</strong> em menos de 1 segundo</td></tr><tr><td>Navegação</td><td>Nenhuma — texto morto</td><td><strong>Ctrl + Clique</strong> salta para o capítulo</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">📖 Como o sumário automático fica na página</div>
+<div style="border:1px solid #94A3B8; border-radius:6px; padding:12px 16px; font-size:11.5px; color:#334155; line-height:2;">
+<div style="text-align:center; font-weight:800; letter-spacing:1px; font-size:11px;">SUMÁRIO</div>
+<div style="display:flex;"><span style="font-weight:700;">1. INTRODUÇÃO</span><span style="flex:1; border-bottom:1.5px dotted #94A3B8; margin:0 6px; transform:translateY(-3px);"></span><span>3</span></div>
+<div style="display:flex; padding-left:22px;"><span>1.1 Objetivo Geral</span><span style="flex:1; border-bottom:1.5px dotted #94A3B8; margin:0 6px; transform:translateY(-3px);"></span><span>3</span></div>
+<div style="display:flex;"><span style="font-weight:700;">2. DESENVOLVIMENTO</span><span style="flex:1; border-bottom:1.5px dotted #94A3B8; margin:0 6px; transform:translateY(-3px);"></span><span>5</span></div>
+<div style="display:flex;"><span style="font-weight:700;">3. CONCLUSÃO</span><span style="flex:1; border-bottom:1.5px dotted #94A3B8; margin:0 6px; transform:translateY(-3px);"></span><span>10</span></div>
+<div style="display:flex;"><span style="font-weight:700;">REFERÊNCIAS</span><span style="flex:1; border-bottom:1.5px dotted #94A3B8; margin:0 6px; transform:translateY(-3px);"></span><span>12</span></div>
+</div></div><div class="fun-highlight"><strong>Regra da ABNT:</strong> Título 1 para capítulos principais e Título 2 para subcapítulos — o sumário espelha exatamente essa hierarquia.</div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.2 Parte 1 — Marcar os Títulos com Estilos (Título 1, 2 e 3)",
+          content: `O Word não sabe o que é um título até que você o ensine através da Galeria de Estilos. Antes de criar o sumário, você precisa avisar ao Word quais são os títulos do seu documento.
+
+COMO MARCAR:
+1. Selecione o texto do título com o mouse (clique no início e arraste até o final).
+2. Na parte de cima da tela, clique na aba Início.
+3. Procure o grupo chamado Estilos (fica no meio da barra).
+4. Clique no estilo correto: Título 1 para capítulos principais, Título 2 para subcapítulos, Título 3 para divisões menores.
+
+COMO SABER SE FUNCIONOU:
+• O texto muda de aparência (fica maior ou colorido) — isso é normal, significa que o estilo foi aplicado.
+• Ao passar o mouse sobre um Título 1 ou 2, aparece uma pequena setinha cinza ao lado dele: o Word já o reconhece como cabeçalho hierárquico.
+
+ERRO CLÁSSICO: se aparecer no sumário um texto que você não queria, é porque ele está marcado como título sem querer. Selecione esse texto e clique em Normal nos Estilos para corrigir. O texto corrido deve permanecer sempre com o estilo Normal.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🌳 Árvore de estilos — a hierarquia que o sumário espelha</div>
+<div style="font-family:monospace; font-size:11.5px; color:#1F2937; line-height:2;">
+<div><span style="background:#DBEAFE; padding:2px 8px; border-radius:4px; font-weight:700;">Título 1</span> 1. INTRODUÇÃO</div>
+<div><span style="background:#EFF6FF; padding:2px 8px 2px 24px; border-radius:4px;">Título 2</span> &nbsp;&nbsp;1.1 Objetivo Geral</div>
+<div><span style="background:#EFF6FF; padding:2px 8px 2px 24px; border-radius:4px;">Título 2</span> &nbsp;&nbsp;1.2 Objetivo Específico</div>
+<div><span style="background:#DBEAFE; padding:2px 8px; border-radius:4px; font-weight:700;">Título 1</span> 2. DESENVOLVIMENTO</div>
+<div><span style="background:#EFF6FF; padding:2px 8px 2px 24px; border-radius:4px;">Título 2</span> &nbsp;&nbsp;2.1 Primeiro Tópico</div>
+<div><span style="background:#FEF3C7; padding:2px 8px; border-radius:4px;">Normal</span> &nbsp;&nbsp;texto corrido (NUNCA no sumário)</div>
+</div></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🖱️ Passo a passo do estilo</div><table class="mini-sheet"><tr><th>Passo</th><th>Ação</th></tr><tr><td>1</td><td>Selecione o texto do título (arraste do início ao fim)</td></tr><tr><td>2</td><td>Aba <strong>Início</strong> (Página Inicial)</td></tr><tr><td>3</td><td>Grupo <strong>Estilos</strong> (no meio da barra)</td></tr><tr><td>4</td><td>Clique em <strong>Título 1</strong> (capítulo) ou <strong>Título 2</strong> (subcapítulo) ou <strong>Título 3</strong> (divisão menor)</td></tr></table></div><div class="fun-highlight"><strong>Teste visual:</strong> a setinha cinza ao lado do título, ao passar o mouse, confirma que o Word o reconhece como cabeçalho hierárquico.</div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.3 Parte 2 — Inserir o Sumário Automático em 1 Clique",
+          content: `ONDE POSICIONAR: deixe uma página inteira reservada após a Folha de Rosto e antes da Introdução. Somente siga estes passos depois de marcar TODOS os títulos (Parte 1) — sem estilos, o sumário nasce vazio.
+
+COMO CRIAR:
+1. Vá para o início do documento pressionando Ctrl + Home.
+2. Crie uma página em branco antes do texto pressionando Ctrl + Enter.
+3. Clique no início dessa página em branco.
+4. Na parte de cima da tela, clique na aba Referências — ela fica entre as abas Layout da Página e Correspondências.
+5. Clique no botão Sumário (fica no canto esquerdo da aba).
+6. Escolha Sumário Automático 1 ou Sumário Automático 2. Pronto!
+
+O QUE ACONTECE: o Word varre o documento inteiro, localiza todos os títulos marcados, puxa a numeração de páginas exata e gera as guias de preenchimento pontilhadas — todas retas, sem nenhum ponto digitado à mão.
+
+O sumário nasceu vazio? O título não foi marcado com estilo. Volte à Parte 1, aplique Título 1/Título 2 no capítulo que faltou e depois atualize o sumário (Parte 3). A ordem importa: primeiro os estilos, depois o sumário.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">📚 Caminho do comando (7 passos)</div><table class="mini-sheet"><tr><th>Passo</th><th>Ação</th><th>Atalho / Onde</th></tr><tr><td>1</td><td>Ir para o início do documento</td><td><strong>Ctrl + Home</strong></td></tr><tr><td>2</td><td>Criar página em branco</td><td><strong>Ctrl + Enter</strong></td></tr><tr><td>3</td><td>Clicar no início da página em branco</td><td>mouse</td></tr><tr><td>4</td><td>Localizar a aba <strong>Referências</strong></td><td>entre Layout da Página e Correspondências</td></tr><tr><td>5</td><td>Clicar no botão <strong>Sumário</strong></td><td>canto esquerdo da aba</td></tr><tr><td>6</td><td>Escolher <strong>Sumário Automático 1</strong> (ou 2)</td><td>galeria do botão</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🚨 Solução de problemas do sumário</div><table class="mini-sheet"><tr><th>Problema</th><th>Solução</th></tr><tr><td>Sumário aparece vazio</td><td>Você não marcou os títulos — volte à Parte 1 e aplique os estilos</td></tr><tr><td>Apareceu um título que eu não queria</td><td>Selecione esse texto e clique em <strong>Normal</strong> nos Estilos</td></tr><tr><td>Não acho a aba Referências</td><td>Ela fica entre as abas <strong>Layout da Página</strong> e <strong>Correspondências</strong>, na barra superior</td></tr></table></div><div class="fun-highlight"><strong>Ordem importa:</strong> primeiro os estilos, depois o sumário — nunca o contrário.</div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.4 Parte 3 — A Mágica da Atualização com a Tecla F9",
+          content: `O sumário NÃO se atualiza sozinho quando você muda o documento. Você precisa atualizar manualmente antes de imprimir ou enviar.
+
+QUANDO PRECISA ATUALIZAR:
+• Adicionou ou removeu texto (os números de página mudam).
+• Criou um novo capítulo ou subcapítulo.
+• Mudou o nome de algum título.
+
+COMO ATUALIZAR:
+1. Clique em qualquer lugar dentro do sumário.
+2. Clique no botão Atualizar Sumário que aparece em cima dele. Ou clique com o botão direito do mouse no sumário e escolha Atualizar campo. Ou simplesmente pressione F9 com o sumário selecionado.
+3. Na janela que abrir, escolha Atualizar o índice inteiro — essa opção serve para qualquer situação (inclusive quando você trocou o nome de capítulos ou adicionou seções novas).
+4. Clique em OK. O sumário refaz todos os cálculos em menos de 1 segundo!
+
+REGRAS DE OURO:
+• Em caso de dúvida, escolha sempre Atualizar o índice inteiro.
+• A opção Atualizar apenas os números de página só serve quando o texto mudou de tamanho, sem títulos novos — ela não reavalia os títulos.
+• Sempre atualizar o sumário antes de imprimir ou enviar o trabalho.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">⌨️ Os 3 caminhos para atualizar</div><table class="mini-sheet"><tr><th>Caminho</th><th>Como</th></tr><tr><td>Botão flutuante</td><td>Clique dentro do sumário &gt; botão <strong>Atualizar Sumário</strong> que aparece em cima dele</td></tr><tr><td>Botão direito</td><td>Clique com o botão direito no sumário &gt; <strong>Atualizar campo</strong></td></tr><tr><td>Teclado</td><td>Selecione o sumário e pressione <strong>F9</strong></td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🪟 Janela "Atualizar Sumário" — qual opção escolher</div><table class="mini-sheet"><tr><th>Opção</th><th>Quando usar</th><th>Limitação</th></tr><tr><td><strong>Atualizar apenas os números de página</strong></td><td>Texto mudou de tamanho, sem títulos novos</td><td>Não reavalia os títulos — capítulo novo não aparece</td></tr><tr><td><strong>Atualizar o índice inteiro</strong></td><td>QUALQUER situação (mudou nome, adicionou seções)</td><td>Nenhuma — sempre seguro</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🗓️ Checklist "quando atualizar"</div>
+<div style="font-size:11.5px; color:#78350F; line-height:1.9;">☑ Adicionou ou removeu texto (números de página mudam)<br>☑ Criou um novo capítulo ou subcapítulo<br>☑ Mudou o nome de algum título<br>☑ <strong>Antes de imprimir ou enviar</strong> — regra de ouro</div></div><div class="fun-highlight"><strong>Menos de 1 segundo:</strong> o Word recalcula o sumário inteiro sozinho — nenhuma página é contada à mão.</div>`
+        },
+        {
+          lessonNum: 8,
+          heading: "8.5 Parte 4 e 5 — Índice de Ilustrações, Navegação Rápida e Personalização",
+          content: `NAVEGAÇÃO RÁPIDA (Parte 5):
+1. Segure a tecla Ctrl no teclado.
+2. Com o Ctrl pressionado, clique em qualquer item do sumário.
+3. O Word leva você direto para aquela página.
+Para voltar ao sumário, pressione Alt + Seta para a esquerda (Alt + ←).
+
+ÍNDICE DE FIGURAS (Parte 4): se o seu trabalho tem imagens ou tabelas, você pode criar uma lista separada só para elas.
+
+Passo 1 — Adicionar legenda em cada imagem:
+1. Clique na imagem.
+2. Vá em Referências > Inserir Legenda.
+3. Escolha o tipo (Figura, Tabela) e escreva o nome. Clique em OK.
+O Word vai numerar automaticamente: Figura 1, Figura 2, Figura 3...
+
+Passo 2 — Criar o índice:
+1. Coloque o cursor onde quer que o índice apareça.
+2. Vá em Referências > Inserir Índice de Ilustrações.
+3. Escolha o tipo (Figuras ou Tabelas) e clique em OK.
+
+PERSONALIZAÇÃO DO SUMÁRIO:
+1. Clique no sumário.
+2. Vá em Referências > Sumário > Inserir Sumário.
+3. Ajuste quantos níveis aparecem, alinhe os números e escolha um visual diferente.
+4. Clique em OK.
+
+EXERCÍCIO PRÁTICO DA APOSTILA ORIGINAL: crie um documento com uma página de sumário no início; três capítulos com Título 1 (INTRODUÇÃO, DESENVOLVIMENTO, CONCLUSÃO); dois subcapítulos com Título 2; uma imagem com legenda e um índice de figuras. Depois, adicione um parágrafo em qualquer capítulo e pratique atualizar o sumário.
+
+✅ CHECKLIST DE AUDITORIA DA AULA 08 — antes de entregar o trabalho:
+• Estilos: todos os capítulos marcados com Título 1/Título 2 (sem texto indesejado no sumário).
+• Posição: sumário em página própria, após os elementos pré-textuais.
+• Atualização: F9 executado com "Atualizar o índice inteiro" na última versão do texto.
+• Legendas: imagens etiquetadas com "Figura X" numerado automaticamente.
+• Entrega: sumário atualizado antes de imprimir ou enviar — nunca na versão final desatualizado.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🖼️ Legenda + Índice de Ilustrações em 2 etapas</div><table class="mini-sheet"><tr><th>Etapa</th><th>Comando</th><th>Resultado</th></tr><tr><td>1. Etiquetar cada imagem</td><td>Clique na foto &gt; <strong>Referências &gt; Inserir Legenda</strong> &gt; tipo (Figura/Tabela) + nome</td><td>Numeração automática: Figura 1, Figura 2, Figura 3…</td></tr><tr><td>2. Gerar o índice</td><td>Cursor no local &gt; <strong>Referências &gt; Inserir Índice de Ilustrações</strong> &gt; tipo (Figuras ou Tabelas) &gt; OK</td><td>Lista separada com todas as figuras e suas páginas</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🖱️ Navegação pelo sumário</div><table class="mini-sheet"><tr><th>Ação</th><th>Teclas</th><th>Resultado</th></tr><tr><td>Ir ao capítulo</td><td><strong>Ctrl + Clique</strong> na linha do sumário</td><td>O Word leva você direto para aquela página</td></tr><tr><td>Voltar ao sumário</td><td><strong>Alt + ←</strong></td><td>Retorna ao ponto de origem</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🎨 Personalização do sumário (Referências &gt; Sumário &gt; Inserir Sumário)</div>
+<div style="font-size:11.5px; color:#334155; line-height:1.9;">• Quantos níveis aparecem (Título 1, 2 e 3)<br>• Alinhamento dos números de página<br>• Visual/formatos diferentes<br>• Confirme com <strong>OK</strong></div></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🧭 Resumo — quatro passos da aula</div><table class="mini-sheet"><tr><th>Passo</th><th>O que fazer</th></tr><tr><td>1 — Marcar títulos</td><td>Selecionar cada título e aplicar Título 1, Título 2 ou Título 3 nos Estilos</td></tr><tr><td>2 — Criar o sumário</td><td>Referências &gt; Sumário &gt; Sumário Automático 1</td></tr><tr><td>3 — Atualizar</td><td>Clicar no sumário &gt; Atualizar Sumário &gt; Atualizar o índice inteiro</td></tr><tr><td>4 — Antes de entregar</td><td>Sempre atualizar o sumário antes de imprimir ou enviar</td></tr></table></div><div class="fun-highlight"><strong>Hiperlink vivo:</strong> qualquer linha do sumário automático funciona como link — Ctrl + Clique navega, Alt + ← volta.</div>`
         }
       ]
     },
