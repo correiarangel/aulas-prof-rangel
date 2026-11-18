@@ -2743,7 +2743,7 @@ EXERCÍCIO DE FIXAÇÃO: Responda às 5 perguntas no portal para consolidar o ap
           chapter: "AULA 01: INTRODUÇÃO AO WORD & DIGITAÇÃO EFICIENTE",
           heading: "1.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
           content: `O QUE VAMOS FAZER (objetivo):
-Você vai aprender a dominar a área de trabalho do Microsoft Word: conhecer cada guia da Faixa de Opções, memorizar os atalhos de alta produtividade do Word em português (como Ctrl+B para salvar e Ctrl+S para sublinhado), gerar texto instantâneo com o comando =rand(), dominar os 3 marcadores da régua horizontal e adotar a postura ergonômica correta na digitação.
+Você vai aprender a dominar a área de trabalho do Microsoft Word: conhecer cada guia da Faixa de Opções, memorizar os atalhos de alta produtividade (como Ctrl+S para salvar, Ctrl+B para negrito e Ctrl+U para sublinhado), gerar texto instantâneo com o comando =rand(), dominar os 3 marcadores da régua horizontal e adotar a postura ergonômica correta na digitação.
 
 COMO VAMOS FAZER (os 5 passos):
 1. Conhecer a interface, as Guias e a Faixa de Opções.
@@ -2764,7 +2764,7 @@ Um documento formatado com parágrafos de teste, recuo correto de primeira linha
   <div style="font-weight:800; color:#1E40AF; font-size:14px; margin-bottom:8px;">🗺️ O ROTEIRO DOS 5 PASSOS</div>
   <div style="display:flex; flex-wrap:wrap; gap:6px;">
     <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">1</strong> Interface, Guias e Faixa de Opções</span>
-    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">2</strong> Atalhos de Teclado em Português (Ctrl+B vs Ctrl+S)</span>
+    <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">2</strong> Atalhos de Teclado (Ctrl+S, Ctrl+B, Ctrl+U, Ctrl+A)</span>
     <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">3</strong> Gerador =rand() e Seleção Ágil com o Mouse</span>
     <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">4</strong> A Régua e os 3 Marcadores de Recuo</span>
     <span style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; padding:3px 8px; font-size:11.5px; color:#1E3A8A;"><strong style="color:#2563EB;">5</strong> Ergonomia, Linha Guia e Teclas Especiais</span>
@@ -2812,15 +2812,15 @@ Anatomia da Interface:
         },
         {
           lessonNum: 1,
-          heading: "1.2 Atalhos Fundamentais de Teclado no Word em Português",
+          heading: "1.2 Atalhos Fundamentais de Teclado do Word",
           content: `O uso de teclas de atalho acelera o trabalho de digitação em mais de 50%, evitando que as mãos saiam do teclado para buscar comandos simples no mouse.
 
-Principais Atalhos no Word em Português:
-• Ctrl + B: Salvar o documento ativo imediatamente (no Word em inglês é Ctrl + S).
-• Ctrl + N: Aplicar ou remover Negrito no texto selecionado.
-• Ctrl + I: Aplicar ou remover Itálico.
-• Ctrl + S: Aplicar ou remover Sublinhado (no Word em português, 'S' é de Sublinhado!).
-• Ctrl + T: Selecionar TODO o texto do documento (no Word em inglês é Ctrl + A).
+Principais Atalhos do Word (iguais em português e inglês):
+• Ctrl + S: Salvar o documento ativo imediatamente (de Save).
+• Ctrl + B: Aplicar ou remover Negrito no texto selecionado (de Bold).
+• Ctrl + I: Aplicar ou remover Itálico (de Italic).
+• Ctrl + U: Aplicar ou remover Sublinhado (de Underline).
+• Ctrl + A: Selecionar TODO o texto do documento (de All).
 • Ctrl + Z: Desfazer a última alteração realizada.
 • Ctrl + Y: Refazer a última alteração desfeita.
 • Ctrl + C: Copiar o texto ou objeto selecionado para a Área de Transferência.
@@ -2829,17 +2829,17 @@ Principais Atalhos no Word em Português:
 • Ctrl + Shift + C / Ctrl + Shift + V: Copiar e colar somente a formatação.
 
 ATENÇÃO AO ERRO MAIS COMUM:
-Muitos usuários habituados a outros programas apertam Ctrl + S achando que estão salvando o arquivo. No Word em português, Ctrl + S aplica SUBLINHADO ao texto! Para SALVAR no Word em português, memorize: aperte Ctrl + B (pense em 'B' de Baixar cópia / Backup).`,
+Apostilas antigas afirmam que o Word em português troca os atalhos (Ctrl+B para salvar, Ctrl+S para sublinhado). Isso é FALSO: os atalhos são os mesmos em qualquer idioma. Ctrl + S salva, Ctrl + B aplica Negrito, Ctrl + U aplica Sublinhado e Ctrl + A seleciona tudo.`,
           image: "../../assets/img/word/Aula1/image1.png",
           caption: "Cursor de texto e atalhos rápidos de formatação",
           html: `<div class="es-sheet-box" style="margin:14px 0;">
-  <div class="es-sheet-titlebar" style="background:#D97706; color:#fff;">⚠️ Alerta Crítico: Diferença de Idioma nos Atalhos</div>
+  <div class="es-sheet-titlebar" style="background:#D97706; color:#fff;">⚠️ Alerta Crítico: Atalhos Corretos (o mesmo em qualquer idioma)</div>
   <table class="mini-sheet">
-    <tr><th>Função</th><th>Word em Português (Brasil)</th><th>Word em Inglês (US)</th></tr>
-    <tr style="background:#FEF3C7; font-weight:700;"><td>SALVAR DOCUMENTO</td><td>Ctrl + B</td><td>Ctrl + S (Save)</td></tr>
-    <tr style="background:#EFF6FF;"><td>SUBLINHADO</td><td>Ctrl + S</td><td>Ctrl + U (Underline)</td></tr>
-    <tr><td>SELECIONAR TUDO</td><td>Ctrl + T (Tudo)</td><td>Ctrl + A (All)</td></tr>
-    <tr><td>NEGRITO</td><td>Ctrl + N (Negrito)</td><td>Ctrl + B (Bold)</td></tr>
+    <tr><th>Função</th><th>Atalho Correto</th><th>Como lembrar</th></tr>
+    <tr style="background:#FEF3C7; font-weight:700;"><td>SALVAR DOCUMENTO</td><td>Ctrl + S</td><td>S de Save</td></tr>
+    <tr style="background:#EFF6FF;"><td>SUBLINHADO</td><td>Ctrl + U</td><td>U de Underline</td></tr>
+    <tr><td>SELECIONAR TUDO</td><td>Ctrl + A</td><td>A de All</td></tr>
+    <tr><td>NEGRITO</td><td>Ctrl + B</td><td>B de Bold</td></tr>
   </table>
 </div>`
         },
@@ -2946,7 +2946,7 @@ Funções das Teclas Especiais:
   <table class="mini-sheet">
     <tr><th>Tecla</th><th>Ação Principal</th><th>Diferencial Importante</th></tr>
     <tr><td><strong>Shift</strong></td><td>Maiúscula pontual e símbolo superior</td><td>Volta a minúsculas imediatamente ao soltar</td></tr>
-    <tr><td><strong>Ctrl</strong></td><td>Combinações de atalhos (Ctrl+B, Ctrl+N)</td><td>Não digita caracteres por si só</td></tr>
+    <tr><td><strong>Ctrl</strong></td><td>Combinações de atalhos (Ctrl+S, Ctrl+B)</td><td>Não digita caracteres por si só</td></tr>
     <tr><td><strong>Alt Gr</strong></td><td>Terceira função de teclas triplas</td><td>Acessa símbolos como ², ³, ª, º, §</td></tr>
     <tr><td><strong>Backspace</strong></td><td>Apaga caractere à ESQUERDA</td><td>Move o cursor para trás apagando</td></tr>
     <tr><td><strong>Delete</strong></td><td>Apaga caractere à DIREITA</td><td>Puxa o texto da frente apagando</td></tr>
@@ -2988,7 +2988,7 @@ Um trabalho perfeitamente formatado nos padrões oficiais da ABNT: margens 3-3-2
   <div class="es-sheet-box" style="max-width:500px; margin-top:10px;">
     <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">💡 Dica do Professor Marcos Rangel</div>
     <p style="margin:0; font-size:12px; color:#1F2937; padding:8px 10px; line-height:1.6;">
-      <strong>Nunca formate o texto enquanto estiver digitando!</strong> A alternância constante entre digitar e selecionar botões cansa a mente e quebra a linha de raciocínio. Primeiro coloque as ideias no papel; depois selecione tudo com Ctrl+T e aplique a ABNT de uma só vez.
+      <strong>Nunca formate o texto enquanto estiver digitando!</strong> A alternância constante entre digitar e selecionar botões cansa a mente e quebra a linha de raciocínio. Primeiro coloque as ideias no papel; depois selecione tudo com Ctrl+A e aplique a ABNT de uma só vez.
     </p>
   </div>
 </div>`
@@ -3040,21 +3040,21 @@ Como Configurar as Margens no Word:
 Regras Oficiais de Tipografia:
 • Famílias Permitidas: Arial (fonte moderna sem serifa) ou Times New Roman (fonte clássica com serifa). O aluno deve escolher uma única família e mantê-la em todo o trabalho.
 • Corpo do Texto: Tamanho 12. É a medida obrigatória para parágrafos, introdução, desenvolvimento e conclusões.
-• Títulos Principais e de Seções: Tamanho 14, formatados em Negrito (Ctrl+N). Conferem hierarquia visual clara aos capítulos.
+• Títulos Principais e de Seções: Tamanho 14, formatados em Negrito (Ctrl+B). Conferem hierarquia visual clara aos capítulos.
 • Citações Longas e Elementos Especiais: Tamanho 10. Aplicado em citações diretas com mais de 3 linhas (que também recebem recuo especial de 4 cm da margem esquerda), notas de rodapé, paginação e legendas explicativas de tabelas e ilustrações.
 • Cor da Fonte: Exclusivamente Preto Automático. Trabalhos acadêmicos nunca devem conter palavras coloridas em azul, vermelho ou verde.
 
 Como Padronizar no Word:
-1. Pressione Ctrl+T para selecionar todo o documento.
+1. Pressione Ctrl+A para selecionar todo o documento.
 2. Na guia Página Inicial, grupo Fonte, selecione "Arial" ou "Times New Roman".
 3. Na caixa de tamanho, selecione "12".
-4. Selecione os títulos individualmente e altere o tamanho para 14, aplicando o atalho Ctrl+N para Negrito.`,
+4. Selecione os títulos individualmente e altere o tamanho para 14, aplicando o atalho Ctrl+B para Negrito.`,
           html: `<div class="es-sheet-box" style="margin:14px 0;">
   <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">📋 Tabela de Hierarquia de Tipografia ABNT</div>
   <table class="mini-sheet">
     <tr><th>Elemento do Trabalho</th><th>Fonte Permitida</th><th>Tamanho</th><th>Destaque / Estilo</th></tr>
-    <tr><td><strong>Títulos de Capítulos / Seções</strong></td><td>Arial ou Times New Roman</td><td>14</td><td><strong>Negrito (Ctrl+N)</strong></td></tr>
-    <tr><td><strong>Subtítulos (Seção Secundária)</strong></td><td>Arial ou Times New Roman</td><td>12</td><td><strong>Negrito (Ctrl+N)</strong></td></tr>
+    <tr><td><strong>Títulos de Capítulos / Seções</strong></td><td>Arial ou Times New Roman</td><td>14</td><td><strong>Negrito (Ctrl+B)</strong></td></tr>
+    <tr><td><strong>Subtítulos (Seção Secundária)</strong></td><td>Arial ou Times New Roman</td><td>12</td><td><strong>Negrito (Ctrl+B)</strong></td></tr>
     <tr style="background:#EFF6FF;"><td><strong>Corpo do Texto (Parágrafos)</strong></td><td>Arial ou Times New Roman</td><td><strong>12</strong></td><td>Normal, sem efeito</td></tr>
     <tr><td><strong>Citações Longas (+3 linhas)</strong></td><td>Arial ou Times New Roman</td><td>10</td><td>Normal com recuo de 4 cm</td></tr>
     <tr><td><strong>Notas de Rodapé e Legendas</strong></td><td>Arial ou Times New Roman</td><td>10</td><td>Normal</td></tr>
@@ -3078,7 +3078,7 @@ Todo novo parágrafo precisa indicar visualmente onde começa. A ABNT fixa esse 
 *Aviso Crucial:* É proibido usar a tecla Tab ou dar 5 espaços na barra de espaço para criar esse recuo! No Word profissional, parágrafos são configurados pela janela Parágrafo ou pelo marcador superior da régua.
 
 Passo a Passo na Janela de Parágrafo:
-1. Com o texto selecionado (Ctrl+T), acesse a guia Página Inicial.
+1. Com o texto selecionado (Ctrl+A), acesse a guia Página Inicial.
 2. No grupo Parágrafo, clique no botão Alinhar Justificado (ou tecle Ctrl+J).
 3. Clique na setinha no canto inferior direito do grupo Parágrafo para abrir a caixa de diálogo completa.
 4. Em Recuo, no campo "Especial", selecione "Primeira linha" e digite "1,25 cm".
@@ -3153,7 +3153,7 @@ Checklist Final da ABNT para Autoavaliação:
 Antes de considerar o trabalho finalizado, confira os 6 itens obrigatórios:
 [ ] Margens: Superior 3 cm, Esquerda 3 cm, Inferior 2 cm, Direita 2 cm.
 [ ] Fonte: Arial ou Times New Roman tamanho 12 no corpo.
-[ ] Títulos: Tamanho 14 em Negrito (Ctrl+N).
+[ ] Títulos: Tamanho 14 em Negrito (Ctrl+B).
 [ ] Alinhamento: Justificado (Ctrl+J) em todos os parágrafos.
 [ ] Espaçamento: 1,5 linha contínuo no corpo de texto.
 [ ] Recuo: 1,25 cm na primeira linha de cada parágrafo.`,
@@ -3175,7 +3175,7 @@ Antes de considerar o trabalho finalizado, confira os 6 itens obrigatórios:
     <tr><th>Regra</th><th>Valor Oficial ABNT</th><th>Status</th></tr>
     <tr><td>Margens da Página</td><td>Superior 3 cm, Esquerda 3 cm, Inferior 2 cm, Direita 2 cm</td><td>☑ Aprovado</td></tr>
     <tr><td>Tipografia do Texto</td><td>Arial ou Times New Roman tamanho 12</td><td>☑ Aprovado</td></tr>
-    <tr><td>Títulos Principais</td><td>Tamanho 14 em Negrito (Ctrl+N)</td><td>☑ Aprovado</td></tr>
+    <tr><td>Títulos Principais</td><td>Tamanho 14 em Negrito (Ctrl+B)</td><td>☑ Aprovado</td></tr>
     <tr><td>Alinhamento do Parágrafo</td><td>Justificado (Ctrl+J) em ambas as bordas</td><td>☑ Aprovado</td></tr>
     <tr><td>Espaçamento entre Linhas</td><td>1,5 linha no corpo do trabalho</td><td>☑ Aprovado</td></tr>
     <tr><td>Recuo de Parágrafo</td><td>1,25 cm especial na primeira linha</td><td>☑ Aprovado</td></tr>
@@ -3213,9 +3213,9 @@ Antes de considerar o trabalho finalizado, confira os 6 itens obrigatórios:
   <div class="es-sheet-titlebar" style="background:#2563EB; color:#fff;">⌨️ Os Quatro Alinhamentos do Word em Português</div>
   <table class="mini-sheet">
     <tr><th>Alinhamento</th><th>Atalho</th><th>Aparência</th><th>Onde usar</th></tr>
-    <tr><td><strong>Alinhar à Esquerda</strong></td><td>Ctrl + Q</td><td>Margem esquerda reta; direita irregular</td><td>Textos informais, listas e anotações</td></tr>
+    <tr><td><strong>Alinhar à Esquerda</strong></td><td>Ctrl + L</td><td>Margem esquerda reta; direita irregular</td><td>Textos informais, listas e anotações</td></tr>
     <tr><td><strong>Centralizar</strong></td><td>Ctrl + E</td><td>Texto no meio da linha</td><td>Títulos, capas, poesias e certificados</td></tr>
-    <tr><td><strong>Alinhar à Direita</strong></td><td>Ctrl + G</td><td>Margem direita reta; esquerda irregular</td><td>Datas de cartas, assinaturas e notas</td></tr>
+    <tr><td><strong>Alinhar à Direita</strong></td><td>Ctrl + R</td><td>Margem direita reta; esquerda irregular</td><td>Datas de cartas, assinaturas e notas</td></tr>
     <tr style="background:#EFF6FF;"><td><strong>Justificar</strong></td><td>Ctrl + J</td><td>Ambas as margens retas</td><td>Livros, jornais, relatórios e trabalhos ABNT</td></tr>
   </table>
 </div>
@@ -4399,6 +4399,216 @@ CHECKLIST FINAL DO PROJETO: título Impact 18 vermelho ✔ | Verdana 12 justific
 
 PRÓXIMO PASSO: na Aula 10 você vai estruturar uma pesquisa acadêmica completa seguindo as normas ABNT — capa, folha de rosto, sumário, citações e referências.`,
           html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🧰 Caixa de ferramentas da Aula 09</div><table class="mini-sheet"><tr><th>Ferramenta</th><th>Comando / tecla</th><th>Uso no projeto</th></tr><tr><td>Lista multinível</td><td><strong>Tab</strong> / <strong>Shift+Tab</strong></td><td>Lista de livros por gênero</td></tr><tr><td>Tabulação</td><td>Duplo clique na régua > À Direita + pontos</td><td>Cardápio e assinaturas</td></tr><tr><td>Orientação</td><td>Layout da Página > Paisagem</td><td>Certificado</td></tr><tr><td>Colunas + Capitular</td><td>Layout da Página > Colunas · Inserir > Letra Capitular</td><td>Artigo Ciclo Solar</td></tr><tr><td>Quebra de texto</td><td>Quadrado / Justo</td><td>Imagem do campo magnético</td></tr><tr><td>Marca d'água</td><td>Personalizada > "Sistema Solar"</td><td>Artigo final</td></tr></table></div><div class="fun-highlight"><strong>Integração:</strong> a Aula 09 fecha o ciclo de formatação — listas, páginas, estilos, figuras e sumário (Aula 08) trabalham juntos na entrega final.</div>`
+        },
+        {
+          lessonNum: 10,
+          chapter: "AULA 10: PESQUISA ACADÊMICA, ESTRUTURA ABNT & CITAÇÕES",
+          heading: "10.0 FASE 0 — Antes de Começar: O que vamos fazer e como vamos fazer",
+          content: `O QUE VAMOS FAZER (objetivo): aprender a estruturar um trabalho acadêmico ou relatório de pesquisa completo dentro das normas da ABNT — montar a capa e a folha de rosto, redigir introdução, desenvolvimento e conclusão e referenciar corretamente artigos e páginas da internet, evitando o plágio.
+
+O material de origem propõe uma pesquisa curta (até 5 páginas) sobre um dos temas: Jogos, Windows, Smartphone, Android, iOS ou PCs. O documento deve usar fonte Arial ou Times New Roman 12, espaçamento 1,5 entre linhas.
+
+COMO VAMOS FAZER (o roteiro de 5 passos):
+1. Compreender o que é uma pesquisa e a gravidade do plágio.
+2. Construir a Capa e a Folha de Rosto nas medidas formais (nota recuada a 8 cm).
+3. Estruturar Introdução, Desenvolvimento e Conclusão com estilos de título.
+4. Aprender a regra da ABNT NBR 6023 para referenciar sites e links.
+5. Pesquisar no Google com filtros e colar somente texto limpo no Word.
+
+Cada passo termina com um check no portal: marque-o somente depois de executar a instrução na sua própria pesquisa.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🗺️ Roteiro da Aula 10 — cinco passos, um check em cada um</div><table class="mini-sheet"><tr><th>Passo</th><th>Etapa</th><th>Recurso-chave</th></tr><tr><td>1</td><td>Pesquisa vs plágio</td><td>Paráfrase com crédito</td></tr><tr><td>2</td><td>Capa e folha de rosto</td><td>Nota recuada a <strong>8 cm</strong></td></tr><tr><td>3</td><td>Corpo do trabalho</td><td>Título 1 / Título 2</td></tr><tr><td>4</td><td>Referências de sites</td><td>NBR 6023 + mês abreviado</td></tr><tr><td>5</td><td>Busca e colagem</td><td><strong>site:</strong>, <strong>filetype:</strong> e Manter Somente Texto</td></tr></table></div><div class="fun-highlight"><strong>Por que esta aula importa:</strong> é a etapa que transforma um amontoado de informações copiadas da internet em um trabalho autoral, organizado e com autoria reconhecida — o que o professor e a banca examinadora exigem.</div>`
+        },
+        {
+          lessonNum: 10,
+          chapter: "AULA 10: PESQUISA ACADÊMICA, ESTRUTURA ABNT & CITAÇÕES",
+          heading: "10.1 FASE 1 — Metodologia Científica e a Ética da Pesquisa",
+          content: `PESQUISAR NÃO É COPIAR E COLAR. Pesquisa é reunir dados de fontes confiáveis, analisar com espírito crítico, organizar a informação de forma lógica e dar os devidos créditos aos autores originais.
+
+O QUE É PLÁGIO: apresentar o texto de outra pessoa como se fosse seu — um parágrafo da Wikipédia, uma notícia ou um artigo — sem citar a fonte. É uma infração ética que, na escola, costuma significar nota zero imediata.
+
+A TÉCNICA DA PARÁFRASE EM 4 MOVIMENTOS:
+1. Leia o texto de referência com atenção até entender a ideia.
+2. Feche a aba do navegador — assim você não copia sem perceber.
+3. Pense sobre o que compreendeu e digite a ideia com as suas próprias palavras.
+4. Anote o crédito: URL completa, nome do site e o dia exato da consulta.
+
+QUANDO USAR ASPAS: se você precisar reproduzir a frase exatamente como está na fonte, coloque-a entre aspas e cite o autor. Aspas sinalizam "isto não é meu". Sem aspas e sem referência, a cópia vira plágio — mesmo que você tenha mudado só uma ou duas palavras.
+
+DANDO O DEVIDO CRÉDITO: registre sempre a URL (link), o nome do site e a data da consulta. Sem esses dados, o leitor não consegue verificar a informação.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">⚖️ Comparativo honesto — cópia x paráfrase com crédito</div><table class="mini-sheet"><tr><th>Situação</th><th>Texto no trabalho</th><th>Veredito</th></tr><tr><td>Fonte original</td><td>"O Windows é um grupo de sistemas operacionais gráficos desenvolvidos pela Microsoft."</td><td>—</td></tr><tr><td>Cópia integral</td><td>"O Windows é um grupo de sistemas operacionais gráficos desenvolvidos pela Microsoft." (sem aspas e sem fonte)</td><td><strong style="color:#B91C1C;">PLÁGIO — nota zero</strong></td></tr><tr><td>Paráfrase</td><td>A Microsoft criou uma família de sistemas com interface visual, o Windows, que se tornou base de milhões de computadores (PINHEIRO, 2026).</td><td><strong style="color:#15803D;">PESQUISA ÉTICA</strong></td></tr></table></div><div class="fun-highlight"><strong>Regra de ouro:</strong> ideia alheia sempre merece crédito. Mudar uma ou duas palavras não disfarça a cópia — reescreva com as suas palavras e cite a fonte.</div>`
+        },
+        {
+          lessonNum: 10,
+          chapter: "AULA 10: PESQUISA ACADÊMICA, ESTRUTURA ABNT & CITAÇÕES",
+          heading: "10.2 FASE 2 — A Estrutura Padrão: Pré-Textuais, Textuais e Pós-Textuais",
+          content: `Mesmo na versão simplificada para pesquisas curtas, o trabalho acadêmico obedece a uma ordem de tópicos. A ABNT organiza esses elementos em três grandes blocos.
+
+ELEMENTOS PRÉ-TEXTUAIS (antes do corpo):
+• Capa — nome da escola/curso, nome do aluno, título do trabalho em destaque, cidade e ano.
+• Folha de rosto (opcional em trabalhos curtos) — mesmos dados da capa mais a nota de identificação: para quem o trabalho é apresentado e o nome do professor. A nota fica recuada a 8 cm da margem esquerda.
+• Sumário — lista dos tópicos e subtópicos com o número da página; no Word, pode ser automático (Aula 08).
+
+ELEMENTOS TEXTUAIS (o corpo):
+• Introdução — apresenta o tema, a motivação e os objetivos da pesquisa (1 a 2 páginas).
+• Desenvolvimento — o conteúdo principal, dividido em seções e subtópicos com Título 1 e Título 2.
+• Conclusão — síntese das descobertas e impressões do autor, sem introduzir ideias novas.
+
+ELEMENTOS PÓS-TEXTUAIS (depois do corpo):
+• Referências — relação em ordem alfabética de todos os livros, artigos e sites consultados, conforme a NBR 6023.
+
+COMO MONTAR A CAPA NO WORD:
+1. No topo da folha, centralize em maiúsculas o nome da instituição (fonte 12 ou 14).
+2. No meio da página, escreva o nome do aluno e, logo abaixo, o TÍTULO DO TRABALHO em negrito, tamanho 14.
+3. Na base, coloque cidade e ano de entrega (ex.: Vargem Grande do Sul – SP / 2026).
+4. Para a folha de rosto, crie página nova com Ctrl+Enter, repita os dados e acrescente a nota recuada a 8 cm — use a régua ou parada de tabulação, nunca espaços.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🏗️ Fluxograma da estrutura ABNT simplificada — 3 blocos, 7 elementos</div><div style="padding:14px 12px; font-size:12px; color:#334155; line-height:1.85;"><div style="text-align:center; font-weight:800; color:#1E3A8A; margin-bottom:10px;">ESTRUTURA PADRÃO DO TRABALHO ACADÊMICO</div><div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"><div style="flex:1 1 190px; border:1.5px solid #93C5FD; background:#EFF6FF; border-radius:8px; padding:10px;"><strong style="color:#1D4ED8;">① PRÉ-TEXTUAIS</strong><div>→ Capa</div><div>→ Folha de rosto</div><div>→ Sumário</div></div><div style="flex:1 1 190px; border:1.5px solid #86EFAC; background:#F0FDF4; border-radius:8px; padding:10px;"><strong style="color:#15803D;">② TEXTUAIS</strong><div>→ Introdução</div><div>→ Desenvolvimento</div><div>→ Conclusão</div></div><div style="flex:1 1 190px; border:1.5px solid #FCD34D; background:#FFFBEB; border-radius:8px; padding:10px;"><strong style="color:#B45309;">③ PÓS-TEXTUAIS</strong><div>→ Referências</div><div style="font-size:10.5px; color:#92400E; margin-top:6px;">(ordem alfabética · NBR 6023)</div></div></div><div style="text-align:center; margin-top:10px; font-size:11px; color:#64748B;">A seta é sempre para frente: primeiro você apresenta, depois explica e, por fim, cita as fontes.</div></div></div><div class="es-sheet-box"><div class="es-sheet-titlebar">📐 Medidas da capa e da folha de rosto</div><table class="mini-sheet"><tr><th>Bloco</th><th>Conteúdo</th><th>Formatação</th></tr><tr><td>Topo</td><td>Escola / curso</td><td>Maiúsculas, centralizado, 12 ou 14</td></tr><tr><td>Meio</td><td>Aluno + título</td><td>Título em negrito 14</td></tr><tr><td>Base</td><td>Cidade e ano</td><td>Ex.: Vargem Grande do Sul – SP / 2026</td></tr><tr><td>Folha de rosto</td><td>Nota de identificação + professor</td><td>Recuada a <strong>8 cm</strong> da margem esquerda</td></tr></table></div><div class="fun-highlight"><strong>Atenção:</strong> o recuo de 8 cm é feito com a régua ou com parada de tabulação. Espaços não são medida confiável — com outra fonte, a nota desalinha.</div>`
+        },
+        {
+          lessonNum: 10,
+          chapter: "AULA 10: PESQUISA ACADÊMICA, ESTRUTURA ABNT & CITAÇÕES",
+          heading: "10.3 FASE 3 — O Corpo da Pesquisa: Introdução, Desenvolvimento e Conclusão",
+          content: `Depois dos elementos pré-textuais vem o corpo do trabalho. Ele obedece a uma ordem lógica: primeiro você apresenta o tema, depois o explica em detalhes e, por fim, fecha dizendo o que descobriu.
+
+INTRODUÇÃO (1 a 2 páginas): texto claro e acolhedor que apresenta o tema escolhido, a motivação da pesquisa e os objetivos gerais. É a "porta de entrada" do leitor.
+
+DESENVOLVIMENTO: o miolo do trabalho, organizado em seções hierárquicas. No Word, use Título 1 para os capítulos e Título 2 para os subtópicos — assim o sumário automático (Aula 08) reconhece a hierarquia. Exemplo para o tema Jogos: 1. História dos Jogos Digitais; 1.1 Primeiros jogos eletrônicos; 1.2 Evolução dos consoles.
+
+CONCLUSÃO (Considerações Finais): o fechamento do trabalho. Não deve apresentar ideias novas, mas recapitular os pontos principais e expressar o que foi concluído a partir dos dados. Um erro comum é aproveitar a conclusão para introduzir um dado que nunca apareceu no desenvolvimento.
+
+CHECKLIST DE AUDITORIA ANTES DE ENTREGAR:
+• Sumário atualizado com F9 na versão final (Aula 08).
+• Títulos marcados com os estilos corretos (Título 1 / Título 2).
+• Introdução, desenvolvimento e conclusão em ordem lógica.
+• Paráfrase em todas as seções — nenhum trecho copiado sem crédito.
+• Colagem limpa: texto no padrão Normal do documento.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">📑 O que vai em cada seção do corpo</div><table class="mini-sheet"><tr><th>Seção</th><th>Função</th><th>Extensão sugerida</th></tr><tr><td><strong>Introdução</strong></td><td>Apresenta tema, motivação e objetivos</td><td>1 a 2 páginas</td></tr><tr><td><strong>Desenvolvimento</strong></td><td>Miolo com tópicos e subtópicos (Título 1 / Título 2)</td><td>Corpo principal</td></tr><tr><td><strong>Conclusão</strong></td><td>Recapitula descobertas — sem ideias novas</td><td>Meia a 1 página</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🌳 Exemplo de hierarquia para o tema "Jogos"</div><div style="padding:12px 14px; font-size:12px; line-height:1.8; color:#334155;"><div><strong>1. HISTÓRIA DOS JOGOS DIGITAIS</strong> <span style="color:#64748B;">(Título 1)</span></div><div style="margin-left:24px;">1.1 Primeiros jogos eletrônicos <span style="color:#64748B;">(Título 2)</span></div><div style="margin-left:24px;">1.2 Evolução dos consoles</div><div><strong>2. IMPACTO NA SOCIEDADE</strong> <span style="color:#64748B;">(Título 1)</span></div><div style="margin-left:24px;">2.1 Jogos e educação</div></div></div><div class="fun-highlight"><strong>Regra de ouro:</strong> a conclusão fecha o raciocínio anunciado na introdução usando apenas o que já foi demonstrado no desenvolvimento.</div>`
+        },
+        {
+          lessonNum: 10,
+          chapter: "AULA 10: PESQUISA ACADÊMICA, ESTRUTURA ABNT & CITAÇÕES",
+          heading: "10.4 FASE 4 — Manual Prático de Referências da Internet (NBR 6023)",
+          content: `A ABNT NBR 6023 define como citar cada fonte consultada. A referência de um site da internet deve permitir que o leitor encontre a página original: por isso registra autor, título, nome do site, ano, endereço completo e a data do acesso — esta última é obrigatória porque páginas online mudam com o tempo.
+
+COM AUTOR CONHECIDO:
+SOBRENOME, Nome. Título do Artigo. Nome do Site, ano da publicação. Disponível em: <link_completo>. Acesso em: dia mês abreviado. ano.
+
+Exemplo: SILVA, João. História dos Jogos Digitais. TechGames, 2024. Disponível em: <https://www.techgames.com.br/historia>. Acesso em: 15 mar. 2026.
+
+SEM AUTOR INDIVIDUAL (autoria institucional/coletiva):
+TÍTULO DA PÁGINA EM MAIÚSCULAS. Nome do Site, ano. Disponível em: <link>. Acesso em: dia mês. ano.
+
+Exemplo: HISTÓRIA DO WINDOWS. Wikipédia, 2026. Disponível em: <https://pt.wikipedia.org/wiki/Microsoft_Windows>. Acesso em: 10 fev. 2026.
+
+DETALHES FUNDAMENTAIS:
+• Quando não se sabe o nome do autor pessoal, a referência começa pela primeira palavra do TÍTULO em MAIÚSCULAS — nunca pelo link.
+• Os meses são abreviados com três letras e ponto: jan., fev., mar., abr., mai (sem ponto!), jun., jul., ago., set., out., nov., dez.
+• A data de acesso é a do dia em que você consultou a página, não a de publicação.
+• As referências aparecem em ordem alfabética no final do trabalho.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">📚 Os dois modelos oficiais da NBR 6023 para sites</div><table class="mini-sheet"><tr><th>Situação</th><th>Como começa</th><th>Exemplo comentado</th></tr><tr><td><strong>Com autor</strong></td><td>SOBRENOME, Nome.</td><td>SILVA, João. História dos Jogos Digitais. TechGames, 2024. Disponível em: &lt;https://www.techgames.com.br/historia&gt;. Acesso em: 15 mar. 2026.</td></tr><tr><td><strong>Sem autor</strong></td><td>TÍTULO EM MAIÚSCULAS.</td><td>HISTÓRIA DO WINDOWS. Wikipédia, 2026. Disponível em: &lt;https://pt.wikipedia.org/wiki/Microsoft_Windows&gt;. Acesso em: 10 fev. 2026.</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🗓️ Abreviatura dos meses — detalhe que cai na prova</div><div style="padding:12px 14px; font-size:12px; color:#334155; line-height:2; text-align:center;"><span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">jan.</span> <span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">fev.</span> <span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">mar.</span> <span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">abr.</span> <strong style="color:#B45309;">mai (sem ponto)</strong> <span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">jun.</span> <span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">jul.</span> <span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">ago.</span> <span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">set.</span> <span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">out.</span> <span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">nov.</span> <span style="background:#EFF6FF; border-radius:4px; padding:2px 6px; margin:2px;">dez.</span><div style="margin-top:8px; font-size:11.5px;">Exemplo: <strong>Acesso em: 15 mar. 2026.</strong></div></div></div><div class="fun-highlight"><strong>Atenção:</strong> cite a data do acesso — o dia em que você consultou. Colar somente o link no trabalho é referência incompleta.</div>`
+        },
+        {
+          lessonNum: 10,
+          chapter: "AULA 10: PESQUISA ACADÊMICA, ESTRUTURA ABNT & CITAÇÕES",
+          heading: "10.5 FASE 5 — Pesquisa Eficiente na Web e Colagem Higienizada",
+          content: `SABER ONDE PROCURAR é metade da pesquisa. Os operadores de busca filtram os resultados diretamente na barra do Google:
+
+• termo de pesquisa site:br — restringe a páginas brasileiras, em português.
+• termo de pesquisa filetype:pdf — encontra apostilas, teses e artigos acadêmicos em PDF.
+• Os dois filtros podem ser combinados: termo site:br filetype:pdf.
+• Confira sempre a data da publicação e prefira sites de instituições, universidades e órgãos oficiais.
+
+COLAGEM SEGURA NO WORD:
+Ao copiar um trecho da internet, clique com o botão direito no Word e escolha Manter Somente Texto (ícone de uma pranchetinha com a letra A). O texto assume imediatamente o estilo Normal do seu documento — Arial/Times 12, espaçamento 1,5 — sem herdar fundos cinzas, fontes esquisitas ou links azuis sublinhados.
+
+Se você usar "Manter Formatação Original", a sujeira visual da página invade o trabalho e destrói o padrão ABNT. Na dúvida, use sempre Manter Somente Texto.
+
+EXERCÍCIO PRÁTICO: escolha um dos temas sugeridos (Jogos, Windows, Smartphone, Android, iOS ou PCs), faça duas buscas com filtros, localize uma fonte confiável e escreva um parágrafo de paráfrase com a referência formatada pela NBR 6023. Depois cole o texto no Word usando Manter Somente Texto.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🔎 Operadores de busca que economizam tempo</div><table class="mini-sheet"><tr><th>O que você digita</th><th>O que acontece</th></tr><tr><td><strong>história do windows site:br</strong></td><td>Somente páginas brasileiras, com português e contexto do Brasil</td></tr><tr><td><strong>história do windows filetype:pdf</strong></td><td>Apostilas, teses e artigos já em formato PDF</td></tr><tr><td><strong>história do windows site:br filetype:pdf</strong></td><td>Combina os dois filtros — resultados mais confiáveis</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">📋 Comparativo de colagem no Word</div><table class="mini-sheet"><tr><th>Opção do botão direito</th><th>Resultado no documento</th></tr><tr><td>Manter Formatação Original</td><td><strong style="color:#B91C1C;">Fundo cinza, fonte diferente, link azul — padrão ABNT destruído</strong></td></tr><tr><td><strong>Manter Somente Texto</strong> (pranchetinha com "A")</td><td><strong style="color:#15803D;">Texto limpo, estilo Normal, sem cores nem fontes esquisitas</strong></td></tr></table></div><div class="fun-highlight"><strong>Fechamento da aula:</strong> capa + folha de rosto + sumário atualizado + introdução/desenvolvimento/conclusão + referências NBR 6023 + paráfrase ética + colagem limpa = pesquisa pronta para entregar.</div>`
+        },
+        {
+          lessonNum: 11,
+          chapter: "AULA 11: REVISÃO GERAL INTEGRADA & TABELAS PROFISSIONAIS",
+          heading: "11.1 O Mapa Geral de Ferramentas e Atalhos do Word 2010/2016/365",
+          content: `A Faixa de Opções organiza o Word em guias. Saber em qual guia cada comando mora resolve metade de qualquer questão da prova — o atalho de teclado faz o resto.
+
+AS 7 GUIAS ESSENCIAIS:
+• Página Inicial — fonte, negrito, itálico, sublinhado, alinhamentos, espaçamento, estilos e Pincel de Formatação.
+• Inserir — tabelas, imagens, formas, cabeçalho e rodapé, quebra de página, números de página e Letra Capitular.
+• Layout da Página — margens ABNT, orientação retrato/paisagem, tamanho A4, colunas e quebras de seção.
+• Referências — Sumário Automático, legendas, índice de ilustrações e notas de rodapé.
+• Correspondências — mala direta, mesclar dados e etiquetas.
+• Revisão — ortografia (F7), sinônimos (Shift+F7), comentários e Controlar Alterações.
+• Exibição — régua, zoom, modos de exibição e painéis de navegação.
+
+ATALHOS QUE CAEM NA PROVA (idênticos em qualquer idioma do Word):
+Ctrl+S salvar · Ctrl+B negrito · Ctrl+I itálico · Ctrl+U sublinhado · Ctrl+A selecionar tudo · Ctrl+J justificar · Ctrl+R alinhar à direita · Ctrl+L alinhar à esquerda · Ctrl+E centralizar · Ctrl+Z desfazer · Ctrl+Y refazer · Ctrl+Enter quebra de página · F7 ortografia · Shift+F7 sinônimos.
+
+ATENÇÃO À LENDA URBANA: apostilas antigas afirmam que, no Word em português, Ctrl+B salva e Ctrl+S sublinha. Isso é FALSO. Os atalhos vêm das palavras em inglês (Save, Bold, Underline, All) e não mudam com o idioma do programa.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">⚡ Mapa mestre de atalhos — memorize antes da prova</div><table class="mini-sheet"><tr><th>Tecla</th><th>Ação</th><th>Tecla</th><th>Ação</th></tr><tr><td><strong>Ctrl+S</strong></td><td>Salvar</td><td><strong>Ctrl+J</strong></td><td>Justificar</td></tr><tr><td><strong>Ctrl+B</strong></td><td>Negrito</td><td><strong>Ctrl+R</strong></td><td>Alinhar à direita</td></tr><tr><td><strong>Ctrl+I</strong></td><td>Itálico</td><td><strong>Ctrl+L</strong></td><td>Alinhar à esquerda</td></tr><tr><td><strong>Ctrl+U</strong></td><td>Sublinhado</td><td><strong>Ctrl+E</strong></td><td>Centralizar</td></tr><tr><td><strong>Ctrl+A</strong></td><td>Selecionar tudo</td><td><strong>Ctrl+Enter</strong></td><td>Quebra de página</td></tr><tr><td><strong>Ctrl+Z / Ctrl+Y</strong></td><td>Desfazer / Refazer</td><td><strong>F7 / Shift+F7</strong></td><td>Ortografia / Sinônimos</td></tr></table></div><div class="fun-highlight"><strong>Não caia na pegadinha:</strong> Ctrl+B é <em>Bold</em> (negrito) e Ctrl+S é <em>Save</em> (salvar) — nunca o contrário. O mesmo atalho vale no Word 2010, 2016 e 365.</div>`
+        },
+        {
+          lessonNum: 11,
+          chapter: "AULA 11: REVISÃO GERAL INTEGRADA & TABELAS PROFISSIONAIS",
+          heading: "11.2 Engenharia e Formatação Avançada de Tabelas",
+          content: `Para inserir uma tabela, vá em Inserir > Tabela e deslize o cursor sobre a grade até destacar 4 colunas × 6 linhas. Ao clicar DENTRO da tabela surgem as guias contextuais douradas Ferramentas de Tabela: Design e Layout. Se você clicar fora, elas desaparecem.
+
+NA GUIA DESIGN: estilos prontos, sombreamento do cabeçalho, cor e espessura das bordas.
+NA GUIA LAYOUT: inserir linhas acima/abaixo, colunas à esquerda/direita, mesclar e dividir células, ajustar altura/largura e aplicar os 9 alinhamentos internos.
+
+MESCLAGEM: selecione duas ou mais células adjacentes e clique em Layout > Mesclar Células. É o recurso ideal para o título da tabela e para a linha de total geral. O comando inverso é Dividir Células.
+
+OS 9 ALINHAMENTOS INTERNOS: superior esquerdo, superior centro, superior direito, meio esquerdo, meio centro, meio direito, inferior esquerdo, inferior centro e inferior direito. O centro (meio) é o mais usado em cabeçalhos.
+
+DICA DE PRODUTIVIDADE: pressione Tab na última célula da tabela para criar automaticamente uma nova linha.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">📊 Modelo de tabela comercial — 4 colunas × 6 linhas, total R$ 696,00</div><table class="mini-sheet"><tr><th style="background:#1D4ED8; color:#FFFFFF;">Produto</th><th style="background:#1D4ED8; color:#FFFFFF;">Qtd.</th><th style="background:#1D4ED8; color:#FFFFFF;">Preço Unit.</th><th style="background:#1D4ED8; color:#FFFFFF;">Subtotal</th></tr><tr><td>Caderno A4</td><td style="text-align:center;">12</td><td style="text-align:right;">R$ 12,00</td><td style="text-align:right;">R$ 144,00</td></tr><tr style="background:#F1F5F9;"><td>Caneta azul</td><td style="text-align:center;">24</td><td style="text-align:right;">R$ 4,50</td><td style="text-align:right;">R$ 108,00</td></tr><tr><td>Pasta elástica</td><td style="text-align:center;">20</td><td style="text-align:right;">R$ 14,80</td><td style="text-align:right;">R$ 296,00</td></tr><tr style="background:#F1F5F9;"><td>Bloco de notas</td><td style="text-align:center;">10</td><td style="text-align:right;">R$ 14,80</td><td style="text-align:right;">R$ 148,00</td></tr><tr style="background:#DBEAFE; font-weight:800; color:#1E3A8A;"><td colspan="3"><strong>TOTAL GERAL (células mescladas)</strong></td><td style="text-align:right;"><strong>R$ 696,00</strong></td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🔧 Onde cada comando mora</div><table class="mini-sheet"><tr><th>Guia contextual</th><th>O que você faz nela</th></tr><tr><td><strong>Design</strong></td><td>Estilos, sombreamento do cabeçalho, cor e espessura das bordas</td></tr><tr><td><strong>Layout</strong></td><td>Inserir/excluir linhas e colunas, mesclar, dividir e alinhar (9 posições)</td></tr></table></div><div class="fun-highlight"><strong>Conferência da soma:</strong> 144 + 108 + 296 + 148 = <strong>696</strong>. A linha de total usa mesclagem das três primeiras células e os valores em reais ficam alinhados à direita.</div>`
+        },
+        {
+          lessonNum: 11,
+          chapter: "AULA 11: REVISÃO GERAL INTEGRADA & TABELAS PROFISSIONAIS",
+          heading: "11.3 Boas Práticas de Diagramação Tabular Corporativa",
+          content: `Uma tabela profissional se reconhece à primeira olhada. Três detalhes fazem toda a diferença: cabeçalho sombreado com texto branco em negrito, bordas completas e valores monetários alinhados à direita.
+
+ALINHAMENTO POR TIPO DE DADO:
+• Descrição e nomes — à esquerda, para facilitar a leitura e a varredura vertical.
+• Quantidades e códigos — centralizado, para equilibrar visualmente os valores curtos.
+• Preços e valores em reais — à direita, para que as casas decimais fiquem perfeitamente alinhadas na coluna.
+• Cabeçalhos — centralizado e em negrito, para identificar a coluna de imediato.
+
+TIPOGRAFIA: mantenha a mesma fonte do corpo do documento (Arial ou Times New Roman 12). Use negrito apenas no cabeçalho e na linha de total; evite itálico e sublinhado em tabelas de dados.
+
+SOMBREAMENTO: no cabeçalho, prefira cor forte com texto branco. Nas linhas de dados, use tons claros ou zebrado (linhas alternadas) para guiar o olho sem poluir.
+
+BORDAS: aplique bordas completas e uniformes. A mesclagem da linha de total cria um espaço contínuo para o rótulo "TOTAL GERAL", reforçando o fechamento do relatório.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">📐 Regra de ouro — alinhamento por tipo de conteúdo</div><table class="mini-sheet"><tr><th>Tipo de conteúdo</th><th>Alinhamento</th><th>Por quê?</th></tr><tr><td>Descrição / nomes</td><td><strong>À esquerda</strong></td><td>Leitura e varredura vertical fáceis</td></tr><tr><td>Quantidades e códigos</td><td><strong>Centralizado</strong></td><td>Valores curtos equilibrados</td></tr><tr><td>Preços em R$</td><td><strong>À direita</strong></td><td>Casas decimais alinhadas na coluna</td></tr><tr><td>Cabeçalhos</td><td><strong>Centro + negrito</strong></td><td>Identificação imediata da coluna</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">🎨 Checklist de acabamento profissional</div><div style="padding:12px 14px; font-size:12px; color:#334155; line-height:1.9;"><div>☑ Cabeçalho sombreado com texto branco e negrito</div><div>☑ Bordas completas e uniformes</div><div>☑ Valores em reais alinhados à direita</div><div>☑ Linha de total com células mescladas e em negrito</div><div>☑ Mesma fonte do corpo do documento (Arial/Times 12)</div></div></div><div class="fun-highlight"><strong>Erro clássico:</strong> centralizar valores em reais. Sem o alinhamento à direita, as casas decimais "dançam" e a tabela parece amadora — mesmo com os números corretos.</div>`
+        },
+        {
+          lessonNum: 11,
+          chapter: "AULA 11: REVISÃO GERAL INTEGRADA & TABELAS PROFISSIONAIS",
+          heading: "11.4 Guia de Preparação e Checklist para a Avaliação Final",
+          content: `Você chegou ao fechamento do Módulo Word. A Avaliação Final tem 15 questões e nota mínima 7,0. Ela cobre todos os tópicos das Aulas 01 a 11. Antes de iniciar, faça esta autoavaliação.
+
+BLOCO 1 — FUNDAMENTOS (Aulas 01 e 02):
+□ Sei abrir, salvar (Ctrl+S) e navegar pelo Word.
+□ Sei os atalhos Ctrl+B, Ctrl+U, Ctrl+A, Ctrl+J, Ctrl+R, Ctrl+L.
+□ Aplico corretamente papel A4, margens ABNT (3 cm superior/esquerda e 2 cm inferior/direita), fonte 12 e espaçamento 1,5.
+
+BLOCO 2 — FORMATAÇÃO (Aulas 03 a 06):
+□ Domino os 4 alinhamentos de parágrafo e o espaçamento em pontos.
+□ Sei usar recuos, bordas, sombreamento, marcas d'água e quebras de texto.
+□ Sei alternar retrato/paisagem e inserir quebras de seção com cabeçalhos independentes.
+
+BLOCO 3 — PRODUTIVIDADE (Aulas 05 a 09):
+□ Uso estilos Título 1 e Título 2 e atualizo o Sumário Automático com F9.
+□ Crio listas multinível (Tab/Shift+Tab), tabulações e certificados em paisagem.
+□ Uso Controlar Alterações e comentários para revisar com colegas.
+
+BLOCO 4 — PESQUISA E TABELAS (Aulas 10 e 11):
+□ Montei capa, folha de rosto (nota recuada a 8 cm), corpo e referências NBR 6023.
+□ Sei colar texto limpo com Manter Somente Texto.
+□ Crio tabelas 4×6, uso Design/Layout, mesclo células e alinho valores em reais à direita.
+
+SE ALGUM ITEM SOAR ESTRANHO: volte à aula correspondente no menu antes de fazer a prova. Conclua o Exercício de Fixação da Aula 11 (5 questões, nota mínima 7,0) e confira o gabarito comentado.`,
+          html: `<div class="es-sheet-box"><div class="es-sheet-titlebar">🎓 Roteiro de autoavaliação — 4 blocos antes da prova</div><table class="mini-sheet"><tr><th>Bloco</th><th>Aulas</th><th>O que você precisa dominar</th></tr><tr><td>1. Fundamentos</td><td>01–02</td><td>Atalhos, A4, margens ABNT, fonte 12, entrelinha 1,5</td></tr><tr><td>2. Formatação</td><td>03–06</td><td>Parágrafos, bordas, formas, páginas e seções</td></tr><tr><td>3. Produtividade</td><td>05–09</td><td>Estilos, sumário, listas, tabulação, revisão</td></tr><tr><td>4. Pesquisa e tabelas</td><td>10–11</td><td>ABNT, NBR 6023, colagem limpa, tabelas profissionais</td></tr></table></div><div class="es-sheet-box"><div class="es-sheet-titlebar">📋 Ficha rápida da Avaliação Final</div><div style="padding:12px 14px; font-size:12px; color:#334155; line-height:1.9;"><div><strong>Quantidade:</strong> 15 questões</div><div><strong>Nota mínima:</strong> 7,0</div><div><strong>Cobertura:</strong> Aulas 01 a 11</div><div><strong>Pré-requisito:</strong> fixação da Aula 11 concluída com gabarito conferido</div></div></div><div class="fun-highlight"><strong>Última dica:</strong> na prova, leia o enunciado duas vezes e procure a palavra-chave (atalho, guia, margem, mesclagem). O Módulo Word premia quem sabe <em>onde</em> cada comando está — não decorre apenas o nome dele.</div>`
         }
       ]
     },

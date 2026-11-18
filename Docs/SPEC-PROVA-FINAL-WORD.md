@@ -31,14 +31,14 @@ A prova integra a trilha do aluno no portal (`modules/word/index.html`), rodando
 Abaixo está o banco completo de 15 questões oficiais calibradas e revisadas (sem erros de atalhos e com unidades exatas):
 
 ### Questão 01 (Aula 01 — Atalhos e Salvamento)
-- **Enunciado**: Qual é a combinação de teclas do teclado utilizada para SALVAR o documento atual no Microsoft Word configurado em português?
+- **Enunciado**: Qual é a combinação de teclas do teclado utilizada para SALVAR o documento atual no Microsoft Word?
 - **Alternativas**:
-  - A) `Ctrl + S`
-  - B) `Ctrl + B` *(Correta)*
+  - A) `Ctrl + S` *(Correta)*
+  - B) `Ctrl + B`
   - C) `Ctrl + P`
   - D) `Ctrl + A`
-- **Gabarito**: **B**
-- **Dica Pedagógica**: *Cuidado com a pegadinha clássica: no Word em inglês é Ctrl+S, mas no Word em português o atalho de salvar é Ctrl+B (de Baixar cópia/Salvar) e Ctrl+S aplica Sublinhado.*
+- **Gabarito**: **A**
+- **Dica Pedagógica**: *Os atalhos do Word não mudam com o idioma: Ctrl+S salva (Save), Ctrl+B aplica Negrito (Bold) e Ctrl+A seleciona tudo (All).*
 
 ---
 
@@ -81,9 +81,9 @@ Abaixo está o banco completo de 15 questões oficiais calibradas e revisadas (s
 ### Questão 05 (Aula 03 — Alinhamentos e Atalhos)
 - **Enunciado**: Qual alinhamento de texto faz com que as margens esquerda e direita do parágrafo fiquem perfeitamente retas e alinhadas simultaneamente?
 - **Alternativas**:
-  - A) Alinhar à Esquerda (`Ctrl + Q`).
+  - A) Alinhar à Esquerda (`Ctrl + L`).
   - B) Centralizar (`Ctrl + E`).
-  - C) Alinhar à Direita (`Ctrl + G`).
+  - C) Alinhar à Direita (`Ctrl + R`).
   - D) Justificar (`Ctrl + J`). *(Correta)*
 - **Gabarito**: **D**
 - **Dica Pedagógica**: *O alinhamento justificado distribui o espaçamento entre as palavras para que o texto forme um bloco reto nas duas laterais.*

@@ -13,9 +13,9 @@
 
 ### 1.2 Estrutura do Conteúdo Original
 1. **Os Quatro Alinhamentos Fundamentais**:
-   - Alinhar à Esquerda (`Ctrl + Q`): Padrão ocidental de leitura, margem direita irregular.
+   - Alinhar à Esquerda (`Ctrl + L`): Padrão ocidental de leitura, margem direita irregular.
    - Centralizar (`Ctrl + E`): Usado em títulos, capas, poesias e certificados.
-   - Alinhar à Direita (`Ctrl + G`): Usado em datas de cartas, assinaturas e referências.
+   - Alinhar à Direita (`Ctrl + R`): Usado em datas de cartas, assinaturas e referências.
    - Justificar (`Ctrl + J`): Ambas as margens perfeitamente alinhadas, padrão de livros e jornais.
 2. **Espaçamento entre Parágrafos (Antes e Depois)**:
    - Medido em pontos (`pt`), evita o vício amador de pressionar repetidas vezes a tecla `Enter` para afastar parágrafos.
@@ -65,12 +65,12 @@
 
 ### FASE 1: O Domínio dos Quatro Alinhamentos e Atalhos
 - Tabela prática e interativa dos alinhamentos:
-  - Esquerda (`Ctrl + Q`)
+  - Esquerda (`Ctrl + L`)
   - Centralizado (`Ctrl + E`)
-  - Direita (`Ctrl + G`)
+  - Direita (`Ctrl + R`)
   - Justificado (`Ctrl + J`)
 - Exemplos de onde usar cada um em uma carta comercial: Cabeçalho à esquerda, Título centralizado, Local e data à direita, Corpo justificado.
-- *Check 1*: `[ ] Passo 1: Pratiquei os 4 alinhamentos com os atalhos Ctrl+Q, Ctrl+E, Ctrl+G e Ctrl+J.`
+- *Check 1*: `[ ] Passo 1: Pratiquei os 4 alinhamentos com os atalhos Ctrl+L, Ctrl+E, Ctrl+R e Ctrl+J.`
 
 ### FASE 2: Espaçamento de Linhas e o Segredo do Antes/Depois (pt)
 - O vício do aluno iniciante: Pressionar `Enter` duas ou três vezes para afastar parágrafos, gerando espaços desiguais e páginas vazias acidentais.

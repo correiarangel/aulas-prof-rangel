@@ -118,7 +118,7 @@ Para cumprir as Regras 2, 3, 4 e 8 do `AGENTS.md`:
 2. **Proibição de Seções Órfãs**: Toda e qualquer seção de Word deve possuir seu respectivo `lessonNum`. Nenhuma seção genérica sem `lessonNum` pode existir em `LESSONS.word`.
 3. **Ilustrações HTML Reais (`sec.html`)**: Toda aula do PDF deve conter ilustrações HTML reais no campo `sec.html` (miniaturas de réguas com recuos, tabelas formatadas, caixas de estilos, diagramas de margens e modelos de citações), renderizadas com as classes de estilo padrão do popup (`.mini-sheet`, `.fun-highlight`, `.es-sheet-box`, `.es-sheet-titlebar`).
 4. **Imagens Reais do Repositório**: As imagens extraídas do material de origem serão organizadas em pastas padronizadas em `assets/img/word/AulaN/imageX.png` e referenciadas via URLs relativas resolvidas pelo helper de PDF.
-5. **Verificação de Fatos**: Atalhos em português estritamente revisados (Ctrl+B para salvar, Ctrl+N para negrito, Ctrl+S para sublinhado, Ctrl+T para selecionar tudo), unidades de medida ABNT corretas (cm para margens e recuos, pt para entrelinhas e espaçamento antes/depois).
+5. **Verificação de Fatos**: Atalhos do Word conferidos e corrigidos (Ctrl+S salvar, Ctrl+B negrito, Ctrl+I itálico, Ctrl+U sublinhado, Ctrl+A selecionar tudo, Ctrl+J justificar, Ctrl+R alinhar à direita; os atalhos NÃO mudam com o idioma), unidades de medida ABNT corretas (cm para margens e recuos, pt para entrelinhas e espaçamento antes/depois).
 
 ---
 

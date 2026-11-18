@@ -1,6 +1,6 @@
 # 📘 SPEC-AULA-10-WORD — Especificação Técnica e Pedagógica da Aula 10 (Word)
 ### Módulo 2: Microsoft Word | Prof. Marcos Rangel — WR Capacitação Profissional
-### Status: 📝 ESPECIFICADA E PRONTA PARA IMPLEMENTAÇÃO
+### Status: 🟢 IMPLEMENTADA E VALIDADA (18/11/2026)
 
 ---
 
@@ -153,3 +153,32 @@ Seções com `lessonNum: 10`:
   - Modelos comentados com exemplos reais de citação de sites, artigos online e Wikipédia.
 - **Seção 10.4**: *Pesquisa Eficiente na Web e Colagem Higienizada*
   - Comandos úteis de busca no Google e filtros de arquivos.
+
+---
+
+## ✅ 6. Registro de Implementação (18/11/2026)
+
+Implementada seguindo o molde direto da Aula 09 (`modules/word/index.html`).
+
+| Peça | Onde | Detalhes |
+| :--- | :--- | :--- |
+| Hub e desbloqueio | `modules/word/index.html` | Card `active-lesson`, senha `wj010`, rota `10: "screen-lesson-10"`, `TOTAL_TOPICS[10]=5`, `SEQUENTIAL_LESSONS[10]=true`, loops até 10. |
+| Tela | `#screen-lesson-10` | FASE 0 tutorial com roteiro numerado de 5 passos, barra `gamify-percent-10`/`gamify-bar-10`/`gamify-badge-box-10`, abas `tab-btn-10-1..5` + `tab-btn-10-fix`. |
+| Fases 1–5 | `#l10-phase-1..5` | Pesquisa vs plágio / Capa e folha de rosto / Corpo da pesquisa / Referências NBR 6023 / Busca e colagem. Check distribuído no fim de cada fase (`l10-check-1..5` + `check-read-10-1..5`). |
+| Simuladores | `window.l10Plagiarism`, `l10Cover`, `l10Body`, `l10Ref`, `l10Search`, `l10Paste` | Comparação cópia × paráfrase, capa bloco a bloco (nota a 8 cm), seções do corpo, referência com/sem autor, filtros `site:br`/`filetype:pdf`, colagem limpa. |
+| Quiz | `QUESTIONS_LESSON_10` + `QUIZ_CFG[10]` | 5 questões, gabarito `[1,2,1,2,1]` (Q2 e Q4 = alternativa **c**), `moduleId: "word_lesson_10_quiz"`, persistência real (`QuizEngine.saveState/loadState`) e "↺ Recomeçar o exercício". |
+| Apostila | `assets/js/pdf-lessons.js` | **6 seções** `lessonNum: 10` (10.0–10.5) — uma a mais que o previsto na spec para espelhar a Aula 09 (seção 10.0 de abertura e 10.5 de encerramento). Todas com ilustração HTML real (`sec.html` com `.es-sheet-box`, `.es-sheet-titlebar`, `.mini-sheet`, `.fun-highlight`). O material-base não tem imagens úteis. |
+
+### 6.1 Validações executadas
+
+- `node --check assets/js/pdf-lessons.js`: **OK**. Script inline extraído de `modules/word/index.html` e validado com `node --check`: **OK**.
+- 720 IDs no HTML, **0 duplicados**; todos os 16 handlers `onclick` da tela têm função definida.
+- Gabarito conferido:`[1,2,1,2,1]`. Persistência conferida: restauração ao abrir, gravação ao responder/navegar/assinar e reset no restart.
+- 6 seções PDF da Aula 10, todas com `html` não vazio e as 4 classes visuais obrigatórias; `moduleLessonTitles.word[10]` correto.
+- Auditoria de conteúdo renderizado (tela e PDF): sem artefatos de idioma, datas vencidas ou afirmações falsas. Corrigidos durante a auditoria: `mai.` → `mai` (maio sem ponto, na tela e no PDF), "cites as fontes" → "cita as fontes", "sintese" → "síntese", "Dep cole" → "Depois cole" e "contexto本地" → "contexto local".
+- Não executada nesta sessão: bateria CDP em navegador (modal `wj010`, cadeia de checks, simuladores, nota 10,0, popup do PDF, mobile 375 px) — ambiente sem Playwright/Puppeteer instalado.
+
+### 6.2 Pendências
+
+- Teste funcional em navegador (CDP), quando o ambiente permitir.
+- Commit das alterações da Aula 10 aguardando pedido explícito do usuário.

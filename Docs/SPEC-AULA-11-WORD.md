@@ -1,6 +1,6 @@
 # 📘 SPEC-AULA-11-WORD — Especificação Técnica e Pedagógica da Aula 11 (Word)
 ### Módulo 2: Microsoft Word | Prof. Marcos Rangel — WR Capacitação Profissional
-### Status: 📝 ESPECIFICADA E PRONTA PARA IMPLEMENTAÇÃO
+### Status: 🟢 IMPLEMENTADA E VALIDADA (18/11/2026)
 
 ---
 
@@ -91,7 +91,7 @@
 ### FASE 5: Simulado Final de Revisão Geral
 - A última etapa prática: Revisar todos os pontos críticos que serão cobrados na Prova Final do Módulo:
   - Formato de papel (A4) e margens ABNT (3-3-2-2).
-  - Atalhos PT-BR (Ctrl+B para salvar, Ctrl+N para negrito, Ctrl+J para justificar).
+  - Atalhos do Word (Ctrl+S salvar, Ctrl+B negrito, Ctrl+U sublinhado, Ctrl+A selecionar tudo, Ctrl+J justificar, Ctrl+R alinhar à direita).
   - Quebra de seção para desvincular cabeçalhos.
   - Estilos Título 1 e Título 2 para alimentar o Sumário Automático.
 - *Check 5*: `[ ] Passo 5: Concluí o simulado de revisão e estou 100% preparado para a Avaliação Final.`
@@ -120,7 +120,7 @@
    - d) A régua é ocultada.
    - *Dica*: As guias contextuais de tabela só aparecem quando você está interagindo com uma tabela.
 4. **Qual atalho do teclado deve ser usado para REFAZER uma ação que foi desfeita pelo Ctrl+Z?**
-   - a) `Ctrl + Y` (ou `Ctrl + R` em alguns programas). *(Correta)*
+   - a) `Ctrl + Y` *(Correta)*
    - b) `Ctrl + X`.
    - c) `Ctrl + P`.
    - d) `Ctrl + B`.
@@ -145,3 +145,15 @@ Seções com `lessonNum: 11`:
   - Recomendações de tipografia, alinhamento de números à direita e mesclagem de células.
 - **Seção 11.4**: *Guia de Preparação e Checklist para a Avaliação Final*
   - Roteiro de autoavaliação do aluno antes de iniciar a Prova Final do Módulo.
+
+---
+
+## ✅ 6. Registro de Implementação (18/11/2026)
+
+- **Tela**: `#screen-lesson-11` em `modules/word/index.html`, com FASE 0 (objetivo + roteiro numerado de 5 passos + checagens distribuídas no fim de cada fase), 5 fases, 6 simuladores (`l11Guide`, `l11Table`, `l11Merge`, `l11Align`, `l11Style`, `l11Review`), fixação e resultado.
+- **Registro/roteamento**: `PASSWORDS[11]="wk011"`, `moduleLessonTitles.word[11]`, `11: "screen-lesson-11"`, `TOTAL_TOPICS[11]=5`, `SEQUENTIAL_LESSONS[11]=true`, loops estendidos até 11.
+- **Quiz**: `QUESTIONS_LESSON_11` + `QUIZ_CFG[11]` (`word_lesson_11_quiz`), gabarito `[1,1,1,0,1]` — Q4 = `Ctrl + Y` (Refazer). Persistência via handlers genéricos (`persistQuizGen`/`restoreQuizGen`/`restartQuizGen`).
+- **Apostila**: 4 seções `lessonNum: 11` (11.1–11.4) em `assets/js/pdf-lessons.js`, todas com `sec.html` ilustrado. Tabela comercial 4×6 com `TOTAL GERAL R$ 696,00` (144+108+296+148). Material de origem sem imagens (`AULA11REVISOFINALDOMICROSOFTWORD2010.html`): ilustrações HTML reais no lugar de referências de imagem.
+- **Correções de atalhos (pedido explícito)**: `Ctrl+Q` removido de HTML/PDF/SPECs/Prova Final; alinhamento à direita = `Ctrl+R`; `Ctrl+G` mantido só como distraidor (SPEC 02) e em nota correta da Aula 4 ("no Word, Ctrl+G abre Ir Para").
+- **Auditoria de conteúdo (regra 12 do AGENTS.md)**: corrigidos `where`→`Onde`, "voltee"→"volte", `Dominio`→`Domino`, e atribuições de aulas nos blocos de revisão (item 5 → Aulas 07 e 11; BLOCO 3 → 05–09). Nenhum `JSTOR`, data vencida ou erro de unidade.
+- **Validações**: `node --check assets/js/pdf-lessons.js` OK; script inline do HTML OK (1 script, 0 erros); 795 IDs sem duplicatas, 46 IDs obrigatórios presentes; 4 seções PDF com `html`. Bateria CDP não executada (sem navegador automatizado no ambiente). Nenhum commit realizado.

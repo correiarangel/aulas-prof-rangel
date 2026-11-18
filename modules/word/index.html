@@ -1471,6 +1471,111 @@
       .l9-columns { gap: 10px; font-size: 10px; }
       .l9-watermark { font-size: 16px; }
     }
+
+    /* ============================================================
+       AULA 10 — PESQUISA ACADÊMICA, ESTRUTURA ABNT & CITAÇÕES
+       ============================================================ */
+    .l10-paper {
+      background: #FFFFFF; border: 1.5px solid #94A3B8; border-radius: 6px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.10);
+      padding: 16px 20px; font-size: 13px; color: #334155; line-height: 1.8;
+      min-height: 92px;
+    }
+    .l10-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .l10-bad, .l10-good { border-radius: 8px; padding: 12px 14px; font-size: 12.5px; line-height: 1.75; }
+    .l10-bad { background: #FEF2F2; border: 1.5px solid #FCA5A5; color: #7F1D1D; }
+    .l10-good { display: none; background: #F0FDF4; border: 1.5px solid #86EFAC; color: #14532D; }
+    .l10-quote { display: block; border-left: 3px solid currentColor; padding-left: 10px; margin: 8px 0; opacity: .9; }
+    .l10-cover { text-align: center; font-family: Georgia, serif; }
+    .l10-cover-top { font-weight: 700; letter-spacing: 1px; }
+    .l10-cover-mid { margin: 22px 0 26px; }
+    .l10-cover-title { display: block; font-size: 15px; font-weight: 800; margin-top: 6px; }
+    .l10-cover-bottom { font-size: 11.5px; color: #64748B; }
+    .l10-folha-note {
+      display: none; margin: 14px 0 0 8cm; text-align: left; font-size: 11px;
+      border-left: 2px solid #2563EB; padding-left: 10px; color: #1E3A8A;
+    }
+    .l10-doc-section { display: none; margin-bottom: 10px; }
+    .l10-doc-section strong { color: #1E3A8A; }
+    .l10-ref {
+      display: none; font-family: 'Courier New', monospace; font-size: 11.5px;
+      line-height: 1.75; border-radius: 8px; padding: 12px 14px; word-break: break-word;
+    }
+    .l10-ref-wrong { background: #FEF2F2; border: 1.5px solid #FCA5A5; color: #991B1B; }
+    .l10-ref-ok { background: #F0FDF4; border: 1.5px solid #86EFAC; color: #14532D; }
+    .l10-search-bar {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      background: #F8FAFC; border: 1.5px solid #CBD5E1; border-radius: 24px; padding: 8px 14px;
+      font-size: 12.5px; color: #475569;
+    }
+    .l10-search-term { font-weight: 800; color: #1E3A8A; }
+    .l10-search-op { background: #DBEAFE; color: #1D4ED8; border-radius: 6px; padding: 2px 8px; font-weight: 800; }
+    .l10-paste-bad, .l10-paste-good { display: none; margin-top: 12px; border-radius: 8px; padding: 12px 14px; font-size: 12.5px; line-height: 1.7; }
+    .l10-paste-bad { background: #FEF2F2; border: 1.5px solid #FCA5A5; color: #7F1D1D; }
+    .l10-paste-good { background: #F0FDF4; border: 1.5px solid #86EFAC; color: #14532D; }
+    .l10-status { margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--word-blue-dark); }
+    @media (max-width: 640px) {
+      .l10-paper { padding: 12px 10px; font-size: 11.5px; }
+      .l10-compare { grid-template-columns: 1fr; }
+      .l10-folha-note { margin-left: 12px; }
+      .l10-ref { font-size: 10.5px; }
+    }
+
+    /* ============================================================
+       AULA 11 — REVISÃO GERAL INTEGRADA & TABELAS PROFISSIONAIS
+       ============================================================ */
+    .l11-stage {
+      background: #FFFFFF; border: 1.5px solid #94A3B8; border-radius: 10px;
+      padding: 14px; margin-top: 12px; min-height: 70px; overflow-x: auto;
+    }
+    .l11-status { margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--word-blue-dark); }
+    .l11-shortcut-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
+    .l11-shortcut-item {
+      background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px;
+      padding: 8px 10px; font-size: 12px; color: #1E3A8A; line-height: 1.5;
+    }
+    .l11-shortcut-item strong { color: #1D4ED8; font-family: 'JetBrains Mono', monospace; }
+    .l11-grid-table, .l11-demo-table {
+      border-collapse: collapse; width: 100%; font-size: 12px; color: #334155; background: #FFF;
+    }
+    .l11-grid-table td, .l11-grid-table th,
+    .l11-demo-table td, .l11-demo-table th {
+      border: 1px solid #94A3B8; padding: 7px 9px; text-align: left; min-width: 72px;
+    }
+    .l11-grid-table th {
+      background: #E2E8F0; color: #1E3A8A; font-weight: 800; text-align: center;
+    }
+    .l11-context-bar {
+      display: none; margin-bottom: 10px; padding: 8px 12px; border-radius: 8px;
+      background: #FFFBEB; border: 1.5px solid #FCD34D; color: #92400E;
+      font-size: 12.5px; font-weight: 800;
+    }
+    .l11-context-bar span { margin-right: 14px; }
+    .l11-merge-row td { background: #F1F5F9; font-weight: 700; text-align: center; }
+    .l11-merge-cell { background: #DBEAFE !important; font-weight: 800; color: #1E3A8A; }
+    .l11-align-grid { display: grid; grid-template-columns: repeat(3, 44px); gap: 5px; justify-content: center; }
+    .l11-align-btn {
+      width: 44px; height: 40px; border: 1.5px solid #CBD5E1; border-radius: 7px;
+      background: #F8FAFC; color: #334155; font-size: 18px; cursor: pointer;
+    }
+    .l11-align-btn.active { background: #1D4ED8; color: #FFF; border-color: #1E3A8A; }
+    .l11-align-sample {
+      margin-top: 10px; border: 1.5px dashed #93C5FD; border-radius: 8px;
+      min-height: 64px; padding: 8px; display: flex; font-size: 12px; color: #1E3A8A;
+    }
+    .l11-demo-table th { background: #E2E8F0; color: #334155; font-weight: 800; text-align: center; }
+    .l11-demo-table tr:last-child td { font-weight: 800; }
+    .l11-demo-table.shaded th { background: #1D4ED8; color: #FFF; }
+    .l11-demo-table.bordered td, .l11-demo-table.bordered th { border: 2px solid #1E3A8A; }
+    .l11-demo-table .num.right { text-align: right; font-variant-numeric: tabular-nums; }
+    .l11-review-item { display: none; margin: 6px 0; font-size: 13px; color: #166534; }
+    .l11-review-item.show { display: block; }
+    @media (max-width: 640px) {
+      .l11-stage { padding: 8px; }
+      .l11-grid-table td, .l11-grid-table th,
+      .l11-demo-table td, .l11-demo-table th { padding: 5px 6px; font-size: 10.5px; min-width: 48px; }
+      .l11-context-bar span { display: block; margin: 2px 0; }
+    }
   </style>
 </head>
 <body>
@@ -1603,21 +1708,21 @@
           </div>
 
           <!-- AULA 10 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(10, 'Pesquisa Acadêmica, Estrutura ABNT & Citações')">
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(10, 'Pesquisa Acadêmica, Estrutura ABNT & Citações')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 10</span>
-              <span class="lesson-name">Pesquisa Acadêmica & Citações ABNT</span>
-              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
+              <span class="lesson-name">Pesquisa Acadêmica, Estrutura ABNT & Citações</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wj010`)</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-10">🔒</span>
           </div>
 
           <!-- AULA 11 -->
-          <div class="lesson-card-item" onclick="promptLessonPassword(11, 'Revisão Geral Integrada & Tabelas Profissionais')">
+          <div class="lesson-card-item active-lesson" onclick="promptLessonPassword(11, 'Revisão Geral Integrada & Tabelas Profissionais')">
             <div style="display:flex; flex-direction:column;">
               <span class="lesson-num" style="color:var(--word-blue);">AULA 11</span>
-              <span class="lesson-name">Revisão Geral & Tabelas Profissionais</span>
-              <span style="font-size:12px; color:var(--ink-muted); font-weight:700; margin-top:4px;">🔒 Em preparação</span>
+              <span class="lesson-name">Revisão Geral Integrada & Tabelas Profissionais</span>
+              <span style="font-size:12px; color:var(--teal); font-weight:700; margin-top:4px;">🔓 Aula Liberada (Senha `wk011`)</span>
             </div>
             <span style="font-size:24px;" id="badge-lesson-11">🔒</span>
           </div>
@@ -1933,7 +2038,7 @@
                 <span class="word-table-badge">TECLADO & VELOCIDADE</span>
                 <h3>⚡ Atalhos Fundamentais de Alta Produtividade</h3>
               </div>
-              <span class="word-table-hint">💡 Memorize especialmente o <kbd>Ctrl</kbd> + <kbd>B</kbd></span>
+              <span class="word-table-hint">💡 Memorize especialmente o <kbd>Ctrl</kbd> + <kbd>S</kbd></span>
             </div>
             <div class="word-table-scroll">
               <table class="word-modern-table">
@@ -1947,14 +2052,14 @@
                 <tbody>
                   <tr class="highlight-blue">
                     <td>
-                      <span class="key-badge">Ctrl</span> + <span class="key-badge">B</span>
+                      <span class="key-badge">Ctrl</span> + <span class="key-badge">S</span>
                       <span class="tag-crucial">Salvar</span>
                     </td>
                     <td><strong>Salvar Documento</strong></td>
                     <td>Grava o arquivo ativo no disco rígido ou pen drive imediatamente sem perder nada.</td>
                   </tr>
                   <tr>
-                    <td><span class="key-badge">Ctrl</span> + <span class="key-badge">N</span></td>
+                    <td><span class="key-badge">Ctrl</span> + <span class="key-badge">B</span></td>
                     <td><strong>Negrito</strong></td>
                     <td>Destaca o texto selecionado tornando os traços da fonte mais grossos e evidentes.</td>
                   </tr>
@@ -1965,14 +2070,14 @@
                   </tr>
                   <tr class="highlight-amber">
                     <td>
-                      <span class="key-badge">Ctrl</span> + <span class="key-badge">S</span>
+                      <span class="key-badge">Ctrl</span> + <span class="key-badge">U</span>
                       <span class="tag-tip">Atenção</span>
                     </td>
                     <td><strong>Sublinhado</strong></td>
-                    <td>Insere uma linha contínua sob o texto selecionado (no Word em PT-BR não salva!).</td>
+                    <td>Insere uma linha contínua sob o texto selecionado (de <em>Underline</em>; não confundir com Salvar).</td>
                   </tr>
                   <tr>
-                    <td><span class="key-badge">Ctrl</span> + <span class="key-badge">T</span></td>
+                    <td><span class="key-badge">Ctrl</span> + <span class="key-badge">A</span></td>
                     <td><strong>Selecionar Tudo</strong></td>
                     <td>Seleciona todo o texto, tabelas e imagens do documento com um só comando.</td>
                   </tr>
@@ -2007,12 +2112,14 @@
           </div>
 
           <div style="background:#FFF9F2; border:1.5px solid var(--amber); border-left:6px solid #D97706; border-radius:12px; padding:16px 18px; margin:20px 0;">
-            <h3 style="color:#B45309; margin:0 0 8px 0; font-size:17px;">⚠️ ALERTA CONTRA O ERRO MAIS COMUM NO WORD EM PORTUGUÊS</h3>
+            <h3 style="color:#B45309; margin:0 0 8px 0; font-size:17px;">⚠️ ALERTA CONTRA A CONFUSÃO MAIS COMUM DE ATALHOS</h3>
             <p style="margin:0; font-size:14.5px; color:#78350F; line-height:1.7;">
-              Em navegadores de internet e programas em inglês, o atalho para salvar é <kbd>Ctrl</kbd> + <kbd>S</kbd> (de <em>Save</em>).<br>
-              <strong>Porém, no Microsoft Word em português:</strong><br>
-              • <kbd>Ctrl</kbd> + <kbd>S</kbd> aplica <strong>SUBLINHADO</strong> (letra inicial de Sublinhado)!<br>
-              • Para <strong>SALVAR</strong>, você deve apertar <kbd>Ctrl</kbd> + <kbd>B</kbd> (memorize como <em>Baixar cópia</em> ou <em>Backup</em>).
+              Os atalhos de formatação do Word são os mesmos em português e em inglês — a inicial vem da palavra em inglês:<br>
+              • <kbd>Ctrl</kbd> + <kbd>S</kbd> <strong>SALVA</strong> o documento (de <em>Save</em>) — vale também para o Word em português.<br>
+              • <kbd>Ctrl</kbd> + <kbd>B</kbd> aplica <strong>NEGRITO</strong> (de <em>Bold</em>).<br>
+              • <kbd>Ctrl</kbd> + <kbd>U</kbd> aplica <strong>SUBLINHADO</strong> (de <em>Underline</em>).<br>
+              • <kbd>Ctrl</kbd> + <kbd>A</kbd> seleciona <strong>TUDO</strong> (de <em>All</em>).<br>
+              Cuidado com apostilas antigas que dizem o contrário: elas estão erradas.
             </p>
           </div>
 
@@ -2021,13 +2128,13 @@
             <input type="checkbox" id="l1-check-2" class="l1-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 2">
             <div style="font-size:14px; color:#374151; line-height:1.6;">
               <strong style="color:var(--word-blue-dark);">PASSO 2: ATALHOS EM PORTUGUÊS</strong><br>
-              Entendi a diferença dos atalhos em português: <kbd>Ctrl</kbd> + <kbd>B</kbd> para Salvar e <kbd>Ctrl</kbd> + <kbd>S</kbd> para Sublinhado, além de <kbd>Ctrl</kbd> + <kbd>N</kbd> e <kbd>Ctrl</kbd> + <kbd>T</kbd>.
+              Memorizei os atalhos corretos: <kbd>Ctrl</kbd> + <kbd>S</kbd> para Salvar, <kbd>Ctrl</kbd> + <kbd>B</kbd> para Negrito, <kbd>Ctrl</kbd> + <kbd>U</kbd> para Sublinhado e <kbd>Ctrl</kbd> + <kbd>A</kbd> para Selecionar Tudo.
               <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 3 →</strong>
             </div>
           </div>
 
           <div class="read-check-box no-print">
-            <span>📖 Certifico que pratiquei os atalhos de produtividade e memorizei Ctrl+B para Salvar.</span>
+            <span>📖 Certifico que pratiquei os atalhos de produtividade e memorizei Ctrl+S para Salvar.</span>
             <button type="button" class="read-check-btn" id="check-read-1-2" onclick="markTopicRead(1, 2)">
               <span>☐ Marcar Leitura Concluída</span>
             </button>
@@ -2727,14 +2834,14 @@
                     <td><strong>Títulos Principais (Capítulos)</strong></td>
                     <td>Arial ou Times New Roman</td>
                     <td><span class="key-badge">14 pt</span></td>
-                    <td><strong class="tag-tip">NEGRITO (Ctrl+N)</strong></td>
+                    <td><strong class="tag-tip">NEGRITO (Ctrl+B)</strong></td>
                     <td>Preto Automático</td>
                   </tr>
                   <tr>
                     <td><strong>Subtítulos (Seções Secundárias)</strong></td>
                     <td>Arial ou Times New Roman</td>
                     <td><span class="key-badge">12 pt</span></td>
-                    <td><strong class="tag-tip">NEGRITO (Ctrl+N)</strong></td>
+                    <td><strong class="tag-tip">NEGRITO (Ctrl+B)</strong></td>
                     <td>Preto Automático</td>
                   </tr>
                   <tr class="highlight-amber">
@@ -3389,9 +3496,9 @@
           <div class="l3-demo-card">
             <div class="l3-demo-head">🧪 Simulador: clique em um alinhamento e veja o efeito <span class="l3-demo-hint">#l3-align-preview</span></div>
             <div class="l3-btn-row" role="group" aria-label="Botões de alinhamento">
-              <button type="button" class="l3-sim-btn active" onclick="l3SetAlign('left', this)">◧ Esquerda (Ctrl+Q)</button>
+              <button type="button" class="l3-sim-btn active" onclick="l3SetAlign('left', this)">◧ Esquerda (Ctrl+L)</button>
               <button type="button" class="l3-sim-btn" onclick="l3SetAlign('center', this)">▣ Centralizar (Ctrl+E)</button>
-              <button type="button" class="l3-sim-btn" onclick="l3SetAlign('right', this)">◨ Direita (Ctrl+G)</button>
+              <button type="button" class="l3-sim-btn" onclick="l3SetAlign('right', this)">◨ Direita (Ctrl+R)</button>
               <button type="button" class="l3-sim-btn" onclick="l3SetAlign('justify', this)">▤ Justificar (Ctrl+J)</button>
             </div>
             <div class="l3-preview" id="l3-align-preview" style="text-align:left;">
@@ -3399,7 +3506,7 @@
               <p>Prezado cliente, este parágrafo simula o corpo de uma carta comercial. Observe como as palavras se distribuem na linha conforme o alinhamento escolhido.</p>
               <p>Atenciosamente,<br>Departamento Comercial</p>
             </div>
-            <div id="l3-align-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Alinhamento atual: À esquerda (Ctrl+Q).</div>
+            <div id="l3-align-status" style="margin-top:10px; font-size:13px; font-weight:700; color:var(--word-blue-dark);">▸ Alinhamento atual: À esquerda (Ctrl+L).</div>
           </div>
 
           <div style="background:#F0F9FF; border:1.5px solid #BAE6FD; border-radius:12px; padding:16px 18px; margin:18px 0;">
@@ -7936,6 +8043,1102 @@
     </section>
 
     <!-- ===================================================================
+         AULA 10: PESQUISA ACADÊMICA, ESTRUTURA ABNT & CITAÇÕES
+         =================================================================== -->
+    <section id="screen-lesson-10" class="screen-view">
+
+      <!-- Topo da Aula com Botões de Ação -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('word', 10)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra Gamificada de Progresso da Aula 10 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 10)</span>
+            <span id="gamify-percent-10">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-10" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-10">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <!-- Cartão Principal de Leitura -->
+      <article class="lesson-reading-card">
+        <span class="badge-word-blue">Módulo 2 • Aula 10</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 10: Pesquisa Acadêmica, Estrutura ABNT &amp; Citações</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <em>Da capa às referências: como montar uma pesquisa curta seguindo a ABNT, parar de plagiar e citar sites da internet sem errar.</em> Leia cada etapa e aplique os comandos no seu Word!
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l10-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--word-blue); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:var(--word-blue-light); color:var(--word-blue-dark); border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar: O que vamos fazer e como</span>
+
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:14px 0 8px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Aprender a estruturar um trabalho acadêmico ou relatório de pesquisa completo dentro das normas da ABNT: montar a <strong>capa</strong> e a <strong>folha de rosto</strong>, redigir <strong>introdução, desenvolvimento e conclusão</strong> e referenciar corretamente artigos e páginas da internet, <strong>evitando o plágio</strong>.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo em 5 Fases)</h3>
+          <p style="margin:0 0 12px 0; font-size:13.5px; color:#475569; line-height:1.7;">
+            Os checks ficam distribuídos — posicionados no fim de cada fase, exatamente onde está a instrução prática. Cada passo é um check e só libera o próximo!
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px;" aria-label="Roteiro dos 5 passos">
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">1</strong>
+              <span>Compreender o que é uma pesquisa e a gravidade do plágio — e como paráfrasear com ética.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">2</strong>
+              <span>Construir a Capa e a Folha de Rosto nas medidas formais (inclusive a nota recuada a 8 cm).</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">3</strong>
+              <span>Estruturar Introdução, Desenvolvimento e Conclusão com estilos de título hierárquicos.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">4</strong>
+              <span>Aprender a regra da NBR 6023 para referenciar sites e links da internet.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">5</strong>
+              <span>Pesquisar no Google com filtros e colar somente texto limpo no Word.</span>
+            </div>
+          </div>
+
+          <div style="margin-top:18px; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-radius:10px; padding:14px 16px;">
+            <div style="font-weight:800; color:var(--word-blue-dark); font-size:14px; margin-bottom:4px;">⚙️ FAIXA DE PREPARAÇÃO — antes da Fase 1</div>
+            <ol style="font-size:13.5px; color:#374151; line-height:1.7; margin:0; padding-left:20px;">
+              <li>Abra o <strong>Microsoft Word</strong> e comece um documento chamado <code>Pesquisa_Aula10.docx</code>.</li>
+              <li>Escolha um dos temas sugeridos no material-base: <strong>Jogos, Windows, Smartphone, Android, iOS ou PCs</strong>. Pesquisa curta: <strong>até 5 páginas</strong>.</li>
+              <li>Deixe o documento em fonte <strong>Arial ou Times New Roman, tamanho 12</strong>, com espaçamento 1,5 entre linhas — o padrão simplification da ABNT para trabalhos escolares.</li>
+            </ol>
+          </div>
+
+          <div id="l10-checklist-status" style="margin-top:14px; font-size:14px; font-weight:700; color:var(--word-blue-dark);">▢ 0 / 5 Passos Concluídos</div>
+          <div id="l10-complete-hint" style="display:none; margin-top:8px; font-size:13.5px; font-weight:700; color:#15803D; background:#DCFCE7; border:1.5px solid #86EFAC; border-radius:8px; padding:10px 12px;">🎉 Todos os 5 passos concluídos — você concluiu a leitura e liberou o Exercício de Fixação!</div>
+
+          <div style="margin-top:20px; text-align:center;">
+            <button type="button" id="btn-start-l10" class="btn btn-primary" style="font-size:15px; padding:12px 28px;" onclick="switchTopicPhase(10, 1)">
+              ▶ ENTENDI! QUERO COMEÇAR A AULA ↓
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Abas de Tópicos da Aula 10 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-10-1" onclick="switchTopicPhase(10, 1)">1. Pesquisa vs Plágio</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-2" onclick="switchTopicPhase(10, 2)">2. Capa &amp; Folha de Rosto</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-3" onclick="switchTopicPhase(10, 3)">3. Corpo da Pesquisa</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-4" onclick="switchTopicPhase(10, 4)">4. Referências ABNT</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-5" onclick="switchTopicPhase(10, 5)">5. Busca &amp; Colagem</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-10-fix" onclick="openFixationPanel(10)" style="background:var(--amber-soft); color:var(--teal-deep); font-weight:700;">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             FASE 1: PESQUISA SÉRIA VS PLÁGIO
+             =============================================================== -->
+        <section id="l10-phase-1" class="topic-phase-section active">
+          <h2>1. Pesquisa Séria vs Plágio — a Regra da Autoria</h2>
+          <p>
+            <strong>Pesquisar não é copiar e colar.</strong> Pesquisa é reunir dados de <strong>fontes confiáveis</strong>, analisar com espírito crítico, organizar a informação de forma lógica e <strong>dar os devidos créditos</strong> a quem escreveu originalmente. Apresentar o texto de outra pessoa como se fosse seu — de um artigo, da Wikipédia ou de uma notícia — é <strong>plágio</strong>, uma infração ética que na escola costuma significar <strong>nota zero imediata</strong>.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: copiar e colar versus paráfrase com crédito <span class="l5-demo-hint">#l10-plag-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Formas de usar uma fonte">
+              <button type="button" class="l5-sim-btn" onclick="l10Plagiarism('copy', this)">❌ Copiar e colar</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Plagiarism('paraphrase', this)">✅ Paráfrase + crédito</button>
+            </div>
+            <div class="l5-stage" id="l10-plag-stage">
+              <div class="l10-compare">
+                <div class="l10-bad" id="l10-plag-bad">
+                  <strong>Fonte original (Wikipédia):</strong>
+                  <span class="l10-quote">"O Windows é um grupo de sistemas operacionais gráficos desenvolvidos pela Microsoft."</span>
+                  <strong>No trabalho do aluno:</strong>
+                  <span class="l10-quote">"O Windows é um grupo de sistemas operacionais gráficos desenvolvidos pela Microsoft."</span>
+                  <em style="font-size:11px;">↑ Palavras idênticas, sem aspas e sem citar de onde veio = PLÁGIO.</em>
+                </div>
+                <div class="l10-good" id="l10-plag-good">
+                  <strong>Paráfrase correta:</strong>
+                  <span class="l10-quote">A Microsoft criou uma família de sistemas com interface visual — o Windows — que se tornou a base de milhões de computadores (PINHEIRO, 2026).</span>
+                  <em style="font-size:11px;">↑ Ideia mantida, palavras novas e crédito na referência = pesquisa ética.</em>
+                </div>
+              </div>
+            </div>
+            <div class="l10-status" id="l10-plag-status">▸ Clique nos botões para comparar as duas formas de usar uma fonte.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">✍️ A técnica da paráfrase em 4 movimentos</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li><strong>Leia</strong> o texto de referência com atenção até entender a ideia.</li>
+              <li><strong>Feche a aba</strong> do navegador — assim você não copia sem perceber.</li>
+              <li><strong>Pense</strong> sobre o que compreendeu e <strong>digite a ideia com as suas palavras</strong>.</li>
+              <li><strong>Anote o crédito</strong>: URL completa, nome do site e o dia exato da consulta.</li>
+            </ol>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">💬 Quando usar aspas?</h3>
+            <p style="margin:0; font-size:14px; color:#78350F; line-height:1.7;">
+              Se você precisar reproduzir a frase <strong>exatamente como está na fonte</strong>, coloque-a entre aspas e cite o autor. Aspas sinalizam "isto não é meu". Sem aspas e sem referência, a cópia vira plágio — mesmo que você tenha mudado só uma ou duas palavras.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 1 -->
+          <div class="phase-step-check" data-step="1" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l10-check-1" class="l10-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 1">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 1: PESQUISA VS PLÁGIO</strong><br>
+              Entendi o conceito de plágio e aprendi a técnica de parafrasear conceitos com minhas próprias palavras, anotando o crédito da fonte.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 2 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que entendi plágio e paráfrase com crédito.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-1" onclick="markTopicRead(10, 1)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 1)">← Voltar à Fase 0</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 2)">Ir para 2. Capa &amp; Folha de Rosto →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 2: A CAPA OFICIAL E A FOLHA DE ROSTO ABNT
+             =============================================================== -->
+        <section id="l10-phase-2" class="topic-phase-section">
+          <h2>2. A Capa Oficial e a Folha de Rosto ABNT</h2>
+          <p>
+            A <strong>capa</strong> é o cartão-de-visita do trabalho. Mesmo na versão simplificada para pesquisas curtas, ela organiza três blocos bem definidos: <strong>topo</strong> (instituição), <strong>meio</strong> (autor e título) e <strong>base</strong> (cidade e ano). A <strong>folha de rosto</strong> repete esses dados e acrescenta, recuada a <strong>8 cm da margem esquerda</strong>, a nota que explica a finalidade do trabalho e o nome do professor.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: montando a capa bloco por bloco <span class="l5-demo-hint">#l10-cover-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Blocos da capa">
+              <button type="button" class="l5-sim-btn" onclick="l10Cover('reset', this)">↺ Limpar capa</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Cover('top', this)">1️⃣ Topo — instituição</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Cover('mid', this)">2️⃣ Meio — autor e título</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Cover('bottom', this)">3️⃣ Base — cidade e ano</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Cover('folha', this)">4️⃣ Folha de rosto (8 cm)</button>
+            </div>
+            <div class="l5-stage" id="l10-cover-stage">
+              <div class="l10-paper l10-cover">
+                <div class="l10-cover-top l10-doc-section" id="l10-cover-top">WR CAPACITAÇÃO PROFISSIONAL<br>CURSO DE INFORMÁTICA</div>
+                <div class="l10-cover-mid l10-doc-section" id="l10-cover-mid">MARCOS RANGEL<br><span class="l10-cover-title">A HISTÓRIA DO WINDOWS</span></div>
+                <div class="l10-cover-bottom l10-doc-section" id="l10-cover-bottom">Vargem Grande do Sul – SP<br>2026</div>
+                <div class="l10-folha-note" id="l10-folha-note">Trabalho apresentado à disciplina de Informática, como requisito parcial de avaliação.<br>Professor: Marcos Rangel.</div>
+              </div>
+            </div>
+            <div class="l10-status" id="l10-cover-status">▸ Monte a capa em etapas e, por fim, acrescente a nota da folha de rosto com recuo de 8 cm.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">⚙️ Como montar no Word</h3>
+            <ol style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.75;">
+              <li>No <strong>topo da folha</strong>: centralize, em maiúsculas, o nome da escola/curso — fonte 12 ou 14.</li>
+              <li>No <strong>meio da página</strong>: digite o nome do aluno e, logo abaixo, o <strong>TÍTULO DO TRABALHO</strong> em negrito, tamanho 14.</li>
+              <li>Na <strong>base</strong>: cidade e ano de entrega (ex.: <code>Vargem Grande do Sul – SP / 2026</code>).</li>
+              <li>Para a folha de rosto, use <strong>Ctrl + Enter</strong> para criar a página nova e repita os dados.</li>
+              <li>A nota explicativa fica <strong>recuada a 8 cm da margem esquerda</strong> — use a régua ou <code>Ctrl + Tab</code>/paradas de tabulação, nunca espaços.</li>
+            </ol>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 8px; font-size:16px;">✅ Capa pronta? Confira estes pontos</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.8;">
+              <li>Instituição em maiúsculas e centralizada no topo.</li>
+              <li>Nome do autor acima do título, ambos na parte central.</li>
+              <li>Cidade com hífen e ano atual (2026).</li>
+              <li>Folha de rosto em página própria, com a nota recuada a 8 cm.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 2 -->
+          <div class="phase-step-check" data-step="2" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l10-check-2" class="l10-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 2">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 2: CAPA E FOLHA DE ROSTO</strong><br>
+              Montei o modelo padrão de Capa e Folha de Rosto seguindo as medidas da ABNT, inclusive a nota recuada a 8 cm da margem esquerda.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 3 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que montei Capa e Folha de Rosto conforme a ABNT.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-2" onclick="markTopicRead(10, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 1)">← Voltar ao Tópico 1</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 3)">Ir para 3. Corpo da Pesquisa →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 3: O CORPO DA PESQUISA
+             =============================================================== -->
+        <section id="l10-phase-3" class="topic-phase-section">
+          <h2>3. O Corpo da Pesquisa — Introdução, Desenvolvimento e Conclusão</h2>
+          <p>
+            Depois dos elementos pré-textuais (capa, folha de rosto e sumário), vem o <strong>corpo do trabalho</strong>. Ele obedece a uma ordem lógica: primeiro você <strong>apresenta</strong> o tema, depois o <strong>explica</strong> em detalhes e, por fim, <strong>fecha</strong> dizendo o que descobriu. Use os estilos <strong>Título 1</strong> e <strong>Título 2</strong> para que o sumário automático reconheça a hierarquia — você já praticou isso na Aula 08.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: as três seções do corpo do texto <span class="l5-demo-hint">#l10-body-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Seções do corpo">
+              <button type="button" class="l5-sim-btn" onclick="l10Body('intro', this)">1️⃣ Introdução</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Body('dev', this)">2️⃣ Desenvolvimento</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Body('conc', this)">3️⃣ Conclusão</button>
+            </div>
+            <div class="l5-stage" id="l10-body-stage">
+              <div class="l10-paper">
+                <div class="l10-doc-section" id="l10-doc-intro"><strong>1. INTRODUÇÃO</strong><br>Este trabalho apresenta a evolução do sistema Windows, desde sua primeira versão até os recursos atuais. O tema foi escolhido porque está presente no cotidiano de quem usa computadores. O objetivo é compreender como a interface gráfica mudou a forma de interagir com a máquina.</div>
+                <div class="l10-doc-section" id="l10-doc-dev"><strong>2. DESENVOLVIMENTO</strong><br><strong>2.1 Primeiros anos</strong><br>O Windows 1.0 surgiu em 1985 com janelas e ícones básicos.<br><strong>2.2 Consolidação</strong><br>As versões 95 e XP popularizaram o sistema e o menu Iniciar.<br><strong>2.3 Versões recentes</strong><br>O Windows 11 trouxe interface centralizada e integração com serviços online.</div>
+                <div class="l10-doc-section" id="l10-doc-conc"><strong>3. CONCLUSÃO</strong><br>A pesquisa mostrou que o Windows evoluiu de um experimento gráfico para uma plataforma completa. Sem introduzir novos tópicos, conclui-se que a facilidade de uso foi o principal motor dessa transformação.</div>
+              </div>
+            </div>
+            <div class="l10-status" id="l10-body-status">▸ Revele cada seção na ordem: apresentar → explicar → concluir.</div>
+          </div>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Estrutura do corpo da pesquisa">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">ABNT SIMPLIFICADA</span>
+                <h3>📑 O que vai em cada seção</h3>
+              </div>
+              <span class="word-table-hint">Elementos textuais</span>
+            </div>
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead><tr><th>Seção</th><th>Função</th><th>Extensão sugerida</th></tr></thead>
+                <tbody>
+                  <tr class="highlight-blue"><td><strong>Introdução</strong></td><td>Apresenta o tema, a motivação e os objetivos da pesquisa.</td><td>1 a 2 páginas</td></tr>
+                  <tr class="highlight-blue"><td><strong>Desenvolvimento</strong></td><td>O miolo do trabalho, dividido em tópicos e subtópicos com Título 1 e Título 2.</td><td>Corpo principal</td></tr>
+                  <tr class="highlight-blue"><td><strong>Conclusão</strong></td><td>Recapitula os pontos principais — sem ideias novas.</td><td>Meia página a 1 página</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">🚨 Atenção: conclusão não é lugar de novidade</h3>
+            <p style="margin:0; font-size:14px; color:#78350F; line-height:1.7;">
+              Um erro comum é aproveitar a conclusão para apresentar um dado que nunca apareceu no desenvolvimento. A conclusão <strong>fecha</strong> o raciocínio: ela responde ao objetivo anunciado na introdução usando apenas o que já foi demonstrado.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 3 -->
+          <div class="phase-step-check" data-step="3" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l10-check-3" class="l10-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 3">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 3: CORPO DA PESQUISA</strong><br>
+              Organizei os tópicos em Introdução, Desenvolvimento e Conclusão, aplicando Título 1 e Título 2 para o sumário reconhecer a hierarquia.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 4 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que organizei Introdução, Desenvolvimento e Conclusão.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-3" onclick="markTopicRead(10, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 2)">← Voltar ao Tópico 2</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 4)">Ir para 4. Referências ABNT →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 4: REFERÊNCIAS DE SITES DA INTERNET (NBR 6023)
+             =============================================================== -->
+        <section id="l10-phase-4" class="topic-phase-section">
+          <h2>4. Referências de Sites da Internet — NBR 6023</h2>
+          <p>
+            A <strong>ABNT NBR 6023</strong> define como citar cada fonte consultada. A referência de um site da internet deve permitir que o leitor encontre a página original. Por isso ela registra <strong>autor, título, nome do site, ano, endereço completo e a data do acesso</strong> — esta última é obrigatória porque páginas online mudam com o tempo.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: referência com autor e sem autor <span class="l5-demo-hint">#l10-ref-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Modelos de referência">
+              <button type="button" class="l5-sim-btn" onclick="l10Ref('wrong', this)">❌ Só o link copiado</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Ref('author', this)">✅ Com autor conhecido</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Ref('noauthor', this)">✅ Sem autor (título em maiúsculas)</button>
+            </div>
+            <div class="l5-stage" id="l10-ref-stage">
+              <div class="l10-ref l10-ref-wrong" id="l10-ref-wrong">https://www.techgames.com.br/historia<br><em style="font-size:10.5px;">↑ Só o link: não diz quem escreveu, nem quando foi acessado. Está incompleto.</em></div>
+              <div class="l10-ref l10-ref-ok" id="l10-ref-ok"></div>
+            </div>
+            <div class="l10-status" id="l10-ref-status">▸ Alterne os modelos e observe como muda a abertura da referência.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">📐 Os dois modelos oficiais</h3>
+            <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Modelos de referência NBR 6023">
+              <div class="word-table-scroll">
+                <table class="word-modern-table">
+                  <thead><tr><th>Situação</th><th>Modelo comentado</th></tr></thead>
+                  <tbody>
+                    <tr class="highlight-blue">
+                      <td><strong>Com autor</strong></td>
+                      <td><code>SOBRENOME, Nome. Título do Artigo. Nome do Site, ano da publicação. Disponível em: &lt;link_completo&gt;. Acesso em: dia mês abreviado. ano.</code></td>
+                    </tr>
+                    <tr class="highlight-blue">
+                      <td><strong>Sem autor individual</strong></td>
+                      <td><code>TÍTULO DA PÁGINA EM MAIÚSCULAS. Nome do Site, ano. Disponível em: &lt;link&gt;. Acesso em: dia mês. ano.</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin:12px 0 0; font-size:13.5px; color:#374151; line-height:1.7;">
+              <strong>Exemplo com autor:</strong> SILVA, João. História dos Jogos Digitais. TechGames, 2024. Disponível em: &lt;https://www.techgames.com.br/historia&gt;. Acesso em: 15 mar. 2026.<br>
+              <strong>Exemplo sem autor:</strong> HISTÓRIA DO WINDOWS. Wikipédia, 2026. Disponível em: &lt;https://pt.wikipedia.org/wiki/Microsoft_Windows&gt;. Acesso em: 10 fev. 2026.
+            </p>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">🗓️ Abreviatura dos meses — detalhe que cai na prova</h3>
+            <p style="margin:0; font-size:14px; color:#78350F; line-height:1.8;">
+              Use <strong>três letras e ponto</strong>: jan., fev., mar., abr., <strong>mai</strong> (sem ponto!), jun., jul., ago., set., out., nov., dez. Exemplo: <code>Acesso em: 15 mar. 2026.</code> A data deve ser <strong>a do dia em que você consultou</strong>, não a de publicação da página.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 4 -->
+          <div class="phase-step-check" data-step="4" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l10-check-4" class="l10-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 4">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 4: REFERÊNCIAS ABNT</strong><br>
+              Formatei referências bibliográficas de internet seguindo o modelo oficial da NBR 6023, com mês abreviado e data de acesso.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 5 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que formatei referências de sites pela NBR 6023.</span>
+            <button type="button" class="read-check-btn" id="check-read-10-4" onclick="markTopicRead(10, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 3)">← Voltar ao Tópico 3</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(10, 5)">Ir para 5. Busca &amp; Colagem →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 5: DICAS DE BUSCA NO GOOGLE E COLAGEM SEGURA
+             =============================================================== -->
+        <section id="l10-phase-5" class="topic-phase-section">
+          <h2>5. Busca Eficiente no Google e Colagem Segura no Word</h2>
+          <p>
+            Saber <strong>onde procurar</strong> é metade da pesquisa. Os operadores <code>site:</code> e <code>filetype:</code> filtram os resultados diretamente na barra do Google e poupam muito tempo. E, ao trazer o conteúdo para o Word, existe um cuidado final: <strong>coloque somente o texto</strong>, para não contaminar seu documento com fontes, cores e fundos cinzas da página de origem.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: filtros de busca e colagem limpa <span class="l5-demo-hint">#l10-search-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Filtros do Google">
+              <button type="button" class="l5-sim-btn" onclick="l10Search('site', this)">🇧🇷 Buscar com site:br</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Search('pdf', this)">📄 Buscar com filetype:pdf</button>
+            </div>
+            <div class="l5-stage" id="l10-search-stage">
+              <div class="l10-search-bar">
+                <span>🔎 Busca no Google:</span>
+                <span class="l10-search-term" id="l10-search-term">história do windows</span>
+                <span class="l10-search-op" id="l10-search-op">(sem filtro)</span>
+                <span style="margin-left:auto; font-size:11px; color:#94A3B8;">← operador adicionado</span>
+              </div>
+            </div>
+            <div class="l10-status" id="l10-search-status">▸ Clique nos filtros e veja como a busca fica mais precisa.</div>
+
+            <div class="l5-btn-row" role="group" aria-label="Modos de colagem" style="margin-top:14px;">
+              <button type="button" class="l5-sim-btn" onclick="l10Paste('dirty', this)">❌ Manter formatação original</button>
+              <button type="button" class="l5-sim-btn" onclick="l10Paste('clean', this)">✅ Manter Somente Texto</button>
+            </div>
+            <div class="l10-paste-bad" id="l10-paste-bad"><strong>Texto colado com formatação da internet:</strong> fundo cinza, fonte diferente, link azul sublinhado e espaçamento descontrolado. O padrão ABNT do documento foi destruído.</div>
+            <div class="l10-paste-good" id="l10-paste-good"><strong>Manter Somente Texto (ícone de pranchetinha com "A"):</strong> o texto assume imediatamente o estilo <strong>Normal</strong> do seu documento — Arial 12, espaçamento 1,5, sem cores nem fontes esquisitas.</div>
+            <div class="l10-status" id="l10-paste-status">▸ Teste os dois modos e compare o resultado dentro do documento ABNT.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">🔎 Truques de busca que economizam tempo</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.85;">
+              <li><code>história do windows site:br</code> — restringe os resultados a <strong>páginas brasileiras</strong>, com português e contexto local.</li>
+              <li><code>história do windows filetype:pdf</code> — encontra <strong>apostilas, teses e artigos acadêmicos</strong> já em PDF.</li>
+              <li><code>história do windows site:br filetype:pdf</code> — combina os dois filtros para resultados ainda mais confiáveis.</li>
+              <li>Sempre confira a <strong>data da publicação</strong> e prefira sites de instituições, universidades e órgãos oficiais.</li>
+            </ul>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <div style="font-weight:700; color:var(--teal-deep); font-size:16px; margin-bottom:8px;">✅ Checklist final antes de entregar a pesquisa</div>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.7;">
+              <li><strong>Capa e folha de rosto</strong> completas, com cidade e ano de 2026.</li>
+              <li><strong>Sumário</strong> gerado com estilos de título e atualizado (F9).</li>
+              <li><strong>Introdução, desenvolvimento e conclusão</strong> em ordem lógica.</li>
+              <li><strong>Referências</strong> em ordem alfabética, com data de acesso e mês abreviado.</li>
+              <li><strong>Paráfrase</strong> em todas as seções — nenhum trecho copiado sem crédito.</li>
+              <li><strong>Colagem limpa</strong>: texto no padrão Normal do documento.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 5 -->
+          <div class="phase-step-check" data-step="5" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l10-check-5" class="l10-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 5">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 5: BUSCA E COLAGEM SEGURA</strong><br>
+              Apliquei filtros <kbd>site:br</kbd> e <kbd>filetype:pdf</kbd> no Google e pratiquei a colagem com <strong>Manter Somente Texto</strong> no Word.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Exercício de Fixação →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que usei filtros de busca e a colagem "Manter Somente Texto".</span>
+            <button type="button" class="read-check-btn" id="check-read-10-5" onclick="markTopicRead(10, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(10, 4)">← Voltar ao Tópico 4</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(10)">Iniciar Exercício de Fixação (5 Perguntas) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 10 (5 QUESTÕES)
+             =============================================================== -->
+        <div id="fixation-panel-10" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="badge-word-blue" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--teal-deep); margin-top:6px; font-size:24px;">Exercício de Fixação — Aula 10 (Pesquisa, ABNT &amp; Citações)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft); font-weight:700;">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-10" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-10">QUESTÃO 1 / 5</span>
+                <span id="q-points-10">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-10"></div>
+
+              <button class="hint-toggle" id="btn-hint-10" type="button" onclick="toggleHint(10)">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-10"></div>
+
+              <div class="options" id="options-10"></div>
+
+              <div class="nav-row">
+                <button type="button" class="btn btn-ghost" id="btn-prev-10" onclick="prevQuestionGen(10)">← Anterior</button>
+                <div style="font-size:12px; color:var(--ink-soft); font-weight:600;">✓ Salvo automaticamente</div>
+                <button type="button" class="btn btn-primary" id="btn-next-10" onclick="nextQuestionGen(10)">Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             PAINEL DE RESULTADO DO EXERCÍCIO DE FIXAÇÃO DA AULA 10
+             =============================================================== -->
+        <div id="result-panel-10" class="fixation-panel">
+          <div class="card-quiz" style="text-align:center;">
+            <div class="result-badge" id="result-badge-10" style="margin:0 auto 16px;"></div>
+            <h2 id="result-title-10" style="color:var(--teal-deep); margin-bottom:8px; font-size:28px;"></h2>
+            <p id="result-sub-10" style="color:var(--ink-soft); margin-bottom:20px; font-size:16px;"></p>
+
+            <div style="font-size:42px; font-weight:800; color:var(--teal); font-family:'Fraunces', serif; margin-bottom:12px;">
+              <span id="result-score-10">0,0</span> <span style="font-size:20px; color:var(--ink-soft); font-family:'Inter';">/ 10,0</span>
+            </div>
+
+            <div class="signature-badge-box">
+              <div style="font-weight:700; color:#F8FAFC; margin-bottom:4px;">🔐 Comprovante Digital de Conclusão da Aula 10</div>
+              <div style="font-size:11.5px; color:#94A3B8;">Código de Autenticidade (SHA-256):</div>
+              <div class="signature-code-display" id="signature-code-10">GERANDO ASSINATURA...</div>
+              <div style="font-size:11px; color:#94A3B8; margin-top:4px;">WR Capacitação Profissional • Instrutor Marcos Rangel</div>
+            </div>
+
+            <h3 style="text-align:left; font-size:18px; color:var(--teal-deep); margin-top:24px;">Gabarito Comentado</h3>
+            <div class="breakdown" id="breakdown-10"></div>
+
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+              <button class="btn btn-primary" id="btn-download-txt-10" type="button">📄 Baixar Comprovante Oficial (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-10" type="button" style="background:var(--amber);">📑 Baixar Apostila em PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-10" type="button" style="justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+                Enviar Resultado por WhatsApp
+              </button>
+              <button class="btn btn-ghost" id="btn-email-10" type="button">📧 Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-10">
+              <p style="font-size:14px; margin-bottom:12px; color:var(--ink-soft);">Clique abaixo para abrir seu aplicativo de e-mail com o comprovante pronto:</p>
+              <button class="btn btn-primary" id="btn-open-gmail-10" type="button" style="width:100%;">Abrir no Gmail</button>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:20px;">
+              <button type="button" class="btn btn-ghost" onclick="restartQuizGen(10)">↺ Recomeçar o exercício</button>
+              <button type="button" class="btn btn-primary" onclick="showScreen('screen-hub')">Voltar ao Menu de Aulas →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- ===================================================================
+         AULA 11 — REVISÃO GERAL INTEGRADA & TABELAS PROFISSIONAIS
+         =================================================================== -->
+    <section id="screen-lesson-11" class="screen-view">
+
+      <!-- Topo da Aula com Botões de Ação -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;" class="no-print">
+        <button type="button" class="btn btn-ghost" onclick="showScreen('screen-hub')" style="background:var(--card-brown); color:var(--amber) !important; border-color:var(--line-dark);">
+          ← Voltar ao Menu do Módulo
+        </button>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-ghost" onclick="window.print()" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; background:var(--card-brown); color:var(--teal) !important; border-color:var(--teal);">
+            🖨️ Imprimir Aula Completa
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.PDFLessons.downloadLessonPDF('word', 11)" style="font-size:14px; padding:10px 18px; display:inline-flex; align-items:center; gap:8px;">
+            📑 Baixar Apostila PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra Gamificada de Progresso da Aula 11 -->
+      <div class="gamify-header-bar no-print">
+        <div class="gamify-progress-container">
+          <div class="gamify-progress-label">
+            <span>Progresso da Leitura &amp; Prática (Aula 11)</span>
+            <span id="gamify-percent-11">0% Concluído</span>
+          </div>
+          <div class="gamify-progress-track">
+            <div class="gamify-progress-fill" id="gamify-bar-11" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div id="gamify-badge-box-11">
+          <span class="eyebrow-badge" style="margin:0;"><span class="dot"></span> 📖 Leitura e Prática Pendentes</span>
+        </div>
+      </div>
+
+      <!-- Cartão Principal de Leitura -->
+      <article class="lesson-reading-card">
+        <span class="badge-word-blue">Módulo 2 • Aula 11</span>
+        <h1 style="font-size:34px; color:var(--teal-deep); margin-bottom:8px;">Aula 11: Revisão Geral Integrada &amp; Tabelas Profissionais</h1>
+        <p style="font-size:16px; color:var(--ink-soft); margin-bottom:20px;">
+          <em>O fechamento do Módulo Word: mapa mestre de comandos, tabelas com acabamento profissional e simulado de revisão antes da Avaliação Final.</em> Leia cada etapa e aplique os comandos no seu Word!
+        </p>
+
+        <!-- FASE 0: BLOCO INTRODUTÓRIO TUTORIAL (OBJETIVO + ROTEIRO NUMERADO) -->
+        <div id="l11-fase-0" style="background:var(--paper-white); border:2px solid var(--line-light); border-left:6px solid var(--word-blue); border-radius:16px; padding:24px 22px; margin:0 0 24px 0; box-shadow:var(--shadow-sm);">
+          <span class="eyebrow-badge" style="background:var(--word-blue-light); color:var(--word-blue-dark); border:none; margin:0;"><span class="dot"></span> FASE 0 — Antes de Começar: O que vamos fazer e como</span>
+
+          <h2 style="color:var(--teal-deep); font-size:25px; margin:14px 0 8px;">🎯 Objetivo desta aula</h2>
+          <p style="color:var(--ink); font-size:15.5px; line-height:1.7;">
+            Consolidar <strong>100% do Módulo Word</strong> antes da prova final: dominar a criação e a formatação estética de <strong>tabelas profissionais</strong> (mesclagem, sombreamento, bordas e alinhamento de valores), revisar o <strong>mapa mental de guias e atalhos</strong> e executar a <strong>oficina integrada de revisão</strong>.
+          </p>
+
+          <h3 style="color:var(--amber-dark); font-size:19px; margin:18px 0 10px;">🗺️ Roteiro Numerado (Passo a Passo em 5 Fases)</h3>
+          <p style="margin:0 0 12px 0; font-size:13.5px; color:#475569; line-height:1.7;">
+            Os checks ficam distribuídos — posicionados no fim de cada fase, exatamente onde está a instrução prática. Cada passo é um check e só libera o próximo!
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px;" aria-label="Roteiro dos 5 passos">
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">1</strong>
+              <span>Revisar o mapa mestre das 7 guias da Faixa de Opções e a tabela completa de atalhos.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">2</strong>
+              <span>Inserir uma tabela de 4 colunas × 6 linhas e dominar as guias contextuais Design e Layout.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">3</strong>
+              <span>Praticar a mesclagem de células e os 9 alinhamentos internos do texto.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">4</strong>
+              <span>Aplicar sombreamento no cabeçalho, bordas completas e alinhar valores numéricos à direita.</span>
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; background:var(--word-blue-light); border:1px solid var(--word-blue-border); border-radius:8px; padding:10px 12px; font-size:13px; color:#1E3A8A;">
+              <strong style="color:var(--word-blue);">5</strong>
+              <span>Concluir o simulado de revisão e liberar a Avaliação Final do Módulo.</span>
+            </div>
+          </div>
+
+          <div style="margin-top:18px; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-radius:10px; padding:14px 16px;">
+            <div style="font-weight:800; color:var(--word-blue-dark); font-size:14px; margin-bottom:4px;">⚙️ FAIXA DE PREPARAÇÃO — antes da Fase 1</div>
+            <ol style="font-size:13.5px; color:#374151; line-height:1.7; margin:0; padding-left:20px;">
+              <li>Abra o <strong>Microsoft Word</strong> e inicie um documento chamado <code>Revisao_Aula11.docx</code>.</li>
+              <li>Deixe em <strong>Arial ou Times New Roman 12</strong>, espaçamento 1,5 e margens ABNT (superior e esquerda 3 cm; inferior e direita 2 cm).</li>
+              <li>Tenha em mãos o material das Aulas 01 a 10 — o simulado final recapitula todos os tópicos.</li>
+            </ol>
+          </div>
+
+          <div id="l11-checklist-status" style="margin-top:14px; font-size:14px; font-weight:700; color:var(--word-blue-dark);">▢ 0 / 5 Passos Concluídos</div>
+          <div id="l11-complete-hint" style="display:none; margin-top:8px; font-size:13.5px; font-weight:700; color:#15803D; background:#DCFCE7; border:1.5px solid #86EFAC; border-radius:8px; padding:10px 12px;">🎉 Todos os 5 passos concluídos — você concluiu a leitura e liberou o Exercício de Fixação!</div>
+
+          <div style="margin-top:20px; text-align:center;">
+            <button type="button" id="btn-start-l11" class="btn btn-primary" style="font-size:15px; padding:12px 28px;" onclick="switchTopicPhase(11, 1)">
+              ▶ ENTENDI! QUERO COMEÇAR A AULA ↓
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Abas de Tópicos da Aula 11 -->
+        <nav class="topic-tabs-bar no-print">
+          <button type="button" class="topic-tab-btn active" id="tab-btn-11-1" onclick="switchTopicPhase(11, 1)">1. Mapa &amp; Atalhos</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-2" onclick="switchTopicPhase(11, 2)">2. Inserir Tabelas</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-3" onclick="switchTopicPhase(11, 3)">3. Mesclar &amp; Alinhar</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-4" onclick="switchTopicPhase(11, 4)">4. Sombra &amp; Bordas</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-5" onclick="switchTopicPhase(11, 5)">5. Simulado Final</button>
+          <button type="button" class="topic-tab-btn" id="tab-btn-11-fix" onclick="openFixationPanel(11)" style="background:var(--amber-soft); color:var(--teal-deep); font-weight:700;">Exercício de 5 Perguntas 📝</button>
+        </nav>
+
+        <!-- ===============================================================
+             FASE 1: MAPA GERAL DA FAIXA DE OPÇÕES E ATALHOS
+             =============================================================== -->
+        <section id="l11-phase-1" class="topic-phase-section active">
+          <h2>1. O Mapa Geral da Faixa de Opções e dos Atalhos</h2>
+          <p>
+            Antes da prova, você precisa saber <strong>onde cada comando mora</strong>. A Faixa de Opções organiza o Word em guias: clicar na guia certa já resolve metade do problema. Combine esse mapa com os atalhos de teclado e você ganha tempo de sobra na Avaliação Final.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: explorando as 7 guias essenciais <span class="l5-demo-hint">#l11-guide-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Guias da Faixa de Opções">
+              <button type="button" class="l5-sim-btn" onclick="l11Guide('home', this)">Página Inicial</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Guide('insert', this)">Inserir</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Guide('layout', this)">Layout da Página</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Guide('references', this)">Referências</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Guide('mailing', this)">Correspondências</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Guide('review', this)">Revisão</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Guide('view', this)">Exibição</button>
+            </div>
+            <div class="l11-stage" id="l11-guide-stage">
+              <div id="l11-guide-content" style="font-size:13.5px; color:#374151; line-height:1.7;">▸ Clique em uma guia acima para ver o que ela contém e quando usá-la.</div>
+            </div>
+            <div class="l11-status" id="l11-guide-status">▸ Mapa mental: 7 guias cobrem 100% das ferramentas do dia a dia.</div>
+          </div>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Mapa mestre de atalhos do Word">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">MAPA MESTRE</span>
+                <h3>⚡ Atalhos que caem na Prova Final</h3>
+              </div>
+              <span class="word-table-hint">Os atalhos NÃO mudam com o idioma</span>
+            </div>
+            <div class="word-table-scroll">
+              <div class="l11-shortcut-grid" style="padding:14px;">
+                <div class="l11-shortcut-item"><strong>Ctrl + S</strong><br>Salvar documento</div>
+                <div class="l11-shortcut-item"><strong>Ctrl + B</strong><br>Negrito (Bold)</div>
+                <div class="l11-shortcut-item"><strong>Ctrl + I</strong><br>Itálico (Italic)</div>
+                <div class="l11-shortcut-item"><strong>Ctrl + U</strong><br>Sublinhado (Underline)</div>
+                <div class="l11-shortcut-item"><strong>Ctrl + A</strong><br>Selecionar tudo (All)</div>
+                <div class="l11-shortcut-item"><strong>Ctrl + J</strong><br>Justificar texto</div>
+                <div class="l11-shortcut-item"><strong>Ctrl + R</strong><br>Alinhar à direita</div>
+                <div class="l11-shortcut-item"><strong>Ctrl + L</strong><br>Alinhar à esquerda</div>
+                <div class="l11-shortcut-item"><strong>Ctrl + Z / Ctrl + Y</strong><br>Desfazer / Refazer</div>
+                <div class="l11-shortcut-item"><strong>F7 / Shift + F7</strong><br>Ortografia / Sinônimos</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:#92400E; margin:0 0 8px; font-size:16px;">⚠️ Correção de uma lenda urbana</h3>
+            <p style="margin:0; font-size:14px; color:#78350F; line-height:1.7;">
+              Apostilas antigas afirmam que no Word em português <kbd>Ctrl+B</kbd> salva e <kbd>Ctrl+S</kbd> sublinha. <strong>Isso é falso.</strong> Os atalhos seguem as palavras em inglês e são idênticos em qualquer idioma: <kbd>Ctrl+S</kbd> salva, <kbd>Ctrl+B</kbd> aplica negrito, <kbd>Ctrl+U</kbd> sublinha e <kbd>Ctrl+A</kbd> seleciona tudo.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 1 -->
+          <div class="phase-step-check" data-step="1" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l11-check-1" class="l11-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 1">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 1: MAPA &amp; ATALHOS</strong><br>
+              Revisei a localização das 7 guias da Faixa de Opções e a tabela completa de atalhos do Word.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 2 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que revisei as guias e os atalhos principais.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-1" onclick="markTopicRead(11, 1)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 1)">← Voltar à Fase 0</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 2)">Ir para 2. Inserir Tabelas →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 2: INSERÇÃO DE TABELAS E GUIAS CONTEXTUAIS
+             =============================================================== -->
+        <section id="l11-phase-2" class="topic-phase-section">
+          <h2>2. Inserindo Tabelas e Usando as Guias Contextuais</h2>
+          <p>
+            Para criar uma tabela, vá em <strong>Inserir &gt; Tabela</strong> e deslize o cursor sobre a grade até destacar <strong>4 colunas × 6 linhas</strong>. O grande segredo acontece depois: ao clicar <strong>dentro</strong> da tabela, surgem duas guias douradas — <strong>Ferramentas de Tabela: Design</strong> e <strong>Layout</strong>. Se você clicar fora, elas desaparecem!
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: inserir e editar uma tabela <span class="l5-demo-hint">#l11-table-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Operações com tabela">
+              <button type="button" class="l5-sim-btn" onclick="l11Table('insert', this)">＋ Inserir tabela 4×6</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Table('row', this)">↕ Inserir linha abaixo</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Table('col', this)">↔ Inserir coluna à direita</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Table('outside', this)">↗ Clicar fora da tabela</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Table('reset', this)">↺ Limpar</button>
+            </div>
+            <div class="l11-context-bar" id="l11-context-bar">🟡 FERRAMENTAS DE TABELA: <span>Design ✓</span><span>Layout ✓</span><span>Visíveis só com o cursor dentro da tabela</span></div>
+            <div class="l11-stage" id="l11-table-stage">
+              <div style="font-size:13px; color:#94A3B8; text-align:center; padding:24px 0;">A tabela inserida aparecerá aqui.</div>
+            </div>
+            <div class="l11-status" id="l11-table-status">▸ Insira a tabela e observe quando as guias contextuais aparecem.</div>
+          </div>
+
+          <div style="background:#F8FAFC; border:1.5px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 10px; font-size:17px;">🧰 O que fazer em cada guia contextual</h3>
+            <ul style="margin:0; padding-left:22px; font-size:14px; color:#374151; line-height:1.85;">
+              <li><strong>Design:</strong> estilos prontos, sombreamento do cabeçalho, cor e espessura das bordas.</li>
+              <li><strong>Layout:</strong> inserir linhas acima/abaixo, colunas à esquerda/direita, mesclar e dividir células, ajustar altura/largura e os 9 alinhamentos.</li>
+              <li><strong>Atalho útil:</strong> pressione <kbd>Tab</kbd> na última célula para criar uma nova linha automaticamente.</li>
+            </ul>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 2 -->
+          <div class="phase-step-check" data-step="2" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l11-check-2" class="l11-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 2">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 2: INSERIR TABELAS</strong><br>
+              Inseri uma tabela de 4×6 no Word e explorei as guias contextuais Design e Layout.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 3 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que inseri uma tabela e localizei as guias contextuais.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-2" onclick="markTopicRead(11, 2)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 1)">← Voltar ao Tópico 1</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 3)">Ir para 3. Mesclar &amp; Alinhar →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 3: MESCLAGEM DE CÉLULAS E 9 ALINHAMENTOS
+             =============================================================== -->
+        <section id="l11-phase-3" class="topic-phase-section">
+          <h2>3. Mesclagem de Células e os 9 Alinhamentos Internos</h2>
+          <p>
+            <strong>Mesclar</strong> é unir duas ou mais células adjacentes em uma única célula contínua — ideal para o título da tabela ou para a <strong>linha de total geral</strong>. Selecione as células desejadas e clique em <strong>Layout &gt; Mesclar Células</strong>. O comando inverso é <strong>Dividir Células</strong>.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: mesclar a linha de total <span class="l5-demo-hint">#l11-merge-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Mesclagem">
+              <button type="button" class="l5-sim-btn" onclick="l11Merge('merge', this)">🔗 Mesclar células do total</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Merge('split', this)">✂️ Dividir célula</button>
+            </div>
+            <div class="l11-stage" id="l11-merge-stage">
+              <table class="l11-demo-table" id="l11-merge-table">
+                <tr><th>Produto</th><th>Qtd.</th><th>Preço Unit.</th><th>Subtotal</th></tr>
+                <tr><td>Caderno A4</td><td>12</td><td>R$ 12,00</td><td>R$ 144,00</td></tr>
+                <tr><td>Caneta azul</td><td>24</td><td>R$ 4,50</td><td>R$ 108,00</td></tr>
+                <tr class="l11-merge-row" id="l11-merge-row"><td colspan="3" id="l11-merge-label">Total parcial</td><td>R$ 252,00</td></tr>
+              </table>
+            </div>
+            <div class="l11-status" id="l11-merge-status">▸ Mescle as três primeiras células da última linha para formar a linha de total.</div>
+          </div>
+
+          <div class="l5-demo-card" style="margin-top:16px;">
+            <div class="l5-demo-head">🧪 Simulador: os 9 alinhamentos dentro da célula <span class="l5-demo-hint">#l11-align-sample</span></div>
+            <div class="l11-align-grid" role="group" aria-label="Nove posições de alinhamento">
+              <button type="button" class="l11-align-btn active" onclick="l11Align('tl', this)" title="Superior esquerdo">↖</button>
+              <button type="button" class="l11-align-btn" onclick="l11Align('tc', this)" title="Superior centro">↑</button>
+              <button type="button" class="l11-align-btn" onclick="l11Align('tr', this)" title="Superior direito">↗</button>
+              <button type="button" class="l11-align-btn" onclick="l11Align('ml', this)" title="Meio esquerdo">←</button>
+              <button type="button" class="l11-align-btn" onclick="l11Align('mc', this)" title="Centralizado no meio">⊙</button>
+              <button type="button" class="l11-align-btn" onclick="l11Align('mr', this)" title="Meio direito">→</button>
+              <button type="button" class="l11-align-btn" onclick="l11Align('bl', this)" title="Inferior esquerdo">↙</button>
+              <button type="button" class="l11-align-btn" onclick="l11Align('bc', this)" title="Inferior centro">↓</button>
+              <button type="button" class="l11-align-btn" onclick="l11Align('br', this)" title="Inferior direito">↘</button>
+            </div>
+            <div class="l11-align-sample" id="l11-align-sample">Texto de exemplo dentro da célula — experimente todos os 9 botões.</div>
+            <div class="l11-status" id="l11-align-status">▸ O botão ⊙ (centralizado no meio) é o mais usado em cabeçalhos de tabela.</div>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 3 -->
+          <div class="phase-step-check" data-step="3" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l11-check-3" class="l11-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 3">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 3: MESCLAGEM E ALINHAMENTO</strong><br>
+              Mesclei células para criar a linha de total e testei os alinhamentos internos da guia Layout.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 4 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que mesclei células e testei os 9 alinhamentos.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-3" onclick="markTopicRead(11, 3)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 2)">← Voltar ao Tópico 2</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 4)">Ir para 4. Sombra &amp; Bordas →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 4: SOMBREAMENTO, BORDAS E ALINHAMENTO NUMÉRICO
+             =============================================================== -->
+        <section id="l11-phase-4" class="topic-phase-section">
+          <h2>4. Sombreamento, Bordas e Alinhamento Numérico Profissional</h2>
+          <p>
+            Uma tabela profissional se reconhece à primeira olhada: <strong>cabeçalho sombreado</strong> com texto branco em negrito, <strong>bordas completas</strong> e <strong>valores monetários alinhados à direita</strong>. Esses três detalhes transformam uma grade simples em um relatório corporativo.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: aplicando o acabamento profissional <span class="l5-demo-hint">#l11-style-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Acabamento da tabela">
+              <button type="button" class="l5-sim-btn" onclick="l11Style('shade', this)">🎨 Sombreamento do cabeçalho</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Style('border', this)">▦ Bordas completas</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Style('numbers', this)">💰 Alinhar valores à direita</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Style('reset', this)">↺ Restaurar</button>
+            </div>
+            <div class="l11-stage" id="l11-style-stage">
+              <table class="l11-demo-table" id="l11-style-table">
+                <tr><th>Produto</th><th>Qtd.</th><th>Preço Unit.</th><th>Subtotal</th></tr>
+                <tr><td>Caderno A4</td><td>12</td><td class="num">R$ 12,00</td><td class="num">R$ 144,00</td></tr>
+                <tr><td>Caneta azul</td><td>24</td><td class="num">R$ 4,50</td><td class="num">R$ 108,00</td></tr>
+                <tr><td>Pasta elástica</td><td>20</td><td class="num">R$ 14,80</td><td class="num">R$ 296,00</td></tr>
+                <tr><td>Bloco de notas</td><td>10</td><td class="num">R$ 14,80</td><td class="num">R$ 148,00</td></tr>
+                <tr class="l11-merge-row"><td colspan="3">TOTAL GERAL</td><td class="num">R$ 696,00</td></tr>
+              </table>
+            </div>
+            <div class="l11-status" id="l11-style-status">▸ Aplique os três acabamentos e compare com a tabela inicial.</div>
+          </div>
+
+          <div class="word-card-table-wrap" tabindex="0" role="region" aria-label="Regras de alinhamento de dados em tabelas">
+            <div class="word-card-table-header">
+              <div class="word-table-title">
+                <span class="word-table-badge">REGRA DE OURO</span>
+                <h3>📐 Alinhamento por tipo de dado</h3>
+              </div>
+              <span class="word-table-hint">Diagramação corporativa</span>
+            </div>
+            <div class="word-table-scroll">
+              <table class="word-modern-table">
+                <thead><tr><th>Tipo de conteúdo</th><th>Alinhamento correto</th><th>Motivo</th></tr></thead>
+                <tbody>
+                  <tr class="highlight-blue"><td><strong>Descrição / Nomes</strong></td><td>À esquerda</td><td>Facilita a leitura e a varredura vertical.</td></tr>
+                  <tr class="highlight-blue"><td><strong>Quantidades e códigos</strong></td><td>Centralizado</td><td>Valores curtos ficam visualmente equilibrados.</td></tr>
+                  <tr class="highlight-blue"><td><strong>Preços e valores em R$</strong></td><td>À direita</td><td>As casas decimais alinham perfeitamente na coluna.</td></tr>
+                  <tr class="highlight-blue"><td><strong>Cabeçalhos</strong></td><td>Centralizado e em negrito</td><td>Identifica a coluna com destaque imediato.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 4 -->
+          <div class="phase-step-check" data-step="4" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l11-check-4" class="l11-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 4">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 4: SOMBREAMENTO E BORDAS</strong><br>
+              Apliquei sombreamento no cabeçalho, bordas completas e alinhei os valores numéricos à direita.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Passo 5 →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que apliquei sombreamento, bordas e alinhamento numérico.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-4" onclick="markTopicRead(11, 4)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 3)">← Voltar ao Tópico 3</button>
+            <button type="button" class="btn btn-primary" onclick="switchTopicPhase(11, 5)">Ir para 5. Simulado Final →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             FASE 5: SIMULADO FINAL DE REVISÃO GERAL
+             =============================================================== -->
+        <section id="l11-phase-5" class="topic-phase-section">
+          <h2>5. Simulado Final de Revisão Geral</h2>
+          <p>
+            Última etapa antes da Avaliação Final. Revele cada bloco e confirme que domina o assunto: se algum item soar estranho, volte à aula correspondente no menu antes de fazer a prova.
+          </p>
+
+          <div class="l5-demo-card">
+            <div class="l5-demo-head">🧪 Simulador: checklist de preparação <span class="l5-demo-hint">#l11-review-stage</span></div>
+            <div class="l5-btn-row" role="group" aria-label="Blocos de revisão">
+              <button type="button" class="l5-sim-btn" onclick="l11Review('all', this)">👀 Revelar todos os blocos</button>
+              <button type="button" class="l5-sim-btn" onclick="l11Review('reset', this)">↺ Ocultar novamente</button>
+            </div>
+            <div class="l11-stage" id="l11-review-stage">
+              <div class="l11-review-item" id="l11-review-item-1">✅ <strong>Formato e margens (Aula 02):</strong> papel A4, margens 3 cm (superior/esquerda) e 2 cm (inferior/direita), fonte 12 e espaçamento 1,5.</div>
+              <div class="l11-review-item" id="l11-review-item-2">✅ <strong>Atalhos (Aula 01):</strong> Ctrl+S salva, Ctrl+B negrito, Ctrl+U sublinhado, Ctrl+A seleciona tudo, Ctrl+J justifica, Ctrl+R alinha à direita.</div>
+              <div class="l11-review-item" id="l11-review-item-3">✅ <strong>Quebras (Aula 07):</strong> Ctrl+Enter cria quebra de página; quebra de seção desvincula cabeçalhos e rodapés.</div>
+              <div class="l11-review-item" id="l11-review-item-4">✅ <strong>Estilos e sumário (Aula 08):</strong> Título 1 e Título 2 alimentam o Sumário Automático; atualize com F9.</div>
+              <div class="l11-review-item" id="l11-review-item-5">✅ <strong>Revisão e tabelas (Aulas 07 e 11):</strong> Controlar Alterações, comentários, mesclagem, sombreamento e valores alinhados à direita.</div>
+            </div>
+            <div class="l11-status" id="l11-review-status">▸ Revele os blocos e marque mentalmente o que ainda precisa de revisão.</div>
+          </div>
+
+          <div style="background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:16px 18px; margin:18px 0;">
+            <h3 style="color:var(--teal-deep); margin:0 0 8px; font-size:16px;">🎓 Pronto para a Avaliação Final?</h3>
+            <p style="margin:0; font-size:14px; color:#374151; line-height:1.7;">
+              A prova final do módulo tem <strong>15 questões</strong> e nota mínima de <strong>7,0</strong>. Ela cobre todos os tópicos das Aulas 01 a 11. Conclua o exercício de fixação abaixo, confira o gabarito comentado e então volte ao menu para iniciar a avaliação.
+            </p>
+          </div>
+
+          <!-- CHECK DISTRIBUÍDO DO PASSO 5 -->
+          <div class="phase-step-check" data-step="5" style="margin:20px 0 10px 0; border:1.5px dashed var(--word-blue); background:#F8FAFC; border-left:5px solid var(--word-blue); border-radius:10px; padding:12px 16px; display:flex; align-items:flex-start; gap:12px;">
+            <input type="checkbox" id="l11-check-5" class="l11-check" style="width:20px; height:20px; margin-top:2px; accent-color:var(--word-blue);" aria-label="Passo 5">
+            <div style="font-size:14px; color:#374151; line-height:1.6;">
+              <strong style="color:var(--word-blue-dark);">PASSO 5: SIMULADO DE REVISÃO</strong><br>
+              Concluí o simulado de revisão e estou 100% preparado para a Avaliação Final.
+              <strong style="color:var(--word-blue);">Marque ao concluir para liberar o Exercício de Fixação →</strong>
+            </div>
+          </div>
+
+          <div class="read-check-box no-print">
+            <span>📖 Certifico que revisei todos os tópicos do Módulo Word.</span>
+            <button type="button" class="read-check-btn" id="check-read-11-5" onclick="markTopicRead(11, 5)">
+              <span>☐ Marcar Leitura Concluída</span>
+            </button>
+          </div>
+
+          <div class="phase-nav-row no-print">
+            <button type="button" class="btn btn-ghost" onclick="switchTopicPhase(11, 4)">← Voltar ao Tópico 4</button>
+            <button type="button" class="btn btn-primary" onclick="openFixationPanel(11)">Iniciar Exercício de Fixação (5 Perguntas) 📝 →</button>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             PAINEL DO EXERCÍCIO DE FIXAÇÃO DA AULA 11 (5 QUESTÕES)
+             =============================================================== -->
+        <div id="fixation-panel-11" class="fixation-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--line); padding-bottom:12px; margin-bottom:20px;">
+            <div>
+              <span class="badge-word-blue" style="margin:0;"><span class="dot"></span> Verificação Prática de Aprendizagem</span>
+              <h2 style="color:var(--teal-deep); margin-top:6px; font-size:24px;">Exercício de Fixação — Aula 11 (Revisão &amp; Tabelas)</h2>
+            </div>
+            <span style="font-family:'JetBrains Mono'; font-size:14px; color:var(--ink-soft); font-weight:700;">5 Questões • Vale 10,0 Pts</span>
+          </div>
+
+          <div class="quiz-app-container">
+            <div id="quiz-trail-11" class="trail"></div>
+            <div class="card-quiz">
+              <div class="q-meta">
+                <span id="q-count-11">QUESTÃO 1 / 5</span>
+                <span id="q-points-11">VALE 2,0 PONTOS</span>
+              </div>
+              <div class="q-text" id="q-text-11"></div>
+
+              <button class="hint-toggle" id="btn-hint-11" type="button" onclick="toggleHint(11)">💡 Ver dica do professor</button>
+              <div class="hint-box" id="hint-box-11"></div>
+
+              <div class="options" id="options-11"></div>
+
+              <div class="nav-row">
+                <button type="button" class="btn btn-ghost" id="btn-prev-11" onclick="prevQuestionGen(11)">← Anterior</button>
+                <div style="font-size:12px; color:var(--ink-soft); font-weight:600;">✓ Salvo automaticamente</div>
+                <button type="button" class="btn btn-primary" id="btn-next-11" onclick="nextQuestionGen(11)">Próxima →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             PAINEL DE RESULTADO DO EXERCÍCIO DE FIXAÇÃO DA AULA 11
+             =============================================================== -->
+        <div id="result-panel-11" class="fixation-panel">
+          <div class="card-quiz" style="text-align:center;">
+            <div class="result-badge" id="result-badge-11" style="margin:0 auto 16px;"></div>
+            <h2 id="result-title-11" style="color:var(--teal-deep); margin-bottom:8px; font-size:28px;"></h2>
+            <p id="result-sub-11" style="color:var(--ink-soft); margin-bottom:20px; font-size:16px;"></p>
+
+            <div style="font-size:42px; font-weight:800; color:var(--teal); font-family:'Fraunces', serif; margin-bottom:12px;">
+              <span id="result-score-11">0,0</span> <span style="font-size:20px; color:var(--ink-soft); font-family:'Inter';">/ 10,0</span>
+            </div>
+
+            <div class="signature-badge-box">
+              <div style="font-weight:700; color:#F8FAFC; margin-bottom:4px;">🔐 Comprovante Digital de Conclusão da Aula 11</div>
+              <div style="font-size:11.5px; color:#94A3B8;">Código de Autenticidade (SHA-256):</div>
+              <div class="signature-code-display" id="signature-code-11">GERANDO ASSINATURA...</div>
+              <div style="font-size:11px; color:#94A3B8; margin-top:4px;">WR Capacitação Profissional • Instrutor Marcos Rangel</div>
+            </div>
+
+            <h3 style="text-align:left; font-size:18px; color:var(--teal-deep); margin-top:24px;">Gabarito Comentado</h3>
+            <div class="breakdown" id="breakdown-11"></div>
+
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+              <button class="btn btn-primary" id="btn-download-txt-11" type="button">📄 Baixar Comprovante Oficial (.txt)</button>
+              <button class="btn btn-primary" id="btn-download-pdf-11" type="button" style="background:var(--amber);">📑 Baixar Apostila em PDF</button>
+              <button class="btn btn-whatsapp" id="btn-whatsapp-11" type="button" style="justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+                Enviar Resultado por WhatsApp
+              </button>
+              <button class="btn btn-ghost" id="btn-email-11" type="button">📧 Enviar por E-mail</button>
+            </div>
+
+            <div class="email-panel" id="email-panel-11">
+              <p style="font-size:14px; margin-bottom:12px; color:var(--ink-soft);">Clique abaixo para abrir seu aplicativo de e-mail com o comprovante pronto:</p>
+              <button class="btn btn-primary" id="btn-open-gmail-11" type="button" style="width:100%;">Abrir no Gmail</button>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:20px;">
+              <button type="button" class="btn btn-ghost" onclick="restartQuizGen(11)">↺ Recomeçar o exercício</button>
+              <button type="button" class="btn btn-primary" onclick="showScreen('screen-hub')">Voltar ao Menu de Aulas →</button>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- ===================================================================
          TELAS DA AVALIAÇÃO FINAL DO MÓDULO (PRESERVADAS)
          =================================================================== -->
     <div class="quiz-app" id="screen-start-app" style="padding:0;">
@@ -8098,8 +9301,8 @@
           "Ctrl + P",
           "Ctrl + A"
         ],
-        correct: 1,
-        hint: "No Word em português, a letra B é associada a salvar/baixar cópia. O atalho Ctrl + S aplica Sublinhado!"
+        correct: 0,
+        hint: "A letra S vem de Save (salvar). Ctrl + B aplica Negrito e Ctrl + U aplica Sublinhado — em qualquer idioma do Word."
       },
       {
         q: "Para que serve o comando secreto =rand(2,3) digitado em um documento em branco?",
@@ -8176,7 +9379,7 @@
         options: [
           "Ctrl + J",
           "Ctrl + E",
-          "Ctrl + Q",
+          "Ctrl + L",
           "Ctrl + G"
         ],
         correct: 0,
@@ -8619,13 +9822,132 @@
       }
     ];
 
+    // QUESTÕES DA AULA 10 (5 QUESTÕES — PESQUISA, ABNT & CITAÇÕES)
+    // Gabarito conforme SPEC-AULA-10-WORD §4: [b, c, b, c, b] = [1, 2, 1, 2, 1]
+    const QUESTIONS_LESSON_10 = [
+      {
+        q: "O que caracteriza a prática inaceitável de PLÁGIO em um trabalho escolar ou acadêmico?",
+        options: [
+          "Ler livros em bibliotecas públicas.",
+          "Copiar textos, frases ou ideias de outra pessoa na internet e apresentar como se fossem seus, sem citar a fonte.",
+          "Tirar uma nota 10 na avaliação.",
+          "Usar fonte Arial tamanho 12."
+        ],
+        correct: 1,
+        hint: "Plágio é a apropriação indevida da autoria alheia sem o devido crédito."
+      },
+      {
+        q: "De acordo com a norma ABNT NBR 6023, como deve iniciar a referência de um site quando NÃO se sabe o nome do autor pessoal?",
+        options: [
+          "Pelo nome do dono da Lan House.",
+          "Pelo link HTTP direto.",
+          "Pela primeira palavra do TÍTULO do artigo em letras MAIÚSCULAS.",
+          "Não é necessário colocar nada."
+        ],
+        correct: 2,
+        hint: "Quando não há autor físico, o título do artigo em maiúsculas assume a liderança da referência."
+      },
+      {
+        q: "Qual comando especial de busca no Google restringe a pesquisa apenas a arquivos em formato PDF (comuns em artigos acadêmicos)?",
+        options: [
+          "pdf:apenas",
+          "filetype:pdf",
+          "abrir-no-word",
+          "baixar.agora"
+        ],
+        correct: 1,
+        hint: "O operador 'filetype:' filtra por extensão do arquivo desejado."
+      },
+      {
+        q: "Qual é a opção correta de colagem no Word para transferir um texto da internet sem trazer junto fundos cinzas e fontes desconfiguradas?",
+        options: [
+          "Manter Formatação Original.",
+          "Mesclar Formatação.",
+          "Manter Somente Texto.",
+          "Colar como Imagem Bitmap."
+        ],
+        correct: 2,
+        hint: "'Manter Somente Texto' remove toda a sujeira visual e herda o padrão do seu documento."
+      },
+      {
+        q: "Em qual parte da estrutura do trabalho acadêmico o autor deve resumir as principais conclusões alcançadas, sem introduzir novos tópicos?",
+        options: [
+          "Na Capa.",
+          "Na Conclusão (Considerações Finais).",
+          "No Sumário.",
+          "Na Folha de Rosto."
+        ],
+        correct: 1,
+        hint: "É a seção final do texto onde se fecham os objetivos da pesquisa."
+      }
+    ];
+
+    // QUESTÕES DO EXERCÍCIO DE FIXAÇÃO DA AULA 11 (SPEC-AULA-11-WORD §4)
+    const QUESTIONS_LESSON_11 = [
+      {
+        q: "Em uma tabela do Word, como se chama o recurso utilizado para unir duas ou mais células em uma única célula maior?",
+        options: [
+          "Dividir Tabela.",
+          "Mesclar Células.",
+          "Ocultar Coluna.",
+          "Agrupar Formas."
+        ],
+        correct: 1,
+        hint: "'Mesclar' funde as células selecionadas em um único espaço contínuo."
+      },
+      {
+        q: "Qual é a prática recomendada de alinhamento visual para colunas que contêm PREÇOS e VALORES MONETÁRIOS em uma tabela?",
+        options: [
+          "Alinhamento Justificado.",
+          "Alinhar à Direita.",
+          "Alinhar à Esquerda.",
+          "Letra Capitular."
+        ],
+        correct: 1,
+        hint: "Alinhar à direita garante que as casas decimais e centavos fiquem em colunas retas."
+      },
+      {
+        q: "O que acontece na Faixa de Opções do Word quando você clica com o cursor DENTRO de uma tabela inserida?",
+        options: [
+          "Todas as ferramentas são desativadas.",
+          "Surgem duas guias contextuais exclusivas: Ferramentas de Tabela (Design e Layout).",
+          "O documento é salvo automaticamente como PDF.",
+          "A régua é ocultada."
+        ],
+        correct: 1,
+        hint: "As guias contextuais de tabela só aparecem quando você está interagindo com uma tabela."
+      },
+      {
+        q: "Qual atalho do teclado deve ser usado para REFAZER uma ação que foi desfeita pelo Ctrl+Z?",
+        options: [
+          "Ctrl + Y",
+          "Ctrl + X",
+          "Ctrl + P",
+          "Ctrl + B"
+        ],
+        correct: 0,
+        hint: "O par clássico da edição é Ctrl+Z (desfazer) e Ctrl+Y (refazer). Ctrl+B aplica Negrito."
+      },
+      {
+        q: "Em qual ferramenta da guia Design de Tabela você pode aplicar uma cor de fundo personalizada em uma linha ou célula selecionada?",
+        options: [
+          "Estilos de Borda.",
+          "Sombreamento (balde de tinta).",
+          "Espaçamento entre Linhas.",
+          "Efeitos de Texto."
+        ],
+        correct: 1,
+        hint: "O balde de sombreamento colore o fundo interno da célula."
+      }
+    ];
+
     // QUESTÕES DA PROVA FINAL DO MÓDULO (10 QUESTÕES)
     const QUESTIONS_FINAL = [
       {
-        q: "Qual é a combinação de teclas do teclado utilizada para SALVAR o documento atual no Microsoft Word configurado em português?",
+        q: "Qual é a combinação de teclas do teclado utilizada para SALVAR o documento atual no Microsoft Word?",
         options: ["Ctrl + S", "Ctrl + B", "Ctrl + P", "Ctrl + A"],
-        correct: 1,
-        hint: "Cuidado com a pegadinha clássica: no Word em inglês é Ctrl+S, mas no Word em português o atalho de salvar é Ctrl+B e Ctrl+S aplica Sublinhado."
+        correct: 0,
+        hint: "Ctrl + S salva em qualquer idioma. Ctrl + B aplica Negrito (Bold) e Ctrl + A seleciona tudo (All)."
       },
       {
         q: "Na régua horizontal do Word, qual marcador é responsável EXCLUSIVAMENTE por recuar a primeira linha de cada parágrafo?",
@@ -8663,9 +9985,9 @@
       {
         q: "Qual alinhamento de texto faz com que as margens esquerda e direita do parágrafo fiquem perfeitamente retas e alinhadas simultaneamente?",
         options: [
-          "Alinhar à Esquerda (Ctrl + Q).",
+          "Alinhar à Esquerda (Ctrl + L).",
           "Centralizar (Ctrl + E).",
-          "Alinhar à Direita (Ctrl + G).",
+          "Alinhar à Direita (Ctrl + R).",
           "Justificar (Ctrl + J)."
         ],
         correct: 3,
@@ -8820,8 +10142,8 @@
       targetLessonNum = lessonNum;
       targetLessonTitle = lessonTitle;
 
-      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5 && lessonNum !== 6 && lessonNum !== 7 && lessonNum !== 8 && lessonNum !== 9){
-        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01, 02, 03, 04, 05, 06, 07, 08, 09 e a Prova Final estão liberadas no portal.`);
+      if(lessonNum !== 1 && lessonNum !== 2 && lessonNum !== 3 && lessonNum !== 4 && lessonNum !== 5 && lessonNum !== 6 && lessonNum !== 7 && lessonNum !== 8 && lessonNum !== 9 && lessonNum !== 10 && lessonNum !== 11){
+        alert(`🔒 A ${lessonTitle} está em preparação!\n\nNo momento, as Aulas 01 a 11 e a Prova Final estão liberadas no portal.`);
         return;
       }
 
@@ -8853,7 +10175,9 @@
           6: "screen-lesson-6",
           7: "screen-lesson-7",
           8: "screen-lesson-8",
-          9: "screen-lesson-9"
+          9: "screen-lesson-9",
+          10: "screen-lesson-10",
+          11: "screen-lesson-11"
         };
         if(routes[targetLessonNum]){
           const badge = document.getElementById(`badge-lesson-${targetLessonNum}`);
@@ -8899,9 +10223,9 @@
       const preview = document.getElementById("l3-align-preview");
       const status = document.getElementById("l3-align-status");
       const mapa = {
-        left:    { css: "left",    rotulo: "À esquerda (Ctrl+Q)" },
+        left:    { css: "left",    rotulo: "À esquerda (Ctrl+L)" },
         center:  { css: "center",  rotulo: "Centralizado (Ctrl+E)" },
-        right:   { css: "right",   rotulo: "À direita (Ctrl+G)" },
+        right:   { css: "right",   rotulo: "À direita (Ctrl+R)" },
         justify: { css: "justify", rotulo: "Justificado (Ctrl+J)" }
       };
       if(!preview || !mapa[mode]) return;
@@ -9811,10 +11135,312 @@
     };
 
     // ===================================================================
+    // SIMULADORES DA AULA 10 — PESQUISA, ABNT & CITAÇÕES
+    // ===================================================================
+    window.l10Plagiarism = function(mode, btn){
+      const bad = document.getElementById("l10-plag-bad");
+      const good = document.getElementById("l10-plag-good");
+      const status = document.getElementById("l10-plag-status");
+      if(!bad || !good) return;
+
+      if(mode === "copy"){
+        bad.style.display = "block";
+        good.style.display = "none";
+        if(status) status.textContent = "▸ Cópia integral sem crédito: as palavras são idênticas à fonte e não há referência. Isso é plágio e pode gerar nota zero.";
+      } else {
+        bad.style.display = "none";
+        good.style.display = "block";
+        if(status) status.textContent = "▸ Paráfrase ética: a ideia foi compreendida, reescrita com palavras próprias e acompanhada do crédito ao autor.";
+      }
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l10Cover = function(mode, btn){
+      const mapa = {
+        reset:  { status: "▸ Capa limpa. Construa novamente: topo → meio → base → folha de rosto.", show: [] },
+        top:    { status: "▸ Topo pronto: instituição em MAIÚSCULAS e centralizada, fonte 12 ou 14.", show: ["l10-cover-top"] },
+        mid:    { status: "▸ Meio pronto: nome do autor e TÍTULO DO TRABALHO em negrito, tamanho 14.", show: ["l10-cover-top", "l10-cover-mid"] },
+        bottom: { status: "▸ Base pronta: cidade e ano de entrega (2026). A capa está completa.", show: ["l10-cover-top", "l10-cover-mid", "l10-cover-bottom"] },
+        folha:  { status: "▸ Folha de rosto: nota explicativa recuada a 8 cm da margem esquerda — use a régua, não espaços.", show: ["l10-cover-top", "l10-cover-mid", "l10-cover-bottom", "l10-folha-note"] }
+      };
+      const acao = mapa[mode];
+      if(!acao) return;
+
+      ["l10-cover-top", "l10-cover-mid", "l10-cover-bottom", "l10-folha-note"].forEach(function(id){
+        const el = document.getElementById(id);
+        if(el) el.style.display = acao.show.indexOf(id) !== -1 ? "block" : "none";
+      });
+      const status = document.getElementById("l10-cover-status");
+      if(status) status.textContent = acao.status;
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l10Body = function(mode, btn){
+      const mapa = {
+        intro: { id: "l10-doc-intro", status: "▸ Introdução: apresenta o tema, a motivação e o objetivo da pesquisa (1 a 2 páginas)." },
+        dev:   { id: "l10-doc-dev", status: "▸ Desenvolvimento: o miolo do trabalho, com seções e subtópicos hierárquicos (Título 1 e Título 2)." },
+        conc:  { id: "l10-doc-conc", status: "▸ Conclusão: recapitula as descobertas sem introduzir ideias novas." }
+      };
+      const acao = mapa[mode];
+      if(!acao) return;
+
+      ["l10-doc-intro", "l10-doc-dev", "l10-doc-conc"].forEach(function(id){
+        const el = document.getElementById(id);
+        if(el) el.style.display = (id === acao.id) ? "block" : "none";
+      });
+      const status = document.getElementById("l10-body-status");
+      if(status) status.textContent = acao.status;
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l10Ref = function(mode, btn){
+      const wrong = document.getElementById("l10-ref-wrong");
+      const ok = document.getElementById("l10-ref-ok");
+      const status = document.getElementById("l10-ref-status");
+      if(!wrong || !ok) return;
+
+      if(mode === "wrong"){
+        wrong.style.display = "block";
+        ok.style.display = "none";
+        if(status) status.textContent = "▸ Referência incompleta: só o endereço. Falta autor/título, site, data de acesso e mês abreviado.";
+      } else {
+        wrong.style.display = "none";
+        ok.style.display = "block";
+        ok.innerHTML = mode === "author"
+          ? "SILVA, João. História dos Jogos Digitais. TechGames, 2024. Disponível em: &lt;https://www.techgames.com.br/historia&gt;. Acesso em: 15 mar. 2026."
+          : "HISTÓRIA DO WINDOWS. Wikipédia, 2026. Disponível em: &lt;https://pt.wikipedia.org/wiki/Microsoft_Windows&gt;. Acesso em: 10 fev. 2026.";
+        if(status) status.textContent = mode === "author"
+          ? "▸ Com autor conhecido: começa pelo SOBRENOME em maiúsculas, seguido do nome e do título do artigo."
+          : "▸ Sem autor individual: a referência começa pelo TÍTULO DA PÁGINA EM MAIÚSCULAS — nunca pelo link.";
+      }
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l10Search = function(mode, btn){
+      const op = document.getElementById("l10-search-op");
+      const status = document.getElementById("l10-search-status");
+      if(!op) return;
+
+      if(mode === "site"){
+        op.textContent = "site:br";
+        if(status) status.textContent = "▸ 'história do windows site:br' → apenas páginas brasileiras, em português e com contexto do Brasil.";
+      } else {
+        op.textContent = "filetype:pdf";
+        if(status) status.textContent = "▸ 'história do windows filetype:pdf' → apostilas, teses e artigos acadêmicos já em formato PDF.";
+      }
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    window.l10Paste = function(mode, btn){
+      const dirty = document.getElementById("l10-paste-bad");
+      const clean = document.getElementById("l10-paste-good");
+      const status = document.getElementById("l10-paste-status");
+      if(!dirty || !clean) return;
+
+      if(mode === "dirty"){
+        dirty.style.display = "block";
+        clean.style.display = "none";
+        if(status) status.textContent = "▸ Cuidado: a formatação original da internet destrói o padrão ABNT do documento.";
+      } else {
+        dirty.style.display = "none";
+        clean.style.display = "block";
+        if(status) status.textContent = "▸ Botão direito > Manter Somente Texto (pranchetinha com 'A'): o texto herda o estilo Normal do seu documento.";
+      }
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    // ===================================================================
+    // SIMULADORES DA AULA 11 — REVISÃO GERAL & TABELAS PROFISSIONAIS
+    // ===================================================================
+    function l11MarkActive(btn){
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l5-sim-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    }
+
+    window.l11Guide = function(mode, btn){
+      const mapa = {
+        home:      { titulo: "Página Inicial", texto: "Fonte, negrito, itálico, sublinhado, alinhamentos, espaçamento, estilos e o Pincel de Formatação. É a guia mais usada na formatação diária." },
+        insert:    { titulo: "Inserir", texto: "Tabelas, imagens, formas, cabeçalho e rodapé, quebra de página, números de página e Letra Capitular." },
+        layout:    { titulo: "Layout da Página", texto: "Margens ABNT, orientação retrato/paisagem, tamanho A4, colunas e quebras de seção." },
+        references:{ titulo: "Referências", texto: "Sumário Automático, legendas, índice de ilustrações e notas de rodapé — tudo o que a ABNT exige em trabalhos longos." },
+        mailing:   { titulo: "Correspondências", texto: "Mala direta, mesclar dados e etiquetas: ideal para cartas e certificados personalizados em massa." },
+        review:    { titulo: "Revisão", texto: "Ortografia (F7), sinônimos (Shift+F7), comentários, Controlar Alterações e comparar documentos." },
+        view:      { titulo: "Exibição", texto: "Régua horizontal, zoom, modos de exibição e painéis de navegação." }
+      };
+      const guia = mapa[mode];
+      const alvo = document.getElementById("l11-guide-content");
+      const status = document.getElementById("l11-guide-status");
+      if(!guia || !alvo) return;
+      alvo.innerHTML = "<strong style=\"color:#1D4ED8;\">" + guia.titulo + "</strong><br>" + guia.texto;
+      if(status) status.textContent = "▸ Guia " + guia.titulo + " — saber onde tudo está é metade da prova.";
+      l11MarkActive(btn);
+    };
+
+    let l11TableState = { cols: 0, rows: 0, inside: false };
+    window.l11Table = function(mode, btn){
+      const stage = document.getElementById("l11-table-stage");
+      const status = document.getElementById("l11-table-status");
+      const bar = document.getElementById("l11-context-bar");
+      if(!stage) return;
+
+      if(mode === "reset"){
+        l11TableState = { cols: 0, rows: 0, inside: false };
+      } else if(mode === "insert"){
+        l11TableState = { cols: 4, rows: 6, inside: true };
+      } else if(mode === "row" && l11TableState.rows > 0){
+        l11TableState.rows += 1;
+        l11TableState.inside = true;
+      } else if(mode === "col" && l11TableState.cols > 0){
+        l11TableState.cols += 1;
+        l11TableState.inside = true;
+      } else if(mode === "outside"){
+        l11TableState.inside = false;
+      }
+
+      if(l11TableState.rows === 0){
+        stage.innerHTML = "<div style=\"font-size:13px; color:#94A3B8; text-align:center; padding:24px 0;\">A tabela inserida aparecerá aqui.</div>";
+        if(status) status.textContent = "▸ Escolha Inserir Tabela > grade 4×6 para começar.";
+      } else {
+        let html = "<table class=\"l11-grid-table\">";
+        for(let r = 0; r < l11TableState.rows; r++){
+          html += "<tr>";
+          for(let c = 0; c < l11TableState.cols; c++){
+            html += "<td>" + (r === 0 && c === 0 ? "Clip-Art" : (r === 0 ? "Cabeçalho " + (c + 1) : "Célula " + (r + 1) + "." + (c + 1))) + "</td>";
+          }
+          html += "</tr>";
+        }
+        html += "</table>";
+        stage.innerHTML = html;
+        if(status) status.textContent = l11TableState.inside
+          ? "▸ Tabela " + l11TableState.cols + "×" + l11TableState.rows + " com o cursor dentro: as guias Design e Layout estão visíveis."
+          : "▸ Cursor fora da tabela: as guias contextuais desapareceram. Clique dentro novamente para vê-las.";
+      }
+      if(bar) bar.style.display = (l11TableState.inside && l11TableState.rows > 0) ? "block" : "none";
+      l11MarkActive(btn);
+    };
+
+    window.l11Merge = function(mode, btn){
+      const label = document.getElementById("l11-merge-label");
+      const row = document.getElementById("l11-merge-row");
+      const status = document.getElementById("l11-merge-status");
+      if(!label || !row) return;
+      if(mode === "merge"){
+        label.setAttribute("colspan", "3");
+        label.textContent = "TOTAL GERAL (células mescladas)";
+        row.classList.add("l11-merge-cell");
+        if(status) status.textContent = "▸ Mesclar Células uniu as três primeiras células: agora há um espaço contínuo para o rótulo do total.";
+      } else {
+        label.setAttribute("colspan", "1");
+        label.textContent = "Total parcial";
+        row.classList.remove("l11-merge-cell");
+        if(status) status.textContent = "▸ Dividir Células restaurou as três células independentes.";
+      }
+      l11MarkActive(btn);
+    };
+
+    window.l11Align = function(pos, btn){
+      const sample = document.getElementById("l11-align-sample");
+      const status = document.getElementById("l11-align-status");
+      if(!sample) return;
+      const mapa = {
+        tl: ["flex-start", "flex-start", "Superior esquerdo"],
+        tc: ["center", "flex-start", "Superior centro"],
+        tr: ["flex-end", "flex-start", "Superior direito"],
+        ml: ["flex-start", "center", "Meio esquerdo"],
+        mc: ["center", "center", "Centralizado no meio"],
+        mr: ["flex-end", "center", "Meio direito"],
+        bl: ["flex-start", "flex-end", "Inferior esquerdo"],
+        bc: ["center", "flex-end", "Inferior centro"],
+        br: ["flex-end", "flex-end", "Inferior direito"]
+      };
+      const alvo = mapa[pos];
+      if(!alvo) return;
+      sample.style.justifyContent = alvo[0];
+      sample.style.alignItems = alvo[1];
+      if(status) status.textContent = "▸ Alinhamento " + alvo[2] + " aplicado dentro da célula (guia Layout > grupo Alinhamento).";
+      if(btn && btn.parentElement){
+        btn.parentElement.querySelectorAll(".l11-align-btn").forEach(function(b){
+          b.classList.toggle("active", b === btn);
+        });
+      }
+    };
+
+    const l11StyleState = { shade: false, border: false, numbers: false };
+    window.l11Style = function(mode, btn){
+      const tabela = document.getElementById("l11-style-table");
+      const status = document.getElementById("l11-style-status");
+      if(!tabela) return;
+      if(mode === "reset"){
+        l11StyleState.shade = false;
+        l11StyleState.border = false;
+        l11StyleState.numbers = false;
+      } else if(mode === "shade"){
+        l11StyleState.shade = !l11StyleState.shade;
+      } else if(mode === "border"){
+        l11StyleState.border = !l11StyleState.border;
+      } else if(mode === "numbers"){
+        l11StyleState.numbers = !l11StyleState.numbers;
+      }
+      tabela.classList.toggle("shaded", l11StyleState.shade);
+      tabela.classList.toggle("bordered", l11StyleState.border);
+      tabela.querySelectorAll("td.num").forEach(function(td){
+        td.classList.toggle("right", l11StyleState.numbers);
+      });
+      if(status){
+        const ligados = [];
+        if(l11StyleState.shade) ligados.push("sombreamento");
+        if(l11StyleState.border) ligados.push("bordas");
+        if(l11StyleState.numbers) ligados.push("valores à direita");
+        status.textContent = ligados.length
+          ? "▸ Aplicados: " + ligados.join(" • ") + ". Clique novamente para alternar cada efeito."
+          : "▸ Tabela restaurada ao estado inicial.";
+      }
+      l11MarkActive(btn);
+    };
+
+    window.l11Review = function(mode, btn){
+      const itens = document.querySelectorAll(".l11-review-item");
+      const status = document.getElementById("l11-review-status");
+      const mostrar = mode === "all";
+      itens.forEach(function(item){ item.classList.toggle("show", mostrar); });
+      if(status) status.textContent = mostrar
+        ? "▸ Todos os 5 blocos revelados. Se algum item soar estranho, revise a aula correspondente antes da prova."
+        : "▸ Blocos ocultos. Revele quando estiver pronto para a autoavaliação.";
+      l11MarkActive(btn);
+    };
+
+    // ===================================================================
     // MARCAR LEITURA & GAMIFICAÇÃO COM PERSISTÊNCIA (LOCALSTORAGE)
     // ===================================================================
-    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5, 6: 5, 7: 5, 8: 5, 9: 5 };
-    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true };
+    const TOTAL_TOPICS = { 1: 5, 2: 5, 3: 5, 4: 5, 5: 5, 6: 5, 7: 5, 8: 5, 9: 5, 10: 5, 11: 5 };
+    const SEQUENTIAL_LESSONS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true };
     const READ_STORAGE_KEY = "word_lessons_reading_progress";
 
     let readTopics = {};
@@ -9929,9 +11555,9 @@
       }
     }
 
-    // Inicialização da Leitura (Aulas 1 a 9)
+    // Inicialização da Leitura (Aulas 1 a 11)
     loadReadTopics();
-    [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function(num){
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].forEach(function(num){
       captureReadLabels(num);
       bindCheckboxes(num);
       paintReadLesson(num);
@@ -9947,7 +11573,7 @@
         btnRestart.textContent = "↺ Recomeçar a leitura";
         btnRestart.title = "Zera os checks de leitura desta aula";
         btnRestart.onclick = function(){
-          if(confirm(`Deseja recomeçar a leitura da Aula 0${num}? Os checks marcados serão zerados.`)) {
+          if(confirm(`Deseja recomeçar a leitura da Aula ${String(num).padStart(2, "0")}? Os checks marcados serão zerados.`)) {
             window.restartReading(num);
           }
         };
@@ -10048,6 +11674,26 @@
         moduleId: "word_lesson_9_quiz",
         title: "Módulo 2 — Aula 09: Oficina de Listas Multinível, Tabulação & Certificados",
         sig: "Módulo 2 - Aula 9 (Word)"
+      },
+      10: {
+        questions: QUESTIONS_LESSON_10,
+        name: "Aluno(a)",
+        answers: new Array(5).fill(null),
+        current: 0,
+        signature: null,
+        moduleId: "word_lesson_10_quiz",
+        title: "Módulo 2 — Aula 10: Pesquisa Acadêmica, Estrutura ABNT & Citações",
+        sig: "Módulo 2 - Aula 10 (Word)"
+      },
+      11: {
+        questions: QUESTIONS_LESSON_11,
+        name: "Aluno(a)",
+        answers: new Array(5).fill(null),
+        current: 0,
+        signature: null,
+        moduleId: "word_lesson_11_quiz",
+        title: "Módulo 2 — Aula 11: Revisão Geral Integrada & Tabelas Profissionais",
+        sig: "Módulo 2 - Aula 11 (Word)"
       }
     };
 
@@ -10193,7 +11839,7 @@
       if(passed){
         badge.className = "result-badge pass"; badge.textContent = "🎉";
         title.textContent = "Parabéns, excelente aproveitamento!";
-        sub.textContent = `Você acertou ${correct} de ${total} questões no Exercício de Fixação da Aula 0${lessonNum}!`;
+        sub.textContent = `Você acertou ${correct} de ${total} questões no Exercício de Fixação da Aula ${String(lessonNum).padStart(2, "0")}!`;
       } else {
         badge.className = "result-badge fail"; badge.textContent = "📘";
         title.textContent = "Atenção ao Conteúdo!";
@@ -10251,7 +11897,7 @@
     window.getReportDataGen = getReportDataGen;
 
     // Vincular botões de Comprovante (.txt), PDF, WhatsApp e E-mail dos Exercícios de Fixação
-    ;[1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function(lessonNum){
+    ;[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].forEach(function(lessonNum){
       const btnTxt = document.getElementById(`btn-download-txt-${lessonNum}`);
       if(btnTxt){
         btnTxt.onclick = () => window.QuizEngine.downloadTxtReport(getReportDataGen(lessonNum));

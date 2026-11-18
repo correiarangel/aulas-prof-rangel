@@ -36,7 +36,81 @@ Fim desta instrução. Continuar na **SESSÃO ATUAL — COMEÇAR AQUI** abaixo.
 
 ---
 
-## ✅ SESSÃO ATUAL (18/11/2026) — Módulo 2: Microsoft Word — Aula 09 (Listas, Tabulação & Certificados)
+## ✅ SESSÃO ATUAL (18/11/2026) — Módulo 2: Microsoft Word — Aula 11 (Revisão Geral Integrada & Tabelas Profissionais)
+
+Implementação completa da **Aula 11 do Módulo Word**, no molde exato das Aulas 09/10 (pedido do usuário: "veja o status atual você acabou de implementar aula nove segue para aula 10 nos mesmos padrões"). Spec `Docs/SPEC-AULA-11-WORD.md`. Senha `wk011`, FASE 0 tutorial com roteiro numerado de 5 passos, 5 fases com checks distribuídos, 6 simuladores, quiz persistente e apostila PDF com 4 seções ilustradas. ⚠️ **Nada foi commitado nesta sessão** — a Aula 09 está no commit `184d089` (fix `c35c0c1`); Aula 10 e Aula 11 seguem pendentes de commit, a pedido.
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Card liberado e rota** | `modules/word/index.html` | Aula 11 com `active-lesson` + `🔓 Aula Liberada (Senha \`wk011\`)`; `PASSWORDS[11]="wk011"`; rota `11: "screen-lesson-11"`; `TOTAL_TOPICS[11]=5`; `SEQUENTIAL_LESSONS[11]=true`; loops de leitura/resultado até 11. |
+| **Tela da Aula 11** | `#screen-lesson-11` | Barra `gamify-percent-11`/`gamify-bar-11`/`gamify-badge-box-11`; abas `tab-btn-11-1..5` + `tab-btn-11-fix`; FASE 0 com objetivo, roteiro de 5 chips e faixa de preparação; 5 fases (mapa/atalhos / inserir tabelas / mesclar+alinhar / sombreamento+bordas / simulado final), cada uma com check + `check-read-11-N`. |
+| **Simuladores** | `window.l11Guide`, `l11Table`, `l11Merge`, `l11Align`, `l11Style`, `l11Review` | Mapa das 7 guias; grade 4×6 com guias contextuais; mesclar/dividir total; 9 alinhamentos internos; acabamento profissional; checklist de revisão. |
+| **Quiz persistente** | `QUESTIONS_LESSON_11` + `QUIZ_CFG[11]` | `moduleId: "word_lesson_11_quiz"`, gabarito **`[1,1,1,0,1]`** (Q4 = Ctrl+Y); painéis `fixation-panel-11`/`result-panel-11`; gravação ao responder/navegar/assinar, restauração ao abrir e `↺ Recomeçar o exercício`. |
+| **Apostila PDF** | `assets/js/pdf-lessons.js` | 4 seções `lessonNum: 11` (11.1–11.4), todas com ilustração HTML real (`sec.html`, `.es-sheet-box`, `.es-sheet-titlebar`, `.mini-sheet`, `.fun-highlight`). Tabela comercial 4×6 com total **R$ 696,00** (144+108+296+148). Material-base sem imagens — ilustrações HTML no lugar de `🖼️ Referência de imagem`. Título em `moduleLessonTitles.word[11]`. |
+| **Correção de atalhos** | vários | `Ctrl+Q` eliminado de `modules/word/index.html`, `pdf-lessons.js`, SPECs 02/03 e Prova Final; alinhamento à direita corrigido para `Ctrl+R` em `pdf-lessons.js`; `Ctrl+G` permanece apenas como distraidor em `SPEC-AULA-02-WORD.md:115` e em nota legítima da Aula 4 ("no Word, Ctrl+G abre Ir Para"). |
+
+### 2. Localizadores e comandos úteis
+
+- Tela: `modules/word/index.html` — `#screen-lesson-11` ~linha 8630; `QUESTIONS_LESSON_11` ~linha 9885; simuladores `l11*` ~linha 11300; `QUIZ_CFG[11]` ~linha 11688.
+- PDF: `assets/js/pdf-lessons.js` — seções 11.1–11.4 ~linhas 4528–4612; renderização `sec.html` em ~7474.
+- Validação rápida: `node --check assets/js/pdf-lessons.js` e extrair o `<script>` inline do HTML para `node --check`.
+
+### 3. Validações (todas passaram)
+
+- Sintaxe JS: OK (PDF + inline do HTML).
+- Estrutura: 795 IDs, **0 duplicados**; 46 IDs obrigatórios da Aula 11 presentes; FASE 0, 5 fases, 5 checks, 5 read-checks, 6 abas; gabarito `[1,1,1,0,1]`; `wk011`; rota e registros conferidos.
+- Apostila: 4 seções da Aula 11, todas com `html` e as classes visuais obrigatórias; tabela 4×6 com total R$ 696,00 e soma conferida; nenhuma seção órfã.
+- Auditoria de conteúdo renderizado (tela e PDF): corrigidos `where` → `Onde`, "voltee" → "volte", `Dominio` → `Domino`, atribuição "Aulas 09–11" → "Aulas 07 e 11" (item de revisão) e BLOCO 3 "07–09" → "05–09" (estilos são da Aula 05). Nenhum artefato `JSTOR`/datas vencidas/conversões erradas.
+- ⚠️ Bateria CDP em navegador **não executada** (sem Playwright/Puppeteer no ambiente).
+
+### 4. Próximos passos
+
+- Bateria CDP em navegador (modal `wk011`, checks 0→100%, simuladores, nota 10,0, popup do PDF, mobile 375 px) — não executada: ambiente sem Playwright/Puppeteer.
+- Commitar Aula 10 + Aula 11 somente quando o usuário pedir.
+
+---
+
+## ✅ SESSÃO ANTERIOR (18/11/2026) — Módulo 2: Microsoft Word — Aula 10 (Pesquisa Acadêmica, Estrutura ABNT & Citações)
+
+Implementação completa da **Aula 10 do Módulo Word**, seguindo exatamente o molde da Aula 09 (pedido do usuário: "veja o status atual você acabou de implementar aula nove segue para aula 10 nos mesmos padrões"). Spec `Docs/SPEC-AULA-10-WORD.md` agora 🟢. Senha `wj010`, FASE 0 tutorial com roteiro numerado de 5 passos, 5 fases com checks distribuídos, 6 simuladores, quiz persistente de 5 questões e apostila PDF com 6 seções ilustradas. ⚠️ **Nada foi commitado nesta sessão** — a Aula 09 já estava no commit `184d089` (fix `c35c0c1`).
+
+### 1. O que foi entregue
+
+| Peça | Onde | Detalhes |
+|:---|:---|:---|
+| **Card liberado e rota** | `modules/word/index.html` | Aula 10 com `active-lesson` + `🔓 Aula Liberada (Senha \`wj010\`)`; `PASSWORDS[10]="wj010"`; rota `10: "screen-lesson-10"`; `TOTAL_TOPICS[10]=5`; `SEQUENTIAL_LESSONS[10]=true`; loops de leitura/resultado até 10. |
+| **Tela da Aula 10** | `#screen-lesson-10` (inserida antes das telas da prova final) | Barra `gamify-percent-10`/`gamify-bar-10`/`gamify-badge-box-10`; abas `tab-btn-10-1..5` + `tab-btn-10-fix`; FASE 0 com objetivo, roteiro de 5 chips e faixa de preparação; 5 fases (plágio/paráfrase / capa e folha de rosto / corpo da pesquisa / NBR 6023 / busca e colagem), cada uma com check + `check-read-10-N`. |
+| **Simuladores** | `window.l10Plagiarism`, `l10Cover`, `l10Body`, `l10Ref`, `l10Search`, `l10Paste` | Cópia vs paráfrase com crédito; capa montada em etapas com nota recuada a 8 cm; introdução/desenvolvimento/conclusão; referência com e sem autor; `site:br`/`filetype:pdf`; Manter Somente Texto. |
+| **Quiz persistente** | `QUESTIONS_LESSON_10` + `QUIZ_CFG[10]` | `moduleId: "word_lesson_10_quiz"`, gabarito **`[1,2,1,2,1]`** (Q2 e Q4 = alternativa c); painéis `fixation-panel-10`/`result-panel-10`; gravação ao responder/navegar/assinar, restauração ao abrir e `↺ Recomeçar o exercício`. |
+| **Apostila PDF** | `assets/js/pdf-lessons.js` | 6 seções `lessonNum: 10` (10.0–10.5), todas com ilustração HTML real (`sec.html`, `.es-sheet-box`, `.es-sheet-titlebar`, `.mini-sheet`, `.fun-highlight`). Material-base sem imagens úteis. Fluxograma ABNT na seção 10.2. Título em `moduleLessonTitles.word[10]` já existia. |
+| **CSS** | bloco inline `<style>` de `modules/word/index.html` | `.l10-paper`, `.l10-compare`, `.l10-bad`, `.l10-good`, `.l10-quote`, `.l10-cover*`, `.l10-folha-note`, `.l10-doc-section`, `.l10-ref*`, `.l10-search-*`, `.l10-paste-*`, `.l10-status` + media query 640 px. |
+| **Docs** | `Docs/SPEC-AULA-10-WORD.md` | Status 🟢; §6 com registro de implementação, validações e pendências. |
+
+### 2. Localizadores e comandos úteis
+
+- Tela: `modules/word/index.html` — `#screen-lesson-10` ~linha 7990; `QUESTIONS_LESSON_10` ~9245; simuladores `l10*` ~10496; `QUIZ_CFG[10]` ~10873.
+- PDF: `assets/js/pdf-lessons.js` — bloco `word`, seções 10.0–10.5 ~linhas 4400–4520; renderização `sec.html` em ~7474.
+- Validação rápida: `node --check assets/js/pdf-lessons.js` e extrair o `<script>` inline do HTML para `node --check`.
+
+### 3. Validações (todas passaram)
+
+- Sintaxe JS: OK (PDF + inline do HTML).
+- Estrutura: 720 IDs, **0 duplicados**; FASE 0, 5 fases, 5 checks, 5 read-checks, 6 abas, 6 seções PDF; 16 handlers `onclick` da tela, todos com função definida.
+- Gabarito `[1,2,1,2,1]` conferido; persistência do quiz conferida no código genérico (`persistQuizGen`/`restoreQuizGen`).
+- Apostila: 6 seções da Aula 10, todas com `html` e as 4 classes visuais obrigatórias; nenhuma seção órfã.
+- Auditoria de conteúdo renderizado (tela e PDF): corrigidos `mai.` → `mai` (maio sem ponto), "cites as fontes" → "cita as fontes", "sintese" → "síntese", "Dep cole" → "Depois cole" e um artefato de idioma no texto da busca.
+
+### 4. Próximos passos
+
+- Bateria CDP em navegador (modal `wj010`, checks 0→100%, simuladores, nota 10,0, popup do PDF, mobile 375 px) — não executada: ambiente sem Playwright/Puppeteer.
+- ✅ Aula 11 do Word concluída na sessão atual (senha `wk011`).
+- Commitar a Aula 10 somente quando o usuário pedir.
+
+---
+
+## ✅ SESSÃO ANTERIOR (18/11/2026) — Módulo 2: Microsoft Word — Aula 09 (Listas, Tabulação & Certificados)
 
 Implementação completa da **Aula 09 do Módulo Word** (spec `Docs/SPEC-AULA-09-WORD.md`, status 🟢), desbloqueio no Hub com senha `wi009`, FASE 0 tutorial com 5 passos/chips, 5 fases com checks distribuídos (`l9-check-1..5`), 5 simuladores ao vivo, exercício de fixação persistente com 5 questões (gabarito `[1,1,1,1,1]`) e apostila PDF com 6 seções (9.0–9.5), ilustrações HTML reais e 2 imagens extraídas do material-base. Commit preparado junto com a Aula 08 (`313556d` já commitado antes desta sessão).
 

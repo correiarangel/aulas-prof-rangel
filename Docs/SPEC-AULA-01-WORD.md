@@ -15,12 +15,12 @@
 ### 1.2 Estrutura do Conteúdo Original
 1. **Abertura & O que é o Word**: Criado pela Microsoft em 1983, editor de textos profissional para cartas, relatórios, contratos e trabalhos.
 2. **Faixa de Opções (Guias)**: Página Inicial (Fonte, Parágrafo, Estilos), Inserir (Imagens, Tabelas, Formas, Cabeçalho/Rodapé), Layout da Página (Margens, Orientação, Colunas), Referências (Sumário, Notas), Revisão (Ortografia, Comentários), Exibição (Zoom, Régua).
-3. **Atalhos Essenciais no Word em Português**:
-   - `Ctrl + B`: Salvar o documento (no Word em inglês é `Ctrl + S`).
-   - `Ctrl + N`: Negrito.
-   - `Ctrl + I`: Itálico.
-   - `Ctrl + S`: Sublinhado.
-   - `Ctrl + T`: Selecionar tudo (no Word em inglês é `Ctrl + A`).
+3. **Atalhos Essenciais do Word** (iguais em qualquer idioma — a inicial vem do inglês):
+   - `Ctrl + S`: Salvar o documento (de *Save*).
+   - `Ctrl + B`: Negrito (de *Bold*).
+   - `Ctrl + I`: Itálico (de *Italic*).
+   - `Ctrl + U`: Sublinhado (de *Underline*).
+   - `Ctrl + A`: Selecionar tudo (de *All*).
    - `Ctrl + Z`: Desfazer última ação.
    - `Ctrl + C` / `Ctrl + V` / `Ctrl + X`: Copiar, Colar e Recortar.
 4. **Seleção de Texto com o Mouse**:
@@ -73,17 +73,17 @@
 - Anatomia da tela: Barra de Título, Barra de Ferramentas de Acesso Rápido, Faixa de Opções dividida em Guias, Área de Edição (Folha de Papel em branco), Barra de Status (contagem de palavras e páginas) e Controle de Zoom.
 - *Check 1*: `[ ] Passo 1: Localizei as guias Página Inicial, Inserir e Layout da Página na Faixa de Opções.`
 
-### FASE 2: Atalhos Essenciais no Word em Português
+### FASE 2: Atalhos Essenciais do Word
 - Tabela visual com atalhos de alta produtividade:
-  - `Ctrl + B`: Salvar
-  - `Ctrl + N`: Negrito
+  - `Ctrl + S`: Salvar
+  - `Ctrl + B`: Negrito
   - `Ctrl + I`: Itálico
-  - `Ctrl + S`: Sublinhado
-  - `Ctrl + T`: Selecionar tudo
+  - `Ctrl + U`: Sublinhado
+  - `Ctrl + A`: Selecionar tudo
   - `Ctrl + Z`: Desfazer
   - `Ctrl + C` / `Ctrl + V`: Copiar e Colar
-- Alerta contra o erro comum: *No Word em inglês, salvar é Ctrl+S; no Word em português, Ctrl+S aplica Sublinhado e Salvar é Ctrl+B!*
-- *Check 2*: `[ ] Passo 2: Entendi a diferença dos atalhos em português (Ctrl+B para Salvar e Ctrl+S para Sublinhado).`
+- Alerta contra o erro comum: *Apostilas antigas dizem que os atalhos mudam conforme o idioma. Não mudam: Ctrl+S salva, Ctrl+B aplica Negrito, Ctrl+U aplica Sublinhado e Ctrl+A seleciona tudo.*
+- *Check 2*: `[ ] Passo 2: Memorizei os atalhos corretos (Ctrl+S Salvar, Ctrl+B Negrito, Ctrl+U Sublinhado e Ctrl+A Selecionar Tudo).`
 
 ### FASE 3: O Comando Mágico `=rand()` e Seleção com Mouse
 - Como gerar texto de teste rapidamente sem perder tempo digitando: digitar `=rand(3,4)` e teclar `Enter`.
@@ -110,12 +110,12 @@
 ## 📝 4. Exercício de Fixação da Aula 01 (`QUIZ_CFG[1]`)
 
 5 Questões de múltipla escolha com persistência no `QuizEngine`:
-1. **Qual é o atalho correto para SALVAR um documento no Microsoft Word em português?**
-   - a) `Ctrl + S`
-   - b) `Ctrl + B` *(Correta)*
+1. **Qual é o atalho correto para SALVAR um documento no Microsoft Word?**
+   - a) `Ctrl + S` *(Correta)*
+   - b) `Ctrl + B`
    - c) `Ctrl + P`
    - d) `Ctrl + A`
-   - *Dica*: No Word em português, a letra B é associada a salvar/baixar cópia.
+   - *Dica*: A letra S vem de *Save*. Ctrl+B aplica Negrito e Ctrl+A seleciona tudo.
 2. **Para que serve o comando secreto `=rand(2,3)` digitado em um documento em branco?**
    - a) Excluir automaticamente 2 linhas e 3 palavras.
    - b) Criar uma tabela com 2 linhas e 3 colunas.

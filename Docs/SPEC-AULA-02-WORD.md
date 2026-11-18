@@ -69,7 +69,7 @@
 - Regras oficiais da ABNT para tipos de letra:
   - Permitidas apenas fontes sóbrias: **Arial** ou **Times New Roman**.
   - Tamanho padrão do corpo do texto: **12**.
-  - Títulos principais: tamanho **14**, com destaque em **Negrito** (`Ctrl + N`).
+  - Títulos principais: tamanho **14**, com destaque em **Negrito** (`Ctrl + B`).
   - Cor do texto: exclusivamente **Preto automático** (proibido textos coloridos em documentos acadêmicos).
 - *Check 2*: `[ ] Passo 2: Padronizei a fonte do texto para Arial ou Times tamanho 12 e títulos em tamanho 14 negrito.`
 
@@ -111,7 +111,7 @@
 3. **Qual é o atalho de teclado para aplicar o alinhamento JUSTIFICADO no parágrafo?**
    - a) `Ctrl + J` *(Correta)*
    - b) `Ctrl + E`
-   - c) `Ctrl + Q`
+   - c) `Ctrl + L`
    - d) `Ctrl + G`
    - *Dica*: Pense na inicial da palavra 'Justificar' (J).
 4. **Qual é o espaçamento entre linhas obrigatório no corpo do texto de um trabalho nas normas ABNT?**
