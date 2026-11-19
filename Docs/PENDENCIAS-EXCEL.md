@@ -281,7 +281,7 @@ $ git diff --stat          # 04/10/2026, 2a rodada
 
 ## ⚪ P-11 — Backlog de evolução (opcional, não é pendência)
 
-0. ⚠️ **O item real e aberto de conteudo do portal e a L-07**: os modulos **Word e PowerPoint estao com o PDF 100% texto puro** (0/5 e 0/5) e **todas as secoes sem `lessonNum`** — violam a regra 2 (imagem/ilustracao obrigatoria) e a regra 8 (`lessonNum` por aula). Enquanto a meta for "todos os modulos", isto e prioridade acima de qualquer enriquecimento abaixo.
+0. ⚠️ **L-07 (parcial, 19/10/2026)**: o módulo **PowerPoint** passou a atender as regras 2 e 8 (36/36 seções com `lessonNum` e ilustração real/imagens, 6 aulas). O módulo **Word continua com o PDF 100% texto puro** e seções sem `lessonNum` — ainda viola as regras 2 e 8; é a pendência real de conteúdo que resta da L-07.
 1. **Conteúdo estendido das Aulas 8 e 9**: o `SPEC-EXCEL-MASTER.md` avisa que a fonte da Aula 08 cobre **só SOMASE** (SOMASES/CONT.SE/CONT.SES/MÉDIASE ficaram para "extensão futura").
 2. **Aulas 3, 4, 5, 6, 8, 11, 12 e 13 não têm nenhuma imagem de arquivo** — só tabelas/ilustrações HTML. Se o professor quiser, dá para produzir PNGs/capturas reais (o PADRE do módulo é justamente imagem-real). Nota: isso é diferente de **P-14**, que é obrigação da regra 2 — aqui é sóENCIAMENTO de material real.
 3. **Simulador**: Aulas 1, 5, 6, 7, 9 e 10 não têm componente interativo próprio (o Master Blueprint §7.5 prevê "simulador dedicado ou prática guiada").

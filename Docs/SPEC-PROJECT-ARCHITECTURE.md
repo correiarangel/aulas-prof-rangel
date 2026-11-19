@@ -30,7 +30,7 @@ O **Portal Didático de Informática Básica** é uma solução educacional dese
 | **Módulo 1** | Sistema Operacional Windows | `modules/windows/index.html` | `Docs/SPEC-AULA-08-WINDOWS.md` | Catálogo de 12 Aulas (Aula 8 Liberada) |
 | **Módulo 2** | Microsoft Word | `modules/word/index.html` | `Docs/SPEC-WORD-MASTER.md` *(Futuro)* | Planejado |
 | **Módulo 3** | Microsoft Excel | `modules/excel/index.html` | [SPEC-EXCEL-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-EXCEL-MASTER.md) | Catálogo de 13 Aulas (Aula 01 Especificada) |
-| **Módulo 4** | Microsoft PowerPoint | `modules/powerpoint/index.html` | `Docs/SPEC-POWERPOINT-MASTER.md` *(Futuro)* | Planejado |
+| **Módulo 4** | Microsoft PowerPoint 2010 | `modules/powerpoint/index.html` | [SPEC-POWERPOINT-MASTER.md](file:///home/rangel/git-dev/aulas/Docs/SPEC-POWERPOINT-MASTER.md) + `SPEC-POWERPOINT-AULA-01..06.md` | 6 Aulas implementadas (`pa001`–`pf006`), PDFs 36/36 com ilustração — validação visual humana pendente (19/10/2026) |
 | **Módulo 5** | Internet & Segurança | `modules/internet/index.html` & `prova-internet.html` | `Docs/SPEC-PROJECT-ARCHITECTURE.md` | 4 Aulas Operacionais (100% Concluído) |
 
 ---

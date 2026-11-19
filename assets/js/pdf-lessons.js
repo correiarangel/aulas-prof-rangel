@@ -7025,25 +7025,323 @@ O Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, va
       moduleName: "Microsoft PowerPoint",
       sections: [
         {
-          chapter: "UNIDADE 1: CRIAÇÃO E APRESENTAÇÃO DE SLIDES",
-          heading: "1.1 Conceito de Comunicação Visual em Slides",
-          content: "O PowerPoint possibilita a estruturação de ideias, relatórios e aulas em sequências visuais dinâmicas compostas por slides."
+          lessonNum: 1,
+          chapter: "AULA 01: INTERFACE DO POWERPOINT 2010 — CONHECENDO A TELA E CRIANDO A PRIMEIRA APRESENTAÇÃO",
+          heading: "1.0 FASE 0 — Antes de Começar: objetivo e roteiro",
+          content: "OBJETIVO: reconhecer a interface do Microsoft PowerPoint 2010 (áreas da tela, modos de exibição, menu Arquivo/Backstage e guias da Faixa de Opções) e criar uma apresentação guiada de 4 slides com formatação, lista, forma e animação básica.\n\nROTEIRO (5 passos):\n1. Conhecer a tela e as áreas principais.\n2. Explorar o menu Arquivo (Backstage).\n3. Mapear as guias da Faixa de Opções.\n4. Montar o exercício guiado de 4 slides.\n5. Aplicar animação básica com boas práticas.\n\nPREPARAÇÃO: abra o PowerPoint 2010, crie uma apresentação em branco e salve como Aula01-Pratica.pptx. Localize a Faixa de Opções (guias e grupos), a área do slide, o painel de anotações e os modos de exibição.",
+          html: '<div class="fun-highlight"><strong>🎯 MISSÃO DA AULA 01:</strong> entender a tela do PowerPoint e montar sua primeira apresentação de 4 slides com texto, forma e animação.</div><div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Roteiro — 5 passos com checks</div><table class="mini-sheet"><tr><th>Passo</th><th>O que fazer</th></tr><tr><td>1</td><td>Conhecer a tela e os modos de exibição</td></tr><tr><td>2</td><td>Explorar Arquivo (Backstage)</td></tr><tr><td>3</td><td>Mapear as guias da Faixa de Opções</td></tr><tr><td>4</td><td>Criar os 4 slides do exercício</td></tr><tr><td>5</td><td>Aplicar animação com moderação</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula1/image3.png", caption: "Banner da aula: Microsoft PowerPoint 2010 — apresentação visual por slides." }
+          ]
         },
         {
-          heading: "1.2 Layouts e Estrutura de Conteúdo",
-          content: "Escolha layouts adequados para cada slide (Título, Título e Conteúdo, Comparação) para garantir clareza na transmissão da mensagem."
+          lessonNum: 1,
+          heading: "1.1 Conhecendo a tela do PowerPoint 2010",
+          content: "A tela principal reúne tudo o que você precisa para criar slides:\n• Barra de Título / Nome do arquivo: mostra o nome da apresentação.\n• Faixa de Opções (Guias e Grupos): reúne os comandos por assunto (Página Inicial, Inserir, Design etc.).\n• Área de trabalho (slide): onde você digita e monta o conteúdo do slide.\n• Painel de Slides (miniaturas, à esquerda): lista e organiza os slides.\n• Painel de Anotações: espaço abaixo do slide para anotações do apresentador (não aparece na projeção).\n• Modos de exibição / Barra de Status: alterna entre Normal, Classificação de Slides, Apresentação e ajusta zoom.\n\nComando (Guia → Grupo): Exibição → Modos de Exibição de Apresentação.",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Mapa das áreas da tela</div><table class="mini-sheet"><tr><th>Área</th><th>Função</th></tr><tr><td>Faixa de Opções</td><td>Guias e grupos de comandos</td></tr><tr><td>Área do slide</td><td>Montar o conteúdo</td></tr><tr><td>Painel de miniaturas</td><td>Selecionar e ordenar slides</td></tr><tr><td>Painel de Anotações</td><td>Notas do apresentador</td></tr><tr><td>Modos de exibição</td><td>Normal, Classificação, Apresentação</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula1/image5.png", caption: "Tela principal do PowerPoint 2010 com as principais áreas indicadas." }
+          ]
         },
         {
-          heading: "1.3 Transições de Slides e Animações",
-          content: "• Transição de Slides: Efeitos visuais na passagem entre um slide e outro (ex: Esmaecer, Suave).\n• Animação de Objetos: Ordem e forma como textos, gráficos e imagens surgem dentro de um mesmo slide."
+          lessonNum: 1,
+          heading: "1.2 Menu Arquivo (Backstage)",
+          content: "No PowerPoint 2010, a guia Arquivo abre a exibição Backstage — um painel de gerenciamento do arquivo (não é uma guia comum da faixa):\n• Informações: propriedades e permissões.\n• Novo: criar apresentação em branco ou a partir de modelos.\n• Abrir: localizar apresentações existentes.\n• Salvar / Salvar Como: gravar o arquivo (.pptx) e, se preciso, exportar (ex.: PDF ou vídeo, conforme recursos disponíveis).\n• Imprimir: configurar impressora, intervalo e layout de impressão.\n• Compartilhar / Enviar: opções de compartilhamento conforme o ambiente.\n• Fechar: fecha a apresentação atual.\n\nDica: passe o mouse pelas opções para ver descrições. Guarde com Ctrl+S (Salvar).",
+          html: '<div class="fun-highlight"><strong>💡 Lembrete:</strong> <strong>Ctrl+S</strong> salva o arquivo. A guia <strong>Arquivo</strong> centraliza Salvar, Imprimir e outras ações do documento.</div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula1/image7.png", caption: "Exibição Backstage (guia Arquivo) com comandos de gerenciamento do arquivo." }
+          ]
         },
         {
-          heading: "1.4 Teclas de Atalho de Apresentação",
-          content: `• Tecla F5: Inicia a apresentação a partir do primeiro slide.\n• Shift + F5: Inicia a apresentação a partir do slide atual.\n• Tecla ESC: Interrompe a apresentação e retorna à edição.`
+          lessonNum: 1,
+          heading: "1.3 Mapa das guias da Faixa de Opções",
+          content: "Cada guia reúne comandos por finalidade:\n• Página Inicial: fonte, parágrafo, desenho e edição (recortar/copiar/colar), novos slides e layout.\n• Inserir: tabelas, imagens, formas, SmartArt, gráficos, caixa de texto, áudio/vídeo e símbolos.\n• Design: temas, cores, fontes, efeitos e plano de fundo.\n• Transições: efeitos na passagem entre slides e opções de avanço.\n• Animações: efeitos nos objetos dentro do slide e Painel de Animação.\n• Apresentação de Slides: iniciar (F5/do slide atual), configurar e ensaiar.\n• Revisão: ortografia, comentários e comparação.\n• Exibição: modos de exibição, zoom, guias, grade e janelas.\n\nDiferença essencial: Transição = entre slides; Animação = dentro do slide (objetos).",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Guia → finalidade (resumo)</div><table class="mini-sheet"><tr><th>Guia</th><th>Para quê</th></tr><tr><td>Página Inicial</td><td>Formatar texto e organizar slides</td></tr><tr><td>Inserir</td><td>Colocar imagens, formas, mídia e objetos</td></tr><tr><td>Design</td><td>Tema e aparência geral</td></tr><tr><td>Transições</td><td>Efeito ao trocar de slide</td></tr><tr><td>Animações</td><td>Efeito nos elementos do slide</td></tr><tr><td>Apresentação de Slides</td><td>Exibir e configurar a apresentação</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula1/image4.png", caption: "Faixa de abas/guias do PowerPoint (visão geral das guias)." }
+          ]
         },
         {
-          heading: "1.5 Boas Práticas para Apresentações Profissionais",
-          content: "Utilize textos concisos em tópicos, mantenha alto contraste entre o texto e o fundo da tela e utilize imagens de alta definição que complementem a fala do apresentador."
+          lessonNum: 1,
+          heading: "1.4 Exercício guiado — 4 slides (WR Capacitação Profissional)",
+          content: "Monte uma apresentação simples seguindo a sequência:\n\nSLIDE 1 — Capa (layout Título):\n• Título: WR Capacitação Profissional (Negrito, tamanho 44).\n• Subtítulo: Seu Futuro Começa Aqui! (tamanho 36).\n\nSLIDE 2 — Cursos (layout Título e Conteúdo, Página Inicial → Novo Slide):\n• Título: Cursos (Negrito, 44).\n• Conteúdo (lista): Informática, Oratória, TTI, Vendas, Telemarketing, Excel.\n\nSLIDE 3 — Sobre (layout Título e Conteúdo):\n• Título: Sobre (Negrito, 44).\n• Conteúdo: texto informativo sobre a WR (conforme o modelo do exercício).\n\nSLIDE 4 — Mensagem do Professor (layout Título e Conteúdo):\n• Título: Mensagem do Professor (Negrito, 44).\n• Subtítulo/mensagem: “Para atingir o impossível é só acreditar que é possível.”\n• Inserir → Formas → Estrela (ex.: Estrela de 7 pontas), formatar (preenchimento e contorno).\n\nComando: Página Inicial → Novo Slide; Página Inicial → Fonte (tamanho/negrito).",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Estrutura dos 4 slides</div><table class="mini-sheet"><tr><th>Slide</th><th>Título</th><th>Conteúdo principal</th></tr><tr><td>1</td><td>WR Capacitação Profissional</td><td>Subtítulo: Seu Futuro Começa Aqui!</td></tr><tr><td>2</td><td>Cursos</td><td>Lista de cursos</td></tr><tr><td>3</td><td>Sobre</td><td>Texto sobre a WR</td></tr><tr><td>4</td><td>Mensagem do Professor</td><td>Frase + forma (estrela)</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula1/image1.png", caption: "Exemplo do slide de Cursos (título e lista)." },
+            { src: "../../assets/img/powerpoint/Aula1/image2.png", caption: "Exemplo do slide Sobre com o conteúdo formatado." }
+          ]
+        },
+        {
+          lessonNum: 1,
+          heading: "1.5 Animação básica e boas práticas",
+          content: "Para dar vida aos elementos (use com moderação):\n1. Selecione o objeto/texto (ex.: a lista de cursos).\n2. Guia Animações → escolha um efeito de Entrada (ex.: Aparecer ou Surgir).\n3. Em Iniciar, selecione Após o Anterior para tocar em sequência; ajuste a Duração conforme necessário.\n4. No Painel de Animação, confira a ordem dos itens.\n5. Na forma do slide 4, aplique um efeito de Ênfase como Girar (animação), se desejar destaque.\n\nBOAS PRÁTICAS:\n• Transições e animações devem ser usadas com cautela.\n• Evite animação na tela inicial (capa) — prefira uma entrada limpa.\n• Mantenha consistência: poucos efeitos, bem aplicados, ajudam; exagero distrai.\n\nAtalho útil: F5 inicia a apresentação do começo para testar.",
+          html: '<div class="fun-highlight"><strong>⚠️ Boa prática:</strong> use animações com moderação e <strong>evite animação na tela inicial</strong>. Priorize clareza na mensagem.</div><div class="es-sheet-box" style="max-width:520px;"><div class="es-sheet-titlebar">Configuração de animação (exemplo)</div><table class="mini-sheet"><tr><th>Opção</th><th>Valor sugerido</th></tr><tr><td>Efeito</td><td>Aparecer / Surgir (Entrada)</td></tr><tr><td>Iniciar</td><td>Após o Anterior</td></tr><tr><td>Ordem</td><td>Conferir no Painel de Animação</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula1/image6.png", caption: "Indicadores de sequência de animação (ordem dos itens no slide)." }
+          ]
+        },
+
+        {
+          lessonNum: 2,
+          chapter: "AULA 02: TRABALHANDO COM SLIDES — INSERIR, ORGANIZAR, FORMATAR E APRESENTAR",
+          heading: "2.0 FASE 0 — Antes de Começar: objetivo e roteiro",
+          content: "OBJETIVO: gerenciar slides (inserir, duplicar, excluir, reordenar), aplicar layouts, temas e plano de fundo, configurar cabeçalho/rodapé/numeração e organizar a apresentação com lógica.\n\nROTEIRO (5 passos):\n1. Inserir, duplicar e excluir slides.\n2. Alterar layouts.\n3. Aplicar temas, cores e plano de fundo.\n4. Configurar rodapé/numeração e organizar a ordem.\n5. Praticar com um exercício autocontido.\n\nPREPARAÇÃO: abra uma apresentação de prática, localize o painel de miniaturas à esquerda e as guias Página Inicial e Design.",
+          html: '<div class="fun-highlight"><strong>🎯 MISSÃO DA AULA 02:</strong> dominar o ciclo de vida dos slides — criar, organizar, padronizar o visual e manter a apresentação legível.</div><div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Atalhos essenciais</div><table class="mini-sheet"><tr><th>Atalho</th><th>Ação</th></tr><tr><td>Ctrl+M</td><td>Novo slide</td></tr><tr><td>Ctrl+D</td><td>Duplicar slide/objeto</td></tr><tr><td>Delete</td><td>Excluir slide selecionado</td></tr><tr><td>Ctrl+Z</td><td>Desfazer</td></tr></table></div>'
+        },
+        {
+          lessonNum: 2,
+          heading: "2.1 Inserir, duplicar, excluir e reordenar slides",
+          content: "• Inserir: Página Inicial → Novo Slide (escolha o layout) ou atalho Ctrl+M.\n• Duplicar: selecione a miniatura → botão direito → Duplicar Slide, ou Ctrl+D.\n• Excluir: selecione a miniatura e pressione Delete (ou botão direito → Excluir Slide).\n• Reordenar: arraste as miniaturas no painel esquerdo; em Exibição → Classificação de Slides a visão geral facilita.\n• Desfazer: Ctrl+Z caso exclua ou mova por engano.\n\nBoa prática: crie primeiro a estrutura (quantos slides e que assunto em cada um) e só depois capriche no visual.",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Gerenciando slides</div><table class="mini-sheet"><tr><th>Ação</th><th>Caminho / Atalho</th></tr><tr><td>Novo slide</td><td>Página Inicial → Novo Slide (Ctrl+M)</td></tr><tr><td>Duplicar</td><td>Menu de contexto ou Ctrl+D</td></tr><tr><td>Excluir</td><td>Selecionar miniatura + Delete</td></tr><tr><td>Reorganizar</td><td>Arrastar miniaturas / Classificação de Slides</td></tr></table></div>'
+        },
+        {
+          lessonNum: 2,
+          heading: "2.2 Layouts de slide",
+          content: "O layout define a disposição dos espaços reservados (título, conteúdo, imagem etc.):\n• Página Inicial → Layout.\n• Opções comuns: Título, Título e Conteúdo, Duas Conteúdos (Comparação), Somente Título, Em Branco.\n• Ao trocar o layout, o PowerPoint reorganiza o conteúdo nos espaços disponíveis — revise o encaixe após a mudança.\n\nDica: use \"Título e Conteúdo\" para texto/listas e \"Somente Título\" quando o slide for dominado por imagens ou gráficos.",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Layouts mais usados</div><table class="mini-sheet"><tr><th>Layout</th><th>Quando usar</th></tr><tr><td>Título</td><td>Capa / abertura</td></tr><tr><td>Título e Conteúdo</td><td>Texto, lista ou objeto principal</td></tr><tr><td>Duas Conteúdos</td><td>Comparar lado a lado</td></tr><tr><td>Somente Título</td><td>Imagens/tabelas ocupando o corpo</td></tr><tr><td>Em Branco</td><td>Composição livre</td></tr></table></div>'
+        },
+        {
+          lessonNum: 2,
+          heading: "2.3 Temas, cores e plano de fundo",
+          content: "Padronize a aparência da apresentação:\n• Design → Temas: aplica um conjunto de cores, fontes e efeitos a todos os slides. Os temas disponíveis variam conforme a instalação do PowerPoint 2010.\n• No PowerPoint 2010, variações de cor/fonte/efeitos ficam no grupo Temas (Cores, Fontes, Efeitos). O termo \"Variantes\" é comum em versões mais recentes.\n• Design → Estilos de Plano de Fundo / Formatar Plano de Fundo: cor sólida, gradiente, imagem ou textura; ajuste transparência e escolha Aplicar (slide atual) ou Aplicar a Todos.\n\nBOA PRÁTICA: garanta alto contraste entre texto e fundo (texto escuro em fundo claro, ou o inverso) para legibilidade.",
+          html: '<div class="fun-highlight"><strong>🎨 Legibilidade primeiro:</strong> tema bonito é tema legível. Teste o contraste do texto sobre o fundo em todos os slides.</div><div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Plano de fundo</div><table class="mini-sheet"><tr><th>Opção</th><th>Uso</th></tr><tr><td>Preenchimento sólido</td><td>Cor única, simples e limpa</td></tr><tr><td>Gradiente</td><td>Transição suave de cores</td></tr><tr><td>Imagem/textura</td><td>Fundo ilustrado (cuidar do contraste)</td></tr><tr><td>Aplicar a Todos</td><td>Padroniza a apresentação inteira</td></tr></table></div>'
+        },
+        {
+          lessonNum: 2,
+          heading: "2.4 Cabeçalho, rodapé, numeração e organização lógica",
+          content: "• Inserir → Cabeçalho e Rodapé: marque Data e hora, Número do slide e/ou Rodapé (texto). Use \"Não mostrar no slide de título\" quando a capa não deve exibir número/rodapé. Aplique em um slide ou em Todos.\n• Estrutura lógica sugerida: Capa (título) → Agenda/Roteiro → Desenvolvimento → Conclusão → Contato/Encerramento.\n• Organização: Exibição → Classificação de Slides para ter visão geral; arraste para reordenar; use Seções (Página Inicial → Seção → Adicionar Seção) para agrupar blocos.\n\nUma apresentação organizada ajuda o público a acompanhar a linha de raciocínio.",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Estrutura lógica de uma apresentação</div><table class="mini-sheet"><tr><th>Parte</th><th>Função</th></tr><tr><td>Capa</td><td>Título e identificação</td></tr><tr><td>Agenda</td><td>O que será visto</td></tr><tr><td>Desenvolvimento</td><td>Conteúdo principal</td></tr><tr><td>Conclusão</td><td>Resumo e fechamento</td></tr><tr><td>Contato</td><td>Encerramento / próximos passos</td></tr></table></div>'
+        },
+        {
+          lessonNum: 2,
+          heading: "2.5 Exercício prático autocontido",
+          content: "Monte uma apresentação curta (5 a 6 slides, tema livre, por exemplo \"Meus objetivos\" ou \"Um hobby\") aplicando tudo desta aula:\n1. Crie os slides com Ctrl+M e escolha layouts adequados (capa em Título, demais em Título e Conteúdo ou Somente Título).\n2. Duplique um slide para reaproveitar a estrutura (Ctrl+D) e ajuste o conteúdo.\n3. Aplique um tema e, se quiser, ajuste o plano de fundo mantendo boa legibilidade.\n4. Ative o número do slide (Inserir → Cabeçalho e Rodapé) ocultando-o na capa, se preferir.\n5. Organize a ordem no painel de miniaturas ou na Classificação de Slides.\n\nObservação: os exemplos visuais abaixo (áudio/transição) mostram controles que você verá em aulas seguintes — aqui o foco é organizar e formatar os slides.",
+          html: '<div class="fun-highlight"><strong>✅ Checklist do exercício:</strong> slides criados e ordenados, layout adequado, tema/fundo legível, numeração configurada e estrutura lógica (início, meio, fim).</div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula2/image6.png", caption: "Exemplo de configuração de transição/intervalo (referência visual de controle na Faixa de Opções)." },
+            { src: "../../assets/img/powerpoint/Aula2/image5.png", caption: "Exemplo de slide com composição visual (capa/exercício) — use como inspiração de organização." }
+          ]
+        },
+
+        {
+          lessonNum: 3,
+          chapter: "AULA 03: TEXTO, IMAGENS, ANIMAÇÕES E TRANSIÇÕES — DANDO VIDA AOS SLIDES",
+          heading: "3.0 FASE 0 — Antes de Começar: objetivo e roteiro",
+          content: "OBJETIVO: formatar texto e parágrafos com clareza, inserir e tratar imagens, diferenciar animação (objeto) de transição (slide) e configurar modos de apresentação (ao clique, automática e quiosque) com critério.\n\nROTEIRO (5 passos):\n1. Formatar tipografia e parágrafos.\n2. Inserir e dimensionar imagens corretamente.\n3. Tratar e organizar imagens (estilos, cor, remover fundo, camadas, plano de fundo).\n4. Entender e aplicar animação × transição.\n5. Configurar modos de apresentação e áudio.\n\nPREPARAÇÃO: abra uma apresentação, tenha uma imagem salva no computador e localize as guias Página Inicial, Inserir, Transições, Animações e Apresentação de Slides.",
+          html: '<div class="fun-highlight"><strong>🎯 MISSÃO DA AULA 03:</strong> transformar slides simples em conteúdo visual claro — com texto legível, imagens bem ajustadas e efeitos usados no momento certo.</div><div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Conceito-chave</div><table class="mini-sheet"><tr><th>Recurso</th><th>Onde age</th></tr><tr><td>Animação</td><td>Nos objetos <strong>dentro</strong> do slide</td></tr><tr><td>Transição</td><td>Na passagem <strong>entre</strong> slides</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula3/image7.png", caption: "Comparação visual: animação atua nos objetos do slide; transição atua entre slides." }
+          ]
+        },
+        {
+          lessonNum: 3,
+          heading: "3.1 Tipografia e parágrafos",
+          content: "Texto legível é a base de um bom slide:\n• Tamanho (Guia Página Inicial → grupo Fonte): títulos 36–44 pt, texto 18–24 pt, notas 14–16 pt (referências práticas).\n• Cor e contraste: garanta leitura fácil sobre o fundo.\n• Fonte: prefira fontes sem serifa para projeção (ex.: Calibri, Arial, Verdana). Títulos podem usar destaque maior.\n• Estilos: Ctrl+B = Negrito, Ctrl+I = Itálico, Ctrl+U = Sublinhado (Ctrl+S salva o arquivo).\n• Tamanho rápido: Ctrl+Shift+> aumenta e Ctrl+Shift+< diminui.\n• Alinhamento (grupo Parágrafo): esquerda para texto corrido, centro para títulos; evite justificar blocos curtos em slides.\n• Espaçamento entre linhas: 1,2 a 1,5 melhora a leitura.\n• Marcadores e numeração: use Tab para subnível e Shift+Tab para voltar.",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Atalhos de formatação (PT-BR)</div><table class="mini-sheet"><tr><th>Atalho</th><th>Ação</th></tr><tr><td>Ctrl+B</td><td>Negrito</td></tr><tr><td>Ctrl+I</td><td>Itálico</td></tr><tr><td>Ctrl+U</td><td>Sublinhado</td></tr><tr><td>Ctrl+S</td><td>Salvar arquivo</td></tr><tr><td>Ctrl+Shift+&gt; / &lt;</td><td>Aumentar / diminuir fonte</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula3/image1.png", caption: "Grupo Fonte: tamanho, cor e estilos aplicados ao texto." },
+            { src: "../../assets/img/powerpoint/Aula3/image3.png", caption: "Grupo Parágrafo: alinhamento, marcadores/numeração e espaçamento." }
+          ]
+        },
+        {
+          lessonNum: 3,
+          heading: "3.2 Inserir e dimensionar imagens",
+          content: "• Inserir: Inserir → Imagem → selecione um arquivo do computador (formatos comuns: JPG, PNG, GIF, BMP, TIFF). No PowerPoint 2010 o caminho é pelo arquivo local.\n• Mover: arraste a imagem para a posição desejada.\n• Redimensionar mantendo proporção: arraste pelas alças dos cantos (evite alças laterais, que distorcem). Segurar Shift ao arrastar também ajuda a preservar a proporção.\n• Tamanho exato: selecione a imagem → Ferramentas de Imagem → Formatar → grupo Tamanho (Altura/Largura) e mantenha a opção de bloquear proporção.\n• Redefinir: se distorcer, use Redefinir Imagem e Tamanho para voltar ao original.\n\nRegra de ouro: nunca estique a imagem — prefira recortar ou ajustar proporcionalmente.",
+          html: '<div class="fun-highlight"><strong>📐 Proporção:</strong> redimensione sempre pelos <strong>cantos</strong> (ou com proporção bloqueada) para não distorcer a imagem.</div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula3/image2.png", caption: "Inserção de imagem a partir de arquivo no computador." },
+            { src: "../../assets/img/powerpoint/Aula3/image4.png", caption: "Redimensionamento pelas alças: usar os cantos preserva a proporção." }
+          ]
+        },
+        {
+          lessonNum: 3,
+          heading: "3.3 Tratar e organizar imagens",
+          content: "Com a imagem selecionada, a guia contextual Ferramentas de Imagem → Formatar oferece:\n• Estilos de Imagem: bordas, sombras e efeitos prontos.\n• Correções: brilho e contraste.\n• Cor: saturação, tom e recolorir.\n• Efeitos Artísticos: filtros visuais.\n• Remover Plano de Fundo: marque áreas a manter/remover e confirme em Manter Alterações.\n• Organizar (ordem/camadas): Trazer para Frente / Enviar para Trás, Avançar / Recuar, Alinhar objetos.\n• Imagem como fundo do slide: botão direito no slide (ou Design → Estilos de Plano de Fundo) → Formatar Plano de Fundo → Preenchimento com imagem ou textura → Arquivo; ajuste transparência e use Aplicar a Todos se quiser padronizar.",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Recursos de imagem (Ferramentas de Imagem → Formatar)</div><table class="mini-sheet"><tr><th>Recurso</th><th>Para quê</th></tr><tr><td>Estilos/Correções</td><td>Aparência, brilho e contraste</td></tr><tr><td>Cor / Efeitos Artísticos</td><td>Ajuste cromático e filtros</td></tr><tr><td>Remover Plano de Fundo</td><td>Isolar o objeto principal</td></tr><tr><td>Trazer/Enviar</td><td>Organizar camadas</td></tr><tr><td>Plano de fundo com imagem</td><td>Imagem cobrindo o slide</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula3/image5.png", caption: "Estilos, correções e organização de imagens na guia Formatar." },
+            { src: "../../assets/img/powerpoint/Aula3/image8.png", caption: "Remover Plano de Fundo: marcar áreas a manter/remover e confirmar." },
+            { src: "../../assets/img/powerpoint/Aula3/image12.png", caption: "Ajustes de Cor da imagem (saturação, tom e recolorir)." },
+            { src: "../../assets/img/powerpoint/Aula3/image10.png", caption: "Imagem aplicada como plano de fundo do slide (cuidar da legibilidade do texto)." }
+          ]
+        },
+        {
+          lessonNum: 3,
+          heading: "3.4 Animação × Transição",
+          content: "Dois recursos diferentes — não confunda:\n\nANIMAÇÃO (objetos dentro do slide):\n• Selecione o objeto → Animações → escolha um efeito (Entrada, Ênfase, Saída, Trajetória). Ex.: Aparecer, Desvanecer.\n• Painel de Animação: controla ordem, Iniciar (Ao Clicar, Com o Anterior, Após o Anterior), Duração e Atraso.\n\nTRANSIÇÃO (passagem entre slides):\n• Selecione o slide → Transições → escolha o efeito.\n• Avançar Slide: \"Ao Clicar com o Mouse\" e/ou \"Após\" (tempo). Aplicar a Todos replica a transição.\n\nBoa prática: mantenha consistência visual (poucos efeitos, coerentes) para não distrair o público.",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Animação × Transição</div><table class="mini-sheet"><tr><th></th><th>Animação</th><th>Transição</th></tr><tr><td>Age em</td><td>Objetos do slide</td><td>Entre slides</td></tr><tr><td>Guia</td><td>Animações</td><td>Transições</td></tr><tr><td>Exemplo</td><td>Aparecer, Girar</td><td>Esmaecer, Empurrar</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula3/image6.png", caption: "Configuração de avanço de slide (tempo 'Após') na guia Transições." }
+          ]
+        },
+        {
+          lessonNum: 3,
+          heading: "3.5 Modos de apresentação e áudio",
+          content: "CONTROLE DE AVANÇO (escolha o modo adequado):\n• Manual (apresentador): Transições → marcar \"Ao Clicar com o Mouse\" e desmarcar \"Após\". Você controla o ritmo.\n• Automática: marcar \"Após\" com tempo e desmarcar o clique; usar intervalos consistentes. Em Apresentação de Slides → Configurar Apresentação de Slides, habilite \"Usar intervalos cronometrados\" se aplicável.\n• Quiosque/loop: Configurar Apresentação de Slides → \"Apresentada em um quiosque (tela inteira)\" (normalmente repete até Esc). Ideal para exibição contínua sem intervenção.\n\nÁUDIO:\n• Inserir → Áudio → Áudio do Arquivo (PowerPoint 2010).\n• Ferramentas de Áudio → Reprodução: iniciar automaticamente ou ao clicar, ocultar durante a apresentação, reproduzir em vários slides/loop conforme a necessidade.\n\nCada modo tem seu caso de uso — não misture sem intenção (ex.: navegação interativa pede controle ao clique/botões).",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Modos de apresentação</div><table class="mini-sheet"><tr><th>Modo</th><th>Configuração</th><th>Uso típico</th></tr><tr><td>Manual</td><td>Ao clicar (sem "Após")</td><td>Palestra/apresentador</td></tr><tr><td>Automático</td><td>"Após" com tempo</td><td>Sequência cronometrada</td></tr><tr><td>Quiosque</td><td>Apresentada em quiosque / repetir até Esc</td><td>Exibição contínua</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula3/image9.png", caption: "Configurar Apresentação de Slides: opções de exibição (incluindo modo quiosque)." },
+            { src: "../../assets/img/powerpoint/Aula3/image11.png", caption: "Ícone de áudio inserido no slide (controle de reprodução)." }
+          ]
+        },
+
+        {
+          lessonNum: 4,
+          chapter: "AULA 04: BOTÕES DE AÇÃO E NAVEGAÇÃO — APRESENTAÇÕES INTERATIVAS",
+          heading: "4.0 FASE 0 — Antes de Começar: objetivo e roteiro",
+          content: "OBJETIVO: criar apresentações interativas com botões de ação e hiperlinks (para slides, sites e arquivos), montar navegação não linear com menu, configurar áudio/vídeo e preparar a exibição para controle pelo usuário.\n\nROTEIRO (5 passos):\n1. Inserir e configurar botões de ação.\n2. Criar hiperlinks (slide, URL, arquivo).\n3. Montar navegação não linear (menu).\n4. Configurar áudio e vídeo na interação.\n5. Testar e ajustar a apresentação.\n\nPREPARAÇÃO: crie uma apresentação com pelo menos 5 slides (ex.: capa, menu e 3 tópicos) para praticar os links. Localize Inserir → Formas → Botões de Ação.\n\nObservação: esta aula não possui imagens de arquivo na origem — as ilustrações abaixo são diagramas/quadros didáticos em HTML.",
+          html: '<div class="fun-highlight"><strong>🎯 MISSÃO DA AULA 04:</strong> transformar a apresentação em um material interativo, em que o usuário escolhe o caminho pelos botões e links.</div><div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Navegação: linear × não linear</div><table class="mini-sheet"><tr><th>Tipo</th><th>Como funciona</th></tr><tr><td>Linear</td><td>Slide 1 → 2 → 3 → ... em sequência</td></tr><tr><td>Não linear</td><td>Menu central e botões levam a tópicos escolhidos pelo usuário</td></tr></table></div>'
+        },
+        {
+          lessonNum: 4,
+          heading: "4.1 Botões de ação",
+          content: "Botões de ação são formas prontas que executam uma ação ao clique durante a apresentação:\n• Inserir → Formas → role até Botões de Ação.\n• Tipos comuns: Início, Voltar ou Anterior, Avançar, Fim, Início (casa), Informações, Retornar, Documento, Som, Filme e Personalizado.\n• Desenhe o botão no slide; ao soltar, abre a caixa Configurações de Ação (ou defina via hiperlink): escolha Hiperlink para (Próximo slide, Slide..., Primeira/Última página, URL etc.) e, se quiser, som.\n• Botão Personalizado: você define o texto/ícone e o destino (muito usado para menus).\n\nDica: mantenha posição e tamanho consistentes (copiar/colar o botão \"Voltar ao Menu\" em todos os slides de conteúdo).",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Botões de ação — guia rápido</div><table class="mini-sheet"><tr><th>Botão</th><th>Uso típico</th></tr><tr><td>Início / Casa</td><td>Ir para o primeiro slide ou menu</td></tr><tr><td>Voltar / Anterior</td><td>Slide anterior</td></tr><tr><td>Avançar</td><td>Próximo slide</td></tr><tr><td>Fim</td><td>Último slide</td></tr><tr><td>Personalizado</td><td>Destino definido por você (ex.: um tópico)</td></tr></table></div><div class="fun-highlight"><strong>💡 Consistência:</strong> coloque o botão \"Voltar ao Menu\" sempre no mesmo canto em todos os slides de conteúdo.</div>'
+        },
+        {
+          lessonNum: 4,
+          heading: "4.2 Hiperlinks (slide, site e arquivo)",
+          content: "Você pode transformar texto, imagem ou forma em link:\n• Selecionar o objeto/texto → Inserir → Hiperlink (ou Ctrl+K) / botão direito → Hiperlink.\n• Colocar neste documento: leva a um slide específico (ideal para menus).\n• Endereço: abre uma página na web (ex.: https://...).\n• Arquivo ou página da Web existente: abre um arquivo local (PDF, documento etc.).\n\nMétodo alternativo com botão de ação: ao desenhar, escolha \"Hiperlink para → Slide...\" e selecione o destino. Links são acionados no modo de apresentação (F5).",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Tipos de hiperlink</div><table class="mini-sheet"><tr><th>Destino</th><th>Opção</th><th>Exemplo</th></tr><tr><td>Outro slide</td><td>Colocar neste documento</td><td>Menu → slide "Oceanos"</td></tr><tr><td>Site</td><td>Endereço</td><td>https://...</td></tr><tr><td>Arquivo</td><td>Arquivo/página existente</td><td>Abrir um PDF local</td></tr></table></div><div class="fun-highlight"><strong>Teste sempre:</strong> links e botões só funcionam na <strong>Apresentação de Slides</strong> (F5), não no modo de edição normal.</div>'
+        },
+        {
+          lessonNum: 4,
+          heading: "4.3 Navegação não linear — menu interativo",
+          content: "Em uma apresentação não linear, o público escolhe a ordem:\n• Estrutura: Capa → Menu → Tópicos (cada um retorna ao Menu).\n• No slide Menu, crie botões/formas com hiperlink para cada slide de tópico.\n• Em cada slide de tópico, inclua um botão \"Voltar ao Menu\".\n• Opcional: ocultar o slide de menu/apoio na sequência linear (botão direito na miniatura → Ocultar Slide) — ele continua acessível pelos links.\n\nExemplo de mapa (exercício \"Mundo Animal\"): Capa → Menu → Oceanos / Florestas / Desertos / Regiões Polares (cada um com Voltar ao Menu) + Curiosidades + Créditos.",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Diagrama de navegação (menu não linear)</div><table class="mini-sheet"><tr><th>De</th><th>Ação</th><th>Para</th></tr><tr><td>Capa</td><td>Clique / botão</td><td>Menu Principal</td></tr><tr><td>Menu</td><td>Botão \"Oceanos\"</td><td>Slide Oceanos</td></tr><tr><td>Menu</td><td>Botão \"Florestas\"</td><td>Slide Florestas</td></tr><tr><td>Menu</td><td>Botão \"Desertos\"</td><td>Slide Desertos</td></tr><tr><td>Menu</td><td>Botão \"Regiões Polares\"</td><td>Slide Regiões Polares</td></tr><tr><td>Qualquer tópico</td><td>\"Voltar ao Menu\"</td><td>Menu Principal</td></tr></table></div><div class="fun-highlight"><strong>Regra do menu:</strong> todo caminho de ida precisa de um caminho de volta claro (\"Voltar ao Menu\").</div>'
+        },
+        {
+          lessonNum: 4,
+          heading: "4.4 Áudio e vídeo na interação",
+          content: "• Inserir áudio: Inserir → Áudio → Áudio do Arquivo (PowerPoint 2010). Ao selecionar o ícone, use Ferramentas de Áudio → Reprodução para definir: iniciar Ao Clicar ou Automaticamente, Ocultar Durante a Apresentação, Reproduzir em Todos os Slides ou repetir (loop), conforme a necessidade.\n• Inserir vídeo: Inserir → Vídeo → Vídeo do Arquivo. Em Ferramentas de Vídeo → Reprodução, configure início, tela inteira e retorno ao início, se necessário.\n• Direitos autorais: use mídias com licença adequada ou de sua autoria; sites de áudio gratuito existem, mas verifique os termos de uso.\n\nEvite exageros: áudio/vídeo devem apoiar o conteúdo, não competir com ele.",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Opções de Reprodução (mídia)</div><table class="mini-sheet"><tr><th>Opção</th><th>Efeito</th></tr><tr><td>Ao Clicar / Automaticamente</td><td>Quando a mídia inicia</td></tr><tr><td>Ocultar Durante a Apresentação</td><td>Esconde o ícone do áudio</td></tr><tr><td>Reproduzir em Todos os Slides</td><td>Mantém o áudio entre slides</td></tr><tr><td>Repetir até ser interrompido</td><td>Loop contínuo</td></tr></table></div>'
+        },
+        {
+          lessonNum: 4,
+          heading: "4.5 Configurar e testar a navegação",
+          content: "Ajustes finais para uma navegação controlada:\n• Apresentação de Slides → Configurar Apresentação de Slides: escolha o modo (ex.: \"Apresentada por um orador\" em tela inteira ou em janela individual, conforme o uso).\n• Transições: para navegação por botões/clique, desmarque \"Após\" (avanço automático) nos slides de navegação e mantenha \"Ao Clicar com o Mouse\". Se algum slide específico precisar avançar sozinho, configure-o conscientemente e sem quebrar o menu.\n• Teste completo: pressione F5, percorra todos os botões/links, confira o retorno ao menu e saia com Esc.\n\nChecklist: todos os destinos corretos, botão \"Voltar ao Menu\" presente, sem links quebrados e sem avanço automático indesejado.",
+          html: '<div class="fun-highlight"><strong>✅ Checklist de teste:</strong> F5 → clicar em cada botão/link → confirmar destino → usar \"Voltar ao Menu\" → revisar slides sem \"Após\" indesejado → Esc.</div><div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Configuração para navegação interativa</div><table class="mini-sheet"><tr><th>Item</th><th>Configuração</th></tr><tr><td>Avanço dos slides de menu/tópicos</td><td>Ao clicar (sem "Após")</td></tr><tr><td>Retorno</td><td>Botão "Voltar ao Menu" em cada tópico</td></tr><tr><td>Slides ocultos</td><td>Opcionais, acessíveis por link</td></tr></table></div>'
+        },
+
+        {
+          lessonNum: 5,
+          chapter: "AULA 05: SLIDE MESTRE — O MOLDE DA SUA APRESENTAÇÃO",
+          heading: "5.0 FASE 0 — Antes de Começar: objetivo e roteiro",
+          content: "OBJETIVO: padronizar toda a apresentação alterando uma única vez o Slide Mestre (fundo, fontes, logotipo), compreender Mestre Principal × layouts, criar layout personalizado e resolver problemas comuns.\n\nROTEIRO (5 passos):\n1. Entender o conceito do Slide Mestre (a \"forma de bolo\").\n2. Diferenciar Mestre Principal e Layouts.\n3. Padronizar fundo, fonte e logotipo.\n4. Fechar o modo mestre, salvar/aplicar e reutilizar.\n5. Criar layout personalizado e diagnosticar erros.\n\nPREPARAÇÃO: abra uma apresentação em branco (ou de teste), tenha um logotipo/imagem simples salvo e localize Exibir → Slide Mestre.",
+          html: '<div class="fun-highlight"><strong>🎯 MISSÃO DA AULA 05:</strong> criar o \"molde\" da apresentação — mude uma vez no mestre e todos os slides herdam o padrão.</div><div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Analogia</div><table class="mini-sheet"><tr><th>Elemento</th><th>Papel</th></tr><tr><td>Slide Mestre</td><td>A forma (molde)</td></tr><tr><td>Slides</td><td>Os bolos (conteúdos) que saem da forma</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula5/image5.png", caption: "Guia Exibir com o comando Slide Mestre." }
+          ]
+        },
+        {
+          lessonNum: 5,
+          heading: "5.1 Conceito: a \"forma de bolo\" (Slide Mestre)",
+          content: "O Slide Mestre define a aparência padrão de toda a apresentação. Pense nele como uma \"forma de bolo\":\n• Slide Mestre (a forma): define fundo, fontes, posições e elementos fixos que se repetem.\n• Slides (os bolos): recebem o conteúdo, mas herdam o formato definido no mestre.\n\nVantagem: padronização em massa — um ajuste no mestre atualiza todos os slides que dependem dele, economizando tempo e evitando inconsistências.\n\nComo acessar: Exibir → Slide Mestre. Ao terminar as alterações, feche o modo mestre para voltar à edição normal dos slides.",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Analogia do Slide Mestre</div><table class="mini-sheet"><tr><th>Elemento</th><th>Papel</th></tr><tr><td><strong>Slide Mestre</strong> (a forma)</td><td>Define fundo, fontes, posições e elementos fixos</td></tr><tr><td><strong>Slides</strong> (os bolos)</td><td>Recebem conteúdo, mas herdam o formato do mestre</td></tr></table></div><div class="fun-highlight"><strong>💡 Regra:</strong> mude uma vez no mestre → todos os slides herdam o padrão automaticamente.</div>',
+          images: []
+        },
+        {
+          lessonNum: 5,
+          heading: "5.2 Mestre Principal × Layouts",
+          content: "Ao entrar em Exibir → Slide Mestre, o painel esquerdo mostra miniaturas em hierarquia:\n• Mestre Principal (a miniatura maior, no topo): alterações nele afetam TODOS os slides da apresentação (fundo, fontes dos espaços reservados, objetos/logotipo fixos).\n• Layouts (miniaturas menores abaixo): controlam a estrutura de tipos específicos de slide (Título, Título e Conteúdo etc.). Alterar um layout afeta apenas os slides que usam aquele layout.\n\nRegra prática: para mudar a identidade visual de toda a apresentação, edite o Mestre Principal. Para ajustar só um tipo de slide, edite o layout correspondente.",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Mestre Principal × Layout</div><table class="mini-sheet"><tr><th>Onde editar</th><th>Alcance da mudança</th></tr><tr><td>Mestre Principal (maior)</td><td>Todos os slides</td></tr><tr><td>Layout específico (menor)</td><td>Apenas slides que usam esse layout</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula5/image10.png", caption: "Painel do modo Slide Mestre: miniatura maior (Mestre Principal) e layouts menores abaixo." }
+          ]
+        },
+        {
+          lessonNum: 5,
+          heading: "5.3 Padronizar fundo, fonte e logotipo",
+          content: "No modo Slide Mestre (de preferência no Mestre Principal):\n• Fundo: clique com o botão direito na área do slide → Formatar Plano de Fundo → escolha cor sólida/gradiente/imagem e ajuste para boa legibilidade.\n• Fonte do título/corpo: selecione os espaços reservados de título/texto e formate em Página Inicial → Fonte (tipo, tamanho, cor) — isso define o padrão herdado.\n• Logotipo: Inserir → Imagem (arquivo do computador, no PowerPoint 2010) → posicione (ex.: canto) e redimensione; o logotipo inserido no mestre aparece em todos os slides daquele mestre/layout.\n\nExemplo orientador: \"Padaria Pão Quente\" — fundo claro, título em cor de destaque e logotipo fixo.",
+          html: '<div class="fun-highlight"><strong>🧁 Exemplo \"Padaria Pão Quente\":</strong> fundo padronizado, fonte do título consistente e logotipo posicionado uma única vez no mestre.</div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula5/image1.png", caption: "Edição no modo Slide Mestre: ajustando elementos do molde." },
+            { src: "../../assets/img/powerpoint/Aula5/image9.png", caption: "Detalhe de formatação do plano de fundo no mestre." },
+            { src: "../../assets/img/powerpoint/Aula5/image3.png", caption: "Inserir imagem (logotipo) a partir de arquivo no computador." },
+            { src: "../../assets/img/powerpoint/Aula5/image8.png", caption: "Logotipo posicionado no slide mestre para aparecer em todos os slides." }
+          ]
+        },
+        {
+          lessonNum: 5,
+          heading: "5.4 Fechar o mestre, salvar como modelo e aplicar",
+          content: "Passos essenciais após configurar o molde:\n• Fechar Modo de Exibição Mestre (guia Slide Mestre → Fechar Modo de Exibição Mestre). Enquanto o modo mestre estiver aberto, você não edita o conteúdo normal dos slides — é obrigatório fechar para voltar.\n• Salvar como modelo (opcional, para reutilizar): Arquivo → Salvar Como → Tipo: Modelo do PowerPoint (*.potx).\n• Criar slides: Página Inicial → Novo Slide — os novos slides já herdam a formatação do mestre.\n• Aplicar layout: selecione um slide → Página Inicial → Layout → escolha o layout desejado.\n• Reutilizar tema: Design → Temas → (opções de temas/temas de outros arquivos, conforme disponível no PowerPoint 2010) para aplicar um visual existente.\n\nTeste de propagação: altere a cor do título no Mestre Principal, feche o modo e verifique se todos os slides mudaram.",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Fluxo correto</div><table class="mini-sheet"><tr><th>Etapa</th><th>Ação</th></tr><tr><td>1</td><td>Editar Mestre Principal/layouts</td></tr><tr><td>2</td><td><strong>Fechar Modo de Exibição Mestre</strong></td></tr><tr><td>3</td><td>Criar/editar slides (herdam o padrão)</td></tr><tr><td>4</td><td>(Opcional) Salvar como .potx</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula5/image6.png", caption: "Botão Fechar Modo de Exibição Mestre — necessário para voltar à edição dos slides." },
+            { src: "../../assets/img/powerpoint/Aula5/image2.png", caption: "Salvar o padrão como Modelo do PowerPoint (*.potx)." },
+            { src: "../../assets/img/powerpoint/Aula5/image4.png", caption: "Seleção do tipo de arquivo de modelo ao salvar." },
+            { src: "../../assets/img/powerpoint/Aula5/image7.png", caption: "Resultado: slides com aparência consistente herdada do mestre." }
+          ]
+        },
+        {
+          lessonNum: 5,
+          heading: "5.5 Layout personalizado e solução de problemas",
+          content: "CRIAR LAYOUT PERSONALIZADO (no modo Slide Mestre):\n• Slide Mestre → Inserir Layout; renomeie (Renomear Layout).\n• Inserir Espaço Reservado → escolha o tipo (ex.: Imagem) e posicione. Feche o modo mestre e aplique o novo layout aos slides desejados.\n\nPROBLEMAS COMUNS (diagnóstico):\n• \"Não consigo digitar nos slides\": você ainda está no modo Slide Mestre → clique em Fechar Modo de Exibição Mestre.\n• \"Só alguns slides mudaram\": a alteração foi feita em um layout específico, não no Mestre Principal → edite o Mestre Principal (ou o layout correto).\n• \"O logotipo não aparece\": ele foi inserido fora do mestre (em um slide normal) → insira o logotipo no Mestre Principal/layout no modo Slide Mestre.\n\nExercício: monte o mestre do tema \"Animais de Estimação\" (fundo, fonte, logotipo, layout personalizado com espaço para imagem), crie 5 slides e teste a propagação alterando a cor do título no mestre.",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Guia rápido de problemas</div><table class="mini-sheet"><tr><th>Sintoma</th><th>Causa provável</th><th>Solução</th></tr><tr><td>Não digita nos slides</td><td>Modo Mestre aberto</td><td>Fechar Modo de Exibição Mestre</td></tr><tr><td>Mudança parcial</td><td>Editou um layout</td><td>Editar o Mestre Principal</td></tr><tr><td>Logotipo sumiu/ausente</td><td>Inserido fora do mestre</td><td>Inserir no Mestre Principal</td></tr></table></div>'
+        },
+
+        {
+          lessonNum: 6,
+          chapter: "AULA 06: PROJETO FINAL — APRESENTAÇÃO DO RESTAURANTE (CONSOLIDAÇÃO DO MÓDULO)",
+          heading: "6.0 FASE 0 — Antes de Começar: objetivo, roteiro e regras do projeto",
+          content: "OBJETIVO: consolidar o módulo criando, passo a passo, uma apresentação de 4 slides (Capa, Cardápio, Nossos Pratos, Contato) com organização de arquivos, tema, tabela, imagens, formas, transições e animações controladas ao clique, teste e entrega.\n\nREGRAS DO PROJETO (importante):\n• Sem vídeo.\n• Sem música de fundo.\n• Sem slides passando sozinhos: usar avanço ao clique (marcar \"Ao Clicar com o Mouse\" e desmarcar \"Após\" nas transições) e não usar modo quiosque.\n\nROTEIRO (5 passos/fases):\n1. Preparar arquivos e montar a capa.\n2. Aplicar tema e criar o cardápio (tabela).\n3. Montar slides de pratos (imagens) e contato.\n4. Configurar transições e animações ao clique (correto × incorreto).\n5. Testar, salvar e conferir o checklist de entrega.\n\nPREPARAÇÃO: crie a pasta Projeto_Restaurante (Documentos), separe 4 imagens (ex.: Salada, Pizza, Massa, Sobremesa) e abra o PowerPoint 2010.",
+          html: '<div class="fun-highlight"><strong>🎯 MISSÃO DA AULA 06:</strong> entregar uma apresentação completa e profissional de 4 slides — <strong>tudo ao clique</strong>, sem vídeo, sem música e sem avanço automático.</div><div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Os 4 slides do projeto</div><table class="mini-sheet"><tr><th>Slide</th><th>Conteúdo</th></tr><tr><td>1. Capa</td><td>Título, subtítulo e imagem</td></tr><tr><td>2. Cardápio</td><td>Tabela de pratos e preços</td></tr><tr><td>3. Nossos Pratos</td><td>3 fotos com legendas</td></tr><tr><td>4. Contato</td><td>Endereço, telefone, horário e forma \"Obrigado!\"</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula6/image1.png", caption: "Visão geral do Projeto Final — Apresentação do Restaurante." },
+            { src: "../../assets/img/powerpoint/Aula6/image3.png", caption: "Regras do projeto: sem vídeo, sem música e sem avanço automático." }
+          ]
+        },
+        {
+          lessonNum: 6,
+          heading: "6.1 Preparar arquivos e montar a capa",
+          content: "PARTE 1 — Preparar a pasta:\n• Crie a pasta Projeto_Restaurante (em Documentos) e copie para ela as imagens do projeto (Salada, Pizza, Massa, Sobremesa).\n\nPARTE 2 — Slide 1 (Capa):\n• Abra o PowerPoint e salve (Ctrl+S) como Projeto Final.\n• Título: Restaurante Sabor (ex.: tamanho 54, destaque).\n• Subtítulo: Sabor de casa, feito com carinho.\n• Inserir → Imagem → escolha o arquivo (ex.: Pizza) da pasta do projeto e posicione.\n\nNo PowerPoint 2010, imagens são inseridas pelo arquivo do computador (Inserir → Imagem).",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Checklist — capa</div><table class="mini-sheet"><tr><th>Item</th><th>Conferir</th></tr><tr><td>Arquivo salvo</td><td>Projeto Final (.pptx)</td></tr><tr><td>Título</td><td>Restaurante Sabor</td></tr><tr><td>Subtítulo</td><td>Sabor de casa, feito com carinho</td></tr><tr><td>Imagem</td><td>Foto inserida e posicionada</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula6/image2.png", caption: "Organização da pasta do projeto com os arquivos/imagens." },
+            { src: "../../assets/img/powerpoint/Aula6/image5.png", caption: "Início da apresentação no PowerPoint (arquivo novo/salvamento)." },
+            { src: "../../assets/img/powerpoint/Aula6/image4.png", caption: "Exemplo do Slide 1 (Capa) concluído." }
+          ]
+        },
+        {
+          lessonNum: 6,
+          heading: "6.2 Tema, legibilidade e cardápio (tabela)",
+          content: "PARTE 3 — Visual consistente:\n• Design → Temas: escolha um tema e ajuste cores/fontes (no PowerPoint 2010 pelo grupo Temas) para que todos os slides tenham a mesma identidade.\n• Garanta legibilidade: contraste adequado entre texto e fundo.\n\nPARTE 4 — Slide 2 (Cardápio):\n• Novo slide com layout Título e Conteúdo.\n• Título: Nosso Cardápio. Inserir → Tabela (2 colunas × 6 linhas) e preencher (use Tab para avançar entre células):\n  - Prato / Preço: Salada Especial R$ 25,00; Pizza Margherita R$ 45,00; Massa ao Molho R$ 38,00; Sobremesa do Dia R$ 18,00; Suco Natural R$ 12,00.\n• Formate: fonte legível (ex.: 24 pt) e estilo em Ferramentas de Tabela → Design/Layout (PowerPoint 2010).",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Tabela do cardápio (modelo)</div><table class="mini-sheet"><tr><th>Prato</th><th>Preço</th></tr><tr><td>Salada Especial</td><td>R$ 25,00</td></tr><tr><td>Pizza Margherita</td><td>R$ 45,00</td></tr><tr><td>Massa ao Molho</td><td>R$ 38,00</td></tr><tr><td>Sobremesa do Dia</td><td>R$ 18,00</td></tr><tr><td>Suco Natural</td><td>R$ 12,00</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula6/image7.png", caption: "Aplicação de tema/visual consistente na apresentação." },
+            { src: "../../assets/img/powerpoint/Aula6/image6.png", caption: "Slide do Cardápio com tabela de pratos e preços." }
+          ]
+        },
+        {
+          lessonNum: 6,
+          heading: "6.3 Slides de pratos (imagens) e contato",
+          content: "PARTE 5 — Slide 3 (Nossos Pratos):\n• Layout Somente Título. Título: Nossos Pratos.\n• Inserir → Imagem: selecione as 3 fotos (Salada, Massa, Sobremesa) — segure Ctrl para selecionar várias de uma vez e clique em Inserir.\n• Alinhe e redimensione proporcionalmente (alças de canto); deixe tamanhos semelhantes. Ferramentas de Imagem → Formatar para borda/ajustes.\n• Adicione legenda com Inserir → Caixa de Texto abaixo de cada foto.\n\nPARTE 6 — Slide 4 (Contato):\n• Título: Fale Conosco. Insira as informações (exemplo): Rua das Flores, 123 – Centro; (19) 0000-0000; Terça a Domingo, 11h às 22h.\n• Inserir → Formas → retângulo arredondado com o texto \"Obrigado!\" e posicione no slide.",
+          html: '<div class="es-sheet-box" style="max-width:560px;"><div class="es-sheet-titlebar">Dicas de composição</div><table class="mini-sheet"><tr><th>Elemento</th><th>Boa prática</th></tr><tr><td>Imagens</td><td>Mesmo tamanho/alinhamento e legenda</td></tr><tr><td>Texto</td><td>Informações objetivas e legíveis</td></tr><tr><td>Forma</td><td>Destaque para o encerramento (Obrigado!)</td></tr></table></div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula6/image9.png", caption: "Inserção e organização das imagens dos pratos." },
+            { src: "../../assets/img/powerpoint/Aula6/image8.png", caption: "Slide de Contato com informações e forma de destaque." }
+          ]
+        },
+        {
+          lessonNum: 6,
+          heading: "6.4 Transições e animações — tudo ao clique",
+          content: "PARTE 7 — Transições (regra do projeto):\n• Transições → escolha um efeito simples (ex.: Esmaecer/Empurrar).\n• Avançar Slide: marque \"Ao Clicar com o Mouse\" e desmarque \"Após\". Clique em Aplicar a Todos.\n• Não usar modo quiosque e não configurar avanço automático.\n\nPARTE 8 — Animações (ao clique):\n• Selecione um objeto → Animações → aplique um efeito de Entrada (ex.: Surgir/Aparecer) com Iniciar: Ao Clicar.\n• Confira a ordem no Painel de Animação. Use poucas animações, com moderação.\n\nCORRETO × INCORRETO: correto = Ao clicar, sem \"Após\", sem vídeo/música, sem quiosque. Incorreto = \"Após\" marcado, avanço automático ou mídias não previstas.",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Correto × incorreto (projeto)</div><table class="mini-sheet"><tr><th>Situação</th><th>Configuração</th></tr><tr><td>✅ Correto</td><td>Ao Clicar com o Mouse marcado; \"Após\" desmarcado; sem quiosque; sem vídeo/música</td></tr><tr><td>❌ Incorreto</td><td>\"Após\" marcado, avanço automático, quiosque ou mídias fora do projeto</td></tr></table></div><div class="fun-highlight"><strong>Regra de ouro:</strong> no projeto final os slides <strong>não passam sozinhos</strong> — o controle é do apresentador (clique/setas).</div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula6/image12.png", caption: "Transição configurada para avançar ao clique (sem 'Após')." },
+            { src: "../../assets/img/powerpoint/Aula6/image10.png", caption: "Animação configurada para iniciar ao clique (Painel de Animação)." }
+          ]
+        },
+        {
+          lessonNum: 6,
+          heading: "6.5 Testar, salvar e entregar (checklist final)",
+          content: "PARTE 9 — Testar:\n• Pressione F5 para iniciar do começo. Avance com clique/seta direita, volte com seta esquerda e saia com Esc.\n• Se algum slide avançar sozinho, volte à Parte 7 e desmarque \"Após\" (e verifique o modo de apresentação).\n\nPARTE 10 — Salvar e entregar:\n• Salve (Ctrl+S) e confira se o arquivo está na pasta correta.\n• Checklist final: 4 slides (Capa, Cardápio, Nossos Pratos, Contato); tema consistente e legível; tabela preenchida; 3 fotos com legenda; transição em todos os slides ao clique e sem \"Após\"; animações ao clique (moderadas); sem vídeo/música; testado com F5; arquivo salvo.\n\nAo concluir, você integrou interface, organização, formatação, imagens, tabela, animação/transição e apresentação — as competências centrais do módulo PowerPoint.",
+          html: '<div class="es-sheet-box" style="max-width:640px;"><div class="es-sheet-titlebar">Checklist final de entrega</div><table class="mini-sheet"><tr><th>Item</th><th>OK?</th></tr><tr><td>4 slides completos</td><td>Capa, Cardápio, Pratos, Contato</td></tr><tr><td>Tema e legibilidade</td><td>Visual consistente</td></tr><tr><td>Tabela e imagens</td><td>Cardápio preenchido; 3 fotos com legenda</td></tr><tr><td>Transições/Animações</td><td>Ao clique, sem "Após", moderadas</td></tr><tr><td>Restrições</td><td>Sem vídeo, sem música, sem avanço automático</td></tr><tr><td>Teste e arquivo</td><td>F5 ok e arquivo salvo</td></tr></table></div><div class="fun-highlight"><strong>🎉 Conclusão:</strong> projeto finalizado — você percorreu todo o ciclo de criação de uma apresentação no PowerPoint 2010.</div>',
+          images: [
+            { src: "../../assets/img/powerpoint/Aula6/image11.png", caption: "Teste da apresentação (modo de exibição em tela cheia)." },
+            { src: "../../assets/img/powerpoint/Aula6/image13.png", caption: "Salvar e organizar o arquivo para entrega." },
+            { src: "../../assets/img/powerpoint/Aula6/image14.png", caption: "Projeto concluído — revisão final e entrega." }
+          ]
         }
       ]
     }
@@ -7120,6 +7418,14 @@ O Projeto Vendas da Tech Solutions reuniu as 13 aulas: planilhas organizadas, va
         10: "Aula 10: Pesquisa Acadêmica, Estrutura ABNT & Citações",
         11: "Aula 11: Revisão Geral Integrada & Tabelas Profissionais",
         12: "Aula 12: Prova Final do Módulo Word"
+      },
+      powerpoint: {
+        1: "Aula 01: Interface do PowerPoint 2010",
+        2: "Aula 02: Trabalhando com Slides",
+        3: "Aula 03: Texto, Imagens, Animações e Transições",
+        4: "Aula 04: Botões de Ação e Navegação",
+        5: "Aula 05: Slide Mestre — O Molde da Apresentação",
+        6: "Aula 06: Projeto Final — Apresentação do Restaurante"
       }
     };
 

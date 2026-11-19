@@ -597,7 +597,7 @@ node --check assets/js/pdf-lessons.js        # OK
 ### 5. Lacunas ainda abertas (não tocadas nesta sessão)
 
 - **L-03** — FASE 0 ausente nas Aulas 7, 8 e complementos 71 e 81.
-- **L-07** — Word e PowerPoint com PDF 100% texto puro (regras 2 e 8).
+- **L-07** — ~~Word e PowerPoint~~ **Word** com PDF 100% texto puro (regras 2 e 8). PowerPoint implementado em 19/10/2026 (36 seções, 6 aulas).
 
 ---
 
@@ -789,10 +789,41 @@ Os harnesses validam **estrutura e comportamento**; **ninguém com visão ainda 
 2. **Confirmar as senhas candidatas** (`wr0126`, `wr0226`, `wr0326` — e a `wr0426` da Aula 4 quando existir).
 3. **P-10** — commitar tudo (Aulas 1/2/3 do Windows + simulador + imagens).
 4. **Aula 04** — SDD em `Docs/SPEC-AULA-04-WINDOWS.md`, prompt em `/tmp/opencode/prompt_aula04.txt`.
-5. **L-07** — Word e PowerPoint com PDF 100% texto puro (maior pendência de conteúdo).
+5. **L-07** — **Word** com PDF 100% texto puro (maior pendência de conteúdo restante; PowerPoint resolvido em 19/10/2026).
 6. **L-03** — escopo da FASE 0 nas Aulas 7, 8, 71 e 81 do Windows.
 
 ---
+
+
+---
+
+## Sessão 2026-10-19 — Implementação do módulo PowerPoint 2010 (6 aulas) + PDF com ilustrações
+
+### 1. Escopo
+
+Implementar o Módulo 4 — **Microsoft PowerPoint 2010 (pt-BR)**: hub, 6 aulas (`pa001`–`pf006`), leitura gamificada com FASE 0 + 5 fases por aula, checks distribuídos por fase, simuladores, quizzes persistentes (5 questões, 10,0 pts, aprovação ≥ 7,0) e apostilas PDF por aula com ilustrações/imagens reais. Alinhar conteúdo/atalhos ao padrão Office (`Ctrl+S` salvar, `Ctrl+B/I/U` formatação).
+
+### 2. Entregas
+
+- **`modules/powerpoint/index.html`** (reescrito): hub com 6 cards/senhas `pa001`–`pf006`; 6 telas `#screen-lesson-1..6` com FASE 0 (objetivo + roteiro numerado + preparação) e 5 fases cada; checks distribuídos por fase (`lN-check-*`, 5/6/5/5/5/5); simuladores em todas as aulas; Aula 4 com ilustrações **HTML-only** (sem imagens de arquivo, conforme origem); Aula 6 (projeto interativo 4 slides, “Restaurante Sabor”) com regras explícitas: tudo ao clique, sem `"Após"`, sem quiosque, sem vídeo/música.
+- **Quizzes (6×5)**: `QuizEngine.saveState`/`loadState`, `moduleId` `powerpoint_lesson_N_quiz`, persistência real (ao responder/navegar/assinar) e restauração ao abrir, “✓ Salvo automaticamente”, “↺ Recomeçar o exercício” (limpa storage e zera estado), `PASS_SCORE = 7.0`, relatórios/assinatura.
+- **`assets/js/pdf-lessons.js`**: `moduleLessonTitles.powerpoint` (1–6) e `LESSONS.powerpoint` reescrito com **36 seções** (6 por aula), **todas com `lessonNum` (1–6)**, todas com ilustração `sec.html` real (`.es-sheet-box`/`.mini-sheet`/`.fun-highlight`) e/ou imagens; refs relativas `../../assets/img/powerpoint/AulaN/...`; sem `AulaOrigem` e sem placeholders “Referência de imagem”.
+- **`assets/img/powerpoint/Aula1..Aula6/`**: 49 imagens versionadas copiadas da origem (A1:7, A2:6, A3:12, A4:0, A5:10, A6:14).
+- **Specs**: `Docs/SPEC-POWERPOINT-MASTER.md` e `Docs/SPEC-POWERPOINT-AULA-01.md`–`06.md` criados/atualizados.
+
+### 3. Validação realizada
+
+- `node --check assets/js/pdf-lessons.js` **OK**; script inline de `modules/powerpoint/index.html` **OK**.
+- Estrutura (grep/parse): hub + `#password-modal` filho direto de `<body>` após `</main>`; 6 telas; FASE 0 e 5 fases em todas; 36 seções PDF (6/aula), todas com `lessonNum` e `html` real; 47 refs de imagem, **0 ausentes**; Aula 4 sem refs de arquivo em tela/PDF; sem `AulaOrigem`; `saveState`/`loadState`, `PASS_SCORE = 7.0`, 12 “Recomeçar”, 6 “Salvo automaticamente”.
+- Revisão de conteúdo (estático): 2010 pt-BR (Backstage/Faixa de Opções), regras da Aula 6 presentes, atalhos corrigidos para `Ctrl+S` salvar / `Ctrl+B|I|U` formatação (tela e PDF da L3).
+- **CDP/headless (parcial, timeouts intermitentes `Runtime.evaluate`):** carregamento/navegação confirmados (`hub`, modal em `<body>`, L4 sem `<img>`, L6 com 12 imagens, `LESSONS.powerpoint`/títulos no runtime após navegação com cache desabilitado). Testes completos intermitentes — **validação visual humana em navegador (telas, simuladores, popups/PDF, fluxo quiz/persistência/recomeçar) pendente** (Regra 12).
+
+### 4. Aprovação e pendências residuais
+
+- **Aulas aprovadas pelo professor (19/10/2026)**. Commit realizado nesta sessão com implementação, specs e imagens.
+- **Validação visual humana em navegador** (telas/simuladores/popups de PDF/fluxo real de quiz persistência/recomeçar) permaneceu parcial no ambiente por timeouts intermitentes do CDP/headless; aprovada funcionalmente pelo professor com base na revisão/conferência realizada.
+- **L-07 (parcial)**: **PowerPoint atendido** (regras 2 e 8). **Word continua pendente** (PDF texto puro / sem `lessonNum`) — próxima frente de conteúdo quando houver escopo.
+
 
 ## 📎 ANEXO 12 — Reordenação dos tópicos 2–4 e explicação do binário (07/10/2026, rodada 2)
 
@@ -887,7 +918,7 @@ A 1ª rodada do dia (Excel + L-01/L-02, seção anterior) continua válida. Esta
 
 ### 6. Próximos passos
 
-1. **L-07** — a maior pendência de conteúdo do portal: Word e PowerPoint com PDF **100% texto puro** e todas as seções sem `lessonNum` (violam as regras 2 e 8). Decidir escopo e atacar.
+1. **L-07** — pendência de conteúdo restante: **Word** com PDF **100% texto puro** e seções sem `lessonNum` (viola regras 2 e 8). PowerPoint foi implementado em 19/10/2026 (36/36 seções com `lessonNum` e ilustração/imagens). Decidir escopo e atacar o Word.
 2. **L-03** — decisão de escopo a registrar: a Aula 2 já tem FASE 0; restam as Aulas 7, 8 e os complementos 71 e 81.
 3. **P-06** — inspeção humana do PDF do Excel (104 ilustrações, 46 legendas).
 4. **Revisão visual dos módulos afetados** pela regra global de `.fixation-panel` (Internet e Excel).
@@ -927,7 +958,7 @@ O que a bateria do Windows prova: **regra 7 cumprida na Aula 1** — `QuizEngine
 
 ### 2. Lacunas encontradas (novas, não são P-01…P-14)
 
-> **Estado em 04/10/2026, 2ª rodada:** L-01, L-02, **L-04, L-05, L-06 e L-08 foram corrigidas** (ver a seção da 2ª rodada, mais acima). **Só L-03 e L-07 continuam abertos.** A tabela abaixo preserva o achado original de cada uma.
+> **Estado em 19/10/2026:** L-01, L-02, **L-04, L-05, L-06 e L-08** corrigidas (2ª rodada 04/10). **PowerPoint (L-07 parcial) implementado** em 19/10/2026. **Continuam abertos: L-03 e L-07 (Word).** A tabela abaixo preserva o achado original de cada uma.
 
 | # | Achado | Onde | Gravidade |
 |:--|:---|:---|:---|
@@ -937,7 +968,7 @@ O que a bateria do Windows prova: **regra 7 cumprida na Aula 1** — `QuizEngine
 | ~~**L-04**~~ | ✅ **CORRIGIDO em 04/10/2026 (2ª rodada).** A Aula 2 passou a existir com título e seções próprias, então `downloadLessonPDF('windows', 2)` gera a apostila real; o guarda de apostila vazia ficou protegendo só os números que realmente não existem (3–6). | `assets/js/pdf-lessons.js` | — |
 | ~~**L-05**~~ | ✅ **CORRIGIDO em 04/10/2026.** A seção "Leituras Recomendadas" ficou `lessonNum: null` + `moduleAppendix: true`, com comentário dizendo que é apêndice genérico do módulo. | `assets/js/pdf-lessons.js` | — |
 | ~~**L-06**~~ | ✅ **CORRIGIDO em 04/10/2026.** Internet agora em **19/19** legendas, junto com Windows (86/86) e Excel (46/46). | `assets/js/pdf-lessons.js` | — |
-| **L-07** | **Word (0/5) e PowerPoint (0/5) continuam com PDF 100% texto puro** e todas as seções sem `lessonNum`. Violam a regra 2 e a regra 8, mas estão fora do escopo das sessões do Excel. | `assets/js/pdf-lessons.js` | alta — se a meta for "todos os módulos" |
+| **L-07** | ~~Word (0/5) e PowerPoint (0/5) com PDF 100% texto puro e seções sem `lessonNum`.~~ **Atualização 19/10/2026:** PowerPoint implementado (6 aulas, 36/36 seções com `lessonNum` e ilustração/imagens). **Resta: Word** com PDF 100% texto puro e seções sem `lessonNum` (viola regras 2 e 8). | `assets/js/pdf-lessons.js`, `modules/powerpoint/index.html`, `assets/img/powerpoint/Aula1..6/` | alta (Word) — se a meta for "todos os módulos" |
 | ~~**L-08**~~ | ✅ **CORRIGIDO em 04/10/2026.** `7.3` e `7.5` ganharam ilustração; Windows está em **39/39** seções ilustradas, **0** texto puro. | `assets/js/pdf-lessons.js` | — |
 
 ### 3. Estado do working tree (nada commitado)
@@ -1019,7 +1050,7 @@ O Excel não tem navegação entre questões (as 5 ficam na mesma tela), então 
 ### 5. Próximos passos sugeridos
 
 1. **L-04**: remover Aulas 2–6 de `moduleLessonTitles.windows` ou criar os stubs com erro claro.
-2. **L-07**: decidir se Word e PowerPoint entram nesta trilha (regras 2 e 8 estão violadas há mais de uma sessão).
+2. **L-07**: PowerPoint atendido em 19/10/2026; decidir escopo/execução do **Word** (regras 2 e 8 ainda violadas).
 3. **L-05 / L-06**: Internet — dar `lessonNum` à seção "Leituras Recomendadas" e legenda às 19 imagens.
 4. **P-06**: única pendência de código do Excel que depende de olho humano — abrir o PDF do popup e conferir as 46 legendas e as 104 ilustrações.
 5. **P-10**: commitar (agora com 7 arquivos, incluindo `modules/windows/index.html` por causa do L-01).
